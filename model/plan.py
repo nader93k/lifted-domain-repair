@@ -1,0 +1,211 @@
+from fd.pddl.conditions import Conjunction, Atom
+from .domain import *
+from .repair import *
+from utils import *
+
+from typing import List, Tuple, Set
+
+
+def applicable(action, state, var_mapping):
+    literals = (action.precondition,)
+    if isinstance(action.precondition, Conjunction):
+        literals = action.precondition.parts
+    for literal in literals:
+        grounded_paras = tuple(var_mapping[para].name for para in literal.args)
+        atom = Atom(literal.predicate, grounded_paras)
+        if (not literal.negated) and (atom not in state):
+            return atom
+        if literal.negated and (atom in state):
+            return atom.negate()  # return a negated atom to indicate that it shall be deleted
+    return None
+
+
+def check_goal(state, goal):
+    for atom in goal.parts:
+        if (not atom.negated) and (atom not in state):
+            return atom
+        if atom.negated and (atom in state):
+            return atom
+    return None
+
+
+def next_state(action, var_mapping, current):
+    pos_effs, neg_effs = set(), set()
+    for eff in action.effects:
+        assert (len(eff.parameters) == 0)
+        literal = eff.literal
+        grounded_paras = tuple(var_mapping[para].name for para in literal.args)
+        atom = Atom(literal.predicate, grounded_paras)
+        if literal.negated:
+            neg_effs.add(atom)
+        else:
+            pos_effs.add(atom)
+    state = current.difference(neg_effs)
+    state = state.union(pos_effs)
+    return state
+
+
+class Plan:
+    def __init__(self, plan_file):
+        self._steps: List[Tuple] = []
+        self._var_mapping = []
+        with open(plan_file, "r") as f:
+            for line in f.readlines():
+                if not line.strip():
+                    continue
+                line = line.strip()
+                if line[0] == "(" and line[-1] == ")":
+                    line = line[1:-1]
+                parts = line.split(" ")
+                self._steps.append(tuple(parts))
+        if self._steps[-1][0] == ";":
+            self._steps.pop(-1)
+        self._succeed = False
+        self._pos = None
+        self._atom = None
+
+    @property
+    def executable(self):
+        return self._succeed
+
+    @property
+    def position(self):
+        return self._pos
+
+    @property
+    def atom(self):
+        return self._atom
+
+    def compute_subs(self, domain, task):
+        for step in self._steps:
+            mapping = {}
+            action = domain.get_action(step[0])
+            for idx, para in enumerate(action.parameters):
+                mapping[para.name] = task.get_object(step[idx + 1])
+            mapping.update([(c.name, c) for c in domain.constants])
+            self._var_mapping.append((step[0], mapping))
+
+    # def compute_subs(self, action_dict, object_dict):
+    #     for step in self._steps:
+    #         action = action_dict[step[0]]
+    #         mapping = dict()
+    #         for idx, para in enumerate(action.parameters):
+    #             mapping[para.name] = object_dict[step[idx + 1]]
+    #         self._var_mapping.append((step[0], mapping))
+
+    def step(self, idx):
+        return self._steps[idx]
+
+    def substitution(self, idx):
+        return self._var_mapping[idx]
+
+    def execute(self, domain: Domain, task: Task):
+        pass
+
+    def compute_conflict(self, domain: Domain):
+        pass
+
+
+class PositivePlan(Plan):
+    def __init__(self, plan_file):
+        super().__init__(plan_file)
+
+    def execute(self, domain: Domain, task: Task):
+        state = set()
+        for p in task.init:
+            state.add(p)
+        for pos, step in enumerate(self._steps):
+            action = domain.get_action(step[0])
+            var_mapping = self._var_mapping[pos][-1]
+            unsat_atom = applicable(action, state, var_mapping)
+            if unsat_atom is not None:
+                self._succeed = False
+                self._pos = pos
+                self._atom = unsat_atom
+                return False
+            state = next_state(action, var_mapping, state)
+        unsat_atom = check_goal(state, task.goal)
+        if unsat_atom is not None:
+            self._succeed = False
+            self._pos = len(self._steps)
+            self._atom = unsat_atom
+            return False
+        return True
+
+    def compute_conflict(self, domain: Domain) -> Set[Repair]:
+        conflict = set()
+        if self._pos < len(self._steps):
+            name = self._steps[self._pos][0]
+            action = domain.get_action(name)
+            prec = match_precondition(
+                action,
+                self._var_mapping[self._pos][-1],
+                self._atom)
+            for atom in prec:
+                repair = RepairPrec(name, atom, -1)
+                conflict.add(repair)
+        for idx in range(self._pos - 1, -1, -1):
+            has_neg_conf = False
+            name = self._steps[idx][0]
+            action = domain.get_action(name)
+            missing = match_missing_effs(
+                action,
+                self._var_mapping[idx][-1],
+                self._atom)
+            for atom in missing:
+                repair = RepairEffs(name, atom, 1)
+                conflict.add(repair)
+                for r in repair.negate():
+                    if r in domain.repairs:
+                        has_neg_conf = True
+            if not self._atom.negated:
+                existing = match_existing_effs(
+                    action,
+                    self._var_mapping[idx][-1],
+                    self._atom.negate())
+            else:
+                existing = match_existing_effs(
+                    action,
+                    self._var_mapping[idx][-1],
+                    self._atom)
+            if len(existing) > 0:
+                for atom in existing:
+                    repair = RepairEffs(name, atom, -1)
+                    conflict.add(repair)
+                break
+            if has_neg_conf:
+                break
+        for r in domain.repairs:
+            if isinstance(r, RepairPrec):
+                continue
+            for neg in r.negate():
+                if neg in conflict:
+                    conflict.remove(neg)
+                    r.condition = True
+                    conflict.add(r)
+        return conflict
+
+
+class NegativePlan(Plan):
+    def __init__(self, plan_file, idx):
+        super().__init__(plan_file)
+        self._idx = idx
+
+    def execute(self, domain: Domain, task: Task):
+        state = {p for p in task.init}
+        for pos, step in enumerate(self._steps):
+            if pos > self._idx:
+                break
+            action = domain.get_action(step[0])
+            var_mapping = self._var_mapping[pos]
+            unsat_atom = applicable(action, state, var_mapping)
+            if unsat_atom is not None:
+                if pos != self._idx:
+                    self._succeed = False
+                    self._pos = pos
+                    self._atom = unsat_atom
+                    return False
+            else:
+                if pos == self._idx:
+                    return False
+        return True
