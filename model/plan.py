@@ -85,14 +85,6 @@ class Plan:
             mapping.update([(c.name, c) for c in domain.constants])
             self._var_mapping.append((step[0], mapping))
 
-    # def compute_subs(self, action_dict, object_dict):
-    #     for step in self._steps:
-    #         action = action_dict[step[0]]
-    #         mapping = dict()
-    #         for idx, para in enumerate(action.parameters):
-    #             mapping[para.name] = object_dict[step[idx + 1]]
-    #         self._var_mapping.append((step[0], mapping))
-
     def step(self, idx):
         return self._steps[idx]
 
@@ -137,7 +129,7 @@ class PositivePlan(Plan):
         if self._pos < len(self._steps):
             name = self._steps[self._pos][0]
             action = domain.get_action(name)
-            prec = match_precondition(
+            prec = match_existing_prec(
                 action,
                 self._var_mapping[self._pos][-1],
                 self._atom)
@@ -186,7 +178,7 @@ class PositivePlan(Plan):
         return conflict
 
 
-class NegativePlan(Plan):
+class NegativePlan(PositivePlan):
     def __init__(self, plan_file, idx):
         super().__init__(plan_file)
         self._idx = idx
@@ -197,7 +189,7 @@ class NegativePlan(Plan):
             if pos > self._idx:
                 break
             action = domain.get_action(step[0])
-            var_mapping = self._var_mapping[pos]
+            var_mapping = self._var_mapping[pos][-1]
             unsat_atom = applicable(action, state, var_mapping)
             if unsat_atom is not None:
                 if pos != self._idx:
@@ -205,7 +197,76 @@ class NegativePlan(Plan):
                     self._pos = pos
                     self._atom = unsat_atom
                     return False
+                else:
+                    return True
             else:
                 if pos == self._idx:
                     return False
-        return True
+        return False
+
+    def compute_conflict(self, domain: Domain):
+        if self._pos is not None and self._pos < self._idx:
+            return super().compute_conflict(domain)
+        name = self._steps[self._idx][0]
+        action = domain.get_action(name)
+        conflict = set()
+        atoms = match_missing_prec(action, domain)
+        for atom in atoms:
+            repair = RepairPrec(name, atom, 1)
+            has_neg_repair = False
+            for neg in repair.negate():
+                if neg in domain.repairs:
+                    neg.condition = True
+                    conflict.add(neg)
+                    has_neg_repair = True
+            if has_neg_repair:
+                continue
+            conflict.add(repair)
+        literals = (action.precondition, )
+        if isinstance(action.precondition, Conjunction):
+            literals = action.precondition.parts
+        for literal in literals:
+            var_mapping = self._var_mapping[self._idx][-1]
+            grounded_paras = tuple(var_mapping[para].name for para in literal.args)
+            target = Atom(literal.predicate, grounded_paras)
+            if literal.negated:
+                target = target.negate()
+            for idx in range(self._idx - 1, -1, -1):
+                prev_action = domain.get_action(self._steps[idx][0])
+                prev_mapping = self._var_mapping[idx][-1]
+                missing = match_missing_effs(
+                        prev_action,
+                        prev_mapping,
+                        target.negate())
+                for atom in missing:
+                    # TODO: add to conflict and check whether its negation is in the candidate
+                    repair = RepairEffs(prev_action.name, atom, 1)
+                    has_neg_repair = False
+                    for neg in repair.negate():
+                        if neg in domain.repairs:
+                            neg.condition = True
+                            conflict.add(neg)
+                            has_neg_repair = True
+                    if has_neg_repair:
+                        continue
+                    conflict.add(atom)
+                existing = match_existing_effs(
+                        prev_action,
+                        prev_mapping,
+                        target)
+                if len(existing) > 0:
+                    # TODO: add to the conflict, check conditions, and terminate the loop
+                    for atom in existing:
+                        repair = RepairEffs(prev_action.name, atom, -1)
+                        has_neg_repair = False
+                        for neg in repair.negate():
+                            if neg in domain.repairs:
+                                neg.condition = True
+                                conflict.add(neg)
+                                has_neg_repair = True
+                        if has_neg_repair:
+                            continue
+                        conflict.add(repair)
+                    break
+        return conflict
+

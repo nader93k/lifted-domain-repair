@@ -30,6 +30,9 @@ class Repair:
 
     def apply(self, action: Action) -> Action:
         pass
+
+    def negate(self):
+        pass
     
     @property
     def target(self):
@@ -83,6 +86,11 @@ class RepairPrec(Repair):
                       action.num_external_parameters,
                       prec, action.effects,
                       action.cost)
+
+    def negate(self):
+        return {RepairPrec(self._action_name,
+                           self._atom,
+                           -1 * self._operation)}
 
 
 class RepairEffs(Repair):

@@ -36,6 +36,14 @@ class Domain:
     def repaired(self, value):
         self._repaired = value
 
+    @property
+    def predicates(self):
+        return self._predicates
+
+    @property
+    def types(self):
+        return self._types
+
     def get_action(self, name):
         if name in self._updated_actions:
             return self._updated_actions[name]

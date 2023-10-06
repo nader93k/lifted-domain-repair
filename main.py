@@ -14,8 +14,9 @@ if __name__ == '__main__':
     plan_file = "/home/users/u6162630/Datasets/fuzzy-1-domain-1-task/tidybot-sat11-strips/p09/sas_plan"
     domain = Domain(domain_file)
     task = Task(task_file)
-    pos_plan = PositivePlan(plan_file)
-    repairer = Repairer(domain, [(task, [pos_plan])])
+    # pos_plan = PositivePlan(plan_file)
+    neg_plan = NegativePlan(plan_file, 3)
+    repairer = Repairer(domain, [(task, [neg_plan])])
     repairer.print_repairs()
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
