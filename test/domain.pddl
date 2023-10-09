@@ -7,7 +7,7 @@
 
 (:types ;todo: enumerate types and their hierarchy here, e.g. car truck bus - vehiclecd
     coordinate
-    object
+    thing
 )
 
 ; un-comment following line if constants are needed
@@ -15,13 +15,12 @@
 
 (:predicates ;todo: define predicates here
     (connected ?c1 - coordinate ?c2 - coordinate)
-    (tall ?x - object)
-    (occupied ?c - coordinate)
-    (holding ?x - object)
+    (tall ?x - thing)
+    (holding ?x - thing)
     (empty)
     (robot-at ?c - coordinate)
-    (obj-at ?o - object ?c - coordinate)
-    (wide ?x - object)
+    (obj-at ?o - thing ?c - coordinate)
+    (wide ?x - thing)
 )
 
 ;define actions here
@@ -31,11 +30,8 @@
         ?nextpos - coordinate
     )
     :precondition (and 
-        ; (connected ?curpos ?nextpos) ; this is supposed to be a missing precondition
+        (connected ?curpos ?nextpos) ; this is supposed to be a missing precondition
         (robot-at ?curpos)
-        (not (occupied ?curpos)) 
-        ;this is to say that the robot cannot move through a position if it is occupied by an object
-        ;this can also be considered to be removed for creating a flaw
     )
     :effect (and 
         (robot-at ?nextpos)
@@ -45,47 +41,43 @@
 
 (:action pickup-from-top
     :parameters (
-        ?target - object
+        ?target - thing
         ?curpos - coordinate
     )
     :precondition (and 
         (robot-at ?curpos)
         (obj-at ?target ?curpos)
         (empty)
-        (not (tall ?target)) ;this can be removed for creating a flaw
+        ;(not (tall ?target)) ;this can be removed for creating a flaw
     )
     :effect (and 
         (holding ?target)
         (not (obj-at ?target ?curpos))
         (not (empty))
-        ;if the target object is picked up, it will not occupy the position
-        (not (occupied ?curpos))
     )
 )
 
 (:action pickup-from-side
     :parameters (
-        ?target - object
+        ?target - thing
         ?curpos - coordinate
     )
     :precondition (and 
         (robot-at ?curpos)
         (obj-at ?target ?curpos)
         (empty)
-        (not (wide ?target)) ;this can be removed for creating a flaw
+        ;(not (wide ?target)) ;this can be removed for creating a flaw
     )
     :effect (and 
         (holding ?target)
         (not (obj-at ?target ?curpos))
         (not (empty))
-        ;if the target object is picked up, it will not occupy the position
-        (not (occupied ?curpos))
     )
 )
 
 (:action putdown
     :parameters (
-        ?target - object
+        ?target - thing
         ?curpos - coordinate
     )
     :precondition (and 
@@ -93,9 +85,8 @@
         (robot-at ?curpos)
     )
     :effect (and 
+        (empty) ;comment this, because this is a real mistask!
         (obj-at ?target ?curpos)
-        ;when the target object is put down, it will occupy this position
-        (occupied ?curpos)
         (not (holding ?target))
     )
 )

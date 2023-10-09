@@ -168,13 +168,15 @@ class PositivePlan(Plan):
             if has_neg_conf:
                 break
         for r in domain.repairs:
-            if isinstance(r, RepairPrec):
-                continue
+            # if isinstance(r, RepairPrec):
+            #     continue
             for neg in r.negate():
                 if neg in conflict:
                     conflict.remove(neg)
                     r.condition = True
                     conflict.add(r)
+        # if len(conflict) == 1 and conflict.pop().condition:
+        #     return None
         return conflict
 
 
@@ -202,6 +204,7 @@ class NegativePlan(PositivePlan):
             else:
                 if pos == self._idx:
                     return False
+            state = next_state(action, var_mapping, state)
         return False
 
     def compute_conflict(self, domain: Domain):
@@ -212,6 +215,8 @@ class NegativePlan(PositivePlan):
         conflict = set()
         atoms = match_missing_prec(action, domain)
         for atom in atoms:
+            if atom.predicate == "=":
+                continue
             repair = RepairPrec(name, atom, 1)
             has_neg_repair = False
             for neg in repair.negate():
@@ -240,6 +245,10 @@ class NegativePlan(PositivePlan):
                         target.negate())
                 for atom in missing:
                     # TODO: add to conflict and check whether its negation is in the candidate
+                    if atom.predicate == "=":
+                        continue
+                    if atom.negated and (atom.negate() in set(eff.literal for eff in prev_action.effects)):
+                        continue
                     repair = RepairEffs(prev_action.name, atom, 1)
                     has_neg_repair = False
                     for neg in repair.negate():
@@ -249,7 +258,7 @@ class NegativePlan(PositivePlan):
                             has_neg_repair = True
                     if has_neg_repair:
                         continue
-                    conflict.add(atom)
+                    conflict.add(repair)
                 existing = match_existing_effs(
                         prev_action,
                         prev_mapping,
@@ -257,6 +266,8 @@ class NegativePlan(PositivePlan):
                 if len(existing) > 0:
                     # TODO: add to the conflict, check conditions, and terminate the loop
                     for atom in existing:
+                        if atom.predicate == "=":
+                            continue
                         repair = RepairEffs(prev_action.name, atom, -1)
                         has_neg_repair = False
                         for neg in repair.negate():
@@ -268,5 +279,7 @@ class NegativePlan(PositivePlan):
                             continue
                         conflict.add(repair)
                     break
+        # if len(conflict) == 1 and conflict.pop().condition:
+        #     return None
         return conflict
 
