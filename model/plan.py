@@ -144,6 +144,7 @@ class PositivePlan(Plan):
                 action,
                 self._var_mapping[idx][-1],
                 self._atom)
+            # TODO: capture the case where a negative effect is added while the same positive effect exists
             for atom in missing:
                 repair = RepairEffs(name, atom, 1)
                 conflict.add(repair)
@@ -168,15 +169,11 @@ class PositivePlan(Plan):
             if has_neg_conf:
                 break
         for r in domain.repairs:
-            # if isinstance(r, RepairPrec):
-            #     continue
             for neg in r.negate():
                 if neg in conflict:
                     conflict.remove(neg)
                     r.condition = True
                     conflict.add(r)
-        # if len(conflict) == 1 and conflict.pop().condition:
-        #     return None
         return conflict
 
 
@@ -203,6 +200,7 @@ class NegativePlan(PositivePlan):
                     return True
             else:
                 if pos == self._idx:
+                    self._pos = None
                     return False
             state = next_state(action, var_mapping, state)
         return False
@@ -244,7 +242,6 @@ class NegativePlan(PositivePlan):
                         prev_mapping,
                         target.negate())
                 for atom in missing:
-                    # TODO: add to conflict and check whether its negation is in the candidate
                     if atom.predicate == "=":
                         continue
                     if atom.negated and (atom.negate() in set(eff.literal for eff in prev_action.effects)):
@@ -264,7 +261,6 @@ class NegativePlan(PositivePlan):
                         prev_mapping,
                         target)
                 if len(existing) > 0:
-                    # TODO: add to the conflict, check conditions, and terminate the loop
                     for atom in existing:
                         if atom.predicate == "=":
                             continue
@@ -279,7 +275,5 @@ class NegativePlan(PositivePlan):
                             continue
                         conflict.add(repair)
                     break
-        # if len(conflict) == 1 and conflict.pop().condition:
-        #     return None
         return conflict
 

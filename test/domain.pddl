@@ -85,7 +85,7 @@
         (robot-at ?curpos)
     )
     :effect (and 
-        (empty) ;comment this, because this is a real mistask!
+        ;(empty) ;comment this, because this is a real mistask!
         (obj-at ?target ?curpos)
         (not (holding ?target))
     )

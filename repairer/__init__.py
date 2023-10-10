@@ -1,4 +1,5 @@
 from hitter.memhitter import *
+from hitter.maxsat import *
 from model.domain import *
 from model.plan import *
 
@@ -14,7 +15,8 @@ class Repairer:
                 plan.compute_subs(domain, task)
         _repair_to_idx = {}
         _idx_to_repair = {}
-        hitter = Hitter()
+        # hitter = Hitter()
+        hitter = MaxSATHitter()
         cached_conflicts = []
         cached = []
         while True:
@@ -22,7 +24,7 @@ class Repairer:
             candidate = set(_idx_to_repair[x] for x in candidate)
             print("*************************")
             for c in candidate:
-                print(c)
+                print(str(c) + "({})".format(_repair_to_idx[c]))
             for e in cached:
                 assert(candidate != e)
             cached.append(candidate)
@@ -32,39 +34,43 @@ class Repairer:
             confs = set()
             for instance in instances:
                 task, plans = instance
+                print("~~~~~~~~~~~~~~~~~~~~")
                 for plan in plans:
                     succeed = plan.execute(domain, task)
+                    print("=================================")
                     if not succeed:
                         domain.repaired = False
                         conf = plan.compute_conflict(domain)
                         confs.add(tuple(conf))
                         # cached_conflicts.append(conf)
-                        # conflict = []
-                        # for r in conf:
-                        #     if r not in _repair_to_idx:
-                        #         idx = len(_repair_to_idx) + 1
-                        #         _repair_to_idx[r] = idx
-                        #         _idx_to_repair[idx] = r
-                        #     if r.condition:
-                        #         conflict.append(-_repair_to_idx[r])
-                        #     else:
-                        #         conflict.append(_repair_to_idx[r])
-                        # hitter.add_conflict(conflict)
-            for conf in confs:
-                print("=================================")
-                cached_conflicts.append(conf)
-                conflict = []
-                for r in conf:
-                    print(str(r) + " condition: {}".format(r.condition))
-                    if r not in _repair_to_idx:
-                        idx = len(_repair_to_idx) + 1
-                        _repair_to_idx[r] = idx
-                        _idx_to_repair[idx] = r
-                    if r.condition:
-                        conflict.append(-_repair_to_idx[r])
-                    else:
-                        conflict.append(_repair_to_idx[r])
-                hitter.add_conflict(conflict)
+                        conflict = []
+                        for r in conf:
+                            if r not in _repair_to_idx:
+                                idx = len(_repair_to_idx) + 1
+                                _repair_to_idx[r] = idx
+                                _idx_to_repair[idx] = r
+                                hitter.add_conflict([-idx], 1)
+                            if r.condition:
+                                conflict.append(-_repair_to_idx[r])
+                            else:
+                                conflict.append(_repair_to_idx[r])
+                            print(str(r) + " condition: {} -- {}".format(r.condition, _repair_to_idx[r]))
+                        hitter.add_conflict(conflict)
+            # for conf in confs:
+            #     # print("=================================")
+            #     cached_conflicts.append(conf)
+            #     conflict = []
+            #     for r in conf:
+            #         if r not in _repair_to_idx:
+            #             idx = len(_repair_to_idx) + 1
+            #             _repair_to_idx[r] = idx
+            #             _idx_to_repair[idx] = r
+            #         if r.condition:
+            #             conflict.append(-_repair_to_idx[r])
+            #         else:
+            #             conflict.append(_repair_to_idx[r])
+            #         # print(str(r) + " condition: {} -- {}".format(r.condition, _repair_to_idx[r]))
+            #     hitter.add_conflict(conflict)
             if domain.repaired:
                 self._repairs = candidate
                 break

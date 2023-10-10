@@ -75,8 +75,10 @@ def match_missing_prec(action: Action,
         for paras in pos_paras:
             pos_atom = Atom(pos_predicate[0], paras)
             neg_atom = pos_atom.negate()
-            if pos_atom not in existing_atoms and neg_atom not in existing_atoms:
+            # if pos_atom not in existing_atoms and neg_atom not in existing_atoms:
+            if pos_atom not in existing_atoms:
                 results.add(pos_atom)
+            if neg_atom not in existing_atoms:
                 results.add(neg_atom)
     return results
 
@@ -105,6 +107,7 @@ def match_missing_effs(
         matched_paras.append(candidates)
     pos_paras = find_all_tuples(matched_paras)
     for paras in pos_paras:
+        # TODO: not adding existing atoms
         if target.negated:
             results.add(NegatedAtom(target.predicate, paras))
         else:
