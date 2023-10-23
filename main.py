@@ -9,7 +9,7 @@ from model.plan import *
 import os
 
 
-def clean_plan(plan_file, negative=False):
+def clean_plan(plan_file, out_file, negative=False):
     lines = []
     idx = None
     with open(plan_file, "r") as f:
@@ -23,38 +23,42 @@ def clean_plan(plan_file, negative=False):
                     idx = i//2
                 continue
             lines.append(line)
-    with open(plan_file, "w") as f:
+    with open(out_file, "w") as f:
         for line in lines:
             f.write(line)
     return idx
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    root = "/home/users/u6162630/Datasets/test"
-    domain_file = os.path.join(root, "domain.pddl")
+    root = "/home/users/u6162630/Datasets/test-2/grid"
+    domain_file = os.path.join(root, "domain-modified.pddl")
     domain = Domain(domain_file)
-    task_dirs = filter(lambda x: "task" in x, os.listdir(root))
+    task_dirs = filter(lambda x: "prob" in x, os.listdir(root))
     instances = []
     for task_dir in task_dirs:
         d = os.path.join(root, task_dir)
-        task_file = os.path.join(d, "task.pddl")
+        task_file = os.path.join(d, task_dir + ".pddl")
         task = Task(task_file)
         pos_plan_dir = os.path.join(d, "positive-plans")
         neg_plan_dir = os.path.join(d, "negative-plans")
-        pos_plan_files = filter(lambda x: "plan" in x, os.listdir(pos_plan_dir))
+        pos_plan_files = filter(lambda x: "plan" in x and "val-" not in x, os.listdir(pos_plan_dir))
         pos_plans = []
         for pos_plan_file in pos_plan_files:
             f = os.path.join(pos_plan_dir, pos_plan_file)
-            _ = clean_plan(f)
-            pos_plans.append(PositivePlan(f))
-        neg_plan_files = filter(lambda x: "plan" in x, os.listdir(neg_plan_dir))
+            out = os.path.join(pos_plan_dir, "val-" + pos_plan_file)
+            _ = clean_plan(f, out)
+            pos_plans.append(PositivePlan(out))
+        neg_plan_files = filter(lambda x: "plan" in x and "val-" not in x, os.listdir(neg_plan_dir))
         neg_plans = []
         for neg_plan_file in neg_plan_files:
             f = os.path.join(neg_plan_dir, neg_plan_file)
-            idx = clean_plan(f, True)
+            out = os.path.join(neg_plan_dir, "inval-" + neg_plan_file)
+            idx = clean_plan(f, out, True)
             assert (idx is not None)
-            neg_plans.append(NegativePlan(f, idx))
+            neg_plans.append(NegativePlan(out, idx))
         plans = pos_plans + neg_plans
+        if len(plans) == 0:
+            continue
         instances.append((task, plans))
     repairer = Repairer(domain, instances)
     repairer.print_repairs()
