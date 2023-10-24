@@ -30,7 +30,7 @@ def clean_plan(plan_file, out_file, negative=False):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    root = "/home/users/u6162630/Datasets/test-2/grid"
+    root = "/home/users/u6162630/Datasets/test-out-blocks-2/blocks"
     domain_file = os.path.join(root, "domain-modified.pddl")
     domain = Domain(domain_file)
     task_dirs = filter(lambda x: "prob" in x, os.listdir(root))
