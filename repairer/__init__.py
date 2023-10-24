@@ -79,3 +79,8 @@ class Repairer:
         print("~~~~~~~~~~~~~~~~~")
         for r in self._repairs:
             print(str(r))
+
+    def write(self, outfile):
+        with open(outfile, "w") as f:
+            for r in self._repairs:
+                f.write(str(r) + "\n")
