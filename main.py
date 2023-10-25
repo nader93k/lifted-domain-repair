@@ -7,6 +7,7 @@ from model.domain import *
 from model.plan import *
 
 import os
+import logging
 import argparse
 
 parser = argparse.ArgumentParser()
@@ -39,7 +40,18 @@ parser.add_argument(
 parser.add_argument(
     "--outfile", type=str,
     help="the output file containing found repairs")
+parser.add_argument(
+        "--log",
+        type=str, default="INFO",
+        help="level for logging")
 args = parser.parse_args()
+
+logging.basicConfig(
+    level=getattr(logging, args.log.upper()),
+    format="%(asctime)s %(name)-5s %(levelname)-8s %(message)s",
+    datefmt="%m-%d %H:%M",
+    filename="log",
+    filemode="w")
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
@@ -53,11 +65,11 @@ if __name__ == '__main__':
     instances = []
     for task_name in task_names:
         task_dir = os.path.join(root, task_name)
-        task_file = os.path.join(root, task_name + ".pddl")
+        task_file = os.path.join(task_dir, task_name + ".pddl")
         task = Task(task_file)
         white_dir = os.path.join(task_dir, args.white_list_dir)
         black_dir = os.path.join(task_dir, args.black_list_dir)
-        _plan_filter = lambda x: lambda y: y[:len(x)] == x
+        _plan_filter = lambda x: lambda y: y[:len(x)] == x and "idx" not in y
         plans = []
         white_list = filter(
             _plan_filter(args.white_plan),
