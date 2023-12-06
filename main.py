@@ -38,7 +38,7 @@ parser.add_argument(
     "--task_name", type=str,
     help="the prefix of the directories containing the tasks")
 parser.add_argument(
-    "--outfile", type=str,
+    "--outfile", type=str, default="repairs",
     help="the output file containing found repairs")
 parser.add_argument(
         "--log",

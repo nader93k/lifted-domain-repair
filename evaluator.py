@@ -11,6 +11,12 @@ parser.add_argument(
 parser.add_argument(
     "--num_cpus", type=int,
     help="number of CPUs used")
+parser.add_argument(
+    "--time_out", type=str,
+    default="300", help="timeout for running the repairer")
+parser.add_argument(
+    "--iters", type=int,
+    default=5, help="number of repeated iterations")
 args = parser.parse_args()
 
 
@@ -55,13 +61,35 @@ def eval(root):
             idx = clean_plan(plan_file, plan_outfile, True)
             with open(plan_outfile+".idx", "w") as f:
                 f.write(str(idx))
-    cmd = [
+    for i in range(args.iters):
+        outfile = os.path.join(root, "repairs.{}".format(i+1))
+        cmd = [
+            "time",
+            "timeout",
+            args.time_out,
             sys.executable,
             "main.py",
             root,
             "--domain_file",
-            "domain-modified.pddl"]
-    subprocess.run(cmd)
+            "domain-modified.pddl",
+            "--outfile",
+            outfile]
+        cmd = " ".join(cmd)
+        proc = subprocess.Popen(
+                cmd, executable="/bin/bash",
+                shell=True, stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE, text=True)
+        _, errs = proc.communicate()
+        if proc.returncode != 0:
+            print(_)
+            print(errs)
+        times = [e for e in errs.split("\n") if e]
+        wall_time = times[-3].split('\t')[-1]
+        minutes, seconds = wall_time.split("m")[0], wall_time.split("m")[-1][:-1]
+        total_secs = float(minutes) * 60 + float(seconds)
+        time_file = os.path.join(root, "time.{}".format(i+1))
+        with open(time_file, "w") as f:
+            f.write(str(total_secs))
 
 
 if __name__ == '__main__':
