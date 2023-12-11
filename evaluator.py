@@ -58,7 +58,7 @@ def evaluate(root):
         task_dir = os.path.join(root, task_name)
         white_dir = os.path.join(task_dir, "white-list")
         black_dir = os.path.join(task_dir, "black-list")
-        _filter = lambda x: "plan" in x
+        _filter = lambda x: ("plan" in x) and ("val-plan" not in x) and ("inval-plan" not in x)
         white_plans = filter(_filter, os.listdir(white_dir))
         for plan in white_plans:
             plan_file = os.path.join(white_dir, plan)
