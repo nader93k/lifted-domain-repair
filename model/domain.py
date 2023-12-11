@@ -11,6 +11,7 @@ class Domain:
          self._types, self._constants,
          self._predicates, _,
          self._actions, _) = parse_domain(parsed_file)
+        self._constant_dict = {o.name: o for o in self._constants}
         self._repairs = set()
         self._updated_actions = {}
         self._name_to_action = {a.name: a for a in self._actions}
@@ -49,6 +50,11 @@ class Domain:
             return self._updated_actions[name]
         return self._name_to_action[name]
 
+    def get_constant(self, name):
+        if name not in self._constant_dict:
+            return None
+        return self._constant_dict[name]
+
     def update(self):
         self.clean()
         for repair in self._repairs:
@@ -74,6 +80,8 @@ class Task:
         self._obj_dict = {o.name: o for o in self._objects}
 
     def get_object(self, name):
+        if name not in self._obj_dict:
+            return None
         return self._obj_dict[name]
 
     @property

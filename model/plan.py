@@ -81,7 +81,12 @@ class Plan:
             mapping = {}
             action = domain.get_action(step[0])
             for idx, para in enumerate(action.parameters):
-                mapping[para.name] = task.get_object(step[idx + 1])
+                object = task.get_object(step[idx + 1])
+                if object is None:
+                    object = domain.get_constant(step[idx + 1])
+                if object is None:
+                    raise KeyError("Undefined object")
+                mapping[para.name] = object
             mapping.update([(c.name, c) for c in domain.constants])
             self._var_mapping.append((step[0], mapping))
 
