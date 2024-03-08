@@ -74,12 +74,12 @@ def match_missing_prec(action: Action,
         pos_paras = find_all_tuples(pos_predicate[-1])
         for paras in pos_paras:
             pos_atom = Atom(pos_predicate[0], paras)
-            neg_atom = pos_atom.negate()
+            # neg_atom = pos_atom.negate()
             # if pos_atom not in existing_atoms and neg_atom not in existing_atoms:
             if pos_atom not in existing_atoms:
                 results.add(pos_atom)
-            if neg_atom not in existing_atoms:
-                results.add(neg_atom)
+            # if neg_atom not in existing_atoms:
+            #     results.add(neg_atom)
     return results
 
 
