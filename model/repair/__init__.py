@@ -72,7 +72,7 @@ class RepairPrec(Repair):
         component = "precPos"
         if self._atom.negated:
             component = "precNeg"
-        paras = [self._action_name, self._atom.predicate, component, str(self._operation)]
+        paras = [self._action_name, self._atom.pddl(), component, str(self._operation)]
         msg = ",".join(paras)
         return msg
 
@@ -116,7 +116,7 @@ class RepairEffs(Repair):
         component = "effPos"
         if self._atom.negated:
             component = "effNeg"
-        paras = [self._action_name, self._atom.predicate, component, str(self._operation)]
+        paras = [self._action_name, self._atom.pddl(), component, str(self._operation)]
         msg = ",".join(paras)
         return msg
 
