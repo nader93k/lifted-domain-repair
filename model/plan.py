@@ -5,8 +5,8 @@ from utils import *
 
 from typing import List, Tuple, Set
 
-
 def applicable(action, state, var_mapping):
+    # Check if an action is applicable in a given state
     literals = (action.precondition,)
     if isinstance(action.precondition, Conjunction):
         literals = action.precondition.parts
@@ -19,8 +19,8 @@ def applicable(action, state, var_mapping):
             return atom.negate()  # return a negated atom to indicate that it shall be deleted
     return None
 
-
 def check_goal(state, goal):
+    # Check if a goal is satisfied in a given state
     for atom in goal.parts:
         if (not atom.negated) and (atom not in state):
             return atom
@@ -28,8 +28,8 @@ def check_goal(state, goal):
             return atom
     return None
 
-
 def next_state(action, var_mapping, current):
+    # Compute the next state after applying an action
     pos_effs, neg_effs = set(), set()
     for eff in action.effects:
         assert (len(eff.parameters) == 0)
@@ -44,9 +44,9 @@ def next_state(action, var_mapping, current):
     state = state.union(pos_effs)
     return state
 
-
 class Plan:
     def __init__(self, plan_file):
+        # Initialize a plan from a file
         self._steps: List[Tuple] = []
         self._var_mapping = []
         with open(plan_file, "r") as f:
@@ -77,6 +77,7 @@ class Plan:
         return self._atom
 
     def compute_subs(self, domain, task):
+        # Compute substitutions for the plan
         for step in self._steps:
             mapping = {}
             action = domain.get_action(step[0])
@@ -102,12 +103,12 @@ class Plan:
     def compute_conflict(self, domain: Domain):
         pass
 
-
 class PositivePlan(Plan):
     def __init__(self, plan_file):
         super().__init__(plan_file)
 
     def execute(self, domain: Domain, task: Task):
+        # Execute a positive plan
         state = set()
         for p in task.init:
             state.add(p)
@@ -130,6 +131,7 @@ class PositivePlan(Plan):
         return True
 
     def compute_conflict(self, domain: Domain) -> Set[Repair]:
+        # Compute conflicts for a positive plan
         conflict = set()
         if self._pos < len(self._steps):
             name = self._steps[self._pos][0]
@@ -149,7 +151,6 @@ class PositivePlan(Plan):
                 action,
                 self._var_mapping[idx][-1],
                 self._atom)
-            # TODO: capture the case where a negative effect is added while the same positive effect exists
             for atom in missing:
                 repair = RepairEffs(name, atom, 1)
                 conflict.add(repair)
@@ -181,13 +182,13 @@ class PositivePlan(Plan):
                     conflict.add(r)
         return conflict
 
-
 class NegativePlan(PositivePlan):
     def __init__(self, plan_file, idx):
         super().__init__(plan_file)
         self._idx = idx
 
     def execute(self, domain: Domain, task: Task):
+        # Execute a negative plan
         state = {p for p in task.init}
         for pos, step in enumerate(self._steps):
             if pos > self._idx:
@@ -211,6 +212,7 @@ class NegativePlan(PositivePlan):
         return False
 
     def compute_conflict(self, domain: Domain):
+        # Compute conflicts for a negative plan
         if self._pos is not None and self._pos < self._idx:
             return super().compute_conflict(domain)
         name = self._steps[self._idx][0]
@@ -281,4 +283,3 @@ class NegativePlan(PositivePlan):
                         conflict.add(repair)
                     break
         return conflict
-
