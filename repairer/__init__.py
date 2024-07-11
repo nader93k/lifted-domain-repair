@@ -1,8 +1,5 @@
-from hitter.memhitter import *
 from hitter.maxsat import *
-from model.domain import *
 from model.plan import *
-
 import logging
 
 
