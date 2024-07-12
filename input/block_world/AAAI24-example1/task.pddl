@@ -1,3 +1,5 @@
+;;; repair: pick-up,(not (handempty )),effNeg,-1
+
 (define 
 (problem BLOCKS-4-0)
 
