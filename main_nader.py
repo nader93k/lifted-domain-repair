@@ -4,17 +4,6 @@ from model.plan import *
 import os
 import argparse
 
-"""
-I'm chaning this file so that it will work with a fixed file structure, instead of taking different dirs as input.
-The structure will look like this:
-
-.
-└── input_directory
-    ├── domain.pddl
-    ├── task.pddl
-    └── white_plan.pddl
-
-"""
 
 # Set up command line argument parser
 parser = argparse.ArgumentParser()
