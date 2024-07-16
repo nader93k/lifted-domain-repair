@@ -3,6 +3,7 @@ from repairer import *
 from model.plan import *
 import os
 import argparse
+import pickle
 
 """
 I'm chaning this file so that it will work with a fixed file structure, instead of taking different dirs as input.
@@ -16,12 +17,20 @@ The structure will look like this:
 
 """
 
+def save_variable_to_folder(folder_path, variable, file_name):
+    os.makedirs(folder_path, exist_ok=True)
+    file_path = os.path.join(folder_path, file_name)
+
+    with open(file_path, 'wb') as file:
+        pickle.dump(variable, file)
+
 # Set up command line argument parser
 parser = argparse.ArgumentParser()
 parser.add_argument("--input_directory", type=str)
 parser.add_argument("--domain_file", type=str, default="domain.pddl")
 parser.add_argument("--task_file", type=str, default="task.pddl")
 parser.add_argument("--white_plan_file", type=str, default="white_plan.pddl")
+parser.add_argument("--pickl-dump", type=str, default=None)
 
 parser.add_argument("--output_directory", type=str,
                     help="the output file containing found repairs")
@@ -47,5 +56,8 @@ if __name__ == '__main__':
         domain
         , [(task, white_plan_list)]
     )
+
+    if args.pickl_dump:
+        save_variable_to_folder(args.pickl_dump, repairer, args.input_directory.split("/")[-1])
 
     repairer.write(out_file)
