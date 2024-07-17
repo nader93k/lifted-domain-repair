@@ -28,6 +28,9 @@ parser.add_argument("--input_directory", type=str)
 parser.add_argument("--domain_file", type=str, default="domain.pddl")
 parser.add_argument("--task_file", type=str, default="task.pddl")
 parser.add_argument("--white_plan_file", type=str, default="white_plan.pddl")
+
+# Feel free to remove this again,
+# I needed this for testing, but it is not necessarily needed anymore
 parser.add_argument("--pickl-dump", type=str, default=None)
 parser.add_argument("--pickl-load", type=str, default=None)
 
@@ -69,4 +72,4 @@ if __name__ == '__main__':
         if args.pickl_dump:
             save_variable_to_folder(args.pickl_dump, repairer, args.input_directory.split("/")[-1])
 
-    repairer.write(out_file)
+        repairer.write(out_file)

@@ -1,0 +1,84 @@
+\documentclass[twocolumn]{article}
+
+\usepackage{amsmath}   
+\usepackage{xspace}
+\usepackage{amssymb}
+
+\newcommand{\task}{\ensuremath{\Pi}\xspace}
+
+\newcommand{\optimalHeuristic}{\ensuremath{h^{*}_{Rep}}\xspace}
+\newcommand{\optimalHeuristicSeq}{\ensuremath{h^{*}_{Seq}}\xspace}
+
+\title{Technical Notes for the heuristic in the paper}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section{Notation}
+	
+	\begin{itemize}
+		\item Acts are ...
+	\end{itemize}
+	
+	
+	\section{Problem Formulation}
+	
+	\begin{definition}
+		Given a planning task \task the optimal repair heuristic $\optimalHeuristic(\task)$ is the minimal amount of repairs to make \task solvable.
+	\end{definition}
+	
+	\begin{definition}
+		Given a planning task \task the optimal repair sequence heuristic $\optimalHeuristicSeq(\task)$ is the minimal amount of repairs to make \task solvable via an action sequence TODO.
+	\end{definition}
+	
+	\begin{lemma}
+		TODO:
+		
+		Minimum over all sequences ends up in h* ...
+		
+		This means that for each is smaller ...
+	\end{lemma}
+	
+	\section{Approach}
+	
+	TODO: delete relaxation is a common choice to make things tractable with heuristics ...
+	
+	\begin{definition}
+		A delete relaxed task is ... TODO
+	\end{definition}
+	
+	\begin{definition}
+		h+ heuristics are just h* for delete relaxed tasks
+	\end{definition}
+	
+	\begin{proposition}
+		h* bounded by min (pre+del) + amount of predicates
+	\end{proposition}
+	
+	\begin{corollary}
+		h+ bounded by min pre + amount of predicates
+	\end{corollary}
+	
+	\begin{proposition}
+		if there is at least one applicable action any pre repair can be replaced by an add repair
+	\end{proposition}
+	
+	TODO: from here need to think about how to actually compute the h+ value or an estimation
+%	LMCUT -- with aim to have minimal sets of fact landmarks
+%	MINIMAL HITTING SET? -- what about maltes way to compute lmcut?
+%	
+%	PROJECT OUT ALL PARAMETERS?
+%	
+%	BRING IT TO HM? What’s the relation to optimal repair?
+%	
+%	extend with preconditions of lifted actions
+	
+	
+\end{document}
