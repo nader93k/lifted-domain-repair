@@ -164,6 +164,12 @@ class JunctorCondition(Condition):
     def change_parts(self, parts):
         return self.__class__(parts)
 
+    def dump_pddl(self, output, indent="  "):
+        output.write("%s(%s\n" % (indent, self._pddl()))
+        for part in self.parts:
+            part.dump_pddl(output, indent + "  ")
+        output.write("%s)\n" % indent)
+
 class Conjunction(JunctorCondition):
     def _simplified(self, parts):
         result_parts = []
@@ -179,6 +185,8 @@ class Conjunction(JunctorCondition):
         if len(result_parts) == 1:
             return result_parts[0]
         return Conjunction(result_parts)
+    def _pddl(self):
+        return "and"
     def to_untyped_strips(self):
         result = []
         for part in self.parts:
@@ -208,6 +216,8 @@ class Disjunction(JunctorCondition):
         if len(result_parts) == 1:
             return result_parts[0]
         return Disjunction(result_parts)
+    def _pddl(self):
+        return "or"
     def negate(self):
         return Conjunction([p.negate() for p in self.parts])
     def has_disjunction(self):
@@ -250,11 +260,22 @@ class QuantifiedCondition(Condition):
     def change_parts(self, parts):
         return self.__class__(self.parameters, parts)
 
+    def dump_pddl(self, output, indent="  "):
+        output.write("%s(%s (" % (indent, self._pddl()))
+        for par in self.parameters:
+            output.write("%s - %s " % (par.name, par.type_name))
+        output.write(")\n")
+        for part in self.parts:
+            part.dump_pddl(output, indent + "  ")
+        output.write("%s)\n" % indent)
+
 class UniversalCondition(QuantifiedCondition):
     def _untyped(self, parts):
         type_literals = [NegatedAtom(par.type, [par.name]) for par in self.parameters]
         return UniversalCondition(self.parameters,
                                   [Disjunction(type_literals + parts)])
+    def _pddl(self):
+        return "forall"
     def negate(self):
         return ExistentialCondition(self.parameters, [p.negate() for p in self.parts])
     def has_universal_part(self):
@@ -267,6 +288,8 @@ class ExistentialCondition(QuantifiedCondition):
                                     [Conjunction(type_literals + parts)])
     def negate(self):
         return UniversalCondition(self.parameters, [p.negate() for p in self.parts])
+    def _pddl(self):
+        return "exists"
     def instantiate(self, var_mapping, init_facts, fluent_facts, result):
         assert not result, "Condition not simplified"
         self.parts[0].instantiate(var_mapping, init_facts, fluent_facts, result)
@@ -342,6 +365,10 @@ class Atom(Literal):
     def pddl(self):
         return "({0} {1})".format(self.predicate, ' '.join(x.name if isinstance(x, pddl_types.TypedObject) else x for x in self.args))
 
+    def dump_pddl(self, output, indent=""):
+        output.write("%s(%s %s)\n" % (indent, self.predicate,
+                                      " ".join(map(str, self.args))))
+
 
 class NegatedAtom(Literal):
     negated = True
@@ -360,3 +387,7 @@ class NegatedAtom(Literal):
 
     def pddl(self):
         return '(not {0})'.format(self.negate().pddl())
+
+    def dump_pddl(self, output, indent=""):
+        output.write("%s(not (%s %s))\n" % (indent, self.predicate,
+                                            " ".join(map(str, self.args))))

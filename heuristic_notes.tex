@@ -21,6 +21,7 @@
 \newcommand{\add}[1]{\ensuremath{\addname(#1)}\xspace}
 \newcommand{\del}[1]{\ensuremath{\delname(#1)}\xspace}
 \newcommand{\arity}[1]{\ensuremath{|#1|}}
+\newcommand{\cost}[1]{\ensuremath{c(#1)}\xspace}
 
 \newcommand{\fixPre}{\ensuremath{F^{\prename}}\xspace}
 \newcommand{\fixAdd}{\ensuremath{F^{\addname}}\xspace}
@@ -84,7 +85,7 @@
 		This means that for each is smaller ...
 	\end{lemma}
 	
-	\section{Bounding Optimal Heuristics}
+	\section{Perfect Heuristic}
 	
 	TODO: delete relaxation is a common choice to make things tractable with heuristics ...
 	
@@ -96,11 +97,30 @@
 		where 
 		$$
 		\relaxedActs = \{
-		(\pre{\someAct}, \add{\someAct}, \emptyset) \mid \someAct \in \acts
+		(\pre{\someAct}, \add{\someAct}, \emptyset, \cost{\someAct}) \mid \someAct \in \acts
 		\}
 		$$
 		is the set of actions obtained by removing the deletes.
 	\end{definition}
+	
+	\begin{definition}
+		Decision problem for heuristic...
+	\end{definition}
+	
+	\begin{theorem}
+		Computing $h^*$ is EXPTIME??? TODO
+	\end{theorem}
+	
+	
+	\begin{proposition}
+		For any planning task \task:
+		$$\optimalHeuristic(\task) \leq \min_{\someAct \in \acts}(\arity{\pre{\someAct}} + \arity{\del{\someAct}}) + \arity{\preds}$$
+		bounds the optimal repair heuristic value.
+	\end{proposition}
+	
+	TODO: expected to be low value ... compared to how hard solving a task ... .
+	
+	\section{Delete Relaxation Heuristics}
 	
 	\begin{definition}
 		For a planning task \task and action sequence \someActSeq:
@@ -110,11 +130,10 @@
 		denote the optimal heuristics within the delete relaxation.
 	\end{definition}
 	
-	\begin{proposition}
-		For any planning task \task:
-		$$\optimalHeuristic(\task) \leq \min_{\someAct \in \acts}(\arity{\pre{\someAct}} + \arity{\del{\someAct}}) + \arity{\preds}$$
-		bounds the optimal repair heuristic value.
-	\end{proposition}
+	\begin{theorem}
+		Computing $h^+$ is EXPTIME??? TODO
+	\end{theorem}
+	
 	
 	\begin{corollary}
 		For any planning task \task:
@@ -136,21 +155,61 @@
 	\end{theorem}
 	
 	
-	TODO: from here need to think about how to actually compute the h+ value or an estimation
+	
+	\section{Task Compilation}
 	
 	
-	\section{Efficient Heuristic Computation}
+	\begin{definition}
+		
+		TODO: task compilation to only add elements 
+		$\task = (\preds, \objects, \acts, \init, \goal)$
+		is obtained as
+		$TODOtask = (\preds, \objects, \acts^0 \cup \acts^{TODOsc}, \init, \goal)$
+		where 
+		$$
+		\acts^0 = \{
+		(\pre{\someAct}, \add{\someAct}, \emptyset, 0) \mid \someAct \in \acts
+		\}
+		$$
+		is the set of actions obtained by removing the deletes and setting cost to 0.
+		And 
+		$$
+		\acts^{TODOsc} = 
+		= \{
+		(SC_ACTIVATED, \add{PRED}, \emptyset, 0) \mid \someAct \in \acts
+		\}$$
+		... activates ... .
+		And TODO
+		$$
+		 \{
+		(\emptyset, SC_ACTIVATED, \emptyset, 1) \mid \someAct \in \acts
+		\}
+		$$
+		is the switch enabling the predicate ... .
+	\end{definition}
 	
-	TODO: what does this value correspond to minimal reachable landmarks? something like that? If yes, can we use LMCUT or the LMCUT like thing malte uses for h+?
+	\begin{theorem}
+		Task trasnformation TODO ... 
+	\end{theorem}
 	
+	
+	
+	\section{0-ary and 1-ary Relaxation}
+	
+	TODO: Maybe could use unary relaxation???
 	TODO: PROJECT OUT ALL PARAMETERS!
 	What's the motivation?
+	
+	TODO: motivate grounding process 
 	
 	\section{Future Ideas}
 	
 	\begin{itemize}
 		\item Could use a $\task^{m}$ construction that reintroduces (some) of the action effects
 		\item extend with preconditions of lifted actions -- that's not exactly what you asked for, but could make it to also need to achieve ... 
+		\item Could use h+ computations
+		\item 
+		TODO: what does this value correspond to minimal reachable landmarks? something like that? If yes, can we use LMCUT or the LMCUT like thing malte uses for h+?
 	\end{itemize}
 	
 	

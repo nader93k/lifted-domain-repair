@@ -2,6 +2,7 @@
 import os
 import argparse
 import pickle
+from heuristic import Heurisitc
 
 """
 I'm chaning this file so that it will work with a fixed file structure, instead of taking different dirs as input.
@@ -40,6 +41,16 @@ parser.add_argument("--output_directory", type=str,
 args = parser.parse_args()
 
 
+def unprotect(s):
+    d = dir(s)
+    for attr in d:
+        if attr.startswith('_') and not attr.startswith('__'):
+            value = getattr(s, attr)
+            new_attr = attr[1:]
+            if new_attr not in d:
+                setattr(s, new_attr, value)
+
+
 if __name__ == '__main__':
     if args.pickl_load:
         with open(args.pickl_load, 'rb') as file:
@@ -64,6 +75,11 @@ if __name__ == '__main__':
         task = Task(task_file)
         white_plan_list = [PositivePlan(white_plan_file)]
 
+        # this is a hack to introducce the protected attributes as normal attributes (like FD uses them)
+        unprotect(domain)
+        unprotect(task)
+        setattr(domain, "objects", domain.constants)
+
         repairer = Repairer(
             domain
             , [(task, white_plan_list)]
@@ -71,5 +87,9 @@ if __name__ == '__main__':
 
         if args.pickl_dump:
             save_variable_to_folder(args.pickl_dump, repairer, args.input_directory.split("/")[-1])
+
+        action_sequence = None
+        h = Heurisitc("G_HMAX", "NONE")
+        print("Initial Heuristic value was:", h.evaluate(domain, task, action_sequence))
 
         repairer.write(out_file)
