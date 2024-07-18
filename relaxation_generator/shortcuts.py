@@ -211,6 +211,9 @@ def lp_ground(theory, model):
     theory_output = theory
     run_grounder(model_output, suppress_output, theory_output, grounderopt)
 
+def _create_tmp(argument):
+    return f"{argument}.tmp"
+
 def call_transformer(inp, argument, outp):
     command = [
         os.path.join(CURRENT_DIR, "datalog_transformer_wrap.sh"),
@@ -218,8 +221,16 @@ def call_transformer(inp, argument, outp):
         inp
     ]
     print("calling", *command)
+
+    create_tmp = outp is None
+    if create_tmp:
+        outp = _create_tmp(argument)
+
     with open(outp, "w") as f:
         subprocess.check_call(command, stdout=f)
+
+    if create_tmp:
+        shutil.copyfile(outp, inp)
 
 def extend_goal_rule(inp, outp):
     call_transformer(inp, "extend-goal-rule", outp)
@@ -470,7 +481,7 @@ def add_mutex_max_rules(inp, outp):
 def integrate_add_del_rules(inp, outp):
     call_transformer(inp, "integrate-add-del-rules", outp)
 
-def superset_pars(inp, outp):
+def superset_pars(inp, outp=None):
     call_transformer(inp, "superset-pars", outp)
 
 def minizinc_constraints(inp, outp):
@@ -491,13 +502,13 @@ def add_none_rules(inp, outp):
 def add_hacky_zero_if_not_unique(inp, outp):
     call_transformer(inp, "add-hacky-zero-if-not-unique", outp)
 
-def add_repair_actions(inp, outp):
+def add_repair_actions(inp, outp=None):
     call_transformer(inp, "add-repair-actions", outp)
 
-def zero_ary_relaxation(inp, outp):
+def zero_ary_relaxation(inp, outp=None):
     call_transformer(inp, "zero-ary-relaxation", outp)
 
-def unary_relaxation(inp, outp):
+def unary_relaxation(inp, outp=None):
     call_transformer(inp, "unary-relaxation", outp)
 
 def split_rule(rule):

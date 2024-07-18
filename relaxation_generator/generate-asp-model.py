@@ -10,7 +10,7 @@ import tempfile
 import time
 import uuid
 
-from shortcuts import lpopt_optimize
+from shortcuts import lpopt_optimize, add_repair_actions, zero_ary_relaxation, unary_relaxation, superset_pars
 
 from subprocess import Popen, PIPE
 
@@ -64,23 +64,21 @@ if __name__ == '__main__':
     execute(command, stdout=theory_output_with_actions)
     print("ASP model *with actions* being copied to %s" % theory_output_with_actions)
 
-    assert False, "TODO: integrate actions"
-    add_repair_actions(inp, outp)
+    add_repair_actions(theory_output)
 
-    assert False, "TODO: use relaxation"
-    zero_ary_relaxation(inp, outp)
-    unary_relaxation(inp, outp)
+    if args.r_mode == "zeroary":
+        zero_ary_relaxation(theory_output)
+    elif args.r_mode == "unary":
+        unary_relaxation(theory_output)
 
     if args.lpopt_preprocessor:
         lpopt_optimize(theory_output)
-
-    assert False, "TODO: superset actions"
-    superset_pars(inp, outp)
 
     grounderopt = args.grounder
     if grounderopt != 'none':
         model_output = args.model_output
         suppress_output = args.suppress_output
+        superset_pars(theory_output)
 
         run_grounder(model_output, suppress_output, theory_output, grounderopt)
 

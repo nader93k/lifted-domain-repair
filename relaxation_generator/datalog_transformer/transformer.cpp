@@ -789,10 +789,30 @@ void unary_relaxation(DatalogTask &task) {
 }
 
 void add_repair_actions(DatalogTask &task) {
+    std::unordered_set<PredicateRef> to_ignore;
     std::vector<Predicate> additional_predicates;
+
+    ull goal_pred = 0;
+    for (auto &p : task.predicates) {
+        if (p.name == GOAL_NAME) {
+            to_ignore.insert(goal_pred);
+            break;
+        }
+        goal_pred++;
+    }
+    assert(to_ignore.size() == 1);
+
+    for (auto &[_, pred] : task.type_predicates) {
+        to_ignore.insert(pred);
+    }
 
     ull pred_id = 0;
     for (auto &pred : task.predicates) {
+        if (to_ignore.contains(pred_id)) {
+            pred_id++;
+            continue;
+        }
+
         std::vector<ObjectOrVarRef> standard_args;
         for (ull i = 0; i < pred.arity; i++) {
             standard_args.push_back(ObjectOrVarRef{._is_variable=true, .index=i});
@@ -807,6 +827,10 @@ void add_repair_actions(DatalogTask &task) {
         task.rules.push_back(Rule{.head=activate_atom, .body={}});
 
         pred_id++;
+    }
+
+    for (auto &pred : additional_predicates) {
+        task.predicates.push_back(pred);
     }
 }
 
