@@ -491,6 +491,15 @@ def add_none_rules(inp, outp):
 def add_hacky_zero_if_not_unique(inp, outp):
     call_transformer(inp, "add-hacky-zero-if-not-unique", outp)
 
+def add_repair_actions(inp, outp):
+    call_transformer(inp, "add-repair-actions", outp)
+
+def zero_ary_relaxation(inp, outp):
+    call_transformer(inp, "zero-ary-relaxation", outp)
+
+def unary_relaxation(inp, outp):
+    call_transformer(inp, "unary-relaxation", outp)
+
 def split_rule(rule):
     head, body = tuple(rule.split(":-"))
     body = body.split("),")

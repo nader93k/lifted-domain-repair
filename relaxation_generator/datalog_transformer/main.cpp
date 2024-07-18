@@ -20,6 +20,9 @@ std::unordered_map<std::string, DataLogTransformer> valid_args {
         {"add-none-rules", add_none_rules},
         {"print-grounded-mutexes", print_grounded_mutexes},
         {"add-hacky-zero-if-not-unique", add_hacky_zero_if_not_unique},
+        {"add-repair-actions", add_repair_actions},
+        {"zero-ary-relaxation", zero_ary_relaxation},
+        {"unary-relaxation", unary_relaxation}
 };
 
 int main(int argc, char* argv[]) {

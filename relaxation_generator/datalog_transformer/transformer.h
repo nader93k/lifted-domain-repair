@@ -41,6 +41,12 @@ void print_grounded_mutexes(DatalogTask &task);
 
 void add_hacky_zero_if_not_unique(DatalogTask &task);
 
+void add_repair_actions(DatalogTask &task);
+
+void zero_ary_relaxation(DatalogTask &task);
+
+void unary_relaxation(DatalogTask &task);
+
 inline void standard_transformations(DatalogTask &task) {
     remove_unique_objects_from_mutex_group(task);
 }

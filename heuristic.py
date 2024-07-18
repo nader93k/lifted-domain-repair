@@ -81,7 +81,6 @@ class Heurisitc:
             # Heuristic is grounded -> ground the model
 
             assert False, "TODO implement me"
-            #TODO: support relaxation
             sas_task = "TODO"
         else:
             assert self.h_name.startswith("L_"), (f"{self.h_name} should either start with L_ to indicate a lifted"

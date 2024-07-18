@@ -714,6 +714,102 @@ static bool all_args_distinc(const Atom &atom, std::unordered_set<ull> &seen_so_
     return atom.args.size() == seen_amount;
 }
 
+void zero_ary_relaxation(DatalogTask &task) {
+    for (auto &pred : task.predicates) {
+        pred.arity = 0;
+    }
+    for (auto &rule : task.rules) {
+        rule.head.args.clear();
+        for (auto &atom : rule.body) {
+            atom.args.clear();
+        }
+    }
+    for (auto &atom : task.init) {
+        atom.args.clear();
+    }
+}
+
+void to_unary(std::vector<Atom> to_transform, std::unordered_map<ull, std::vector<ull>> &pred_translation) {
+    std::vector<Atom> old_atoms;
+    std::set<std::tuple<ull, ull, ull>> new_init;
+    for (auto &atom : to_transform) {
+        if (pred_translation.contains(atom.head)) {
+            int i = 0;
+            for (auto sub_preds : pred_translation.at(atom.head)) {
+                auto &arg =  atom.args.at(i);
+                ull is_var = arg._is_variable;
+                ull index = arg.index;
+                new_init.insert({sub_preds, is_var, index});
+                i++;
+            }
+        } else {
+            old_atoms.push_back(atom);
+        }
+    }
+
+    to_transform = old_atoms;
+    for (auto &p : new_init) {
+        to_transform.push_back(Atom{.head=get<0>(p), .args={ObjectOrVarRef{._is_variable=get<1>(p), .index=get<2>(p)}}});
+    }
+}
+
+void unary_relaxation(DatalogTask &task) {
+    std::vector<Predicate> new_preds;
+    std::unordered_map<ull, std::vector<ull>> pred_translation;
+
+    ull p_id = 0;
+    for (auto &pred : task.predicates) {
+        if (pred.arity > 1) {
+            std::vector<ull> new_subpreds;
+            for (int i = 0; i < pred.arity; i++) {
+                new_subpreds.push_back(new_preds.size());
+                new_preds.push_back(Predicate{.name=pred.name+"___ur"+std::to_string(i), .arity=1});
+            }
+            pred_translation.emplace(p_id, new_subpreds);
+        } else {
+            new_preds.push_back(pred);
+        }
+        p_id++;
+    }
+    task.predicates = new_preds;
+
+    std::vector<Rule> new_rules;
+    for (auto &rule : task.rules) {
+        to_unary(rule.body, pred_translation);
+
+        std::vector<Atom> head_args{rule.head};
+        to_unary(head_args, pred_translation);
+        for (auto &head : head_args) {
+            new_rules.push_back(Rule{.head=head, .body=rule.body});
+        }
+    }
+    task.rules = new_rules;
+
+    to_unary(task.init, pred_translation);
+}
+
+void add_repair_actions(DatalogTask &task) {
+    std::vector<Predicate> additional_predicates;
+
+    ull pred_id = 0;
+    for (auto &pred : task.predicates) {
+        std::vector<ObjectOrVarRef> standard_args;
+        for (ull i = 0; i < pred.arity; i++) {
+            standard_args.push_back(ObjectOrVarRef{._is_variable=true, .index=i});
+        }
+        Atom standard_atom{.head=pred_id, .args=standard_args};
+
+        auto activate_pred_id = task.predicates.size() + additional_predicates.size();
+        additional_predicates.push_back(Predicate{.name="activate_pred_" + pred.name, .arity=0});
+        Atom activate_atom{.head=activate_pred_id, .args={}};
+
+        task.rules.push_back(Rule{.head=standard_atom, .body={activate_atom}});
+        task.rules.push_back(Rule{.head=activate_atom, .body={}});
+
+        pred_id++;
+    }
+}
+
 void mutex_filter(DatalogTask &task) {
     MutexMatcher mutex_matcher(task);
 
