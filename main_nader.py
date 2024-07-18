@@ -40,23 +40,6 @@ parser.add_argument("--output_directory", type=str,
 
 args = parser.parse_args()
 
-
-def unprotect(s):
-    d = dir(s)
-    for attr in d:
-        if attr.startswith('_') and not attr.startswith('__'):
-            value = getattr(s, attr)
-            new_attr = attr[1:]
-            if new_attr not in d:
-                setattr(s, new_attr, value)
-
-def revert_to_fd_structure(domain, task):
-    unprotect(domain)
-    setattr(domain, "functions", [])
-    setattr(domain, "requirements", type('requirements', (object,), {'pddl': lambda self: ''})())
-    unprotect(task)
-
-
 if __name__ == '__main__':
     if args.pickl_load:
         with open(args.pickl_load, 'rb') as file:
@@ -80,9 +63,6 @@ if __name__ == '__main__':
         domain = Domain(domain_file)
         task = Task(task_file)
         white_plan_list = [PositivePlan(white_plan_file)]
-
-        # this is a hack to introducce the protected attributes as normal attributes (like FD uses them)
-        revert_to_fd_structure(domain, task)
 
         repairer = Repairer(
             domain

@@ -64,15 +64,20 @@ if __name__ == '__main__':
     execute(command, stdout=theory_output_with_actions)
     print("ASP model *with actions* being copied to %s" % theory_output_with_actions)
 
+    assert False, "TODO: integrate actions"
+    assert False, "TODO: use relaxation"
 
     if args.lpopt_preprocessor:
         lpopt_optimize(theory_output)
 
-    grounderopt = args.grounder
-    model_output = args.model_output
-    suppress_output = args.suppress_output
+    assert False, "TODO: superset actions"
 
-    run_grounder(model_output, suppress_output, theory_output, grounderopt)
+    grounderopt = args.grounder
+    if grounderopt != 'none':
+        model_output = args.model_output
+        suppress_output = args.suppress_output
+
+        run_grounder(model_output, suppress_output, theory_output, grounderopt)
 
     if args.remove_files:
         silentremove(args.model_output)

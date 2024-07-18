@@ -4,7 +4,10 @@ pkg_resources.require("tarski==0.4.0")
 import os, sys
 import subprocess
 from pathlib import Path
-from .utils import run_grounder, find_lpopt
+try:
+    from .utils import run_grounder, find_lpopt
+except ImportError:
+    from utils import run_grounder, find_lpopt
 from collections import defaultdict
 import itertools
 import uuid
@@ -70,7 +73,7 @@ def lpopt_optimize(f_name):
     execute(command, stdout=temporary_filename)
     os.rename(temporary_filename, f_name)
 
-def ground(domain, problem, theory_outp=None, model_outp=None, lpopt_enabled=False):
+def ground(domain, problem, theory_outp=None, model_outp=None, lpopt_enabled=False, grounder=None):
     command = [
         "python3",
         os.path.join(CURRENT_DIR, "generate-asp-model.py"),
@@ -92,6 +95,11 @@ def ground(domain, problem, theory_outp=None, model_outp=None, lpopt_enabled=Fal
     if lpopt_enabled:
         command += [
             "--lpopt-preprocessor"
+        ]
+    if grounder:
+        command += [
+            "--grounder",
+            grounder
         ]
     subprocess.check_call(command)
 
