@@ -50,6 +50,12 @@ def unprotect(s):
             if new_attr not in d:
                 setattr(s, new_attr, value)
 
+def revert_to_fd_structure(domain, task):
+    unprotect(domain)
+    setattr(domain, "functions", [])
+    setattr(domain, "requirements", type('requirements', (object,), {'pddl': lambda self: ''})())
+    unprotect(task)
+
 
 if __name__ == '__main__':
     if args.pickl_load:
@@ -76,9 +82,7 @@ if __name__ == '__main__':
         white_plan_list = [PositivePlan(white_plan_file)]
 
         # this is a hack to introducce the protected attributes as normal attributes (like FD uses them)
-        unprotect(domain)
-        unprotect(task)
-        setattr(domain, "objects", domain.constants)
+        revert_to_fd_structure(domain, task)
 
         repairer = Repairer(
             domain
