@@ -11,7 +11,7 @@ import copy
 # for now this is just for you to know which options you have
 # should later add a check that makes sure the options match
 H_NAMES = ["L_HMAX", "L_HADD", "L_HFF", "G_HMAX", "G_HADD", "G_HFF", "G_LM_CUT"]
-RELAXATIONS = ["none", "unary", "zero_ary"]
+RELAXATIONS = ["none", "unary", "zeroary"]
 
 INPUT_MODEL_DOMAIN = "domain-in.pddl"
 INPUT_MODEL_PROBLEM = "problem-in.pddl"

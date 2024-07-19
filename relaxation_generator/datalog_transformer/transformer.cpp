@@ -820,7 +820,7 @@ void add_repair_actions(DatalogTask &task) {
         Atom standard_atom{.head=pred_id, .args=standard_args};
 
         auto activate_pred_id = task.predicates.size() + additional_predicates.size();
-        additional_predicates.push_back(Predicate{.name="activate_pred_" + pred.name, .arity=0});
+        additional_predicates.push_back(Predicate{.name=ACTIVATE_PRED_START + pred.name, .arity=0});
         Atom activate_atom{.head=activate_pred_id, .args={}};
 
         task.rules.push_back(Rule{.head=standard_atom, .body={activate_atom}});
@@ -879,12 +879,17 @@ void print_problem(DatalogTask &task) {
         }
         std::cout << ")\n";
     }
+    std::cout <<"    (= (total-cost) 0)\n";
     std::cout << "  )\n\n";
 
     // Print goal state
     std::cout << "  (:goal\n";
     std::cout << "    (" << GOAL_NAME << ")\n";
     std::cout << "  )\n";
+
+
+    std::cout << "  (:metric minimize (total-cost))\n\n";
+
     std::cout << ")\n";
 
     exit(0);
@@ -913,6 +918,10 @@ void print_domain(DatalogTask &task) {
 
     // Print types
     std::cout << "  (:types object)\n\n";
+
+    std::cout << "  (:functions\n";
+    std::cout << "    (total-cost) - number\n";
+    std::cout << "  )\n\n";
 
     // Print predicates
     std::cout << "  (:predicates\n";
@@ -972,6 +981,7 @@ void print_domain(DatalogTask &task) {
             }
         }
         std::cout << ")\n";
+        std::cout << "      (increase (total-cost) " << (1 ? rule.body.size() == 0 && is_activate_pred(task.predicates.at(rule.head.head).name) : 0) << ")\n";
         std::cout << "    )\n";
         std::cout << "  )\n\n";
         i++;

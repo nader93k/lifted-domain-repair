@@ -62,6 +62,9 @@ PredicateRef Parser::get_predicate_ref(const std::string &current_predicate) { /
     if (it == predicate_map.end()) {
         auto id = result.predicates.size();
         predicate_map.emplace(current_predicate, id);
+        if (is_activate_pred(current_predicate)) {
+            activate_preds.insert(id);
+        }
         result.predicates.push_back(Predicate{.name=current_predicate, .arity=current_args.size()});
         if (is_type_predicate(current_predicate)) {
             result.type_predicates.emplace(get_type_from_pred(current_predicate), id);
@@ -235,6 +238,10 @@ void Parser::line_stop() {
 #endif
     assert(depth == 0);
     push_atom();
+    if (!is_rule && activate_preds.contains(current_atoms.begin()->head)) {
+        is_rule = true;
+    }
+
     if (is_rule) {
         create_rule();
         if (defines_mutex(result, result.rules.back())) {

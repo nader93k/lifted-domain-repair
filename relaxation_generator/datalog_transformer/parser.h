@@ -132,6 +132,8 @@ class Parser {
     std::unordered_map<std::string, ull> object_map;
     std::unordered_map<std::string, ull> var_map;
 
+    std::unordered_set<ull> activate_preds;
+
     void handle_char(char c);
     void append_char(char c);
 public:

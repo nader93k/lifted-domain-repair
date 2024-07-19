@@ -164,4 +164,9 @@ inline bool is_false_pred(const std::string &s) {
     return s == FALSE_PRED;
 }
 
+extern const std::string ACTIVATE_PRED_START;
+inline bool is_activate_pred(const std::string &s) {
+    return starts_with(s, ACTIVATE_PRED_START);
+}
+
 #endif //DATALOG_TRANSFORMER_COMMON_H

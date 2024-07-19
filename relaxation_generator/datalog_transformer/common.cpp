@@ -14,3 +14,4 @@ const std::string FALSE_PRED("weird_false_pred");
 const std::string MUTEX_PRED("mutexpred");
 const std::string NONE_STUB("none_of_mutexgroup_");
 const std::string NONE_T("object");
+const std::string ACTIVATE_PRED_START("activate_pred_");
