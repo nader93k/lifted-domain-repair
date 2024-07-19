@@ -729,11 +729,12 @@ void zero_ary_relaxation(DatalogTask &task) {
     }
 }
 
-void to_unary(std::vector<Atom> to_transform, std::unordered_map<ull, std::vector<ull>> &pred_translation) {
+void to_unary(std::vector<Atom> &to_transform, std::unordered_map<ull, std::vector<ull>> &pred_translation, std::unordered_set<ull> &is_zeroary) {
     std::vector<Atom> old_atoms;
     std::set<std::tuple<ull, ull, ull>> new_init;
     for (auto &atom : to_transform) {
-        if (pred_translation.contains(atom.head)) {
+        assert(pred_translation.contains(atom.head));
+        if (!is_zeroary.contains(atom.head)) {
             int i = 0;
             for (auto sub_preds : pred_translation.at(atom.head)) {
                 auto &arg =  atom.args.at(i);
@@ -743,6 +744,9 @@ void to_unary(std::vector<Atom> to_transform, std::unordered_map<ull, std::vecto
                 i++;
             }
         } else {
+            auto &new_preds = pred_translation.at(atom.head);
+            assert(new_preds.size() == 1);
+            atom.head = *new_preds.begin();
             old_atoms.push_back(atom);
         }
     }
@@ -751,10 +755,16 @@ void to_unary(std::vector<Atom> to_transform, std::unordered_map<ull, std::vecto
     for (auto &p : new_init) {
         to_transform.push_back(Atom{.head=get<0>(p), .args={ObjectOrVarRef{._is_variable=get<1>(p), .index=get<2>(p)}}});
     }
+#ifndef NEDBUG
+    for (auto &atom : to_transform) {
+        assert(atom.args.size() <= 1);
+    }
+#endif
 }
 
 void unary_relaxation(DatalogTask &task) {
     std::vector<Predicate> new_preds;
+    std::unordered_set<ull> is_zeroary;
     std::unordered_map<ull, std::vector<ull>> pred_translation;
 
     ull p_id = 0;
@@ -767,6 +777,8 @@ void unary_relaxation(DatalogTask &task) {
             }
             pred_translation.emplace(p_id, new_subpreds);
         } else {
+            is_zeroary.insert(p_id);
+            pred_translation.emplace(p_id, std::vector<ull>{new_preds.size()});
             new_preds.push_back(pred);
         }
         p_id++;
@@ -775,17 +787,17 @@ void unary_relaxation(DatalogTask &task) {
 
     std::vector<Rule> new_rules;
     for (auto &rule : task.rules) {
-        to_unary(rule.body, pred_translation);
+        to_unary(rule.body, pred_translation, is_zeroary);
 
         std::vector<Atom> head_args{rule.head};
-        to_unary(head_args, pred_translation);
+        to_unary(head_args, pred_translation, is_zeroary);
         for (auto &head : head_args) {
             new_rules.push_back(Rule{.head=head, .body=rule.body});
         }
     }
     task.rules = new_rules;
 
-    to_unary(task.init, pred_translation);
+    to_unary(task.init, pred_translation, is_zeroary);
 }
 
 void add_repair_actions(DatalogTask &task) {
