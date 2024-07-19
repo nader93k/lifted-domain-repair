@@ -834,6 +834,134 @@ void add_repair_actions(DatalogTask &task) {
     }
 }
 
+
+void print_problem(DatalogTask &task) {
+    std::cout << "(define (problem generated_problem)\n";
+    std::cout << "  (:domain generated_domain)\n\n";
+
+
+    std::unordered_set<ull> collected_constants;
+    for (const auto& rule : task.rules) {
+        for (const auto& atom : rule.body) {
+            for (const auto& arg : atom.args) {
+                if (!arg._is_variable) {
+                    collected_constants.insert(arg.index);
+                }
+            }
+        }
+        for (const auto& arg : rule.head.args) {
+            if (!arg._is_variable) {
+                collected_constants.insert(arg.index);
+            }
+        }
+    }
+
+    // Print objects
+    std::cout << "  (:objects\n";
+    ull o = 0;
+    for (const auto& object : task.objects) {
+        if (!collected_constants.contains(o)) {
+            std::cout << "    " << object.name << " - object\n";
+        }
+        o++;
+    }
+    std::cout << "  )\n\n";
+
+    // Print initial state
+    std::cout << "  (:init\n";
+    for (const auto& atom : task.init) {
+        std::cout << "    (" << task.predicates[atom.head].name;
+        for (const auto& arg : atom.args) {
+            assert(!arg._is_variable);
+            std::cout << " " << task.objects[arg.index].name;
+        }
+        std::cout << ")\n";
+    }
+    std::cout << "  )\n\n";
+
+    // Print goal state
+    std::cout << "  (:goal\n";
+    std::cout << "    (" << GOAL_NAME << ")\n";
+    std::cout << "  )\n";
+    std::cout << ")\n";
+
+    exit(0);
+}
+void print_domain(DatalogTask &task) {
+    std::cout << "(define (domain generated_domain)\n\n";
+
+    // Print types
+    std::cout << "  (:types object)\n\n";
+
+    // Print predicates
+    std::cout << "  (:predicates\n";
+    for (const auto& predicate : task.predicates) {
+        std::cout << "    (" << predicate.name;
+        for (ull i = 0; i < predicate.arity; ++i) {
+            std::cout << " ?v" << i << " - object";
+        }
+        std::cout << ")\n";
+    }
+    std::cout << "  )\n\n";
+
+    // Print actions
+    ull i = 0;
+    std::unordered_set<ull> collected_constants;
+    for (const auto& rule : task.rules) {
+        std::cout << "  (:action action_" << i << "\n";
+        std::cout << "    :parameters (";
+        for (ull i = 0; i < rule.head.args.size(); ++i) {
+            if (rule.head.args[i]._is_variable) {
+                std::cout << "?v" << rule.head.args[i].index << " - object ";
+            }
+        }
+        std::cout << ")\n";
+
+        std::cout << "    :precondition (and\n";
+        for (const auto& atom : rule.body) {
+            std::cout << "      (" << task.predicates[atom.head].name;
+            for (const auto& arg : atom.args) {
+                if (arg._is_variable) {
+                    std::cout << " " << task.vars[arg.index].name;
+                } else {
+                    std::cout << " " << task.objects[arg.index].name;
+                    collected_constants.insert(arg.index);
+                }
+            }
+            std::cout << ")\n";
+        }
+        std::cout << "    )\n";
+
+        std::cout << "    :effect (and\n";
+        std::cout << "      (" << task.predicates[rule.head.head].name;
+        for (const auto& arg : rule.head.args) {
+            if (arg._is_variable) {
+                std::cout << " " << task.vars[arg.index].name;
+            } else {
+                std::cout << " " << task.objects[arg.index].name;
+                collected_constants.insert(arg.index);
+            }
+        }
+        std::cout << ")\n";
+        std::cout << "    )\n";
+        std::cout << "  )\n\n";
+        i++;
+    }
+
+
+    // Print objects
+    std::cout << "  (:constants\n";
+    ull o = 0;
+    for (const auto& constant : collected_constants) {
+        std::cout << "    " << task.objects[o].name << " - object\n";
+        o++;
+    }
+    std::cout << "  )\n\n";
+
+    std::cout << ")\n";
+    exit(0);
+}
+
 void mutex_filter(DatalogTask &task) {
     MutexMatcher mutex_matcher(task);
 

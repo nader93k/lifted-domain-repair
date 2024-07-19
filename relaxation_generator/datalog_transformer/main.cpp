@@ -22,7 +22,9 @@ std::unordered_map<std::string, DataLogTransformer> valid_args {
         {"add-hacky-zero-if-not-unique", add_hacky_zero_if_not_unique},
         {"add-repair-actions", add_repair_actions},
         {"zero-ary-relaxation", zero_ary_relaxation},
-        {"unary-relaxation", unary_relaxation}
+        {"unary-relaxation", unary_relaxation},
+        {"print-domain", print_domain},
+        {"print-problem", print_problem}
 };
 
 int main(int argc, char* argv[]) {

@@ -469,6 +469,12 @@ def atoms_supset(tmp_file1, tmp_file2,all_output=False):
 def filter_add_del_annotation(inp, outp):
     call_transformer(inp, "mutex-filter", outp)
 
+def produce_domain(inp, outp):
+    call_transformer(inp, "print-domain", outp)
+
+def produce_problem(inp, outp):
+    call_transformer(inp, "print-problem", outp)
+
 def equalize_guaranteed_atoms(inp, outp):
     call_transformer(inp, "equalize-guaranteed-atoms", outp)
 

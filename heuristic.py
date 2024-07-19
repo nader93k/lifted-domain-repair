@@ -1,4 +1,5 @@
 #TODO: could allow to reduce datalog model
+#TODO: some h+ computation?
 
 H_NAMES = ["L_HMAX", "L_HADD", "L_HFF", "G_HMAX", "G_HADD", "G_HFF", "G_LM_CUT"]
 RELAXATIONS = ["NONE", "UNARY", "ZERO_ARY"]

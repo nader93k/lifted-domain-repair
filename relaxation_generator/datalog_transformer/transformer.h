@@ -47,6 +47,10 @@ void zero_ary_relaxation(DatalogTask &task);
 
 void unary_relaxation(DatalogTask &task);
 
+void print_domain(DatalogTask &task);
+
+void print_problem(DatalogTask &task);
+
 inline void standard_transformations(DatalogTask &task) {
     remove_unique_objects_from_mutex_group(task);
 }

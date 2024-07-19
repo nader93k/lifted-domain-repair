@@ -10,7 +10,13 @@ import tempfile
 import time
 import uuid
 
-from shortcuts import lpopt_optimize, add_repair_actions, zero_ary_relaxation, unary_relaxation, superset_pars
+from shortcuts import lpopt_optimize,\
+                      add_repair_actions, \
+                      zero_ary_relaxation, \
+                      unary_relaxation, \
+                      superset_pars, \
+                      produce_domain, \
+                      produce_problem
 
 from subprocess import Popen, PIPE
 
@@ -81,6 +87,11 @@ if __name__ == '__main__':
         superset_pars(theory_output)
 
         run_grounder(model_output, suppress_output, theory_output, grounderopt)
+    else:
+        if args.domain_print:
+            produce_domain(theory_output, args.domain_print)
+        if args.problem_print:
+            produce_problem(theory_output, args.problem_print)
 
     if args.remove_files:
         silentremove(args.model_output)
