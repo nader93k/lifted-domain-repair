@@ -21,6 +21,13 @@ DATALOG_THEORY = "datalog.theory"
 DATALOG_MODEL = "datalog.model"
 GROUNDED_OUTPUT_SAS = "out.sas"
 
+transform_to_fd = {
+    "G_HMAX": "hmax",
+    "G_HADD": "add",
+    "G_HFF": "ff",
+    "G_LM_CUT": "lmcut"
+}
+
 transform_to_pwl = {
     "L_HMAX": "hmax",
     "L_HADD": "add",
@@ -29,6 +36,7 @@ transform_to_pwl = {
 
 current_dir = Path(__file__).resolve().parent
 POWERLIFTED_PY = current_dir / 'pwl' / 'powerlifted.py'
+FAST_DOWNWARD_PY = current_dir / 'fd2' / 'fast-downward.py'
 
 def get_heuristic(command, look_for):
     output_file = "heuristic_value.tmp"
@@ -42,6 +50,18 @@ def get_heuristic(command, look_for):
 
     assert False, "shouldn't reach this"
     return None
+
+def get_fd_value(heuristic, domain_file, instance_file):
+    heuristic = transform_to_fd[heuristic]
+
+    command = [
+        "python3", FAST_DOWNWARD_PY,
+        domain_file, instance_file,
+        "--search", f"astar({heuristic}())"
+    ]
+
+    print("Calling", *command)
+    return get_heuristic(command, "Initial heuristic value for")
 
 def get_pwl_value(heuristic, domain_file, instance_file):
     search_algorithm = "print-initial-h"
@@ -129,6 +149,10 @@ class Heurisitc:
         else:
             assert self.h_name.startswith("G_"), (f"{self.h_name} should either start with L_ to indicate a lifted"
                                                   "or G to indicate a grounded heuristic")
+            # For now we also do not use the efficient grounder, as we would have to do an additional translation
+            # the splitting by lpopt should suffice to make the FD grounder sufficiently performant for
+            # a first evaluation
+            GROUND_CMD["grounder"] = 'none'
 
         if self.relaxation:
             GROUND_CMD["relaxation"] = self.relaxation
@@ -138,4 +162,4 @@ class Heurisitc:
         if self.h_name.startswith("L_"):
             return get_pwl_value(self.h_name, OUTPUT_MODEL_DOMAIN, OUTPUT_MODEL_PROBLEM)
         else:
-            return get_fd_value(TODO)
+            return get_fd_value(self.h_name, OUTPUT_MODEL_DOMAIN, OUTPUT_MODEL_PROBLEM)
