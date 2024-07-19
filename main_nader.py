@@ -73,7 +73,7 @@ if __name__ == '__main__':
             save_variable_to_folder(args.pickl_dump, repairer, args.input_directory.split("/")[-1])
 
         action_sequence = None
-        h = Heurisitc("G_HMAX", "NONE")
+        h = Heurisitc("L_HMAX", "none")
         print("Initial Heuristic value was:", h.evaluate(domain, task, action_sequence))
 
         repairer.write(out_file)

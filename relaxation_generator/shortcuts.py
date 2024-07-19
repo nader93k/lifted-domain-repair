@@ -73,7 +73,7 @@ def lpopt_optimize(f_name):
     execute(command, stdout=temporary_filename)
     os.rename(temporary_filename, f_name)
 
-def ground(domain, problem, theory_outp=None, model_outp=None, lpopt_enabled=False, grounder=None):
+def ground(domain, problem, theory_outp=None, model_outp=None, lpopt_enabled=False, domain_print=None, problem_print=None, grounder=None, relaxation=None):
     command = [
         "python3",
         os.path.join(CURRENT_DIR, "generate-asp-model.py"),
@@ -100,6 +100,21 @@ def ground(domain, problem, theory_outp=None, model_outp=None, lpopt_enabled=Fal
         command += [
             "--grounder",
             grounder
+        ]
+    if domain_print:
+        command += [
+            "--domain-print",
+            domain_print
+        ]
+    if problem_print:
+        command += [
+            "--problem-print",
+            problem_print
+        ]
+    if relaxation:
+        command += [
+            "--r-mode",
+            relaxation
         ]
     subprocess.check_call(command)
 

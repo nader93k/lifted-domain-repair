@@ -834,13 +834,7 @@ void add_repair_actions(DatalogTask &task) {
     }
 }
 
-
-void print_problem(DatalogTask &task) {
-    std::cout << "(define (problem generated_problem)\n";
-    std::cout << "  (:domain generated_domain)\n\n";
-
-
-    std::unordered_set<ull> collected_constants;
+void collect_constants(DatalogTask &task, std::unordered_set<ull> &collected_constants) {
     for (const auto& rule : task.rules) {
         for (const auto& atom : rule.body) {
             for (const auto& arg : atom.args) {
@@ -855,6 +849,14 @@ void print_problem(DatalogTask &task) {
             }
         }
     }
+}
+
+void print_problem(DatalogTask &task) {
+    std::cout << "(define (problem generated_problem)\n";
+    std::cout << "  (:domain generated_domain)\n\n";
+
+    std::unordered_set<ull> collected_constants;
+    collect_constants(task, collected_constants);
 
     // Print objects
     std::cout << "  (:objects\n";
@@ -887,7 +889,26 @@ void print_problem(DatalogTask &task) {
 
     exit(0);
 }
+
+void get_vars(const Rule &rule, std::unordered_set<ull> &vars) {
+    for (auto &vec : {rule.body, {rule.head}})
+    for (auto &atom : vec) {
+        for (ull i = 0; i < atom.args.size(); ++i) {
+            if (atom.args[i]._is_variable) {
+                vars.insert(atom.args[i].index);
+            }
+        }
+    }
+}
+
 void print_domain(DatalogTask &task) {
+    for (ull i = 0; i < task.vars.size(); i++) {
+        auto &name = task.vars.at(i).name;
+        if (name.at(0) != '?') {
+            name = "?" + name;
+        }
+    }
+
     std::cout << "(define (domain generated_domain)\n\n";
 
     // Print types
@@ -904,16 +925,26 @@ void print_domain(DatalogTask &task) {
     }
     std::cout << "  )\n\n";
 
+    // Print constants
+    std::unordered_set<ull> collected_constants;
+    collect_constants(task, collected_constants);
+    std::cout << "  (:constants\n";
+    ull o = 0;
+    for (const auto& constant : collected_constants) {
+        std::cout << "    " << task.objects[o].name << " - object\n";
+        o++;
+    }
+    std::cout << "  )\n\n";
+
     // Print actions
     ull i = 0;
-    std::unordered_set<ull> collected_constants;
     for (const auto& rule : task.rules) {
         std::cout << "  (:action action_" << i << "\n";
         std::cout << "    :parameters (";
-        for (ull i = 0; i < rule.head.args.size(); ++i) {
-            if (rule.head.args[i]._is_variable) {
-                std::cout << "?v" << rule.head.args[i].index << " - object ";
-            }
+        std::unordered_set<ull> head_vars;
+        get_vars(rule, head_vars);
+        for (ull i : head_vars) {
+            std::cout << task.vars.at(i).name << " - object ";
         }
         std::cout << ")\n";
 
@@ -925,7 +956,6 @@ void print_domain(DatalogTask &task) {
                     std::cout << " " << task.vars[arg.index].name;
                 } else {
                     std::cout << " " << task.objects[arg.index].name;
-                    collected_constants.insert(arg.index);
                 }
             }
             std::cout << ")\n";
@@ -939,7 +969,6 @@ void print_domain(DatalogTask &task) {
                 std::cout << " " << task.vars[arg.index].name;
             } else {
                 std::cout << " " << task.objects[arg.index].name;
-                collected_constants.insert(arg.index);
             }
         }
         std::cout << ")\n";
@@ -947,16 +976,6 @@ void print_domain(DatalogTask &task) {
         std::cout << "  )\n\n";
         i++;
     }
-
-
-    // Print objects
-    std::cout << "  (:constants\n";
-    ull o = 0;
-    for (const auto& constant : collected_constants) {
-        std::cout << "    " << task.objects[o].name << " - object\n";
-        o++;
-    }
-    std::cout << "  )\n\n";
 
     std::cout << ")\n";
     exit(0);
