@@ -50,11 +50,13 @@ void Parser::push_atom() {
         // Happens if there was no depth decrease due to atom without parameters (written up without parens)
         overwrite_current_predicate();
     }
-    current_atoms.emplace_back();
-    auto &new_atom = current_atoms.back();
-    new_atom.head = get_current_predicate_ref();
-    insert_current_args_into(new_atom.args);
-    current_predicate = "";
+    if (!current_predicate.empty()) {
+        current_atoms.emplace_back();
+        auto &new_atom = current_atoms.back();
+        new_atom.head = get_current_predicate_ref();
+        insert_current_args_into(new_atom.args);
+        current_predicate = "";
+    }
 }
 
 PredicateRef Parser::get_predicate_ref(const std::string &current_predicate) { //TODO: rn arg
