@@ -11,8 +11,18 @@
 \newcommand{\objects}{\ensuremath{\mathcal{O}}\xspace}
 \newcommand{\init}{\ensuremath{\mathcal{I}}\xspace}
 \newcommand{\goal}{\ensuremath{\mathcal{G}}\xspace}
+\newcommand{\vars}{\ensuremath{X}\xspace}
 \newcommand{\varRepl}{\ensuremath{\theta}\xspace}
 
+\newcommand{\someVar}{\ensuremath{x}\xspace}
+\newcommand{\atoms}{\ensuremath{\preds^{\vars}}\xspace}
+\newcommand{\someAtom}{\ensuremath{p(\vec{\someVar})}\xspace}
+\newcommand{\someLiftedSet}{\ensuremath{L}\xspace}
+
+\newcommand{\somePred}{\ensuremath{p}\xspace}
+
+\newcommand{\states}{\ensuremath{S}\xspace}
+\newcommand{\someState}{\ensuremath{s}\xspace}
 
 \newcommand{\prename}{\ensuremath{pre}\xspace}
 \newcommand{\addname}{\ensuremath{add}\xspace}
@@ -39,6 +49,10 @@
 \newcommand{\relaxedActs}{\ensuremath{\acts^{+}}\xspace}
 \newcommand{\relaxedTask}{\ensuremath{\task^{+}}\xspace}
 
+\zeroary
+\newcommand{\unary}[1]{\ensuremath{#1_{|1}}\xspace}
+\newcommand{\zeroary}[1]{\ensuremath{#1_{|0}}\xspace}
+
 \title{Technical Notes for the heuristic in the paper}
 
 \newtheorem{theorem}{Theorem}
@@ -60,6 +74,7 @@
 		\item \objects denotes objects
 		\item \init denotes the initial state
 		\item \goal denotes goal
+		\item \atoms denotes the set of all (lifted) atoms
 		\item \varRepl denotes a full variable replacement to ground a structure
 		\item $^+$ is associated with the delete relaxation
 		\item \fixPre is some set of atomic repairs that delete preconditions
@@ -77,13 +92,14 @@
 		Given a planning task \task, lifted action sequence \someActSeq the optimal repair sequence heuristic $\optimalHeuristicSeq(\task, \someActSeq)$ is the minimal amount of repairs to make \task solvable via a grounded action sequence $\varRepl(\someActSeq)$ for some variable replacement \varRepl.
 	\end{definition}
 	
-	\begin{lemma}
-		TODO:
-		
-		Minimum over all sequences ends up in h* ...
-		
-		This means that for each is smaller ...
-	\end{lemma}
+	\begin{proposition}
+		Given a planning task \task, lifted action sequence \someActSeq, it holds that:
+		$$
+		\optimalHeuristic(\task) \leq \optimalHeuristicSeq(\task, \someActSeq)
+		$$
+		I.e.\ the optimal repair heuristic $\optimalHeuristic(\task)$ is bounded by $\optimalHeuristicSeq(\task, \someActSeq)$.
+		This implies that $\optimalHeuristic(\task)$ is an admissible heuristic for the repair problem with a lifted action sequence provided.
+	\end{proposition}
 	
 	\section{Perfect Heuristic}
 	
@@ -104,7 +120,8 @@
 	\end{definition}
 	
 	\begin{definition}
-		Decision problem for heuristic...
+		For any heuristic $h: \states \rightarrow \mathbb{R}$ the decision problem is:
+		Given a state $\someState \in \states$ and $\mathit{val} \in \mathbb{R}$, decide if $h(\someState) = \mathit{val}$.
 	\end{definition}
 	
 	\begin{theorem}
@@ -196,12 +213,66 @@
 	
 	\section{0-ary and 1-ary Relaxation}
 	
-	TODO: Maybe could use unary relaxation???
-	TODO: PROJECT OUT ALL PARAMETERS!
-	What's the motivation?
+	\begin{definition}
+		The unary relaxation of a predicate $\somePred \in \preds$ is:
+		$$
+		\unary{\somePred} = \{\somePred_i \mid 1 \leq i \leq \arity{\somePred}\}
+		$$
+		Which splits the predicate into \arity{\somePred} unary ones.
+		The unary relaxation of an atom $\someAtom \in \atoms$ is:
+		$$
+		\unary{\someAtom} =  \{\somePred_i(\someVar_i) \mid 1 \leq i \leq \arity{\somePred}\}
+		$$
+		Which splits the atom into its unary predicates.
+		The unary relaxation of a set $\someLiftedSet \subseteq \atoms$ is the collection of all its atomic applications
+		$
+		\unary{\someLiftedSet} =  \bigcup_{\someAtom \in \atoms} \unary{\someAtom}
+		$.
+		
+		The unary relaxation is defined on the top of the delete relaxation and so applies the {$\unary{}$}-operation only over \prename and \delname as
+		$$
+		\unary{\acts} = \{(\unary{\pre{\someAct}}, \unary{\add{\someAct}}, \emptyset, \cost{\someAct}) \mid \someAct \in \acts\}
+		$$.
+		The unary relaxed task is then obtained as the application of $\unary{}$ across the whole task:
+		$$
+		\unary{\task} = (\unary{\preds}, \objects, \unary{\acts}, \unary{\init}, \unary{\goal})
+		$$
+	\end{definition}
 	
+	\begin{theorem}
+		TODO hmax, hadd, hff TODO 
+	\end{theorem}
+	
+	\begin{proof}
+		TODO ... link bsc thesis, unary paper
+	\end{proof}
+	
+	
+	TODO: explain invention.
+	TODO: link lipovetzky paper
+	
+	\begin{definition}
+		The zeroary relaxation of an atom $\someAtom \in \atoms$ removes its arguments as:
+		$$
+		\zeroary{\someAtom} =  \somePred()
+		$$
+		The zeroary relaxation is defined on the top of the delete relaxation and so applies the {$\zeroary{}$}-operation only over \prename and \delname as
+		$$
+		\zeroary{\acts} = \{(\zeroary{\pre{\someAct}}, \zeroary{\add{\someAct}}, \emptyset, \cost{\someAct}) \mid \someAct \in \acts\}
+		$$.
+		The unary relaxed task is then obtained as the application of $\unary{}$ across the whole task:
+		$$
+		\zeroary{\task} = (\zeroary{\preds}, \objects, \zeroary{\acts}, \zeroary{\init}, \zeroary{\goal})
+		$$
+	\end{definition}
+	
+	What's the motivation?
 	TODO: motivate grounding process 
 	
+	\section{Approach}
+	
+	TODO: currently implemented is:
+		
 	\section{Future Ideas}
 	
 	\begin{itemize}
