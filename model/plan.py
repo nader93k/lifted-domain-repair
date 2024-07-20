@@ -50,19 +50,34 @@ class Plan:
         self._steps: List[Tuple] = []
         self._var_mapping = []
         with open(plan_file, "r") as f:
-            for line in f.readlines():
-                if not line.strip():
-                    continue
-                line = line.strip()
-                if line[0] == "(" and line[-1] == ")":
-                    line = line[1:-1]
-                parts = line.split(" ")
-                self._steps.append(tuple(parts))
-        if self._steps[-1][0] == ";":
-            self._steps.pop(-1)
+            self._parse_plan(f.readlines())
         self._succeed = False
         self._pos = None
         self._atom = None
+
+    @classmethod
+    def from_string(cls, plan_string):
+        # Create a Plan object from a string
+        plan = cls.__new__(cls)
+        plan._steps: List[Tuple] = []
+        plan._var_mapping = []
+        plan._parse_plan(plan_string.split('\n'))
+        plan._succeed = False
+        plan._pos = None
+        plan._atom = None
+        return plan
+
+    def _parse_plan(self, lines):
+        for line in lines:
+            if not line.strip():
+                continue
+            line = line.strip()
+            if line[0] == "(" and line[-1] == ")":
+                line = line[1:-1]
+            parts = line.split(" ")
+            self._steps.append(tuple(parts))
+        if self._steps[-1][0] == ";":
+            self._steps.pop(-1)
 
     @property
     def executable(self):

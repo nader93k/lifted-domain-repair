@@ -18,17 +18,19 @@ import astar
 # args = parser.parse_args()
 
 
-input_directory = r"/Users/naderkarimi/Code/GitHub/nader-classical-domain-repairer/input/block_world/AAAI25-example1"
+input_directory = r"./input/block_world/AAAI25-example1"
 domain_file = "domain.pddl"
 task_file = "task.pddl"
-white_plan_file = "white_plan_lifted.pddl"
+white_plan_grounded_file = "white_plan_grounded.pddl"
+white_plan_lifted_file = "white_plan_lifted.pddl"
 
-output_directory = r"/Users/naderkarimi/Code/GitHub/nader-classical-domain-repairer/output"
+output_directory = r"./output"
 
 
 domain_file = os.path.join(input_directory, domain_file)
 task_file = os.path.join(input_directory, task_file)
-white_plan_file = os.path.join(input_directory, white_plan_file)
+white_plan_grounded_file = os.path.join(input_directory, white_plan_grounded_file)
+white_plan_lifted_file = os.path.join(input_directory, white_plan_lifted_file)
 out_file = os.path.join(output_directory, "repairs")
 
 
@@ -133,27 +135,6 @@ def read_action_names(file_path):
     return result
 
 
-def compute_subs(self, domain, task):
-    """DELETE THIS"""
-    for step in self._steps:
-        mapping = {}
-        action = domain.get_action(step[0])
-        for idx, para in enumerate(action.parameters):
-            object = task.get_object(step[idx + 1])
-            if object is None:
-                object = domain.get_constant(step[idx + 1])
-            if object is None:
-                raise KeyError("Undefined object")
-            mapping[para.name] = object
-        mapping.update([(c.name, c) for c in domain.constants])
-        self._var_mapping.append((step[0], mapping))
-
-
-def get_groundings(lifted_action):
-
-    pass
-
-
 def compute_groundings(action, domain, task):
     """
     Compute possible groundings for a lifted action.
@@ -173,28 +154,59 @@ def compute_groundings(action, domain, task):
 
         param = action.parameters[param_index]
         for obj in objects:
-            if obj.type_name == param.type_name:
+            if obj.type == param.type:
                 current_grounding[param.name] = obj
                 recursive_ground(param_index + 1, current_grounding)
 
     recursive_ground(0, {})
     return possible_groundings
-# if __name__ == '__main__':
-#     PASS
+
 
 if __name__ == '__main__':
     domain = Domain(domain_file)
     task = Task(task_file)
-    # white_plan_list = [PositivePlan(white_plan_file)]
-    white_action_names = read_action_names(white_plan_file)
+    white_plan_list = [PositivePlan(white_plan_grounded_file)]
+    white_action_names = read_action_names(white_plan_lifted_file)
 
     # for name in white_action_names:
     #     print(domain.get_action(name))
 
-    compute_groundings(domain.get_action(white_action_names[0]), domain, task)
+    # lifted_action = domain.get_action("stack")
+
+    all_groundings = {}
+    for name in white_action_names:
+        all_groundings[name] = []
+        lifted_action = domain.get_action(name)
+        grounded_action = compute_groundings(lifted_action, domain, task)
+        for g in grounded_action:
+            s = '(' + lifted_action.name
+            for param in lifted_action.parameters:
+                s = s + ' ' + g[param.name].name
+            s = s + ')'
+            all_groundings[name].append(s)
 
 
+    # test_string = [PositivePlan(white_plan_grounded_file)]
+    with open(white_plan_grounded_file, 'r') as f:
+        test_string = f.read()
+    print(test_string)
+    test_string2 = [PositivePlan(Plan.from_string(test_string))]
+
+
+    x=1
+
+
+
+
+
+
+
+
+    # for lifted_action in set(white_action_names):
     x = 1
+
+
+
     # repairer = Repairer(
     #     domain
     #     , [(task, white_plan_list)]
