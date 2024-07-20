@@ -4,6 +4,8 @@
 \usepackage{xspace}
 \usepackage{amssymb}
 \usepackage{enumitem}
+\usepackage{amsthm}
+\usepackage{mathtools}
 
 \newcommand{\task}{\ensuremath{\Pi}\xspace}
 \newcommand{\preds}{\ensuremath{\mathcal{P}}\xspace}
@@ -49,7 +51,6 @@
 \newcommand{\relaxedActs}{\ensuremath{\acts^{+}}\xspace}
 \newcommand{\relaxedTask}{\ensuremath{\task^{+}}\xspace}
 
-\zeroary
 \newcommand{\unary}[1]{\ensuremath{#1_{|1}}\xspace}
 \newcommand{\zeroary}[1]{\ensuremath{#1_{|0}}\xspace}
 
@@ -64,6 +65,20 @@
 \begin{document}
 	
 	\maketitle
+	
+	\section{Introduction}
+	
+	TODO: 
+	just formalize so that we know we are on the same page
+	introduce the necesscary background
+	
+	motivate the choices i made 
+	
+	and list some observations i made
+	
+	further lsit what's actually implemented
+	
+	The proofs are not inteded to be elaborate ideas but rather just sketches of the main idea, all statements are rather trivial
 	
 	\section{Notation}
 	
@@ -82,7 +97,9 @@
 	\end{itemize}
 	
 	
-	\section{Problem Formulation}
+	\section{Problem Formulations and Perfect Heuristics}
+	
+	Let's start by formalizing the perfect heuristic for both settings.
 	
 	\begin{definition}
 		Given a planning task \task the optimal repair heuristic $\optimalHeuristic(\task)$ is the minimal amount of repairs to make \task solvable.
@@ -92,16 +109,61 @@
 		Given a planning task \task, lifted action sequence \someActSeq the optimal repair sequence heuristic $\optimalHeuristicSeq(\task, \someActSeq)$ is the minimal amount of repairs to make \task solvable via a grounded action sequence $\varRepl(\someActSeq)$ for some variable replacement \varRepl.
 	\end{definition}
 	
+	This is particularly important, as we are looking for an admissible heuristic, which is defined w.r.t. to the perfect heuristic.
+	
+	\begin{definition}
+		A heuristic $h$ is called admissible for the optimal repair problem if for all planning tasks \task it holds that. $h(\task) \leq \optimalHeuristic(\task)$. 
+	\end{definition}
+	
+	\begin{definition}
+		A heuristic $h$ is called admissible for the optimal repair sequence problem if for all planning tasks \task, lifted action sequences \someActSeq it holds that. $h(\task, \someActSeq) \leq \optimalHeuristicSeq(\task, \someActSeq)$. 
+	\end{definition}
+	
+	We can make the instant observation that a given sequence can only increase the perfect heuristic value and so ignoring the sequence can yield an admissible heuristic estimate.
+	
 	\begin{proposition}
 		Given a planning task \task, lifted action sequence \someActSeq, it holds that:
 		$$
 		\optimalHeuristic(\task) \leq \optimalHeuristicSeq(\task, \someActSeq)
 		$$
 		I.e.\ the optimal repair heuristic $\optimalHeuristic(\task)$ is bounded by $\optimalHeuristicSeq(\task, \someActSeq)$.
-		This implies that $\optimalHeuristic(\task)$ is an admissible heuristic for the repair problem with a lifted action sequence provided.
+		This implies that $h(\task, \someActSeq) \coloneqq \optimalHeuristic(\task)$ is an admissible heuristic for the repair problem with a lifted action sequence provided.
 	\end{proposition}
 	
-	\section{Perfect Heuristic}
+	\section{Feasibility of Computing the Perfect Heuristics}
+	
+	TODO: standard argument that it is hard to compute the heuristic.
+	
+	\begin{definition}
+		For any heuristic $h: \states \rightarrow \mathbb{R}$ the decision problem is:
+		Given a state $\someState \in \states$ and $\mathit{val} \in \mathbb{R}$, decide if $h(\someState) = \mathit{val}$.
+	\end{definition}
+	
+	\begin{theorem}
+		Computing $h^*$ is EXPTIME??? TODO
+	\end{theorem}
+	
+	\begin{proof}
+		TODO
+	\end{proof}
+	
+	
+	TODO:
+	On top of that as plan sizes low, heuristic values are low ... so maybe can be more 
+	abstract / relaxing
+	
+	\begin{proposition}
+		For any planning task \task:
+		$$\optimalHeuristic(\task) \leq \min_{\someAct \in \acts}(\arity{\pre{\someAct}} + \arity{\del{\someAct}}) + \arity{\preds}$$
+		bounds the optimal repair heuristic value.
+	\end{proposition}
+	
+	\begin{proof}
+		TODO
+	\end{proof}
+	
+	
+	\section{Delete Relaxation Heuristics}
 	
 	TODO: delete relaxation is a common choice to make things tractable with heuristics ...
 	
@@ -120,26 +182,6 @@
 	\end{definition}
 	
 	\begin{definition}
-		For any heuristic $h: \states \rightarrow \mathbb{R}$ the decision problem is:
-		Given a state $\someState \in \states$ and $\mathit{val} \in \mathbb{R}$, decide if $h(\someState) = \mathit{val}$.
-	\end{definition}
-	
-	\begin{theorem}
-		Computing $h^*$ is EXPTIME??? TODO
-	\end{theorem}
-	
-	
-	\begin{proposition}
-		For any planning task \task:
-		$$\optimalHeuristic(\task) \leq \min_{\someAct \in \acts}(\arity{\pre{\someAct}} + \arity{\del{\someAct}}) + \arity{\preds}$$
-		bounds the optimal repair heuristic value.
-	\end{proposition}
-	
-	TODO: expected to be low value ... compared to how hard solving a task ... .
-	
-	\section{Delete Relaxation Heuristics}
-	
-	\begin{definition}
 		For a planning task \task and action sequence \someActSeq:
 		$\optimalHeuristicRel(\task) := \optimalHeuristic(\relaxedTask)$
 		and 
@@ -150,6 +192,50 @@
 	\begin{theorem}
 		Computing $h^+$ is EXPTIME??? TODO
 	\end{theorem}
+	
+	
+	\section{Task Compilation}
+	
+	TODO: short intution what's done here
+	
+	\begin{definition}
+		
+		TODO: task compilation to only add elements 
+		$\task = (\preds, \objects, \acts, \init, \goal)$
+		is obtained as
+		$\task^{R} = (\preds, \objects, \acts^0 \cup \acts^{R}, \init, \goal)$
+		where 
+		$$
+		\acts^0 = \{
+		(\pre{\someAct}, \add{\someAct}, \emptyset, 0) \mid \someAct \in \acts
+		\}
+		$$
+		is the set of actions obtained by removing the deletes and setting cost to 0.
+		And the repair actions $\acts^{R} = \acts^{R}_1 \cup \acts^{R}_2$ are composed by:
+		$$
+		\acts^{R}_1 = 
+		\{
+		(\emptyset, \{\text{activate\_}\somePred\}, \emptyset, 1) \mid \somePred \in \preds
+		\}
+		$$
+		the actions selecting which \addname repairs are selected.
+		$$
+		\acts^{R}_2
+		= \{
+		(\{\text{activate\_}\somePred\}, \{\someAtom\}, \emptyset, 0) \mid \somePred \in \preds
+		\}$$
+		that allow to achieve any atom for the corresponding repair.
+	\end{definition}
+	
+	\begin{theorem}
+		Task trasnformation value matches if one applicable ...
+		
+		Otherwise 
+		TODO: if no action applicable in the beginning ... add reapirs can't help
+	\end{theorem}
+	
+	
+	\section{Feasibility of Computing the Perfect Delete Relaxation Heuristics}
 	
 	
 	\begin{corollary}
@@ -173,45 +259,9 @@
 	
 	
 	
-	\section{Task Compilation}
-	
-	
-	\begin{definition}
-		
-		TODO: task compilation to only add elements 
-		$\task = (\preds, \objects, \acts, \init, \goal)$
-		is obtained as
-		$TODOtask = (\preds, \objects, \acts^0 \cup \acts^{TODOsc}, \init, \goal)$
-		where 
-		$$
-		\acts^0 = \{
-		(\pre{\someAct}, \add{\someAct}, \emptyset, 0) \mid \someAct \in \acts
-		\}
-		$$
-		is the set of actions obtained by removing the deletes and setting cost to 0.
-		And 
-		$$
-		\acts^{TODOsc} = 
-		= \{
-		(SC_ACTIVATED, \add{PRED}, \emptyset, 0) \mid \someAct \in \acts
-		\}$$
-		... activates ... .
-		And TODO
-		$$
-		 \{
-		(\emptyset, SC_ACTIVATED, \emptyset, 1) \mid \someAct \in \acts
-		\}
-		$$
-		is the switch enabling the predicate ... .
-	\end{definition}
-	
-	\begin{theorem}
-		Task trasnformation TODO ... 
-	\end{theorem}
-	
-	
-	
 	\section{0-ary and 1-ary Relaxation}
+	
+	BOTH motivates we need more relaxation
 	
 	\begin{definition}
 		The unary relaxation of a predicate $\somePred \in \preds$ is:
@@ -272,6 +322,13 @@
 	\section{Approach}
 	
 	TODO: currently implemented is:
+	
+	
+	A lot of room for improvement -- Maybe we should add this to an issue:
+	\begin{itemize}
+		\item deep-copy:
+		\item TODO
+	\end{itemize}
 		
 	\section{Future Ideas}
 	
