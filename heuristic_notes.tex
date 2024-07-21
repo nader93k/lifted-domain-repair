@@ -6,6 +6,8 @@
 \usepackage{enumitem}
 \usepackage{amsthm}
 \usepackage{mathtools}
+\usepackage{natbib}   
+
 
 \newcommand{\task}{\ensuremath{\Pi}\xspace}
 \newcommand{\preds}{\ensuremath{\mathcal{P}}\xspace}
@@ -53,6 +55,7 @@
 
 \newcommand{\unary}[1]{\ensuremath{#1_{|1}}\xspace}
 \newcommand{\zeroary}[1]{\ensuremath{#1_{|0}}\xspace}
+
 
 \title{Technical Notes for the heuristic in the paper}
 
@@ -141,49 +144,44 @@
 	\end{definition}
 	
 	\begin{theorem}
-		Computing $h^*$ is EXPTIME??? TODO
+		Computing $h^*$ is EXPSpace-complete.
 	\end{theorem}
 	
-	
-	TODO:
-	On top of that as plan sizes low, heuristic values are low ... so maybe can be more 
-	abstract / relaxing
+	Thus it is generally as hard as computing a planning task,
+	while the heuristic value range is far more restricted than the classical 
+	planning plan length.
 	
 	\begin{proposition}
 		For any planning task \task:
 		$$\optimalHeuristic(\task) \leq \min_{\someAct \in \acts}(\arity{\pre{\someAct}} + \arity{\del{\someAct}}) + \arity{\preds}$$
 		bounds the optimal repair heuristic value.
 	\end{proposition}
-	
-	\begin{proof}
-		TODO
-	\end{proof}
-	
+
 	
 	\section{Delete Relaxation Heuristics}
 	
 	
-	So, we have seen that computing \optimalHeuristic and \optimalHeuristicSeq is too hard.
+	We have seen that computing \optimalHeuristic and \optimalHeuristicSeq is too hard.
 	Therefore we want to derive a heuristic that is simpler to compute.
 	A standard step to head into this direction is to relax the task.
 	I.e. create a simpler version of the task that has a superset of solutions of the original task.
 	
-	The arguably most impactful relaxation of classical planning tasks is the delete relaxation BONET GEFFNER.
+	The arguably most impactful relaxation of classical planning tasks is the delete relaxation \cite{bonet:geffner:aij-01}.
  	It removes all delete effects of actions to make the computations of plans tractable BYLANDER.
 	Within the delete relaxation there derived multiple heuristics.
 	The main examples are
-	HMAX HADD, 
-	LMCUT,
-	HFF,
-	HM
+	$h^{max}$/$h^{add}$\citep{bonet:geffner:aij-01}, 
+	$h^{lmcut}$\citep{helmert:domshlak:icaps-09},
+	$h^{FF}$\citep{hoffmann:nebel:jair-01},
+	$h^{m}$ (TODO: add citation)
 	and 
-	H+ computation Helmert --- Fukunaga.
-	
+	feasible computations for $h^{+}$ \citep{bonet:helmert:ecai-10,imai:fukunaga:ecai-14}.
 	
 	This set of heuristics is still highly relevant and competitive.
 	A good example is that the winner of the recent Agile track IPC 
-	DecStar 2023 ... uses HFF.
-	LAMA uses HFF ... .
+	DecStar 2023 (TODO: add citation) ... uses HFF.
+	Or the very succesful planner
+	LAMA (TODO: add citation) uses HFF ... .
 	
 	
 	Thus it seems reasonable to center our heuristic in the same promising setting.
@@ -276,12 +274,12 @@
 	
 	The choice for delete relaxation heuristics is very important to create a task representation one can approach with standard planning techniques.
 	The problem for a more general, unrelaxed,  encoding is that grounding would quickly become infeasible.
-	The state-of-the-art grounding procedure CITE HELMERT main advantage comes from only representing all delete relaxed reachable actions. 
+	The main advantage of the state-of-the-art grounding procedure \citep{helmert:aij-09} comes from only representing all delete relaxed reachable actions. 
 	Here all actions become delete relaxed reachable.
 	We need these actions in the actual task.
-	But for the delete relaxation HELMERT 09 and CORREA 2021 showed how to link the task representation to a Datalog representation which can be rewritten to be more space efficient and groundable by 
+	But for the delete relaxation, \cite{helmert:aij-09} and \cite{correa:etal:icaps-21} showed how to link the task representation to a Datalog representation which can be rewritten to be more space efficient and groundable by 
 	benefiting from multiple advancements in Datalog and ASP research.
-	CORREA 2023 backed this by thorughly analyzing these advancements w.r.t. to grounding.
+	\cite{correa:etal:icaps-23} backed this by thorughly analyzing these advancements w.r.t. to grounding.
 	The observation is that if ... stil infeasible, but representing the smaller transformed is possible even in larger scale tasks with many delete relaxed reachable actions.
 	
 	\section{Feasibility of Computing the Perfect Delete Relaxation Heuristics}
@@ -429,5 +427,7 @@
 		\item Need to handle case if no action is applicable
 	\end{itemize}
 	
+	\bibliographystyle{plainnat}
+	\bibliography{pbib/books,pbib/journals,pbib/journalsCRef,pbib/proceedings,pbib/proceedingsCRef,pbib/techreport}
 	
 \end{document}
