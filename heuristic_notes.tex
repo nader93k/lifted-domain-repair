@@ -68,17 +68,17 @@
 	
 	\section{Introduction}
 	
-	TODO: 
-	just formalize so that we know we are on the same page
-	introduce the necesscary background
+	This notes are meant to formalize the parts of the paper I am involved in.
+	This aims to make sure that we know we are on the same page.
+	I formalize what I have implemented.
+	The main aim is to motivate the choices I made.
+	But I also added  some observations I made during this, that I found interesting. 
+	We should definitely not be as elaborate in the paper.
 	
-	motivate the choices i made 
 	
-	and list some observations i made
-	
-	further lsit what's actually implemented
-	
-	The proofs are not inteded to be elaborate ideas but rather just sketches of the main idea, all statements are rather trivial
+	If there is anything unclear let me know. 
+	Feel free to put anything you want to recycle into a paper draft.
+	(Sorry for not adding proofs, I had no time for that.)
 	
 	\section{Notation}
 	
@@ -132,7 +132,8 @@
 	
 	\section{Feasibility of Computing the Perfect Heuristics}
 	
-	TODO: standard argument that it is hard to compute the heuristic.
+	It should be obvious that computing the optimal heuristics is too hard. 
+	Here we formalize this observation.
 	
 	\begin{definition}
 		For any heuristic $h: \states \rightarrow \mathbb{R}$ the decision problem is:
@@ -142,10 +143,6 @@
 	\begin{theorem}
 		Computing $h^*$ is EXPTIME??? TODO
 	\end{theorem}
-	
-	\begin{proof}
-		TODO
-	\end{proof}
 	
 	
 	TODO:
@@ -165,7 +162,34 @@
 	
 	\section{Delete Relaxation Heuristics}
 	
-	TODO: delete relaxation is a common choice to make things tractable with heuristics ...
+	
+	So, we have seen that computing \optimalHeuristic and \optimalHeuristicSeq is too hard.
+	Therefore we want to derive a heuristic that is simpler to compute.
+	A standard step to head into this direction is to relax the task.
+	I.e. create a simpler version of the task that has a superset of solutions of the original task.
+	
+	The arguably most impactful relaxation of classical planning tasks is the delete relaxation BONET GEFFNER.
+ 	It removes all delete effects of actions to make the computations of plans tractable BYLANDER.
+	Within the delete relaxation there derived multiple heuristics.
+	The main examples are
+	HMAX HADD, 
+	LMCUT,
+	HFF,
+	HM
+	and 
+	H+ computation Helmert --- Fukunaga.
+	
+	
+	This set of heuristics is still highly relevant and competitive.
+	A good example is that the winner of the recent Agile track IPC 
+	DecStar 2023 ... uses HFF.
+	LAMA uses HFF ... .
+	
+	
+	Thus it seems reasonable to center our heuristic in the same promising setting.
+	We will see that this will further allow us to derive a efficient task representation.
+	
+	
 	
 	\begin{definition}
 		The delete relaxation of a planning task
@@ -189,18 +213,35 @@
 		denote the optimal heuristics within the delete relaxation.
 	\end{definition}
 	
-	\begin{theorem}
-		Computing $h^+$ is EXPTIME??? TODO
-	\end{theorem}
-	
 	
 	\section{Task Compilation}
 	
-	TODO: short intution what's done here
+	I will introduce a compilation that repairs a delete relaxed task.
+	The compilation is only capturing \addname repairs, as I will observe in the following that any \prename repair can be converted to an \addname repair.
+	(\delname repairs are non-existent in the delete relaxation.)
+	
+	\begin{corollary}
+		For any planning task \task:
+		$$\optimalHeuristicRel(\task) \leq \min_{\someAct \in \acts}(\arity{\pre{\someAct}}) + \arity{\preds}$$
+		bounds the optimal repair heuristic value within the delete relaxation.
+	\end{corollary}
+	
+	\begin{proposition}
+		Let \relaxedTask be a delete relaxed planning task with at least one applicable action in its initial state.
+		Let \fixPre be atomic precondition repairs to make the task solvable.
+		Then there is a set \fixAdd with $\arity{\fixPre} \leq \arity{\fixAdd}$ that makes the task solvable.
+	\end{proposition}
+	
+	For now I ignored the case if no action is applicable. 
+	We can not do this in the final paper.
+	But in this case we should just see which repairs make an action of the next schema applicable. 
+	This seems like an easier task to me and would probably prune many other repair options.
+	
+	So let's continue with the compilation for the case if there is at least one applicable action. 
+	In this case we can imply only care about add effect repairs, which we cover by extra actions in the following.
 	
 	\begin{definition}
 		
-		TODO: task compilation to only add elements 
 		$\task = (\preds, \objects, \acts, \init, \goal)$
 		is obtained as
 		$\task^{R} = (\preds, \objects, \acts^0 \cup \acts^{R}, \init, \goal)$
@@ -228,27 +269,29 @@
 	\end{definition}
 	
 	\begin{theorem}
-		Task trasnformation value matches if one applicable ...
-		
-		Otherwise 
-		TODO: if no action applicable in the beginning ... add reapirs can't help
+		$$\optimalHeuristicRel(\task) = \optimalHeuristic(\task^{R})$$
 	\end{theorem}
 	
+	\smallskip
+	
+	The choice for delete relaxation heuristics is very important to create a task representation one can approach with standard planning techniques.
+	The problem for a more general, unrelaxed,  encoding is that grounding would quickly become infeasible.
+	The state-of-the-art grounding procedure CITE HELMERT main advantage comes from only representing all delete relaxed reachable actions. 
+	Here all actions become delete relaxed reachable.
+	We need these actions in the actual task.
+	But for the delete relaxation HELMERT 09 and CORREA 2021 showed how to link the task representation to a Datalog representation which can be rewritten to be more space efficient and groundable by 
+	benefiting from multiple advancements in Datalog and ASP research.
+	CORREA 2023 backed this by thorughly analyzing these advancements w.r.t. to grounding.
+	The observation is that if ... stil infeasible, but representing the smaller transformed is possible even in larger scale tasks with many delete relaxed reachable actions.
 	
 	\section{Feasibility of Computing the Perfect Delete Relaxation Heuristics}
 	
 	
-	\begin{corollary}
-		For any planning task \task:
-		$$\optimalHeuristicRel(\task) \leq \min_{\someAct \in \acts}(\arity{\pre{\someAct}}) + \arity{\preds}$$
-		bounds the optimal repair heuristic value within the delete relaxation.
-	\end{corollary}
 	
-	\begin{proposition}
-		Let \relaxedTask be a delete relaxed planning task with at least one applicable action in its initial state.
-		Let \fixPre be atomic precondition repairs to make the task solvable.
-		Then there is a set \fixAdd with $\arity{\fixPre} \leq \arity{\fixAdd}$ that makes the task solvable.
-	\end{proposition}
+	\begin{theorem}
+		Computing $h^+$ is EXPTIME??? TODO
+	\end{theorem}
+	
 	
 	
 	\begin{theorem}
@@ -261,7 +304,12 @@
 	
 	\section{0-ary and 1-ary Relaxation}
 	
-	BOTH motivates we need more relaxation
+	So, 
+	we know that computing $h^{+}$ 
+	is generally still intractable and heuristic values are low.
+	A relaxation that will give us a polynomial time guarantee at the lifted level is the Unary Relxation.
+	Its drawback can be seen as simplifying too much leading to too low heuristic values.
+	Though, as heuristic values are super low here, it may be not as much of a bottleneck.
 	
 	\begin{definition}
 		The unary relaxation of a predicate $\somePred \in \preds$ is:
@@ -289,17 +337,37 @@
 		$$
 	\end{definition}
 	
+	Within this relaxation we can derive admissible heuristics.
+	
 	\begin{theorem}
-		TODO hmax, hadd, hff TODO 
+		$$
+			h^{max}(\unary{\task^{R}}) \leq \optimalHeuristic(\task)
+		$$
+		$$
+		h^{add}(\unary{\task^{R}}) \leq \optimalHeuristic(\task)
+		$$
+		$$
+		h^{lmcut}(\unary{\task^{R}}) \leq \optimalHeuristic(\task)
+		$$
 	\end{theorem}
 	
-	\begin{proof}
-		TODO ... link bsc thesis, unary paper
-	\end{proof}
+	And provide a polynomial time guarantee. LAUER 2020,2021
 	
+	\begin{theorem}
+		$
+		h^{max}(\unary{\task^{R}})
+		$
+		and
+		$
+		h^{add}(\unary{\task^{R}})
+		$
+		are computable in polynomial time w.r.t.\ the lifted representation.
+	\end{theorem}
 	
-	TODO: explain invention.
-	TODO: link lipovetzky paper
+	As the heuristic value is bounded by only the amount of predicates, I was curious what happens if we simply drop all parameters. 
+	(Which corresponds to considering predicates.)
+	A similar idea was considered by TODO LIPOVETZKY as a novelty measure for actions in a generalized planning context.
+	(It's probably not too related, but we should cite it.)
 	
 	\begin{definition}
 		The zeroary relaxation of an atom $\someAtom \in \atoms$ removes its arguments as:
@@ -316,21 +384,40 @@
 		$$
 	\end{definition}
 	
-	What's the motivation?
-	TODO: motivate grounding process 
+	As it is even simpler than the unary relaxation, we can derive the same properties.
+	
+	\begin{theorem}
+		$$
+		h^{max}(\zeroary{\task^{R}}) \leq \optimalHeuristic(\task)
+		$$
+		$$
+		h^{add}(\zeroary{\task^{R}}) \leq \optimalHeuristic(\task)
+		$$
+		$$
+		h^{lmcut}(\zeroary{\task^{R}}) \leq \optimalHeuristic(\task)
+		$$
+	\end{theorem}
+	
+	\begin{theorem}
+		$
+		h^{max}(\zeroary{\task^{R}})
+		$
+		and
+		$
+		h^{add}(\zeroary{\task^{R}})
+		$
+		are computable in polynomial time w.r.t.\ the lifted representation.
+	\end{theorem}
 	
 	\section{Approach}
 	
-	TODO: currently implemented is:
-	
-	
-	A lot of room for improvement -- Maybe we should add this to an issue:
-	\begin{itemize}
-		\item deep-copy:
-		\item TODO
-	\end{itemize}
+	I implemented an approach that delete relaxed the task and passes it onto a grounded or lifted planner.
+	You can decide if you want to add a unary or zeroary relaxation on top or just stick with the delete relaxation.
+	Supported heuristics are the commonly used delete relaxation heuristics $h^{max}$, $h^{add}$, $h^{FF}$, $h^{lmcut}$.
+	There are several technical details that can be improved to speed up the implementation.
+	Though, for now we should see if the heuristics provide any guidance at all.
 		
-	\section{Future Ideas}
+	\section{Future Ideas / Todos}
 	
 	\begin{itemize}
 		\item Could use a $\task^{m}$ construction that reintroduces (some) of the action effects
@@ -338,6 +425,8 @@
 		\item Could use h+ computations
 		\item 
 		TODO: what does this value correspond to minimal reachable landmarks? something like that? If yes, can we use LMCUT or the LMCUT like thing malte uses for h+?
+		\item Could improve a lot about the implementation
+		\item Need to handle case if no action is applicable
 	\end{itemize}
 	
 	
