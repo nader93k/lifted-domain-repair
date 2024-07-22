@@ -1,6 +1,7 @@
 from fd.pddl.pddl_file import parse_pddl_file
 from fd.pddl.tasks import parse_domain, parse_task
 
+
 class Domain:
     def __init__(self, domain_file):
         # Parse the domain file

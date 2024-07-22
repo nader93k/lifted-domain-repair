@@ -122,6 +122,10 @@ class PositivePlan(Plan):
     def __init__(self, plan_file):
         super().__init__(plan_file)
 
+    @classmethod
+    def from_string(cls, plan_string):
+        super().from_string(plan_string)
+
     def execute(self, domain: Domain, task: Task):
         # Execute a positive plan
         state = set()

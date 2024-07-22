@@ -88,7 +88,7 @@ def evaluate(root):
             "timeout",
             args.time_out,
             sys.executable,
-            "main.py",
+            "original_main.py",
             root,
             "--domain_file",
             "domain-modified.pddl",

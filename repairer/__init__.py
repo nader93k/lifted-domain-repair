@@ -71,3 +71,9 @@ class Repairer:
         with open(outfile, "w") as f:
             for r in self._repairs:
                 f.write(str(r) + "\n")
+
+    def get_repairs_string(self):
+        return "\n".join(str(r) for r in self._repairs)
+
+    def count_repair_lines(self):
+        return len(self._repairs)
