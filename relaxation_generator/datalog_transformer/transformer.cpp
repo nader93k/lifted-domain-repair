@@ -804,15 +804,20 @@ void add_repair_actions(DatalogTask &task) {
     std::unordered_set<PredicateRef> to_ignore;
     std::vector<Predicate> additional_predicates;
 
-    ull goal_pred = 0;
+    ull p_id = 0;
     for (auto &p : task.predicates) {
         if (p.name == GOAL_NAME) {
-            to_ignore.insert(goal_pred);
-            break;
+            to_ignore.insert(p_id);
         }
-        goal_pred++;
+        if (p.name == std::string("current_plan_step")) {
+            to_ignore.insert(p_id);
+        }
+        if (p.name == std::string("applied_plan_step")) {
+            to_ignore.insert(p_id);
+        }
+        p_id++;
     }
-    assert(to_ignore.size() == 1);
+    assert(to_ignore.size() == 3 || to_ignore.size() == 1);
 
     for (auto &[_, pred] : task.type_predicates) {
         to_ignore.insert(pred);
