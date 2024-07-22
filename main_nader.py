@@ -74,6 +74,6 @@ if __name__ == '__main__':
 
         action_sequence = None
         h = Heurisitc(h_name="G_HMAX", relaxation="none")
-        print("Initial Heuristic value was:", h.evaluate(domain, task, action_sequence))
+        print("Initial Heuristic value was:", h.evaluate(domain, task, white_plan_list[0]._steps))
 
         repairer.write(out_file)

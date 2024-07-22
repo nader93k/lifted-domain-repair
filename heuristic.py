@@ -1,6 +1,10 @@
 import subprocess
 from pathlib import Path
+from io import UnsupportedOperation
 
+from fd.pddl.effects import add_effect
+
+import fd.pddl.conditions
 from relaxation_generator.shortcuts import ground
 from fd.pddl.tasks import Task
 import copy
@@ -92,12 +96,10 @@ def unprotect(s):
             if new_attr not in d:
                 setattr(s, new_attr, value)
 
-def revert_to_fd_structure(_domain, _task):
+def revert_to_fd_structure(domain, task):
     """
     Return domain, task in fd.pddl format for given _domain, _task in model.domain format
     """
-    domain = copy.deepcopy(_domain)
-    task = copy.deepcopy(_task)
     unprotect(domain)
     setattr(domain, "functions", [])
     setattr(domain, "requirements", type('requirements', (object,), {'pddl': lambda self: ''})())
@@ -105,7 +107,6 @@ def revert_to_fd_structure(_domain, _task):
     setattr(task, "constants", domain._constants)
     setattr(task, "use_min_cost_metric", False)
     setattr(task, "domain_name", domain.domain_name)
-    return domain, task
 
 
 def print_domain(domain, path):
@@ -116,19 +117,95 @@ def print_problem(problem, path):
     with open(path, "w") as f:
         print(Task.problem(problem), file=f)
 
+def make_eff(eff):
+    res = []
+    eff = eff.normalize()
+    add_effect(eff, res)
+    assert len(res) == 1
+    return res[0]
+
+COUNTER_PRED = 'current_plan_step'
+NEXT_PRED = 'next_plan_step'
+APPLIED_PRED = 'applied_plan_step'
+NUM_PAR = '?next_plan_step_num'
+make_num = lambda i: f"n{i}"
+to_eff = lambda lit: make_eff(fd.pddl.effects.SimpleEffect(lit))
+
+def add_to_eff(atom, action):
+    action.effects.append(to_eff(atom))
+
+def add_to_pre(atom, action):
+    pre = action.precondition
+    if type(pre) == fd.pddl.conditions.Conjunction:
+        pre.parts = tuple(list(pre.parts) + [atom]) # verbose
+    else:
+        raise UnsupportedOperation(f"type {type(pre)} not supported yet")
+
+def remap_vars_condition(pre, var_remap):
+    if type(pre) == fd.pddl.conditions.Conjunction:
+        for cond in pre.parts:
+            remap_vars_condition(cond, var_remap)
+    elif issubclass(type(pre), fd.pddl.conditions.Literal):
+        pre.args = tuple(arg if arg not in var_remap else var_remap[arg] for arg in pre.args)
+    else:
+        raise UnsupportedOperation(f"type {type(pre)} not supported yet")
+
+def remap_vars_effect(effs, var_remap):
+    for eff in effs:
+        assert type(eff.condition) == fd.pddl.conditions.Truth or type(eff.condition) == fd.pddl.conditions.Falsity, "Conditional effects not supported yet"
+        remap_vars_condition(eff.literal, var_remap)
+def remap_vars(action, var_remap):
+    remap_vars_condition(action.precondition, var_remap)
+    remap_vars_effect(action.effects, var_remap)
+
+def integrate_action_sequence(domain, task, action_sequence):
+    old_actions = domain._actions
+    name_to_action = dict((action.name, action) for action in old_actions)
+
+    domain._constants += [fd.pddl.pddl_types.TypedObject(make_num(i), 'object') for i in range(len(action_sequence)+1)]
+
+    # copy action schema per plan step
+    new_actions = []
+    for i, action_step in enumerate(action_sequence):
+        action_name = action_step[0]
+        action_constants = [(obj, j) for j, obj in enumerate(action_step[1:]) if obj[0] != '?']
+
+        new_action = copy.deepcopy(name_to_action[action_name]) # verbose
+        var_remap = dict((new_action.parameters[j], obj) for obj, j in action_constants)
+        remap_vars(new_action, var_remap)
+
+        # conditions to increase counter
+        add_to_pre(fd.pddl.conditions.Atom(COUNTER_PRED, [make_num(i)]), new_action)
+
+        add_to_eff(fd.pddl.conditions.Atom(COUNTER_PRED, [make_num(i+1)]), new_action)
+        add_to_eff(fd.pddl.conditions.Atom(APPLIED_PRED, [make_num(i)]), new_action)
+        add_to_eff(fd.pddl.conditions.NegatedAtom(COUNTER_PRED, [make_num(i)]), new_action)
+
+        new_actions.append(new_action)
+
+    domain._actions = new_actions
+    task._goal = fd.pddl.conditions.Conjunction([
+        fd.pddl.conditions.Atom(COUNTER_PRED, [make_num(i)]) for i in range(len(action_sequence))
+    ])
+
 class Heurisitc:
     def __init__(self, h_name, relaxation):
         self.h_name = h_name
         self.relaxation = relaxation
 
-    def evaluate(self, _domain, _task, action_sequence):
+    def evaluate(self, __domain, __task, action_sequence):
+        domain = copy.deepcopy(__domain) # verbose
+        task = copy.deepcopy(__task) # verbose
+
+        integrate_action_sequence(domain, task, action_sequence)
+
         # Here we revert Songtuans datastructure to match the original FD translator format again
         # This allows us to use the provided printout functions of the translator
         # To pass it on to another program as .pddl
         # ---
         # Copying here is definetly a big performance bottle neck
         # But we ignore this for now
-        domain, task = revert_to_fd_structure(_domain, _task)
+        revert_to_fd_structure(domain, task)
         print_domain(domain, INPUT_MODEL_DOMAIN)
         print_problem(task, INPUT_MODEL_PROBLEM)
 
