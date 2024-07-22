@@ -1,6 +1,7 @@
 # astar_algorithm.py
 import heapq
 
+
 class AStar:
     def __init__(self, initial_node):
         self.initial_node = initial_node
