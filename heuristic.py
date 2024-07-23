@@ -342,6 +342,7 @@ class Heurisitc:
         val = self.get_val()
 
         if val != -1:
-            return (0, val)
+            return val #TODO: (0, val) would be better
         else: # returned infinity == add repair is not sufficient
-            return (self.re_run(__domain, __task, action_sequence), 0)
+            print("No single action was applicable, rerunning to precondition repair.")
+            return self.re_run(__domain, __task, action_sequence) #TODO: (self.re_run(__domain, __task, action_sequence), 0)
