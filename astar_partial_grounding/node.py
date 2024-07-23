@@ -88,13 +88,6 @@ class Node:
 
         neighbours = []
         for grounding in possible_groundings:
-            next_domain = 1
-            new_task = 2
-            white_ground_action_sequence = self.white_ground_action_sequence + '\n' + grounding
-            white_lifted_action_sequence = self.white_lifted_action_sequence[1:]
-            parent = self
-            is_initial_node = False
-
             next_node = Node(
                 white_ground_action_sequence=self.white_ground_action_sequence + '\n' + grounding,
                 white_lifted_action_sequence=self.white_lifted_action_sequence[1:],
