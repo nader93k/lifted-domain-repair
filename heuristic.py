@@ -1,4 +1,5 @@
 import collections
+import shutil
 import subprocess
 from pathlib import Path
 from io import UnsupportedOperation
@@ -22,6 +23,8 @@ INPUT_MODEL_DOMAIN = "domain-in.pddl"
 INPUT_MODEL_PROBLEM = "problem-in.pddl"
 OUTPUT_MODEL_DOMAIN = "domain-out.pddl"
 OUTPUT_MODEL_PROBLEM = "problem-out.pddl"
+OLD_OUTPUT_MODEL_DOMAIN = "old-domain-out.pddl"
+OLD_OUTPUT_MODEL_PROBLEM = "old-problem-out.pddl"
 DATALOG_THEORY = "datalog.theory"
 DATALOG_MODEL = "datalog.model"
 GROUNDED_OUTPUT_SAS = "out.sas"
@@ -194,6 +197,7 @@ def integrate_action_sequence(domain, task, action_sequence):
         new_action = copy.deepcopy(name_to_action[action_name]) # verbose
         var_remap = dict((new_action.parameters[j].name, obj) for obj, j in action_constants)
         remap_vars(new_action, var_remap)
+        new_action.name += f"-step-{i}"
 
         # conditions to increase counter
         add_to_pre(fd.pddl.conditions.Atom(COUNTER_PRED, [make_num(i)]), new_action)
@@ -204,9 +208,11 @@ def integrate_action_sequence(domain, task, action_sequence):
 
         new_actions.append(new_action)
 
+    task._init.append(fd.pddl.conditions.Atom(COUNTER_PRED, [make_num(0)]))
+
     domain._actions = new_actions
     task._goal = fd.pddl.conditions.Conjunction([
-        fd.pddl.conditions.Atom(COUNTER_PRED, [make_num(i)]) for i in range(len(action_sequence))
+        fd.pddl.conditions.Atom(APPLIED_PRED, [make_num(i)]) for i in range(len(action_sequence))
     ])
 
 def integrate_pre_repair(domain, task, ref_action):
@@ -295,6 +301,9 @@ class Heurisitc:
         return val
 
     def re_run(self, __domain, __task, action_sequence):
+        shutil.copyfile(OUTPUT_MODEL_DOMAIN, OLD_OUTPUT_MODEL_DOMAIN)
+        shutil.copyfile(OUTPUT_MODEL_PROBLEM, OLD_OUTPUT_MODEL_PROBLEM)
+
         domain = copy.deepcopy(__domain) # verbose
         task = copy.deepcopy(__task) # verbose
 
