@@ -192,7 +192,7 @@ def integrate_action_sequence(domain, task, action_sequence):
         action_constants = [(obj, j) for j, obj in enumerate(action_step[1:]) if obj[0] != '?']
 
         new_action = copy.deepcopy(name_to_action[action_name]) # verbose
-        var_remap = dict((new_action.parameters[j], obj) for obj, j in action_constants)
+        var_remap = dict((new_action.parameters[j].name, obj) for obj, j in action_constants)
         remap_vars(new_action, var_remap)
 
         # conditions to increase counter
@@ -216,12 +216,11 @@ def integrate_pre_repair(domain, task, ref_action):
     action = domain._actions[0]
     action_constants = [(obj, j) for j, obj in enumerate(ref_action[1:]) if obj[0] != '?']
 
-    var_remap = dict((action.parameters[j], obj) for obj, j in action_constants)
+    var_remap = dict((action.parameters[j].name, obj) for obj, j in action_constants)
     remap_vars(action, var_remap)
 
     duplications = collections.defaultdict(lambda: 0)
     duplicate_pre(action.precondition, duplications)
-    domain._predicates.append(fd.pddl.predicates.Predicate(GOAL_PRED, []))
 
     olds_preds = dict((pred.name, pred) for pred in domain.predicates)
     old_init = collections.defaultdict(lambda: [])
@@ -237,7 +236,6 @@ def integrate_pre_repair(domain, task, ref_action):
             new_name = make_copy_pred(new_pred.name, i)
             new_pred.name = new_name
             new_preds.append(new_pred)
-            domain._predicates.append(fd.pddl.predicates.Predicate(new_name, []))
 
             for atom in old_init[pred.name]:
                 new_atom = copy.deepcopy(atom)
@@ -245,6 +243,7 @@ def integrate_pre_repair(domain, task, ref_action):
                 new_init.append(new_atom)
 
     domain._predicates = new_preds
+    domain._predicates.append(fd.pddl.predicates.Predicate(GOAL_PRED, []))
     task._init = new_init
 
     # set effect to goal pred
@@ -253,7 +252,7 @@ def integrate_pre_repair(domain, task, ref_action):
 
     # set goal to singlet goal pred
     task._goal = fd.pddl.conditions.Conjunction([
-        fd.pddl.conditions.NegatedAtom(GOAL_PRED, [])
+        fd.pddl.conditions.Atom(GOAL_PRED, [])
     ])
 
 class Heurisitc:
@@ -307,9 +306,11 @@ class Heurisitc:
 
         # hack to evaluate this with h_add
         old_h = self.h_name
-        self.h_name = self.h_name[:2] + "_HADD"
+        self.h_name = self.h_name[:2] + "HADD"
         val = self.get_val()
         self.h_name = old_h
+
+        assert val > 0, "Since last value was inf this needs to be > 0"
 
         return val
 

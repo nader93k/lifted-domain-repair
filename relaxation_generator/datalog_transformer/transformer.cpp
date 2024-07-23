@@ -815,9 +815,12 @@ void add_repair_actions(DatalogTask &task) {
         if (p.name == std::string("applied_plan_step")) {
             to_ignore.insert(p_id);
         }
+        if (p.name == std::string("final___goal")) {
+            to_ignore.insert(p_id);
+        }
         p_id++;
     }
-    assert(to_ignore.size() == 3 || to_ignore.size() == 1);
+    assert(to_ignore.size() == 3 || to_ignore.size() == 2);
 
     for (auto &[_, pred] : task.type_predicates) {
         to_ignore.insert(pred);
@@ -955,10 +958,8 @@ void print_domain(DatalogTask &task) {
     std::unordered_set<ull> collected_constants;
     collect_constants(task, collected_constants);
     std::cout << "  (:constants\n";
-    ull o = 0;
-    for (const auto& constant : collected_constants) {
-        std::cout << "    " << task.objects[o].name << " - object\n";
-        o++;
+    for (auto constant : collected_constants) {
+        std::cout << "    " << task.objects[constant].name << " - object\n";
     }
     std::cout << "  )\n\n";
 
