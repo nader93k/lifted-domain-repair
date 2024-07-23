@@ -1,7 +1,7 @@
 # Import necessary modules and classes
 import os
 from model.plan import *
-from astar_partial_grounding import all_action_groundings, AStar, Node
+from astar_partial_grounding import all_action_groundings, read_action_names, AStar, Node
 
 
 input_directory = r"./input/block_world/AAAI25-example1"
@@ -21,23 +21,24 @@ out_file = os.path.join(output_directory, "repairs")
 if __name__ == "__main__":
     domain = Domain(domain_file)
     task = Task(task_file)
+    lifted_action_names = read_action_names(white_plan_lifted_file)
     action_grounding_dict = all_action_groundings(white_plan_lifted_file, domain, task)
 
-    print(action_grounding_dict)
     # # test creating a plan from a string
     # with open(white_plan_grounded_file, 'r') as f:
     #     test_string = f.read()
     # test_plan = [PositivePlan(Plan.from_string(test_string))]
 
-
     Node.set_action_grounding_dict(action_grounding_dict)
 
     # Create the initial node
     initial_node = Node(
-        planning_domain=...,
-        planning_task=...,
-        ground_action_sequence=[],
-        lifted_action_sequence=[]
+        planning_domain=domain,
+        planning_task=task,
+        white_ground_action_sequence=[],
+        white_lifted_action_sequence=lifted_action_names,
+        parent=None,
+        is_initial_node=True
     )
 
     # Run A* algorithm

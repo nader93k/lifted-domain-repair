@@ -21,19 +21,23 @@ out_file = os.path.join(output_directory, "repairs")
 
 
 if __name__ == '__main__':
-    domain = Domain(domain_file)
-    task = Task(task_file)
-    white_grounded_plan_list = [PositivePlan(white_plan_grounded_file)]
+    with open(domain_file, 'r') as f:
+        file_content = f.read()
+        domain = Domain(file_content)
+
+    with open(task_file, 'r') as f:
+        file_content = f.read()
+        task = Task(file_content)
 
     with open(white_plan_grounded_file, 'r') as f:
         test_string = f.read()
 
-    test_string = ''
-    test_plan = [PositivePlan.from_string(test_string)]
+    # test_string = ''
+    test_plan = [PositivePlan(test_string)]
 
     repairer = Repairer(
         domain
-        , [(task, white_grounded_plan_list)]
+        , [(task, test_plan)]
     )
 
     repairer.write(out_file)

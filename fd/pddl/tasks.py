@@ -197,6 +197,7 @@ def parse_domain(domain_pddl):
     yield the_actions
     yield the_axioms
 
+
 def parse_task(task_pddl):
     iterator = iter(task_pddl)
 

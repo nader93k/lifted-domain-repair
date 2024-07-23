@@ -1,4 +1,4 @@
-def _read_action_names(file_path):
+def read_action_names(file_path):
     result = []
     with open(file_path, 'r') as file:
         for line in file:
@@ -35,7 +35,7 @@ def _one_action_groundings(action, domain, task):
     return possible_groundings
 
 def all_action_groundings(file_path, domain, task):
-    white_action_names = _read_action_names(file_path)
+    white_action_names = read_action_names(file_path)
 
     all_groundings = {}
     for name in white_action_names:

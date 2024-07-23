@@ -5,6 +5,7 @@ from utils import *
 
 from typing import List, Tuple, Set
 
+
 def applicable(action, state, var_mapping):
     # Check if an action is applicable in a given state
     literals = (action.precondition,)
@@ -19,14 +20,18 @@ def applicable(action, state, var_mapping):
             return atom.negate()  # return a negated atom to indicate that it shall be deleted
     return None
 
+
 def check_goal(state, goal):
     # Check if a goal is satisfied in a given state
+    if goal is None:
+        return None
     for atom in goal.parts:
         if (not atom.negated) and (atom not in state):
             return atom
         if atom.negated and (atom in state):
             return atom
     return None
+
 
 def next_state(action, var_mapping, current):
     # Compute the next state after applying an action
@@ -44,28 +49,17 @@ def next_state(action, var_mapping, current):
     state = state.union(pos_effs)
     return state
 
+
 class Plan:
-    def __init__(self, plan_file):
+    def __init__(self, plan_string):
         # Initialize a plan from a file
+        self.plan_string = plan_string
         self._steps: List[Tuple] = []
         self._var_mapping = []
-        with open(plan_file, "r") as f:
-            self._parse_plan(f.readlines())
+        self._parse_plan(plan_string.split('\n'))
         self._succeed = False
         self._pos = None
         self._atom = None
-
-    @classmethod
-    def from_string(cls, plan_string):
-        # Create a Plan object from a string
-        plan = cls.__new__(cls)
-        plan._steps: List[Tuple] = []
-        plan._var_mapping = []
-        plan._parse_plan(plan_string.split('\n'))
-        plan._succeed = False
-        plan._pos = None
-        plan._atom = None
-        return plan
 
     def _parse_plan(self, lines):
         for line in lines:
@@ -118,13 +112,10 @@ class Plan:
     def compute_conflict(self, domain: Domain):
         pass
 
-class PositivePlan(Plan):
-    def __init__(self, plan_file):
-        super().__init__(plan_file)
 
-    @classmethod
-    def from_string(cls, plan_string):
-        super().from_string(plan_string)
+class PositivePlan(Plan):
+    def __init__(self, plan_string):
+        super().__init__(plan_string)
 
     def execute(self, domain: Domain, task: Task):
         # Execute a positive plan

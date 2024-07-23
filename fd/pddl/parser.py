@@ -1,5 +1,6 @@
 __all__ = ["ParseError", "parse_nested_list"]
 
+
 class ParseError(Exception):
     pass
 

@@ -1,17 +1,18 @@
-from fd.pddl.pddl_file import parse_pddl_file
+from fd.pddl.parser import parse_nested_list
 from fd.pddl.tasks import parse_domain, parse_task
 
 
 class Domain:
-    def __init__(self, domain_file):
-        # Parse the domain file
-        parsed_file = parse_pddl_file("domain", domain_file)
+    def __init__(self, domain_string):
+        # Parse the domain string
+        self.domain_string = domain_string.strip()
+        parsed_domain = parse_nested_list(self.domain_string.splitlines())
         # Extract domain components
         (self._domain_name,
          self._domain_requirements,
          self._types, self._constants,
          self._predicates, _,
-         self._actions, _) = parse_domain(parsed_file)
+         self._actions, _) = parse_domain(parsed_domain)
         # Create a dictionary of constants for quick lookup
         self._constant_dict = {o.name: o for o in self._constants}
         # Initialize sets and dictionaries for repairs and actions
@@ -79,13 +80,14 @@ class Domain:
 
 
 class Task:
-    def __init__(self, task_file):
-        # Parse the task file
-        parsed_file = parse_pddl_file("task", task_file)
+    def __init__(self, task_string):
+        self.task_string = task_string.strip()
+        parsed_task = parse_nested_list(self.task_string.splitlines())
+
         # Extract task components
         (self._task_name, self._task_domain_name,
          self._task_requirements, self._objects,
-         self._init, self._goal, _) = parse_task(parsed_file)
+         self._init, self._goal, _) = parse_task(parsed_task)
         # Create a dictionary of objects for quick lookup
         self._obj_dict = {o.name: o for o in self._objects}
 
@@ -94,6 +96,13 @@ class Task:
         if name not in self._obj_dict:
             return None
         return self._obj_dict[name]
+
+    def copy(self):
+        return Task(self.task_string)
+
+    def set_goal_empty(self):
+        self._goal = None
+
 
     # Property getters
     @property
