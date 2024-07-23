@@ -41,7 +41,7 @@ class Node:
             raise ValueError("Action grounding dicts must be set before creating instances.")
 
         if is_initial_node:
-            assert white_ground_action_sequence is None and parent is None
+            assert white_ground_action_sequence == '' and parent is None
             # These values are arbitrary numbers and won't affect the results.
             self.g_cost = 0
             self.h_cost = 0
@@ -103,8 +103,14 @@ class Node:
 
     def __eq__(self, other):
         raise NotImplementedError("This method has not been implemented yet")
+        if not isinstance(other, Node):
+            return False
         return (self.white_ground_action_sequence == other.white_ground_action_sequence
                 and self.white_lifted_action_sequence == other.white_lifted_action_sequence)
 
     def __lt__(self, other):
         return self.f_cost < other.f_cost
+
+    def __hash__(self):
+        # todo : review this
+        return hash((self.white_ground_action_sequence, self.white_lifted_action_sequence))
