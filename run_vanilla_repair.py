@@ -30,14 +30,15 @@ if __name__ == '__main__':
         task = Task(file_content)
 
     with open(white_plan_grounded_file, 'r') as f:
-        test_string = f.read()
+        ground_action_sequence = f.read()
+        ground_action_sequence = ground_action_sequence.split('\n')
 
     # test_string = ''
-    test_plan = [PositivePlan(test_string)]
+    plan = [PositivePlan(ground_action_sequence)]
 
     repairer = Repairer(
         domain
-        , [(task, test_plan)]
+        , [(task, plan)]
     )
 
     repairer.write(out_file)

@@ -1,5 +1,4 @@
-l = [1]
+l = ["hello", "bello", "jello"]
 
-s = l[1:]
 
-print(s)
+print(l)

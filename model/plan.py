@@ -51,12 +51,12 @@ def next_state(action, var_mapping, current):
 
 
 class Plan:
-    def __init__(self, plan_string):
+    def __init__(self, action_sequence):
         # Initialize a plan from a file
-        self.plan_string = plan_string
+        self.action_sequence = action_sequence
         self._steps: List[Tuple] = []
         self._var_mapping = []
-        self._parse_plan(plan_string.split('\n'))
+        self._parse_plan(action_sequence)
         self._succeed = False
         self._pos = None
         self._atom = None
@@ -114,8 +114,8 @@ class Plan:
 
 
 class PositivePlan(Plan):
-    def __init__(self, plan_string):
-        super().__init__(plan_string)
+    def __init__(self, action_sequence):
+        super().__init__(action_sequence)
 
     def execute(self, domain: Domain, task: Task):
         # Execute a positive plan

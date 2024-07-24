@@ -1,10 +1,12 @@
 # astar_algorithm.py
 import heapq
+import logging
 
 
 class AStar:
     def __init__(self, initial_node):
         self.initial_node = initial_node
+        self.logger = logging.getLogger(f"{__name__}.{self.__class__.__name__}")
 
     def find_path(self):
         open_list = []
@@ -12,7 +14,9 @@ class AStar:
 
         heapq.heappush(open_list, (self.initial_node.f_cost, self.initial_node))
 
+        iteration = 0
         while open_list:
+            iteration = iteration + 1
             current_node = heapq.heappop(open_list)[1]
 
             if current_node.is_goal():
@@ -32,6 +36,10 @@ class AStar:
                     continue
 
                 neighbor.parent = current_node
+
+            self.logger.info(f"\nA* iteration {iteration}.\n")
+            self.logger.info(f"\nCurrent Node: {current_node}.\n")
+            self.logger.debug(f"Open list:\n" + str(open_list) + f"\nClose list:\n" + str(closed_set))
 
         return None, None  # No path found
 

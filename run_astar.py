@@ -1,5 +1,5 @@
 # Import necessary modules and classes
-import os
+import os, logging
 from model.plan import *
 from astar_partial_grounding import all_action_groundings, read_action_names, AStar, Node
 
@@ -19,6 +19,13 @@ out_file = os.path.join(output_directory, "repairs")
 
 
 if __name__ == "__main__":
+    logging.basicConfig(
+        filename='./output/log.txt',
+        filemode='w',
+        level=logging.INFO,
+        format='%(message)s'
+    )
+
     with open(domain_file, 'r') as f:
         file_content = f.read()
         domain = Domain(file_content)
@@ -28,12 +35,8 @@ if __name__ == "__main__":
         task = Task(file_content)
 
     lifted_action_names = read_action_names(white_plan_lifted_file)
-    action_grounding_dict = all_action_groundings(white_plan_lifted_file, domain, task)
 
-    # # test creating a plan from a string
-    # with open(white_plan_grounded_file, 'r') as f:
-    #     test_string = f.read()
-    # test_plan = [PositivePlan(Plan.from_string(test_string))]
+    action_grounding_dict = all_action_groundings(white_plan_lifted_file, domain, task)
 
     Node.set_action_grounding_dict(action_grounding_dict)
     Node.set_planning_domain(domain)
@@ -41,8 +44,8 @@ if __name__ == "__main__":
 
     # Create the initial node
     initial_node = Node(
-        white_ground_action_sequence='',
-        white_lifted_action_sequence=lifted_action_names,
+        lifted_action_sequence=lifted_action_names,
+        ground_action_sequence=[],
         parent=None,
         is_initial_node=True
     )
@@ -50,10 +53,11 @@ if __name__ == "__main__":
     # Run A* algorithm
     astar = AStar(initial_node)
     path, goal_node = astar.find_path()
+    print("Goal found:")
+    print(goal_node.ground_action_sequence)
 
-    if path:
-        print("Path found!")
-        for node in path:
-            print(node.white_ground_action_sequence)
-    else:
-        print("No path found.")
+
+# # test creating a plan from a string
+# with open(white_plan_grounded_file, 'r') as f:
+#     test_string = f.read()
+# test_plan = [PositivePlan(Plan.from_string(test_string))]
