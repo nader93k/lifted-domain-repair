@@ -663,9 +663,9 @@ def main():
     if options.dump_pddl:
         print(f"Dumping pddl task to {DUMP_DOMAIN} {DUMP_PROBLEM}")
         with open(DUMP_DOMAIN, "w") as f:
-            print(task.domain(), f)
+            print(task.domain(), file=f)
         with open(DUMP_PROBLEM, "w") as f:
-            print(task.problem(), f)
+            print(task.problem(), file=f)
         exit(0)
 
     sas_task = pddl_to_sas(task)
