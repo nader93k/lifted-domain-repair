@@ -627,11 +627,19 @@ def parse_options():
     optparser.add_option(
         "--force-old-python", action="store_true",
         help="Allow running the translator with slow Python 2.6")
+    optparser.add_option(
+        "--dump-pddl", action="store_true",
+        help="Dump .pddl instead .sas")
     options, args = optparser.parse_args()
     # Remove the parsed options from sys.argv
     sys.argv = [sys.argv[0]] + args
     return options, args
 
+DUMP_DOMAIN = "dump_domain.pddl"
+DUMP_PROBLEM = "dump_problem.pddl"
+
+def delete_relax(task):
+    pass
 
 def main():
     options, args = parse_options()
@@ -651,6 +659,14 @@ def main():
             for index, effect in reversed(list(enumerate(action.effects))):
                 if effect.literal.negated:
                     del action.effects[index]
+
+    if options.dump_pddl:
+        print(f"Dumping pddl task to {DUMP_DOMAIN} {DUMP_PROBLEM}")
+        with open(DUMP_DOMAIN, "w") as f:
+            print(task.domain(), f)
+        with open(DUMP_PROBLEM, "w") as f:
+            print(task.problem(), f)
+        exit(0)
 
     sas_task = pddl_to_sas(task)
     dump_statistics(sas_task)
