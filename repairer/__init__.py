@@ -4,9 +4,12 @@ import logging
 
 
 class Repairer:
-    def __init__(self,
-                 domain: Domain,
-                 instances: List[Tuple[Task, List[Plan]]]):
+    def __init__(self):
+        self._repairs = None
+
+    def repair(self
+               , domain: Domain
+               , instances: List[Tuple[Task, List[Plan]]]):
         # initialize the plans
         for instance in instances:
             task, plans = instance
@@ -20,6 +23,11 @@ class Repairer:
         # cached = []
         while True:
             candidate = hitter.top()
+            # try:
+            #     candidate = hitter.top()
+            # except AttributeError:
+            #     print("Error: 'FM' object has no attribute 'model'. Make sure the solver has been run and a model is available.")
+            #     x = 1
             candidate = set(_idx_to_repair[x] for x in candidate)
             logging.debug("printing candidate repairs:")
             for c in candidate:

@@ -192,6 +192,7 @@ class PositivePlan(Plan):
                     conflict.add(r)
         return conflict
 
+
 class NegativePlan(PositivePlan):
     def __init__(self, plan_file, idx):
         super().__init__(plan_file)

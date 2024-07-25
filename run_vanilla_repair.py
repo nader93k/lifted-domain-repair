@@ -36,7 +36,8 @@ if __name__ == '__main__':
     # test_string = ''
     plan = [PositivePlan(ground_action_sequence)]
 
-    repairer = Repairer(
+    repairer = Repairer()
+    repairer.repair(
         domain
         , [(task, plan)]
     )

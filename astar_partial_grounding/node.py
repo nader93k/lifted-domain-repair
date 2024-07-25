@@ -4,6 +4,12 @@ from typing import List, Optional
 import logging
 
 
+# Delete This
+from hitter.maxsat import *
+from model.plan import *
+
+
+
 class Node:
     action_grounding_dict: dict = None
     planning_domain = None
@@ -67,11 +73,22 @@ class Node:
         # If current version is needed we have to take a copy.
 
         planning_task = self.planning_task.copy()
-        if len(self.lifted_action_sequence) != 0:
-            planning_task.set_goal_empty()
+        # if len(self.lifted_action_sequence) != 0:
+        #     planning_task.set_goal_empty()
         plan = [PositivePlan(self.ground_action_sequence)]
 
-        repairer = Repairer(
+        # self.logger.debug(f"Planning domain: {self.planning_domain.action_sequence}\n")
+        self.logger.info(f"Task: {planning_task}\n")
+        self.logger.info(f"Plan: {plan[0].action_sequence}\n")
+
+        if bool(planning_task._goal):
+            x = 1
+
+
+
+        repairer = Repairer()
+
+        repairer.repair(
             self.planning_domain
             , [(planning_task, plan)]
         )

@@ -1,5 +1,6 @@
 from fd.pddl.parser import parse_nested_list
 from fd.pddl.tasks import parse_domain, parse_task
+from fd.pddl.conditions import Condition
 
 
 class Domain:
@@ -101,7 +102,7 @@ class Task:
         return Task(self.task_string)
 
     def set_goal_empty(self):
-        self._goal = None
+        self._goal = Condition(tuple())
 
 
     # Property getters
@@ -116,3 +117,9 @@ class Task:
     @property
     def objects(self):
         return self._objects
+
+    def __repr__(self):
+        return f"Task(name='{self._task_name}', domain='{self._task_domain_name}', objects={len(self._objects)}, init={bool(self._init)}, goal={bool(self._goal)})"
+
+    def __str__(self):
+        return self.__repr__()
