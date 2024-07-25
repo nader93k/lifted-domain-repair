@@ -1,6 +1,7 @@
 from hitter.maxsat import *
 from model.plan import *
 import logging
+import pprint as pp
 
 
 class Repairer:
@@ -22,6 +23,7 @@ class Repairer:
         # cached_conflicts = []
         # cached = []
         while True:
+            print(10)
             candidate = hitter.top()
             # try:
             #     candidate = hitter.top()
@@ -57,8 +59,7 @@ class Repairer:
                                 idx = len(_repair_to_idx) + 1
                                 _repair_to_idx[r] = idx
                                 _idx_to_repair[idx] = r
-                                print('conflict1:')
-                                print(conflict)
+                                print('conflict in-loop:', conflict)
                                 hitter.add_conflict([-idx], 1)
                             if r.condition:
                                 conflict.append(-_repair_to_idx[r])
@@ -67,8 +68,9 @@ class Repairer:
                             msg = str(r) + " condition: {} -- {}".format(
                                     r.condition, _repair_to_idx[r])
                             logging.debug(msg)
-                        print('conflict2:')
-                        print(conflict)
+                        print('conflict out-loop:', conflict)
+                        print(">> id to repair ")
+                        pp.pp(_idx_to_repair)
                         hitter.add_conflict(conflict)
                     logging.debug("end conflict for the {}th plan".format(i))
             if domain.repaired:

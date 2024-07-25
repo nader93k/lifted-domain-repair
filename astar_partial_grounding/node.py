@@ -84,7 +84,9 @@ class Node:
         if bool(planning_task._goal):
             x = 1
 
-
+        print("Repairing Node: ", self)
+        print(self.planning_domain)
+        print(planning_task)
 
         repairer = Repairer()
 
