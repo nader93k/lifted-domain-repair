@@ -142,8 +142,11 @@ class PositivePlan(Plan):
 
     def compute_conflict(self, domain: Domain) -> Set[Repair]:
         # Compute conflicts for a positive plan
+        x = 1
         conflict = set()
         if self._pos < len(self._steps):
+            # if we are repairing to reach the goal then self._pos == len(self.steps) and this block won't run
+            # this block repairs (removes) preconditions of an action
             name = self._steps[self._pos][0]
             action = domain.get_action(name)
             prec = match_existing_prec(
