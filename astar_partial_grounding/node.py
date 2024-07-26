@@ -75,7 +75,7 @@ class Node:
         planning_task = self.planning_task.copy()
         # if len(self.lifted_action_sequence) != 0:
         #     planning_task.set_goal_empty()
-        plan = [PositivePlan(self.ground_action_sequence)]
+        plan = [PositivePlan(self.ground_action_sequence + [''])]
 
         # self.logger.debug(f"Planning domain: {self.planning_domain.action_sequence}\n")
         self.logger.info(f"Task: {planning_task}\n")
@@ -83,10 +83,6 @@ class Node:
 
         if bool(planning_task._goal):
             x = 1
-
-        print("Repairing Node: ", self)
-        print(self.planning_domain)
-        print(planning_task)
 
         repairer = Repairer()
 
