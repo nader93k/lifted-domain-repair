@@ -35,6 +35,8 @@ class Repairer:
                     if not succeed:
                         domain.repaired = False
                         conf = plan.compute_conflict(domain)
+                        if len(conf) == 0:
+                            return False
                         print('conf', conf)
                         confs.add(tuple(conf))
                         conflict = []
@@ -53,7 +55,7 @@ class Repairer:
                         hitter.add_conflict(conflict)
             if domain.repaired:
                 self._repairs = candidate
-                break
+                return True
 
     def print_repairs(self):
         for r in self._repairs:

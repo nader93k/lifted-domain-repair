@@ -37,13 +37,12 @@ if __name__ == '__main__':
     plan = [PositivePlan(ground_action_sequence)]
 
     repairer = Repairer()
-    repairer.repair(
-        domain
-        , [(task, plan)]
-    )
 
-    repairer.write(out_file)
-
-    s = repairer.get_repairs_string()
+    if(repairer.repair(domain,[(task, plan)])):
+        repairer.write(out_file)
+        s = repairer.get_repairs_string()
+        print(s)
+    else:
+        print("Problem is unsolvable")
 
     x = 1
