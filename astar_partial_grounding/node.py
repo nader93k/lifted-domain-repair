@@ -49,15 +49,14 @@ class Node:
         if self.planning_task is None:
             raise ValueError("Action grounding dicts must be set before creating instances.")
 
-        self.initial_node = is_initial_node
+        self.is_initial_node = is_initial_node
         self.ground_action_sequence = ground_action_sequence
         self.lifted_action_sequence = lifted_action_sequence
         self.parent = parent
 
         self.logger = logging.getLogger(f"{__name__}.{self.__class__.__name__}")
 
-        if is_initial_node:
-            assert len(ground_action_sequence) == 0 and parent is None
+        if len(ground_action_sequence) == 0:
             # todo: review the claim below
             # These values are arbitrary numbers and won't affect the results.
             self.g_cost = 0

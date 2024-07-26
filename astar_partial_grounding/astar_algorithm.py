@@ -19,6 +19,8 @@ class AStar:
             iteration = iteration + 1
             current_node = heapq.heappop(open_list)[1]
 
+            self.logger.debug(f"A* iteration {iteration}, current node:\n{current_node}")
+
             if current_node.is_goal():
                 return self.reconstruct_path(current_node), current_node
 

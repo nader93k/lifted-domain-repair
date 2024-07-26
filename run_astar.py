@@ -22,7 +22,7 @@ if __name__ == "__main__":
     logging.basicConfig(
         filename='./output/log.txt',
         filemode='w',
-        level=logging.INFO,
+        level=logging.DEBUG,
         format='%(message)s'
     )
 
@@ -34,6 +34,10 @@ if __name__ == "__main__":
         file_content = f.read()
         task = Task(file_content)
 
+    with open(white_plan_grounded_file, 'r') as f:
+        ground_action_sequence = f.read()
+        ground_action_sequence = ground_action_sequence.split('\n')
+
     lifted_action_names = read_action_names(white_plan_lifted_file)
 
     action_grounding_dict = all_action_groundings(white_plan_lifted_file, domain, task)
@@ -42,15 +46,27 @@ if __name__ == "__main__":
     Node.set_planning_domain(domain)
     Node.set_planning_task(task)
 
-    # Create the initial node
+
+    # # Test: Input is the lifted action sequence
+    # initial_nodede = Node(
+    #     lifted_action_sequence=lifted_action_names,
+    #     ground_action_sequence=[],
+    #     parent=None,
+    #     is_initial_node=True
+    # )
+    # astar = AStar(initial_node)
+    # path, goal_node = astar.find_path()
+    # print("Goal found:")
+    # print(goal_node.ground_action_sequence)
+
+
+    # Test: Input is the grounded action sequence
     initial_node = Node(
-        lifted_action_sequence=lifted_action_names,
-        ground_action_sequence=[],
+        lifted_action_sequence=[],
+        ground_action_sequence=ground_action_sequence,
         parent=None,
         is_initial_node=True
     )
-
-    # Run A* algorithm
     astar = AStar(initial_node)
     path, goal_node = astar.find_path()
     print("Goal found:")
