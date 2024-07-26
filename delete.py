@@ -1,6 +1,3 @@
-from hitter.maxsat import *
-from model.plan import *
-import logging
+a = float('inf')
 
-hitter = MaxSATHitter()
-candidate = hitter.top()
+print(a >  10)

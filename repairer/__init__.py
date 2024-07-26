@@ -37,7 +37,6 @@ class Repairer:
                         conf = plan.compute_conflict(domain)
                         if len(conf) == 0:
                             return False
-                        print('conf', conf)
                         confs.add(tuple(conf))
                         conflict = []
                         for r in conf:

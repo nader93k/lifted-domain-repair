@@ -73,8 +73,8 @@ class Node:
         # If current version is needed we have to take a copy.
 
         planning_task = self.planning_task.copy()
-        # if len(self.lifted_action_sequence) != 0:
-        #     planning_task.set_goal_empty()
+        if len(self.lifted_action_sequence) != 0:
+            planning_task.set_goal_empty()
         plan = [PositivePlan(self.ground_action_sequence + [''])]
 
         # self.logger.debug(f"Planning domain: {self.planning_domain.action_sequence}\n")
@@ -86,12 +86,11 @@ class Node:
 
         repairer = Repairer()
 
-        repairer.repair(
-            self.planning_domain
-            , [(planning_task, plan)]
-        )
+        if repairer.repair(self.planning_domain, [(planning_task, plan)]):
+            return repairer.count_repair_lines(), repairer.get_repairs_string()
+        else:
+            return float('inf'), None
 
-        return repairer.count_repair_lines(), repairer.get_repairs_string()
 
     def compute_h_cost(self):
         # todo: NOT IMPLEMENTED

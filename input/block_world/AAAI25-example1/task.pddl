@@ -20,7 +20,7 @@
 
 (:goal 
   (AND
-    (HOLDING B)
+    (ON D C) (ON C B) (ON B A)
   )
 )
 

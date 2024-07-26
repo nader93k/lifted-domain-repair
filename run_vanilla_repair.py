@@ -38,11 +38,9 @@ if __name__ == '__main__':
 
     repairer = Repairer()
 
-    if(repairer.repair(domain,[(task, plan)])):
+    if repairer.repair(domain, [(task, plan)]):
         repairer.write(out_file)
         s = repairer.get_repairs_string()
         print(s)
     else:
         print("Problem is unsolvable")
-
-    x = 1
