@@ -1,3 +1,9 @@
-a = float('inf')
+a = {}
 
-print(a >  10)
+a['nader'] = {}
+
+a['nader']['karimi'] = 1
+
+
+
+print(a)
