@@ -1,9 +1,6 @@
-a = {}
+from pathlib import Path
 
-a['nader'] = {}
+a = Path(r'/Users/nader/Documents/hi.pd')
+x = a.name
 
-a['nader']['karimi'] = 1
-
-
-
-print(a)
+print(a.stem)

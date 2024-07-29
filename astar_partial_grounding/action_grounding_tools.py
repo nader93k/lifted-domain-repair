@@ -3,7 +3,18 @@ def read_action_names(file_path):
     with open(file_path, 'r') as file:
         for line in file:
             line = line.strip()
-            if line and not line.startswith(';'):
+            if line.startswith('('):
+                first_word = line.split()[0][1:]  # Remove the opening parenthesis
+                result.append(first_word)
+    return result
+
+
+def read_ground_actions(file_path):
+    result = []
+    with open(file_path, 'r') as file:
+        for line in file:
+            line = line.strip()
+            if line.startswith('('):
                 result.append(line)
     return result
 
@@ -34,9 +45,8 @@ def _one_action_groundings(action, domain, task):
     recursive_ground(0, {})
     return possible_groundings
 
-def all_action_groundings(file_path, domain, task):
-    white_action_names = read_action_names(file_path)
 
+def all_action_groundings(white_action_names, domain, task):
     all_groundings = {}
     for name in white_action_names:
         all_groundings[name] = []

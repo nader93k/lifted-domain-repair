@@ -1,0 +1,89 @@
+import logging
+from pathlib import Path
+import re
+from model.plan import Domain, Task
+from astar_partial_grounding import read_ground_actions, all_action_groundings, read_action_names
+
+
+class Instance:
+    def __init__(self
+                 , domain_class: str
+                 , instance_name: str
+                 , error_rate: str
+                 , planning_task_file: Path
+                 , planning_domain_file: Path
+                 , white_plan_file: Path
+                 ):
+        self.domain_class = domain_class
+        self.instance_name = instance_name
+        self.error_rate = error_rate
+
+        self.planning_task_file = planning_task_file
+        self.planning_domain_file = planning_domain_file
+        self.white_plan_file = white_plan_file
+
+        self.planning_task = None
+        self.planning_domain = None
+        self.lifted_plan = None
+
+    def load_to_memory(self):
+        with open(self.planning_task_file, 'r') as f:
+            file_content = f.read()
+            self.planning_task = Task(file_content)
+
+        with open(self.planning_domain_file, 'r') as f:
+            file_content = f.read()
+            self.planning_domain = Domain(file_content)
+
+        self.lifted_plan = read_action_names(self.white_plan_file)
+
+
+def _list_folders(directory: Path):
+    return [f for f in directory.iterdir() if f.is_dir()]
+
+
+def _list_files(directory: Path):
+    return [f for f in directory.iterdir() if f.is_file()]
+
+
+def _find_err_rate_substring(s):
+    match = re.search(r'err-rate.*$', s, re.IGNORECASE)
+
+    if match:
+        return match.group(0)
+    else:
+        raise ValueError("Substring 'err-rate' not found in the given text")
+
+
+def generate_instances(benchmark_path: Path):
+    folders = _list_folders(benchmark_path)
+    folders.sort()
+    planning_folders = folders[::2]
+
+    # Debug - Todo: remove this
+    planning_folders = [planning_folders[0]]
+
+    for planning_folder in planning_folders:
+        plan_folder = Path(str(planning_folder) + '_plans')
+        logging.debug(f"Planning folder: {planning_folder}\n")
+
+        for task_file in [f for f in _list_files(planning_folder) if not f.name.startswith("domain")]:
+            domain_file = task_file.with_name('domain-' + task_file.name)
+            plan_file = Path(plan_folder / task_file.stem).with_suffix(".plan")
+
+            error_rate = _find_err_rate_substring(task_file.stem)
+
+            instance = Instance(
+                domain_class=planning_folder.name
+                , instance_name=task_file.stem
+                , planning_task_file=task_file
+                , planning_domain_file=domain_file
+                , error_rate=error_rate
+                , white_plan_file=plan_file
+            )
+
+            logging.debug(f"task_file: {task_file}")
+            logging.debug(f"domain_file: {domain_file}")
+            logging.debug(f"plan_file: {plan_file}\n")
+
+            yield instance

@@ -76,12 +76,8 @@ class Node:
             planning_task.set_goal_empty()
         plan = [PositivePlan(self.ground_action_sequence + [''])]
 
-        # self.logger.debug(f"Planning domain: {self.planning_domain.action_sequence}\n")
         self.logger.info(f"Task: {planning_task}\n")
         self.logger.info(f"Plan: {plan[0].action_sequence}\n")
-
-        if bool(planning_task._goal):
-            x = 1
 
         repairer = Repairer()
 
@@ -89,7 +85,6 @@ class Node:
             return repairer.count_repair_lines(), repairer.get_repairs_string()
         else:
             return float('inf'), None
-
 
     def compute_h_cost(self):
         # todo: NOT IMPLEMENTED
