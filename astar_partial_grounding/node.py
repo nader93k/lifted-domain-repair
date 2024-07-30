@@ -2,6 +2,7 @@ from repairer import Repairer
 from model.plan import PositivePlan
 from typing import List, Optional
 import logging
+import time
 
 
 # Delete This
@@ -9,6 +10,7 @@ from hitter.maxsat import *
 from model.plan import *
 
 counter = 0
+node_creation_counter = 0
 
 class Node:
     action_grounding_dict: dict = None
@@ -100,6 +102,7 @@ class Node:
 
         neighbours = []
         for grounding in possible_groundings:
+            # start_time = time.time()
             next_node = Node(
                 ground_action_sequence=self.ground_action_sequence + [grounding],
                 lifted_action_sequence=self.lifted_action_sequence[1:],
@@ -107,6 +110,13 @@ class Node:
                 is_initial_node=False
             )
             neighbours.append(next_node)
+            # end_time = time.time()
+            # elapsed_time = end_time - start_time
+            # global node_creation_counter
+            # node_creation_counter += 1
+            # print(f"Node creation number: {node_creation_counter}")
+            # print(f"Node creation time: {elapsed_time:.5f} seconds")
+
         print(f'Num neighbour created: {len(neighbours)}')
         return neighbours
 
@@ -121,7 +131,8 @@ class Node:
         counter += 1
         print(f"eq counter: {counter}")
         print('other', other)
-        print('Node', Node)
+        print('this Node', self)
+        print()
         return self.ground_action_sequence == other.ground_action_sequence
 
     def __str__(self):

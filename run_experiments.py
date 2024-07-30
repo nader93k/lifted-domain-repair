@@ -6,6 +6,7 @@ from astar_partial_grounding import read_ground_actions, all_action_groundings, 
 from pathlib import Path
 from exptools import generate_instances
 import cProfile
+import pickle
 
 benchmark_path = Path('/Users/naderkarimi/Code/GitHub/nader-classical-domain-repairer/input/benchmarks-G1')
 
@@ -19,10 +20,17 @@ def experiment(benchmark_path=benchmark_path):
             print(f"Domain class: {instance.domain_class}")
             print(f"Instance name: {instance.instance_name}")
 
-            action_grounding_dict = all_action_groundings(
-                instance.lifted_plan
-                , instance.planning_domain
-                , instance.planning_task)
+            # action_grounding_dict = all_action_groundings(
+            #     instance.lifted_plan
+            #     , instance.planning_domain
+            #     , instance.planning_task)
+
+            # with open('tmp_grounding_dict', 'wb') as f:
+            #     pickle.dump(action_grounding_dict, f)
+
+            # Loading the dictionary
+            with open('tmp_grounding_dict', 'rb') as f:
+                action_grounding_dict = pickle.load(f)
 
             # All data on memory here
 
