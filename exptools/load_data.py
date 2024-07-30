@@ -60,9 +60,6 @@ def generate_instances(benchmark_path: Path):
     folders.sort()
     planning_folders = folders[::2]
 
-    # Debug - Todo: remove this
-    planning_folders = [planning_folders[0]]
-
     for planning_folder in planning_folders:
         plan_folder = Path(str(planning_folder) + '_plans')
         logging.debug(f"Planning folder: {planning_folder}\n")
