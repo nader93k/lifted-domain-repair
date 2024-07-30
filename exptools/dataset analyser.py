@@ -63,27 +63,16 @@ if __name__ == "__main__":
         name = instance.domain_class + '_' + instance.instance_name
         name = name.split("-err")[0]
 
-        if name == "tpp_pp01":
-            x = 1
-
         plan_length = len(instance.lifted_plan)
 
         action_parameters = [len(a.parameters) for a in instance.planning_domain._actions]
         avg_parameters = sum(action_parameters) / len(action_parameters)
-
-        # print(name)
-        # [print(a.name) for a in instance.planning_domain._actions]
-        # print()
-        # print()
-        # print()
-        # print()
 
         type_counts = defaultdict(int)
         for o in instance.planning_task.objects:
             type_counts[o.type] += 1
 
         avg_objects_per_type = sum(type_counts.values()) / len(type_counts)
-
 
         insights.append(
             insight(
@@ -99,4 +88,3 @@ if __name__ == "__main__":
 
     print(len(set(i.name for i in insights)))
     insights_to_csv(sorted_insights, 'insights.csv')
-
