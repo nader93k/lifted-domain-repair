@@ -48,7 +48,7 @@ def _one_action_groundings(action, domain, task):
 
 def all_action_groundings(white_action_names, domain, task):
     all_groundings = {}
-    for name in set(white_action_names):
+    for name in white_action_names:
         all_groundings[name] = []
         lifted_action = domain.get_action(name)
         grounded_action = _one_action_groundings(lifted_action, domain, task)

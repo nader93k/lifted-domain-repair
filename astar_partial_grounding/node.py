@@ -8,7 +8,7 @@ import logging
 from hitter.maxsat import *
 from model.plan import *
 
-
+counter = 0
 
 class Node:
     action_grounding_dict: dict = None
@@ -70,7 +70,7 @@ class Node:
     def ground_repair(self):
         # Side effect: after applying repairer, planning domain will be updated.
         # If current version is needed we have to take a copy.
-
+        # print('repairing started')
         planning_task = self.planning_task.copy()
         if len(self.lifted_action_sequence) != 0:
             planning_task.set_goal_empty()
@@ -81,6 +81,7 @@ class Node:
 
         repairer = Repairer()
 
+        # print('repairing done')
         if repairer.repair(self.planning_domain, [(planning_task, plan)]):
             return repairer.count_repair_lines(), repairer.get_repairs_string()
         else:
@@ -106,6 +107,7 @@ class Node:
                 is_initial_node=False
             )
             neighbours.append(next_node)
+        print(f'Num neighbour created: {len(neighbours)}')
         return neighbours
 
     def is_goal(self):
@@ -115,6 +117,11 @@ class Node:
     def __eq__(self, other):
         if not isinstance(other, Node):
             return False
+        global counter
+        counter += 1
+        print(f"eq counter: {counter}")
+        print('other', other)
+        print('Node', Node)
         return self.ground_action_sequence == other.ground_action_sequence
 
     def __str__(self):

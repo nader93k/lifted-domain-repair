@@ -45,6 +45,8 @@ class AStar:
             self.logger.info(f"\nCurrent Node: {current_node}.\n")
             self.logger.debug(f"Open list:\n" + str(open_list) + f"\nClose list:\n" + str(closed_set))
 
+            break
+
         return None, None  # No path found
 
     def reconstruct_path(self, node):
