@@ -7,7 +7,6 @@ from io import StringIO
 
 benchmark_path = Path('/Users/nader/Downloads/domain-repair-accessible-main/benchmarks-G1')
 
-
 class insight:
     def __init__(self, name, plan_length, avg_parameters, avg_objects_per_type):
         self.name = name

@@ -6,54 +6,61 @@ from astar_partial_grounding import read_ground_actions, all_action_groundings, 
 from pathlib import Path
 from exptools import generate_instances
 import cProfile
-import pickle
-
-benchmark_path = Path('/Users/naderkarimi/Code/GitHub/nader-classical-domain-repairer/input/benchmarks-G1')
+import pstats
 
 
-def experiment(benchmark_path=benchmark_path):
+def experiment(benchmark_path, specific_instance=None):
 
-    for instance in generate_instances(benchmark_path):
+    for instance in generate_instances(
+            benchmark_path
+            , specific_instance=specific_instance):
         instance.load_to_memory()
 
-        if instance.domain_class == 'agricola-opt18-strips' and instance.instance_name == 'pp04-err-rate-0-5':
-            print(f"Domain class: {instance.domain_class}")
-            print(f"Instance name: {instance.instance_name}")
+        print(f"Domain class: {instance.domain_class}")
+        print(f"Instance name: {instance.instance_name}")
 
-            # action_grounding_dict = all_action_groundings(
-            #     instance.lifted_plan
-            #     , instance.planning_domain
-            #     , instance.planning_task)
+        action_grounding_dict = all_action_groundings(
+            instance.lifted_plan
+            , instance.planning_domain
+            , instance.planning_task)
 
-            # with open('tmp_grounding_dict', 'wb') as f:
-            #     pickle.dump(action_grounding_dict, f)
+        # All data on memory here
 
-            # Loading the dictionary
-            with open('tmp_grounding_dict', 'rb') as f:
-                action_grounding_dict = pickle.load(f)
+        Node.set_action_grounding_dict(action_grounding_dict)
+        Node.set_planning_domain(instance.planning_domain)
+        Node.set_planning_task(instance.planning_task)
 
-            # All data on memory here
+        # Test: Input is the lifted action sequence
+        initial_node = Node(
+            lifted_action_sequence=instance.lifted_plan,
+            ground_action_sequence=[],
+            parent=None,
+            is_initial_node=True
+        )
 
-            Node.set_action_grounding_dict(action_grounding_dict)
-            Node.set_planning_domain(instance.planning_domain)
-            Node.set_planning_task(instance.planning_task)
+        astar = AStar(initial_node)
+        path, goal_node = astar.find_path()
 
-            # Test: Input is the lifted action sequence
-            initial_node = Node(
-                lifted_action_sequence=instance.lifted_plan,
-                ground_action_sequence=[],
-                parent=None,
-                is_initial_node=True
-            )
-            astar = AStar(initial_node)
-            path, goal_node = astar.find_path()
+        if goal_node:
             print("Goal found:")
             print(goal_node.ground_action_sequence)
             print('Repairs:')
             print(goal_node.ground_repair_solution)
+        else:
+            print("No goal found")
 
-            break
+
+def print_profile(file_name: str, num_lines=20):
+    stats = pstats.Stats(file_name)
+    stats.sort_stats('ncalls')
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    stats.print_stats(script_dir, num_lines)
 
 
 if __name__ == "__main__":
-    cProfile.run('experiment()')
+    benchmark_path = Path('/Users/nader/Documents/GitHub/classical-domain-repairer/input/benchmarks-G1')
+
+    cProfile.run("experiment(benchmark_path)"
+                 , 'profile_output')
+
+    print_profile('profile_output', 20)

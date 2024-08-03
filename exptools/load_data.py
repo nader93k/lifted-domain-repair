@@ -9,6 +9,7 @@ class Instance:
     def __init__(self
                  , domain_class: str
                  , instance_name: str
+                 , identifier: str
                  , error_rate: str
                  , planning_task_file: Path
                  , planning_domain_file: Path
@@ -16,6 +17,9 @@ class Instance:
                  ):
         self.domain_class = domain_class
         self.instance_name = instance_name
+        self.identifier = identifier
+
+
         self.error_rate = error_rate
 
         self.planning_task_file = planning_task_file
@@ -55,7 +59,7 @@ def _find_err_rate_substring(s):
         raise ValueError("Substring 'err-rate' not found in the given text")
 
 
-def generate_instances(benchmark_path: Path):
+def generate_instances(benchmark_path: Path, specific_instance=None):
     folders = _list_folders(benchmark_path)
     folders.sort()
     planning_folders = folders[::2]
@@ -73,11 +77,15 @@ def generate_instances(benchmark_path: Path):
             instance = Instance(
                 domain_class=planning_folder.name
                 , instance_name=task_file.stem
+                , identifier = planning_folder.name + '/' + task_file.stem
                 , planning_task_file=task_file
                 , planning_domain_file=domain_file
                 , error_rate=error_rate
                 , white_plan_file=plan_file
             )
+
+            if specific_instance and instance.identifier != specific_instance:
+                continue
 
             logging.debug(f"task_file: {task_file}")
             logging.debug(f"domain_file: {domain_file}")
