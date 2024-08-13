@@ -100,6 +100,7 @@ if __name__ == '__main__':
 
         current_dir = Path(__file__).parent
         grounder = os.path.join(current_dir, 'fd2', 'src', 'translate', 'translate.py')
+        print("Using grounder", grounder)
 
         sas_file = "out.sas"
         subprocess.check_call([grounder, domain_pddl, problem_pddl, "--sas-file", sas_file])
