@@ -2,7 +2,12 @@
 import os
 import argparse
 import pickle
+import subprocess
+
 from heuristic import Heurisitc
+import heuristic
+import copy
+from pathlib import Path
 
 """
 I'm chaning this file so that it will work with a fixed file structure, instead of taking different dirs as input.
@@ -72,8 +77,33 @@ if __name__ == '__main__':
         if args.pickl_dump:
             save_variable_to_folder(args.pickl_dump, repairer, args.input_directory.split("/")[-1])
 
-        action_sequence = None
+        # Example for computing heuristic
+        action_sequence = white_plan_list[0]._steps
         h = Heurisitc(h_name="G_HMAX", relaxation="none")
-        print("Initial Heuristic value was:", h.evaluate(domain, task, white_plan_list[0]._steps))
+        print("Initial Heuristic value was:", h.evaluate(domain, task, action_sequence))
+
+        # Example for grounding
+        print("== Performing task transformation")
+        domain = copy.deepcopy(domain) # verbose
+        task = copy.deepcopy(task) # verbose
+
+        heuristic.integrate_action_sequence(domain, task, action_sequence)
+
+        domain_pddl = "pass_to_grounder_domain.pddl"
+        problem_pddl = "pass_to_grounder_problem.pddl"
+        heuristic.revert_to_fd_structure(domain, task)
+        heuristic.print_domain(domain, domain_pddl)
+        heuristic.print_problem(task, problem_pddl)
+
+        print("== Grounding")
+        current_dir = os.path.dirname(__file__)
+
+        current_dir = Path(__file__).parent
+        grounder = os.path.join(current_dir, 'fd2', 'src', 'translate', 'translate.py')
+
+        sas_file = "out.sas"
+        subprocess.check_call([grounder, domain_pddl, problem_pddl, "--sas-file", sas_file])
+
+        print("Grounded file written to", sas_file)
 
         repairer.write(out_file)
