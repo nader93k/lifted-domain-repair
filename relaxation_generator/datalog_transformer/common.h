@@ -7,6 +7,7 @@
 #include <unordered_set>
 #include <cstddef>
 #include <string>
+#include <cassert>
 
 typedef long long ll; // signed integer type commonly used within the project
 typedef size_t ull; // unsigned integer type commonly used within the project
