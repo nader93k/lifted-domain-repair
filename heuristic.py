@@ -19,15 +19,17 @@ import copy
 H_NAMES = ["L_HMAX", "L_HADD", "L_HFF", "G_HMAX", "G_HADD", "G_HFF", "G_LM_CUT"]
 RELAXATIONS = ["none", "unary", "zeroary"]
 
-INPUT_MODEL_DOMAIN = "domain-in.pddl"
-INPUT_MODEL_PROBLEM = "problem-in.pddl"
-OUTPUT_MODEL_DOMAIN = "domain-out.pddl"
-OUTPUT_MODEL_PROBLEM = "problem-out.pddl"
-OLD_OUTPUT_MODEL_DOMAIN = "old-domain-out.pddl"
-OLD_OUTPUT_MODEL_PROBLEM = "old-problem-out.pddl"
-DATALOG_THEORY = "datalog.theory"
-DATALOG_MODEL = "datalog.model"
-GROUNDED_OUTPUT_SAS = "out.sas"
+
+BASE_FOLDER = r'heuristic_aux_files/'
+INPUT_MODEL_DOMAIN = BASE_FOLDER + "domain-in.pddl"
+INPUT_MODEL_PROBLEM = BASE_FOLDER + "problem-in.pddl"
+OUTPUT_MODEL_DOMAIN = BASE_FOLDER + "domain-out.pddl"
+OUTPUT_MODEL_PROBLEM = BASE_FOLDER + "problem-out.pddl"
+OLD_OUTPUT_MODEL_DOMAIN = BASE_FOLDER + "old-domain-out.pddl"
+OLD_OUTPUT_MODEL_PROBLEM = BASE_FOLDER + "old-problem-out.pddl"
+DATALOG_THEORY = BASE_FOLDER + "datalog.theory"
+DATALOG_MODEL = BASE_FOLDER + "datalog.model"
+GROUNDED_OUTPUT_SAS = BASE_FOLDER + "out.sas"
 
 transform_to_fd = {
     "G_HMAX": "hmax",
@@ -47,7 +49,7 @@ POWERLIFTED_PY = current_dir / 'pwl' / 'powerlifted.py'
 FAST_DOWNWARD_PY = current_dir / 'fd2' / 'fast-downward.py'
 
 def _get_heuristic(command, look_for):
-    output_file = "heuristic_value.tmp"
+    output_file = BASE_FOLDER + "heuristic_value.tmp"
     with open(output_file, "w") as f:
         subprocess.run(command, stdout=f)
 
