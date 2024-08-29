@@ -71,4 +71,9 @@ if __name__ == '__main__':
 
     print("Grounded file written to", sas_file)
 
-    repairer.write(out_file)
+    if repairer.repair(domain, [(task, plan)]):
+        repairer.write(out_file)
+        s = repairer.get_repairs_string()
+        print(s)
+    else:
+        print("Problem is unsolvable")
