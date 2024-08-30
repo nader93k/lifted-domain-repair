@@ -109,6 +109,9 @@ class Node:
         # check with @songtuan
         return len(self.lifted_action_sequence) == 0
 
+    def possible_groundings(self):
+        pass
+
     def __eq__(self, other):
         if not isinstance(other, Node):
             return False

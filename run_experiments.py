@@ -7,6 +7,7 @@ from pathlib import Path
 from exptools import generate_instances
 import cProfile
 import pstats
+import json
 
 
 def experiment(benchmark_path, specific_instance=None):
@@ -23,6 +24,9 @@ def experiment(benchmark_path, specific_instance=None):
             instance.lifted_plan
             , instance.planning_domain
             , instance.planning_task)
+        
+        # with open('action_grounding', 'w') as file:
+        #     json.dump(action_grounding_dict, file, indent=4)
 
         # All data on memory here
 
@@ -58,7 +62,7 @@ def print_profile(file_name: str, num_lines=20):
 
 
 if __name__ == "__main__":
-    benchmark_path = Path('/Users/nader/Documents/GitHub/classical-domain-repairer/input/benchmarks-G1')
+    benchmark_path = Path('./input/benchmarks-G1')
 
     cProfile.run("experiment(benchmark_path)"
                  , 'profile_output')
