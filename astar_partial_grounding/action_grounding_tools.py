@@ -21,13 +21,10 @@ class ActionGrounding:
     def __init__(self):
         self.data = defaultdict(lambda: defaultdict(list))
 
-    def __getitem__(self, action_name, step):
-        return self.get_grounding(action_name, step)
-
     def __setitem__(self, action_name, step, value):
         self.data[action_name][step] = value
     
-    def get_grounding(self, action_name, step):
+    def get(self, action_name, step):
         return self.data[action_name][step]
 
     def append(self, action_name, step, item):

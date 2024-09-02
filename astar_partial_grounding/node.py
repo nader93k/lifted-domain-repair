@@ -7,27 +7,19 @@ import logging
 class Node:
     planning_domain = None
     planning_task = None
+    action_grounding = None
 
     @classmethod
     def set_action_grounding(cls, value):
-        if cls.action_grounding is None:
-            cls.action_grounding = value
-        else:
-            raise ValueError("Action grounding has already been set and cannot be changed.")
+        cls.action_grounding = value
     
     @classmethod
     def set_planning_domain(cls, value):
-        if cls.planning_domain is None:
-            cls.planning_domain = value
-        else:
-            raise ValueError("Planning domain has already been set and cannot be changed.")
+        cls.planning_domain = value
 
     @classmethod
     def set_planning_task(cls, value):
-        if cls.planning_task is None:
-            cls.planning_task = value
-        else:
-            raise ValueError("Planning task has already been set and cannot be changed.")
+        cls.planning_task = value
 
     def __init__(self,
                  lifted_action_sequence: List[str],

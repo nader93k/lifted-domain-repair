@@ -33,10 +33,7 @@ def experiment(benchmark_path, specific_instance=None):
         # # with open('action_grounding', 'w') as file:
         # #     json.dump(action_grounding_dict, file, indent=4)
 
-        ###### Using smart grounding
-
-        # print(plan[0]._steps):
-        # [('pick-up', 'b'), ('stack', 'b', 'a'), ('pick-up', 'c'), ('stack', 'c', 'b'), ('pick-up', 'd'), ('stack', 'd', 'c')]
+        ###### Using smart grounding 
 
         action_grounding = smart_grounder(
             instance.planning_domain,

@@ -149,7 +149,10 @@ def add_to_eff(atom, action):
 def add_to_pre(atom, action):
     pre = action.precondition
     if type(pre) == fd.pddl.conditions.Conjunction:
-        pre.parts = tuple(list(pre.parts) + [atom]) # verbose
+        pre.parts = tuple(list(pre.parts) + [atom])
+    elif type(pre) == fd.pddl.conditions.Atom:
+        pre = fd.pddl.conditions.Conjunction([pre])
+        pre.parts = tuple(list(pre.parts) + [atom])
     else:
         raise UnsupportedOperation(f"type {type(pre)} not supported yet")
 
@@ -203,7 +206,6 @@ def integrate_action_sequence(domain, task, action_sequence):
 
         # conditions to increase counter
         add_to_pre(fd.pddl.conditions.Atom(COUNTER_PRED, [make_num(i)]), new_action)
-
         add_to_eff(fd.pddl.conditions.Atom(COUNTER_PRED, [make_num(i+1)]), new_action)
         add_to_eff(fd.pddl.conditions.Atom(APPLIED_PRED, [make_num(i)]), new_action)
         add_to_eff(fd.pddl.conditions.NegatedAtom(COUNTER_PRED, [make_num(i)]), new_action)
