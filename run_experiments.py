@@ -2,7 +2,10 @@
 import os
 import logging
 from model.plan import Domain, Task
-from astar_partial_grounding import read_ground_actions, all_action_groundings, read_action_names, AStar, Node
+from astar_partial_grounding import \
+    read_ground_actions, all_action_groundings, read_action_names,smart_grounder, \
+    AStar, Node
+from astar_partial_grounding.action_grounding_tools import smart_grounder
 from pathlib import Path
 from exptools import generate_instances
 import cProfile
@@ -20,17 +23,28 @@ def experiment(benchmark_path, specific_instance=None):
         print(f"Domain class: {instance.domain_class}")
         print(f"Instance name: {instance.instance_name}")
 
-        action_grounding_dict = all_action_groundings(
-            instance.lifted_plan
-            , instance.planning_domain
-            , instance.planning_task)
+
+        ###### Using exaustive grounding
+        # action_grounding_dict = all_action_groundings(
+        #     instance.lifted_plan
+        #     , instance.planning_domain
+        #     , instance.planning_task)
         
-        # with open('action_grounding', 'w') as file:
-        #     json.dump(action_grounding_dict, file, indent=4)
+        # # with open('action_grounding', 'w') as file:
+        # #     json.dump(action_grounding_dict, file, indent=4)
 
-        # All data on memory here
+        ###### Using smart grounding
 
-        Node.set_action_grounding_dict(action_grounding_dict)
+        # print(plan[0]._steps):
+        # [('pick-up', 'b'), ('stack', 'b', 'a'), ('pick-up', 'c'), ('stack', 'c', 'b'), ('pick-up', 'd'), ('stack', 'd', 'c')]
+
+        action_grounding = smart_grounder(
+            instance.planning_domain,
+            instance.planning_task,
+            instance.lifted_plan)
+
+
+        Node.set_action_grounding(action_grounding)
         Node.set_planning_domain(instance.planning_domain)
         Node.set_planning_task(instance.planning_task)
 

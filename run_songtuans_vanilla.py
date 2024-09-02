@@ -4,7 +4,7 @@ from repairer import *
 from astar_partial_grounding import all_action_groundings
 
 
-input_directory = r"./input/block_world/AAAI25-example1"
+input_directory = r"./input/dummy_block_world/AAAI25-example1"
 domain_file = "domain.pddl"
 task_file = "task.pddl"
 white_plan_grounded_file = "white_plan_grounded.pddl"

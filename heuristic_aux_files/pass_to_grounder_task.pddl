@@ -1,16 +1,16 @@
-(define (problem blocks-4-0)               (:domain blocks)               (:objects b - object
-d - object
+(define (problem blocks-4-0)               (:domain blocks)               (:objects d - object
 a - object
-c - object)                (:init (current_plan_step n0)
-(clear a)
+b - object
+c - object)                (:init (clear c)
+(clear d)
 (ontable d)
-(ontable c)
-(clear b)
 (ontable a)
 (ontable b)
-(clear c)
 (handempty )
-(clear d))                (:goal (and
+(ontable c)
+(current_plan_step n0)
+(clear a)
+(clear b))                (:goal (and
 		(applied_plan_step n0)
 		(applied_plan_step n1)
 		(applied_plan_step n2)

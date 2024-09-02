@@ -5,17 +5,16 @@ import logging
 
 
 class Node:
-    action_grounding_dict: dict = None
     planning_domain = None
     planning_task = None
 
     @classmethod
-    def set_action_grounding_dict(cls, value):
-        if cls.action_grounding_dict is None:
-            cls.action_grounding_dict = value
+    def set_action_grounding(cls, value):
+        if cls.action_grounding is None:
+            cls.action_grounding = value
         else:
-            raise ValueError("Action grounding dict has already been set and cannot be changed.")
-
+            raise ValueError("Action grounding has already been set and cannot be changed.")
+    
     @classmethod
     def set_planning_domain(cls, value):
         if cls.planning_domain is None:
@@ -36,8 +35,8 @@ class Node:
                  parent: 'Node' = None,
                  is_initial_node: bool = False
                  ):
-        if self.action_grounding_dict is None:
-            raise ValueError("Action grounding dicts must be set before creating instances.")
+        if self.action_grounding is None:
+            raise ValueError("Action grounding must be set before creating instances.")
         if self.planning_domain is None:
             raise ValueError("Action grounding dicts must be set before creating instances.")
         if self.planning_task is None:
@@ -89,8 +88,14 @@ class Node:
         return 0
 
     def get_neighbors(self):
-        next_lifted_action_name = self.lifted_action_sequence[0]
-        possible_groundings = Node.action_grounding_dict[next_lifted_action_name]
+        next_action_name = self.lifted_action_sequence[0]
+
+        step = len(self.ground_action_sequence)
+        possible_groundings = Node.action_grounding.get_grounding(
+            action_name=next_action_name,
+            step=step)
+        # possible_groundings = Node.action_grounding_dict[next_lifted_action_name]
+        
 
         neighbours = []
         for grounding in possible_groundings:
@@ -109,8 +114,6 @@ class Node:
         # check with @songtuan
         return len(self.lifted_action_sequence) == 0
 
-    def possible_groundings(self):
-        pass
 
     def __eq__(self, other):
         if not isinstance(other, Node):
