@@ -1,12 +1,14 @@
 from repairer import Repairer
 from model.plan import PositivePlan
-from typing import List, Optional
+from typing import List
 import logging
+import copy
+
 
 
 class Node:
-    planning_domain = None
-    planning_task = None
+    original_domain = None
+    original_task = None
     action_grounding = None
 
     @classmethod
@@ -14,12 +16,12 @@ class Node:
         cls.action_grounding = value
     
     @classmethod
-    def set_planning_domain(cls, value):
-        cls.planning_domain = value
+    def set_original_domain(cls, value):
+        cls.original_domain = value
 
     @classmethod
-    def set_planning_task(cls, value):
-        cls.planning_task = value
+    def set_original_task(cls, value):
+        cls.original_task = value
 
     def __init__(self,
                  lifted_action_sequence: List[str],
@@ -29,10 +31,10 @@ class Node:
                  ):
         if self.action_grounding is None:
             raise ValueError("Action grounding must be set before creating instances.")
-        if self.planning_domain is None:
-            raise ValueError("Action grounding dicts must be set before creating instances.")
-        if self.planning_task is None:
-            raise ValueError("Action grounding dicts must be set before creating instances.")
+        if self.original_domain is None:
+            raise ValueError("Original domain must be set before creating instances.")
+        if self.original_task is None:
+            raise ValueError("Original task must be set before creating instances.")
 
         self.is_initial_node = is_initial_node
         self.ground_action_sequence = ground_action_sequence
@@ -47,30 +49,27 @@ class Node:
             self.g_cost = 0
             self.h_cost = 0
             self.f_cost = 0
+            self.repaired_domain = None
         else:
-            self.g_cost, self.ground_repair_solution = self.ground_repair()
+            self.g_cost, self.ground_repair_solution, self.repaired_domain = self._ground_repair()
             self.h_cost = self.compute_h_cost()
             self.f_cost = self.g_cost + self.h_cost
 
-    def ground_repair(self):
-        # Side effect: after applying repairer, planning domain will be updated.
-        # If current version is needed we have to take a copy.
-        # print('repairing started')
-        planning_task = self.planning_task.copy()
+    def _ground_repair(self):
+        # plan.compute_subs(domain, task)
+        # succeed = plan.execute(domain, task)
+
+        domain = copy.deepcopy(self.original_domain)
+        task = self.original_task.copy()
         if len(self.lifted_action_sequence) != 0:
-            planning_task.set_goal_empty()
+            task.set_goal_empty()
         plan = [PositivePlan(self.ground_action_sequence + [''])]
 
-        self.logger.info(f"Task: {planning_task}\n")
-        self.logger.info(f"Plan: {plan[0].action_sequence}\n")
-
         repairer = Repairer()
-
-        # print('repairing done')
-        if repairer.repair(self.planning_domain, [(planning_task, plan)]):
-            return repairer.count_repair_lines(), repairer.get_repairs_string()
+        if repairer.repair(domain, [(task, plan)]):
+            return repairer.count_repair_lines(), repairer.get_repairs_string(), domain
         else:
-            return float('inf'), None
+            return float('inf'), None, None
 
     def compute_h_cost(self):
         # todo: NOT IMPLEMENTED

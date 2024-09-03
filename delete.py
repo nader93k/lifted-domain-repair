@@ -1,9 +1,11 @@
 import os
+import subprocess
+from heuristic import Heurisitc
+import heuristic
+from pathlib import Path
+import copy
 from model.plan import *
 from repairer import *
-from pathlib import Path
-from astar_partial_grounding.action_grounding_tools import smart_grounder, _sas_parser
-
 
 
 input_directory = r"./input/dummy_block_world/AAAI25-example1"
@@ -34,9 +36,21 @@ if __name__ == '__main__':
         ground_action_sequence = f.read()
         ground_action_sequence = ground_action_sequence.split('\n')
 
-    plan = [PositivePlan(ground_action_sequence)]
+    plan = PositivePlan(ground_action_sequence)
 
-    d = smart_grounder(domain, task, plan[0]._steps)
-    
-    print(d)
-    x = 1
+    print(plan._steps)
+
+
+    state = apply_action_sequence(domain, task, plan)
+
+    print(state)
+
+
+    # repairer = Repairer()
+    # if repairer.repair(domain, [(task, plan)]): # type: ignore
+    #     repairer.write(out_file)
+    #     print("Repair done")
+    #     s = repairer.get_repairs_string()
+    #     # print(s)
+    # else:
+    #     print("Problem is unsolvable")

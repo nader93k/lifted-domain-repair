@@ -2,8 +2,8 @@ from fd.pddl.conditions import Conjunction, Atom
 from .domain import *
 from .repair import *
 from utils import *
-
 from typing import List, Tuple, Set
+from types import SimpleNamespace
 
 
 def applicable(action, state, var_mapping):
@@ -17,7 +17,7 @@ def applicable(action, state, var_mapping):
         if (not literal.negated) and (atom not in state):
             return atom
         if literal.negated and (atom in state):
-            return atom.negate()  # return a negated atom to indicate that it shall be deleted
+            return atom.negate()
     return None
 
 
@@ -31,6 +31,30 @@ def check_goal(state, goal):
         if atom.negated and (atom in state):
             return atom
     return None
+
+
+def apply_action_sequence(domain: Domain, task: Task, plan) -> Set[Atom]:
+    state = set(task.init)
+    
+    for step in plan._steps:
+        action_name = step[0]
+        parameters = step[1:]
+        action = domain.get_action(action_name)
+        if action is None:
+            raise ValueError(f"Action {action_name} not found in the domain.")
+        
+        # This line is a hack to use "applicable" & "next_state" functions because they need ".name"
+        # access the parameters
+        parameters = [SimpleNamespace(name=p) for p in parameters]
+        var_mapping = dict(zip((param.name for param in action.parameters), parameters))
+
+        unsat_atom = applicable(action, state, var_mapping)
+        if unsat_atom is not None:
+            raise ValueError(f"Action {action_name} not applicable in current state")
+
+        state = next_state(action, var_mapping, state)
+    
+    return state
 
 
 def next_state(action, var_mapping, current):

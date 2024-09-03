@@ -5,41 +5,8 @@ import os
 from pathlib import Path
 from collections import defaultdict
 import re
+from typing import List, Dict
 
-
-class ActionGrounding:
-    """
-    A class representing a double dictionary for storing and retrieving possible groundings for actions.
-
-    This class allows indexing by both action name and step number to access lists of possible groundings.
-    It uses a nested defaultdict structure to automatically create new entries as needed.
-
-    Attributes:
-        data (defaultdict): A nested defaultdict storing the action groundings.
-    """
-
-    def __init__(self):
-        self.data = defaultdict(lambda: defaultdict(list))
-
-    def __setitem__(self, action_name, step, value):
-        self.data[action_name][step] = value
-    
-    def get(self, action_name, step):
-        return self.data[action_name][step]
-
-    def append(self, action_name, step, item):
-        self.data[action_name][step].append(item)
-
-    def __str__(self):
-        return self.__repr__()
-
-    def __repr__(self):
-        lines = []
-        for action_name, steps in self.data.items():
-            lines.append(f"Action: {action_name}")
-            for step, groundings in steps.items():
-                lines.append(f"  Step {step}: {groundings}")
-        return "\n".join(lines)
 
 
 def read_action_names(file_path):
@@ -106,8 +73,14 @@ def all_action_groundings(white_action_names, domain, task):
     return all_groundings
 
 
+# def all_smart_groundings(domain_in, task_in, action_sequence) -> Dict[int, List[str]]:
+#     d = {}
+#     for i, action in enumerate(action_sequence):
+#         d[i] = _smart_grounder_single_action(domain_in, task_in, action)
+#     return d
+    
 
-def smart_grounder(domain_in, task_in, action_sequence):
+def smart_grounder(domain_in, task_in, action_name) -> List[str]:
     aux_folder = r'heuristic_aux_files/'
     domain_path = aux_folder + "pass_to_grounder_domain.pddl"
     task_path = aux_folder + "pass_to_grounder_task.pddl"
@@ -116,22 +89,15 @@ def smart_grounder(domain_in, task_in, action_sequence):
     domain = copy.deepcopy(domain_in) # verbose
     task = copy.deepcopy(task_in) # verbose
 
-    # transform action_sequence to be a list of tuples,
-    # because of how integrate_action_sequence is impelemented.
-    if not all(isinstance(item, tuple) for item in action_sequence):
-        tuple_action_sequence = [(s,) if not isinstance(s, tuple) else s for s in action_sequence]
-    else:
-        tuple_action_sequence = action_sequence
-    heuristic.integrate_action_sequence(domain, task, tuple_action_sequence)
-
-    
+    x = (action_name,)
+    heuristic.integrate_action_sequence(domain, task, [(action_name,)])
     heuristic.revert_to_fd_structure(domain, task)
+
     heuristic.print_domain(domain, domain_path)
     heuristic.print_problem(task, task_path)
 
     project_path = Path(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     grounder = os.path.join(project_path, 'fd2', 'src', 'translate', 'translate.py')
-
     # TODO: change file transactions to memory transactions for efficiency later. 
     with open('/dev/null', 'w') as devnull:
         subprocess.run(
@@ -141,10 +107,10 @@ def smart_grounder(domain_in, task_in, action_sequence):
             stderr=devnull
         )
     
-    return _sas_parser(Path(sas_path))
+    return _sas_parser(Path(sas_path), action_name)
 
 
-def _sas_parser(file_path: Path):
+def _sas_parser(file_path: Path, action_name_in: str) -> List[str]:
     def has_nx_pattern(l):
         # To see if there are any parameters of type n1..n10..nx which is only ariticially added by the grounder
         pattern = r'^n\d+$'
@@ -157,18 +123,21 @@ def _sas_parser(file_path: Path):
     filtered_lines = [lines[i+1] for i in range(len(lines)-1) if lines[i] == "begin_operator"]
 
 
-    groundings = ActionGrounding()
+    groundings = []
     
     for l in filtered_lines:
         parts = l.split()
         action_name, step = parts[0].split('-step-')
         step = int(step)
         parameters = parts[1:]
+
+        assert action_name == action_name_in, "Grounder is passing unspected action name."
+
         ground_action = '(' + action_name + ' ' + ' '.join(map(str, parameters)) + ')'
 
         if has_nx_pattern(parameters):
             continue
         
-        groundings.append(action_name, step, ground_action)
+        groundings.append(ground_action)
 
     return groundings
