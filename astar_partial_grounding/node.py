@@ -1,5 +1,5 @@
 from repairer import Repairer
-from model.plan import PositivePlan
+from model.plan import PositivePlan, apply_action_sequence
 from typing import List
 import logging
 import copy
@@ -9,19 +9,22 @@ import copy
 class Node:
     original_domain = None
     original_task = None
-    action_grounding = None
+    grounder = None
 
     @classmethod
-    def set_action_grounding(cls, value):
-        cls.action_grounding = value
+    def set_grounder(cls, value):
+        cls.grounder = value
     
+
     @classmethod
-    def set_original_domain(cls, value):
+    def set_domain(cls, value):
         cls.original_domain = value
 
+
     @classmethod
-    def set_original_task(cls, value):
+    def set_task(cls, value):
         cls.original_task = value
+
 
     def __init__(self,
                  lifted_action_sequence: List[str],
@@ -29,8 +32,8 @@ class Node:
                  parent: 'Node' = None,
                  is_initial_node: bool = False
                  ):
-        if self.action_grounding is None:
-            raise ValueError("Action grounding must be set before creating instances.")
+        if self.grounder is None:
+            raise ValueError("Action grounder must be set before creating instances.")
         if self.original_domain is None:
             raise ValueError("Original domain must be set before creating instances.")
         if self.original_task is None:
@@ -49,11 +52,12 @@ class Node:
             self.g_cost = 0
             self.h_cost = 0
             self.f_cost = 0
-            self.repaired_domain = None
+            self.repaired_domain = copy.deepcopy(self.original_domain)
         else:
             self.g_cost, self.ground_repair_solution, self.repaired_domain = self._ground_repair()
             self.h_cost = self.compute_h_cost()
             self.f_cost = self.g_cost + self.h_cost
+
 
     def _ground_repair(self):
         # plan.compute_subs(domain, task)
@@ -61,6 +65,7 @@ class Node:
 
         domain = copy.deepcopy(self.original_domain)
         task = self.original_task.copy()
+
         if len(self.lifted_action_sequence) != 0:
             task.set_goal_empty()
         plan = [PositivePlan(self.ground_action_sequence + [''])]
@@ -71,6 +76,7 @@ class Node:
         else:
             return float('inf'), None, None
 
+
     def compute_h_cost(self):
         # todo: NOT IMPLEMENTED
         # will always be run after ground_repair(), and hence works with the repaired self.planning.domain.
@@ -78,15 +84,29 @@ class Node:
 
         return 0
 
+
     def get_neighbors(self):
+        # don't try to expand this node if the cost is infinite (no repairs)
+        if self.g_cost == float('inf'):
+            raise ValueError("Can't expand this node.")
+        
         next_action_name = self.lifted_action_sequence[0]
 
-        step = len(self.ground_action_sequence)
-        possible_groundings = Node.action_grounding.get_grounding(
-            action_name=next_action_name,
-            step=step)
-        # possible_groundings = Node.action_grounding_dict[next_lifted_action_name]
-        
+        task = copy.deepcopy(self.original_task)
+        # TODO: Adding the following lines - debug later
+        plan = PositivePlan(self.ground_action_sequence)
+        plan.compute_subs(self.repaired_domain, task)
+        state = apply_action_sequence(self.repaired_domain, task, plan)
+        # state = apply_action_sequence(self.repaired_domain, task, self.ground_action_sequence)
+        task.set_init_state(state)
+
+
+        # initial state must be updated in the task
+        possible_groundings = Node.grounder(
+            self.repaired_domain,
+            task,
+            next_action_name
+        )
 
         neighbours = []
         for grounding in possible_groundings:
@@ -101,6 +121,7 @@ class Node:
         print(f'Num neighbour created: {len(neighbours)}')
         return neighbours
 
+
     def is_goal(self):
         # check with @songtuan
         return len(self.lifted_action_sequence) == 0
@@ -111,20 +132,22 @@ class Node:
             return False
         return self.ground_action_sequence == other.ground_action_sequence
 
+
     def __str__(self):
         return ("Node instance:"
                 + "\n"
                 + f"Ground actions: {self.ground_action_sequence}"
                 + "\n"
-                + f"Lifted actions: {self.lifted_action_sequence}"
-                + "\n"
+                + f"Next lifted actions: {self.lifted_action_sequence[0]}"
                 )
 
     def __repr__(self):
         return self.__str__()
 
+
     def __lt__(self, other):
         return self.f_cost < other.f_cost
+
 
     def __hash__(self):
         return hash(tuple(self.ground_action_sequence))

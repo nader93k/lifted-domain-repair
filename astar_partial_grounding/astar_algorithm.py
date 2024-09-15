@@ -30,7 +30,10 @@ class AStar:
 
             self.logger.debug(f"A* iteration {iteration}, current node:\n{current_node}")
 
-            print(f"A* iteration {iteration}, current node:\n{current_node}")
+            print()
+            print(f">>>>  A* iteration {iteration}  <<<<")
+            print()
+            print(f"Current node:\n{current_node}")
 
             if current_node.is_goal():
                 return self.reconstruct_path(current_node), current_node

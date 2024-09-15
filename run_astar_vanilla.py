@@ -32,15 +32,16 @@ if __name__ == "__main__":
     with open(task_file, 'r') as f:
         file_content = f.read()
         task = Task(file_content)
+        task.set_goal_empty()
 
     ground_action_sequence = read_ground_actions(white_plan_file)
     lifted_action_names = read_action_names(white_plan_file)
 
     action_grounding_dict = all_action_groundings(lifted_action_names, domain, task)
 
-    Node.set_action_grounding_dict(action_grounding_dict)
-    Node.set_planning_domain(domain)
-    Node.set_planning_task(task)
+    Node.set_grounder(action_grounding_dict)
+    Node.set_domain(domain)
+    Node.set_task(task)
 
     # Test: Input is the lifted action sequence
     initial_node = Node(

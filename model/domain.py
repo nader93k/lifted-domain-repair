@@ -103,6 +103,9 @@ class Task:
 
     def set_goal_empty(self):
         self._goal = Condition(tuple())
+    
+    def set_init_state(self, state):
+        self._init = state
 
 
     # Property getters

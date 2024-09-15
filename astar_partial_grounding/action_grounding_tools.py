@@ -89,7 +89,6 @@ def smart_grounder(domain_in, task_in, action_name) -> List[str]:
     domain = copy.deepcopy(domain_in) # verbose
     task = copy.deepcopy(task_in) # verbose
 
-    x = (action_name,)
     heuristic.integrate_action_sequence(domain, task, [(action_name,)])
     heuristic.revert_to_fd_structure(domain, task)
 

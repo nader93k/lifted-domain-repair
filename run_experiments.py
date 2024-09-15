@@ -22,6 +22,7 @@ def experiment(benchmark_path, specific_instance=None):
 
         print(f"Domain class: {instance.domain_class}")
         print(f"Instance name: {instance.instance_name}")
+        print(f"Lifted plan: {instance.lifted_plan}")
 
 
         ###### Using exaustive grounding
@@ -32,18 +33,17 @@ def experiment(benchmark_path, specific_instance=None):
         
         # # with open('action_grounding', 'w') as file:
         # #     json.dump(action_grounding_dict, file, indent=4)
-
         ###### Using smart grounding 
+        # action_grounding = smart_grounder(
+        #     instance.planning_domain,
+        #     instance.planning_task,
+        #     instance.lifted_plan)
 
-        action_grounding = smart_grounder(
-            instance.planning_domain,
-            instance.planning_task,
-            instance.lifted_plan)
 
+        Node.set_grounder(smart_grounder)
+        Node.set_domain(instance.planning_domain)
+        Node.set_task(instance.planning_task)
 
-        Node.set_action_grounding(action_grounding)
-        Node.set_planning_domain(instance.planning_domain)
-        Node.set_planning_task(instance.planning_task)
 
         # Test: Input is the lifted action sequence
         initial_node = Node(

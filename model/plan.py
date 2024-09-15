@@ -13,6 +13,7 @@ def applicable(action, state, var_mapping):
         literals = action.precondition.parts
     for literal in literals:
         grounded_paras = tuple(var_mapping[para].name for para in literal.args)
+
         atom = Atom(literal.predicate, grounded_paras)
         if (not literal.negated) and (atom not in state):
             return atom
@@ -33,27 +34,18 @@ def check_goal(state, goal):
     return None
 
 
-def apply_action_sequence(domain: Domain, task: Task, plan) -> Set[Atom]:
+def apply_action_sequence(domain: Domain, task: Task, plan) -> List[Atom]:
     state = set(task.init)
     
-    for step in plan._steps:
-        action_name = step[0]
-        parameters = step[1:]
-        action = domain.get_action(action_name)
-        if action is None:
-            raise ValueError(f"Action {action_name} not found in the domain.")
-        
-        # This line is a hack to use "applicable" & "next_state" functions because they need ".name"
-        # access the parameters
-        parameters = [SimpleNamespace(name=p) for p in parameters]
-        var_mapping = dict(zip((param.name for param in action.parameters), parameters))
-
+    for pos, step in enumerate(plan._steps):
+        action = domain.get_action(step[0])
+        var_mapping = plan._var_mapping[pos][-1]
         unsat_atom = applicable(action, state, var_mapping)
         if unsat_atom is not None:
-            raise ValueError(f"Action {action_name} not applicable in current state")
-
+            raise ValueError(f"Action {action} not applicable in current state")
         state = next_state(action, var_mapping, state)
     
+    state = list(state)
     return state
 
 
@@ -85,6 +77,7 @@ class Plan:
         self._pos = None
         self._atom = None
 
+
     def _parse_plan(self, lines):
         for line in lines:
             if not line.strip():
@@ -94,12 +87,12 @@ class Plan:
                 line = line[1:-1]
             parts = line.split(" ")
             self._steps.append(tuple(parts))
-        if self._steps[-1][0] == ";":
-            self._steps.pop(-1)
+
 
     @property
     def executable(self):
         return self._succeed
+
 
     @property
     def position(self):
@@ -166,7 +159,6 @@ class PositivePlan(Plan):
 
     def compute_conflict(self, domain: Domain) -> Set[Repair]:
         # Compute conflicts for a positive plan
-        x = 1
         conflict = set()
         if self._pos < len(self._steps):
             # if we are repairing to reach the goal then self._pos == len(self.steps) and this block won't run
