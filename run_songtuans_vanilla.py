@@ -2,6 +2,25 @@ import os
 from model.plan import *
 from repairer import *
 from astar_partial_grounding import all_action_groundings
+import copy
+
+
+def ground_repair(domain, task, plan_path):
+    domain = copy.deepcopy(domain)
+    task = copy.deepcopy(task)
+
+    with open(plan_path, 'r') as f:
+        ground_action_sequence = f.read()
+    ground_action_sequence = ground_action_sequence.split('\n')
+    plan = [PositivePlan(ground_action_sequence)]
+
+    repairer = Repairer()
+
+    if repairer.repair(domain, [(task, plan)]):
+        r = repairer.get_repairs_string()
+    else:
+        raise "Problem is unsolvable"
+    return(r)
 
 
 input_directory = r"./input/dummy_block_world/AAAI25-example1"

@@ -11,6 +11,8 @@ from exptools import generate_instances
 import cProfile
 import pstats
 import json
+#TODO: Fina a better place for ground_repair
+from run_songtuans_vanilla import ground_repair
 
 
 def experiment(benchmark_path, specific_instance=None):
@@ -24,26 +26,19 @@ def experiment(benchmark_path, specific_instance=None):
         print(f"Instance name: {instance.instance_name}")
         print(f"Lifted plan: {instance.lifted_plan}")
 
-
-        ###### Using exaustive grounding
-        # action_grounding_dict = all_action_groundings(
-        #     instance.lifted_plan
-        #     , instance.planning_domain
-        #     , instance.planning_task)
-        
-        # # with open('action_grounding', 'w') as file:
-        # #     json.dump(action_grounding_dict, file, indent=4)
-        ###### Using smart grounding 
-        # action_grounding = smart_grounder(
-        #     instance.planning_domain,
-        #     instance.planning_task,
-        #     instance.lifted_plan)
+        # Ground repair
+        gr = ground_repair(
+            instance.planning_domain
+            , instance.planning_task
+            , instance.white_plan_file)
+        print(f"$$$$  Vanilla ground repair:  $$$$")
+        print(gr)
 
 
+        # Lifted repair
         Node.set_grounder(smart_grounder)
         Node.set_domain(instance.planning_domain)
         Node.set_task(instance.planning_task)
-
 
         # Test: Input is the lifted action sequence
         initial_node = Node(
@@ -75,7 +70,7 @@ def print_profile(file_name: str, num_lines=20):
 if __name__ == "__main__":
     benchmark_path = Path('./input/benchmarks-G1')
 
-    cProfile.run("experiment(benchmark_path)"
+    cProfile.run("experiment(benchmark_path, 'blocks/pprobBLOCKS-5-0-err-rate-0-5')"
                  , 'profile_output')
 
-    print_profile('profile_output', 20)
+    # print_profile('profile_output', 2000)

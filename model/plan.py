@@ -80,13 +80,12 @@ class Plan:
 
     def _parse_plan(self, lines):
         for line in lines:
-            if not line.strip():
-                continue
             line = line.strip()
-            if line[0] == "(" and line[-1] == ")":
-                line = line[1:-1]
-            parts = line.split(" ")
-            self._steps.append(tuple(parts))
+            if line:
+                if line[0] == "(" and line[-1] == ")":
+                    line = line[1:-1]
+                    parts = line.split(" ")
+                    self._steps.append(tuple(parts))
 
 
     @property

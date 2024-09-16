@@ -47,12 +47,13 @@ class Node:
         self.logger = logging.getLogger(f"{__name__}.{self.__class__.__name__}")
 
         if len(ground_action_sequence) == 0:
-            # todo: review the claim below
+            # TODO: review the claim below
             # These values are arbitrary numbers and won't affect the results.
             self.g_cost = 0
             self.h_cost = 0
             self.f_cost = 0
             self.repaired_domain = copy.deepcopy(self.original_domain)
+            self.ground_repair_solution = None
         else:
             self.g_cost, self.ground_repair_solution, self.repaired_domain = self._ground_repair()
             self.h_cost = self.compute_h_cost()
@@ -78,7 +79,7 @@ class Node:
 
 
     def compute_h_cost(self):
-        # todo: NOT IMPLEMENTED
+        # TODO: NOT IMPLEMENTED
         # will always be run after ground_repair(), and hence works with the repaired self.planning.domain.
         # should be sth like: h(y(self.domain), d(self.task), self.lifted_action_sequence)
 
@@ -93,7 +94,7 @@ class Node:
         next_action_name = self.lifted_action_sequence[0]
 
         task = copy.deepcopy(self.original_task)
-        # TODO: Adding the following lines - debug later
+
         plan = PositivePlan(self.ground_action_sequence)
         plan.compute_subs(self.repaired_domain, task)
         state = apply_action_sequence(self.repaired_domain, task, plan)
@@ -107,6 +108,11 @@ class Node:
             task,
             next_action_name
         )
+
+        print(f'Current repairs:\n{self.ground_repair_solution}')
+
+        print(f'current state:\n{state}')
+        print(f'possible groundings:\n{possible_groundings}')
 
         neighbours = []
         for grounding in possible_groundings:
@@ -124,7 +130,7 @@ class Node:
 
     def is_goal(self):
         # check with @songtuan
-        return len(self.lifted_action_sequence) == 0
+        return len(self.lifted_action_sequence) == 0 and self.f_cost != float('inf')
 
 
     def __eq__(self, other):
@@ -134,11 +140,12 @@ class Node:
 
 
     def __str__(self):
+        next_lifted = [] if len(self.lifted_action_sequence)==0 else self.lifted_action_sequence[0]
         return ("Node instance:"
                 + "\n"
                 + f"Ground actions: {self.ground_action_sequence}"
                 + "\n"
-                + f"Next lifted actions: {self.lifted_action_sequence[0]}"
+                + f"Next lifted actions: {next_lifted}"
                 )
 
     def __repr__(self):
