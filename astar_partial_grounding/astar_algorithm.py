@@ -21,17 +21,19 @@ class AStar:
         open_list = []
         closed_list = []
 
-        heapq.heappush(open_list, (self.initial_node.f_cost, self.initial_node))
+        heapq.heappush(open_list, (self.initial_node.f_cost, -self.initial_node.depth, self.initial_node))
 
         iteration = 0
         while open_list:
-            iteration = iteration + 1
-            current_node = heapq.heappop(open_list)[1]
+            iteration += 1
+            current_node = heapq.heappop(open_list)[2]
 
             self.logger.debug(f"A* iteration {iteration}, current node:\n{current_node}")
 
             print()
             print(f">>>>  A* iteration {iteration}  <<<<")
+            print()
+            print(f"Fringe size: {len(open_list)}, First 20 nodes: " + ", ".join(f"(D:{-nd},C:{fc})" for fc, nd, _ in sorted(open_list)[:20]))
             print()
             print(f"Current node:\n{current_node}")
 
@@ -46,8 +48,8 @@ class AStar:
 
                 tentative_g_cost = neighbor.g_cost
 
-                if (neighbor.f_cost, neighbor) not in open_list:
-                    heapq.heappush(open_list, (neighbor.f_cost, neighbor))
+                if not any(node[2]==neighbor for node in open_list):
+                    heapq.heappush(open_list, (neighbor.f_cost, -neighbor.depth, neighbor))
                 elif tentative_g_cost >= neighbor.g_cost:
                     continue
 

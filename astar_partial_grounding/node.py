@@ -3,6 +3,7 @@ from model.plan import PositivePlan, apply_action_sequence
 from typing import List
 import logging
 import copy
+from fd.pddl.conditions import Conjunction
 
 
 
@@ -30,7 +31,8 @@ class Node:
                  lifted_action_sequence: List[str],
                  ground_action_sequence: List[str],
                  parent: 'Node' = None,
-                 is_initial_node: bool = False
+                 is_initial_node: bool = False,
+                 depth=0
                  ):
         if self.grounder is None:
             raise ValueError("Action grounder must be set before creating instances.")
@@ -46,18 +48,23 @@ class Node:
 
         self.logger = logging.getLogger(f"{__name__}.{self.__class__.__name__}")
 
-        if len(ground_action_sequence) == 0:
+        if is_initial_node:
             # TODO: review the claim below
             # These values are arbitrary numbers and won't affect the results.
+            assert len(ground_action_sequence) == 0
+            assert depth == 0
+            self.depth = depth
             self.g_cost = 0
             self.h_cost = 0
             self.f_cost = 0
             self.repaired_domain = copy.deepcopy(self.original_domain)
             self.ground_repair_solution = None
         else:
+            self.depth = depth
             self.g_cost, self.ground_repair_solution, self.repaired_domain = self._ground_repair()
             self.h_cost = self.compute_h_cost()
             self.f_cost = self.g_cost + self.h_cost
+
 
 
     def _ground_repair(self):
@@ -92,27 +99,26 @@ class Node:
             raise ValueError("Can't expand this node.")
         
         next_action_name = self.lifted_action_sequence[0]
-
         task = copy.deepcopy(self.original_task)
-
         plan = PositivePlan(self.ground_action_sequence)
         plan.compute_subs(self.repaired_domain, task)
-        state = apply_action_sequence(self.repaired_domain, task, plan)
-        # state = apply_action_sequence(self.repaired_domain, task, self.ground_action_sequence)
+        state = apply_action_sequence(self.repaired_domain, task, plan, delete_relaxed=True)
         task.set_init_state(state)
 
+        # Precondition relaxing
+        # If a precondition is not satisfied then don't check it
+        domain = copy.deepcopy(self.repaired_domain)
+        action = domain.get_action(next_action_name)
+        curr_state_names = [p.predicate for p in state]
+        relaxed_pre = [part for part in action.precondition.parts if part.predicate in curr_state_names]
+        action.precondition = Conjunction(relaxed_pre)
 
-        # initial state must be updated in the task
-        possible_groundings = Node.grounder(
-            self.repaired_domain,
-            task,
-            next_action_name
-        )
+        possible_groundings = Node.grounder(domain, task, next_action_name)
 
         print(f'Current repairs:\n{self.ground_repair_solution}')
-
-        print(f'current state:\n{state}')
-        print(f'possible groundings:\n{possible_groundings}')
+        print(f"Current f_cost={self.f_cost}\n")
+        # print(f'current state:\n{state}')
+        # print(f'possible groundings:\n{possible_groundings}')
 
         neighbours = []
         for grounding in possible_groundings:
@@ -120,7 +126,8 @@ class Node:
                 ground_action_sequence=self.ground_action_sequence + [grounding],
                 lifted_action_sequence=self.lifted_action_sequence[1:],
                 parent=self,
-                is_initial_node=False
+                is_initial_node=False,
+                depth=self.depth+1
             )
             neighbours.append(next_node)
 

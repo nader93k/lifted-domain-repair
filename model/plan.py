@@ -34,7 +34,7 @@ def check_goal(state, goal):
     return None
 
 
-def apply_action_sequence(domain: Domain, task: Task, plan) -> List[Atom]:
+def apply_action_sequence(domain: Domain, task: Task, plan, delete_relaxed) -> List[Atom]:
     state = set(task.init)
     
     for pos, step in enumerate(plan._steps):
@@ -43,13 +43,13 @@ def apply_action_sequence(domain: Domain, task: Task, plan) -> List[Atom]:
         unsat_atom = applicable(action, state, var_mapping)
         if unsat_atom is not None:
             raise ValueError(f"Action {action} not applicable in current state")
-        state = next_state(action, var_mapping, state)
+        state = next_state(action, var_mapping, state, delete_relaxed=delete_relaxed)
     
     state = list(state)
     return state
 
 
-def next_state(action, var_mapping, current):
+def next_state(action, var_mapping, current, delete_relaxed=False):
     # Compute the next state after applying an action
     pos_effs, neg_effs = set(), set()
     for eff in action.effects:
@@ -61,7 +61,10 @@ def next_state(action, var_mapping, current):
             neg_effs.add(atom)
         else:
             pos_effs.add(atom)
-    state = current.difference(neg_effs)
+    if delete_relaxed:
+        state = current
+    else:
+        state = current.difference(neg_effs)
     state = state.union(pos_effs)
     return state
 
