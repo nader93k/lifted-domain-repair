@@ -4,6 +4,7 @@ from typing import List
 import logging
 import copy
 from fd.pddl.conditions import Conjunction
+from heuristic import Heurisitc
 
 
 
@@ -45,8 +46,8 @@ class Node:
         self.ground_action_sequence = ground_action_sequence
         self.lifted_action_sequence = lifted_action_sequence
         self.parent = parent
+        self.neighbours = []
 
-        self.logger = logging.getLogger(f"{__name__}.{self.__class__.__name__}")
 
         if is_initial_node:
             # TODO: review the claim below
@@ -59,10 +60,16 @@ class Node:
             self.f_cost = 0
             self.repaired_domain = copy.deepcopy(self.original_domain)
             self.ground_repair_solution = None
+            self.current_state = copy.deepcopy(self.original_task.init)
         else:
             self.depth = depth
             self.g_cost, self.ground_repair_solution, self.repaired_domain = self._ground_repair()
-            self.h_cost = self.compute_h_cost()
+            if self.g_cost != float('inf'):
+                self.current_state = self.calculate_current_state()
+            else:
+                self.current_state = None
+            # self.h_cost = s elf.compute_h_cost()
+            self.h_cost = 0
             self.f_cost = self.g_cost + self.h_cost
 
 
@@ -83,12 +90,24 @@ class Node:
             return repairer.count_repair_lines(), repairer.get_repairs_string(), domain
         else:
             return float('inf'), None, None
+        
+    
+    def calculate_current_state(self):
+        task = copy.deepcopy(self.original_task)
+        plan = PositivePlan(self.ground_action_sequence)
+        plan.compute_subs(self.repaired_domain, task)
+        state = apply_action_sequence(self.repaired_domain, task, plan, delete_relaxed=True)
+        return state
 
 
     def compute_h_cost(self):
-        # TODO: NOT IMPLEMENTED
+        # TODO: debug & check
         # will always be run after ground_repair(), and hence works with the repaired self.planning.domain.
         # should be sth like: h(y(self.domain), d(self.task), self.lifted_action_sequence)
+        task = copy.deepcopy(self.original_task)
+        task.set_init_state(self.current_state)
+        h = Heurisitc(h_name="G_HMAX", relaxation="none")
+        self.h_cost = h.evaluate(self.original_domain, task, [(l,) for l in self.lifted_action_sequence])
 
         return 0
 
@@ -100,27 +119,22 @@ class Node:
         
         next_action_name = self.lifted_action_sequence[0]
         task = copy.deepcopy(self.original_task)
-        plan = PositivePlan(self.ground_action_sequence)
-        plan.compute_subs(self.repaired_domain, task)
-        state = apply_action_sequence(self.repaired_domain, task, plan, delete_relaxed=True)
-        task.set_init_state(state)
+        task.set_init_state(self.current_state)
 
         # Precondition relaxing
         # If a precondition is not satisfied then don't check it
         domain = copy.deepcopy(self.repaired_domain)
         action = domain.get_action(next_action_name)
-        curr_state_names = [p.predicate for p in state]
+        curr_state_names = [p.predicate for p in self.current_state]
         relaxed_pre = [part for part in action.precondition.parts if part.predicate in curr_state_names]
         action.precondition = Conjunction(relaxed_pre)
 
+        # # TODO: remove this idea?
+        # action.precondition = Conjunction([])
+
         possible_groundings = Node.grounder(domain, task, next_action_name)
 
-        print(f'Current repairs:\n{self.ground_repair_solution}')
-        print(f"Current f_cost={self.f_cost}\n")
-        # print(f'current state:\n{state}')
-        # print(f'possible groundings:\n{possible_groundings}')
-
-        neighbours = []
+        self.neighbours = []
         for grounding in possible_groundings:
             next_node = Node(
                 ground_action_sequence=self.ground_action_sequence + [grounding],
@@ -129,10 +143,17 @@ class Node:
                 is_initial_node=False,
                 depth=self.depth+1
             )
-            neighbours.append(next_node)
+            self.neighbours.append(next_node)
 
-        print(f'Num neighbour created: {len(neighbours)}')
-        return neighbours
+        # logging.info(f'repair set:\n{self.ground_repair_solution}')
+        # logging.info(f"g_cost={self.g_cost}")
+        # logging.info(f"h_cost={self.h_cost}")
+        # logging.info(f"f_cost={self.f_cost}")
+        # logging.info(f'num neighbour={len(neighbours)}')
+        print(f'> Current state:\n{self.current_state}')
+        print(f'> Possible groundings:\n{possible_groundings}')
+
+        return self.neighbours
 
 
     def is_goal(self):
@@ -148,11 +169,16 @@ class Node:
 
     def __str__(self):
         next_lifted = [] if len(self.lifted_action_sequence)==0 else self.lifted_action_sequence[0]
-        return ("Node instance:"
-                + "\n"
-                + f"Ground actions: {self.ground_action_sequence}"
-                + "\n"
-                + f"Next lifted actions: {next_lifted}"
+        return ("> Node instance:" + "\n"
+                + f"> Depth={self.depth}" + "\n"
+                + f"> Ground actions: {self.ground_action_sequence}" + "\n"
+                + f"> Next lifted action: {next_lifted}" + "\n"
+                + f"> Repair set:\n{self.ground_repair_solution}" + "\n"
+                + f"> g_cost={self.g_cost}" + "\n"
+                + f"> h_cost={self.h_cost}" + "\n"
+                + f"> f_cost={self.f_cost}" + "\n"
+                + f"> #neighbours={len(self.neighbours)}"
+
                 )
 
     def __repr__(self):

@@ -34,6 +34,8 @@ def experiment(benchmark_path, specific_instance=None):
         print(f"$$$$  Vanilla ground repair:  $$$$")
         print(gr)
 
+        # exit()
+
 
         # Lifted repair
         Node.set_grounder(smart_grounder)
@@ -68,9 +70,9 @@ def print_profile(file_name: str, num_lines=20):
 
 
 if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO, format='%(message)s')
     benchmark_path = Path('./input/benchmarks-G1')
-
     cProfile.run("experiment(benchmark_path, 'blocks/pprobBLOCKS-5-0-err-rate-0-5')"
-                 , 'profile_output')
+                 , 'profiler_blocks_full-log')
 
     # print_profile('profile_output', 2000)

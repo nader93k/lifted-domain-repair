@@ -15,7 +15,6 @@ class AStar:
     """
     def __init__(self, initial_node):
         self.initial_node = initial_node
-        self.logger = logging.getLogger(f"{__name__}.{self.__class__.__name__}")
 
     def find_path(self):
         open_list = []
@@ -28,15 +27,6 @@ class AStar:
             iteration += 1
             current_node = heapq.heappop(open_list)[2]
 
-            self.logger.debug(f"A* iteration {iteration}, current node:\n{current_node}")
-
-            print()
-            print(f">>>>  A* iteration {iteration}  <<<<")
-            print()
-            print(f"Fringe size: {len(open_list)}, First 20 nodes: " + ", ".join(f"(D:{-nd},C:{fc})" for fc, nd, _ in sorted(open_list)[:20]))
-            print()
-            print(f"Current node:\n{current_node}")
-
             if current_node.is_goal():
                 return self.reconstruct_path(current_node), current_node
 
@@ -46,18 +36,18 @@ class AStar:
                 # if neighbor in closed_list:
                 #     continue
 
-                tentative_g_cost = neighbor.g_cost
+                tentative_f_cost = neighbor.f_cost
 
                 if not any(node[2]==neighbor for node in open_list):
                     heapq.heappush(open_list, (neighbor.f_cost, -neighbor.depth, neighbor))
-                elif tentative_g_cost >= neighbor.g_cost:
+                elif tentative_f_cost >= neighbor.f_cost:
                     continue
 
                 neighbor.parent = current_node
 
-            self.logger.info(f"\nA* iteration {iteration}.\n")
-            self.logger.info(f"\nCurrent Node: {current_node}.\n")
-            self.logger.debug(f"Open list:\n" + str(open_list) + f"\nClose list:\n" + str(closed_list))
+            logging.info(f"\n>>>>  A* iteration {iteration}  <<<<\n")
+            logging.info(f"> Fringe size: {len(open_list)}\n> First 20 nodes: " + ", ".join(f"(D:{-nd},C:{fc})" for fc, nd, _ in sorted(open_list)[:20]))
+            logging.info(f"\n{current_node}")
 
         return None, None  # No path found
 

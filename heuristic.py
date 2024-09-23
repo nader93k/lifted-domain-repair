@@ -76,7 +76,7 @@ def get_fd_value(heuristic, domain_file, instance_file):
         "--search", f"astar({heuristic}())"
     ]
 
-    print("Calling", *command)
+    # print("Calling", *command)
     return get_heuristic(command, "Initial heuristic value for")
 
 def get_pwl_value(heuristic, domain_file, instance_file):
@@ -93,7 +93,7 @@ def get_pwl_value(heuristic, domain_file, instance_file):
         "-g", generator
     ]
 
-    print("Calling", *command)
+    # print("Calling", *command)
     return get_heuristic(command, "Initial heuristic value is:")
 
 def unprotect(s):
@@ -348,5 +348,5 @@ class Heurisitc:
         if val != -1:
             return val #TODO: (0, val) would be better
         else: # returned infinity == add repair is not sufficient
-            print("No single action was applicable, rerunning to precondition repair.")
+            # print("No single action was applicable, rerunning to precondition repair.")
             return self.re_run(__domain, __task, action_sequence) #TODO: (self.re_run(__domain, __task, action_sequence), 0)
