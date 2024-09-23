@@ -1,1 +1,1 @@
-from .load_data import generate_instances
+from .load_data import list_instances

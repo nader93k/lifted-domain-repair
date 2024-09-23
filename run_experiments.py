@@ -7,35 +7,37 @@ from astar_partial_grounding import \
     AStar, Node
 from astar_partial_grounding.action_grounding_tools import smart_grounder
 from pathlib import Path
-from exptools import generate_instances
+from exptools import list_instances
 import cProfile
 import pstats
 import json
 #TODO: Fina a better place for ground_repair
-from run_songtuans_vanilla import ground_repair
+from vanilla_runs.run_songtuans_vanilla import ground_repair
 
 
 def experiment(benchmark_path, specific_instance=None):
+    instance_list = list_instances(benchmark_path, specific_instance=specific_instance)
 
-    for instance in generate_instances(
-            benchmark_path
-            , specific_instance=specific_instance):
+    instance_list.sort(key=lambda i: i.plan_length)
+
+    # print(f'identifier={instance.identifier}')
+    # print(len(read_action_names(plan_file)))
+
+    for instance in instance_list:
+        logging.info(f"> Instance ID={instance.identifier}")
+        logging.info(f"> Plan length={instance.plan_length}")
         instance.load_to_memory()
-
-        print(f"Domain class: {instance.domain_class}")
-        print(f"Instance name: {instance.instance_name}")
-        print(f"Lifted plan: {instance.lifted_plan}")
+        logging.info(f"> Domain class: {instance.domain_class}")
+        logging.info(f"> Instance name: {instance.instance_name}")
+        logging.info(f"> Lifted plan:\n{instance.lifted_plan}")
 
         # Ground repair
         gr = ground_repair(
             instance.planning_domain
             , instance.planning_task
             , instance.white_plan_file)
-        print(f"$$$$  Vanilla ground repair:  $$$$")
-        print(gr)
-
+        logging.info(f">>>  Vanilla ground repair:\n{gr}\n")
         # exit()
-
 
         # Lifted repair
         Node.set_grounder(smart_grounder)
@@ -51,15 +53,12 @@ def experiment(benchmark_path, specific_instance=None):
         )
 
         astar = AStar(initial_node)
-        path, goal_node = astar.find_path()
+        path, goal_node = astar.find_path(log_interval=100)
 
         if goal_node:
-            print("Goal found:")
-            print(goal_node.ground_action_sequence)
-            print('Repairs:')
-            print(goal_node.ground_repair_solution)
+            logging.info(f"Goal found:\n{goal_node}")
         else:
-            print("No goal found")
+            logging.info("No goal found.")
 
 
 def print_profile(file_name: str, num_lines=20):
@@ -72,7 +71,8 @@ def print_profile(file_name: str, num_lines=20):
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, format='%(message)s')
     benchmark_path = Path('./input/benchmarks-G1')
-    cProfile.run("experiment(benchmark_path, 'blocks/pprobBLOCKS-5-0-err-rate-0-5')"
-                 , 'profiler_blocks_full-log')
+    cProfile.run("experiment(benchmark_path, 'blocks/pprobBLOCKS-5-0-err-rate-0-5')", 'profiler_blocks_less_log')
 
-    # print_profile('profile_output', 2000)
+    # cProfile.run("experiment(benchmark_path)", 'profiler_tmp')
+
+    print_profile('\nexp_logs/full-log_blocks/profiler_blocks_full-log', 200)

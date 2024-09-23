@@ -19,12 +19,13 @@ class Instance:
         self.instance_name = instance_name
         self.identifier = identifier
 
-
         self.error_rate = error_rate
 
         self.planning_task_file = planning_task_file
         self.planning_domain_file = planning_domain_file
         self.white_plan_file = white_plan_file
+
+        self.plan_length = len(read_action_names(self.white_plan_file))
 
         self.planning_task = None
         self.planning_domain = None
@@ -59,15 +60,18 @@ def _find_err_rate_substring(s):
         raise ValueError("Substring 'err-rate' not found in the given text")
 
 
-def generate_instances(benchmark_path: Path, specific_instance=None):
+def list_instances(benchmark_path: Path, specific_instance=None):
     folders = _list_folders(benchmark_path)
+
     folders.sort()
     planning_folders = folders[::2]
 
+    instance_list = []
     for planning_folder in planning_folders:
         plan_folder = Path(str(planning_folder) + '_plans')
         logging.debug(f"Planning folder: {planning_folder}\n")
 
+        
         for task_file in [f for f in _list_files(planning_folder) if not f.name.startswith("domain")]:
             domain_file = task_file.with_name('domain-' + task_file.name)
             plan_file = Path(plan_folder / task_file.stem).with_suffix(".plan")
@@ -75,20 +79,25 @@ def generate_instances(benchmark_path: Path, specific_instance=None):
             error_rate = _find_err_rate_substring(task_file.stem)
 
             instance = Instance(
-                domain_class=planning_folder.name
+                  domain_class=planning_folder.name
                 , instance_name=task_file.stem
                 , identifier = planning_folder.name + '/' + task_file.stem
                 , planning_task_file=task_file
                 , planning_domain_file=domain_file
                 , error_rate=error_rate
-                , white_plan_file=plan_file
-            )
+                , white_plan_file=plan_file)
 
             if specific_instance and instance.identifier != specific_instance:
                 continue
 
+            instance_list.append(instance)
+
             logging.debug(f"task_file: {task_file}")
             logging.debug(f"domain_file: {domain_file}")
             logging.debug(f"plan_file: {plan_file}\n")
+        
+    return(instance_list)
+        
+        
 
-            yield instance
+        

@@ -145,13 +145,8 @@ class Node:
             )
             self.neighbours.append(next_node)
 
-        # logging.info(f'repair set:\n{self.ground_repair_solution}')
-        # logging.info(f"g_cost={self.g_cost}")
-        # logging.info(f"h_cost={self.h_cost}")
-        # logging.info(f"f_cost={self.f_cost}")
-        # logging.info(f'num neighbour={len(neighbours)}')
-        print(f'> Current state:\n{self.current_state}')
-        print(f'> Possible groundings:\n{possible_groundings}')
+        logging.debug(f'> Current state:\n{self.current_state}')
+        logging.debug(f'> Possible groundings:\n{possible_groundings}')
 
         return self.neighbours
 
