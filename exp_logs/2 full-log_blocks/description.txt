@@ -1,0 +1,58 @@
+This log is created with a full logging recorded for in depth investigation of our algorithm. Other runs will have less logs for performance gain.
+
+
+Domain class: blocks
+Instance name: pprobBLOCKS-5-0-err-rate-0-5
+Lifted plan: ['unstack', 'put-down', 'pick-up', 'stack', 'unstack', 'put-down', 'unstack', 'stack', 'pick-up', 'stack', 'pick-up', 'stack']
+$$$$  Vanilla ground repair:  $$$$
+unstack,(clear ?y),effPos,1
+pick-up,(holding ?x),effPos,1
+
+
+
+>>>>  A* iteration 3554  <<<<
+
+> Fringe size: 19911
+> First 20 nodes: (D:12,C:3), (D:12,C:3), (D:12,C:3), (D:12,C:3), (D:12,C:3), (D:12,C:3), (D:11,C:3), (D:11,C:3), (D:11,C:3), (D:11,C:3), (D:11,C:3), (D:11,C:3), (D:11,C:3), (D:11,C:3), (D:11,C:3), (D:11,C:3), (D:11,C:3), (D:11,C:3), (D:11,C:3), (D:11,C:3)
+
+> Node instance:
+> Depth=9
+> Ground actions: ['(unstack c e)', '(put-down b)', '(pick-up d)', '(stack c c)', '(unstack c c)', '(put-down c)', '(unstack b a)', '(stack b d)', '(pick-up c)']
+> Next lifted action: stack
+> Repair set:
+put-down,(holding ?x),precPos,-1
+stack,(clear ?y),precPos,-1
+> g_cost=2
+> h_cost=0
+> f_cost=2
+> #neighbours=6
+> Current state:
+[<Atom holding(b)>, <Atom on(e, b)>, <Atom ontable(b)>, <Atom ontable(a)>, <Atom on(c, c)>, <Atom on(b, a)>, <Atom on(c, e)>, <Atom on(b, b)>, <Atom clear(d)>, <Atom handempty()>, <Atom ontable(d)>, <Atom clear(c)>, <Atom holding(c)>, <Atom clear(b)>, <Atom ontable(c)>]
+> Possible groundings:
+['(stack b b)', '(stack b c)', '(stack b d)', '(stack c b)', '(stack c c)', '(stack c d)']
+> Current state:
+[<Atom holding(b)>, <Atom on(e, b)>, <Atom ontable(b)>, <Atom ontable(a)>, <Atom on(c, c)>, <Atom on(b, a)>, <Atom on(b, c)>, <Atom on(c, e)>, <Atom clear(d)>, <Atom handempty()>, <Atom ontable(d)>, <Atom clear(c)>, <Atom holding(c)>, <Atom clear(b)>, <Atom ontable(c)>]
+> Possible groundings:
+['(pick-up b)', '(pick-up c)', '(pick-up d)']
+> Current state:
+[<Atom holding(b)>, <Atom on(e, b)>, <Atom ontable(b)>, <Atom ontable(a)>, <Atom on(c, c)>, <Atom on(b, a)>, <Atom on(b, c)>, <Atom on(c, e)>, <Atom clear(d)>, <Atom handempty()>, <Atom ontable(d)>, <Atom clear(c)>, <Atom holding(c)>, <Atom clear(b)>, <Atom ontable(c)>]
+> Possible groundings:
+['(stack b b)', '(stack b c)', '(stack b d)', '(stack c b)', '(stack c c)', '(stack c d)']
+> Current state:
+[<Atom holding(b)>, <Atom on(e, b)>, <Atom ontable(b)>, <Atom ontable(a)>, <Atom on(c, c)>, <Atom on(b, a)>, <Atom on(c, e)>, <Atom clear(d)>, <Atom handempty()>, <Atom ontable(d)>, <Atom on(b, d)>, <Atom clear(c)>, <Atom holding(c)>, <Atom clear(b)>, <Atom ontable(c)>]
+> Possible groundings:
+['(pick-up b)', '(pick-up c)', '(pick-up d)']
+> Current state:
+[<Atom holding(b)>, <Atom on(e, b)>, <Atom ontable(b)>, <Atom ontable(a)>, <Atom on(c, c)>, <Atom on(b, a)>, <Atom on(c, e)>, <Atom clear(d)>, <Atom handempty()>, <Atom ontable(d)>, <Atom on(b, d)>, <Atom clear(c)>, <Atom holding(c)>, <Atom clear(b)>, <Atom ontable(c)>]
+> Possible groundings:
+['(stack b b)', '(stack b c)', '(stack b d)', '(stack c b)', '(stack c c)', '(stack c d)']
+> Current state:
+[<Atom holding(b)>, <Atom on(e, b)>, <Atom ontable(b)>, <Atom ontable(a)>, <Atom on(c, c)>, <Atom on(b, a)>, <Atom on(c, e)>, <Atom clear(d)>, <Atom handempty()>, <Atom ontable(d)>, <Atom on(b, d)>, <Atom clear(c)>, <Atom holding(c)>, <Atom clear(b)>, <Atom ontable(c)>]
+> Possible groundings:
+['(stack b b)', '(stack b c)', '(stack b d)', '(stack c b)', '(stack c c)', '(stack c d)']
+Goal found:
+['(unstack c e)', '(put-down e)', '(pick-up d)', '(stack c d)', '(unstack e b)', '(put-down b)', '(unstack b a)', '(stack a e)', '(pick-up a)', '(stack b d)', '(pick-up b)', '(stack e b)']
+Repairs:
+unstack,(holding ?y),effPos,1
+stack,(on ?y ?x),effPos,1
+stack,(clear ?y),precPos,-1

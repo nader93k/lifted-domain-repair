@@ -1,0 +1,53 @@
+This is the second fully logged run. This can be interesting to compare with the previous run (full-log_blocks) because it is identical but gets a different result. Because I think Songtuans solver can return different results on the same input. It seems that this randomness can have significant effect on 1. number of A* (BFS really) iterations 2. quality of answer (number of repairs) and probablt 3. "degree of completeness": whether we can find any answer at all.
+
+
+> Instance ID=blocks/pprobBLOCKS-5-0-err-rate-0-5
+> Plan length=12
+> Domain class: blocks
+> Instance name: pprobBLOCKS-5-0-err-rate-0-5
+> Lifted plan:
+['unstack', 'put-down', 'pick-up', 'stack', 'unstack', 'put-down', 'unstack', 'stack', 'pick-up', 'stack', 'pick-up', 'stack']
+>>>  Vanilla ground repair:
+unstack,(clear ?y),effPos,1
+stack,(holding ?x),precPos,-1
+
+
+Mon Sep 23 12:08:38 2024    profiler_blocks_less_log
+
+         22955706652 function calls (22718866269 primitive calls) in 16664.466 seconds
+
+   Ordered by: call count
+   List reduced from 485 to 185 due to restriction <'/home/nader/projects/lifted-white-plan-domain-repair'>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+6791265330 5266.224    0.000 6112.261    0.000 /home/nader/projects/lifted-white-plan-domain-repair/astar_partial_grounding/node.py:159(__eq__)
+4858342423 3585.877    0.000 8181.683    0.000 /home/nader/projects/lifted-white-plan-domain-repair/astar_partial_grounding/astar_algorithm.py:52(<genexpr>)
+1933034423  332.755    0.000  332.755    0.000 /home/nader/projects/lifted-white-plan-domain-repair/astar_partial_grounding/node.py:183(__lt__)
+ 78797900   14.688    0.000   14.688    0.000 /home/nader/projects/lifted-white-plan-domain-repair/fd/pddl/conditions.py:67(__hash__)
+ 77838307   55.334    0.000   74.318    0.000 /home/nader/projects/lifted-white-plan-domain-repair/fd/pddl/conditions.py:281(__init__)
+ 48801949   23.174    0.000   23.174    0.000 /home/nader/projects/lifted-white-plan-domain-repair/model/plan.py:58(<genexpr>)
+ 39507267   16.049    0.000   16.049    0.000 /home/nader/projects/lifted-white-plan-domain-repair/fd/pddl/conditions.py:285(__eq__)
+ 26376881    5.389    0.000    5.389    0.000 /home/nader/projects/lifted-white-plan-domain-repair/utils/__init__.py:30(<genexpr>)
+
+
+
+ Last Iteration (goal not achieved)
+ >>>>  A* iteration 23628  <<<<
+
+> Fringe size: 87882
+> First 20 nodes: (D:11,C:5), (D:10,C:5), (D:9,C:5), (D:8,C:5), (D:8,C:5), (D:8,C:5), (D:8,C:5), (D:8,C:5), (D:8,C:5), (D:8,C:5), (D:8,C:5), (D:8,C:5), (D:8,C:5), (D:8,C:5), (D:8,C:5), (D:8,C:5), (D:8,C:5), (D:8,C:5), (D:8,C:5), (D:8,C:5)
+
+> Node instance:
+> Depth=10
+> Ground actions: ['(unstack c e)', '(put-down b)', '(pick-up b)', '(stack c d)', '(unstack c d)', '(put-down c)', '(unstack b a)', '(stack c b)', '(pick-up d)', '(stack c c)']
+> Next lifted action: pick-up
+> Repair set:
+stack,(holding ?x),precPos,-1
+stack,(clear ?y),effPos,1
+pick-up,(clear ?x),effPos,1
+unstack,(clear ?x),effPos,1
+put-down,(holding ?x),precPos,-1
+> g_cost=5
+> h_cost=0
+> f_cost=5
+> #neighbours=3
