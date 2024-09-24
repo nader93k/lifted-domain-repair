@@ -1,5 +1,5 @@
 import copy
-import heuristic
+from heuristic_tools import heuristic
 import subprocess
 import os
 from pathlib import Path
@@ -81,7 +81,7 @@ def all_action_groundings(white_action_names, domain, task):
     
 
 def smart_grounder(domain_in, task_in, action_name) -> List[str]:
-    aux_folder = r'heuristic_aux_files/'
+    aux_folder = r'heuristic_tools/'
     domain_path = aux_folder + "pass_to_grounder_domain.pddl"
     task_path = aux_folder + "pass_to_grounder_task.pddl"
     sas_path = aux_folder + 'out.sas'

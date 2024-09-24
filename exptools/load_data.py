@@ -30,6 +30,7 @@ class Instance:
         self.planning_task = None
         self.planning_domain = None
         self.lifted_plan = None
+        self.ground_plan = None
 
     def load_to_memory(self):
         with open(self.planning_task_file, 'r') as f:
@@ -41,6 +42,7 @@ class Instance:
             self.planning_domain = Domain(file_content)
 
         self.lifted_plan = read_action_names(self.white_plan_file)
+        self.ground_plan = read_ground_actions(self.white_plan_file)
 
 
 def _list_folders(directory: Path):

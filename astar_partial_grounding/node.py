@@ -3,8 +3,8 @@ from model.plan import PositivePlan, apply_action_sequence
 from typing import List
 import logging
 import copy
-from fd.pddl.conditions import Conjunction
-from heuristic import Heurisitc
+from fd.pddl.conditions import Conjunction, Atom
+from heuristic_tools.heuristic import Heurisitc
 
 
 
@@ -60,7 +60,8 @@ class Node:
             self.f_cost = 0
             self.repaired_domain = copy.deepcopy(self.original_domain)
             self.ground_repair_solution = None
-            self.current_state = copy.deepcopy(self.original_task.init)
+            init_atoms = [item for item in self.original_task.init if isinstance(item, Atom)]
+            self.current_state = copy.deepcopy(init_atoms)
         else:
             self.depth = depth
             self.g_cost, self.ground_repair_solution, self.repaired_domain = self._ground_repair()

@@ -1,56 +1,46 @@
 import os
-import subprocess
-from heuristic import Heurisitc
-import heuristic
-from pathlib import Path
-import copy
-from model.plan import *
-from repairer import *
+import logging
+
+def process_folders(folder_list):
+
+    for folder in folder_list:
+        # Change the log file for each folder
+        log_file = os.path.join(folder, 'folder_operations.log')
+        
+        logging.basicConfig(file=log_file)
+
+        try:
+            # Your processing logic here
+            logger.info(f"Processing folder: {folder}")
+            
+            # Example operations
+            files = os.listdir(folder)
+            logger.debug(f"Files in folder: {files}")
+
+            # Simulate some operations
+            for file in files:
+                logger.info(f"Operating on file: {file}")
+                # Your file operation logic here
+
+        except Exception as e:
+            logger.error(f"An error occurred while processing folder {folder}: {str(e)}")
+
+    # Clean up the last file handler after processing all folders
+    if file_handler:
+        logger.removeHandler(file_handler)
+        file_handler.close()
+
+# List of folders to process
+folders_to_process = [
+    '/path/to/folder1',
+    '/path/to/folder2',
+    '/path/to/folder3'
+]
 
 
-input_directory = r"./input/dummy_block_world/AAAI25-example1"
-domain_file = "domain.pddl"
-task_file = "task.pddl"
-white_plan_file = "white_plan_grounded.pddl"
-output_directory = r"./output"
-aux_folder = r'heuristic_aux_files/'
 
-
-domain_file = os.path.join(input_directory, domain_file)
-task_file = os.path.join(input_directory, task_file)
-white_plan_grounded_file = os.path.join(input_directory, white_plan_file)
-out_file = os.path.join(output_directory, "repairs")
-
-
-
-if __name__ == '__main__':
-    with open(domain_file, 'r') as f:
-        file_content = f.read()
-        domain = Domain(file_content)
-
-    with open(task_file, 'r') as f:
-        file_content = f.read()
-        task = Task(file_content)
-
-    with open(white_plan_grounded_file, 'r') as f:
-        ground_action_sequence = f.read()
-        ground_action_sequence = ground_action_sequence.split('\n')
-
-    plan = PositivePlan(ground_action_sequence)
-
-    print(plan._steps)
-
-
-    state = apply_action_sequence(domain, task, plan)
-
-    print(state)
-
-
-    # repairer = Repairer()
-    # if repairer.repair(domain, [(task, plan)]): # type: ignore
-    #     repairer.write(out_file)
-    #     print("Repair done")
-    #     s = repairer.get_repairs_string()
-    #     # print(s)
-    # else:
-    #     print("Problem is unsolvable")
+logging.basicConfig(level=logging.DEBUG, 
+                    format='%(asctime)s - %(levelname)s - %(message)s',
+                    filemode='w')
+# Run the process
+process_folders(folders_to_process)

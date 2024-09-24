@@ -20,7 +20,7 @@ H_NAMES = ["L_HMAX", "L_HADD", "L_HFF", "G_HMAX", "G_HADD", "G_HFF", "G_LM_CUT"]
 RELAXATIONS = ["none", "unary", "zeroary"]
 
 
-BASE_FOLDER = r'heuristic_aux_files/'
+BASE_FOLDER = r'heuristic_tools/'
 INPUT_MODEL_DOMAIN = BASE_FOLDER + "domain-in.pddl"
 INPUT_MODEL_PROBLEM = BASE_FOLDER + "problem-in.pddl"
 OUTPUT_MODEL_DOMAIN = BASE_FOLDER + "domain-out.pddl"
