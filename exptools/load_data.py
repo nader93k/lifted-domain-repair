@@ -2,7 +2,9 @@ import logging
 from pathlib import Path
 import re
 from model.plan import Domain, Task
-from search_partial_grounding import read_ground_actions, all_action_groundings, read_action_names
+from search_partial_grounding import read_ground_actions, read_action_names
+from typing import List, Dict, Generator
+import random
 
 
 class Instance:
@@ -104,5 +106,42 @@ def list_instances(benchmark_path: Path, instance_id=None):
     return(instance_list)
         
         
-
+def smart_instance_generator(instances: List[Instance], min_length, max_length) -> Generator[Instance, None, None]:
+    # Group instances by domain_class
+    domain_classes: Dict[str, List[Instance]] = {}
+    for instance in instances:
+        if instance.domain_class not in domain_classes:
+            domain_classes[instance.domain_class] = []
+        domain_classes[instance.domain_class].append(instance)
+    
+    # Filter instances by plan length
+    for domain_class in domain_classes:
+        domain_classes[domain_class] = [
+            inst for inst in domain_classes[domain_class]
+            if min_length <= inst.plan_length <= max_length
+        ]
+    
+    # Remove empty domain classes
+    domain_classes = {k: v for k, v in domain_classes.items() if v}
+    
+    used_identifiers = set()
+    
+    while domain_classes:
+        # Choose a random domain class
+        domain_class = random.choice(list(domain_classes.keys()))
+        
+        # Choose a random instance from the selected domain class
+        instance = random.choice(domain_classes[domain_class])
+        
+        # Ensure the instance hasn't been used before
+        if instance.identifier not in used_identifiers:
+            used_identifiers.add(instance.identifier)
+            yield instance
+        
+        # Remove the instance from the list
+        domain_classes[domain_class].remove(instance)
+        
+        # If the domain class is empty, remove it
+        if not domain_classes[domain_class]:
+            del domain_classes[domain_class]
         

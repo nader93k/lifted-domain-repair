@@ -3,7 +3,6 @@ from .domain import *
 from .repair import *
 from utils import *
 from typing import List, Tuple, Set
-from types import SimpleNamespace
 
 
 def applicable(action, state, var_mapping):

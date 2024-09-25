@@ -8,6 +8,7 @@ from pathlib import Path
 import logging
 import time
 import sys
+import traceback
 
 
 def solve_instance(search_algorithm, benchmark_path, log_file, log_interval, instance_id):
@@ -64,6 +65,8 @@ def solve_instance(search_algorithm, benchmark_path, log_file, log_interval, ins
             logger.info(">>> No goal found.\n")
     except Exception as e:
         logger.error(f"An error occurred during A* search: {str(e)}")
+        stack_trace = traceback.format_exc()
+        logger.error(f"{stack_trace}")
         path, goal_node = None, None
     
     # Logging ...

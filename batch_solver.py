@@ -1,5 +1,5 @@
 from logging_config import setup_logging
-from exptools import list_instances
+from exptools import list_instances, smart_instance_generator
 from pathlib import Path
 import os
 import logging
@@ -30,9 +30,10 @@ def print_profile(file_name: str, num_lines=20):
 
 def run_process(search_algorithm, benchmark_path, log_folder, log_interval, instance_id=None):
     instance_list = list_instances(benchmark_path, instance_id=instance_id)
-    instance_list.sort(key=lambda i: i.plan_length)
+    
+    # instance_list.sort(key=lambda i: i.plan_length)
 
-    for instance in instance_list:
+    for instance in smart_instance_generator(instance_list, 8, 50):
         log_file = os.path.join(
             log_folder,
             f"{search_algorithm}_length_{instance.plan_length}_{instance.domain_class}_{instance.instance_name}.txt"
@@ -52,9 +53,9 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval, inst
         # 30 minutes in seconds
         timeout_seconds = 30 * 60
         try:
-            logger.info(f"> Starting a subprocess search for instance_id={instance.identifier}")
+            print(f"> Starting a subprocess search for instance_id={instance.identifier}")
             result = subprocess.run(cmd, check=True, timeout=timeout_seconds)
-            logger.info(f"> Searche returned no errors.")
+            logger.info(f"> Subprocess finished.")
         except subprocess.TimeoutExpired:
             logger.error("> Command timed out after 30 minutes")
         except subprocess.CalledProcessError as e:
@@ -63,15 +64,16 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval, inst
 
 # instance_id_example: 'blocks/pprobBLOCKS-5-0-err-rate-0-5'
 if __name__ == "__main__":
-    search_algorithm = 'bfs'
+    search_algorithm = 'astar'
     logging.basicConfig(level=logging.INFO, format='%(message)s')
-    benchmark_path = Path('./input/benchmarks-G1')\
+    benchmark_path = Path('./input/benchmarks-G1')
     # log_folder = Path('./exp_logs/4 BFS mega-run')
-    log_folder = Path('./exp_logs_debug')
-    log_interval = 100
+    log_folder = Path('./exp_logs/6 ASTAR mega-run full-log-heauristic0')
+    # log_folder = Path('./exp_logs_debug')
+    log_interval = 1
     
     run_process(search_algorithm=search_algorithm
-              , benchmark_path=benchmark_path
-              , log_folder=log_folder
-              , log_interval=log_interval
-              , instance_id=None)
+               , benchmark_path=benchmark_path
+               , log_folder=log_folder
+               , log_interval=log_interval
+               , instance_id=None)

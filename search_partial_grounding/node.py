@@ -127,7 +127,7 @@ class Node:
         # If a precondition is not satisfied then don't check it
         domain = copy.deepcopy(self.repaired_domain)
         action = domain.get_action(next_action_name)
-        curr_state_names = [p.predicate for p in self.current_state]
+        curr_state_names = [p.predicate for p in self.current_state if isinstance(p, Atom)]
         relaxed_pre = [part for part in action.precondition.parts if part.predicate in curr_state_names]
         action.precondition = Conjunction(relaxed_pre)
 
