@@ -1,19 +1,25 @@
+import sys
 import os
+# Get the absolute path of the project root
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+# Add the project root to the Python path
+sys.path.insert(0, project_root)
+
 import subprocess
-from heuristic import Heurisitc
-import heuristic
+from heuristic_tools import Heurisitc
+import heuristic_tools
 from pathlib import Path
 import copy
 from model.plan import *
 from repairer import *
 
 
-input_directory = r"./input/dummy_block_world/AAAI25-example1"
+input_directory = os.path.join(project_root, "input/dummy_block_world/AAAI25-example1")
 domain_file = "domain.pddl"
 task_file = "task.pddl"
-white_plan_file = "white_plan_grounded.pddl"
-output_directory = r"./output"
-aux_folder = r'heuristic_aux_files/'
+white_plan_file = "white_plan.pddl"
+output_directory = os.path.abspath(os.path.join(os.path.dirname(__file__)))
+aux_folder = os.path.join(project_root, "heuristic_tools")
 
 
 domain_file = os.path.join(input_directory, domain_file)
