@@ -13,17 +13,20 @@ class AStar:
         if a new node is already in the closed_list.
         - We also used list for closed_list instead of having a closed_set for the same reason.
     """
-    def __init__(self, initial_node):
+
+
+    def __init__(self, initial_node, logger):
         self.initial_node = initial_node
+        self.logger = logger
     
     def log_iteration_info(self, iteration, open_list, current_node, is_goal):
         if is_goal:
-            logging.info(f"\n==== Goal Reached at Iteration {iteration} ====")
-        logging.info(f"\n>>>>  A* iteration {iteration}  <<<<\n")
-        logging.info(f"> Fringe size: {len(open_list)}\n> First 20 nodes: " + ", ".join(f"(D:{-nd},C:{fc})" for fc, nd, _ in sorted(open_list)[:20]))
-        logging.info(f"\n{current_node}")
+            self.logger.info(f"\n==== Goal Reached at Iteration {iteration} ====")
+        self.logger.info(f"\n>>>>  A* iteration {iteration}  <<<<\n")
+        self.logger.info(f"> Fringe size: {len(open_list)}\n> First 20 nodes: " + ", ".join(f"(D:{-nd},C:{fc})" for fc, nd, _ in sorted(open_list)[:20]))
+        self.logger.info(f"\n{current_node}")
         if is_goal:
-            logging.info("==== End of Goal State Log ====\n")
+            self.logger.info("==== End of Goal State Log ====\n")
 
     def find_path(self, log_interval):
         open_list = []
@@ -75,17 +78,18 @@ class DFS:
     A class that implements the Depth-First Search algorithm with f-cost prioritization.
     This implementation assumes that distinct nodes cannot have equal children.
     """
-    def __init__(self, initial_node):
+    def __init__(self, initial_node, logger):
         self.initial_node = initial_node
+        self.logger = logger
     
     def log_iteration_info(self, iteration, stack, current_node, is_goal):
         if is_goal:
-            logging.info(f"\n==== Goal Reached at Iteration {iteration} ====")
-        logging.info(f"\n>>>>  DFS iteration {iteration}  <<<<\n")
-        logging.info(f"> Stack size: {len(stack)}\n> Top 20 nodes: " + ", ".join(f"(F:{node.f_cost},D:{node.depth})" for node in sorted(stack, key=lambda x: x.f_cost)[:20])) # <<<<<<<
-        logging.info(f"\n{current_node}")
+            self.logger.info(f"\n==== Goal Reached at Iteration {iteration} ====")
+        self.logger.info(f"\n>>>>  DFS iteration {iteration}  <<<<\n")
+        self.logger.info(f"> Stack size: {len(stack)}\n> Top 20 nodes: " + ", ".join(f"(F:{node.f_cost},D:{node.depth})" for node in sorted(stack, key=lambda x: x.f_cost)[:20])) # <<<<<<<
+        self.logger.info(f"\n{current_node}")
         if is_goal:
-            logging.info("==== End of Goal State Log ====\n")
+            self.logger.info("==== End of Goal State Log ====\n")
 
     def find_path(self, log_interval):
         stack = [self.initial_node]  # <<<<<<<

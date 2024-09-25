@@ -33,7 +33,8 @@ class Node:
                  ground_action_sequence: List[str],
                  parent: 'Node' = None,
                  is_initial_node: bool = False,
-                 depth=0
+                 depth=0,
+                 h_cost_needed=False
                  ):
         if self.grounder is None:
             raise ValueError("Action grounder must be set before creating instances.")
@@ -45,6 +46,7 @@ class Node:
         self.is_initial_node = is_initial_node
         self.ground_action_sequence = ground_action_sequence
         self.lifted_action_sequence = lifted_action_sequence
+        self.h_cost_needed = h_cost_needed
         self.parent = parent
         self.neighbours = []
 
@@ -69,8 +71,7 @@ class Node:
                 self.current_state = self.calculate_current_state()
             else:
                 self.current_state = None
-            # self.h_cost = s elf.compute_h_cost()
-            self.h_cost = 0
+            self.h_cost = self.compute_h_cost() if self.h_cost_needed else 0
             self.f_cost = self.g_cost + self.h_cost
 
 
@@ -108,9 +109,9 @@ class Node:
         task = copy.deepcopy(self.original_task)
         task.set_init_state(self.current_state)
         h = Heurisitc(h_name="G_HMAX", relaxation="none")
-        self.h_cost = h.evaluate(self.original_domain, task, [(l,) for l in self.lifted_action_sequence])
+        h_cost = h.evaluate(self.original_domain, task, [(l,) for l in self.lifted_action_sequence])
 
-        return 0
+        return h_cost
 
 
     def get_neighbors(self):

@@ -62,7 +62,10 @@ def _find_err_rate_substring(s):
         raise ValueError("Substring 'err-rate' not found in the given text")
 
 
-def list_instances(benchmark_path: Path, specific_instance=None):
+def list_instances(benchmark_path: Path, instance_id=None):
+    """
+    instance id example: 'blocks/pprobBLOCKS-5-0-err-rate-0-5'
+    """
     folders = _list_folders(benchmark_path)
 
     folders.sort()
@@ -89,7 +92,7 @@ def list_instances(benchmark_path: Path, specific_instance=None):
                 , error_rate=error_rate
                 , white_plan_file=plan_file)
 
-            if specific_instance and instance.identifier != specific_instance:
+            if instance_id and instance.identifier != instance_id:
                 continue
 
             instance_list.append(instance)
