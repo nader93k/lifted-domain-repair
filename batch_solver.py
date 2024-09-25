@@ -1,20 +1,9 @@
-from search_partial_grounding import \
-    read_ground_actions, all_action_groundings, read_action_names,smart_grounder, \
-    AStar, DFS, Node
-from model.plan import Domain, Task
-from search_partial_grounding.action_grounding_tools import smart_grounder
-#TODO: Fina a better place for ground_repair
-from vanilla_runs.run_songtuans_vanilla import ground_repair
-from instance_solver import solve_instance
-
+from logging_config import setup_logging
 from exptools import list_instances
 from pathlib import Path
 import os
 import logging
-import cProfile
 import pstats
-import json
-import time
 import subprocess
 
 
@@ -26,17 +15,17 @@ def print_profile(file_name: str, num_lines=20):
     stats.print_stats(script_dir, num_lines)
 
 
-def run_module(search_algorithm, benchmark_path, log_folder, log_interval, instance_id=None):
-    instance_list = list_instances(benchmark_path, instance_id=instance_id)
-    instance_list.sort(key=lambda i: i.plan_length)
+# def run_module(search_algorithm, benchmark_path, log_folder, log_interval, instance_id=None):
+#     instance_list = list_instances(benchmark_path, instance_id=instance_id)
+#     instance_list.sort(key=lambda i: i.plan_length)
 
-    for instance in instance_list:
-        solve_instance(search_algorithm
-                      , benchmark_path
-                      , log_folder
-                      , log_interval
-                      , instance.identifier
-                      )
+#     for instance in instance_list:
+#         solve_instance(search_algorithm
+#                       , benchmark_path
+#                       , log_folder
+#                       , log_interval
+#                       , instance.identifier
+#         )
 
 
 def run_process(search_algorithm, benchmark_path, log_folder, log_interval, instance_id=None):
@@ -44,43 +33,45 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval, inst
     instance_list.sort(key=lambda i: i.plan_length)
 
     for instance in instance_list:
+        log_file = os.path.join(
+            log_folder,
+            f"{search_algorithm}_length_{instance.plan_length}_{instance.domain_class}_{instance.instance_name}.txt"
+        )
+        if os.path.isfile(log_file):
+            continue
+        logger = setup_logging(log_file)
         cmd = [
             "/home/nader/miniconda3/envs/planning/bin/python",
             "instance_solver.py",
             search_algorithm,
             benchmark_path,
-            log_folder,
+            log_file,
             str(log_interval),
             instance.identifier
         ]
         # 30 minutes in seconds
         timeout_seconds = 30 * 60
         try:
-            print(f"Starting a subprocess solver for instance_id={instance.identifier}")
+            logger.info(f"> Starting a subprocess search for instance_id={instance.identifier}")
             result = subprocess.run(cmd, check=True, timeout=timeout_seconds)
-            print(f"Solver done with no errors.")
+            logger.info(f"> Searche returned no errors.")
         except subprocess.TimeoutExpired:
-            print("Command timed out after 30 minutes")
+            logger.error("> Command timed out after 30 minutes")
         except subprocess.CalledProcessError as e:
-            print(f"Error: instance id ={instance.identifier}, err: {e}")
+            logger.error(f"> Error: instance id ={instance.identifier}, err: {e}")
 
 
-
+# instance_id_example: 'blocks/pprobBLOCKS-5-0-err-rate-0-5'
 if __name__ == "__main__":
-    search_algorithm = 'astar'
+    search_algorithm = 'bfs'
     logging.basicConfig(level=logging.INFO, format='%(message)s')
-    benchmark_path = Path('./input/benchmarks-G1')
+    benchmark_path = Path('./input/benchmarks-G1')\
     # log_folder = Path('./exp_logs/4 BFS mega-run')
-    log_folder = Path('./exp_logs/6 ASTAR mega-run full-log')
-    # log_folder = Path('./exp_logs_debug')
-    log_interval = 1
+    log_folder = Path('./exp_logs_debug')
+    log_interval = 100
     
-
     run_process(search_algorithm=search_algorithm
               , benchmark_path=benchmark_path
               , log_folder=log_folder
               , log_interval=log_interval
-              , instance_id='blocks/pprobBLOCKS-5-0-err-rate-0-5')
-
-    # cProfile.run("experiment(benchmark_path)", 'profiler_tmp')
-    # instance_id_example: 'blocks/pprobBLOCKS-5-0-err-rate-0-5'
+              , instance_id=None)

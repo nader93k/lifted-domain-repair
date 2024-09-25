@@ -1,12 +1,7 @@
 import logging
-import os
 
-def setup_logging(log_folder, search_algorithm, plan_length, domain_class, instance_name):
-    log_file = os.path.join(
-        log_folder,
-        f"{search_algorithm}_length_{plan_length}_{domain_class}_{instance_name}.txt"
-    )
-    
+
+def setup_logging(log_file):    
     # Remove any existing handlers
     for handler in logging.root.handlers[:]:
         logging.root.removeHandler(handler)

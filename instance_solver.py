@@ -1,37 +1,23 @@
-from search_partial_grounding import \
-    read_ground_actions, all_action_groundings, read_action_names,smart_grounder, \
-    AStar, DFS, Node
-from model.plan import Domain, Task
+from search_partial_grounding import smart_grounder, AStar, DFS, Node
 from search_partial_grounding.action_grounding_tools import smart_grounder
 #TODO: Fina a better place for ground_repair
 from vanilla_runs.run_songtuans_vanilla import ground_repair
 from logging_config import setup_logging
-
 from exptools import list_instances
 from pathlib import Path
-import os
 import logging
-import cProfile
-import pstats
-import json
 import time
 import sys
 
 
-def solve_instance(search_algorithm, benchmark_path, log_folder, log_interval, instance_id):
+def solve_instance(search_algorithm, benchmark_path, log_file, log_interval, instance_id):
     instance = list_instances(benchmark_path, instance_id=instance_id)[0]
 
     start_time = time.time()
 
     instance.load_to_memory()
 
-    logger = setup_logging(
-        log_folder,
-        search_algorithm,
-        instance.plan_length,
-        instance.domain_class,
-        instance.instance_name
-    )
+    logger = setup_logging(log_file)
     
     current_time = time.localtime()
     formatted_time = time.strftime("%Y-%m-%d %H:%M:%S %Z", current_time)
@@ -89,16 +75,16 @@ def solve_instance(search_algorithm, benchmark_path, log_folder, log_interval, i
     logger.info(f"> Time spent on this problem: {hours:.1f} hours = {minutes:.1f} minutes = {seconds:.2f} seconds")
 
 
-def example():
-    benchmark_path = Path('./input/benchmarks-G1')
-    # log_folder = Path('./exp_logs/4 BFS mega-run')
-    log_folder = Path('./exp_logs_debug')
+# def example():
+#     benchmark_path = Path('./input/benchmarks-G1')
+#     # log_folder = Path('./exp_logs/4 BFS mega-run')
+#     log_folder = Path('./exp_logs_debug')
 
-    solve_instance(search_algorithm=AStar
-              , benchmark_path=benchmark_path
-              , log_folder=log_folder
-              , log_interval=200
-              , instance_id='blocks/pprobBLOCKS-5-0-err-rate-0-5')
+#     solve_instance(search_algorithm=AStar
+#               , benchmark_path=benchmark_path
+#               , log_folder=log_folder
+#               , log_interval=200
+#               , instance_id='blocks/pprobBLOCKS-5-0-err-rate-0-5')
 
     # cProfile.run("experiment(benchmark_path)", 'profiler_tmp')
 
@@ -113,14 +99,14 @@ if __name__ == "__main__":
         sys.exit(1)
     search_algorithm = sys.argv[1]
     benchmark_path = Path(sys.argv[2])
-    log_folder = Path(sys.argv[3])
+    log_file = Path(sys.argv[3])
     log_interval = int(sys.argv[4])
     instance_id = sys.argv[5]
 
     solve_instance(
         search_algorithm=search_algorithm,
         benchmark_path=benchmark_path,
-        log_folder=log_folder,
+        log_file=log_file,
         log_interval=log_interval,
         instance_id=instance_id
     )
