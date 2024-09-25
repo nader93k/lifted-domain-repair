@@ -130,7 +130,7 @@ def _sas_parser(file_path: Path, action_name_in: str) -> List[str]:
         step = int(step)
         parameters = parts[1:]
 
-        assert action_name == action_name_in, "Grounder is passing unspected action name."
+        assert action_name == action_name_in, f"Grounder is passing unspected actionname={action_name}, while we are waiting for action_name_in={action_name_in}"
 
         ground_action = '(' + action_name + ' ' + ' '.join(map(str, parameters)) + ')'
 

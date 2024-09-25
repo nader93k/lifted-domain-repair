@@ -115,7 +115,7 @@ class Node:
 
     def get_neighbors(self):
         # don't try to expand this node if the cost is infinite (no repairs)
-        if self.g_cost == float('inf'):
+        if self.f_cost == float('inf'):
             raise ValueError("Can't expand this node.")
         
         next_action_name = self.lifted_action_sequence[0]
@@ -144,6 +144,8 @@ class Node:
                 is_initial_node=False,
                 depth=self.depth+1
             )
+            if next_node.f_cost == float('inf'):
+                continue
             self.neighbours.append(next_node)
 
         logging.debug(f'> Current state:\n{self.current_state}')

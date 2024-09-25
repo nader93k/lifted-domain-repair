@@ -1,7 +1,7 @@
 import os
 from model.plan import *
 from repairer import *
-from astar_partial_grounding import all_action_groundings
+from search_partial_grounding import all_action_groundings
 import copy
 
 

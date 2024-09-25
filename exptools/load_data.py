@@ -2,7 +2,7 @@ import logging
 from pathlib import Path
 import re
 from model.plan import Domain, Task
-from astar_partial_grounding import read_ground_actions, all_action_groundings, read_action_names
+from search_partial_grounding import read_ground_actions, all_action_groundings, read_action_names
 
 
 class Instance:
