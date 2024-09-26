@@ -1,0 +1,149 @@
+> Solving the next problem at: 2024-09-25 15:48:08 UTC
+> Search algorithm: astar
+> Instance ID=miconic/ps2-1-err-rate-0-3
+> Plan length=8
+> Domain class: miconic
+> Instance name: ps2-1-err-rate-0-3
+> Ground plan:
+['(board f0 p0)', '(up f0 f1)', '(depart f1 p0)', '(down f1 f0)', '(up f0 f3)', '(board f3 p1)', '(down f3 f0)', '(depart f0 p1)']
+> Lifted plan:
+['board', 'up', 'depart', 'down', 'up', 'board', 'down', 'depart']
+>>>  Vanilla ground repair:
+depart,(origin ?p ?f),precPos,-1
+up,(served ?f1),precPos,-1
+
+
+>>>>  A* iteration 1  <<<<
+
+> Fringe size: 1
+> First 20 nodes: (D:1,C:0)
+
+> Node instance:
+> Depth=0
+> Ground actions: []
+> Next lifted action: board
+> Repair set:
+None
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=1
+
+>>>>  A* iteration 2  <<<<
+
+> Fringe size: 6
+> First 20 nodes: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+
+> Node instance:
+> Depth=1
+> Ground actions: ['(board f0 p0)']
+> Next lifted action: up
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=6
+
+>>>>  A* iteration 3  <<<<
+
+> Fringe size: 5
+> First 20 nodes: (D:2,C:1), (D:2,C:1), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+
+> Node instance:
+> Depth=2
+> Ground actions: ['(board f0 p0)', '(up f0 f1)']
+> Next lifted action: depart
+> Repair set:
+up,(served ?f1),precPos,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 4  <<<<
+
+> Fringe size: 4
+> First 20 nodes: (D:2,C:1), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+
+> Node instance:
+> Depth=2
+> Ground actions: ['(board f0 p0)', '(up f0 f3)']
+> Next lifted action: depart
+> Repair set:
+up,(served ?f1),precPos,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 5  <<<<
+
+> Fringe size: 3
+> First 20 nodes: (D:2,C:2), (D:2,C:2), (D:2,C:2)
+
+> Node instance:
+> Depth=2
+> Ground actions: ['(board f0 p0)', '(up f0 f2)']
+> Next lifted action: depart
+> Repair set:
+up,(served ?f1),precPos,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 6  <<<<
+
+> Fringe size: 2
+> First 20 nodes: (D:2,C:2), (D:2,C:2)
+
+> Node instance:
+> Depth=2
+> Ground actions: ['(board f0 p0)', '(up f2 f3)']
+> Next lifted action: depart
+> Repair set:
+up,(lift-at ?f1),precPos,-1
+up,(served ?f1),precPos,-1
+> g_cost=2
+> h_cost=0
+> f_cost=2
+> #neighbours=0
+
+>>>>  A* iteration 7  <<<<
+
+> Fringe size: 1
+> First 20 nodes: (D:2,C:2)
+
+> Node instance:
+> Depth=2
+> Ground actions: ['(board f0 p0)', '(up f1 f2)']
+> Next lifted action: depart
+> Repair set:
+up,(lift-at ?f1),precPos,-1
+up,(served ?f1),precPos,-1
+> g_cost=2
+> h_cost=0
+> f_cost=2
+> #neighbours=0
+
+>>>>  A* iteration 8  <<<<
+
+> Fringe size: 0
+> First 20 nodes: 
+
+> Node instance:
+> Depth=2
+> Ground actions: ['(board f0 p0)', '(up f1 f3)']
+> Next lifted action: depart
+> Repair set:
+up,(lift-at ?f1),precPos,-1
+up,(served ?f1),precPos,-1
+> g_cost=2
+> h_cost=0
+> f_cost=2
+> #neighbours=0
+>>> No goal found.
+
+> Time spent on this problem: 0.0 hours = 0.0 minutes = 0.89 seconds
+> Subprocess finished.

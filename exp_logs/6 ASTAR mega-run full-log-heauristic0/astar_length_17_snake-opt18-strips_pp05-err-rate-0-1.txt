@@ -1,0 +1,148 @@
+> Solving the next problem at: 2024-09-25 18:34:14 UTC
+> Search algorithm: astar
+> Instance ID=snake-opt18-strips/pp05-err-rate-0-1
+> Plan length=17
+> Domain class: snake-opt18-strips
+> Instance name: pp05-err-rate-0-1
+> Ground plan:
+['(move pos4-4 pos3-4 pos4-3 pos4-4)', '(move-and-eat-spawn pos3-4 pos2-4 pos1-0 pos3-1)', '(move-and-eat-spawn pos2-4 pos1-4 pos3-1 pos0-2)', '(move-and-eat-spawn pos1-4 pos0-4 pos0-2 pos1-2)', '(move-and-eat-spawn pos0-4 pos0-3 pos1-2 pos4-1)', '(move-and-eat-spawn pos0-3 pos0-2 pos4-1 pos2-2)', '(move-and-eat-spawn pos0-2 pos1-2 pos2-2 dummypoint)', '(move pos1-2 pos1-1 pos4-4 pos3-4)', '(move-and-eat-no-spawn pos1-1 pos1-0)', '(move pos1-0 pos2-0 pos3-4 pos2-4)', '(move pos2-0 pos3-0 pos2-4 pos1-4)', '(move-and-eat-no-spawn pos3-0 pos3-1)', '(move-and-eat-no-spawn pos3-1 pos4-1)', '(move pos4-1 pos4-2 pos1-4 pos0-4)', '(move pos4-2 pos3-2 pos0-4 pos0-3)', '(move-and-eat-no-spawn pos3-2 pos2-2)', '(move-and-eat-no-spawn pos2-2 pos2-3)']
+> Lifted plan:
+['move', 'move-and-eat-spawn', 'move-and-eat-spawn', 'move-and-eat-spawn', 'move-and-eat-spawn', 'move-and-eat-spawn', 'move-and-eat-spawn', 'move', 'move-and-eat-no-spawn', 'move', 'move', 'move-and-eat-no-spawn', 'move-and-eat-no-spawn', 'move', 'move', 'move-and-eat-no-spawn', 'move-and-eat-no-spawn']
+>>>  Vanilla ground repair:
+move-and-eat-spawn,(nextsnake ?newhead ?head),effPos,1
+
+
+>>>>  A* iteration 1  <<<<
+
+> Fringe size: 3770
+> First 20 nodes: (D:1,C:0), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+
+> Node instance:
+> Depth=0
+> Ground actions: []
+> Next lifted action: move
+> Repair set:
+None
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=3770
+
+>>>>  A* iteration 2  <<<<
+
+> Fringe size: 3871
+> First 20 nodes: (D:2,C:0), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+
+> Node instance:
+> Depth=1
+> Ground actions: ['(move pos4-4 pos3-4 pos4-3 pos4-4)']
+> Next lifted action: move-and-eat-spawn
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=102
+
+>>>>  A* iteration 3  <<<<
+
+> Fringe size: 3954
+> First 20 nodes: (D:3,C:0), (D:3,C:0), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:2,C:1), (D:2,C:1)
+
+> Node instance:
+> Depth=2
+> Ground actions: ['(move pos4-4 pos3-4 pos4-3 pos4-4)', '(move-and-eat-spawn pos3-4 pos2-4 pos1-0 pos3-1)']
+> Next lifted action: move-and-eat-spawn
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=84
+
+>>>>  A* iteration 4  <<<<
+
+> Fringe size: 4025
+> First 20 nodes: (D:4,C:0), (D:3,C:0), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1)
+
+> Node instance:
+> Depth=3
+> Ground actions: ['(move pos4-4 pos3-4 pos4-3 pos4-4)', '(move-and-eat-spawn pos3-4 pos2-4 pos1-0 pos3-1)', '(move-and-eat-spawn pos2-4 pos1-4 pos3-1 pos0-2)']
+> Next lifted action: move-and-eat-spawn
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=72
+
+>>>>  A* iteration 5  <<<<
+
+> Fringe size: 4084
+> First 20 nodes: (D:5,C:0), (D:3,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1)
+
+> Node instance:
+> Depth=4
+> Ground actions: ['(move pos4-4 pos3-4 pos4-3 pos4-4)', '(move-and-eat-spawn pos3-4 pos2-4 pos1-0 pos3-1)', '(move-and-eat-spawn pos2-4 pos1-4 pos3-1 pos0-2)', '(move-and-eat-spawn pos1-4 pos0-4 pos0-2 pos1-2)']
+> Next lifted action: move-and-eat-spawn
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=60
+
+>>>>  A* iteration 6  <<<<
+
+> Fringe size: 4131
+> First 20 nodes: (D:6,C:0), (D:3,C:0), (D:6,C:1), (D:6,C:1), (D:6,C:1), (D:6,C:1), (D:6,C:1), (D:6,C:1), (D:6,C:1), (D:6,C:1), (D:6,C:1), (D:6,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+
+> Node instance:
+> Depth=5
+> Ground actions: ['(move pos4-4 pos3-4 pos4-3 pos4-4)', '(move-and-eat-spawn pos3-4 pos2-4 pos1-0 pos3-1)', '(move-and-eat-spawn pos2-4 pos1-4 pos3-1 pos0-2)', '(move-and-eat-spawn pos1-4 pos0-4 pos0-2 pos1-2)', '(move-and-eat-spawn pos0-4 pos0-3 pos1-2 pos4-1)']
+> Next lifted action: move-and-eat-spawn
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=48
+
+>>>>  A* iteration 7  <<<<
+
+> Fringe size: 4166
+> First 20 nodes: (D:7,C:0), (D:3,C:0), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:6,C:1), (D:6,C:1), (D:6,C:1), (D:6,C:1), (D:6,C:1), (D:6,C:1), (D:6,C:1), (D:6,C:1), (D:6,C:1), (D:6,C:1)
+
+> Node instance:
+> Depth=6
+> Ground actions: ['(move pos4-4 pos3-4 pos4-3 pos4-4)', '(move-and-eat-spawn pos3-4 pos2-4 pos1-0 pos3-1)', '(move-and-eat-spawn pos2-4 pos1-4 pos3-1 pos0-2)', '(move-and-eat-spawn pos1-4 pos0-4 pos0-2 pos1-2)', '(move-and-eat-spawn pos0-4 pos0-3 pos1-2 pos4-1)', '(move-and-eat-spawn pos0-3 pos0-2 pos4-1 pos2-2)']
+> Next lifted action: move-and-eat-spawn
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=36
+An error occurred during A* search: Action <Action 'move' at 0x7c9105231250> not applicable in current state
+Traceback (most recent call last):
+  File "/home/nader/projects/lifted-white-plan-domain-repair/instance_solver.py", line 61, in solve_instance
+    path, goal_node = searcher.find_path(log_interval=log_interval)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py", line 49, in find_path
+    for neighbor in current_node.get_neighbors():
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/node.py", line 141, in get_neighbors
+    next_node = Node(
+                ^^^^^
+  File "/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/node.py", line 71, in __init__
+    self.current_state = self.calculate_current_state()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/node.py", line 101, in calculate_current_state
+    state = apply_action_sequence(self.repaired_domain, task, plan, delete_relaxed=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nader/projects/lifted-white-plan-domain-repair/model/plan.py", line 44, in apply_action_sequence
+    raise ValueError(f"Action {action} not applicable in current state")
+ValueError: Action <Action 'move' at 0x7c9105231250> not applicable in current state
+
+> Time spent on this problem: 0.0 hours = 0.5 minutes = 31.91 seconds
+> Subprocess finished.

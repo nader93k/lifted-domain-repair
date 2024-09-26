@@ -1,0 +1,494 @@
+> Solving the next problem at: 2024-09-25 14:17:57 UTC
+> Search algorithm: astar
+> Instance ID=grid/pprob01-err-rate-0-1
+> Plan length=14
+> Domain class: grid
+> Instance name: pprob01-err-rate-0-1
+> Ground plan:
+['(move node2-4 node1-4)', '(move node1-4 node1-3)', '(move node1-3 node1-2)', '(move node1-2 node0-2)', '(pickup node0-2 key3)', '(move node0-2 node1-2)', '(move node1-2 node1-3)', '(unlock node1-3 node2-3 key3 square)', '(move node1-3 node2-3)', '(pickup-and-loose node2-3 key0 key3)', '(move node2-3 node1-3)', '(move node1-3 node1-2)', '(move node1-2 node1-1)', '(putdown node1-1 key0)']
+> Lifted plan:
+['move', 'move', 'move', 'move', 'pickup', 'move', 'move', 'unlock', 'move', 'pickup-and-loose', 'move', 'move', 'move', 'putdown']
+>>>  Vanilla ground repair:
+
+
+
+>>>>  A* iteration 1  <<<<
+
+> Fringe size: 46
+> First 20 nodes: (D:1,C:0), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+
+> Node instance:
+> Depth=0
+> Ground actions: []
+> Next lifted action: move
+> Repair set:
+None
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=46
+
+>>>>  A* iteration 2  <<<<
+
+> Fringe size: 91
+> First 20 nodes: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1)
+
+> Node instance:
+> Depth=1
+> Ground actions: ['(move node2-4 node1-4)']
+> Next lifted action: move
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=46
+
+>>>>  A* iteration 3  <<<<
+
+> Fringe size: 136
+> First 20 nodes: (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1)
+
+> Node instance:
+> Depth=2
+> Ground actions: ['(move node2-4 node1-4)', '(move node1-4 node0-4)']
+> Next lifted action: move
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=46
+
+>>>>  A* iteration 4  <<<<
+
+> Fringe size: 181
+> First 20 nodes: (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1)
+
+> Node instance:
+> Depth=3
+> Ground actions: ['(move node2-4 node1-4)', '(move node1-4 node0-4)', '(move node0-4 node0-3)']
+> Next lifted action: move
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=46
+
+>>>>  A* iteration 5  <<<<
+
+> Fringe size: 182
+> First 20 nodes: (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:5,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1)
+
+> Node instance:
+> Depth=4
+> Ground actions: ['(move node2-4 node1-4)', '(move node1-4 node0-4)', '(move node0-4 node0-3)', '(move node0-3 node0-2)']
+> Next lifted action: pickup
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=2
+
+>>>>  A* iteration 6  <<<<
+
+> Fringe size: 227
+> First 20 nodes: (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:6,C:1), (D:6,C:1), (D:6,C:1), (D:6,C:1), (D:6,C:1), (D:6,C:1), (D:6,C:1), (D:6,C:1), (D:6,C:1), (D:6,C:1), (D:6,C:1), (D:6,C:1)
+
+> Node instance:
+> Depth=5
+> Ground actions: ['(move node2-4 node1-4)', '(move node1-4 node0-4)', '(move node0-4 node0-3)', '(move node0-3 node0-2)', '(pickup node0-2 key3)']
+> Next lifted action: move
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=46
+
+>>>>  A* iteration 7  <<<<
+
+> Fringe size: 272
+> First 20 nodes: (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1)
+
+> Node instance:
+> Depth=6
+> Ground actions: ['(move node2-4 node1-4)', '(move node1-4 node0-4)', '(move node0-4 node0-3)', '(move node0-3 node0-2)', '(pickup node0-2 key3)', '(move node0-2 node0-1)']
+> Next lifted action: move
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=46
+
+>>>>  A* iteration 8  <<<<
+
+> Fringe size: 273
+> First 20 nodes: (D:7,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:8,C:1), (D:8,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1)
+
+> Node instance:
+> Depth=7
+> Ground actions: ['(move node2-4 node1-4)', '(move node1-4 node0-4)', '(move node0-4 node0-3)', '(move node0-3 node0-2)', '(pickup node0-2 key3)', '(move node0-2 node0-1)', '(move node0-1 node0-0)']
+> Next lifted action: unlock
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=2
+
+>>>>  A* iteration 9  <<<<
+
+> Fringe size: 274
+> First 20 nodes: (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:8,C:1), (D:8,C:1), (D:8,C:1), (D:8,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1)
+
+> Node instance:
+> Depth=7
+> Ground actions: ['(move node2-4 node1-4)', '(move node1-4 node0-4)', '(move node0-4 node0-3)', '(move node0-3 node0-2)', '(pickup node0-2 key3)', '(move node0-2 node0-1)', '(move node0-1 node0-2)']
+> Next lifted action: unlock
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=2
+
+>>>>  A* iteration 10  <<<<
+
+> Fringe size: 275
+> First 20 nodes: (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:8,C:1), (D:8,C:1), (D:8,C:1), (D:8,C:1), (D:8,C:1), (D:8,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1)
+
+> Node instance:
+> Depth=7
+> Ground actions: ['(move node2-4 node1-4)', '(move node1-4 node0-4)', '(move node0-4 node0-3)', '(move node0-3 node0-2)', '(pickup node0-2 key3)', '(move node0-2 node0-1)', '(move node0-1 node1-1)']
+> Next lifted action: unlock
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=2
+
+>>>>  A* iteration 11  <<<<
+
+> Fringe size: 320
+> First 20 nodes: (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:8,C:1), (D:8,C:1), (D:8,C:1), (D:8,C:1), (D:8,C:1), (D:8,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1)
+
+> Node instance:
+> Depth=6
+> Ground actions: ['(move node2-4 node1-4)', '(move node1-4 node0-4)', '(move node0-4 node0-3)', '(move node0-3 node0-2)', '(pickup node0-2 key3)', '(move node0-2 node0-3)']
+> Next lifted action: move
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=46
+
+>>>>  A* iteration 12  <<<<
+
+> Fringe size: 321
+> First 20 nodes: (D:7,C:0), (D:7,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:8,C:1), (D:8,C:1), (D:8,C:1), (D:8,C:1), (D:8,C:1), (D:8,C:1), (D:8,C:1), (D:8,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1)
+
+> Node instance:
+> Depth=7
+> Ground actions: ['(move node2-4 node1-4)', '(move node1-4 node0-4)', '(move node0-4 node0-3)', '(move node0-3 node0-2)', '(pickup node0-2 key3)', '(move node0-2 node0-3)', '(move node0-3 node0-2)']
+> Next lifted action: unlock
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=2
+
+>>>>  A* iteration 13  <<<<
+
+> Fringe size: 322
+> First 20 nodes: (D:7,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:8,C:1), (D:8,C:1), (D:8,C:1), (D:8,C:1), (D:8,C:1), (D:8,C:1), (D:8,C:1), (D:8,C:1), (D:8,C:1), (D:8,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1)
+
+> Node instance:
+> Depth=7
+> Ground actions: ['(move node2-4 node1-4)', '(move node1-4 node0-4)', '(move node0-4 node0-3)', '(move node0-3 node0-2)', '(pickup node0-2 key3)', '(move node0-2 node0-3)', '(move node0-3 node0-4)']
+> Next lifted action: unlock
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=2
+
+>>>>  A* iteration 14  <<<<
+
+> Fringe size: 324
+> First 20 nodes: (D:8,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:8,C:1), (D:8,C:1), (D:8,C:1), (D:8,C:1), (D:8,C:1), (D:8,C:1), (D:8,C:1), (D:8,C:1), (D:8,C:1), (D:8,C:1), (D:8,C:1), (D:8,C:1), (D:7,C:1)
+
+> Node instance:
+> Depth=7
+> Ground actions: ['(move node2-4 node1-4)', '(move node1-4 node0-4)', '(move node0-4 node0-3)', '(move node0-3 node0-2)', '(pickup node0-2 key3)', '(move node0-2 node0-3)', '(move node0-3 node1-3)']
+> Next lifted action: unlock
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=3
+
+>>>>  A* iteration 15  <<<<
+
+> Fringe size: 373
+> First 20 nodes: (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+
+> Node instance:
+> Depth=8
+> Ground actions: ['(move node2-4 node1-4)', '(move node1-4 node0-4)', '(move node0-4 node0-3)', '(move node0-3 node0-2)', '(pickup node0-2 key3)', '(move node0-2 node0-3)', '(move node0-3 node1-3)', '(unlock node1-3 node2-3 key3 square)']
+> Next lifted action: move
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=50
+
+>>>>  A* iteration 16  <<<<
+
+> Fringe size: 393
+> First 20 nodes: (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+
+> Node instance:
+> Depth=9
+> Ground actions: ['(move node2-4 node1-4)', '(move node1-4 node0-4)', '(move node0-4 node0-3)', '(move node0-3 node0-2)', '(pickup node0-2 key3)', '(move node0-2 node0-3)', '(move node0-3 node1-3)', '(unlock node1-3 node2-3 key3 square)', '(move node1-3 node0-3)']
+> Next lifted action: pickup-and-loose
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=21
+
+>>>>  A* iteration 17  <<<<
+
+> Fringe size: 413
+> First 20 nodes: (D:9,C:0), (D:9,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:10,C:1), (D:10,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+
+> Node instance:
+> Depth=9
+> Ground actions: ['(move node2-4 node1-4)', '(move node1-4 node0-4)', '(move node0-4 node0-3)', '(move node0-3 node0-2)', '(pickup node0-2 key3)', '(move node0-2 node0-3)', '(move node0-3 node1-3)', '(unlock node1-3 node2-3 key3 square)', '(move node1-3 node1-2)']
+> Next lifted action: pickup-and-loose
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=21
+
+>>>>  A* iteration 18  <<<<
+
+> Fringe size: 433
+> First 20 nodes: (D:9,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:10,C:1), (D:10,C:1), (D:10,C:1), (D:10,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+
+> Node instance:
+> Depth=9
+> Ground actions: ['(move node2-4 node1-4)', '(move node1-4 node0-4)', '(move node0-4 node0-3)', '(move node0-3 node0-2)', '(pickup node0-2 key3)', '(move node0-2 node0-3)', '(move node0-3 node1-3)', '(unlock node1-3 node2-3 key3 square)', '(move node1-3 node1-4)']
+> Next lifted action: pickup-and-loose
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=21
+
+>>>>  A* iteration 19  <<<<
+
+> Fringe size: 484
+> First 20 nodes: (D:10,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:10,C:1), (D:10,C:1), (D:10,C:1), (D:10,C:1), (D:10,C:1), (D:10,C:1), (D:10,C:1), (D:10,C:1), (D:10,C:1), (D:10,C:1), (D:10,C:1), (D:10,C:1), (D:10,C:1)
+
+> Node instance:
+> Depth=9
+> Ground actions: ['(move node2-4 node1-4)', '(move node1-4 node0-4)', '(move node0-4 node0-3)', '(move node0-3 node0-2)', '(pickup node0-2 key3)', '(move node0-2 node0-3)', '(move node0-3 node1-3)', '(unlock node1-3 node2-3 key3 square)', '(move node1-3 node2-3)']
+> Next lifted action: pickup-and-loose
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=52
+
+>>>>  A* iteration 20  <<<<
+
+> Fringe size: 533
+> First 20 nodes: (D:11,C:0), (D:11,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1)
+
+> Node instance:
+> Depth=10
+> Ground actions: ['(move node2-4 node1-4)', '(move node1-4 node0-4)', '(move node0-4 node0-3)', '(move node0-3 node0-2)', '(pickup node0-2 key3)', '(move node0-2 node0-3)', '(move node0-3 node1-3)', '(unlock node1-3 node2-3 key3 square)', '(move node1-3 node2-3)', '(pickup-and-loose node2-3 key0 key3)']
+> Next lifted action: move
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=50
+
+>>>>  A* iteration 21  <<<<
+
+> Fringe size: 582
+> First 20 nodes: (D:12,C:0), (D:12,C:0), (D:12,C:0), (D:12,C:0), (D:11,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1)
+
+> Node instance:
+> Depth=11
+> Ground actions: ['(move node2-4 node1-4)', '(move node1-4 node0-4)', '(move node0-4 node0-3)', '(move node0-3 node0-2)', '(pickup node0-2 key3)', '(move node0-2 node0-3)', '(move node0-3 node1-3)', '(unlock node1-3 node2-3 key3 square)', '(move node1-3 node2-3)', '(pickup-and-loose node2-3 key0 key3)', '(move node2-3 node1-3)']
+> Next lifted action: move
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=50
+
+>>>>  A* iteration 22  <<<<
+
+> Fringe size: 631
+> First 20 nodes: (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:12,C:0), (D:12,C:0), (D:12,C:0), (D:11,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1)
+
+> Node instance:
+> Depth=12
+> Ground actions: ['(move node2-4 node1-4)', '(move node1-4 node0-4)', '(move node0-4 node0-3)', '(move node0-3 node0-2)', '(pickup node0-2 key3)', '(move node0-2 node0-3)', '(move node0-3 node1-3)', '(unlock node1-3 node2-3 key3 square)', '(move node1-3 node2-3)', '(pickup-and-loose node2-3 key0 key3)', '(move node2-3 node1-3)', '(move node1-3 node0-3)']
+> Next lifted action: move
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=50
+
+>>>>  A* iteration 23  <<<<
+
+> Fringe size: 630
+> First 20 nodes: (D:13,C:0), (D:13,C:0), (D:12,C:0), (D:12,C:0), (D:12,C:0), (D:11,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(move node2-4 node1-4)', '(move node1-4 node0-4)', '(move node0-4 node0-3)', '(move node0-3 node0-2)', '(pickup node0-2 key3)', '(move node0-2 node0-3)', '(move node0-3 node1-3)', '(unlock node1-3 node2-3 key3 square)', '(move node1-3 node2-3)', '(pickup-and-loose node2-3 key0 key3)', '(move node2-3 node1-3)', '(move node1-3 node0-3)', '(move node0-3 node0-2)']
+> Next lifted action: putdown
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 24  <<<<
+
+> Fringe size: 629
+> First 20 nodes: (D:13,C:0), (D:12,C:0), (D:12,C:0), (D:12,C:0), (D:11,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(move node2-4 node1-4)', '(move node1-4 node0-4)', '(move node0-4 node0-3)', '(move node0-3 node0-2)', '(pickup node0-2 key3)', '(move node0-2 node0-3)', '(move node0-3 node1-3)', '(unlock node1-3 node2-3 key3 square)', '(move node1-3 node2-3)', '(pickup-and-loose node2-3 key0 key3)', '(move node2-3 node1-3)', '(move node1-3 node0-3)', '(move node0-3 node0-4)']
+> Next lifted action: putdown
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 25  <<<<
+
+> Fringe size: 628
+> First 20 nodes: (D:12,C:0), (D:12,C:0), (D:12,C:0), (D:11,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(move node2-4 node1-4)', '(move node1-4 node0-4)', '(move node0-4 node0-3)', '(move node0-3 node0-2)', '(pickup node0-2 key3)', '(move node0-2 node0-3)', '(move node0-3 node1-3)', '(unlock node1-3 node2-3 key3 square)', '(move node1-3 node2-3)', '(pickup-and-loose node2-3 key0 key3)', '(move node2-3 node1-3)', '(move node1-3 node0-3)', '(move node0-3 node1-3)']
+> Next lifted action: putdown
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 26  <<<<
+
+> Fringe size: 677
+> First 20 nodes: (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:12,C:0), (D:12,C:0), (D:11,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1)
+
+> Node instance:
+> Depth=12
+> Ground actions: ['(move node2-4 node1-4)', '(move node1-4 node0-4)', '(move node0-4 node0-3)', '(move node0-3 node0-2)', '(pickup node0-2 key3)', '(move node0-2 node0-3)', '(move node0-3 node1-3)', '(unlock node1-3 node2-3 key3 square)', '(move node1-3 node2-3)', '(pickup-and-loose node2-3 key0 key3)', '(move node2-3 node1-3)', '(move node1-3 node1-2)']
+> Next lifted action: move
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=50
+
+>>>>  A* iteration 27  <<<<
+
+> Fringe size: 676
+> First 20 nodes: (D:13,C:0), (D:13,C:0), (D:12,C:0), (D:12,C:0), (D:11,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(move node2-4 node1-4)', '(move node1-4 node0-4)', '(move node0-4 node0-3)', '(move node0-3 node0-2)', '(pickup node0-2 key3)', '(move node0-2 node0-3)', '(move node0-3 node1-3)', '(unlock node1-3 node2-3 key3 square)', '(move node1-3 node2-3)', '(pickup-and-loose node2-3 key0 key3)', '(move node2-3 node1-3)', '(move node1-3 node1-2)', '(move node1-2 node0-2)']
+> Next lifted action: putdown
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 28  <<<<
+
+> Fringe size: 676
+> First 20 nodes: (D:14,C:0), (D:13,C:0), (D:12,C:0), (D:12,C:0), (D:11,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(move node2-4 node1-4)', '(move node1-4 node0-4)', '(move node0-4 node0-3)', '(move node0-3 node0-2)', '(pickup node0-2 key3)', '(move node0-2 node0-3)', '(move node0-3 node1-3)', '(unlock node1-3 node2-3 key3 square)', '(move node1-3 node2-3)', '(pickup-and-loose node2-3 key0 key3)', '(move node2-3 node1-3)', '(move node1-3 node1-2)', '(move node1-2 node1-1)']
+> Next lifted action: putdown
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=1
+
+==== Goal Reached at Iteration 29 ====
+
+>>>>  A* iteration 29  <<<<
+
+> Fringe size: 675
+> First 20 nodes: (D:13,C:0), (D:12,C:0), (D:12,C:0), (D:11,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1)
+
+> Node instance:
+> Depth=14
+> Ground actions: ['(move node2-4 node1-4)', '(move node1-4 node0-4)', '(move node0-4 node0-3)', '(move node0-3 node0-2)', '(pickup node0-2 key3)', '(move node0-2 node0-3)', '(move node0-3 node1-3)', '(unlock node1-3 node2-3 key3 square)', '(move node1-3 node2-3)', '(pickup-and-loose node2-3 key0 key3)', '(move node2-3 node1-3)', '(move node1-3 node1-2)', '(move node1-2 node1-1)', '(putdown node1-1 key0)']
+> Next lifted action: []
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+==== End of Goal State Log ====
+
+>>> Goal found:
+> Node instance:
+> Depth=14
+> Ground actions: ['(move node2-4 node1-4)', '(move node1-4 node0-4)', '(move node0-4 node0-3)', '(move node0-3 node0-2)', '(pickup node0-2 key3)', '(move node0-2 node0-3)', '(move node0-3 node1-3)', '(unlock node1-3 node2-3 key3 square)', '(move node1-3 node2-3)', '(pickup-and-loose node2-3 key0 key3)', '(move node2-3 node1-3)', '(move node1-3 node1-2)', '(move node1-2 node1-1)', '(putdown node1-1 key0)']
+> Next lifted action: []
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+> Time spent on this problem: 0.0 hours = 0.1 minutes = 6.73 seconds
+> Subprocess finished.
