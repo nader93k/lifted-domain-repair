@@ -33,7 +33,7 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval, inst
     
     # instance_list.sort(key=lambda i: i.plan_length)
 
-    for instance in smart_instance_generator(instance_list, 8, 50):
+    for instance in smart_instance_generator(instance_list, 5, 15):
         log_file = os.path.join(
             log_folder,
             f"{search_algorithm}_length_{instance.plan_length}_{instance.domain_class}_{instance.instance_name}.txt"
@@ -52,8 +52,9 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval, inst
         ]
         # 30 minutes in seconds
         timeout_seconds = 30 * 60
+        # timeout_seconds = 15
         try:
-            print(f"> Starting a subprocess search for instance_id={instance.identifier}")
+            print(f"> Starting a subprocess search for file_name={log_file}")
             result = subprocess.run(cmd, check=True, timeout=timeout_seconds)
             logger.info(f"> Subprocess finished.")
         except subprocess.TimeoutExpired:
@@ -64,13 +65,14 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval, inst
 
 # instance_id_example: 'blocks/pprobBLOCKS-5-0-err-rate-0-5'
 if __name__ == "__main__":
-    search_algorithm = 'astar'
+    search_algorithm = 'bfs'
     logging.basicConfig(level=logging.INFO, format='%(message)s')
     benchmark_path = Path('./input/benchmarks-G1')
-    # log_folder = Path('./exp_logs/4 BFS mega-run')
-    log_folder = Path('./exp_logs/6 ASTAR mega-run full-log-heauristic0')
+    log_folder = Path('./exp_logs/4 BFS mega-run')
+    # log_folder = Path('./exp_logs/6 ASTAR mega-run full-log-heauristic0')
     # log_folder = Path('./exp_logs_debug')
-    log_interval = 1
+    # log_folder = Path('./exp_logs/7 Songtuan Vanilla')
+    log_interval = 200
     
     run_process(search_algorithm=search_algorithm
                , benchmark_path=benchmark_path

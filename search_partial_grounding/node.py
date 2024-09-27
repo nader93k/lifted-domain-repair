@@ -12,6 +12,7 @@ class Node:
     original_domain = None
     original_task = None
     grounder = None
+    logger = None
 
     @classmethod
     def set_grounder(cls, value):
@@ -26,6 +27,10 @@ class Node:
     @classmethod
     def set_task(cls, value):
         cls.original_task = value
+
+    @classmethod
+    def set_logger(cls, logger):
+        cls.logger = logger
 
 
     def __init__(self,
@@ -42,6 +47,8 @@ class Node:
             raise ValueError("Original domain must be set before creating instances.")
         if self.original_task is None:
             raise ValueError("Original task must be set before creating instances.")
+        if self.logger is None:
+            raise ValueError("Logger must be set before creating instances.")
 
         self.is_initial_node = is_initial_node
         self.ground_action_sequence = ground_action_sequence
@@ -134,6 +141,14 @@ class Node:
         # # TODO: remove this idea?
         # action.precondition = Conjunction([])
 
+        try:
+            possible_groundings = Node.grounder(domain, task, next_action_name)
+        except Exception as error:
+            print(f">/>/ An error occurred during grounding: {error}")
+            logger.info(f'>/>/ Current node:\n{self}')
+            logger.info(f'>/>/ Current state:\n{self.current_state}')
+            raise
+
         possible_groundings = Node.grounder(domain, task, next_action_name)
 
         self.neighbours = []
@@ -149,8 +164,8 @@ class Node:
                 continue
             self.neighbours.append(next_node)
 
-        logging.debug(f'> Current state:\n{self.current_state}')
-        logging.debug(f'> Possible groundings:\n{possible_groundings}')
+        logger.debug(f'> Current state:\n{self.current_state}')
+        logger.debug(f'> Possible groundings:\n{possible_groundings}')
 
         return self.neighbours
 

@@ -107,6 +107,7 @@ def list_instances(benchmark_path: Path, instance_id=None):
         
         
 def smart_instance_generator(instances: List[Instance], min_length, max_length) -> Generator[Instance, None, None]:
+    random.seed(0)
     # Group instances by domain_class
     domain_classes: Dict[str, List[Instance]] = {}
     for instance in instances:
@@ -118,7 +119,7 @@ def smart_instance_generator(instances: List[Instance], min_length, max_length) 
     for domain_class in domain_classes:
         domain_classes[domain_class] = [
             inst for inst in domain_classes[domain_class]
-            if min_length <= inst.plan_length <= max_length
+            if min_length <= inst.plan_length <= max_length and inst.instance_name.endswith("err-rate-0-5")
         ]
     
     # Remove empty domain classes

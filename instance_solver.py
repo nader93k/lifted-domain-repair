@@ -32,16 +32,25 @@ def solve_instance(search_algorithm, benchmark_path, log_file, log_interval, ins
     logger.info(f"> Lifted plan:\n{instance.lifted_plan}")
 
     # Ground repair
-    gr = ground_repair(
-        instance.planning_domain
-        , instance.planning_task
-        , instance.white_plan_file)
+    try:
+        gr = ground_repair(
+                instance.planning_domain
+                , instance.planning_task
+                , instance.white_plan_file)
+    except Exception as e:
+        logger.error(f"An error occurred trying to get the vanilla repair: {str(e)}")
+        stack_trace = traceback.format_exc()
+        logger.error(f"{stack_trace}")
+        raise
+    
+    logger.info(f">>>  Vanilla ground repair length:\n{len(gr.strip().split('\n')) if gr.strip() else 0}\n")
     logger.info(f">>>  Vanilla ground repair:\n{gr}\n")
 
     # Lifted repair
     Node.set_grounder(smart_grounder)
     Node.set_domain(instance.planning_domain)
     Node.set_task(instance.planning_task)
+    Node.set_logger(logger)
     initial_node = Node(
         lifted_action_sequence=instance.lifted_plan,
         ground_action_sequence=[],
