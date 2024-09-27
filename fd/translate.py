@@ -5,7 +5,9 @@ from __future__ import print_function
 
 from collections import defaultdict
 from copy import deepcopy
+from io import UnsupportedOperation
 
+from pddl.effects import add_effect
 import axiom_rules
 import fact_groups
 import instantiate
@@ -625,6 +627,9 @@ def parse_options():
         "--relaxed", dest="generate_relaxed_task", action="store_true",
         help="Output relaxed task (no delete effects)")
     optparser.add_option(
+        "--unary", dest="generate_unary_relaxed_task", action="store_true",
+        help="Output unary relaxed task")
+    optparser.add_option(
         "--force-old-python", action="store_true",
         help="Allow running the translator with slow Python 2.6")
     optparser.add_option(
@@ -638,8 +643,72 @@ def parse_options():
 DUMP_DOMAIN = "dump_domain.pddl"
 DUMP_PROBLEM = "dump_problem.pddl"
 
-def delete_relax(task):
-    pass
+def get_u_pred(name, i):
+    return f"{name}__u{i}"
+
+def flatten(parts):
+    new_li = []
+    for el in parts:
+        if type(el) == pddl.conditions.Conjunction:
+            new_li += el.parts
+        else:
+            new_li.append(el)
+    return new_li
+
+def get_unary_cond(pre):
+    if type(pre) == pddl.conditions.Conjunction:
+        parts = [get_unary_cond(part) for part in pre.parts]
+        parts = flatten(parts)
+        return pddl.conditions.Conjunction(parts)
+    elif issubclass(type(pre), pddl.conditions.Literal):
+        if len(pre.args) == 0:
+            return pre
+        return pddl.Conjunction([type(pre)(get_u_pred(pre.predicate, i), [arg]) for i, arg in enumerate(pre.args)])
+    else:
+        raise UnsupportedOperation(f"type {type(pre)} not supported yet")
+
+
+to_eff = lambda lit: make_eff(pddl.effects.SimpleEffect(lit))
+
+def make_eff(eff):
+    res = []
+    eff = eff.normalize()
+    add_effect(eff, res)
+    assert len(res) == 1
+    return res[0]
+
+def get_unary_eff(eff):
+    unary_atoms = get_unary_cond(eff.literal).parts
+    return [to_eff(atom) for atom in unary_atoms]
+
+def unary_relax(task):
+    # unary predicates
+    non_z_preds = [p for p in task.predicates if len(p.arguments) > 0]
+    z_preds = [p for p in task.predicates if len(p.arguments) == 0]
+    new_preds = [pddl.predicates.Predicate(get_u_pred(p.name, i), [p.arguments[i]]) for p in non_z_preds for i in range(len(p.arguments))]
+
+    task.predicates = new_preds + z_preds
+
+    for act in task.actions:
+        unary_pre = get_unary_cond(act.precondition)
+        act.precondition = unary_pre
+        unary_eff = []
+        for eff in act.effects:
+            unary_eff += get_unary_eff(eff)
+        unary_neg = []
+        unary_pos = []
+        for eff in unary_eff:
+            if eff.literal.negated:
+                unary_neg.append(eff)
+            else:
+                unary_pos.append(eff)
+        act.effects = unary_neg + unary_pos
+
+    new_init = []
+    for atom in task.init:
+        new_init += get_unary_cond(atom).parts
+
+    task.goal = get_unary_cond(task.goal)
 
 def main():
     options, args = parse_options()
@@ -659,6 +728,9 @@ def main():
             for index, effect in reversed(list(enumerate(action.effects))):
                 if effect.literal.negated:
                     del action.effects[index]
+
+    if options.generate_unary_relaxed_task:
+        unary_relax(task)
 
     if options.dump_pddl:
         print(f"Dumping pddl task to {DUMP_DOMAIN} {DUMP_PROBLEM}")
