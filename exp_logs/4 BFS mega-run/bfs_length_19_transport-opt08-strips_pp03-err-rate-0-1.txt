@@ -1,0 +1,1070 @@
+> Solving the next problem at: 2024-09-26 04:06:44 UTC
+> Search algorithm: astar
+> Instance ID=transport-opt08-strips/pp03-err-rate-0-1
+> Plan length=19
+> Domain class: transport-opt08-strips
+> Instance name: pp03-err-rate-0-1
+> Ground plan:
+['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(drop truck-1 city-loc-9 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-9 city-loc-6)', '(pick-up truck-1 city-loc-6 package-3 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(drive truck-1 city-loc-3 city-loc-1)', '(drop truck-1 city-loc-1 package-3 capacity-1 capacity-2)', '(drive truck-1 city-loc-1 city-loc-5)', '(pick-up truck-1 city-loc-5 package-2 capacity-1 capacity-2)', '(drive truck-1 city-loc-5 city-loc-1)', '(drive truck-1 city-loc-1 city-loc-3)', '(drop truck-1 city-loc-3 package-2 capacity-1 capacity-2)', '(drive truck-1 city-loc-3 city-loc-6)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(drive truck-1 city-loc-3 city-loc-7)', '(drive truck-1 city-loc-7 city-loc-8)', '(drop truck-1 city-loc-8 package-4 capacity-1 capacity-2)']
+> Lifted plan:
+['pick-up', 'drive', 'drop', 'drive', 'pick-up', 'drive', 'drive', 'drop', 'drive', 'pick-up', 'drive', 'drive', 'drop', 'drive', 'pick-up', 'drive', 'drive', 'drive', 'drop']
+>>>  Vanilla ground repair:
+drive,(at ?v ?l2),effPos,1
+
+
+>>>>  A* iteration 200  <<<<
+
+> Fringe size: 209
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:15,C:1), (D:15,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drive truck-2 city-loc-9 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-3)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 400  <<<<
+
+> Fringe size: 214
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 600  <<<<
+
+> Fringe size: 215
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:16,C:1), (D:16,C:1), (D:15,C:1), (D:15,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(drive truck-1 city-loc-6 city-loc-9)', '(drive truck-1 city-loc-6 city-loc-2)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 800  <<<<
+
+> Fringe size: 210
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:16,C:1), (D:15,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(pick-up truck-1 city-loc-6 package-3 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drive truck-1 city-loc-6 city-loc-3)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 1000  <<<<
+
+> Fringe size: 221
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:15,C:1), (D:15,C:1), (D:14,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1)
+
+> Node instance:
+> Depth=17
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-3)']
+> Next lifted action: drive
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=5
+
+>>>>  A* iteration 1200  <<<<
+
+> Fringe size: 216
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:15,C:1), (D:14,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-3 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(drive truck-2 city-loc-9 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 1400  <<<<
+
+> Fringe size: 216
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:16,C:1), (D:14,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 1600  <<<<
+
+> Fringe size: 217
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:15,C:1), (D:15,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drive truck-1 city-loc-6 city-loc-9)', '(drive truck-1 city-loc-6 city-loc-2)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 1800  <<<<
+
+> Fringe size: 217
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drive truck-1 city-loc-6 city-loc-2)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 2000  <<<<
+
+> Fringe size: 223
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:16,C:1), (D:16,C:1), (D:15,C:1), (D:15,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1)
+
+> Node instance:
+> Depth=17
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(drive truck-1 city-loc-6 city-loc-3)']
+> Next lifted action: drive
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=5
+
+>>>>  A* iteration 2200  <<<<
+
+> Fringe size: 218
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:16,C:1), (D:15,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(pick-up truck-1 city-loc-6 package-3 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 2400  <<<<
+
+> Fringe size: 225
+> First 20 nodes: (D:15,C:1), (D:15,C:1), (D:15,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+
+> Node instance:
+> Depth=14
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)']
+> Next lifted action: pick-up
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=6
+
+>>>>  A* iteration 2600  <<<<
+
+> Fringe size: 230
+> First 20 nodes: (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:15,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-3 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(drive truck-1 city-loc-6 city-loc-3)', '(drive truck-2 city-loc-9 city-loc-2)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 2800  <<<<
+
+> Fringe size: 225
+> First 20 nodes: (D:17,C:1), (D:16,C:1), (D:16,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(drive truck-2 city-loc-9 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-6)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 3000  <<<<
+
+> Fringe size: 231
+> First 20 nodes: (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:15,C:1), (D:15,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-2)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 3200  <<<<
+
+> Fringe size: 231
+> First 20 nodes: (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(drive truck-2 city-loc-9 city-loc-2)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 3400  <<<<
+
+> Fringe size: 232
+> First 20 nodes: (D:18,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:15,C:1), (D:15,C:1), (D:14,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(drive truck-2 city-loc-9 city-loc-6)', '(drive truck-2 city-loc-9 city-loc-2)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 3600  <<<<
+
+> Fringe size: 232
+> First 20 nodes: (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:16,C:1), (D:15,C:1), (D:14,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-3 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(drive truck-2 city-loc-9 city-loc-2)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 3800  <<<<
+
+> Fringe size: 227
+> First 20 nodes: (D:17,C:1), (D:14,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drive truck-2 city-loc-9 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-6)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 4000  <<<<
+
+> Fringe size: 238
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:15,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(pick-up truck-1 city-loc-6 package-3 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-9)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 4200  <<<<
+
+> Fringe size: 233
+> First 20 nodes: (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:16,C:1), (D:16,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:7,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(drive truck-1 city-loc-6 city-loc-9)', '(drive truck-2 city-loc-9 city-loc-2)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 4400  <<<<
+
+> Fringe size: 234
+> First 20 nodes: (D:18,C:1), (D:16,C:1), (D:15,C:1), (D:15,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drive truck-2 city-loc-9 city-loc-2)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 4600  <<<<
+
+> Fringe size: 239
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(drive truck-1 city-loc-6 city-loc-9)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 4800  <<<<
+
+> Fringe size: 251
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:15,C:1), (D:15,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(drive truck-2 city-loc-9 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 5000  <<<<
+
+> Fringe size: 251
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:16,C:1), (D:15,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-3 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 5200  <<<<
+
+> Fringe size: 246
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drive truck-1 city-loc-6 city-loc-9)', '(drive truck-1 city-loc-6 city-loc-3)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 5400  <<<<
+
+> Fringe size: 252
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:15,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(pick-up truck-1 city-loc-6 package-3 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drive truck-1 city-loc-6 city-loc-2)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 5600  <<<<
+
+> Fringe size: 252
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:16,C:1), (D:16,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(drive truck-1 city-loc-6 city-loc-3)', '(drive truck-1 city-loc-6 city-loc-2)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 5800  <<<<
+
+> Fringe size: 253
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:16,C:1), (D:15,C:1), (D:15,C:1), (D:14,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 6000  <<<<
+
+> Fringe size: 258
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:14,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1)
+
+> Node instance:
+> Depth=17
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)']
+> Next lifted action: drive
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=5
+
+>>>>  A* iteration 6200  <<<<
+
+> Fringe size: 259
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:15,C:1), (D:15,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1)
+
+> Node instance:
+> Depth=17
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(drive truck-1 city-loc-6 city-loc-3)']
+> Next lifted action: drive
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=5
+
+>>>>  A* iteration 6400  <<<<
+
+> Fringe size: 254
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:16,C:1), (D:16,C:1), (D:15,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(pick-up truck-1 city-loc-6 package-3 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(drive truck-2 city-loc-9 city-loc-6)', '(drive truck-1 city-loc-6 city-loc-2)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 6600  <<<<
+
+> Fringe size: 254
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drive truck-1 city-loc-6 city-loc-3)', '(drive truck-1 city-loc-6 city-loc-2)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 6800  <<<<
+
+> Fringe size: 260
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:15,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1)
+
+> Node instance:
+> Depth=17
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(pick-up truck-1 city-loc-6 package-3 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-2)']
+> Next lifted action: drive
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=5
+
+>>>>  A* iteration 7000  <<<<
+
+> Fringe size: 260
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:16,C:1), (D:16,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1)
+
+> Node instance:
+> Depth=17
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(drive truck-1 city-loc-6 city-loc-2)']
+> Next lifted action: drive
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=5
+
+>>>>  A* iteration 7200  <<<<
+
+> Fringe size: 267
+> First 20 nodes: (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:16,C:1), (D:15,C:1), (D:15,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(drive truck-2 city-loc-9 city-loc-2)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 7400  <<<<
+
+> Fringe size: 262
+> First 20 nodes: (D:17,C:1), (D:15,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-3 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drive truck-2 city-loc-9 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-6)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 7600  <<<<
+
+> Fringe size: 273
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:15,C:1), (D:15,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-9)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 7800  <<<<
+
+> Fringe size: 268
+> First 20 nodes: (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:16,C:1), (D:16,C:1), (D:15,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(pick-up truck-1 city-loc-6 package-3 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(drive truck-1 city-loc-6 city-loc-9)', '(drive truck-2 city-loc-9 city-loc-2)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 8000  <<<<
+
+> Fringe size: 263
+> First 20 nodes: (D:16,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:6,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drive truck-2 city-loc-9 city-loc-6)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 8200  <<<<
+
+> Fringe size: 274
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:15,C:1), (D:14,C:1), (D:14,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-3 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(drive truck-1 city-loc-6 city-loc-9)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 8400  <<<<
+
+> Fringe size: 269
+> First 20 nodes: (D:18,C:1), (D:17,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:14,C:1), (D:14,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:7,C:1), (D:7,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(drive truck-2 city-loc-9 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-2)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 8600  <<<<
+
+> Fringe size: 275
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:16,C:1), (D:15,C:1), (D:15,C:1), (D:14,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-9)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 8800  <<<<
+
+> Fringe size: 270
+> First 20 nodes: (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:15,C:1), (D:14,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(pick-up truck-1 city-loc-6 package-3 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drive truck-1 city-loc-6 city-loc-9)', '(drive truck-2 city-loc-9 city-loc-2)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 9000  <<<<
+
+> Fringe size: 276
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:15,C:1), (D:15,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:7,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drive truck-1 city-loc-6 city-loc-9)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 9200  <<<<
+
+> Fringe size: 276
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:16,C:1), (D:16,C:1), (D:15,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:7,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(pick-up truck-1 city-loc-6 package-3 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(drive truck-1 city-loc-6 city-loc-3)', '(drive truck-1 city-loc-6 city-loc-9)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 9400  <<<<
+
+> Fringe size: 271
+> First 20 nodes: (D:18,C:1), (D:17,C:1), (D:16,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:6,C:1), (D:6,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-2)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 9600  <<<<
+
+> Fringe size: 293
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:15,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:11,C:1), (D:11,C:1)
+
+> Node instance:
+> Depth=17
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-3 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)']
+> Next lifted action: drive
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=5
+
+>>>>  A* iteration 9800  <<<<
+
+> Fringe size: 288
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(drive truck-1 city-loc-6 city-loc-9)', '(drive truck-1 city-loc-6 city-loc-2)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 10000  <<<<
+
+> Fringe size: 289
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:16,C:1), (D:16,C:1), (D:15,C:1), (D:15,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(drive truck-2 city-loc-9 city-loc-6)', '(drive truck-1 city-loc-6 city-loc-2)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 10200  <<<<
+
+> Fringe size: 289
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:15,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(pick-up truck-1 city-loc-6 package-3 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drive truck-1 city-loc-6 city-loc-3)', '(drive truck-1 city-loc-6 city-loc-2)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 10400  <<<<
+
+> Fringe size: 295
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:15,C:1), (D:15,C:1), (D:14,C:1), (D:14,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1)
+
+> Node instance:
+> Depth=17
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-2)']
+> Next lifted action: drive
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=5
+
+>>>>  A* iteration 10600  <<<<
+
+> Fringe size: 295
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:16,C:1), (D:16,C:1), (D:15,C:1), (D:14,C:1), (D:14,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1)
+
+> Node instance:
+> Depth=17
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-3 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(drive truck-1 city-loc-6 city-loc-2)']
+> Next lifted action: drive
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=5
+
+>>>>  A* iteration 10800  <<<<
+
+> Fringe size: 290
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:16,C:1), (D:14,C:1), (D:14,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:7,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drive truck-1 city-loc-6 city-loc-9)', '(drive truck-1 city-loc-6 city-loc-2)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 11000  <<<<
+
+> Fringe size: 291
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:15,C:1), (D:15,C:1), (D:14,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drive truck-2 city-loc-9 city-loc-6)', '(drive truck-1 city-loc-6 city-loc-2)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 11200  <<<<
+
+> Fringe size: 296
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:14,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1)
+
+> Node instance:
+> Depth=17
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(drive truck-1 city-loc-6 city-loc-3)']
+> Next lifted action: drive
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=5
+
+>>>>  A* iteration 11400  <<<<
+
+> Fringe size: 297
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:16,C:1), (D:16,C:1), (D:15,C:1), (D:15,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+
+> Node instance:
+> Depth=17
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(drive truck-2 city-loc-9 city-loc-2)']
+> Next lifted action: drive
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=5
+
+>>>>  A* iteration 11600  <<<<
+
+> Fringe size: 297
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:15,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+
+> Node instance:
+> Depth=17
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(pick-up truck-1 city-loc-6 package-3 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drive truck-1 city-loc-6 city-loc-2)']
+> Next lifted action: drive
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=5
+
+>>>>  A* iteration 11800  <<<<
+
+> Fringe size: 314
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:15,C:1), (D:15,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(drive truck-1 city-loc-6 city-loc-3)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 12000  <<<<
+
+> Fringe size: 309
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:15,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-3 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(drive truck-2 city-loc-9 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-9)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 12200  <<<<
+
+> Fringe size: 309
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:16,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-9)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 12400  <<<<
+
+> Fringe size: 310
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:15,C:1), (D:15,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drive truck-1 city-loc-6 city-loc-9)', '(drive truck-1 city-loc-6 city-loc-9)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 12600  <<<<
+
+> Fringe size: 310
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:14,C:1), (D:14,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-3)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drive truck-1 city-loc-6 city-loc-9)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 12800  <<<<
+
+> Fringe size: 316
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:16,C:1), (D:16,C:1), (D:15,C:1), (D:15,C:1), (D:14,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(drive truck-1 city-loc-6 city-loc-3)', '(drive truck-1 city-loc-6 city-loc-3)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 13000  <<<<
+
+> Fringe size: 311
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:16,C:1), (D:15,C:1), (D:14,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1), (D:11,C:1), (D:11,C:1), (D:10,C:1), (D:10,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-3 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-9)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+
+>>>>  A* iteration 13200  <<<<
+
+> Fringe size: 322
+> First 20 nodes: (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:18,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:17,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:16,C:1), (D:15,C:1), (D:15,C:1), (D:14,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:11,C:1)
+
+> Node instance:
+> Depth=18
+> Ground actions: ['(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-9)', '(pick-up truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-4 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-6)', '(drive truck-1 city-loc-6 city-loc-2)', '(drop truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-2 city-loc-9 city-loc-2)', '(pick-up truck-1 city-loc-6 package-1 capacity-1 capacity-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)', '(drive truck-1 city-loc-6 city-loc-2)']
+> Next lifted action: drop
+> Repair set:
+drive,(not (at ?v ?l1)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+> Command timed out after 30 minutes

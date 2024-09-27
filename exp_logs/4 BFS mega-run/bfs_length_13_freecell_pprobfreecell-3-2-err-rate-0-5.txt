@@ -1,0 +1,31 @@
+> Solving the next problem at: 2024-09-27 08:30:02 UTC
+> Search algorithm: bfs
+> Instance ID=freecell/pprobfreecell-3-2-err-rate-0-5
+> Plan length=13
+> Domain class: freecell
+> Instance name: pprobfreecell-3-2-err-rate-0-5
+> Ground plan:
+['(sendtohome ca d2 c n1 c0 n0)', '(sendtohome-b da d n1 d0 n0 n1 n2)', '(sendtohome sa h3 s n1 s0 n0)', '(sendtofree h3 ha n4 n3)', '(sendtohome-b ha h n1 h0 n0 n2 n3)', '(sendtohome-b h2 h n2 ha n1 n3 n4)', '(sendtohome-b c2 c n2 ca n1 n4 n5)', '(sendtohome-b d2 d n2 da n1 n5 n6)', '(homefromfreecell h3 h n3 h2 n2 n3 n4)', '(sendtohome d3 s2 d n3 d2 n2)', '(sendtohome s2 c3 s n2 sa n1)', '(sendtohome-b c3 c n3 c2 n2 n6 n7)', '(sendtohome-b s3 s n3 s2 n2 n7 n8)']
+> Lifted plan:
+['sendtohome', 'sendtohome-b', 'sendtohome', 'sendtofree', 'sendtohome-b', 'sendtohome-b', 'sendtohome-b', 'sendtohome-b', 'homefromfreecell', 'sendtohome', 'sendtohome', 'sendtohome-b', 'sendtohome-b']
+>>>  Vanilla ground repair length:
+1
+
+>>>  Vanilla ground repair:
+homefromfreecell,(value ?card ?vcard),precPos,-1
+
+An error occurred during A* search: name 'logger' is not defined
+Traceback (most recent call last):
+  File "/home/nader/projects/lifted-white-plan-domain-repair/instance_solver.py", line 70, in solve_instance
+    path, goal_node = searcher.find_path(log_interval=log_interval)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py", line 49, in find_path
+    for neighbor in current_node.get_neighbors():
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/node.py", line 167, in get_neighbors
+    logger.debug(f'> Current state:\n{self.current_state}')
+    ^^^^^^
+NameError: name 'logger' is not defined. Did you mean: 'self.logger'?
+
+> Time spent on this problem: 0.0 hours = 0.0 minutes = 0.68 seconds
+> Subprocess finished.

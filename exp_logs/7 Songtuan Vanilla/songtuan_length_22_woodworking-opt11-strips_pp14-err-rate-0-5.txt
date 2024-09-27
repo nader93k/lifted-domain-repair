@@ -1,0 +1,20 @@
+> Solving the next problem at: 2024-09-27 04:30:21 UTC
+> Search algorithm: songtuan
+> Instance ID=woodworking-opt11-strips/pp14-err-rate-0-5
+> Plan length=22
+> Domain class: woodworking-opt11-strips
+> Instance name: pp14-err-rate-0-5
+> Ground plan:
+['(do-grind p5 grinder0 smooth black colourfragments untreated)', '(do-glaze p5 glazer0 green)', '(do-saw-medium b0 p3 saw0 oak smooth s4 s3 s2)', '(do-saw-small b0 p0 saw0 oak smooth s4 s3)', '(do-saw-small b0 p4 saw0 oak smooth s4 s3)', '(do-saw-medium b2 p1 saw0 pine rough s4 s3 s2)', '(do-saw-small b2 p6 saw0 pine rough s4 s3)', '(do-saw-medium b2 p2 saw0 pine rough s4 s3 s2)', '(do-saw-medium b2 p7 saw0 pine rough s4 s3 s2)', '(do-saw-small b2 p8 saw0 pine rough s4 s3)', '(do-plane p1 planer0 rough natural untreated)', '(do-plane p6 planer0 rough natural untreated)', '(do-glaze p6 glazer0 red)', '(do-plane p8 planer0 rough natural untreated)', '(do-plane p7 planer0 rough natural untreated)', '(do-grind p7 grinder0 smooth natural untreated untreated)', '(do-glaze p2 glazer0 green)', '(do-glaze p7 glazer0 white)', '(do-glaze p0 glazer0 green)', '(do-immersion-varnish p8 immersion-varnisher0 green smooth)', '(do-immersion-varnish p3 immersion-varnisher0 red smooth)', '(do-glaze p4 glazer0 natural)']
+> Lifted plan:
+['do-grind', 'do-glaze', 'do-saw-medium', 'do-saw-small', 'do-saw-small', 'do-saw-medium', 'do-saw-small', 'do-saw-medium', 'do-saw-medium', 'do-saw-small', 'do-plane', 'do-plane', 'do-glaze', 'do-plane', 'do-plane', 'do-grind', 'do-glaze', 'do-glaze', 'do-glaze', 'do-immersion-varnish', 'do-immersion-varnish', 'do-glaze']
+An error occurred trying to get the vanilla repair: exceptions must derive from BaseException
+Traceback (most recent call last):
+  File "/home/nader/projects/lifted-white-plan-domain-repair/instance_solver.py", line 36, in solve_instance
+    gr = ground_repair(
+         ^^^^^^^^^^^^^^
+  File "/home/nader/projects/lifted-white-plan-domain-repair/vanilla_runs/run_songtuans_vanilla.py", line 22, in ground_repair
+    raise "Problem is unsolvable"
+TypeError: exceptions must derive from BaseException
+
+> Error: instance id =woodworking-opt11-strips/pp14-err-rate-0-5, err: Command '['/home/nader/miniconda3/envs/planning/bin/python', 'instance_solver.py', 'songtuan', PosixPath('input/benchmarks-G1'), 'exp_logs/7 Songtuan Vanilla/songtuan_length_22_woodworking-opt11-strips_pp14-err-rate-0-5.txt', '200', 'woodworking-opt11-strips/pp14-err-rate-0-5']' returned non-zero exit status 1.

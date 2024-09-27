@@ -1,0 +1,20 @@
+> Solving the next problem at: 2024-09-27 04:54:31 UTC
+> Search algorithm: songtuan
+> Instance ID=elevators-sat08-strips/pp01-err-rate-0-5
+> Plan length=20
+> Domain class: elevators-sat08-strips
+> Instance name: pp01-err-rate-0-5
+> Ground plan:
+['(move-up-slow slow1-0 n4 n5)', '(move-down-slow slow0-0 n4 n1)', '(board p1 slow0-0 n1 n0 n1)', '(move-down-slow slow0-0 n1 n0)', '(board p3 slow0-0 n0 n1 n2)', '(move-up-slow slow0-0 n0 n2)', '(leave p3 slow0-0 n2 n2 n1)', '(move-up-slow slow0-0 n2 n3)', '(board p0 slow0-0 n3 n1 n2)', '(move-up-slow slow0-0 n3 n4)', '(leave p0 slow0-0 n4 n2 n1)', '(leave p1 slow0-0 n4 n1 n0)', '(move-up-slow slow1-0 n5 n7)', '(board p2 slow1-0 n7 n0 n1)', '(move-down-slow slow1-0 n7 n4)', '(board p1 slow1-0 n4 n1 n2)', '(move-up-slow slow1-0 n4 n5)', '(leave p1 slow1-0 n5 n2 n1)', '(move-up-slow slow1-0 n5 n6)', '(leave p2 slow1-0 n6 n1 n0)']
+> Lifted plan:
+['move-up-slow', 'move-down-slow', 'board', 'move-down-slow', 'board', 'move-up-slow', 'leave', 'move-up-slow', 'board', 'move-up-slow', 'leave', 'leave', 'move-up-slow', 'board', 'move-down-slow', 'board', 'move-up-slow', 'leave', 'move-up-slow', 'leave']
+>>>  Vanilla ground repair length:
+3
+
+>>>  Vanilla ground repair:
+move-down-slow,(lift-at ?lift ?f2),effPos,1
+board,(passengers ?lift ?n2),effPos,1
+board,(not (passengers ?lift ?n1)),effNeg,-1
+
+> Time spent on this problem: 0.0 hours = 0.0 minutes = 0.01 seconds
+> Subprocess finished.

@@ -1,0 +1,31 @@
+> Solving the next problem at: 2024-09-27 08:05:24 UTC
+> Search algorithm: bfs
+> Instance ID=zenotravel/pp08-err-rate-0-5
+> Plan length=15
+> Domain class: zenotravel
+> Instance name: pp08-err-rate-0-5
+> Ground plan:
+['(fly plane1 city0 city1 fl6 fl5)', '(board person1 plane1 city1)', '(fly plane1 city1 city0 fl5 fl4)', '(debark person1 plane1 city0)', '(fly plane1 city0 city1 fl4 fl3)', '(fly plane1 city1 city2 fl3 fl2)', '(board person3 plane1 city2)', '(fly plane1 city2 city1 fl2 fl1)', '(debark person3 plane1 city1)', '(fly plane1 city1 city3 fl1 fl0)', '(fly plane3 city0 city2 fl3 fl2)', '(fly plane3 city2 city4 fl2 fl1)', '(board person6 plane3 city4)', '(fly plane3 city4 city2 fl1 fl0)', '(debark person6 plane3 city2)']
+> Lifted plan:
+['fly', 'board', 'fly', 'debark', 'fly', 'fly', 'board', 'fly', 'debark', 'fly', 'fly', 'fly', 'board', 'fly', 'debark']
+>>>  Vanilla ground repair length:
+0
+
+>>>  Vanilla ground repair:
+
+
+An error occurred during A* search: name 'logger' is not defined
+Traceback (most recent call last):
+  File "/home/nader/projects/lifted-white-plan-domain-repair/instance_solver.py", line 70, in solve_instance
+    path, goal_node = searcher.find_path(log_interval=log_interval)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py", line 49, in find_path
+    for neighbor in current_node.get_neighbors():
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/node.py", line 167, in get_neighbors
+    logger.debug(f'> Current state:\n{self.current_state}')
+    ^^^^^^
+NameError: name 'logger' is not defined. Did you mean: 'self.logger'?
+
+> Time spent on this problem: 0.0 hours = 0.0 minutes = 0.82 seconds
+> Subprocess finished.

@@ -1,0 +1,20 @@
+> Solving the next problem at: 2024-09-27 04:47:08 UTC
+> Search algorithm: songtuan
+> Instance ID=grid/pprob02-err-rate-0-5
+> Plan length=32
+> Domain class: grid
+> Instance name: pprob02-err-rate-0-5
+> Ground plan:
+['(pickup node5-5 key4)', '(move node5-5 node4-5)', '(move node4-5 node3-5)', '(move node3-5 node2-5)', '(move node2-5 node2-4)', '(move node2-4 node2-3)', '(unlock node2-3 node3-3 key4 triangle)', '(move node2-3 node3-3)', '(unlock node3-3 node3-2 key4 triangle)', '(unlock node3-3 node4-3 key4 triangle)', '(move node3-3 node3-2)', '(move node3-2 node3-1)', '(move node3-1 node4-1)', '(unlock node4-1 node4-2 key4 triangle)', '(move node4-1 node3-1)', '(move node3-1 node2-1)', '(move node2-1 node1-1)', '(move node1-1 node1-0)', '(move node1-0 node0-0)', '(pickup-and-loose node0-0 key0 key4)', '(move node0-0 node1-0)', '(move node1-0 node2-0)', '(move node2-0 node2-1)', '(move node2-1 node3-1)', '(move node3-1 node4-1)', '(putdown node4-1 key0)', '(move node4-1 node4-2)', '(move node4-2 node4-3)', '(pickup node4-3 key8)', '(move node4-3 node3-3)', '(move node3-3 node3-2)', '(putdown node3-2 key8)']
+> Lifted plan:
+['pickup', 'move', 'move', 'move', 'move', 'move', 'unlock', 'move', 'unlock', 'unlock', 'move', 'move', 'move', 'unlock', 'move', 'move', 'move', 'move', 'move', 'pickup-and-loose', 'move', 'move', 'move', 'move', 'move', 'putdown', 'move', 'move', 'pickup', 'move', 'move', 'putdown']
+>>>  Vanilla ground repair length:
+3
+
+>>>  Vanilla ground repair:
+pickup,(= ?key ?curpos),precPos,-1
+putdown,(at ?key ?key),precPos,-1
+pickup,(key-shape ?key ?key),effPos,1
+
+> Time spent on this problem: 0.0 hours = 0.0 minutes = 0.01 seconds
+> Subprocess finished.

@@ -1,0 +1,46 @@
+> Solving the next problem at: 2024-09-26 23:38:24 UTC
+> Search algorithm: astar
+> Instance ID=transport-sat08-strips/pp01-err-rate-0-3
+> Plan length=6
+> Domain class: transport-sat08-strips
+> Instance name: pp01-err-rate-0-3
+> Ground plan:
+['(pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)', '(pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)', '(drive truck-1 city-loc-4 city-loc-5)', '(drop truck-1 city-loc-5 package-1 capacity-0 capacity-1)', '(drive truck-1 city-loc-5 city-loc-2)', '(drop truck-1 city-loc-2 package-2 capacity-1 capacity-2)']
+> Lifted plan:
+['pick-up', 'pick-up', 'drive', 'drop', 'drive', 'drop']
+>>>  Vanilla ground repair:
+pick-up,(capacity ?v ?s1),effPos,1
+
+
+==== Goal Reached at Iteration 68 ====
+
+>>>>  A* iteration 68  <<<<
+
+> Fringe size: 261
+> First 20 nodes: (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:4,C:1), (D:2,C:1), (D:6,C:2), (D:5,C:2), (D:5,C:2), (D:5,C:2), (D:5,C:2), (D:5,C:2), (D:5,C:2), (D:5,C:2), (D:5,C:2), (D:5,C:2), (D:5,C:2), (D:5,C:2)
+
+> Node instance:
+> Depth=6
+> Ground actions: ['(pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)', '(pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)', '(drive truck-1 city-loc-4 city-loc-5)', '(drop truck-1 city-loc-5 package-1 capacity-2 capacity-3)', '(drive truck-1 city-loc-5 city-loc-2)', '(drop truck-1 city-loc-2 package-2 capacity-3 capacity-4)']
+> Next lifted action: []
+> Repair set:
+pick-up,(not (capacity ?v ?s2)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+==== End of Goal State Log ====
+
+>>> Goal found:
+> Node instance:
+> Depth=6
+> Ground actions: ['(pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)', '(pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)', '(drive truck-1 city-loc-4 city-loc-5)', '(drop truck-1 city-loc-5 package-1 capacity-2 capacity-3)', '(drive truck-1 city-loc-5 city-loc-2)', '(drop truck-1 city-loc-2 package-2 capacity-3 capacity-4)']
+> Next lifted action: []
+> Repair set:
+pick-up,(not (capacity ?v ?s2)),effNeg,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+> Time spent on this problem: 0.0 hours = 0.1 minutes = 8.48 seconds
+> Subprocess finished.

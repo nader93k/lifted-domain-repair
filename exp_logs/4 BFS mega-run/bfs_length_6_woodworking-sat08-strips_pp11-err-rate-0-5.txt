@@ -1,0 +1,32 @@
+> Solving the next problem at: 2024-09-27 08:29:49 UTC
+> Search algorithm: bfs
+> Instance ID=woodworking-sat08-strips/pp11-err-rate-0-5
+> Plan length=6
+> Domain class: woodworking-sat08-strips
+> Instance name: pp11-err-rate-0-5
+> Ground plan:
+['(do-grind p2 grinder0 verysmooth mauve colourfragments untreated)', '(do-glaze p2 glazer0 natural)', '(do-plane p0 planer0 verysmooth blue colourfragments)', '(do-grind p1 grinder0 smooth natural colourfragments untreated)', '(do-plane p1 planer0 verysmooth natural untreated)', '(do-glaze p1 glazer0 natural)']
+> Lifted plan:
+['do-grind', 'do-glaze', 'do-plane', 'do-grind', 'do-plane', 'do-glaze']
+>>>  Vanilla ground repair length:
+2
+
+>>>  Vanilla ground repair:
+do-plane,(treatment ?x ?oldtreatment),precPos,-1
+do-glaze,(treatment ?x untreated),precPos,-1
+
+An error occurred during A* search: name 'logger' is not defined
+Traceback (most recent call last):
+  File "/home/nader/projects/lifted-white-plan-domain-repair/instance_solver.py", line 70, in solve_instance
+    path, goal_node = searcher.find_path(log_interval=log_interval)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py", line 49, in find_path
+    for neighbor in current_node.get_neighbors():
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/node.py", line 167, in get_neighbors
+    logger.debug(f'> Current state:\n{self.current_state}')
+    ^^^^^^
+NameError: name 'logger' is not defined. Did you mean: 'self.logger'?
+
+> Time spent on this problem: 0.0 hours = 0.0 minutes = 0.20 seconds
+> Subprocess finished.

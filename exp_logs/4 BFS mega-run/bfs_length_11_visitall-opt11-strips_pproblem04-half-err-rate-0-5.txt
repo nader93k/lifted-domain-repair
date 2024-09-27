@@ -1,0 +1,31 @@
+> Solving the next problem at: 2024-09-27 08:17:17 UTC
+> Search algorithm: bfs
+> Instance ID=visitall-opt11-strips/pproblem04-half-err-rate-0-5
+> Plan length=11
+> Domain class: visitall-opt11-strips
+> Instance name: pproblem04-half-err-rate-0-5
+> Ground plan:
+['(move loc-x2-y2 loc-x3-y2)', '(move loc-x3-y2 loc-x3-y3)', '(move loc-x3-y3 loc-x2-y3)', '(move loc-x2-y3 loc-x1-y3)', '(move loc-x1-y3 loc-x0-y3)', '(move loc-x0-y3 loc-x0-y2)', '(move loc-x0-y2 loc-x0-y1)', '(move loc-x0-y1 loc-x0-y0)', '(move loc-x0-y0 loc-x1-y0)', '(move loc-x1-y0 loc-x2-y0)', '(move loc-x2-y0 loc-x3-y0)']
+> Lifted plan:
+['move', 'move', 'move', 'move', 'move', 'move', 'move', 'move', 'move', 'move', 'move']
+>>>  Vanilla ground repair length:
+1
+
+>>>  Vanilla ground repair:
+move,(at-robot ?nextpos),precPos,-1
+
+An error occurred during A* search: name 'logger' is not defined
+Traceback (most recent call last):
+  File "/home/nader/projects/lifted-white-plan-domain-repair/instance_solver.py", line 70, in solve_instance
+    path, goal_node = searcher.find_path(log_interval=log_interval)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py", line 49, in find_path
+    for neighbor in current_node.get_neighbors():
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/node.py", line 167, in get_neighbors
+    logger.debug(f'> Current state:\n{self.current_state}')
+    ^^^^^^
+NameError: name 'logger' is not defined. Did you mean: 'self.logger'?
+
+> Time spent on this problem: 0.0 hours = 0.0 minutes = 0.20 seconds
+> Subprocess finished.

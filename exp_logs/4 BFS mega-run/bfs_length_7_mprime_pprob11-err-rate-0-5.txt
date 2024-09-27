@@ -1,0 +1,31 @@
+> Solving the next problem at: 2024-09-27 08:35:38 UTC
+> Search algorithm: bfs
+> Instance ID=mprime/pprob11-err-rate-0-5
+> Plan length=7
+> Domain class: mprime
+> Instance name: pprob11-err-rate-0-5
+> Ground plan:
+['(overcome laceration lubricity pear uranus saturn)', '(feast lubricity pear sweetroll quebec bosnia)', '(overcome loneliness lubricity sweetroll neptune uranus)', '(feast lubricity sweetroll tomato alsace quebec)', '(feast lubricity tomato shrimp quebec bosnia)', '(succumb laceration lubricity shrimp neptune uranus)', '(succumb loneliness lubricity shrimp uranus saturn)']
+> Lifted plan:
+['overcome', 'feast', 'overcome', 'feast', 'feast', 'succumb', 'succumb']
+>>>  Vanilla ground repair length:
+0
+
+>>>  Vanilla ground repair:
+
+
+An error occurred during A* search: name 'logger' is not defined
+Traceback (most recent call last):
+  File "/home/nader/projects/lifted-white-plan-domain-repair/instance_solver.py", line 70, in solve_instance
+    path, goal_node = searcher.find_path(log_interval=log_interval)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py", line 49, in find_path
+    for neighbor in current_node.get_neighbors():
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/node.py", line 167, in get_neighbors
+    logger.debug(f'> Current state:\n{self.current_state}')
+    ^^^^^^
+NameError: name 'logger' is not defined. Did you mean: 'self.logger'?
+
+> Time spent on this problem: 0.0 hours = 0.0 minutes = 0.24 seconds
+> Subprocess finished.

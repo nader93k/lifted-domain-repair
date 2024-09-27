@@ -1,0 +1,158 @@
+> Solving the next problem at: 2024-09-26 21:01:28 UTC
+> Search algorithm: astar
+> Instance ID=hiking-opt14-strips/pptesting-1-2-3-err-rate-0-3
+> Plan length=13
+> Domain class: hiking-opt14-strips
+> Instance name: pptesting-1-2-3-err-rate-0-3
+> Ground plan:
+['(put_down girl0 place0 tent0)', '(drive_tent girl0 place0 place1 car0 tent0)', '(drive guy0 place0 place1 car1)', '(drive_tent_passenger girl0 place1 place0 car0 tent0 guy0)', '(drive_tent girl0 place0 place1 car0 tent0)', '(put_up girl0 place1 tent0)', '(drive girl0 place1 place0 car0)', '(walk_together tent0 place1 guy0 place0 girl0 couple0)', '(put_down girl0 place1 tent0)', '(drive_tent girl0 place1 place2 car1 tent0)', '(put_up girl0 place2 tent0)', '(drive girl0 place2 place1 car1)', '(walk_together tent0 place2 guy0 place1 girl0 couple0)']
+> Lifted plan:
+['put_down', 'drive_tent', 'drive', 'drive_tent_passenger', 'drive_tent', 'put_up', 'drive', 'walk_together', 'put_down', 'drive_tent', 'put_up', 'drive', 'walk_together']
+>>>  Vanilla ground repair:
+drive_tent,(at_car ?x4 ?x3),effPos,1
+
+
+>>>>  A* iteration 200  <<<<
+
+> Fringe size: 4374
+> First 20 nodes: (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0)
+
+> Node instance:
+> Depth=5
+> Ground actions: ['(put_down girl0 place0 tent0)', '(drive_tent girl0 place0 place0 car0 tent0)', '(drive guy0 place0 place0 car1)', '(drive_tent_passenger girl0 place0 place1 car1 tent0 guy0)', '(drive_tent guy0 place1 place0 car1 tent0)']
+> Next lifted action: put_up
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=4
+
+>>>>  A* iteration 400  <<<<
+
+> Fringe size: 8736
+> First 20 nodes: (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:7,C:1), (D:7,C:1), (D:7,C:1)
+
+> Node instance:
+> Depth=6
+> Ground actions: ['(put_down girl0 place0 tent0)', '(drive_tent guy0 place0 place2 car0 tent0)', '(drive girl0 place0 place2 car1)', '(drive_tent_passenger guy0 place2 place0 car1 tent0 guy0)', '(drive_tent guy0 place0 place2 car1 tent0)', '(put_up girl0 place2 tent0)']
+> Next lifted action: drive
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=36
+
+>>>>  A* iteration 600  <<<<
+
+> Fringe size: 13190
+> First 20 nodes: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1)
+
+> Node instance:
+> Depth=6
+> Ground actions: ['(put_down girl0 place0 tent0)', '(drive_tent girl0 place0 place2 car0 tent0)', '(drive guy0 place0 place2 car1)', '(drive_tent_passenger guy0 place2 place2 car1 tent0 girl0)', '(drive_tent girl0 place2 place1 car1 tent0)', '(put_up girl0 place1 tent0)']
+> Next lifted action: drive
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=36
+
+>>>>  A* iteration 800  <<<<
+
+> Fringe size: 17420
+> First 20 nodes: (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0)
+
+> Node instance:
+> Depth=5
+> Ground actions: ['(put_down girl0 place0 tent0)', '(drive_tent girl0 place0 place0 car1 tent0)', '(drive guy0 place0 place0 car0)', '(drive_tent_passenger girl0 place0 place0 car0 tent0 guy0)', '(drive_tent girl0 place0 place1 car0 tent0)']
+> Next lifted action: put_up
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=3
+
+>>>>  A* iteration 1000  <<<<
+
+> Fringe size: 21969
+> First 20 nodes: (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1)
+
+> Node instance:
+> Depth=6
+> Ground actions: ['(put_down girl0 place0 tent0)', '(drive_tent girl0 place0 place2 car1 tent0)', '(drive guy0 place0 place2 car0)', '(drive_tent_passenger girl0 place2 place2 car0 tent0 girl0)', '(drive_tent guy0 place2 place2 car0 tent0)', '(put_up girl0 place2 tent0)']
+> Next lifted action: drive
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=36
+
+>>>>  A* iteration 1200  <<<<
+
+> Fringe size: 26219
+> First 20 nodes: (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1)
+
+> Node instance:
+> Depth=6
+> Ground actions: ['(put_down girl0 place0 tent0)', '(drive_tent guy0 place0 place0 car1 tent0)', '(drive girl0 place0 place0 car0)', '(drive_tent_passenger guy0 place0 place0 car0 tent0 guy0)', '(drive_tent guy0 place0 place2 car0 tent0)', '(put_up guy0 place2 tent0)']
+> Next lifted action: drive
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=36
+
+>>>>  A* iteration 1400  <<<<
+
+> Fringe size: 30487
+> First 20 nodes: (D:6,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1)
+
+> Node instance:
+> Depth=5
+> Ground actions: ['(put_down girl0 place0 tent0)', '(drive_tent guy0 place0 place0 car1 tent0)', '(drive guy0 place0 place0 car0)', '(drive_tent_passenger guy0 place0 place2 car0 tent0 guy0)', '(drive_tent guy0 place2 place2 car0 tent0)']
+> Next lifted action: put_up
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=3
+
+>>>>  A* iteration 1600  <<<<
+
+> Fringe size: 35142
+> First 20 nodes: (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1)
+
+> Node instance:
+> Depth=6
+> Ground actions: ['(put_down girl0 place0 tent0)', '(drive_tent girl0 place0 place1 car1 tent0)', '(drive guy0 place0 place1 car0)', '(drive_tent_passenger girl0 place1 place1 car0 tent0 girl0)', '(drive_tent guy0 place1 place2 car0 tent0)', '(put_up guy0 place2 tent0)']
+> Next lifted action: drive
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=36
+
+>>>>  A* iteration 1800  <<<<
+
+> Fringe size: 39595
+> First 20 nodes: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:7,C:1)
+
+> Node instance:
+> Depth=6
+> Ground actions: ['(put_down girl0 place0 tent0)', '(drive_tent guy0 place0 place1 car0 tent0)', '(drive girl0 place0 place1 car1)', '(drive_tent_passenger guy0 place1 place0 car1 tent0 girl0)', '(drive_tent girl0 place0 place1 car1 tent0)', '(put_up girl0 place1 tent0)']
+> Next lifted action: drive
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=36
+> Command timed out after 30 minutes

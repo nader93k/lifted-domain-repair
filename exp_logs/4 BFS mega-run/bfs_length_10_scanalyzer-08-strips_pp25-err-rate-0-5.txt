@@ -1,0 +1,31 @@
+> Solving the next problem at: 2024-09-27 08:33:00 UTC
+> Search algorithm: bfs
+> Instance ID=scanalyzer-08-strips/pp25-err-rate-0-5
+> Plan length=10
+> Domain class: scanalyzer-08-strips
+> Instance name: pp25-err-rate-0-5
+> Ground plan:
+['(analyze-4 seg-in-1a seg-in-1b seg-out-1a seg-out-1b car-in-1a car-in-1b car-out-1a car-out-1b)', '(analyze-4 seg-in-2a seg-in-2b seg-out-2a seg-out-2b car-in-2a car-in-2b car-out-2a car-out-2b)', '(analyze-4 seg-in-1a seg-in-1b seg-out-1a seg-out-1b car-in-1b car-out-1a car-out-1b car-in-1a)', '(analyze-4 seg-in-1a seg-in-1b seg-out-1a seg-out-1b car-out-1a car-out-1b car-in-1a car-in-1b)', '(analyze-4 seg-in-1a seg-in-1b seg-out-1a seg-out-1b car-out-1b car-in-1a car-in-1b car-out-1a)', '(analyze-4 seg-in-1a seg-in-1b seg-out-1a seg-out-1b car-in-1a car-in-1b car-out-1a car-out-1b)', '(analyze-4 seg-in-2a seg-in-2b seg-out-2a seg-out-2b car-in-2b car-out-2a car-out-2b car-in-2a)', '(analyze-4 seg-in-2a seg-in-2b seg-out-2a seg-out-2b car-out-2a car-out-2b car-in-2a car-in-2b)', '(analyze-4 seg-in-2a seg-in-2b seg-out-2a seg-out-2b car-out-2b car-in-2a car-in-2b car-out-2a)', '(analyze-4 seg-in-2a seg-in-2b seg-out-2a seg-out-2b car-in-2a car-in-2b car-out-2a car-out-2b)']
+> Lifted plan:
+['analyze-4', 'analyze-4', 'analyze-4', 'analyze-4', 'analyze-4', 'analyze-4', 'analyze-4', 'analyze-4', 'analyze-4', 'analyze-4']
+>>>  Vanilla ground repair length:
+0
+
+>>>  Vanilla ground repair:
+
+
+An error occurred during A* search: name 'logger' is not defined
+Traceback (most recent call last):
+  File "/home/nader/projects/lifted-white-plan-domain-repair/instance_solver.py", line 70, in solve_instance
+    path, goal_node = searcher.find_path(log_interval=log_interval)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py", line 49, in find_path
+    for neighbor in current_node.get_neighbors():
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/node.py", line 167, in get_neighbors
+    logger.debug(f'> Current state:\n{self.current_state}')
+    ^^^^^^
+NameError: name 'logger' is not defined. Did you mean: 'self.logger'?
+
+> Time spent on this problem: 0.0 hours = 1.1 minutes = 65.89 seconds
+> Subprocess finished.

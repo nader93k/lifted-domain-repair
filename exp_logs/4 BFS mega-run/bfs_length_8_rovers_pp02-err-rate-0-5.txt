@@ -1,0 +1,49 @@
+> Solving the next problem at: 2024-09-26 12:18:17 UTC
+> Search algorithm: astar
+> Instance ID=rovers/pp02-err-rate-0-5
+> Plan length=8
+> Domain class: rovers
+> Instance name: pp02-err-rate-0-5
+> Ground plan:
+['(calibrate rover0 camera0 objective0 waypoint0)', '(take_image rover0 waypoint0 objective1 camera0 low_res)', '(communicate_image_data rover0 general objective1 low_res waypoint0 waypoint1)', '(sample_rock rover0 rover0store waypoint0)', '(communicate_rock_data rover0 general waypoint0 waypoint0 waypoint1)', '(drop rover0 rover0store)', '(sample_soil rover0 rover0store waypoint0)', '(communicate_soil_data rover0 general waypoint0 waypoint0 waypoint1)']
+> Lifted plan:
+['calibrate', 'take_image', 'communicate_image_data', 'sample_rock', 'communicate_rock_data', 'drop', 'sample_soil', 'communicate_soil_data']
+>>>  Vanilla ground repair:
+communicate_image_data,(at_lander ?l ?y),effPos,1
+communicate_rock_data,(equipped_for_soil_analysis ?r),effPos,1
+
+
+==== Goal Reached at Iteration 50 ====
+
+>>>>  A* iteration 50  <<<<
+
+> Fringe size: 2
+> First 20 nodes: (D:7,C:2), (D:7,C:2)
+
+> Node instance:
+> Depth=8
+> Ground actions: ['(calibrate rover0 camera0 objective0 waypoint0)', '(take_image rover0 waypoint0 objective1 camera0 low_res)', '(communicate_image_data rover0 general objective1 low_res waypoint0 waypoint1)', '(sample_rock rover0 rover0store waypoint0)', '(communicate_rock_data rover0 general waypoint0 waypoint0 waypoint1)', '(drop rover0 rover0store)', '(sample_soil rover0 rover0store waypoint0)', '(communicate_soil_data rover0 general waypoint0 waypoint0 waypoint1)']
+> Next lifted action: []
+> Repair set:
+communicate_image_data,(at_lander ?l ?y),effPos,1
+communicate_rock_data,(equipped_for_soil_analysis ?r),effPos,1
+> g_cost=2
+> h_cost=0
+> f_cost=2
+> #neighbours=0
+==== End of Goal State Log ====
+
+>>> Goal found:
+> Node instance:
+> Depth=8
+> Ground actions: ['(calibrate rover0 camera0 objective0 waypoint0)', '(take_image rover0 waypoint0 objective1 camera0 low_res)', '(communicate_image_data rover0 general objective1 low_res waypoint0 waypoint1)', '(sample_rock rover0 rover0store waypoint0)', '(communicate_rock_data rover0 general waypoint0 waypoint0 waypoint1)', '(drop rover0 rover0store)', '(sample_soil rover0 rover0store waypoint0)', '(communicate_soil_data rover0 general waypoint0 waypoint0 waypoint1)']
+> Next lifted action: []
+> Repair set:
+communicate_image_data,(at_lander ?l ?y),effPos,1
+communicate_rock_data,(equipped_for_soil_analysis ?r),effPos,1
+> g_cost=2
+> h_cost=0
+> f_cost=2
+> #neighbours=0
+> Time spent on this problem: 0.0 hours = 0.1 minutes = 5.85 seconds
+> Subprocess finished.

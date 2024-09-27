@@ -1,0 +1,20 @@
+> Solving the next problem at: 2024-09-27 04:52:47 UTC
+> Search algorithm: songtuan
+> Instance ID=rovers/pp14-err-rate-0-5
+> Plan length=33
+> Domain class: rovers
+> Instance name: pp14-err-rate-0-5
+> Ground plan:
+['(calibrate rover3 camera0 objective2 waypoint2)', '(navigate rover3 waypoint2 waypoint1)', '(navigate rover1 waypoint4 waypoint6)', '(take_image rover3 waypoint1 objective0 camera0 colour)', '(communicate_image_data rover3 general objective0 colour waypoint1 waypoint7)', '(navigate rover1 waypoint6 waypoint8)', '(calibrate rover0 camera4 objective3 waypoint1)', '(navigate rover0 waypoint1 waypoint2)', '(navigate rover0 waypoint2 waypoint3)', '(sample_soil rover0 rover0store waypoint3)', '(communicate_soil_data rover0 general waypoint3 waypoint3 waypoint7)', '(sample_rock rover1 rover1store waypoint8)', '(communicate_rock_data rover1 general waypoint8 waypoint8 waypoint7)', '(drop rover1 rover1store)', '(navigate rover1 waypoint8 waypoint6)', '(navigate rover1 waypoint6 waypoint4)', '(sample_rock rover1 rover1store waypoint4)', '(navigate rover1 waypoint4 waypoint5)', '(communicate_rock_data rover1 general waypoint4 waypoint5 waypoint7)', '(drop rover1 rover1store)', '(sample_rock rover1 rover1store waypoint5)', '(communicate_rock_data rover1 general waypoint5 waypoint5 waypoint7)', '(drop rover1 rover1store)', '(navigate rover1 waypoint5 waypoint4)', '(navigate rover1 waypoint4 waypoint6)', '(sample_soil rover1 rover1store waypoint6)', '(navigate rover1 waypoint6 waypoint8)', '(communicate_soil_data rover1 general waypoint6 waypoint8 waypoint7)', '(take_image rover0 waypoint3 objective0 camera4 low_res)', '(calibrate rover0 camera4 objective3 waypoint3)', '(take_image rover0 waypoint3 objective2 camera4 low_res)', '(communicate_image_data rover0 general objective2 low_res waypoint3 waypoint7)', '(communicate_image_data rover0 general objective0 low_res waypoint3 waypoint7)']
+> Lifted plan:
+['calibrate', 'navigate', 'navigate', 'take_image', 'communicate_image_data', 'navigate', 'calibrate', 'navigate', 'navigate', 'sample_soil', 'communicate_soil_data', 'sample_rock', 'communicate_rock_data', 'drop', 'navigate', 'navigate', 'sample_rock', 'navigate', 'communicate_rock_data', 'drop', 'sample_rock', 'communicate_rock_data', 'drop', 'navigate', 'navigate', 'sample_soil', 'navigate', 'communicate_soil_data', 'take_image', 'calibrate', 'take_image', 'communicate_image_data', 'communicate_image_data']
+>>>  Vanilla ground repair length:
+3
+
+>>>  Vanilla ground repair:
+calibrate,(can_traverse ?r ?w ?w),precPos,-1
+communicate_image_data,(visible_from ?o ?y),precPos,-1
+sample_soil,(can_traverse ?x ?p ?p),effPos,1
+
+> Time spent on this problem: 0.0 hours = 0.0 minutes = 0.01 seconds
+> Subprocess finished.

@@ -1,0 +1,20 @@
+> Solving the next problem at: 2024-09-27 04:42:27 UTC
+> Search algorithm: songtuan
+> Instance ID=woodworking-opt11-strips/pp03-err-rate-0-5
+> Plan length=12
+> Domain class: woodworking-opt11-strips
+> Instance name: pp03-err-rate-0-5
+> Ground plan:
+['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b1 p0 saw0 mahogany smooth s6 s5 s4)', '(do-saw-medium b1 p1 saw0 mahogany smooth s6 s5 s4)', '(do-saw-medium b1 p3 saw0 mahogany smooth s6 s5 s4)', '(do-saw-small b1 p2 saw0 mahogany smooth s6 s5)', '(do-plane p4 planer0 rough natural untreated)', '(do-immersion-varnish p4 immersion-varnisher0 green smooth)', '(do-glaze p0 glazer0 mauve)', '(do-grind p1 grinder0 smooth natural untreated untreated)', '(do-immersion-varnish p1 immersion-varnisher0 green verysmooth)', '(do-glaze p3 glazer0 white)', '(do-glaze p2 glazer0 mauve)']
+> Lifted plan:
+['do-saw-large', 'do-saw-medium', 'do-saw-medium', 'do-saw-medium', 'do-saw-small', 'do-plane', 'do-immersion-varnish', 'do-glaze', 'do-grind', 'do-immersion-varnish', 'do-glaze', 'do-glaze']
+>>>  Vanilla ground repair length:
+3
+
+>>>  Vanilla ground repair:
+do-plane,(not (grind-treatment-change ?oldtreatment ?oldtreatment)),effNeg,-1
+do-saw-small,(not (is-smooth ?surface)),effNeg,-1
+do-immersion-varnish,(is-smooth ?surface),effPos,1
+
+> Time spent on this problem: 0.0 hours = 0.0 minutes = 0.01 seconds
+> Subprocess finished.

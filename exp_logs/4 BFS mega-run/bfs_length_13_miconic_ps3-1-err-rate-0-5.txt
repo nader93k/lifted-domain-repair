@@ -1,0 +1,31 @@
+> Solving the next problem at: 2024-09-27 08:36:03 UTC
+> Search algorithm: bfs
+> Instance ID=miconic/ps3-1-err-rate-0-5
+> Plan length=13
+> Domain class: miconic
+> Instance name: ps3-1-err-rate-0-5
+> Ground plan:
+['(up f0 f1)', '(up f1 f2)', '(board f2 p0)', '(up f2 f4)', '(board f4 p2)', '(down f4 f1)', '(depart f1 p2)', '(up f1 f2)', '(up f2 f5)', '(board f5 p1)', '(depart f5 p0)', '(down f5 f2)', '(depart f2 p1)']
+> Lifted plan:
+['up', 'up', 'board', 'up', 'board', 'down', 'depart', 'up', 'up', 'board', 'depart', 'down', 'depart']
+>>>  Vanilla ground repair length:
+1
+
+>>>  Vanilla ground repair:
+board,(not (passenger ?p)),effNeg,-1
+
+An error occurred during A* search: name 'logger' is not defined
+Traceback (most recent call last):
+  File "/home/nader/projects/lifted-white-plan-domain-repair/instance_solver.py", line 70, in solve_instance
+    path, goal_node = searcher.find_path(log_interval=log_interval)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py", line 49, in find_path
+    for neighbor in current_node.get_neighbors():
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/node.py", line 167, in get_neighbors
+    logger.debug(f'> Current state:\n{self.current_state}')
+    ^^^^^^
+NameError: name 'logger' is not defined. Did you mean: 'self.logger'?
+
+> Time spent on this problem: 0.0 hours = 0.0 minutes = 0.32 seconds
+> Subprocess finished.

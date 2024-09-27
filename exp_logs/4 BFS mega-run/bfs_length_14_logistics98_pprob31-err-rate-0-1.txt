@@ -1,0 +1,670 @@
+> Solving the next problem at: 2024-09-26 16:58:19 UTC
+> Search algorithm: astar
+> Instance ID=logistics98/pprob31-err-rate-0-1
+> Plan length=14
+> Domain class: logistics98
+> Instance name: pprob31-err-rate-0-1
+> Ground plan:
+['(load-truck package1 truck4 city4-1)', '(drive-truck truck4 city4-1 city4-2 city4)', '(unload-truck package1 truck4 city4-2)', '(load-truck package3 truck1 city1-1)', '(fly-airplane plane1 city2-2 city3-2)', '(drive-truck truck1 city1-1 city1-2 city1)', '(unload-truck package3 truck1 city1-2)', '(load-truck package2 truck1 city1-2)', '(drive-truck truck1 city1-2 city1-1 city1)', '(unload-truck package2 truck1 city1-1)', '(fly-airplane plane1 city3-2 city4-2)', '(load-airplane package1 plane1 city4-2)', '(fly-airplane plane1 city4-2 city3-2)', '(unload-airplane package1 plane1 city3-2)']
+> Lifted plan:
+['load-truck', 'drive-truck', 'unload-truck', 'load-truck', 'fly-airplane', 'drive-truck', 'unload-truck', 'load-truck', 'drive-truck', 'unload-truck', 'fly-airplane', 'load-airplane', 'fly-airplane', 'unload-airplane']
+>>>  Vanilla ground repair:
+
+
+
+>>>>  A* iteration 200  <<<<
+
+> Fringe size: 847
+> First 20 nodes: (D:13,C:0), (D:13,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:8,C:0), (D:6,C:0), (D:6,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(drive-truck truck4 city4-1 city4-1 city4)', '(unload-truck package1 truck4 city4-1)', '(fly-airplane plane1 city1-2 city4-2)', '(load-airplane package2 plane2 city1-2)', '(fly-airplane plane1 city4-2 city4-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 400  <<<<
+
+> Fringe size: 1576
+> First 20 nodes: (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(drive-truck truck3 city3-1 city3-2 city3)', '(unload-truck package1 truck4 city4-1)', '(fly-airplane plane2 city1-2 city2-2)', '(load-airplane package2 plane1 city1-2)', '(fly-airplane plane2 city2-2 city3-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 600  <<<<
+
+> Fringe size: 2356
+> First 20 nodes: (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:9,C:0)
+
+> Node instance:
+> Depth=12
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-2 city1)', '(unload-truck package1 truck4 city4-1)', '(fly-airplane plane1 city1-2 city1-2)', '(load-airplane package2 plane2 city1-2)']
+> Next lifted action: fly-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=50
+
+>>>>  A* iteration 800  <<<<
+
+> Fringe size: 3035
+> First 20 nodes: (D:13,C:0), (D:13,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(drive-truck truck5 city5-1 city5-1 city5)', '(unload-truck package1 truck4 city4-1)', '(fly-airplane plane1 city1-2 city5-2)', '(load-airplane package2 plane2 city1-2)', '(fly-airplane plane2 city1-2 city3-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 1000  <<<<
+
+> Fringe size: 3764
+> First 20 nodes: (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:11,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(drive-truck truck2 city2-1 city2-1 city2)', '(unload-truck package1 truck4 city4-1)', '(fly-airplane plane2 city1-2 city4-2)', '(load-airplane package2 plane1 city1-2)', '(fly-airplane plane1 city1-2 city5-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 1200  <<<<
+
+> Fringe size: 4544
+> First 20 nodes: (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:9,C:0), (D:8,C:0), (D:6,C:0)
+
+> Node instance:
+> Depth=12
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(drive-truck truck3 city3-1 city3-1 city3)', '(unload-truck package1 truck4 city4-1)', '(fly-airplane plane1 city1-2 city3-2)', '(load-airplane package2 plane2 city1-2)']
+> Next lifted action: fly-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=50
+
+>>>>  A* iteration 1400  <<<<
+
+> Fringe size: 5221
+> First 20 nodes: (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(drive-truck truck4 city4-1 city4-2 city4)', '(unload-truck package1 truck4 city4-2)', '(fly-airplane plane2 city1-2 city1-2)', '(load-airplane package2 plane2 city1-2)', '(fly-airplane plane2 city1-2 city5-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 1600  <<<<
+
+> Fringe size: 5972
+> First 20 nodes: (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:11,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package3 truck1 city1-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package3 truck1 city1-1)', '(fly-airplane plane2 city1-2 city4-2)', '(load-airplane package2 plane1 city1-2)', '(fly-airplane plane2 city4-2 city1-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 1800  <<<<
+
+> Fringe size: 6701
+> First 20 nodes: (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package3 truck1 city1-1)', '(drive-truck truck1 city1-1 city1-2 city1)', '(unload-truck package3 truck1 city1-2)', '(fly-airplane plane2 city1-2 city1-2)', '(load-airplane package3 plane2 city1-2)', '(fly-airplane plane2 city1-2 city5-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 2000  <<<<
+
+> Fringe size: 7433
+> First 20 nodes: (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package3 truck1 city1-1)', '(drive-truck truck2 city2-1 city2-1 city2)', '(unload-truck package3 truck1 city1-1)', '(fly-airplane plane2 city1-2 city2-2)', '(load-airplane package2 plane1 city1-2)', '(fly-airplane plane1 city1-2 city5-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 2200  <<<<
+
+> Fringe size: 8215
+> First 20 nodes: (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:6,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package3 truck1 city1-1)', '(drive-truck truck3 city3-1 city3-1 city3)', '(unload-truck package3 truck1 city1-1)', '(fly-airplane plane1 city1-2 city1-2)', '(load-airplane package2 plane2 city1-2)', '(fly-airplane plane1 city1-2 city5-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 2400  <<<<
+
+> Fringe size: 8947
+> First 20 nodes: (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:12,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:6,C:0), (D:6,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package3 truck1 city1-1)', '(drive-truck truck3 city3-1 city3-2 city3)', '(unload-truck package3 truck1 city1-1)', '(fly-airplane plane2 city1-2 city1-2)', '(load-airplane package2 plane1 city1-2)', '(fly-airplane plane1 city1-2 city1-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 2600  <<<<
+
+> Fringe size: 9625
+> First 20 nodes: (D:11,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package3 truck1 city1-1)', '(drive-truck truck5 city5-1 city5-2 city5)', '(unload-truck package3 truck1 city1-1)', '(fly-airplane plane2 city1-2 city4-2)', '(load-airplane package2 plane1 city1-2)', '(fly-airplane plane2 city4-2 city5-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 2800  <<<<
+
+> Fringe size: 10408
+> First 20 nodes: (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:9,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package3 truck1 city1-1)', '(drive-truck truck4 city4-1 city4-2 city4)', '(unload-truck package3 truck1 city1-1)', '(fly-airplane plane1 city1-2 city3-2)', '(load-airplane package2 plane2 city1-2)', '(fly-airplane plane1 city3-2 city5-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 3000  <<<<
+
+> Fringe size: 11138
+> First 20 nodes: (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package3 truck1 city1-1)', '(drive-truck truck4 city4-1 city4-1 city4)', '(unload-truck package3 truck1 city1-1)', '(fly-airplane plane2 city1-2 city1-2)', '(load-airplane package2 plane2 city1-2)', '(fly-airplane plane1 city1-2 city2-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 3200  <<<<
+
+> Fringe size: 11841
+> First 20 nodes: (D:13,C:0), (D:11,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck4 city4-1 city4-2 city4)', '(unload-truck package1 truck4 city4-2)', '(load-truck package1 truck4 city4-2)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-2)', '(fly-airplane plane2 city1-2 city4-2)', '(load-airplane package2 plane1 city1-2)', '(fly-airplane plane2 city4-2 city4-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 3400  <<<<
+
+> Fringe size: 12621
+> First 20 nodes: (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck4 city4-1 city4-2 city4)', '(unload-truck package1 truck4 city4-2)', '(load-truck package1 truck4 city4-2)', '(drive-truck truck2 city2-1 city2-1 city2)', '(unload-truck package1 truck4 city4-2)', '(fly-airplane plane1 city1-2 city1-2)', '(load-airplane package2 plane2 city1-2)', '(fly-airplane plane2 city1-2 city1-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 3600  <<<<
+
+> Fringe size: 13352
+> First 20 nodes: (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:8,C:0), (D:6,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck4 city4-1 city4-2 city4)', '(unload-truck package1 truck4 city4-2)', '(load-truck package1 truck4 city4-2)', '(drive-truck truck4 city4-2 city4-1 city4)', '(unload-truck package1 truck4 city4-1)', '(fly-airplane plane1 city1-2 city4-2)', '(load-airplane package2 plane2 city1-2)', '(fly-airplane plane1 city4-2 city4-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 3800  <<<<
+
+> Fringe size: 14082
+> First 20 nodes: (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck4 city4-1 city4-2 city4)', '(unload-truck package1 truck4 city4-2)', '(load-truck package1 truck4 city4-2)', '(drive-truck truck4 city4-2 city4-2 city4)', '(unload-truck package1 truck4 city4-2)', '(fly-airplane plane2 city1-2 city2-2)', '(load-airplane package2 plane1 city1-2)', '(fly-airplane plane1 city1-2 city2-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 4000  <<<<
+
+> Fringe size: 14811
+> First 20 nodes: (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:11,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck4 city4-1 city4-2 city4)', '(unload-truck package1 truck4 city4-2)', '(load-truck package1 truck4 city4-2)', '(drive-truck truck5 city5-1 city5-1 city5)', '(unload-truck package1 truck4 city4-2)', '(fly-airplane plane2 city1-2 city4-2)', '(load-airplane package2 plane1 city1-2)', '(fly-airplane plane1 city1-2 city1-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 4200  <<<<
+
+> Fringe size: 15541
+> First 20 nodes: (D:13,C:0), (D:12,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:9,C:0), (D:9,C:0), (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck4 city4-1 city4-2 city4)', '(unload-truck package1 truck4 city4-2)', '(load-truck package1 truck4 city4-2)', '(drive-truck truck2 city2-1 city2-2 city2)', '(unload-truck package1 truck4 city4-2)', '(fly-airplane plane1 city1-2 city1-2)', '(load-airplane package2 plane1 city1-2)', '(fly-airplane plane2 city1-2 city4-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 4400  <<<<
+
+> Fringe size: 16269
+> First 20 nodes: (D:13,C:0), (D:13,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:9,C:0), (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck4 city4-1 city4-2 city4)', '(unload-truck package1 truck4 city4-2)', '(load-truck package1 truck4 city4-2)', '(drive-truck truck3 city3-1 city3-1 city3)', '(unload-truck package1 truck4 city4-2)', '(fly-airplane plane1 city1-2 city3-2)', '(load-airplane package2 plane2 city1-2)', '(fly-airplane plane2 city1-2 city5-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 4600  <<<<
+
+> Fringe size: 16998
+> First 20 nodes: (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck4 city4-1 city4-2 city4)', '(unload-truck package1 truck4 city4-2)', '(load-truck package1 truck4 city4-2)', '(drive-truck truck3 city3-1 city3-2 city3)', '(unload-truck package1 truck4 city4-2)', '(fly-airplane plane1 city1-2 city5-2)', '(load-airplane package2 plane2 city1-2)', '(fly-airplane plane2 city1-2 city2-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 4800  <<<<
+
+> Fringe size: 17747
+> First 20 nodes: (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck4 city4-1 city4-2 city4)', '(unload-truck package1 truck4 city4-2)', '(load-truck package3 truck1 city1-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package3 truck1 city1-1)', '(fly-airplane plane2 city1-2 city2-2)', '(load-airplane package2 plane1 city1-2)', '(fly-airplane plane1 city1-2 city5-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 5000  <<<<
+
+> Fringe size: 18479
+> First 20 nodes: (D:13,C:0), (D:13,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck4 city4-1 city4-2 city4)', '(unload-truck package1 truck4 city4-2)', '(load-truck package3 truck1 city1-1)', '(drive-truck truck1 city1-1 city1-2 city1)', '(unload-truck package3 truck1 city1-2)', '(fly-airplane plane1 city1-2 city5-2)', '(load-airplane package3 plane2 city1-2)', '(fly-airplane plane2 city1-2 city3-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 5200  <<<<
+
+> Fringe size: 19212
+> First 20 nodes: (D:12,C:0), (D:12,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0)
+
+> Node instance:
+> Depth=11
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck4 city4-1 city4-2 city4)', '(unload-truck package1 truck4 city4-2)', '(load-truck package3 truck1 city1-1)', '(drive-truck truck2 city2-1 city2-1 city2)', '(unload-truck package3 truck1 city1-1)', '(fly-airplane plane1 city1-2 city4-2)']
+> Next lifted action: load-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=3
+
+>>>>  A* iteration 5400  <<<<
+
+> Fringe size: 19939
+> First 20 nodes: (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck4 city4-1 city4-2 city4)', '(unload-truck package1 truck4 city4-2)', '(load-truck package3 truck1 city1-1)', '(drive-truck truck2 city2-1 city2-2 city2)', '(unload-truck package3 truck1 city1-1)', '(fly-airplane plane1 city1-2 city5-2)', '(load-airplane package2 plane2 city1-2)', '(fly-airplane plane2 city1-2 city5-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 5600  <<<<
+
+> Fringe size: 20668
+> First 20 nodes: (D:13,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck4 city4-1 city4-2 city4)', '(unload-truck package1 truck4 city4-2)', '(load-truck package3 truck1 city1-1)', '(drive-truck truck3 city3-1 city3-1 city3)', '(unload-truck package3 truck1 city1-1)', '(fly-airplane plane2 city1-2 city2-2)', '(load-airplane package2 plane1 city1-2)', '(fly-airplane plane2 city2-2 city4-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 5800  <<<<
+
+> Fringe size: 21398
+> First 20 nodes: (D:13,C:0), (D:13,C:0), (D:11,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck4 city4-1 city4-2 city4)', '(unload-truck package1 truck4 city4-2)', '(load-truck package3 truck1 city1-1)', '(drive-truck truck3 city3-1 city3-2 city3)', '(unload-truck package3 truck1 city1-1)', '(fly-airplane plane2 city1-2 city4-2)', '(load-airplane package2 plane1 city1-2)', '(fly-airplane plane2 city4-2 city3-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 6000  <<<<
+
+> Fringe size: 22180
+> First 20 nodes: (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:9,C:0), (D:9,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck4 city4-1 city4-2 city4)', '(unload-truck package1 truck4 city4-2)', '(load-truck package3 truck1 city1-1)', '(drive-truck truck4 city4-2 city4-2 city4)', '(unload-truck package3 truck1 city1-1)', '(fly-airplane plane1 city1-2 city1-2)', '(load-airplane package2 plane2 city1-2)', '(fly-airplane plane1 city1-2 city5-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 6200  <<<<
+
+> Fringe size: 22912
+> First 20 nodes: (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:12,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:9,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck4 city4-1 city4-2 city4)', '(unload-truck package1 truck4 city4-2)', '(load-truck package3 truck1 city1-1)', '(drive-truck truck5 city5-1 city5-1 city5)', '(unload-truck package3 truck1 city1-1)', '(fly-airplane plane1 city1-2 city4-2)', '(load-airplane package1 plane1 city4-2)', '(fly-airplane plane1 city4-2 city3-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 6400  <<<<
+
+> Fringe size: 23641
+> First 20 nodes: (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:12,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck4 city4-1 city4-2 city4)', '(unload-truck package1 truck4 city4-2)', '(load-truck package3 truck1 city1-1)', '(drive-truck truck5 city5-1 city5-2 city5)', '(unload-truck package3 truck1 city1-1)', '(fly-airplane plane2 city1-2 city1-2)', '(load-airplane package2 plane1 city1-2)', '(fly-airplane plane1 city1-2 city2-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 6600  <<<<
+
+> Fringe size: 24340
+> First 20 nodes: (D:13,C:0), (D:11,C:0), (D:11,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck5 city5-1 city5-1 city5)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(fly-airplane plane2 city1-2 city3-2)', '(load-airplane package2 plane1 city1-2)', '(fly-airplane plane2 city3-2 city4-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 6800  <<<<
+
+> Fringe size: 25120
+> First 20 nodes: (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck5 city5-1 city5-1 city5)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(drive-truck truck2 city2-1 city2-1 city2)', '(unload-truck package1 truck4 city4-1)', '(fly-airplane plane1 city1-2 city2-2)', '(load-airplane package2 plane2 city1-2)', '(fly-airplane plane1 city2-2 city4-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 7000  <<<<
+
+> Fringe size: 25849
+> First 20 nodes: (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:8,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck5 city5-1 city5-1 city5)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(drive-truck truck2 city2-1 city2-2 city2)', '(unload-truck package1 truck4 city4-1)', '(fly-airplane plane2 city1-2 city1-2)', '(load-airplane package2 plane2 city1-2)', '(fly-airplane plane1 city1-2 city1-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 7200  <<<<
+
+> Fringe size: 26528
+> First 20 nodes: (D:13,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck5 city5-1 city5-1 city5)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(drive-truck truck3 city3-1 city3-1 city3)', '(unload-truck package1 truck4 city4-1)', '(fly-airplane plane2 city1-2 city5-2)', '(load-airplane package2 plane1 city1-2)', '(fly-airplane plane2 city5-2 city4-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 7400  <<<<
+
+> Fringe size: 27308
+> First 20 nodes: (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck5 city5-1 city5-1 city5)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(drive-truck truck4 city4-1 city4-1 city4)', '(unload-truck package1 truck4 city4-1)', '(fly-airplane plane1 city1-2 city4-2)', '(load-airplane package2 plane2 city1-2)', '(fly-airplane plane1 city4-2 city4-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 7600  <<<<
+
+> Fringe size: 28037
+> First 20 nodes: (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:9,C:0), (D:9,C:0), (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck5 city5-1 city5-1 city5)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(drive-truck truck4 city4-1 city4-2 city4)', '(unload-truck package1 truck4 city4-2)', '(fly-airplane plane2 city1-2 city2-2)', '(load-airplane package2 plane1 city1-2)', '(fly-airplane plane1 city1-2 city2-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 7800  <<<<
+
+> Fringe size: 28716
+> First 20 nodes: (D:10,C:0), (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:2,C:0)
+
+> Node instance:
+> Depth=9
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck5 city5-1 city5-1 city5)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(drive-truck truck5 city5-1 city5-2 city5)']
+> Next lifted action: unload-truck
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=1
+
+>>>>  A* iteration 8000  <<<<
+
+> Fringe size: 29516
+> First 20 nodes: (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck5 city5-1 city5-1 city5)', '(unload-truck package1 truck4 city4-1)', '(load-truck package3 truck1 city1-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package3 truck1 city1-1)', '(fly-airplane plane1 city1-2 city4-2)', '(load-airplane package2 plane2 city1-2)', '(fly-airplane plane1 city4-2 city5-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 8200  <<<<
+
+> Fringe size: 30247
+> First 20 nodes: (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:13,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:6,C:0), (D:6,C:0)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(load-truck package1 truck4 city4-1)', '(drive-truck truck1 city1-1 city1-1 city1)', '(unload-truck package1 truck4 city4-1)', '(load-truck package1 truck4 city4-1)', '(fly-airplane plane1 city2-2 city1-2)', '(drive-truck truck5 city5-1 city5-1 city5)', '(unload-truck package1 truck4 city4-1)', '(load-truck package3 truck1 city1-1)', '(drive-truck truck1 city1-1 city1-2 city1)', '(unload-truck package3 truck1 city1-2)', '(fly-airplane plane1 city1-2 city4-2)', '(load-airplane package3 plane2 city1-2)', '(fly-airplane plane2 city1-2 city1-2)']
+> Next lifted action: unload-airplane
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+> Command timed out after 30 minutes

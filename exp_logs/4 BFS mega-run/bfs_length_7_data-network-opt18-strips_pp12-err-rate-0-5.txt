@@ -1,0 +1,32 @@
+> Solving the next problem at: 2024-09-27 08:35:25 UTC
+> Search algorithm: bfs
+> Instance ID=data-network-opt18-strips/pp12-err-rate-0-5
+> Plan length=7
+> Domain class: data-network-opt18-strips
+> Instance name: pp12-err-rate-0-5
+> Ground plan:
+['(load data-0-7 server3 number2 number8 number0 number2)', '(load data-0-8 server3 number2 number8 number2 number4)', '(process data-0-8 data-0-7 data-1-5 script1 server3 number1 number8 number4 number5)', '(send data-0-7 server3 server1 number2 number16 number0 number2)', '(send data-1-5 server3 server1 number1 number16 number2 number3)', '(process data-1-5 data-0-7 data-2-4 script6 server1 number4 number16 number3 number7)', '(save data-2-4 number4 server1)']
+> Lifted plan:
+['load', 'load', 'process', 'send', 'send', 'process', 'save']
+>>>  Vanilla ground repair length:
+2
+
+>>>  Vanilla ground repair:
+load,(cached ?d ?s),effPos,1
+process,(less-equal ?size ?size),precPos,-1
+
+An error occurred during A* search: name 'logger' is not defined
+Traceback (most recent call last):
+  File "/home/nader/projects/lifted-white-plan-domain-repair/instance_solver.py", line 70, in solve_instance
+    path, goal_node = searcher.find_path(log_interval=log_interval)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py", line 49, in find_path
+    for neighbor in current_node.get_neighbors():
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/node.py", line 167, in get_neighbors
+    logger.debug(f'> Current state:\n{self.current_state}')
+    ^^^^^^
+NameError: name 'logger' is not defined. Did you mean: 'self.logger'?
+
+> Time spent on this problem: 0.0 hours = 0.0 minutes = 0.25 seconds
+> Subprocess finished.

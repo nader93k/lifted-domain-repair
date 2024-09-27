@@ -1,0 +1,78 @@
+> Solving the next problem at: 2024-09-26 17:28:28 UTC
+> Search algorithm: astar
+> Instance ID=driverlog/pp03-err-rate-0-3
+> Plan length=13
+> Domain class: driverlog
+> Instance name: pp03-err-rate-0-3
+> Ground plan:
+['(board-truck driver1 truck1 s1)', '(load-truck package3 truck1 s1)', '(walk driver2 s0 p2-0)', '(walk driver2 p2-0 s2)', '(drive-truck truck1 s1 s0 driver1)', '(load-truck package2 truck1 s0)', '(load-truck package1 truck1 s0)', '(drive-truck truck1 s0 s1 driver1)', '(unload-truck package2 truck1 s1)', '(unload-truck package1 truck1 s1)', '(drive-truck truck1 s1 s2 driver1)', '(unload-truck package3 truck1 s2)', '(drive-truck truck1 s2 s1 driver1)']
+> Lifted plan:
+['board-truck', 'load-truck', 'walk', 'walk', 'drive-truck', 'load-truck', 'load-truck', 'drive-truck', 'unload-truck', 'unload-truck', 'drive-truck', 'unload-truck', 'drive-truck']
+>>>  Vanilla ground repair:
+
+
+
+>>>>  A* iteration 200  <<<<
+
+> Fringe size: 804
+> First 20 nodes: (D:12,C:0), (D:11,C:0), (D:10,C:0), (D:9,C:0), (D:6,C:0), (D:5,C:0), (D:3,C:0), (D:2,C:0), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1)
+
+> Node instance:
+> Depth=11
+> Ground actions: ['(board-truck driver1 truck1 s1)', '(load-truck package3 truck1 s1)', '(walk driver2 s0 p0-1)', '(walk driver2 p0-1 s1)', '(drive-truck truck1 s1 s0 driver1)', '(load-truck package1 truck1 s0)', '(load-truck package2 truck1 s0)', '(drive-truck truck1 s0 s2 driver1)', '(unload-truck package2 truck1 s2)', '(unload-truck package1 truck1 s2)', '(drive-truck truck1 s2 s0 driver1)']
+> Next lifted action: unload-truck
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=9
+
+>>>>  A* iteration 400  <<<<
+
+> Fringe size: 1579
+> First 20 nodes: (D:9,C:0), (D:9,C:0), (D:9,C:0), (D:5,C:0), (D:4,C:0), (D:2,C:0), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1)
+
+> Node instance:
+> Depth=8
+> Ground actions: ['(board-truck driver1 truck1 s1)', '(load-truck package3 truck1 s1)', '(walk driver2 s0 p2-0)', '(walk driver2 p2-0 s0)', '(drive-truck truck1 s1 s0 driver1)', '(load-truck package2 truck1 s0)', '(load-truck package1 truck1 s0)', '(drive-truck truck1 s0 s2 driver1)']
+> Next lifted action: unload-truck
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=9
+
+==== Goal Reached at Iteration 446 ====
+
+>>>>  A* iteration 446  <<<<
+
+> Fringe size: 1765
+> First 20 nodes: (D:10,C:0), (D:9,C:0), (D:9,C:0), (D:8,C:0), (D:6,C:0), (D:5,C:0), (D:2,C:0), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:13,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1), (D:12,C:1)
+
+> Node instance:
+> Depth=13
+> Ground actions: ['(board-truck driver1 truck1 s1)', '(load-truck package3 truck1 s1)', '(walk driver2 s0 p2-0)', '(walk driver2 p2-0 s2)', '(drive-truck truck1 s1 s0 driver1)', '(load-truck package1 truck1 s0)', '(load-truck package2 truck1 s0)', '(drive-truck truck1 s0 s1 driver1)', '(unload-truck package1 truck1 s1)', '(unload-truck package2 truck1 s1)', '(drive-truck truck1 s1 s2 driver1)', '(unload-truck package3 truck1 s2)', '(drive-truck truck1 s2 s1 driver1)']
+> Next lifted action: []
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+==== End of Goal State Log ====
+
+>>> Goal found:
+> Node instance:
+> Depth=13
+> Ground actions: ['(board-truck driver1 truck1 s1)', '(load-truck package3 truck1 s1)', '(walk driver2 s0 p2-0)', '(walk driver2 p2-0 s2)', '(drive-truck truck1 s1 s0 driver1)', '(load-truck package1 truck1 s0)', '(load-truck package2 truck1 s0)', '(drive-truck truck1 s0 s1 driver1)', '(unload-truck package1 truck1 s1)', '(unload-truck package2 truck1 s1)', '(drive-truck truck1 s1 s2 driver1)', '(unload-truck package3 truck1 s2)', '(drive-truck truck1 s2 s1 driver1)']
+> Next lifted action: []
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+> Time spent on this problem: 0.0 hours = 0.9 minutes = 56.90 seconds
+> Subprocess finished.

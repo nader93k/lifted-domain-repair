@@ -1,0 +1,31 @@
+> Solving the next problem at: 2024-09-27 08:05:18 UTC
+> Search algorithm: bfs
+> Instance ID=pipesworld-notankage/pp08-net1-b12-g7-err-rate-0-5
+> Plan length=12
+> Domain class: pipesworld-notankage
+> Instance name: pp08-net1-b12-g7-err-rate-0-5
+> Ground plan:
+['(pop-unitarypipe s13 b11 a1 a3 b1 gasoleo oc1b)', '(pop-unitarypipe s13 b7 a1 a3 b11 rat-a gasoleo)', '(pop-unitarypipe s13 b3 a1 a3 b7 gasoleo rat-a)', '(pop-unitarypipe s12 b4 a1 a2 b8 lco oc1b)', '(pop-unitarypipe s12 b5 a1 a2 b4 rat-a lco)', '(pop-unitarypipe s13 b6 a1 a3 b3 lco gasoleo)', '(pop-unitarypipe s12 b9 a1 a2 b5 lco rat-a)', '(push-unitarypipe s12 b1 a1 a2 b9 oc1b lco)', '(push-unitarypipe s12 b0 a1 a2 b1 lco oc1b)', '(pop-unitarypipe s12 b9 a1 a2 b0 lco lco)', '(pop-unitarypipe s12 b1 a1 a2 b9 oc1b lco)', '(push-unitarypipe s12 b0 a1 a2 b1 lco oc1b)']
+> Lifted plan:
+['pop-unitarypipe', 'pop-unitarypipe', 'pop-unitarypipe', 'pop-unitarypipe', 'pop-unitarypipe', 'pop-unitarypipe', 'pop-unitarypipe', 'push-unitarypipe', 'push-unitarypipe', 'pop-unitarypipe', 'pop-unitarypipe', 'push-unitarypipe']
+>>>  Vanilla ground repair length:
+0
+
+>>>  Vanilla ground repair:
+
+
+An error occurred during A* search: name 'logger' is not defined
+Traceback (most recent call last):
+  File "/home/nader/projects/lifted-white-plan-domain-repair/instance_solver.py", line 70, in solve_instance
+    path, goal_node = searcher.find_path(log_interval=log_interval)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py", line 49, in find_path
+    for neighbor in current_node.get_neighbors():
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/node.py", line 167, in get_neighbors
+    logger.debug(f'> Current state:\n{self.current_state}')
+    ^^^^^^
+NameError: name 'logger' is not defined. Did you mean: 'self.logger'?
+
+> Time spent on this problem: 0.0 hours = 0.0 minutes = 0.37 seconds
+> Subprocess finished.

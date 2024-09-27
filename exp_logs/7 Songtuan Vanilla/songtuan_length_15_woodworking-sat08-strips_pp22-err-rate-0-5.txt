@@ -1,0 +1,20 @@
+> Solving the next problem at: 2024-09-27 05:02:56 UTC
+> Search algorithm: songtuan
+> Instance ID=woodworking-sat08-strips/pp22-err-rate-0-5
+> Plan length=15
+> Domain class: woodworking-sat08-strips
+> Instance name: pp22-err-rate-0-5
+> Ground plan:
+['(do-grind p3 grinder0 verysmooth blue glazed untreated)', '(do-plane p3 planer0 verysmooth natural untreated)', '(do-immersion-varnish p3 immersion-varnisher0 mauve smooth)', '(do-saw-medium b0 p4 saw0 teak rough s3 s2 s1)', '(do-saw-large b1 p2 saw0 walnut rough s4 s2 s3 s1)', '(do-saw-small b1 p1 saw0 walnut rough s4 s3)', '(do-saw-small b1 p5 saw0 walnut rough s4 s3)', '(do-glaze p4 glazer0 blue)', '(do-plane p5 planer0 rough natural untreated)', '(do-glaze p1 glazer0 green)', '(do-glaze p5 glazer0 blue)', '(do-grind p0 grinder0 smooth green colourfragments untreated)', '(do-plane p0 planer0 verysmooth natural untreated)', '(do-immersion-varnish p0 immersion-varnisher0 black smooth)', '(do-glaze p2 glazer0 natural)']
+> Lifted plan:
+['do-grind', 'do-plane', 'do-immersion-varnish', 'do-saw-medium', 'do-saw-large', 'do-saw-small', 'do-saw-small', 'do-glaze', 'do-plane', 'do-glaze', 'do-glaze', 'do-grind', 'do-plane', 'do-immersion-varnish', 'do-glaze']
+An error occurred trying to get the vanilla repair: exceptions must derive from BaseException
+Traceback (most recent call last):
+  File "/home/nader/projects/lifted-white-plan-domain-repair/instance_solver.py", line 36, in solve_instance
+    gr = ground_repair(
+         ^^^^^^^^^^^^^^
+  File "/home/nader/projects/lifted-white-plan-domain-repair/vanilla_runs/run_songtuans_vanilla.py", line 22, in ground_repair
+    raise "Problem is unsolvable"
+TypeError: exceptions must derive from BaseException
+
+> Error: instance id =woodworking-sat08-strips/pp22-err-rate-0-5, err: Command '['/home/nader/miniconda3/envs/planning/bin/python', 'instance_solver.py', 'songtuan', PosixPath('input/benchmarks-G1'), 'exp_logs/7 Songtuan Vanilla/songtuan_length_15_woodworking-sat08-strips_pp22-err-rate-0-5.txt', '200', 'woodworking-sat08-strips/pp22-err-rate-0-5']' returned non-zero exit status 1.

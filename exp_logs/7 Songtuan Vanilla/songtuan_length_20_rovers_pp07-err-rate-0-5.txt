@@ -1,0 +1,20 @@
+> Solving the next problem at: 2024-09-27 05:09:46 UTC
+> Search algorithm: songtuan
+> Instance ID=rovers/pp07-err-rate-0-5
+> Plan length=20
+> Domain class: rovers
+> Instance name: pp07-err-rate-0-5
+> Ground plan:
+['(sample_soil rover2 rover2store waypoint4)', '(communicate_soil_data rover2 general waypoint4 waypoint4 waypoint3)', '(navigate rover1 waypoint3 waypoint4)', '(sample_rock rover1 rover1store waypoint4)', '(communicate_rock_data rover1 general waypoint4 waypoint4 waypoint3)', '(calibrate rover0 camera0 objective0 waypoint2)', '(take_image rover0 waypoint2 objective0 camera0 high_res)', '(communicate_image_data rover0 general objective0 high_res waypoint2 waypoint3)', '(navigate rover0 waypoint2 waypoint1)', '(sample_soil rover0 rover0store waypoint1)', '(navigate rover0 waypoint1 waypoint2)', '(communicate_soil_data rover0 general waypoint1 waypoint2 waypoint3)', '(drop rover0 rover0store)', '(sample_rock rover0 rover0store waypoint2)', '(communicate_rock_data rover0 general waypoint2 waypoint2 waypoint3)', '(drop rover1 rover1store)', '(navigate rover1 waypoint4 waypoint3)', '(sample_rock rover1 rover1store waypoint3)', '(navigate rover1 waypoint3 waypoint4)', '(communicate_rock_data rover1 general waypoint3 waypoint4 waypoint3)']
+> Lifted plan:
+['sample_soil', 'communicate_soil_data', 'navigate', 'sample_rock', 'communicate_rock_data', 'calibrate', 'take_image', 'communicate_image_data', 'navigate', 'sample_soil', 'navigate', 'communicate_soil_data', 'drop', 'sample_rock', 'communicate_rock_data', 'drop', 'navigate', 'sample_rock', 'navigate', 'communicate_rock_data']
+>>>  Vanilla ground repair length:
+3
+
+>>>  Vanilla ground repair:
+sample_rock,(have_rock_analysis ?x ?p),effPos,1
+drop,(empty ?y),effPos,1
+calibrate,(calibrated ?i ?r),effPos,1
+
+> Time spent on this problem: 0.0 hours = 0.0 minutes = 0.01 seconds
+> Subprocess finished.

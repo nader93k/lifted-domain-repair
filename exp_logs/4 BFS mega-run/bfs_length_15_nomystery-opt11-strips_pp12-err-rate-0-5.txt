@@ -1,0 +1,31 @@
+> Solving the next problem at: 2024-09-27 08:34:32 UTC
+> Search algorithm: bfs
+> Instance ID=nomystery-opt11-strips/pp12-err-rate-0-5
+> Plan length=15
+> Domain class: nomystery-opt11-strips
+> Instance name: pp12-err-rate-0-5
+> Ground plan:
+['(drive t0 l3 l0 level65 level12 level77)', '(drive t0 l0 l4 level51 level14 level65)', '(load p3 t0 l4)', '(load p0 t0 l4)', '(drive t0 l4 l0 level37 level14 level51)', '(drive t0 l0 l3 level25 level12 level37)', '(unload p3 t0 l3)', '(load p1 t0 l3)', '(drive t0 l3 l2 level14 level11 level25)', '(unload p0 t0 l2)', '(drive t0 l2 l1 level9 level5 level14)', '(load p2 t0 l1)', '(unload p1 t0 l1)', '(drive t0 l1 l2 level4 level5 level9)', '(unload p2 t0 l2)']
+> Lifted plan:
+['drive', 'drive', 'load', 'load', 'drive', 'drive', 'unload', 'load', 'drive', 'unload', 'drive', 'load', 'unload', 'drive', 'unload']
+>>>  Vanilla ground repair length:
+0
+
+>>>  Vanilla ground repair:
+
+
+An error occurred during A* search: name 'logger' is not defined
+Traceback (most recent call last):
+  File "/home/nader/projects/lifted-white-plan-domain-repair/instance_solver.py", line 70, in solve_instance
+    path, goal_node = searcher.find_path(log_interval=log_interval)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py", line 49, in find_path
+    for neighbor in current_node.get_neighbors():
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/node.py", line 167, in get_neighbors
+    logger.debug(f'> Current state:\n{self.current_state}')
+    ^^^^^^
+NameError: name 'logger' is not defined. Did you mean: 'self.logger'?
+
+> Time spent on this problem: 0.0 hours = 0.8 minutes = 45.16 seconds
+> Subprocess finished.

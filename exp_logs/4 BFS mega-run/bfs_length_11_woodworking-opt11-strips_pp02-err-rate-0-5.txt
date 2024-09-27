@@ -1,0 +1,31 @@
+> Solving the next problem at: 2024-09-27 08:17:19 UTC
+> Search algorithm: bfs
+> Instance ID=woodworking-opt11-strips/pp02-err-rate-0-5
+> Plan length=11
+> Domain class: woodworking-opt11-strips
+> Instance name: pp02-err-rate-0-5
+> Ground plan:
+['(do-saw-large b0 p2 saw0 oak rough s10 s8 s9 s7)', '(do-saw-medium b1 p0 saw0 pine rough s3 s2 s1)', '(do-saw-large b1 p1 saw0 pine rough s3 s1 s2 s0)', '(do-saw-medium b1 p3 saw0 pine rough s3 s2 s1)', '(do-plane p0 planer0 rough natural untreated)', '(do-glaze p0 glazer0 mauve)', '(do-plane p1 planer0 rough natural untreated)', '(do-glaze p1 glazer0 blue)', '(do-plane p2 planer0 rough natural untreated)', '(do-glaze p2 glazer0 white)', '(do-glaze p3 glazer0 mauve)']
+> Lifted plan:
+['do-saw-large', 'do-saw-medium', 'do-saw-large', 'do-saw-medium', 'do-plane', 'do-glaze', 'do-plane', 'do-glaze', 'do-plane', 'do-glaze', 'do-glaze']
+>>>  Vanilla ground repair length:
+1
+
+>>>  Vanilla ground repair:
+do-saw-medium,(boardsize-successor ?size_before ?size_after),precPos,-1
+
+An error occurred during A* search: name 'logger' is not defined
+Traceback (most recent call last):
+  File "/home/nader/projects/lifted-white-plan-domain-repair/instance_solver.py", line 70, in solve_instance
+    path, goal_node = searcher.find_path(log_interval=log_interval)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py", line 49, in find_path
+    for neighbor in current_node.get_neighbors():
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/node.py", line 167, in get_neighbors
+    logger.debug(f'> Current state:\n{self.current_state}')
+    ^^^^^^
+NameError: name 'logger' is not defined. Did you mean: 'self.logger'?
+
+> Time spent on this problem: 0.0 hours = 0.0 minutes = 0.28 seconds
+> Subprocess finished.

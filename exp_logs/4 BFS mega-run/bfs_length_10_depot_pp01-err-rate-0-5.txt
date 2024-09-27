@@ -1,0 +1,38 @@
+> Solving the next problem at: 2024-09-26 22:02:21 UTC
+> Search algorithm: astar
+> Instance ID=depot/pp01-err-rate-0-5
+> Plan length=10
+> Domain class: depot
+> Instance name: pp01-err-rate-0-5
+> Ground plan:
+['(lift hoist0 crate1 pallet0 depot0)', '(load hoist0 crate1 truck1 depot0)', '(drive truck1 depot0 distributor0)', '(lift hoist1 crate0 pallet1 distributor0)', '(load hoist1 crate0 truck1 distributor0)', '(unload hoist1 crate1 truck1 distributor0)', '(drive truck1 distributor0 distributor1)', '(unload hoist2 crate0 truck1 distributor1)', '(drop hoist1 crate1 pallet1 distributor0)', '(drop hoist2 crate0 pallet2 distributor1)']
+> Lifted plan:
+['lift', 'load', 'drive', 'lift', 'load', 'unload', 'drive', 'unload', 'drop', 'drop']
+>>>  Vanilla ground repair:
+unload,(in ?y ?z),precPos,-1
+drop,(clear ?z),precPos,-1
+drive,(at ?x ?z),effPos,1
+
+
+>>>>  A* iteration 200  <<<<
+
+> Fringe size: 20
+> First 20 nodes: (D:7,C:4), (D:7,C:4), (D:7,C:4), (D:6,C:4), (D:6,C:4), (D:6,C:4), (D:6,C:4), (D:6,C:4), (D:5,C:4), (D:5,C:4), (D:5,C:4), (D:7,C:5), (D:7,C:5), (D:7,C:5), (D:6,C:5), (D:6,C:5), (D:6,C:5), (D:6,C:5), (D:6,C:5), (D:6,C:5)
+
+> Node instance:
+> Depth=6
+> Ground actions: ['(lift hoist0 crate1 pallet0 depot0)', '(load hoist0 crate1 truck1 depot0)', '(drive truck0 distributor1 distributor1)', '(lift hoist0 crate1 pallet0 depot0)', '(load hoist0 crate1 truck1 depot0)', '(unload hoist0 crate0 truck1 depot0)']
+> Next lifted action: drive
+> Repair set:
+unload,(in ?y ?z),precPos,-1
+lift,(on ?y ?z),effPos,1
+lift,(clear ?y),precPos,-1
+lift,(not (at ?y ?p)),effNeg,-1
+> g_cost=4
+> h_cost=0
+> f_cost=4
+> #neighbours=6
+>>> No goal found.
+
+> Time spent on this problem: 0.0 hours = 0.6 minutes = 36.80 seconds
+> Subprocess finished.

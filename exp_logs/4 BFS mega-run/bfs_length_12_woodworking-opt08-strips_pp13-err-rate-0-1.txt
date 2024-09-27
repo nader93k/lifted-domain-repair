@@ -1,0 +1,590 @@
+> Solving the next problem at: 2024-09-26 13:54:57 UTC
+> Search algorithm: astar
+> Instance ID=woodworking-opt08-strips/pp13-err-rate-0-1
+> Plan length=12
+> Domain class: woodworking-opt08-strips
+> Instance name: pp13-err-rate-0-1
+> Ground plan:
+['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b1 p0 saw0 mahogany smooth s6 s5 s4)', '(do-saw-medium b1 p1 saw0 mahogany smooth s6 s5 s4)', '(do-saw-medium b1 p3 saw0 mahogany smooth s6 s5 s4)', '(do-saw-small b1 p2 saw0 mahogany smooth s6 s5)', '(do-plane p4 planer0 rough natural untreated)', '(do-immersion-varnish p4 immersion-varnisher0 green smooth)', '(do-glaze p0 glazer0 mauve)', '(do-grind p1 grinder0 smooth natural untreated untreated)', '(do-immersion-varnish p1 immersion-varnisher0 green verysmooth)', '(do-glaze p3 glazer0 white)', '(do-glaze p2 glazer0 mauve)']
+> Lifted plan:
+['do-saw-large', 'do-saw-medium', 'do-saw-medium', 'do-saw-medium', 'do-saw-small', 'do-plane', 'do-immersion-varnish', 'do-glaze', 'do-grind', 'do-immersion-varnish', 'do-glaze', 'do-glaze']
+>>>  Vanilla ground repair:
+
+
+
+>>>>  A* iteration 200  <<<<
+
+> Fringe size: 1430
+> First 20 nodes: (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0)
+
+> Node instance:
+> Depth=9
+> Ground actions: ['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)', '(do-saw-small b0 p2 saw0 teak rough s6 s5)', '(do-plane p0 planer0 rough natural untreated)', '(do-immersion-varnish p0 immersion-varnisher0 green smooth)', '(do-glaze p4 glazer0 white)', '(do-grind p0 grinder0 smooth green varnished colourfragments)']
+> Next lifted action: do-immersion-varnish
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=4
+
+>>>>  A* iteration 400  <<<<
+
+> Fringe size: 2625
+> First 20 nodes: (D:11,C:0), (D:10,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0)
+
+> Node instance:
+> Depth=11
+> Ground actions: ['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)', '(do-saw-small b1 p2 saw0 mahogany smooth s6 s5)', '(do-plane p0 planer0 rough natural untreated)', '(do-immersion-varnish p0 immersion-varnisher0 green smooth)', '(do-glaze p1 glazer0 white)', '(do-grind p2 grinder0 smooth natural untreated untreated)', '(do-immersion-varnish p2 immersion-varnisher0 green verysmooth)', '(do-glaze p4 glazer0 mauve)']
+> Next lifted action: do-glaze
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 600  <<<<
+
+> Fringe size: 3039
+> First 20 nodes: (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:10,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:7,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0)
+
+> Node instance:
+> Depth=10
+> Ground actions: ['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)', '(do-saw-small b1 p2 saw0 mahogany smooth s6 s5)', '(do-plane p0 planer0 rough natural untreated)', '(do-immersion-varnish p0 immersion-varnisher0 mauve smooth)', '(do-glaze p2 glazer0 white)', '(do-grind p2 grinder0 smooth white glazed untreated)', '(do-immersion-varnish p2 immersion-varnisher0 green verysmooth)']
+> Next lifted action: do-glaze
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=10
+
+>>>>  A* iteration 800  <<<<
+
+> Fringe size: 3415
+> First 20 nodes: (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:10,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0)
+
+> Node instance:
+> Depth=10
+> Ground actions: ['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)', '(do-saw-small b1 p2 saw0 mahogany smooth s6 s5)', '(do-plane p0 planer0 rough natural untreated)', '(do-immersion-varnish p2 immersion-varnisher0 green smooth)', '(do-glaze p3 glazer0 mauve)', '(do-grind p2 grinder0 smooth green varnished colourfragments)', '(do-immersion-varnish p0 immersion-varnisher0 green smooth)']
+> Next lifted action: do-glaze
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=10
+
+>>>>  A* iteration 1000  <<<<
+
+> Fringe size: 3791
+> First 20 nodes: (D:10,C:0), (D:8,C:0), (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0)
+
+> Node instance:
+> Depth=11
+> Ground actions: ['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)', '(do-saw-small b1 p2 saw0 mahogany smooth s6 s5)', '(do-plane p0 planer0 rough natural untreated)', '(do-immersion-varnish p2 immersion-varnisher0 mauve smooth)', '(do-glaze p3 glazer0 white)', '(do-grind p2 grinder0 smooth mauve varnished colourfragments)', '(do-immersion-varnish p0 immersion-varnisher0 green smooth)', '(do-glaze p4 glazer0 white)']
+> Next lifted action: do-glaze
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 1200  <<<<
+
+> Fringe size: 4181
+> First 20 nodes: (D:11,C:0), (D:11,C:0), (D:8,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0)
+
+> Node instance:
+> Depth=11
+> Ground actions: ['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)', '(do-saw-small b1 p2 saw0 mahogany smooth s6 s5)', '(do-plane p1 planer0 rough natural untreated)', '(do-immersion-varnish p1 immersion-varnisher0 green smooth)', '(do-glaze p4 glazer0 white)', '(do-grind p2 grinder0 smooth natural untreated untreated)', '(do-immersion-varnish p2 immersion-varnisher0 mauve verysmooth)', '(do-glaze p0 glazer0 white)']
+> Next lifted action: do-glaze
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 1400  <<<<
+
+> Fringe size: 4581
+> First 20 nodes: (D:9,C:0), (D:9,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0)
+
+> Node instance:
+> Depth=8
+> Ground actions: ['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)', '(do-saw-small b1 p2 saw0 mahogany smooth s6 s5)', '(do-plane p1 planer0 rough natural untreated)', '(do-immersion-varnish p2 immersion-varnisher0 green smooth)', '(do-glaze p0 glazer0 mauve)']
+> Next lifted action: do-grind
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=14
+
+>>>>  A* iteration 1600  <<<<
+
+> Fringe size: 4973
+> First 20 nodes: (D:11,C:0), (D:11,C:0), (D:10,C:0), (D:9,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0)
+
+> Node instance:
+> Depth=11
+> Ground actions: ['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)', '(do-saw-small b1 p2 saw0 mahogany smooth s6 s5)', '(do-plane p1 planer0 rough natural untreated)', '(do-immersion-varnish p1 immersion-varnisher0 mauve smooth)', '(do-glaze p0 glazer0 white)', '(do-grind p1 grinder0 smooth mauve varnished colourfragments)', '(do-immersion-varnish p2 immersion-varnisher0 green smooth)', '(do-glaze p3 glazer0 white)']
+> Next lifted action: do-glaze
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 1800  <<<<
+
+> Fringe size: 5535
+> First 20 nodes: (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0)
+
+> Node instance:
+> Depth=10
+> Ground actions: ['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)', '(do-saw-small b1 p2 saw0 mahogany smooth s6 s5)', '(do-plane p3 planer0 rough natural untreated)', '(do-immersion-varnish p2 immersion-varnisher0 green smooth)', '(do-glaze p0 glazer0 mauve)', '(do-grind p3 grinder0 smooth natural untreated untreated)', '(do-immersion-varnish p3 immersion-varnisher0 mauve verysmooth)']
+> Next lifted action: do-glaze
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=10
+
+>>>>  A* iteration 2000  <<<<
+
+> Fringe size: 5911
+> First 20 nodes: (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:7,C:0), (D:7,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0)
+
+> Node instance:
+> Depth=11
+> Ground actions: ['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)', '(do-saw-small b1 p2 saw0 mahogany smooth s6 s5)', '(do-plane p3 planer0 rough natural untreated)', '(do-immersion-varnish p2 immersion-varnisher0 mauve smooth)', '(do-glaze p0 glazer0 white)', '(do-grind p3 grinder0 smooth natural untreated untreated)', '(do-immersion-varnish p3 immersion-varnisher0 mauve verysmooth)', '(do-glaze p4 glazer0 white)']
+> Next lifted action: do-glaze
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 2200  <<<<
+
+> Fringe size: 6317
+> First 20 nodes: (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:10,C:0), (D:9,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:7,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0)
+
+> Node instance:
+> Depth=11
+> Ground actions: ['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)', '(do-saw-small b1 p2 saw0 mahogany smooth s6 s5)', '(do-plane p3 planer0 rough natural untreated)', '(do-immersion-varnish p3 immersion-varnisher0 green smooth)', '(do-glaze p1 glazer0 white)', '(do-grind p2 grinder0 smooth natural untreated untreated)', '(do-immersion-varnish p2 immersion-varnisher0 green verysmooth)', '(do-glaze p0 glazer0 mauve)']
+> Next lifted action: do-glaze
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 2400  <<<<
+
+> Fringe size: 6699
+> First 20 nodes: (D:11,C:0), (D:10,C:0), (D:9,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0)
+
+> Node instance:
+> Depth=11
+> Ground actions: ['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)', '(do-saw-small b1 p2 saw0 mahogany smooth s6 s5)', '(do-plane p3 planer0 rough natural untreated)', '(do-immersion-varnish p3 immersion-varnisher0 mauve smooth)', '(do-glaze p2 glazer0 mauve)', '(do-grind p2 grinder0 smooth mauve glazed untreated)', '(do-immersion-varnish p2 immersion-varnisher0 green verysmooth)', '(do-glaze p4 glazer0 mauve)']
+> Next lifted action: do-glaze
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 2600  <<<<
+
+> Fringe size: 7083
+> First 20 nodes: (D:11,C:0), (D:9,C:0), (D:8,C:0), (D:8,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0)
+
+> Node instance:
+> Depth=11
+> Ground actions: ['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)', '(do-saw-small b1 p2 saw0 mahogany smooth s6 s5)', '(do-plane p4 planer0 rough natural untreated)', '(do-immersion-varnish p2 immersion-varnisher0 green smooth)', '(do-glaze p3 glazer0 white)', '(do-grind p2 grinder0 smooth green varnished colourfragments)', '(do-immersion-varnish p4 immersion-varnisher0 mauve smooth)', '(do-glaze p1 glazer0 mauve)']
+> Next lifted action: do-glaze
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 2800  <<<<
+
+> Fringe size: 7471
+> First 20 nodes: (D:11,C:0), (D:11,C:0), (D:8,C:0), (D:7,C:0), (D:7,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0)
+
+> Node instance:
+> Depth=11
+> Ground actions: ['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)', '(do-saw-small b1 p2 saw0 mahogany smooth s6 s5)', '(do-plane p4 planer0 rough natural untreated)', '(do-immersion-varnish p2 immersion-varnisher0 mauve smooth)', '(do-glaze p4 glazer0 mauve)', '(do-grind p4 grinder0 smooth mauve glazed untreated)', '(do-immersion-varnish p4 immersion-varnisher0 mauve verysmooth)', '(do-glaze p1 glazer0 white)']
+> Next lifted action: do-glaze
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 3000  <<<<
+
+> Fringe size: 7873
+> First 20 nodes: (D:10,C:0), (D:9,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0)
+
+> Node instance:
+> Depth=11
+> Ground actions: ['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)', '(do-saw-small b1 p2 saw0 mahogany smooth s6 s5)', '(do-plane p4 planer0 rough natural untreated)', '(do-immersion-varnish p4 immersion-varnisher0 mauve smooth)', '(do-glaze p0 glazer0 mauve)', '(do-grind p2 grinder0 smooth natural untreated untreated)', '(do-immersion-varnish p2 immersion-varnisher0 green verysmooth)', '(do-glaze p3 glazer0 white)']
+> Next lifted action: do-glaze
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 3200  <<<<
+
+> Fringe size: 8427
+> First 20 nodes: (D:9,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0)
+
+> Node instance:
+> Depth=8
+> Ground actions: ['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)', '(do-saw-small b0 p2 saw0 teak rough s3 s2)', '(do-plane p0 planer0 rough natural untreated)', '(do-immersion-varnish p0 immersion-varnisher0 mauve smooth)', '(do-glaze p4 glazer0 white)']
+> Next lifted action: do-grind
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=12
+
+>>>>  A* iteration 3400  <<<<
+
+> Fringe size: 9821
+> First 20 nodes: (D:9,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0)
+
+> Node instance:
+> Depth=8
+> Ground actions: ['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p3 saw0 teak rough s6 s5 s4)', '(do-saw-small b0 p2 saw0 teak rough s1 s0)', '(do-plane p1 planer0 rough natural untreated)', '(do-immersion-varnish p1 immersion-varnisher0 mauve smooth)', '(do-glaze p0 glazer0 white)']
+> Next lifted action: do-grind
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=12
+
+>>>>  A* iteration 3600  <<<<
+
+> Fringe size: 11209
+> First 20 nodes: (D:9,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0)
+
+> Node instance:
+> Depth=8
+> Ground actions: ['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p3 saw0 teak rough s6 s5 s4)', '(do-saw-small b0 p2 saw0 teak rough s3 s2)', '(do-plane p2 planer0 rough natural untreated)', '(do-immersion-varnish p2 immersion-varnisher0 green smooth)', '(do-glaze p3 glazer0 mauve)']
+> Next lifted action: do-grind
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=12
+
+>>>>  A* iteration 3800  <<<<
+
+> Fringe size: 12599
+> First 20 nodes: (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:11,C:1)
+
+> Node instance:
+> Depth=9
+> Ground actions: ['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p3 saw0 teak rough s6 s5 s4)', '(do-saw-small b0 p2 saw0 teak rough s4 s3)', '(do-plane p2 planer0 rough natural untreated)', '(do-immersion-varnish p2 immersion-varnisher0 mauve smooth)', '(do-glaze p4 glazer0 white)', '(do-grind p2 grinder0 smooth mauve varnished colourfragments)']
+> Next lifted action: do-immersion-varnish
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=4
+
+>>>>  A* iteration 4000  <<<<
+
+> Fringe size: 13993
+> First 20 nodes: (D:9,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0)
+
+> Node instance:
+> Depth=8
+> Ground actions: ['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p3 saw0 teak rough s6 s5 s4)', '(do-saw-small b0 p2 saw0 teak rough s6 s5)', '(do-plane p3 planer0 rough natural untreated)', '(do-immersion-varnish p3 immersion-varnisher0 mauve smooth)', '(do-glaze p1 glazer0 mauve)']
+> Next lifted action: do-grind
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=12
+
+>>>>  A* iteration 4200  <<<<
+
+> Fringe size: 14632
+> First 20 nodes: (D:10,C:0), (D:10,C:0), (D:9,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0)
+
+> Node instance:
+> Depth=9
+> Ground actions: ['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p3 saw0 teak rough s6 s5 s4)', '(do-saw-small b1 p2 saw0 mahogany smooth s6 s5)', '(do-plane p0 planer0 rough natural untreated)', '(do-immersion-varnish p0 immersion-varnisher0 green smooth)', '(do-glaze p4 glazer0 white)', '(do-grind p0 grinder0 smooth green varnished colourfragments)']
+> Next lifted action: do-immersion-varnish
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=6
+
+>>>>  A* iteration 4400  <<<<
+
+> Fringe size: 15034
+> First 20 nodes: (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:10,C:0), (D:9,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:3,C:0)
+
+> Node instance:
+> Depth=11
+> Ground actions: ['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p3 saw0 teak rough s6 s5 s4)', '(do-saw-small b1 p2 saw0 mahogany smooth s6 s5)', '(do-plane p0 planer0 rough natural untreated)', '(do-immersion-varnish p2 immersion-varnisher0 green smooth)', '(do-glaze p0 glazer0 mauve)', '(do-grind p0 grinder0 smooth mauve glazed untreated)', '(do-immersion-varnish p0 immersion-varnisher0 green verysmooth)', '(do-glaze p1 glazer0 white)']
+> Next lifted action: do-glaze
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 4600  <<<<
+
+> Fringe size: 15406
+> First 20 nodes: (D:11,C:0), (D:9,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0)
+
+> Node instance:
+> Depth=11
+> Ground actions: ['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p3 saw0 teak rough s6 s5 s4)', '(do-saw-small b1 p2 saw0 mahogany smooth s6 s5)', '(do-plane p0 planer0 rough natural untreated)', '(do-immersion-varnish p2 immersion-varnisher0 mauve smooth)', '(do-glaze p0 glazer0 white)', '(do-grind p0 grinder0 smooth white glazed untreated)', '(do-immersion-varnish p0 immersion-varnisher0 mauve verysmooth)', '(do-glaze p4 glazer0 mauve)']
+> Next lifted action: do-glaze
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 4800  <<<<
+
+> Fringe size: 15806
+> First 20 nodes: (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0)
+
+> Node instance:
+> Depth=11
+> Ground actions: ['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p3 saw0 teak rough s6 s5 s4)', '(do-saw-small b1 p2 saw0 mahogany smooth s6 s5)', '(do-plane p1 planer0 rough natural untreated)', '(do-immersion-varnish p1 immersion-varnisher0 green smooth)', '(do-glaze p2 glazer0 mauve)', '(do-grind p2 grinder0 smooth mauve glazed untreated)', '(do-immersion-varnish p2 immersion-varnisher0 mauve verysmooth)', '(do-glaze p0 glazer0 mauve)']
+> Next lifted action: do-glaze
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 5000  <<<<
+
+> Fringe size: 16198
+> First 20 nodes: (D:11,C:0), (D:11,C:0), (D:10,C:0), (D:9,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:7,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0)
+
+> Node instance:
+> Depth=11
+> Ground actions: ['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p3 saw0 teak rough s6 s5 s4)', '(do-saw-small b1 p2 saw0 mahogany smooth s6 s5)', '(do-plane p1 planer0 rough natural untreated)', '(do-immersion-varnish p1 immersion-varnisher0 mauve smooth)', '(do-glaze p3 glazer0 mauve)', '(do-grind p1 grinder0 smooth mauve varnished colourfragments)', '(do-immersion-varnish p2 immersion-varnisher0 green smooth)', '(do-glaze p0 glazer0 white)']
+> Next lifted action: do-glaze
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 5200  <<<<
+
+> Fringe size: 16588
+> First 20 nodes: (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:10,C:0), (D:9,C:0), (D:8,C:0), (D:8,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0)
+
+> Node instance:
+> Depth=10
+> Ground actions: ['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p3 saw0 teak rough s6 s5 s4)', '(do-saw-small b1 p2 saw0 mahogany smooth s6 s5)', '(do-plane p1 planer0 rough natural untreated)', '(do-immersion-varnish p2 immersion-varnisher0 green smooth)', '(do-glaze p3 glazer0 white)', '(do-grind p1 grinder0 smooth natural untreated untreated)', '(do-immersion-varnish p1 immersion-varnisher0 green verysmooth)']
+> Next lifted action: do-glaze
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=10
+
+>>>>  A* iteration 5400  <<<<
+
+> Fringe size: 16966
+> First 20 nodes: (D:10,C:0), (D:10,C:0), (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0)
+
+> Node instance:
+> Depth=9
+> Ground actions: ['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p3 saw0 teak rough s6 s5 s4)', '(do-saw-small b1 p2 saw0 mahogany smooth s6 s5)', '(do-plane p1 planer0 rough natural untreated)', '(do-immersion-varnish p2 immersion-varnisher0 mauve smooth)', '(do-glaze p4 glazer0 mauve)', '(do-grind p2 grinder0 smooth mauve varnished colourfragments)']
+> Next lifted action: do-immersion-varnish
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=6
+
+>>>>  A* iteration 5600  <<<<
+
+> Fringe size: 17356
+> First 20 nodes: (D:10,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0)
+
+> Node instance:
+> Depth=11
+> Ground actions: ['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p3 saw0 teak rough s6 s5 s4)', '(do-saw-small b1 p2 saw0 mahogany smooth s6 s5)', '(do-plane p4 planer0 rough natural untreated)', '(do-immersion-varnish p2 immersion-varnisher0 green smooth)', '(do-glaze p4 glazer0 white)', '(do-grind p4 grinder0 smooth white glazed untreated)', '(do-immersion-varnish p4 immersion-varnisher0 green verysmooth)', '(do-glaze p3 glazer0 white)']
+> Next lifted action: do-glaze
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 5800  <<<<
+
+> Fringe size: 17752
+> First 20 nodes: (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0)
+
+> Node instance:
+> Depth=10
+> Ground actions: ['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p3 saw0 teak rough s6 s5 s4)', '(do-saw-small b1 p2 saw0 mahogany smooth s6 s5)', '(do-plane p4 planer0 rough natural untreated)', '(do-immersion-varnish p4 immersion-varnisher0 green smooth)', '(do-glaze p0 glazer0 mauve)', '(do-grind p4 grinder0 smooth green varnished colourfragments)', '(do-immersion-varnish p2 immersion-varnisher0 mauve smooth)']
+> Next lifted action: do-glaze
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=10
+
+>>>>  A* iteration 6000  <<<<
+
+> Fringe size: 18128
+> First 20 nodes: (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0)
+
+> Node instance:
+> Depth=11
+> Ground actions: ['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p3 saw0 teak rough s6 s5 s4)', '(do-saw-small b1 p2 saw0 mahogany smooth s6 s5)', '(do-plane p4 planer0 rough natural untreated)', '(do-immersion-varnish p4 immersion-varnisher0 mauve smooth)', '(do-glaze p0 glazer0 white)', '(do-grind p4 grinder0 smooth mauve varnished colourfragments)', '(do-immersion-varnish p2 immersion-varnisher0 mauve smooth)', '(do-glaze p3 glazer0 white)']
+> Next lifted action: do-glaze
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 6200  <<<<
+
+> Fringe size: 18538
+> First 20 nodes: (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:10,C:0), (D:9,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:6,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0)
+
+> Node instance:
+> Depth=10
+> Ground actions: ['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p3 saw0 teak rough s6 s5 s4)', '(do-saw-small b1 p2 saw0 mahogany smooth s6 s5)', '(do-plane p3 planer0 rough natural untreated)', '(do-immersion-varnish p2 immersion-varnisher0 green smooth)', '(do-glaze p1 glazer0 white)', '(do-grind p2 grinder0 smooth green varnished colourfragments)', '(do-immersion-varnish p3 immersion-varnisher0 green smooth)']
+> Next lifted action: do-glaze
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=10
+
+>>>>  A* iteration 6400  <<<<
+
+> Fringe size: 18926
+> First 20 nodes: (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:10,C:0), (D:8,C:0), (D:8,C:0), (D:8,C:0), (D:7,C:0), (D:7,C:0), (D:6,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0)
+
+> Node instance:
+> Depth=11
+> Ground actions: ['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p3 saw0 teak rough s6 s5 s4)', '(do-saw-small b1 p2 saw0 mahogany smooth s6 s5)', '(do-plane p3 planer0 rough natural untreated)', '(do-immersion-varnish p2 immersion-varnisher0 mauve smooth)', '(do-glaze p3 glazer0 mauve)', '(do-grind p3 grinder0 smooth mauve glazed untreated)', '(do-immersion-varnish p3 immersion-varnisher0 green verysmooth)', '(do-glaze p1 glazer0 mauve)']
+> Next lifted action: do-glaze
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 6600  <<<<
+
+> Fringe size: 19298
+> First 20 nodes: (D:8,C:0), (D:8,C:0), (D:7,C:0), (D:6,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:11,C:1)
+
+> Node instance:
+> Depth=9
+> Ground actions: ['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p3 saw0 teak rough s6 s5 s4)', '(do-saw-small b1 p2 saw0 mahogany smooth s6 s5)', '(do-plane p3 planer0 rough natural untreated)', '(do-immersion-varnish p3 immersion-varnisher0 green smooth)', '(do-glaze p2 glazer0 white)', '(do-grind p3 grinder0 smooth green varnished colourfragments)']
+> Next lifted action: do-immersion-varnish
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=6
+
+>>>>  A* iteration 6800  <<<<
+
+> Fringe size: 19704
+> First 20 nodes: (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:10,C:0), (D:9,C:0), (D:6,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0)
+
+> Node instance:
+> Depth=11
+> Ground actions: ['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p3 saw0 teak rough s6 s5 s4)', '(do-saw-small b1 p2 saw0 mahogany smooth s6 s5)', '(do-plane p3 planer0 rough natural untreated)', '(do-immersion-varnish p3 immersion-varnisher0 mauve smooth)', '(do-glaze p4 glazer0 white)', '(do-grind p2 grinder0 smooth natural untreated untreated)', '(do-immersion-varnish p2 immersion-varnisher0 green verysmooth)', '(do-glaze p0 glazer0 mauve)']
+> Next lifted action: do-glaze
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 7000  <<<<
+
+> Fringe size: 20277
+> First 20 nodes: (D:11,C:0), (D:11,C:0), (D:10,C:0), (D:8,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0)
+
+> Node instance:
+> Depth=11
+> Ground actions: ['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)', '(do-saw-medium b1 p3 saw0 mahogany smooth s6 s5 s4)', '(do-saw-small b0 p2 saw0 teak rough s1 s0)', '(do-plane p0 planer0 rough natural untreated)', '(do-immersion-varnish p0 immersion-varnisher0 green smooth)', '(do-glaze p4 glazer0 mauve)', '(do-grind p3 grinder0 smooth natural untreated untreated)', '(do-immersion-varnish p3 immersion-varnisher0 green verysmooth)', '(do-glaze p1 glazer0 white)']
+> Next lifted action: do-glaze
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+
+>>>>  A* iteration 7200  <<<<
+
+> Fringe size: 20663
+> First 20 nodes: (D:11,C:0), (D:11,C:0), (D:11,C:0), (D:7,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0)
+
+> Node instance:
+> Depth=11
+> Ground actions: ['(do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)', '(do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)', '(do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)', '(do-saw-medium b1 p3 saw0 mahogany smooth s6 s5 s4)', '(do-saw-small b0 p2 saw0 teak rough s1 s0)', '(do-plane p0 planer0 rough natural untreated)', '(do-immersion-varnish p0 immersion-varnisher0 mauve smooth)', '(do-glaze p4 glazer0 white)', '(do-grind p3 grinder0 smooth natural untreated untreated)', '(do-immersion-varnish p3 immersion-varnisher0 mauve verysmooth)', '(do-glaze p1 glazer0 mauve)']
+> Next lifted action: do-glaze
+> Repair set:
+
+> g_cost=0
+> h_cost=0
+> f_cost=0
+> #neighbours=0
+> Command timed out after 30 minutes

@@ -1,0 +1,46 @@
+> Solving the next problem at: 2024-09-26 19:46:32 UTC
+> Search algorithm: astar
+> Instance ID=rovers/pp04-err-rate-0-3
+> Plan length=8
+> Domain class: rovers
+> Instance name: pp04-err-rate-0-3
+> Ground plan:
+['(calibrate rover1 camera0 objective0 waypoint2)', '(navigate rover1 waypoint2 waypoint1)', '(take_image rover1 waypoint1 objective0 camera0 high_res)', '(communicate_image_data rover1 general objective0 high_res waypoint1 waypoint2)', '(sample_rock rover1 rover1store waypoint1)', '(communicate_rock_data rover1 general waypoint1 waypoint1 waypoint2)', '(sample_soil rover0 rover0store waypoint3)', '(communicate_soil_data rover0 general waypoint3 waypoint3 waypoint2)']
+> Lifted plan:
+['calibrate', 'navigate', 'take_image', 'communicate_image_data', 'sample_rock', 'communicate_rock_data', 'sample_soil', 'communicate_soil_data']
+>>>  Vanilla ground repair:
+calibrate,(calibrated ?i ?r),effPos,1
+
+
+==== Goal Reached at Iteration 96 ====
+
+>>>>  A* iteration 96  <<<<
+
+> Fringe size: 85
+> First 20 nodes: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1)
+
+> Node instance:
+> Depth=8
+> Ground actions: ['(calibrate rover0 camera1 objective0 waypoint3)', '(navigate rover1 waypoint2 waypoint1)', '(take_image rover1 waypoint1 objective0 camera0 high_res)', '(communicate_image_data rover1 general objective0 high_res waypoint1 waypoint2)', '(sample_rock rover1 rover1store waypoint1)', '(communicate_rock_data rover1 general waypoint1 waypoint1 waypoint2)', '(sample_soil rover0 rover0store waypoint3)', '(communicate_soil_data rover0 general waypoint3 waypoint3 waypoint2)']
+> Next lifted action: []
+> Repair set:
+take_image,(calibrated ?i ?r),precPos,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+==== End of Goal State Log ====
+
+>>> Goal found:
+> Node instance:
+> Depth=8
+> Ground actions: ['(calibrate rover0 camera1 objective0 waypoint3)', '(navigate rover1 waypoint2 waypoint1)', '(take_image rover1 waypoint1 objective0 camera0 high_res)', '(communicate_image_data rover1 general objective0 high_res waypoint1 waypoint2)', '(sample_rock rover1 rover1store waypoint1)', '(communicate_rock_data rover1 general waypoint1 waypoint1 waypoint2)', '(sample_soil rover0 rover0store waypoint3)', '(communicate_soil_data rover0 general waypoint3 waypoint3 waypoint2)']
+> Next lifted action: []
+> Repair set:
+take_image,(calibrated ?i ?r),precPos,-1
+> g_cost=1
+> h_cost=0
+> f_cost=1
+> #neighbours=0
+> Time spent on this problem: 0.0 hours = 0.2 minutes = 11.08 seconds
+> Subprocess finished.
