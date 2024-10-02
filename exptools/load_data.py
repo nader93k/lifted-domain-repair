@@ -64,7 +64,7 @@ def _find_err_rate_substring(s):
         raise ValueError("Substring 'err-rate' not found in the given text")
 
 
-def list_instances(benchmark_path: Path, instance_id=None):
+def list_instances(benchmark_path: Path, domain_class=None, instance_id=None):
     """
     instance id example: 'blocks/pprobBLOCKS-5-0-err-rate-0-5'
     """
@@ -94,6 +94,9 @@ def list_instances(benchmark_path: Path, instance_id=None):
                 , error_rate=error_rate
                 , white_plan_file=plan_file)
 
+            if domain_class and instance.domain_class != domain_class:
+                continue
+
             if instance_id and instance.identifier != instance_id:
                 continue
 
@@ -106,7 +109,7 @@ def list_instances(benchmark_path: Path, instance_id=None):
     return(instance_list)
         
         
-def smart_instance_generator(instances: List[Instance], min_length, max_length) -> Generator[Instance, None, None]:
+def smart_instance_generator(instances: List[Instance], min_length, max_length, order="random"):
     random.seed(0)
     # Group instances by domain_class
     domain_classes: Dict[str, List[Instance]] = {}
@@ -131,8 +134,14 @@ def smart_instance_generator(instances: List[Instance], min_length, max_length) 
         # Choose a random domain class
         domain_class = random.choice(list(domain_classes.keys()))
         
-        # Choose a random instance from the selected domain class
-        instance = random.choice(domain_classes[domain_class])
+        if order == "random":
+            # Choose a random instance from the selected domain class
+            instance = random.choice(domain_classes[domain_class])
+        elif order == "increasing":
+            # Choose the instance with the smallest plan_length
+            instance = min(domain_classes[domain_class], key=lambda x: x.plan_length)
+        else:
+            raise ValueError("Invalid order parameter. Must be 'random' or 'increasing'.")
         
         # Ensure the instance hasn't been used before
         if instance.identifier not in used_identifiers:
@@ -145,4 +154,3 @@ def smart_instance_generator(instances: List[Instance], min_length, max_length) 
         # If the domain class is empty, remove it
         if not domain_classes[domain_class]:
             del domain_classes[domain_class]
-        

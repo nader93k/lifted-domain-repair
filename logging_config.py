@@ -8,7 +8,7 @@ def setup_logging(log_file):
 
     # Create file handler and set level to info
     file_handler = logging.FileHandler(log_file, mode='a')  # Changed to 'a' for append mode
-    file_handler.setLevel(logging.INFO)
+    file_handler.setLevel(logging.DEBUG)
 
     # Create formatter
     formatter = logging.Formatter('%(message)s')
@@ -18,7 +18,8 @@ def setup_logging(log_file):
 
     # Get the root logger and add the file handler
     root_logger = logging.getLogger()
-    root_logger.setLevel(logging.INFO)
+    root_logger.setLevel(logging.DEBUG)
     root_logger.addHandler(file_handler)
+
 
     return root_logger

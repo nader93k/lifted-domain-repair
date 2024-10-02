@@ -56,6 +56,7 @@ class Node:
         self.h_cost_needed = h_cost_needed
         self.parent = parent
         self.neighbours = []
+        self.possible_groundings = None
 
 
         if is_initial_node:
@@ -142,17 +143,15 @@ class Node:
         # action.precondition = Conjunction([])
 
         try:
-            possible_groundings = Node.grounder(domain, task, next_action_name)
+            self.possible_groundings = Node.grounder(domain, task, next_action_name)
         except Exception as error:
             print(f">/>/ An error occurred during grounding: {error}")
-            logger.info(f'>/>/ Current node:\n{self}')
-            logger.info(f'>/>/ Current state:\n{self.current_state}')
+            self.logger.info(f'>/>/ Current node:\n{self}')
+            self.logger.info(f'>/>/ Current state:\n{self.current_state}')
             raise
 
-        possible_groundings = Node.grounder(domain, task, next_action_name)
-
         self.neighbours = []
-        for grounding in possible_groundings:
+        for grounding in self.possible_groundings:
             next_node = Node(
                 ground_action_sequence=self.ground_action_sequence + [grounding],
                 lifted_action_sequence=self.lifted_action_sequence[1:],
@@ -163,9 +162,6 @@ class Node:
             if next_node.f_cost == float('inf'):
                 continue
             self.neighbours.append(next_node)
-
-        logger.debug(f'> Current state:\n{self.current_state}')
-        logger.debug(f'> Possible groundings:\n{possible_groundings}')
 
         return self.neighbours
 
@@ -186,13 +182,14 @@ class Node:
         return ("> Node instance:" + "\n"
                 + f"> Depth={self.depth}" + "\n"
                 + f"> Ground actions: {self.ground_action_sequence}" + "\n"
-                + f"> Next lifted action: {next_lifted}" + "\n"
                 + f"> Repair set:\n{self.ground_repair_solution}" + "\n"
                 + f"> g_cost={self.g_cost}" + "\n"
                 + f"> h_cost={self.h_cost}" + "\n"
                 + f"> f_cost={self.f_cost}" + "\n"
-                + f"> #neighbours={len(self.neighbours)}"
-
+                + f"> Next lifted action: {next_lifted}" + "\n"
+                + f"> Possible groundings:\n{self.possible_groundings}" + "\n"
+                + f"> #neighbours={len(self.neighbours)}" + "\n"
+                + f"> Current state:\n{self.current_state}" + "\n"
                 )
 
     def __repr__(self):
