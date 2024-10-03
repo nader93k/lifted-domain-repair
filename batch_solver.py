@@ -5,6 +5,7 @@ import os
 import logging
 import pstats
 import subprocess
+import json
 
 
 
@@ -28,8 +29,8 @@ def print_profile(file_name: str, num_lines=20):
 #         )
 
 
-def run_process(search_algorithm, benchmark_path, log_folder, log_interval, timeout_seconds, order, min_length, max_length, domain_class=None, instance_id=None):
-    instance_list = list_instances(benchmark_path, domain_class, instance_id)
+def run_process(search_algorithm, benchmark_path, log_folder, log_interval, timeout_seconds, order, min_length, max_length, domain_class=None, instance_ids=[]):
+    instance_list = list_instances(benchmark_path, domain_class, instance_ids)
     
     # instance_list.sort(key=lambda i: i.plan_length)
 
@@ -60,6 +61,11 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval, time
         except subprocess.CalledProcessError as e:
             logger.error(f"> Error: instance id ={instance.identifier}, err: {e}")
 
+def load_instance_ids(file_path='instance_ids.json'):
+    with open(file_path, 'r') as file:
+        instance_ids = json.load(file)
+    print(f"Successfully loaded {len(instance_ids)} instance IDs from JSON file.")
+    return instance_ids
 
 # instance_id_example: 'blocks/pprobBLOCKS-5-0-err-rate-0-5'
 if __name__ == "__main__":
@@ -70,12 +76,14 @@ if __name__ == "__main__":
     log_folder = Path('./exp_logs_debug')
     # log_folder = Path('./exp_logs/7 Songtuan Vanilla')
     log_interval = 1
-    timeout_seconds = 30 * 60
-    order = 'increasing'
-    min_length=1
-    max_length=20
-    domain_class='blocks'
-    instance_id='blocks/pprobBLOCKS-4-1-err-rate-0-5'
+    timeout_seconds = 1 * 10
+    order = 'random'
+    min_length = 1
+    max_length = 2000
+    # domain_class='blocks'
+    domain_class = None
+    # instance_ids=['blocks/pprobBLOCKS-4-1-err-rate-0-5']
+    instance_ids = load_instance_ids()
     
     run_process(search_algorithm=search_algorithm
                , benchmark_path=benchmark_path
@@ -86,4 +94,4 @@ if __name__ == "__main__":
                , min_length=min_length
                , max_length=max_length
                , domain_class=domain_class
-               , instance_id=instance_id)
+               , instance_ids=instance_ids)

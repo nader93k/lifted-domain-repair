@@ -64,7 +64,7 @@ def _find_err_rate_substring(s):
         raise ValueError("Substring 'err-rate' not found in the given text")
 
 
-def list_instances(benchmark_path: Path, domain_class=None, instance_id=None):
+def list_instances(benchmark_path: Path, domain_class=None, instance_ids=[]):
     """
     instance id example: 'blocks/pprobBLOCKS-5-0-err-rate-0-5'
     """
@@ -97,7 +97,7 @@ def list_instances(benchmark_path: Path, domain_class=None, instance_id=None):
             if domain_class and instance.domain_class != domain_class:
                 continue
 
-            if instance_id and instance.identifier != instance_id:
+            if instance_ids and instance.identifier not in instance_ids:
                 continue
 
             instance_list.append(instance)
@@ -122,7 +122,8 @@ def smart_instance_generator(instances: List[Instance], min_length, max_length, 
     for domain_class in domain_classes:
         domain_classes[domain_class] = [
             inst for inst in domain_classes[domain_class]
-            if min_length <= inst.plan_length <= max_length and inst.instance_name.endswith("err-rate-0-5")
+            # if min_length <= inst.plan_length <= max_length and inst.instance_name.endswith("err-rate-0-5")
+            if min_length <= inst.plan_length <= max_length
         ]
     
     # Remove empty domain classes
