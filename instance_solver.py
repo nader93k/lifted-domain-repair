@@ -12,6 +12,7 @@ import traceback
 
 
 def solve_instance(search_algorithm, benchmark_path, log_file, log_interval, instance_id):
+    log_interval = int(log_interval)
     instance = list_instances(benchmark_path, instance_ids=[instance_id])[0]
 
     start_time = time.time()

@@ -76,9 +76,6 @@ def list_instances(benchmark_path: Path, domain_class=None, instance_ids=[]):
     instance_list = []
     for planning_folder in planning_folders:
         plan_folder = Path(str(planning_folder) + '_plans')
-        logging.debug(f"Planning folder: {planning_folder}\n")
-
-        
         for task_file in [f for f in _list_files(planning_folder) if not f.name.startswith("domain")]:
             domain_file = task_file.with_name('domain-' + task_file.name)
             plan_file = Path(plan_folder / task_file.stem).with_suffix(".plan")

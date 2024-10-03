@@ -5,6 +5,8 @@ import logging
 import copy
 from fd.pddl.conditions import Conjunction, Atom
 from heuristic_tools.heuristic import Heurisitc
+import pickle
+import json
 
 
 
@@ -119,6 +121,14 @@ class Node:
         h = Heurisitc(h_name="G_HMAX", relaxation="none")
         h_cost = h.evaluate(self.original_domain, task, [(l,) for l in self.lifted_action_sequence])
 
+        # Debug #TODO: delete this
+        # d = self.original_domain
+        # t = task
+        # a = [(l,) for l in self.lifted_action_sequence]
+        # with open('variables.pickle', 'wb') as pickle_file:
+        #     pickle.dump((d, t, a), pickle_file)
+
+
         return h_cost
 
 
@@ -157,7 +167,8 @@ class Node:
                 lifted_action_sequence=self.lifted_action_sequence[1:],
                 parent=self,
                 is_initial_node=False,
-                depth=self.depth+1
+                depth=self.depth+1,
+                h_cost_needed=self.h_cost_needed
             )
             if next_node.f_cost == float('inf'):
                 continue

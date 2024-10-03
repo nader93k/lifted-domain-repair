@@ -45,8 +45,9 @@ transform_to_pwl = {
 }
 
 current_dir = Path(__file__).resolve().parent
-POWERLIFTED_PY = current_dir / 'pwl' / 'powerlifted.py'
-FAST_DOWNWARD_PY = current_dir / 'fd2' / 'fast-downward.py'
+parent_dir = current_dir.parent
+POWERLIFTED_PY = parent_dir / 'pwl' / 'powerlifted.py'
+FAST_DOWNWARD_PY = parent_dir / 'fd2' / 'fast-downward.py'
 
 def _get_heuristic(command, look_for):
     output_file = BASE_FOLDER + "heuristic_value.tmp"
