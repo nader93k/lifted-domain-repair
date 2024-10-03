@@ -119,6 +119,7 @@ def smart_instance_generator(instances: List[Instance], min_length, max_length, 
     for domain_class in domain_classes:
         domain_classes[domain_class] = [
             inst for inst in domain_classes[domain_class]
+            #TODO: clean the following line
             # if min_length <= inst.plan_length <= max_length and inst.instance_name.endswith("err-rate-0-5")
             if min_length <= inst.plan_length <= max_length
         ]
@@ -129,14 +130,14 @@ def smart_instance_generator(instances: List[Instance], min_length, max_length, 
     used_identifiers = set()
     
     while domain_classes:
-        # Choose a random domain class
-        domain_class = random.choice(list(domain_classes.keys()))
-        
         if order == "random":
+            # Choose a random domain class
+            domain_class = random.choice(list(domain_classes.keys()))
             # Choose a random instance from the selected domain class
             instance = random.choice(domain_classes[domain_class])
         elif order == "increasing":
             # Choose the instance with the smallest plan_length
+            domain_class = min(domain_classes.keys(), key=lambda k: min(inst.plan_length for inst in domain_classes[k]))
             instance = min(domain_classes[domain_class], key=lambda x: x.plan_length)
         else:
             raise ValueError("Invalid order parameter. Must be 'random' or 'increasing'.")

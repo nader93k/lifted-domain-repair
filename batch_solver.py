@@ -63,7 +63,7 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval, time
             except subprocess.CalledProcessError as e:
                 logger.error(f"> Error: instance id ={instance.identifier}, err: {e}")
         else:
-            # normal function call: mostly used for debugging
+            # python function call: mostly used for debugging
             try:
                 print(f"> Starting by function call for file_name={log_file}")
                 result = solve_instance(*cmd[2:])
@@ -73,7 +73,7 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval, time
             
             
 
-def load_instance_ids(file_path='instance_ids.json'):
+def load_instance_ids(file_path='instance_ids_nonzero_h.json'):
     with open(file_path, 'r') as file:
         instance_ids = json.load(file)
     print(f"Successfully loaded {len(instance_ids)} instance IDs from JSON file.")
@@ -82,19 +82,19 @@ def load_instance_ids(file_path='instance_ids.json'):
 # instance_id_example: 'blocks/pprobBLOCKS-5-0-err-rate-0-5'
 if __name__ == "__main__":
     benchmark_path = Path('./input/benchmarks-G1')
-    search_algorithm = 'astar'
-    # log_folder = Path('./exp_logs/4 BFS mega-run')
-    log_folder = Path('./exp_logs_debug')
-    # log_folder = Path('./exp_logs/7 Songtuan Vanilla')
+    search_algorithm = 'bfs'
+    log_folder = Path('./exp_logs/8 BFS-full-log length1-15')
+    # log_folder = Path('./exp_logs_debug')
     log_interval = 1
     timeout_seconds = 30 * 60
-    order = 'random'
+    order = 'increasing' # 'increasing' or 'random'
     min_length = 1
     max_length = 15
     # domain_class='blocks'
     domain_class = None
-    instance_ids = load_instance_ids()
+    # instance_ids = load_instance_ids()
     # instance_ids = ["blocks/pprobBLOCKS-6-2-err-rate-0-3"]
+    instance_ids = []
     
     run_process(search_algorithm=search_algorithm
                , benchmark_path=benchmark_path
