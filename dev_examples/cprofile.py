@@ -1,3 +1,5 @@
+import pstats
+
 def example():
     benchmark_path = Path('./input/benchmarks-G1')
     # log_folder = Path('./exp_logs/4 BFS mega-run')

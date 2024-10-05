@@ -7,6 +7,7 @@ from fd.pddl.conditions import Conjunction, Atom
 from heuristic_tools.heuristic import Heurisitc
 import pickle
 import json
+import yaml
 
 
 
@@ -41,7 +42,8 @@ class Node:
                  parent: 'Node' = None,
                  is_initial_node: bool = False,
                  depth=0,
-                 h_cost_needed=False
+                 h_cost_needed=False,
+                 heuristic_relaxation=None
                  ):
         if self.grounder is None:
             raise ValueError("Action grounder must be set before creating instances.")
@@ -59,6 +61,8 @@ class Node:
         self.parent = parent
         self.neighbours = []
         self.possible_groundings = None
+        self.h_relaxation = heuristic_relaxation
+
 
 
         if is_initial_node:
@@ -118,16 +122,8 @@ class Node:
         # should be sth like: h(y(self.domain), d(self.task), self.lifted_action_sequence)
         task = copy.deepcopy(self.original_task)
         task.set_init_state(self.current_state)
-        h = Heurisitc(h_name="G_HMAX", relaxation="unary")
+        h = Heurisitc(h_name="G_HMAX", relaxation=self.h_relaxation)
         h_cost = h.evaluate(self.original_domain, task, [(l,) for l in self.lifted_action_sequence])
-
-        # Debug #TODO: delete this
-        # d = self.original_domain
-        # t = task
-        # a = [(l,) for l in self.lifted_action_sequence]
-        # with open('variables.pickle', 'wb') as pickle_file:
-        #     pickle.dump((d, t, a), pickle_file)
-
 
         return h_cost
 
@@ -199,8 +195,8 @@ class Node:
             "h_cost": self.h_cost,
             "f_cost": self.f_cost,
             "next_lifted_action": next_lifted,
-            "possible_groundings": self.possible_groundings,
             "num_neighbours": len(self.neighbours),
+            "possible_groundings": self.possible_groundings
         }
     
     def __str__(self):

@@ -23,9 +23,20 @@ class Instance:
 
         self.error_rate = error_rate
 
-        self.planning_task_file = planning_task_file
-        self.planning_domain_file = planning_domain_file
-        self.white_plan_file = white_plan_file
+        if isinstance(planning_task_file, str):
+            self.planning_task_file = Path(planning_task_file)
+        else:
+            self.planning_task_file = planning_task_file
+
+        if isinstance(planning_domain_file, str):
+            self.planning_domain_file = Path(planning_domain_file)
+        else:
+            self.planning_domain_file = planning_domain_file
+
+        if isinstance(white_plan_file, str):
+            self.white_plan_file = Path(white_plan_file)
+        else:
+            self.white_plan_file = white_plan_file
 
         self.plan_length = len(read_action_names(self.white_plan_file))
 
@@ -68,6 +79,10 @@ def list_instances(benchmark_path: Path, domain_class=None, instance_ids=[]):
     """
     instance id example: 'blocks/pprobBLOCKS-5-0-err-rate-0-5'
     """
+
+    if isinstance(benchmark_path, str):
+        benchmark_path = Path(benchmark_path)
+    
     folders = _list_folders(benchmark_path)
 
     folders.sort()

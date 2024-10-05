@@ -11,8 +11,9 @@ import sys
 import traceback
 
 
-def solve_instance(search_algorithm, benchmark_path, log_file, log_interval, instance_id):
+def solve_instance(search_algorithm, benchmark_path, log_file, log_interval, instance_id, heuristic_relaxation):
     log_interval = int(log_interval)
+    print(benchmark_path)
     instance = list_instances(benchmark_path, instance_ids=[instance_id])[0]
 
     start_time = time.time()
@@ -20,9 +21,7 @@ def solve_instance(search_algorithm, benchmark_path, log_file, log_interval, ins
     instance.load_to_memory()
 
     logger = StructuredLogger(log_file)
-    
-    current_time = time.localtime()
-    formatted_time = time.strftime("%Y-%m-%d %H:%M:%S %Z", current_time)
+
 
     log_data_meta= {
         "log_file": str(log_file),
@@ -45,7 +44,7 @@ def solve_instance(search_algorithm, benchmark_path, log_file, log_interval, ins
     except Exception as e:
         stack_trace = traceback.format_exc()
         logger.log(issuer="instance_solver"
-            , type="error"
+            , event_type="error"
             , level=logging.ERROR
             , message=f"An error occurred trying to get the vanilla repair: {str(e)}\n{stack_trace}")
         raise
@@ -66,13 +65,15 @@ def solve_instance(search_algorithm, benchmark_path, log_file, log_interval, ins
         ground_action_sequence=[],
         parent=None,
         is_initial_node=True,
-        h_cost_needed=True if search_algorithm in ('astar',) else False
+        h_cost_needed=True if search_algorithm in ('astar',) else False,
+        heuristic_relaxation=heuristic_relaxation
     )
     match search_algorithm:
         case 'astar' | 'bfs':
             search_class = AStar
         case 'dfs':
-            search_class = DFS
+            raise NotImplementedError
+            # search_class = DFS
         case _:
             raise NotImplementedError("Search algorithm not supported.")
     searcher = search_class(initial_node)
@@ -91,7 +92,7 @@ def solve_instance(search_algorithm, benchmark_path, log_file, log_interval, ins
         logger.log(issuer="instance_solver", event_type="error", level=logging.ERROR, message=log_data_error)
         path, goal_node = None, None
     
-    # Logging ...
+    # Logging
     end_time = time.time()
     elapsed_time = end_time - start_time
     seconds = elapsed_time
@@ -104,20 +105,22 @@ def solve_instance(search_algorithm, benchmark_path, log_file, log_interval, ins
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, format='%(message)s')
 
-    # Parse args
-    if len(sys.argv) != 6:
-        print("Usage: python instance_solver.py <search_algorithm> <benchmark_path> <log_folder> <log_interval> <instance_id>")
+    if len(sys.argv) != 7:
+        print("Usage: python instance_solver.py <search_algorithm> <benchmark_path> <log_folder> <log_interval> <instance_id> <heuristic_relaxation>")
         sys.exit(1)
     search_algorithm = sys.argv[1]
-    benchmark_path = Path(sys.argv[2])
+    benchmark_path = sys.argv[2]
+    benchmark_path = Path(benchmark_path)
     log_file = Path(sys.argv[3])
     log_interval = int(sys.argv[4])
     instance_id = sys.argv[5]
+    heuristic_relaxation = sys.argv[6]
 
     solve_instance(
         search_algorithm=search_algorithm,
         benchmark_path=benchmark_path,
         log_file=log_file,
         log_interval=log_interval,
-        instance_id=instance_id
+        instance_id=instance_id,
+        heuristic_relaxation=heuristic_relaxation
     )
