@@ -3,6 +3,17 @@ import heapq
 import logging
 
 
+def log_iteration_info(logger, iteration, open_list, current_node, is_goal):
+        log_data = {
+            "is_goal": is_goal,
+            "iteration": iteration,
+            "fring_size": len(open_list),
+            "fring_first_20": ", ".join(f"(D:{-nd},C:{fc})" for fc, nd, _ in sorted(open_list)[:20]),
+            "current_node": current_node.to_dict()
+        }
+        logger.log(issuer="Searcher", event_type="general", level=logging.INFO, message=log_data)
+
+
 class AStar:
     """
     A class that implements the A* pathfinding algorithm.
@@ -15,20 +26,11 @@ class AStar:
     """
 
 
-    def __init__(self, initial_node, logger):
+    def __init__(self, initial_node):
         self.initial_node = initial_node
-        self.logger = logger
-    
-    def log_iteration_info(self, iteration, open_list, current_node, is_goal):
-        if is_goal:
-            self.logger.info(f"\n==== Goal Reached at Iteration {iteration} ====")
-        self.logger.info(f"\n>>>>  A* iteration {iteration}  <<<<\n")
-        self.logger.info(f"> Fringe size: {len(open_list)}\n> First 20 nodes: " + ", ".join(f"(D:{-nd},C:{fc})" for fc, nd, _ in sorted(open_list)[:20]))
-        self.logger.info(f"\n{current_node}")
-        if is_goal:
-            self.logger.info("==== End of Goal State Log ====\n")
 
-    def find_path(self, log_interval):
+
+    def find_path(self, logger, log_interval):
         open_list = []
         closed_list = []
 
@@ -41,7 +43,7 @@ class AStar:
 
             if current_node.is_goal():
 
-                self.log_iteration_info(iteration, open_list, current_node, is_goal=True)
+                log_iteration_info(logger, iteration, open_list, current_node, is_goal=True)
                 return self.reconstruct_path(current_node), current_node
 
             closed_list.append(current_node)
@@ -60,7 +62,7 @@ class AStar:
                 neighbor.parent = current_node
 
             if iteration % log_interval == 0:
-                self.log_iteration_info(iteration, open_list, current_node, is_goal=False)
+                log_iteration_info(logger, iteration, open_list, current_node, is_goal=False)
 
         return None, None  # No path found
 
@@ -73,62 +75,63 @@ class AStar:
 
 
 
-class DFS:
-    """
-    A class that implements the Depth-First Search algorithm with f-cost prioritization.
-    This implementation assumes that distinct nodes cannot have equal children.
-    """
-    def __init__(self, initial_node, logger):
-        self.initial_node = initial_node
-        self.logger = logger
+# TODO fix the logger before using
+# class DFS:
+#     """
+#     A class that implements the Depth-First Search algorithm with f-cost prioritization.
+#     This implementation assumes that distinct nodes cannot have equal children.
+#     """
+#     def __init__(self, initial_node, logger):
+#         self.initial_node = initial_node
+#         self.logger = logger
     
-    def log_iteration_info(self, iteration, stack, current_node, is_goal):
-        if is_goal:
-            self.logger.info(f"\n==== Goal Reached at Iteration {iteration} ====")
-        self.logger.info(f"\n>>>>  DFS iteration {iteration}  <<<<\n")
-        self.logger.info(f"> Stack size: {len(stack)}\n> Top 20 nodes: " + ", ".join(f"(F:{node.f_cost},D:{node.depth})" for node in sorted(stack, key=lambda x: x.f_cost)[:20])) # <<<<<<<
-        self.logger.info(f"\n{current_node}")
-        if is_goal:
-            self.logger.info("==== End of Goal State Log ====\n")
+#     def log_iteration_info(self, iteration, stack, current_node, is_goal):
+#         if is_goal:
+#             self.logger.info(f"\n==== Goal Reached at Iteration {iteration} ====")
+#         self.logger.info(f"\n>>>>  DFS iteration {iteration}  <<<<\n")
+#         self.logger.info(f"> Stack size: {len(stack)}\n> Top 20 nodes: " + ", ".join(f"(F:{node.f_cost},D:{node.depth})" for node in sorted(stack, key=lambda x: x.f_cost)[:20])) # <<<<<<<
+#         self.logger.info(f"\n{current_node}")
+#         if is_goal:
+#             self.logger.info("==== End of Goal State Log ====\n")
 
-    def find_path(self, log_interval):
-        stack = [self.initial_node]  # <<<<<<<
-        # visited = set()  # <<<<<<<
-        # The visited set is not necessary because distinct nodes cannot have equal children.
-        # This ensures we won't revisit nodes, eliminating the need for a visited set.
+#     def find_path(self, log_interval):
+#         stack = [self.initial_node]  # <<<<<<<
+#         # visited = set()  # <<<<<<<
+#         # The visited set is not necessary because distinct nodes cannot have equal children.
+#         # This ensures we won't revisit nodes, eliminating the need for a visited set.
 
-        iteration = 0
-        while stack:
-            iteration += 1
-            current_node = stack.pop()  # <<<<<<<
+#         iteration = 0
+#         while stack:
+#             iteration += 1
+#             current_node = stack.pop()  # <<<<<<<
 
-            # if current_node in visited:  # <<<<<<<
-            #     continue  # <<<<<<<
-            # This check is not needed because each node is unique and won't be revisited.
+#             # if current_node in visited:  # <<<<<<<
+#             #     continue  # <<<<<<<
+#             # This check is not needed because each node is unique and won't be revisited.
 
-            # visited.add(current_node)  # <<<<<<<
-            # We don't need to track visited nodes for the same reason as above.
+#             # visited.add(current_node)  # <<<<<<<
+#             # We don't need to track visited nodes for the same reason as above.
 
-            if current_node.is_goal():
-                self.log_iteration_info(iteration, stack, current_node, is_goal=True)
-                return self.reconstruct_path(current_node), current_node
+#             if current_node.is_goal():
+#                 self.log_iteration_info(iteration, stack, current_node, is_goal=True)
+#                 return self.reconstruct_path(current_node), current_node
 
-            neighbors = sorted(current_node.get_neighbors(), key=lambda x: x.f_cost)  # <<<<<<<
-            # for neighbor in neighbors:
-            #     if neighbor not in visited:  # <<<<<<<
-            #         stack.append(neighbor)  # <<<<<<<
-            # We don't need to check if neighbors are visited because each node is unique.
-            # Instead, we can directly extend the stack with all neighbors.
-            stack.extend(neighbors)  # <<<<<<<
+#             neighbors = sorted(current_node.get_neighbors(), key=lambda x: x.f_cost)  # <<<<<<<
+#             # for neighbor in neighbors:
+#             #     if neighbor not in visited:  # <<<<<<<
+#             #         stack.append(neighbor)  # <<<<<<<
+#             # We don't need to check if neighbors are visited because each node is unique.
+#             # Instead, we can directly extend the stack with all neighbors.
+#             stack.extend(neighbors)  # <<<<<<<
 
-            if iteration % log_interval == 0:
-                self.log_iteration_info(iteration, stack, current_node, is_goal=False)
+#             if iteration % log_interval == 0:
+#                 self.log_iteration_info(iteration, stack, current_node, is_goal=False)
 
-        return None, None  # No path found
+#         return None, None  # No path found
 
-    def reconstruct_path(self, node):
-        path = []
-        while node:
-            path.append(node)
-            node = node.parent
-        return path[::-1]
+#     def reconstruct_path(self, node):
+#         path = []
+#         while node:
+#             path.append(node)
+#             node = node.parent
+#         return path[::-1]

@@ -108,7 +108,7 @@ class Node:
         task = copy.deepcopy(self.original_task)
         plan = PositivePlan(self.ground_action_sequence)
         plan.compute_subs(self.repaired_domain, task)
-        state = apply_action_sequence(self.repaired_domain, task, plan, delete_relaxed=True)
+        state = apply_action_sequence(self.repaired_domain, task, plan, delete_relaxed=False)
         return state
 
 
@@ -118,7 +118,7 @@ class Node:
         # should be sth like: h(y(self.domain), d(self.task), self.lifted_action_sequence)
         task = copy.deepcopy(self.original_task)
         task.set_init_state(self.current_state)
-        h = Heurisitc(h_name="G_HMAX", relaxation="none")
+        h = Heurisitc(h_name="G_HMAX", relaxation="unary")
         h_cost = h.evaluate(self.original_domain, task, [(l,) for l in self.lifted_action_sequence])
 
         # Debug #TODO: delete this
@@ -155,9 +155,11 @@ class Node:
         try:
             self.possible_groundings = Node.grounder(domain, task, next_action_name)
         except Exception as error:
-            print(f">/>/ An error occurred during grounding: {error}")
-            self.logger.info(f'>/>/ Current node:\n{self}')
-            self.logger.info(f'>/>/ Current state:\n{self.current_state}')
+            log_data_error = {
+                'current_node': str(self),
+                'current_state': self.current_state
+            }
+            logger.log(issuer="node", type="error", level=logging.ERROR, message=log_data_error)
             raise
 
         self.neighbours = []
@@ -187,21 +189,23 @@ class Node:
             return False
         return self.ground_action_sequence == other.ground_action_sequence
 
-
+    def to_dict(self):
+        next_lifted = None if len(self.lifted_action_sequence) == 0 else str(self.lifted_action_sequence[0])
+        return {
+            "depth": self.depth,
+            "ground_actions": self.ground_action_sequence,
+            "repair_set": self.ground_repair_solution,
+            "g_cost": self.g_cost,
+            "h_cost": self.h_cost,
+            "f_cost": self.f_cost,
+            "next_lifted_action": next_lifted,
+            "possible_groundings": self.possible_groundings,
+            "num_neighbours": len(self.neighbours),
+        }
+    
     def __str__(self):
-        next_lifted = [] if len(self.lifted_action_sequence)==0 else self.lifted_action_sequence[0]
-        return ("> Node instance:" + "\n"
-                + f"> Depth={self.depth}" + "\n"
-                + f"> Ground actions: {self.ground_action_sequence}" + "\n"
-                + f"> Repair set:\n{self.ground_repair_solution}" + "\n"
-                + f"> g_cost={self.g_cost}" + "\n"
-                + f"> h_cost={self.h_cost}" + "\n"
-                + f"> f_cost={self.f_cost}" + "\n"
-                + f"> Next lifted action: {next_lifted}" + "\n"
-                + f"> Possible groundings:\n{self.possible_groundings}" + "\n"
-                + f"> #neighbours={len(self.neighbours)}" + "\n"
-                + f"> Current state:\n{self.current_state}" + "\n"
-                )
+        node_dict = self.to_dict()
+        return "\n".join([f"> {key}: {value}" for key, value in node_dict.items()])
 
     def __repr__(self):
         return self.__str__()

@@ -1,8 +1,8 @@
-from search_partial_grounding import smart_grounder, AStar, DFS, Node
+from search_partial_grounding import smart_grounder, AStar, Node
 from search_partial_grounding.action_grounding_tools import smart_grounder
 #TODO: Fina a better place for ground_repair
 from vanilla_runs.run_songtuans_vanilla import ground_repair
-from logging_config import setup_logging
+from custom_logger import StructuredLogger
 from exptools import list_instances
 from pathlib import Path
 import logging
@@ -19,18 +19,22 @@ def solve_instance(search_algorithm, benchmark_path, log_file, log_interval, ins
 
     instance.load_to_memory()
 
-    logger = setup_logging(log_file)
+    logger = StructuredLogger(log_file)
     
     current_time = time.localtime()
     formatted_time = time.strftime("%Y-%m-%d %H:%M:%S %Z", current_time)
-    logger.info(f"> Solving the next problem at: {formatted_time}")
-    logger.info(f"> Search algorithm: {search_algorithm}")
-    logger.info(f"> Instance ID={instance.identifier}")
-    logger.info(f"> Plan length={instance.plan_length}")
-    logger.info(f"> Domain class: {instance.domain_class}")
-    logger.info(f"> Instance name: {instance.instance_name}")
-    logger.info(f"> Ground plan:\n{instance.ground_plan}")
-    logger.info(f"> Lifted plan:\n{instance.lifted_plan}")
+
+    log_data_meta= {
+        "log_file": str(log_file),
+        "instance_id": instance.identifier,
+        "search_algorithm": search_algorithm,
+        "plan_length": instance.plan_length,
+        "domain_class": instance.domain_class,
+        "instance_name": instance.instance_name,
+        "ground_plan": instance.ground_plan,
+        "lifted_plan": instance.lifted_plan
+    }
+    logger.log(issuer="instance_solver", event_type="metadata", level=logging.INFO, message=log_data_meta)
 
     # Ground repair
     try:
@@ -39,13 +43,18 @@ def solve_instance(search_algorithm, benchmark_path, log_file, log_interval, ins
                 , instance.planning_task
                 , instance.white_plan_file)
     except Exception as e:
-        logger.error(f"An error occurred trying to get the vanilla repair: {str(e)}")
         stack_trace = traceback.format_exc()
-        logger.error(f"{stack_trace}")
+        logger.log(issuer="instance_solver"
+            , type="error"
+            , level=logging.ERROR
+            , message=f"An error occurred trying to get the vanilla repair: {str(e)}\n{stack_trace}")
         raise
-    
-    logger.info(f">>>  Vanilla ground repair length:\n{len(gr.strip().split('\n')) if gr.strip() else 0}\n")
-    logger.info(f">>>  Vanilla ground repair:\n{gr}\n")
+
+    log_data_gr = {
+        "repair_length": len(gr.strip().split('\n')) if gr.strip() else 0,
+        "repair": gr
+    }
+    logger.log(issuer="instance_solver", event_type="ground_repair", level=logging.INFO, message=log_data_gr)
 
     # Lifted repair
     Node.set_grounder(smart_grounder)
@@ -66,17 +75,20 @@ def solve_instance(search_algorithm, benchmark_path, log_file, log_interval, ins
             search_class = DFS
         case _:
             raise NotImplementedError("Search algorithm not supported.")
-    searcher = search_class(initial_node, logger=logger)
+    searcher = search_class(initial_node)
+
+    log_data_results = {}
     try:
-        path, goal_node = searcher.find_path(log_interval=log_interval)
+        path, goal_node = searcher.find_path(logger=logger, log_interval=log_interval)
         if goal_node:
-            logger.info(f">>> Goal found:\n{goal_node}")
+            log_data_results['goal'] = goal_node.to_dict()
         else:
-            logger.info(">>> No goal found.\n")
+            log_data_results['goal'] = 'not_found'
+        logger.log(issuer="instance_solver", event_type="results", level=logging.INFO, message=log_data_results)
     except Exception as e:
-        logger.error(f"An error occurred during A* search: {str(e)}")
         stack_trace = traceback.format_exc()
-        logger.error(f"{stack_trace}")
+        log_data_error = f"An error occurred during A* search: {str(e)}. Stack trace: {stack_trace}"
+        logger.log(issuer="instance_solver", event_type="error", level=logging.ERROR, message=log_data_error)
         path, goal_node = None, None
     
     # Logging ...
@@ -85,26 +97,12 @@ def solve_instance(search_algorithm, benchmark_path, log_file, log_interval, ins
     seconds = elapsed_time
     minutes = elapsed_time / 60
     hours = elapsed_time / 3600
-    logger.info(f"> Time spent on this problem: {hours:.1f} hours = {minutes:.1f} minutes = {seconds:.2f} seconds")
-
-
-# def example():
-#     benchmark_path = Path('./input/benchmarks-G1')
-#     # log_folder = Path('./exp_logs/4 BFS mega-run')
-#     log_folder = Path('./exp_logs_debug')
-
-#     solve_instance(search_algorithm=AStar
-#               , benchmark_path=benchmark_path
-#               , log_folder=log_folder
-#               , log_interval=200
-#               , instance_id='blocks/pprobBLOCKS-5-0-err-rate-0-5')
-
-    # cProfile.run("experiment(benchmark_path)", 'profiler_tmp')
+    time_spent = f"{hours:.1f} hours = {minutes:.1f} minutes = {seconds:.2f} seconds"
+    logger.log(issuer="instance_solver", event_type="time_spent", level=logging.INFO, message=time_spent)
 
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, format='%(message)s')
-    # example()
 
     # Parse args
     if len(sys.argv) != 6:
