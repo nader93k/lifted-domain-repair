@@ -1,4 +1,3 @@
-import json
 import yaml
 import logging
 from datetime import datetime
@@ -39,8 +38,12 @@ class StructuredLogger:
             "data": message
         }
         
-        log_message = json.dumps(log_entry, indent=4)
-        log_message = yaml.dump(log_entry, default_flow_style=False, sort_keys=False, indent=4)
+        # Start with a separator
+        log_message = "---\n"
+        # Add the YAML dump of the log entry
+        log_message += yaml.dump(log_entry, default_flow_style=False, sort_keys=False, indent=4)
+        # End with a newline to separate from the next entry
+        log_message += "\n"
         
         if level == logging.DEBUG:
             self.logger.debug(log_message)

@@ -19,7 +19,7 @@ def ground_repair(domain, task, plan_path):
     if repairer.repair(domain, [(task, plan)]):
         r = repairer.get_repairs_string()
     else:
-        raise "Problem is unsolvable"
+        raise Exception("Problem is unsolvable")
     return(r)
 
 

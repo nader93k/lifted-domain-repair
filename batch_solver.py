@@ -12,7 +12,7 @@ import yaml
 
 def run_process(search_algorithm, benchmark_path, log_folder, log_interval, \
                 timeout_seconds, order, min_length, max_length, heuristic_relaxation, \
-                domain_class=None, instance_ids=[]):
+                domain_class=None, instance_ids=[], run_mode='subprocess'):
     instance_list = list_instances(benchmark_path, domain_class, instance_ids)
     for instance in smart_instance_generator(instance_list, min_length=min_length
                                              , max_length=max_length
@@ -33,10 +33,11 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval, \
                 str(benchmark_path),
                 log_file,
                 str(log_interval),
-                instance.identifier,
-                heuristic_relaxation
+                instance.identifier
             ]
-        if False:
+        if heuristic_relaxation:
+            cmd.append(heuristic_relaxation)
+        if run_mode == 'subprocess':
             try:
                 print(f"> Starting a subprocess search for file_name={log_file}")
                 result = subprocess.run(cmd, check=True, timeout=timeout_seconds)
@@ -51,9 +52,11 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval, \
                 logger.log(issuer="batch_solver", event_type="error"
                            , level=logging.ERROR
                            , message=f"> Eexception: instance id ={instance.identifier}, err: {e}")
-        else: # python function call: mostly used for debugging
+        elif run_mode == 'pycall': # python function call: mostly used for debugging
             print(f"> Starting by function call for file_name={log_file}")
             result = solve_instance(*cmd[2:])
+        else:
+            raise NotImplementedError
 
 
 def load_instance_ids(file_path='instance_ids_nonzero_h.json'):
@@ -78,7 +81,10 @@ if __name__ == "__main__":
     max_length = config['max_length']
     domain_class = config['domain_class']
     instance_ids = config['instance_ids']
+    if instance_ids == 'load_instance_ids':
+        instance_ids = load_instance_ids
     heuristic_relaxation = config['heuristic_relaxation']
+    run_mode = config['run_mode']
 
     print(f"Loaded configuration from: {config_file}")
     
@@ -92,4 +98,5 @@ if __name__ == "__main__":
                , max_length=max_length
                , domain_class=domain_class
                , instance_ids=instance_ids
-               , heuristic_relaxation=heuristic_relaxation)
+               , heuristic_relaxation=heuristic_relaxation
+               , run_mode=run_mode)

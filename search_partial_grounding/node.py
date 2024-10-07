@@ -5,9 +5,6 @@ import logging
 import copy
 from fd.pddl.conditions import Conjunction, Atom
 from heuristic_tools.heuristic import Heurisitc
-import pickle
-import json
-import yaml
 
 
 
@@ -152,10 +149,10 @@ class Node:
             self.possible_groundings = Node.grounder(domain, task, next_action_name)
         except Exception as error:
             log_data_error = {
-                'current_node': str(self),
+                'current_node': self.to_dict(),
                 'current_state': self.current_state
             }
-            logger.log(issuer="node", type="error", level=logging.ERROR, message=log_data_error)
+            self.logger.log(issuer="node", event_type="error", level=logging.ERROR, message=log_data_error)
             raise
 
         self.neighbours = []
@@ -196,7 +193,7 @@ class Node:
             "f_cost": self.f_cost,
             "next_lifted_action": next_lifted,
             "num_neighbours": len(self.neighbours),
-            "possible_groundings": self.possible_groundings
+            "first_10_possible_groundings": self.possible_groundings[:10] if self.possible_groundings is not None else self.possible_groundings
         }
     
     def __str__(self):
