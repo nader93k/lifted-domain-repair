@@ -1,0 +1,117 @@
+---
+timestamp: '2024-10-05T20:57:54.005728'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/8 BFS-full-log length1-15/bfs_length_1_zenotravel_pp01-err-rate-0-5.yaml
+    instance_id: zenotravel/pp01-err-rate-0-5
+    search_algorithm: bfs
+    plan_length: 1
+    domain_class: zenotravel
+    instance_name: pp01-err-rate-0-5
+    ground_plan:
+    - (fly plane1 city0 city1 fl1 fl0)
+    lifted_plan:
+    - fly
+
+
+---
+timestamp: '2024-10-05T20:57:54.008847'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2024-10-05T20:57:54.120292'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 5
+    fring_first_20: (D:1,C:0), (D:1,C:1), (D:1,C:1), (D:1,C:2), (D:1,C:2)
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: fly
+        num_neighbours: 5
+        first_10_possible_groundings:
+        - (fly plane1 city0 city0 fl1 fl0)
+        - (fly plane1 city0 city1 fl1 fl0)
+        - (fly plane1 city0 city2 fl1 fl0)
+        - (fly plane1 city1 city0 fl1 fl0)
+        - (fly plane1 city1 city1 fl1 fl0)
+        - (fly plane1 city1 city2 fl1 fl0)
+        - (fly plane1 city2 city0 fl1 fl0)
+        - (fly plane1 city2 city1 fl1 fl0)
+        - (fly plane1 city2 city2 fl1 fl0)
+
+
+---
+timestamp: '2024-10-05T20:57:54.121631'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: true
+    iteration: 2
+    fring_size: 4
+    fring_first_20: (D:1,C:1), (D:1,C:1), (D:1,C:2), (D:1,C:2)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (fly plane1 city0 city1 fl1 fl0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2024-10-05T20:57:54.122530'
+level: INFO
+issuer: instance_solver
+event_type: results
+data:
+    goal:
+        depth: 1
+        ground_actions:
+        - (fly plane1 city0 city1 fl1 fl0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2024-10-05T20:57:54.123206'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.0 minutes = 0.12 seconds
+
+
+---
+timestamp: '2024-10-05T20:57:54.200817'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+

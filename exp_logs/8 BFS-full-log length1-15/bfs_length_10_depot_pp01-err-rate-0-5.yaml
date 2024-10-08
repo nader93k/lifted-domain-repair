@@ -1,0 +1,490 @@
+---
+timestamp: '2024-10-07T21:57:37.927298'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/8 BFS-full-log length1-15/bfs_length_10_depot_pp01-err-rate-0-5.yaml
+    instance_id: depot/pp01-err-rate-0-5
+    search_algorithm: bfs
+    plan_length: 10
+    domain_class: depot
+    instance_name: pp01-err-rate-0-5
+    ground_plan:
+    - (lift hoist0 crate1 pallet0 depot0)
+    - (load hoist0 crate1 truck1 depot0)
+    - (drive truck1 depot0 distributor0)
+    - (lift hoist1 crate0 pallet1 distributor0)
+    - (load hoist1 crate0 truck1 distributor0)
+    - (unload hoist1 crate1 truck1 distributor0)
+    - (drive truck1 distributor0 distributor1)
+    - (unload hoist2 crate0 truck1 distributor1)
+    - (drop hoist1 crate1 pallet1 distributor0)
+    - (drop hoist2 crate0 pallet2 distributor1)
+    lifted_plan:
+    - lift
+    - load
+    - drive
+    - lift
+    - load
+    - unload
+    - drive
+    - unload
+    - drop
+    - drop
+
+
+---
+timestamp: '2024-10-07T21:57:37.933866'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 3
+    repair: 'load,(in ?y ?z),effPos,1
+
+        drive,(at ?x ?z),effPos,1
+
+        drop,(clear ?z),precPos,-1'
+
+
+---
+timestamp: '2024-10-07T21:57:38.038890'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 2
+    fring_first_20: (D:1,C:0), (D:1,C:0)
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: lift
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (lift hoist0 crate1 pallet0 depot0)
+        - (lift hoist1 crate0 pallet1 distributor0)
+
+
+---
+timestamp: '2024-10-07T21:57:38.156338'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 2
+    fring_size: 2
+    fring_first_20: (D:2,C:0), (D:1,C:0)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (lift hoist0 crate1 pallet0 depot0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: load
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (load hoist0 crate1 truck1 depot0)
+
+
+---
+timestamp: '2024-10-07T21:57:38.263682'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 3
+    fring_size: 7
+    fring_first_20: (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0),
+        (D:1,C:0)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (lift hoist0 crate1 pallet0 depot0)
+        - (load hoist0 crate1 truck1 depot0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive truck0 distributor1 depot0)
+        - (drive truck0 distributor1 distributor0)
+        - (drive truck0 distributor1 distributor1)
+        - (drive truck1 depot0 depot0)
+        - (drive truck1 depot0 distributor0)
+        - (drive truck1 depot0 distributor1)
+
+
+---
+timestamp: '2024-10-07T21:57:38.370533'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 4
+    fring_size: 7
+    fring_first_20: (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0),
+        (D:1,C:0)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (lift hoist0 crate1 pallet0 depot0)
+        - (load hoist0 crate1 truck1 depot0)
+        - (drive truck0 distributor1 depot0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: lift
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (lift hoist1 crate0 pallet1 distributor0)
+
+
+---
+timestamp: '2024-10-07T21:57:38.470866'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 5
+    fring_size: 6
+    fring_first_20: (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:1,C:0)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (lift hoist0 crate1 pallet0 depot0)
+        - (load hoist0 crate1 truck1 depot0)
+        - (drive truck0 distributor1 depot0)
+        - (lift hoist1 crate0 pallet1 distributor0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: load
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T21:57:38.569508'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 6
+    fring_size: 6
+    fring_first_20: (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:1,C:0)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (lift hoist0 crate1 pallet0 depot0)
+        - (load hoist0 crate1 truck1 depot0)
+        - (drive truck0 distributor1 distributor0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: lift
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (lift hoist1 crate0 pallet1 distributor0)
+
+
+---
+timestamp: '2024-10-07T21:57:38.669862'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 7
+    fring_size: 5
+    fring_first_20: (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:1,C:0)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (lift hoist0 crate1 pallet0 depot0)
+        - (load hoist0 crate1 truck1 depot0)
+        - (drive truck0 distributor1 distributor0)
+        - (lift hoist1 crate0 pallet1 distributor0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: load
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T21:57:38.801534'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 8
+    fring_size: 5
+    fring_first_20: (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:1,C:0)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (lift hoist0 crate1 pallet0 depot0)
+        - (load hoist0 crate1 truck1 depot0)
+        - (drive truck1 depot0 distributor1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: lift
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (lift hoist1 crate0 pallet1 distributor0)
+
+
+---
+timestamp: '2024-10-07T21:57:38.934045'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 9
+    fring_size: 4
+    fring_first_20: (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:1,C:0)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (lift hoist0 crate1 pallet0 depot0)
+        - (load hoist0 crate1 truck1 depot0)
+        - (drive truck1 depot0 distributor1)
+        - (lift hoist1 crate0 pallet1 distributor0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: load
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T21:57:39.079230'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 10
+    fring_size: 4
+    fring_first_20: (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:1,C:0)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (lift hoist0 crate1 pallet0 depot0)
+        - (load hoist0 crate1 truck1 depot0)
+        - (drive truck1 depot0 depot0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: lift
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (lift hoist1 crate0 pallet1 distributor0)
+
+
+---
+timestamp: '2024-10-07T21:57:39.214800'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 11
+    fring_size: 3
+    fring_first_20: (D:3,C:0), (D:3,C:0), (D:1,C:0)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (lift hoist0 crate1 pallet0 depot0)
+        - (load hoist0 crate1 truck1 depot0)
+        - (drive truck1 depot0 depot0)
+        - (lift hoist1 crate0 pallet1 distributor0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: load
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T21:57:39.360026'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 12
+    fring_size: 3
+    fring_first_20: (D:4,C:0), (D:3,C:0), (D:1,C:0)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (lift hoist0 crate1 pallet0 depot0)
+        - (load hoist0 crate1 truck1 depot0)
+        - (drive truck0 distributor1 distributor1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: lift
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (lift hoist1 crate0 pallet1 distributor0)
+
+
+---
+timestamp: '2024-10-07T21:57:39.495068'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 13
+    fring_size: 2
+    fring_first_20: (D:3,C:0), (D:1,C:0)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (lift hoist0 crate1 pallet0 depot0)
+        - (load hoist0 crate1 truck1 depot0)
+        - (drive truck0 distributor1 distributor1)
+        - (lift hoist1 crate0 pallet1 distributor0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: load
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T21:57:39.596512'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 14
+    fring_size: 2
+    fring_first_20: (D:4,C:0), (D:1,C:0)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (lift hoist0 crate1 pallet0 depot0)
+        - (load hoist0 crate1 truck1 depot0)
+        - (drive truck1 depot0 distributor0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: lift
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (lift hoist1 crate0 pallet1 distributor0)
+
+
+---
+timestamp: '2024-10-07T21:57:39.701029'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 15
+    fring_size: 1
+    fring_first_20: (D:1,C:0)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (lift hoist0 crate1 pallet0 depot0)
+        - (load hoist0 crate1 truck1 depot0)
+        - (drive truck1 depot0 distributor0)
+        - (lift hoist1 crate0 pallet1 distributor0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: load
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T21:57:39.817323'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 16
+    fring_size: 0
+    fring_first_20: ''
+    current_node:
+        depth: 1
+        ground_actions:
+        - (lift hoist1 crate0 pallet1 distributor0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: load
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T21:57:39.819168'
+level: INFO
+issuer: instance_solver
+event_type: results
+data:
+    goal: not_found
+
+
+---
+timestamp: '2024-10-07T21:57:39.819841'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.0 minutes = 1.89 seconds
+
+
+---
+timestamp: '2024-10-07T21:57:39.932932'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+

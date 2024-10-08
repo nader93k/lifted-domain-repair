@@ -1,0 +1,89 @@
+---
+timestamp: '2024-10-06T14:00:31.072960'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/8 BFS-full-log length1-15/bfs_length_8_freecell_pprobfreecell-2-4-err-rate-0-5.yaml
+    instance_id: freecell/pprobfreecell-2-4-err-rate-0-5
+    search_algorithm: bfs
+    plan_length: 8
+    domain_class: freecell
+    instance_name: pprobfreecell-2-4-err-rate-0-5
+    ground_plan:
+    - (sendtohome-b ca c n1 c0 n0 n2 n3)
+    - (sendtohome-b ha h n1 h0 n0 n3 n4)
+    - (sendtohome-b sa s n1 s0 n0 n4 n5)
+    - (sendtohome da d2 d n1 d0 n0)
+    - (sendtohome-b c2 c n2 ca n1 n5 n6)
+    - (sendtohome-b d2 d n2 da n1 n6 n7)
+    - (sendtohome h2 s2 h n2 ha n1)
+    - (sendtohome-b s2 s n2 sa n1 n7 n8)
+    lifted_plan:
+    - sendtohome-b
+    - sendtohome-b
+    - sendtohome-b
+    - sendtohome
+    - sendtohome-b
+    - sendtohome-b
+    - sendtohome
+    - sendtohome-b
+
+
+---
+timestamp: '2024-10-06T14:00:31.079367'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2024-10-06T14:00:31.250531'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 0
+    fring_first_20: ''
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: sendtohome-b
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:00:31.252306'
+level: INFO
+issuer: instance_solver
+event_type: results
+data:
+    goal: not_found
+
+
+---
+timestamp: '2024-10-06T14:00:31.252944'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.0 minutes = 0.18 seconds
+
+
+---
+timestamp: '2024-10-06T14:00:31.341171'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+

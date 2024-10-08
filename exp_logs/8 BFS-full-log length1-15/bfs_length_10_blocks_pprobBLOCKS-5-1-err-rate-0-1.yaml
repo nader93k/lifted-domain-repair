@@ -1,0 +1,5881 @@
+---
+timestamp: '2024-10-07T21:53:41.343839'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/8 BFS-full-log length1-15/bfs_length_10_blocks_pprobBLOCKS-5-1-err-rate-0-1.yaml
+    instance_id: blocks/pprobBLOCKS-5-1-err-rate-0-1
+    search_algorithm: bfs
+    plan_length: 10
+    domain_class: blocks
+    instance_name: pprobBLOCKS-5-1-err-rate-0-1
+    ground_plan:
+    - (unstack b a)
+    - (put-down b)
+    - (unstack a d)
+    - (stack a e)
+    - (pick-up b)
+    - (stack b a)
+    - (pick-up c)
+    - (stack c b)
+    - (pick-up d)
+    - (stack d c)
+    lifted_plan:
+    - unstack
+    - put-down
+    - unstack
+    - stack
+    - pick-up
+    - stack
+    - pick-up
+    - stack
+    - pick-up
+    - stack
+
+
+---
+timestamp: '2024-10-07T21:53:41.346888'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2024-10-07T21:53:41.484547'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 2
+    fring_first_20: (D:1,C:0), (D:1,C:1)
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: unstack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (unstack a d)
+        - (unstack b a)
+
+
+---
+timestamp: '2024-10-07T21:53:41.582992'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 2
+    fring_size: 6
+    fring_first_20: (D:2,C:0), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (unstack b a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: put-down
+        num_neighbours: 5
+        first_10_possible_groundings:
+        - (put-down a)
+        - (put-down b)
+        - (put-down c)
+        - (put-down d)
+        - (put-down e)
+
+
+---
+timestamp: '2024-10-07T21:53:41.707735'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 3
+    fring_size: 6
+    fring_first_20: (D:3,C:0), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: unstack
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unstack a d)
+
+
+---
+timestamp: '2024-10-07T21:53:41.815958'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 4
+    fring_size: 9
+    fring_first_20: (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (stack a b)
+        - (stack a c)
+        - (stack a d)
+        - (stack a e)
+
+
+---
+timestamp: '2024-10-07T21:53:41.916853'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 5
+    fring_size: 11
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (pick-up c)
+        - (pick-up d)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:42.016913'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 6
+    fring_size: 13
+    fring_first_20: (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0),
+        (D:4,C:0), (D:4,C:0), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (stack c a)
+        - (stack c d)
+        - (stack c e)
+
+
+---
+timestamp: '2024-10-07T21:53:42.111221'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 7
+    fring_size: 14
+    fring_first_20: (D:7,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0),
+        (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:1,C:1)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up c)
+        - (stack c a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up d)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:42.206483'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 8
+    fring_size: 15
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0),
+        (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:1,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up c)
+        - (stack c a)
+        - (pick-up d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack d c)
+        - (stack d e)
+
+
+---
+timestamp: '2024-10-07T21:53:42.300390'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 9
+    fring_size: 15
+    fring_first_20: (D:9,C:0), (D:8,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0),
+        (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:1,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up c)
+        - (stack c a)
+        - (pick-up d)
+        - (stack d c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:42.392359'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 10
+    fring_size: 14
+    fring_first_20: (D:8,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0),
+        (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:1,C:1)
+    current_node:
+        depth: 9
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up c)
+        - (stack c a)
+        - (pick-up d)
+        - (stack d c)
+        - (pick-up e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (stack e d)
+
+
+---
+timestamp: '2024-10-07T21:53:42.488023'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 11
+    fring_size: 15
+    fring_first_20: (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0),
+        (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:1,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up c)
+        - (stack c a)
+        - (pick-up d)
+        - (stack d e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up c)
+        - (pick-up d)
+
+
+---
+timestamp: '2024-10-07T21:53:42.580099'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 12
+    fring_size: 16
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0),
+        (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:1,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up c)
+        - (stack c a)
+        - (pick-up e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack e c)
+        - (stack e d)
+
+
+---
+timestamp: '2024-10-07T21:53:42.671296'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 13
+    fring_size: 16
+    fring_first_20: (D:9,C:0), (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0),
+        (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:1,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up c)
+        - (stack c a)
+        - (pick-up e)
+        - (stack e c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up d)
+
+
+---
+timestamp: '2024-10-07T21:53:42.766041'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 14
+    fring_size: 15
+    fring_first_20: (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0),
+        (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:1,C:1)
+    current_node:
+        depth: 9
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up c)
+        - (stack c a)
+        - (pick-up e)
+        - (stack e c)
+        - (pick-up d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (stack d e)
+
+
+---
+timestamp: '2024-10-07T21:53:42.886815'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 15
+    fring_size: 16
+    fring_first_20: (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0),
+        (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:1,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up c)
+        - (stack c a)
+        - (pick-up e)
+        - (stack e d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up c)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:42.983254'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 16
+    fring_size: 16
+    fring_first_20: (D:7,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0),
+        (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:1,C:1)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up c)
+        - (stack c d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:43.084395'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 17
+    fring_size: 17
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0),
+        (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up c)
+        - (stack c d)
+        - (pick-up e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack e a)
+        - (stack e c)
+
+
+---
+timestamp: '2024-10-07T21:53:43.182594'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 18
+    fring_size: 18
+    fring_first_20: (D:8,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0),
+        (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up c)
+        - (stack c d)
+        - (pick-up e)
+        - (stack e a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up c)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:43.297303'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 19
+    fring_size: 19
+    fring_first_20: (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up c)
+        - (stack c d)
+        - (pick-up e)
+        - (stack e c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up a)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:43.406566'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 20
+    fring_size: 19
+    fring_first_20: (D:7,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up c)
+        - (stack c e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up d)
+
+
+---
+timestamp: '2024-10-07T21:53:43.504981'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 21
+    fring_size: 20
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0),
+        (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up c)
+        - (stack c e)
+        - (pick-up d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack d a)
+        - (stack d c)
+
+
+---
+timestamp: '2024-10-07T21:53:43.599554'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 22
+    fring_size: 21
+    fring_first_20: (D:8,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up c)
+        - (stack c e)
+        - (pick-up d)
+        - (stack d a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up c)
+        - (pick-up d)
+
+
+---
+timestamp: '2024-10-07T21:53:43.693797'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 23
+    fring_size: 22
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up c)
+        - (stack c e)
+        - (pick-up d)
+        - (stack d c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up a)
+        - (pick-up d)
+
+
+---
+timestamp: '2024-10-07T21:53:43.797406'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 24
+    fring_size: 24
+    fring_first_20: (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0),
+        (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:2,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (stack e a)
+        - (stack e c)
+        - (stack e d)
+
+
+---
+timestamp: '2024-10-07T21:53:43.890128'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 25
+    fring_size: 25
+    fring_first_20: (D:7,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0),
+        (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up e)
+        - (stack e a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up c)
+        - (pick-up d)
+
+
+---
+timestamp: '2024-10-07T21:53:43.989542'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 26
+    fring_size: 26
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0),
+        (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up e)
+        - (stack e a)
+        - (pick-up c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack c d)
+        - (stack c e)
+
+
+---
+timestamp: '2024-10-07T21:53:44.087518'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 27
+    fring_size: 27
+    fring_first_20: (D:8,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0),
+        (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up e)
+        - (stack e a)
+        - (pick-up c)
+        - (stack c d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up c)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:44.178309'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 28
+    fring_size: 27
+    fring_first_20: (D:9,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0),
+        (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up e)
+        - (stack e a)
+        - (pick-up c)
+        - (stack c e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up d)
+
+
+---
+timestamp: '2024-10-07T21:53:44.271579'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 29
+    fring_size: 26
+    fring_first_20: (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0),
+        (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 9
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up e)
+        - (stack e a)
+        - (pick-up c)
+        - (stack c e)
+        - (pick-up d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (stack d c)
+
+
+---
+timestamp: '2024-10-07T21:53:44.368628'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 30
+    fring_size: 27
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0),
+        (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up e)
+        - (stack e a)
+        - (pick-up d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack d c)
+        - (stack d e)
+
+
+---
+timestamp: '2024-10-07T21:53:44.475659'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 31
+    fring_size: 28
+    fring_first_20: (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0),
+        (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up e)
+        - (stack e a)
+        - (pick-up d)
+        - (stack d c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up d)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:44.567821'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 32
+    fring_size: 28
+    fring_first_20: (D:9,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0),
+        (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up e)
+        - (stack e a)
+        - (pick-up d)
+        - (stack d e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up c)
+
+
+---
+timestamp: '2024-10-07T21:53:44.658362'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 33
+    fring_size: 27
+    fring_first_20: (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 9
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up e)
+        - (stack e a)
+        - (pick-up d)
+        - (stack d e)
+        - (pick-up c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (stack c d)
+
+
+---
+timestamp: '2024-10-07T21:53:44.783530'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 34
+    fring_size: 27
+    fring_first_20: (D:7,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up e)
+        - (stack e d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up c)
+
+
+---
+timestamp: '2024-10-07T21:53:44.891660'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 35
+    fring_size: 28
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0),
+        (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up e)
+        - (stack e d)
+        - (pick-up c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack c a)
+        - (stack c e)
+
+
+---
+timestamp: '2024-10-07T21:53:44.989353'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 36
+    fring_size: 29
+    fring_first_20: (D:8,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up e)
+        - (stack e d)
+        - (pick-up c)
+        - (stack c a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up c)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:45.086439'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 37
+    fring_size: 30
+    fring_first_20: (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up e)
+        - (stack e d)
+        - (pick-up c)
+        - (stack c e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up a)
+        - (pick-up c)
+
+
+---
+timestamp: '2024-10-07T21:53:45.192004'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 38
+    fring_size: 30
+    fring_first_20: (D:7,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up e)
+        - (stack e c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up d)
+
+
+---
+timestamp: '2024-10-07T21:53:45.292261'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 39
+    fring_size: 31
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up e)
+        - (stack e c)
+        - (pick-up d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack d a)
+        - (stack d e)
+
+
+---
+timestamp: '2024-10-07T21:53:45.408962'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 40
+    fring_size: 32
+    fring_first_20: (D:8,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up e)
+        - (stack e c)
+        - (pick-up d)
+        - (stack d a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up d)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:45.512315'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 41
+    fring_size: 33
+    fring_first_20: (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up e)
+        - (stack e c)
+        - (pick-up d)
+        - (stack d e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up a)
+        - (pick-up d)
+
+
+---
+timestamp: '2024-10-07T21:53:45.610672'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 42
+    fring_size: 35
+    fring_first_20: (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (stack d a)
+        - (stack d c)
+        - (stack d e)
+
+
+---
+timestamp: '2024-10-07T21:53:45.709299'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 43
+    fring_size: 36
+    fring_first_20: (D:7,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0),
+        (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up d)
+        - (stack d a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up c)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:45.841239'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 44
+    fring_size: 37
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0),
+        (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up d)
+        - (stack d a)
+        - (pick-up c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack c d)
+        - (stack c e)
+
+
+---
+timestamp: '2024-10-07T21:53:45.944272'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 45
+    fring_size: 37
+    fring_first_20: (D:9,C:0), (D:8,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0),
+        (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up d)
+        - (stack d a)
+        - (pick-up c)
+        - (stack c d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:46.042156'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 46
+    fring_size: 36
+    fring_first_20: (D:8,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0),
+        (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 9
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up d)
+        - (stack d a)
+        - (pick-up c)
+        - (stack c d)
+        - (pick-up e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (stack e c)
+
+
+---
+timestamp: '2024-10-07T21:53:46.138374'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 47
+    fring_size: 37
+    fring_first_20: (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up d)
+        - (stack d a)
+        - (pick-up c)
+        - (stack c e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up c)
+        - (pick-up d)
+
+
+---
+timestamp: '2024-10-07T21:53:46.237944'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 48
+    fring_size: 38
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0),
+        (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up d)
+        - (stack d a)
+        - (pick-up e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack e c)
+        - (stack e d)
+
+
+---
+timestamp: '2024-10-07T21:53:46.335872'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 49
+    fring_size: 39
+    fring_first_20: (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up d)
+        - (stack d a)
+        - (pick-up e)
+        - (stack e c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up d)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:46.465914'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 50
+    fring_size: 39
+    fring_first_20: (D:9,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up d)
+        - (stack d a)
+        - (pick-up e)
+        - (stack e d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up c)
+
+
+---
+timestamp: '2024-10-07T21:53:46.601154'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 51
+    fring_size: 38
+    fring_first_20: (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 9
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up d)
+        - (stack d a)
+        - (pick-up e)
+        - (stack e d)
+        - (pick-up c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (stack c e)
+
+
+---
+timestamp: '2024-10-07T21:53:46.696958'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 52
+    fring_size: 38
+    fring_first_20: (D:7,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up d)
+        - (stack d c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:46.820251'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 53
+    fring_size: 39
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up d)
+        - (stack d c)
+        - (pick-up e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack e a)
+        - (stack e d)
+
+
+---
+timestamp: '2024-10-07T21:53:46.922962'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 54
+    fring_size: 40
+    fring_first_20: (D:8,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up d)
+        - (stack d c)
+        - (pick-up e)
+        - (stack e a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up d)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:47.014748'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 55
+    fring_size: 41
+    fring_first_20: (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up d)
+        - (stack d c)
+        - (pick-up e)
+        - (stack e d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up a)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:47.107617'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 56
+    fring_size: 41
+    fring_first_20: (D:7,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up d)
+        - (stack d e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up c)
+
+
+---
+timestamp: '2024-10-07T21:53:47.200015'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 57
+    fring_size: 42
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up d)
+        - (stack d e)
+        - (pick-up c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack c a)
+        - (stack c d)
+
+
+---
+timestamp: '2024-10-07T21:53:47.298676'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 58
+    fring_size: 43
+    fring_first_20: (D:8,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up d)
+        - (stack d e)
+        - (pick-up c)
+        - (stack c a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up c)
+        - (pick-up d)
+
+
+---
+timestamp: '2024-10-07T21:53:47.392701'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 59
+    fring_size: 44
+    fring_first_20: (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up d)
+        - (stack d e)
+        - (pick-up c)
+        - (stack c d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up a)
+        - (pick-up c)
+
+
+---
+timestamp: '2024-10-07T21:53:47.488536'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 60
+    fring_size: 46
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (pick-up b)
+        - (pick-up d)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:47.589511'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 61
+    fring_size: 48
+    fring_first_20: (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0),
+        (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (stack b a)
+        - (stack b d)
+        - (stack b e)
+
+
+---
+timestamp: '2024-10-07T21:53:47.690573'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 62
+    fring_size: 49
+    fring_first_20: (D:7,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0),
+        (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up b)
+        - (stack b a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up d)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:47.789936'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 63
+    fring_size: 50
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0),
+        (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up b)
+        - (stack b a)
+        - (pick-up d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack d b)
+        - (stack d e)
+
+
+---
+timestamp: '2024-10-07T21:53:47.921561'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 64
+    fring_size: 50
+    fring_first_20: (D:9,C:0), (D:8,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0),
+        (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up b)
+        - (stack b a)
+        - (pick-up d)
+        - (stack d b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:48.033427'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 65
+    fring_size: 49
+    fring_first_20: (D:8,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0),
+        (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 9
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up b)
+        - (stack b a)
+        - (pick-up d)
+        - (stack d b)
+        - (pick-up e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (stack e d)
+
+
+---
+timestamp: '2024-10-07T21:53:48.137092'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 66
+    fring_size: 50
+    fring_first_20: (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0),
+        (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up b)
+        - (stack b a)
+        - (pick-up d)
+        - (stack d e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up b)
+        - (pick-up d)
+
+
+---
+timestamp: '2024-10-07T21:53:48.233459'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 67
+    fring_size: 51
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0),
+        (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up b)
+        - (stack b a)
+        - (pick-up e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack e b)
+        - (stack e d)
+
+
+---
+timestamp: '2024-10-07T21:53:48.326991'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 68
+    fring_size: 51
+    fring_first_20: (D:9,C:0), (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0),
+        (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up b)
+        - (stack b a)
+        - (pick-up e)
+        - (stack e b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up d)
+
+
+---
+timestamp: '2024-10-07T21:53:48.419495'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 69
+    fring_size: 50
+    fring_first_20: (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0),
+        (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 9
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up b)
+        - (stack b a)
+        - (pick-up e)
+        - (stack e b)
+        - (pick-up d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (stack d e)
+
+
+---
+timestamp: '2024-10-07T21:53:48.543532'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 70
+    fring_size: 51
+    fring_first_20: (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up b)
+        - (stack b a)
+        - (pick-up e)
+        - (stack e d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up b)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:48.637762'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 71
+    fring_size: 51
+    fring_first_20: (D:7,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up b)
+        - (stack b e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up d)
+
+
+---
+timestamp: '2024-10-07T21:53:48.734408'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 72
+    fring_size: 52
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0),
+        (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up b)
+        - (stack b e)
+        - (pick-up d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack d a)
+        - (stack d b)
+
+
+---
+timestamp: '2024-10-07T21:53:48.829560'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 73
+    fring_size: 53
+    fring_first_20: (D:8,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up b)
+        - (stack b e)
+        - (pick-up d)
+        - (stack d a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up b)
+        - (pick-up d)
+
+
+---
+timestamp: '2024-10-07T21:53:48.935524'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 74
+    fring_size: 54
+    fring_first_20: (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up b)
+        - (stack b e)
+        - (pick-up d)
+        - (stack d b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up a)
+        - (pick-up d)
+
+
+---
+timestamp: '2024-10-07T21:53:49.029752'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 75
+    fring_size: 54
+    fring_first_20: (D:7,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up b)
+        - (stack b d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:49.133925'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 76
+    fring_size: 55
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up b)
+        - (stack b d)
+        - (pick-up e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack e a)
+        - (stack e b)
+
+
+---
+timestamp: '2024-10-07T21:53:49.237271'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 77
+    fring_size: 56
+    fring_first_20: (D:8,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up b)
+        - (stack b d)
+        - (pick-up e)
+        - (stack e a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up b)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:49.341807'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 78
+    fring_size: 57
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up b)
+        - (stack b d)
+        - (pick-up e)
+        - (stack e b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up a)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:49.443679'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 79
+    fring_size: 59
+    fring_first_20: (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (stack d a)
+        - (stack d b)
+        - (stack d e)
+
+
+---
+timestamp: '2024-10-07T21:53:49.543196'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 80
+    fring_size: 60
+    fring_first_20: (D:7,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0),
+        (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up d)
+        - (stack d a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up b)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:49.651019'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 81
+    fring_size: 61
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0),
+        (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up d)
+        - (stack d a)
+        - (pick-up b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack b d)
+        - (stack b e)
+
+
+---
+timestamp: '2024-10-07T21:53:49.751479'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 82
+    fring_size: 61
+    fring_first_20: (D:9,C:0), (D:8,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0),
+        (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up d)
+        - (stack d a)
+        - (pick-up b)
+        - (stack b d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:49.848403'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 83
+    fring_size: 60
+    fring_first_20: (D:8,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0),
+        (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 9
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up d)
+        - (stack d a)
+        - (pick-up b)
+        - (stack b d)
+        - (pick-up e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (stack e b)
+
+
+---
+timestamp: '2024-10-07T21:53:49.961062'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 84
+    fring_size: 61
+    fring_first_20: (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up d)
+        - (stack d a)
+        - (pick-up b)
+        - (stack b e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up b)
+        - (pick-up d)
+
+
+---
+timestamp: '2024-10-07T21:53:50.101214'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 85
+    fring_size: 62
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0),
+        (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up d)
+        - (stack d a)
+        - (pick-up e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack e b)
+        - (stack e d)
+
+
+---
+timestamp: '2024-10-07T21:53:50.233664'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 86
+    fring_size: 63
+    fring_first_20: (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up d)
+        - (stack d a)
+        - (pick-up e)
+        - (stack e b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up d)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:50.369376'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 87
+    fring_size: 63
+    fring_first_20: (D:9,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up d)
+        - (stack d a)
+        - (pick-up e)
+        - (stack e d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up b)
+
+
+---
+timestamp: '2024-10-07T21:53:50.469261'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 88
+    fring_size: 62
+    fring_first_20: (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 9
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up d)
+        - (stack d a)
+        - (pick-up e)
+        - (stack e d)
+        - (pick-up b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (stack b e)
+
+
+---
+timestamp: '2024-10-07T21:53:50.565370'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 89
+    fring_size: 62
+    fring_first_20: (D:7,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up d)
+        - (stack d b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:50.701086'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 90
+    fring_size: 63
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up d)
+        - (stack d b)
+        - (pick-up e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack e a)
+        - (stack e d)
+
+
+---
+timestamp: '2024-10-07T21:53:50.833848'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 91
+    fring_size: 64
+    fring_first_20: (D:8,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up d)
+        - (stack d b)
+        - (pick-up e)
+        - (stack e a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up d)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:50.970058'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 92
+    fring_size: 65
+    fring_first_20: (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up d)
+        - (stack d b)
+        - (pick-up e)
+        - (stack e d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up a)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:51.074008'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 93
+    fring_size: 65
+    fring_first_20: (D:7,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up d)
+        - (stack d e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up b)
+
+
+---
+timestamp: '2024-10-07T21:53:51.204985'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 94
+    fring_size: 66
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up d)
+        - (stack d e)
+        - (pick-up b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack b a)
+        - (stack b d)
+
+
+---
+timestamp: '2024-10-07T21:53:51.334692'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 95
+    fring_size: 67
+    fring_first_20: (D:8,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up d)
+        - (stack d e)
+        - (pick-up b)
+        - (stack b a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up b)
+        - (pick-up d)
+
+
+---
+timestamp: '2024-10-07T21:53:51.464624'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 96
+    fring_size: 68
+    fring_first_20: (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up d)
+        - (stack d e)
+        - (pick-up b)
+        - (stack b d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up a)
+        - (pick-up b)
+
+
+---
+timestamp: '2024-10-07T21:53:51.597752'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 97
+    fring_size: 70
+    fring_first_20: (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (stack e a)
+        - (stack e b)
+        - (stack e d)
+
+
+---
+timestamp: '2024-10-07T21:53:51.704823'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 98
+    fring_size: 71
+    fring_first_20: (D:7,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up e)
+        - (stack e a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up b)
+        - (pick-up d)
+
+
+---
+timestamp: '2024-10-07T21:53:51.806383'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 99
+    fring_size: 72
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0),
+        (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up e)
+        - (stack e a)
+        - (pick-up b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack b d)
+        - (stack b e)
+
+
+---
+timestamp: '2024-10-07T21:53:51.913185'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 100
+    fring_size: 73
+    fring_first_20: (D:8,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up e)
+        - (stack e a)
+        - (pick-up b)
+        - (stack b d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up b)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:52.005959'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 101
+    fring_size: 73
+    fring_first_20: (D:9,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up e)
+        - (stack e a)
+        - (pick-up b)
+        - (stack b e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up d)
+
+
+---
+timestamp: '2024-10-07T21:53:52.099902'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 102
+    fring_size: 72
+    fring_first_20: (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 9
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up e)
+        - (stack e a)
+        - (pick-up b)
+        - (stack b e)
+        - (pick-up d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (stack d b)
+
+
+---
+timestamp: '2024-10-07T21:53:52.196313'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 103
+    fring_size: 73
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up e)
+        - (stack e a)
+        - (pick-up d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack d b)
+        - (stack d e)
+
+
+---
+timestamp: '2024-10-07T21:53:52.324078'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 104
+    fring_size: 74
+    fring_first_20: (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up e)
+        - (stack e a)
+        - (pick-up d)
+        - (stack d b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up d)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:52.419920'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 105
+    fring_size: 74
+    fring_first_20: (D:9,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up e)
+        - (stack e a)
+        - (pick-up d)
+        - (stack d e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up b)
+
+
+---
+timestamp: '2024-10-07T21:53:52.515399'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 106
+    fring_size: 73
+    fring_first_20: (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 9
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up e)
+        - (stack e a)
+        - (pick-up d)
+        - (stack d e)
+        - (pick-up b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (stack b d)
+
+
+---
+timestamp: '2024-10-07T21:53:52.605629'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 107
+    fring_size: 73
+    fring_first_20: (D:7,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up e)
+        - (stack e b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up d)
+
+
+---
+timestamp: '2024-10-07T21:53:52.705967'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 108
+    fring_size: 74
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up e)
+        - (stack e b)
+        - (pick-up d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack d a)
+        - (stack d e)
+
+
+---
+timestamp: '2024-10-07T21:53:52.810874'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 109
+    fring_size: 75
+    fring_first_20: (D:8,C:0), (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up e)
+        - (stack e b)
+        - (pick-up d)
+        - (stack d a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up d)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:52.915205'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 110
+    fring_size: 76
+    fring_first_20: (D:6,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up e)
+        - (stack e b)
+        - (pick-up d)
+        - (stack d e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up a)
+        - (pick-up d)
+
+
+---
+timestamp: '2024-10-07T21:53:53.046004'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 111
+    fring_size: 76
+    fring_first_20: (D:7,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up e)
+        - (stack e d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up b)
+
+
+---
+timestamp: '2024-10-07T21:53:53.179798'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 112
+    fring_size: 77
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up e)
+        - (stack e d)
+        - (pick-up b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack b a)
+        - (stack b e)
+
+
+---
+timestamp: '2024-10-07T21:53:53.294400'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 113
+    fring_size: 78
+    fring_first_20: (D:8,C:0), (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up e)
+        - (stack e d)
+        - (pick-up b)
+        - (stack b a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up b)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:53.404188'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 114
+    fring_size: 79
+    fring_first_20: (D:4,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a c)
+        - (pick-up e)
+        - (stack e d)
+        - (pick-up b)
+        - (stack b e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up a)
+        - (pick-up b)
+
+
+---
+timestamp: '2024-10-07T21:53:53.508346'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 115
+    fring_size: 81
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (pick-up b)
+        - (pick-up c)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:53.605986'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 116
+    fring_size: 83
+    fring_first_20: (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (stack b a)
+        - (stack b c)
+        - (stack b e)
+
+
+---
+timestamp: '2024-10-07T21:53:53.724316'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 117
+    fring_size: 84
+    fring_first_20: (D:7,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0),
+        (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up b)
+        - (stack b a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up c)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:53.830019'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 118
+    fring_size: 85
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0),
+        (D:5,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up b)
+        - (stack b a)
+        - (pick-up c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack c b)
+        - (stack c e)
+
+
+---
+timestamp: '2024-10-07T21:53:53.924503'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 119
+    fring_size: 85
+    fring_first_20: (D:9,C:0), (D:8,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0),
+        (D:5,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up b)
+        - (stack b a)
+        - (pick-up c)
+        - (stack c b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:54.031920'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 120
+    fring_size: 84
+    fring_first_20: (D:8,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0),
+        (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 9
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up b)
+        - (stack b a)
+        - (pick-up c)
+        - (stack c b)
+        - (pick-up e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (stack e c)
+
+
+---
+timestamp: '2024-10-07T21:53:54.150963'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 121
+    fring_size: 85
+    fring_first_20: (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up b)
+        - (stack b a)
+        - (pick-up c)
+        - (stack c e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up b)
+        - (pick-up c)
+
+
+---
+timestamp: '2024-10-07T21:53:54.246626'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 122
+    fring_size: 86
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0),
+        (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up b)
+        - (stack b a)
+        - (pick-up e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack e b)
+        - (stack e c)
+
+
+---
+timestamp: '2024-10-07T21:53:54.339289'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 123
+    fring_size: 86
+    fring_first_20: (D:9,C:0), (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0),
+        (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up b)
+        - (stack b a)
+        - (pick-up e)
+        - (stack e b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up c)
+
+
+---
+timestamp: '2024-10-07T21:53:54.443672'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 124
+    fring_size: 85
+    fring_first_20: (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 9
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up b)
+        - (stack b a)
+        - (pick-up e)
+        - (stack e b)
+        - (pick-up c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (stack c e)
+
+
+---
+timestamp: '2024-10-07T21:53:54.545832'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 125
+    fring_size: 86
+    fring_first_20: (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up b)
+        - (stack b a)
+        - (pick-up e)
+        - (stack e c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up b)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:54.653374'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 126
+    fring_size: 86
+    fring_first_20: (D:7,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up b)
+        - (stack b c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:54.750693'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 127
+    fring_size: 87
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up b)
+        - (stack b c)
+        - (pick-up e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack e a)
+        - (stack e b)
+
+
+---
+timestamp: '2024-10-07T21:53:54.848861'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 128
+    fring_size: 88
+    fring_first_20: (D:8,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up b)
+        - (stack b c)
+        - (pick-up e)
+        - (stack e a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up b)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:54.949081'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 129
+    fring_size: 89
+    fring_first_20: (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up b)
+        - (stack b c)
+        - (pick-up e)
+        - (stack e b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up a)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:55.057986'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 130
+    fring_size: 89
+    fring_first_20: (D:7,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up b)
+        - (stack b e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up c)
+
+
+---
+timestamp: '2024-10-07T21:53:55.160853'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 131
+    fring_size: 90
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up b)
+        - (stack b e)
+        - (pick-up c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack c a)
+        - (stack c b)
+
+
+---
+timestamp: '2024-10-07T21:53:55.276782'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 132
+    fring_size: 91
+    fring_first_20: (D:8,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up b)
+        - (stack b e)
+        - (pick-up c)
+        - (stack c a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up b)
+        - (pick-up c)
+
+
+---
+timestamp: '2024-10-07T21:53:55.408752'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 133
+    fring_size: 92
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up b)
+        - (stack b e)
+        - (pick-up c)
+        - (stack c b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up a)
+        - (pick-up c)
+
+
+---
+timestamp: '2024-10-07T21:53:55.548767'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 134
+    fring_size: 94
+    fring_first_20: (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (stack c a)
+        - (stack c b)
+        - (stack c e)
+
+
+---
+timestamp: '2024-10-07T21:53:55.646023'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 135
+    fring_size: 95
+    fring_first_20: (D:7,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up c)
+        - (stack c a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up b)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:55.746653'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 136
+    fring_size: 96
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0),
+        (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up c)
+        - (stack c a)
+        - (pick-up b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack b c)
+        - (stack b e)
+
+
+---
+timestamp: '2024-10-07T21:53:55.859475'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 137
+    fring_size: 96
+    fring_first_20: (D:9,C:0), (D:8,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0),
+        (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up c)
+        - (stack c a)
+        - (pick-up b)
+        - (stack b c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:55.982833'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 138
+    fring_size: 95
+    fring_first_20: (D:8,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 9
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up c)
+        - (stack c a)
+        - (pick-up b)
+        - (stack b c)
+        - (pick-up e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (stack e b)
+
+
+---
+timestamp: '2024-10-07T21:53:56.089260'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 139
+    fring_size: 96
+    fring_first_20: (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up c)
+        - (stack c a)
+        - (pick-up b)
+        - (stack b e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up b)
+        - (pick-up c)
+
+
+---
+timestamp: '2024-10-07T21:53:56.197452'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 140
+    fring_size: 97
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up c)
+        - (stack c a)
+        - (pick-up e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack e b)
+        - (stack e c)
+
+
+---
+timestamp: '2024-10-07T21:53:56.325318'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 141
+    fring_size: 98
+    fring_first_20: (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up c)
+        - (stack c a)
+        - (pick-up e)
+        - (stack e b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up c)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:56.427413'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 142
+    fring_size: 98
+    fring_first_20: (D:9,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up c)
+        - (stack c a)
+        - (pick-up e)
+        - (stack e c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up b)
+
+
+---
+timestamp: '2024-10-07T21:53:56.560563'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 143
+    fring_size: 97
+    fring_first_20: (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 9
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up c)
+        - (stack c a)
+        - (pick-up e)
+        - (stack e c)
+        - (pick-up b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (stack b e)
+
+
+---
+timestamp: '2024-10-07T21:53:56.668630'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 144
+    fring_size: 97
+    fring_first_20: (D:7,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up c)
+        - (stack c b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:56.765798'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 145
+    fring_size: 98
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up c)
+        - (stack c b)
+        - (pick-up e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack e a)
+        - (stack e c)
+
+
+---
+timestamp: '2024-10-07T21:53:56.860252'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 146
+    fring_size: 99
+    fring_first_20: (D:8,C:0), (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up c)
+        - (stack c b)
+        - (pick-up e)
+        - (stack e a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up c)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:56.967828'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 147
+    fring_size: 100
+    fring_first_20: (D:6,C:0), (D:5,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up c)
+        - (stack c b)
+        - (pick-up e)
+        - (stack e c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up a)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:57.060216'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 148
+    fring_size: 100
+    fring_first_20: (D:7,C:0), (D:5,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up c)
+        - (stack c e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up b)
+
+
+---
+timestamp: '2024-10-07T21:53:57.193420'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 149
+    fring_size: 101
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:5,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up c)
+        - (stack c e)
+        - (pick-up b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack b a)
+        - (stack b c)
+
+
+---
+timestamp: '2024-10-07T21:53:57.286088'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 150
+    fring_size: 102
+    fring_first_20: (D:8,C:0), (D:5,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up c)
+        - (stack c e)
+        - (pick-up b)
+        - (stack b a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up b)
+        - (pick-up c)
+
+
+---
+timestamp: '2024-10-07T21:53:57.378393'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 151
+    fring_size: 103
+    fring_first_20: (D:5,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up c)
+        - (stack c e)
+        - (pick-up b)
+        - (stack b c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up a)
+        - (pick-up b)
+
+
+---
+timestamp: '2024-10-07T21:53:57.477583'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 152
+    fring_size: 105
+    fring_first_20: (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (stack e a)
+        - (stack e b)
+        - (stack e c)
+
+
+---
+timestamp: '2024-10-07T21:53:57.572856'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 153
+    fring_size: 106
+    fring_first_20: (D:7,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up e)
+        - (stack e a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up b)
+        - (pick-up c)
+
+
+---
+timestamp: '2024-10-07T21:53:57.668140'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 154
+    fring_size: 107
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up e)
+        - (stack e a)
+        - (pick-up b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack b c)
+        - (stack b e)
+
+
+---
+timestamp: '2024-10-07T21:53:57.781810'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 155
+    fring_size: 108
+    fring_first_20: (D:8,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up e)
+        - (stack e a)
+        - (pick-up b)
+        - (stack b c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up b)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:57.906473'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 156
+    fring_size: 108
+    fring_first_20: (D:9,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up e)
+        - (stack e a)
+        - (pick-up b)
+        - (stack b e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up c)
+
+
+---
+timestamp: '2024-10-07T21:53:58.005537'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 157
+    fring_size: 107
+    fring_first_20: (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 9
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up e)
+        - (stack e a)
+        - (pick-up b)
+        - (stack b e)
+        - (pick-up c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (stack c b)
+
+
+---
+timestamp: '2024-10-07T21:53:58.114341'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 158
+    fring_size: 108
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up e)
+        - (stack e a)
+        - (pick-up c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack c b)
+        - (stack c e)
+
+
+---
+timestamp: '2024-10-07T21:53:58.225641'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 159
+    fring_size: 109
+    fring_first_20: (D:8,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up e)
+        - (stack e a)
+        - (pick-up c)
+        - (stack c b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up c)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:58.327150'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 160
+    fring_size: 109
+    fring_first_20: (D:9,C:0), (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up e)
+        - (stack e a)
+        - (pick-up c)
+        - (stack c e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up b)
+
+
+---
+timestamp: '2024-10-07T21:53:58.431046'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 161
+    fring_size: 108
+    fring_first_20: (D:6,C:0), (D:6,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 9
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up e)
+        - (stack e a)
+        - (pick-up c)
+        - (stack c e)
+        - (pick-up b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (stack b c)
+
+
+---
+timestamp: '2024-10-07T21:53:58.521294'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 162
+    fring_size: 108
+    fring_first_20: (D:7,C:0), (D:6,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up e)
+        - (stack e b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up c)
+
+
+---
+timestamp: '2024-10-07T21:53:58.614136'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 163
+    fring_size: 109
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:6,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up e)
+        - (stack e b)
+        - (pick-up c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack c a)
+        - (stack c e)
+
+
+---
+timestamp: '2024-10-07T21:53:58.710186'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 164
+    fring_size: 110
+    fring_first_20: (D:8,C:0), (D:6,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up e)
+        - (stack e b)
+        - (pick-up c)
+        - (stack c a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up c)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:58.810210'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 165
+    fring_size: 111
+    fring_first_20: (D:6,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up e)
+        - (stack e b)
+        - (pick-up c)
+        - (stack c e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up a)
+        - (pick-up c)
+
+
+---
+timestamp: '2024-10-07T21:53:58.916196'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 166
+    fring_size: 111
+    fring_first_20: (D:7,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up e)
+        - (stack e c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up b)
+
+
+---
+timestamp: '2024-10-07T21:53:59.010970'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 167
+    fring_size: 112
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up e)
+        - (stack e c)
+        - (pick-up b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack b a)
+        - (stack b e)
+
+
+---
+timestamp: '2024-10-07T21:53:59.107126'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 168
+    fring_size: 113
+    fring_first_20: (D:8,C:0), (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up e)
+        - (stack e c)
+        - (pick-up b)
+        - (stack b a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up b)
+        - (pick-up e)
+
+
+---
+timestamp: '2024-10-07T21:53:59.206183'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 169
+    fring_size: 114
+    fring_first_20: (D:4,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a d)
+        - (pick-up e)
+        - (stack e c)
+        - (pick-up b)
+        - (stack b e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up a)
+        - (pick-up b)
+
+
+---
+timestamp: '2024-10-07T21:53:59.322914'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 170
+    fring_size: 116
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a e)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (pick-up b)
+        - (pick-up c)
+        - (pick-up d)
+
+
+---
+timestamp: '2024-10-07T21:53:59.423970'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 171
+    fring_size: 118
+    fring_first_20: (D:6,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a e)
+        - (pick-up b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (stack b a)
+        - (stack b c)
+        - (stack b d)
+
+
+---
+timestamp: '2024-10-07T21:53:59.521693'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 172
+    fring_size: 119
+    fring_first_20: (D:7,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a e)
+        - (pick-up b)
+        - (stack b a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up c)
+        - (pick-up d)
+
+
+---
+timestamp: '2024-10-07T21:53:59.627378'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 173
+    fring_size: 120
+    fring_first_20: (D:8,C:0), (D:8,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0),
+        (D:5,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a e)
+        - (pick-up b)
+        - (stack b a)
+        - (pick-up c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack c b)
+        - (stack c d)
+
+
+---
+timestamp: '2024-10-07T21:53:59.723368'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 174
+    fring_size: 120
+    fring_first_20: (D:9,C:0), (D:8,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0),
+        (D:5,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a e)
+        - (pick-up b)
+        - (stack b a)
+        - (pick-up c)
+        - (stack c b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up d)
+
+
+---
+timestamp: '2024-10-07T21:53:59.816874'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 175
+    fring_size: 120
+    fring_first_20: (D:10,C:0), (D:8,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0),
+        (D:5,C:0), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 9
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a e)
+        - (pick-up b)
+        - (stack b a)
+        - (pick-up c)
+        - (stack c b)
+        - (pick-up d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (stack d c)
+
+
+---
+timestamp: '2024-10-07T21:53:59.819436'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: true
+    iteration: 176
+    fring_size: 119
+    fring_first_20: (D:8,C:0), (D:7,C:0), (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1),
+        (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1), (D:9,C:1)
+    current_node:
+        depth: 10
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a e)
+        - (pick-up b)
+        - (stack b a)
+        - (pick-up c)
+        - (stack c b)
+        - (pick-up d)
+        - (stack d c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2024-10-07T21:53:59.821628'
+level: INFO
+issuer: instance_solver
+event_type: results
+data:
+    goal:
+        depth: 10
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a e)
+        - (pick-up b)
+        - (stack b a)
+        - (pick-up c)
+        - (stack c b)
+        - (pick-up d)
+        - (stack d c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2024-10-07T21:53:59.823325'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.3 minutes = 18.48 seconds
+
+
+---
+timestamp: '2024-10-07T21:53:59.978880'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+

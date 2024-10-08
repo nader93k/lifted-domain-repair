@@ -1,0 +1,993 @@
+---
+timestamp: '2024-10-06T14:16:44.051791'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/8 BFS-full-log length1-15/bfs_length_8_logistics00_pprobLOGISTICS-5-2-err-rate-0-5.yaml
+    instance_id: logistics00/pprobLOGISTICS-5-2-err-rate-0-5
+    search_algorithm: bfs
+    plan_length: 8
+    domain_class: logistics00
+    instance_name: pprobLOGISTICS-5-2-err-rate-0-5
+    ground_plan:
+    - (load-truck obj23 tru2 pos2)
+    - (load-truck obj21 tru2 pos2)
+    - (drive-truck tru2 pos2 apt2 cit2)
+    - (unload-truck obj23 tru2 apt2)
+    - (unload-truck obj21 tru2 apt2)
+    - (load-truck obj12 tru1 pos1)
+    - (drive-truck tru1 pos1 apt1 cit1)
+    - (unload-truck obj12 tru1 apt1)
+    lifted_plan:
+    - load-truck
+    - load-truck
+    - drive-truck
+    - unload-truck
+    - unload-truck
+    - load-truck
+    - drive-truck
+    - unload-truck
+
+
+---
+timestamp: '2024-10-06T14:16:44.055878'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: drive-truck,(location ?city),precPos,-1
+
+
+---
+timestamp: '2024-10-06T14:16:44.164847'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 6
+    fring_first_20: (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0)
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: load-truck
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (load-truck obj11 tru1 pos1)
+        - (load-truck obj12 tru1 pos1)
+        - (load-truck obj13 tru1 pos1)
+        - (load-truck obj21 tru2 pos2)
+        - (load-truck obj22 tru2 pos2)
+        - (load-truck obj23 tru2 pos2)
+
+
+---
+timestamp: '2024-10-06T14:16:44.266927'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 2
+    fring_size: 10
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0),
+        (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (load-truck obj11 tru1 pos1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: load-truck
+        num_neighbours: 5
+        first_10_possible_groundings:
+        - (load-truck obj12 tru1 pos1)
+        - (load-truck obj13 tru1 pos1)
+        - (load-truck obj21 tru2 pos2)
+        - (load-truck obj22 tru2 pos2)
+        - (load-truck obj23 tru2 pos2)
+
+
+---
+timestamp: '2024-10-06T14:16:44.363223'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 3
+    fring_size: 9
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:1,C:0),
+        (D:1,C:0), (D:1,C:0), (D:1,C:0)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck obj11 tru1 pos1)
+        - (load-truck obj12 tru1 pos1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:16:44.463760'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 4
+    fring_size: 8
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0),
+        (D:1,C:0), (D:1,C:0)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck obj11 tru1 pos1)
+        - (load-truck obj13 tru1 pos1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:16:44.561561'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 5
+    fring_size: 7
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0),
+        (D:1,C:0)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck obj11 tru1 pos1)
+        - (load-truck obj21 tru2 pos2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:16:44.655949'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 6
+    fring_size: 6
+    fring_first_20: (D:2,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck obj11 tru1 pos1)
+        - (load-truck obj23 tru2 pos2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:16:44.750926'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 7
+    fring_size: 5
+    fring_first_20: (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck obj11 tru1 pos1)
+        - (load-truck obj22 tru2 pos2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:16:44.864895'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 8
+    fring_size: 9
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0),
+        (D:1,C:0), (D:1,C:0), (D:1,C:0)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (load-truck obj13 tru1 pos1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: load-truck
+        num_neighbours: 5
+        first_10_possible_groundings:
+        - (load-truck obj11 tru1 pos1)
+        - (load-truck obj12 tru1 pos1)
+        - (load-truck obj21 tru2 pos2)
+        - (load-truck obj22 tru2 pos2)
+        - (load-truck obj23 tru2 pos2)
+
+
+---
+timestamp: '2024-10-06T14:16:44.957929'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 9
+    fring_size: 8
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:1,C:0),
+        (D:1,C:0), (D:1,C:0)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck obj13 tru1 pos1)
+        - (load-truck obj11 tru1 pos1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:16:45.048653'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 10
+    fring_size: 7
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0),
+        (D:1,C:0)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck obj13 tru1 pos1)
+        - (load-truck obj12 tru1 pos1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:16:45.135748'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 11
+    fring_size: 6
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck obj13 tru1 pos1)
+        - (load-truck obj21 tru2 pos2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:16:45.224843'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 12
+    fring_size: 5
+    fring_first_20: (D:2,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck obj13 tru1 pos1)
+        - (load-truck obj22 tru2 pos2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:16:45.326332'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 13
+    fring_size: 4
+    fring_first_20: (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck obj13 tru1 pos1)
+        - (load-truck obj23 tru2 pos2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:16:45.452389'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 14
+    fring_size: 8
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0),
+        (D:1,C:0), (D:1,C:0)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (load-truck obj23 tru2 pos2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: load-truck
+        num_neighbours: 5
+        first_10_possible_groundings:
+        - (load-truck obj11 tru1 pos1)
+        - (load-truck obj12 tru1 pos1)
+        - (load-truck obj13 tru1 pos1)
+        - (load-truck obj21 tru2 pos2)
+        - (load-truck obj22 tru2 pos2)
+
+
+---
+timestamp: '2024-10-06T14:16:45.544151'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 15
+    fring_size: 7
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:1,C:0),
+        (D:1,C:0)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck obj23 tru2 pos2)
+        - (load-truck obj11 tru1 pos1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:16:45.637295'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 16
+    fring_size: 6
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck obj23 tru2 pos2)
+        - (load-truck obj13 tru1 pos1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:16:45.731889'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 17
+    fring_size: 5
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck obj23 tru2 pos2)
+        - (load-truck obj21 tru2 pos2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:16:45.824309'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 18
+    fring_size: 4
+    fring_first_20: (D:2,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck obj23 tru2 pos2)
+        - (load-truck obj12 tru1 pos1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:16:45.938991'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 19
+    fring_size: 3
+    fring_first_20: (D:1,C:0), (D:1,C:0), (D:1,C:0)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck obj23 tru2 pos2)
+        - (load-truck obj22 tru2 pos2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:16:46.082999'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 20
+    fring_size: 7
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0),
+        (D:1,C:0)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (load-truck obj21 tru2 pos2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: load-truck
+        num_neighbours: 5
+        first_10_possible_groundings:
+        - (load-truck obj11 tru1 pos1)
+        - (load-truck obj12 tru1 pos1)
+        - (load-truck obj13 tru1 pos1)
+        - (load-truck obj22 tru2 pos2)
+        - (load-truck obj23 tru2 pos2)
+
+
+---
+timestamp: '2024-10-06T14:16:46.210842'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 21
+    fring_size: 6
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:1,C:0)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck obj21 tru2 pos2)
+        - (load-truck obj11 tru1 pos1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:16:46.331505'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 22
+    fring_size: 5
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:1,C:0)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck obj21 tru2 pos2)
+        - (load-truck obj22 tru2 pos2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:16:46.428159'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 23
+    fring_size: 4
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:1,C:0)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck obj21 tru2 pos2)
+        - (load-truck obj23 tru2 pos2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:16:46.520334'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 24
+    fring_size: 3
+    fring_first_20: (D:2,C:0), (D:1,C:0), (D:1,C:0)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck obj21 tru2 pos2)
+        - (load-truck obj12 tru1 pos1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:16:46.642163'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 25
+    fring_size: 2
+    fring_first_20: (D:1,C:0), (D:1,C:0)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck obj21 tru2 pos2)
+        - (load-truck obj13 tru1 pos1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:16:46.770318'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 26
+    fring_size: 6
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (load-truck obj22 tru2 pos2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: load-truck
+        num_neighbours: 5
+        first_10_possible_groundings:
+        - (load-truck obj11 tru1 pos1)
+        - (load-truck obj12 tru1 pos1)
+        - (load-truck obj13 tru1 pos1)
+        - (load-truck obj21 tru2 pos2)
+        - (load-truck obj23 tru2 pos2)
+
+
+---
+timestamp: '2024-10-06T14:16:46.863763'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 27
+    fring_size: 5
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck obj22 tru2 pos2)
+        - (load-truck obj11 tru1 pos1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:16:46.975657'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 28
+    fring_size: 4
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck obj22 tru2 pos2)
+        - (load-truck obj12 tru1 pos1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:16:47.068321'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 29
+    fring_size: 3
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:1,C:0)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck obj22 tru2 pos2)
+        - (load-truck obj23 tru2 pos2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:16:47.163581'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 30
+    fring_size: 2
+    fring_first_20: (D:2,C:0), (D:1,C:0)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck obj22 tru2 pos2)
+        - (load-truck obj21 tru2 pos2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:16:47.253563'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 31
+    fring_size: 1
+    fring_first_20: (D:1,C:0)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck obj22 tru2 pos2)
+        - (load-truck obj13 tru1 pos1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:16:47.363297'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 32
+    fring_size: 5
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (load-truck obj12 tru1 pos1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: load-truck
+        num_neighbours: 5
+        first_10_possible_groundings:
+        - (load-truck obj11 tru1 pos1)
+        - (load-truck obj13 tru1 pos1)
+        - (load-truck obj21 tru2 pos2)
+        - (load-truck obj22 tru2 pos2)
+        - (load-truck obj23 tru2 pos2)
+
+
+---
+timestamp: '2024-10-06T14:16:47.473899'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 33
+    fring_size: 4
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck obj12 tru1 pos1)
+        - (load-truck obj11 tru1 pos1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:16:47.567813'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 34
+    fring_size: 3
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck obj12 tru1 pos1)
+        - (load-truck obj21 tru2 pos2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:16:47.665197'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 35
+    fring_size: 2
+    fring_first_20: (D:2,C:0), (D:2,C:0)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck obj12 tru1 pos1)
+        - (load-truck obj23 tru2 pos2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:16:47.763167'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 36
+    fring_size: 1
+    fring_first_20: (D:2,C:0)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck obj12 tru1 pos1)
+        - (load-truck obj13 tru1 pos1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:16:47.864576'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 37
+    fring_size: 0
+    fring_first_20: ''
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck obj12 tru1 pos1)
+        - (load-truck obj22 tru2 pos2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:16:47.865975'
+level: INFO
+issuer: instance_solver
+event_type: results
+data:
+    goal: not_found
+
+
+---
+timestamp: '2024-10-06T14:16:47.866576'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.1 minutes = 3.82 seconds
+
+
+---
+timestamp: '2024-10-06T14:16:47.957482'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+

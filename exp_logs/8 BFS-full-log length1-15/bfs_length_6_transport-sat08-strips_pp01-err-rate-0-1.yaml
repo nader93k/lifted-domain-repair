@@ -1,0 +1,4401 @@
+---
+timestamp: '2024-10-06T08:21:38.179753'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/8 BFS-full-log length1-15/bfs_length_6_transport-sat08-strips_pp01-err-rate-0-1.yaml
+    instance_id: transport-sat08-strips/pp01-err-rate-0-1
+    search_algorithm: bfs
+    plan_length: 6
+    domain_class: transport-sat08-strips
+    instance_name: pp01-err-rate-0-1
+    ground_plan:
+    - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+    - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+    - (drive truck-1 city-loc-4 city-loc-5)
+    - (drop truck-1 city-loc-5 package-1 capacity-0 capacity-1)
+    - (drive truck-1 city-loc-5 city-loc-2)
+    - (drop truck-1 city-loc-2 package-2 capacity-1 capacity-2)
+    lifted_plan:
+    - pick-up
+    - pick-up
+    - drive
+    - drop
+    - drive
+    - drop
+
+
+---
+timestamp: '2024-10-06T08:21:38.183894'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: pick-up,(capacity-predecessor ?s2 ?s1),effPos,1
+
+
+---
+timestamp: '2024-10-06T08:21:38.314426'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 4
+    fring_first_20: (D:1,C:0), (D:1,C:0), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+
+
+---
+timestamp: '2024-10-06T08:21:38.428447'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 2
+    fring_size: 4
+    fring_first_20: (D:2,C:0), (D:1,C:0), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+
+
+---
+timestamp: '2024-10-06T08:21:38.576569'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 3
+    fring_size: 27
+    fring_first_20: (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0),
+        (D:1,C:0), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive
+        num_neighbours: 24
+        first_10_possible_groundings:
+        - (drive truck-1 city-loc-1 city-loc-4)
+        - (drive truck-1 city-loc-1 city-loc-5)
+        - (drive truck-1 city-loc-2 city-loc-3)
+        - (drive truck-1 city-loc-2 city-loc-5)
+        - (drive truck-1 city-loc-3 city-loc-2)
+        - (drive truck-1 city-loc-3 city-loc-5)
+        - (drive truck-1 city-loc-4 city-loc-1)
+        - (drive truck-1 city-loc-4 city-loc-5)
+        - (drive truck-1 city-loc-5 city-loc-1)
+        - (drive truck-1 city-loc-5 city-loc-2)
+
+
+---
+timestamp: '2024-10-06T08:21:38.673631'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 4
+    fring_size: 26
+    fring_first_20: (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:1,C:0),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-4 city-loc-1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:38.773478'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 5
+    fring_size: 25
+    fring_first_20: (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:1,C:0), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-5 city-loc-1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:38.877453'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 6
+    fring_size: 24
+    fring_first_20: (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:1,C:0), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-5 city-loc-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:38.992625'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 7
+    fring_size: 23
+    fring_first_20: (D:3,C:0), (D:3,C:0), (D:1,C:0), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-5 city-loc-3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:39.093165'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 8
+    fring_size: 22
+    fring_first_20: (D:3,C:0), (D:1,C:0), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-5 city-loc-4)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:39.189940'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 9
+    fring_size: 21
+    fring_first_20: (D:1,C:0), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-4 city-loc-5)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:39.291901'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 10
+    fring_size: 21
+    fring_first_20: (D:2,C:0), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:1,C:1)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+
+
+---
+timestamp: '2024-10-06T08:21:39.471978'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 11
+    fring_size: 44
+    fring_first_20: (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive
+        num_neighbours: 24
+        first_10_possible_groundings:
+        - (drive truck-1 city-loc-1 city-loc-4)
+        - (drive truck-1 city-loc-1 city-loc-5)
+        - (drive truck-1 city-loc-2 city-loc-3)
+        - (drive truck-1 city-loc-2 city-loc-5)
+        - (drive truck-1 city-loc-3 city-loc-2)
+        - (drive truck-1 city-loc-3 city-loc-5)
+        - (drive truck-1 city-loc-4 city-loc-1)
+        - (drive truck-1 city-loc-4 city-loc-5)
+        - (drive truck-1 city-loc-5 city-loc-1)
+        - (drive truck-1 city-loc-5 city-loc-2)
+
+
+---
+timestamp: '2024-10-06T08:21:39.566346'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 12
+    fring_size: 43
+    fring_first_20: (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-4 city-loc-1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:39.662998'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 13
+    fring_size: 42
+    fring_first_20: (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-4 city-loc-5)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:39.798762'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 14
+    fring_size: 41
+    fring_first_20: (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-5 city-loc-1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:39.936276'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 15
+    fring_size: 40
+    fring_first_20: (D:3,C:0), (D:3,C:0), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-5 city-loc-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:40.041721'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 16
+    fring_size: 39
+    fring_first_20: (D:3,C:0), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-5 city-loc-4)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:40.141248'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 17
+    fring_size: 38
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-5 city-loc-3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:40.240914'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 18
+    fring_size: 37
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-5 city-loc-4)
+        repair_set: drive,(at ?v ?l1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:40.341579'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 19
+    fring_size: 36
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-5 city-loc-2)
+        repair_set: drive,(at ?v ?l1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:40.476914'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 20
+    fring_size: 35
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-5 city-loc-3)
+        repair_set: drive,(at ?v ?l1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:40.612475'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 21
+    fring_size: 34
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-1 city-loc-5)
+        repair_set: drive,(at ?v ?l1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:40.747978'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 22
+    fring_size: 33
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-4 city-loc-1)
+        repair_set: drive,(at ?v ?l1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:40.911289'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 23
+    fring_size: 32
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-3 city-loc-5)
+        repair_set: drive,(at ?v ?l1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:41.042937'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 24
+    fring_size: 31
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-3 city-loc-2)
+        repair_set: drive,(at ?v ?l1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:41.144343'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 25
+    fring_size: 30
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-2 city-loc-5)
+        repair_set: drive,(at ?v ?l1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:41.256640'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 26
+    fring_size: 29
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-2 city-loc-3)
+        repair_set: drive,(at ?v ?l1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:41.357896'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 27
+    fring_size: 28
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-1 city-loc-5)
+        repair_set: drive,(at ?v ?l1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:41.460632'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 28
+    fring_size: 27
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-1 city-loc-4)
+        repair_set: drive,(at ?v ?l1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:41.562382'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 29
+    fring_size: 26
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-3 city-loc-5)
+        repair_set: drive,(at ?v ?l1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:41.660888'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 30
+    fring_size: 25
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-5 city-loc-1)
+        repair_set: drive,(at ?v ?l1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:41.800693'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 31
+    fring_size: 24
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-1 city-loc-5)
+        repair_set: drive,(at ?v ?l1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:41.933524'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 32
+    fring_size: 23
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-5 city-loc-1)
+        repair_set: drive,(at ?v ?l1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:42.064704'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 33
+    fring_size: 22
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-3 city-loc-5)
+        repair_set: drive,(at ?v ?l1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:42.194794'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 34
+    fring_size: 21
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-3 city-loc-2)
+        repair_set: drive,(at ?v ?l1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:42.325269'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 35
+    fring_size: 20
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-2 city-loc-5)
+        repair_set: drive,(at ?v ?l1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:42.458787'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 36
+    fring_size: 19
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-4 city-loc-5)
+        repair_set: drive,(at ?v ?l1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:42.590383'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 37
+    fring_size: 18
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-4 city-loc-5)
+        repair_set: drive,(at ?v ?l1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:42.727436'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 38
+    fring_size: 17
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-1 city-loc-4)
+        repair_set: drive,(at ?v ?l1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:42.868325'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 39
+    fring_size: 16
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-4 city-loc-1)
+        repair_set: drive,(at ?v ?l1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:42.968668'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 40
+    fring_size: 15
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-2 city-loc-5)
+        repair_set: drive,(at ?v ?l1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:43.099855'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 41
+    fring_size: 14
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:1,C:1),
+        (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-2 city-loc-3)
+        repair_set: drive,(at ?v ?l1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:43.193374'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 42
+    fring_size: 13
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-1 city-loc-5)
+        repair_set: drive,(at ?v ?l1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:43.281867'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 43
+    fring_size: 12
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-5 city-loc-4)
+        repair_set: drive,(at ?v ?l1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:43.375175'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 44
+    fring_size: 11
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-5 city-loc-3)
+        repair_set: drive,(at ?v ?l1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:43.466020'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 45
+    fring_size: 10
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-5 city-loc-2)
+        repair_set: drive,(at ?v ?l1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:43.557451'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 46
+    fring_size: 9
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-2 city-loc-3)
+        repair_set: drive,(at ?v ?l1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:43.647654'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 47
+    fring_size: 8
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-3 city-loc-2)
+        repair_set: drive,(at ?v ?l1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:43.741009'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 48
+    fring_size: 7
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:1,C:1),
+        (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-2 city-loc-5)
+        repair_set: drive,(at ?v ?l1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:43.836771'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 49
+    fring_size: 6
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-3 city-loc-5)
+        repair_set: drive,(at ?v ?l1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:43.928348'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 50
+    fring_size: 5
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-1 city-loc-4)
+        repair_set: drive,(at ?v ?l1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:44.015439'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 51
+    fring_size: 4
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-2 city-loc-3)
+        repair_set: drive,(at ?v ?l1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:44.101387'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 52
+    fring_size: 3
+    fring_first_20: (D:3,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-1 city-loc-4)
+        repair_set: drive,(at ?v ?l1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:44.187913'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 53
+    fring_size: 2
+    fring_first_20: (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-3 city-loc-2)
+        repair_set: drive,(at ?v ?l1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:44.284065'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 54
+    fring_size: 3
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:1,C:1)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        repair_set: pick-up,(capacity ?v ?s2),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+
+
+---
+timestamp: '2024-10-06T08:21:44.429340'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 55
+    fring_size: 26
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:2,C:1), (D:1,C:1), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        repair_set: pick-up,(capacity ?v ?s2),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drive
+        num_neighbours: 24
+        first_10_possible_groundings:
+        - (drive truck-1 city-loc-1 city-loc-4)
+        - (drive truck-1 city-loc-1 city-loc-5)
+        - (drive truck-1 city-loc-2 city-loc-3)
+        - (drive truck-1 city-loc-2 city-loc-5)
+        - (drive truck-1 city-loc-3 city-loc-2)
+        - (drive truck-1 city-loc-3 city-loc-5)
+        - (drive truck-1 city-loc-4 city-loc-1)
+        - (drive truck-1 city-loc-4 city-loc-5)
+        - (drive truck-1 city-loc-5 city-loc-1)
+        - (drive truck-1 city-loc-5 city-loc-2)
+
+
+---
+timestamp: '2024-10-06T08:21:44.523798'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 56
+    fring_size: 25
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:2,C:1),
+        (D:1,C:1), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-4 city-loc-1)
+        repair_set: pick-up,(capacity ?v ?s2),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:44.612747'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 57
+    fring_size: 24
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:2,C:1), (D:1,C:1),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-5 city-loc-2)
+        repair_set: pick-up,(capacity ?v ?s2),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:44.728876'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 58
+    fring_size: 23
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:2,C:1), (D:1,C:1), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-5 city-loc-3)
+        repair_set: pick-up,(capacity ?v ?s2),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:44.861770'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 59
+    fring_size: 22
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:2,C:1), (D:1,C:1), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-5 city-loc-4)
+        repair_set: pick-up,(capacity ?v ?s2),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:44.990896'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 60
+    fring_size: 21
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:1,C:1), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-4 city-loc-5)
+        repair_set: pick-up,(capacity ?v ?s2),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:45.123593'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 61
+    fring_size: 20
+    fring_first_20: (D:2,C:1), (D:1,C:1), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-5 city-loc-1)
+        repair_set: pick-up,(capacity ?v ?s2),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:45.295089'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 62
+    fring_size: 43
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:1,C:1), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        repair_set: pick-up,(capacity ?v ?s2),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drive
+        num_neighbours: 24
+        first_10_possible_groundings:
+        - (drive truck-1 city-loc-1 city-loc-4)
+        - (drive truck-1 city-loc-1 city-loc-5)
+        - (drive truck-1 city-loc-2 city-loc-3)
+        - (drive truck-1 city-loc-2 city-loc-5)
+        - (drive truck-1 city-loc-3 city-loc-2)
+        - (drive truck-1 city-loc-3 city-loc-5)
+        - (drive truck-1 city-loc-4 city-loc-1)
+        - (drive truck-1 city-loc-4 city-loc-5)
+        - (drive truck-1 city-loc-5 city-loc-1)
+        - (drive truck-1 city-loc-5 city-loc-2)
+
+
+---
+timestamp: '2024-10-06T08:21:45.391781'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 63
+    fring_size: 42
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:1,C:1),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (drive truck-1 city-loc-4 city-loc-1)
+        repair_set: pick-up,(capacity ?v ?s2),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:45.487590'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 64
+    fring_size: 41
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:1,C:1), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (drive truck-1 city-loc-4 city-loc-5)
+        repair_set: pick-up,(capacity ?v ?s2),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:45.579922'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 65
+    fring_size: 40
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:1,C:1), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (drive truck-2 city-loc-5 city-loc-1)
+        repair_set: pick-up,(capacity ?v ?s2),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:45.686764'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 66
+    fring_size: 39
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:1,C:1), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (drive truck-2 city-loc-5 city-loc-2)
+        repair_set: pick-up,(capacity ?v ?s2),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:45.776703'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 67
+    fring_size: 38
+    fring_first_20: (D:3,C:1), (D:1,C:1), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (drive truck-2 city-loc-5 city-loc-3)
+        repair_set: pick-up,(capacity ?v ?s2),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:45.872952'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 68
+    fring_size: 37
+    fring_first_20: (D:1,C:1), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (drive truck-2 city-loc-5 city-loc-4)
+        repair_set: pick-up,(capacity ?v ?s2),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:45.978283'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 69
+    fring_size: 38
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        repair_set: pick-up,(capacity ?v ?s2),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+
+
+---
+timestamp: '2024-10-06T08:21:46.128871'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 70
+    fring_size: 61
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:2,C:1), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        repair_set: pick-up,(capacity ?v ?s2),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drive
+        num_neighbours: 24
+        first_10_possible_groundings:
+        - (drive truck-1 city-loc-1 city-loc-4)
+        - (drive truck-1 city-loc-1 city-loc-5)
+        - (drive truck-1 city-loc-2 city-loc-3)
+        - (drive truck-1 city-loc-2 city-loc-5)
+        - (drive truck-1 city-loc-3 city-loc-2)
+        - (drive truck-1 city-loc-3 city-loc-5)
+        - (drive truck-1 city-loc-4 city-loc-1)
+        - (drive truck-1 city-loc-4 city-loc-5)
+        - (drive truck-1 city-loc-5 city-loc-1)
+        - (drive truck-1 city-loc-5 city-loc-2)
+
+
+---
+timestamp: '2024-10-06T08:21:46.260162'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 71
+    fring_size: 60
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:2,C:1),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-4 city-loc-1)
+        repair_set: pick-up,(capacity ?v ?s2),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:46.393070'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 72
+    fring_size: 59
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:2,C:1), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-5 city-loc-1)
+        repair_set: pick-up,(capacity ?v ?s2),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:46.527671'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 73
+    fring_size: 58
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:2,C:1), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-5 city-loc-2)
+        repair_set: pick-up,(capacity ?v ?s2),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:46.620974'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 74
+    fring_size: 57
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:2,C:1), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-5 city-loc-3)
+        repair_set: pick-up,(capacity ?v ?s2),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:46.718192'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 75
+    fring_size: 56
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-5 city-loc-4)
+        repair_set: pick-up,(capacity ?v ?s2),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:46.810741'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 76
+    fring_size: 55
+    fring_first_20: (D:2,C:1), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-4 city-loc-5)
+        repair_set: pick-up,(capacity ?v ?s2),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:46.962620'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 77
+    fring_size: 78
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        repair_set: pick-up,(capacity ?v ?s2),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drive
+        num_neighbours: 24
+        first_10_possible_groundings:
+        - (drive truck-1 city-loc-1 city-loc-4)
+        - (drive truck-1 city-loc-1 city-loc-5)
+        - (drive truck-1 city-loc-2 city-loc-3)
+        - (drive truck-1 city-loc-2 city-loc-5)
+        - (drive truck-1 city-loc-3 city-loc-2)
+        - (drive truck-1 city-loc-3 city-loc-5)
+        - (drive truck-1 city-loc-4 city-loc-1)
+        - (drive truck-1 city-loc-4 city-loc-5)
+        - (drive truck-1 city-loc-5 city-loc-1)
+        - (drive truck-1 city-loc-5 city-loc-2)
+
+
+---
+timestamp: '2024-10-06T08:21:47.061957'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 78
+    fring_size: 77
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (drive truck-1 city-loc-4 city-loc-1)
+        repair_set: pick-up,(capacity ?v ?s2),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:47.170209'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 79
+    fring_size: 76
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (drive truck-1 city-loc-4 city-loc-5)
+        repair_set: pick-up,(capacity ?v ?s2),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:47.267375'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 80
+    fring_size: 75
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (drive truck-2 city-loc-5 city-loc-1)
+        repair_set: pick-up,(capacity ?v ?s2),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:47.356869'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 81
+    fring_size: 74
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (drive truck-2 city-loc-5 city-loc-2)
+        repair_set: pick-up,(capacity ?v ?s2),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:47.456428'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 82
+    fring_size: 73
+    fring_first_20: (D:3,C:1), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (drive truck-2 city-loc-5 city-loc-3)
+        repair_set: pick-up,(capacity ?v ?s2),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:47.551055'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 83
+    fring_size: 72
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (drive truck-2 city-loc-5 city-loc-4)
+        repair_set: pick-up,(capacity ?v ?s2),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:47.708914'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 84
+    fring_size: 71
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (drive truck-2 city-loc-3 city-loc-5)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:47.841512'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 85
+    fring_size: 70
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (drive truck-2 city-loc-4 city-loc-1)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:47.975322'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 86
+    fring_size: 69
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-5 city-loc-4)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:48.108524'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 87
+    fring_size: 68
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (drive truck-1 city-loc-5 city-loc-1)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:48.212226'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 88
+    fring_size: 67
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-1 city-loc-5)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:48.346394'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 89
+    fring_size: 66
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (drive truck-2 city-loc-4 city-loc-1)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:48.444751'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 90
+    fring_size: 65
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (drive truck-2 city-loc-3 city-loc-5)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:48.547322'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 91
+    fring_size: 64
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (drive truck-2 city-loc-3 city-loc-2)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:48.660042'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 92
+    fring_size: 63
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (drive truck-2 city-loc-2 city-loc-5)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:48.756622'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 93
+    fring_size: 62
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (drive truck-2 city-loc-2 city-loc-3)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:48.891735'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 94
+    fring_size: 61
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (drive truck-2 city-loc-1 city-loc-5)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:48.985547'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 95
+    fring_size: 60
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (drive truck-2 city-loc-1 city-loc-4)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:49.118510'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 96
+    fring_size: 59
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (drive truck-1 city-loc-5 city-loc-4)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:49.215796'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 97
+    fring_size: 58
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (drive truck-1 city-loc-5 city-loc-3)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:49.312243'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 98
+    fring_size: 57
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-3 city-loc-5)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:49.401379'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 99
+    fring_size: 56
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (drive truck-1 city-loc-5 city-loc-2)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:49.500676'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 100
+    fring_size: 55
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (drive truck-1 city-loc-5 city-loc-3)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:49.612739'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 101
+    fring_size: 54
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (drive truck-1 city-loc-3 city-loc-5)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:49.748657'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 102
+    fring_size: 53
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (drive truck-1 city-loc-3 city-loc-2)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:49.880307'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 103
+    fring_size: 52
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (drive truck-1 city-loc-2 city-loc-5)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:50.015066'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 104
+    fring_size: 51
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (drive truck-1 city-loc-2 city-loc-3)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:50.115893'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 105
+    fring_size: 50
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (drive truck-1 city-loc-1 city-loc-5)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:50.214384'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 106
+    fring_size: 49
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (drive truck-1 city-loc-1 city-loc-4)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:50.310665'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 107
+    fring_size: 48
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-3 city-loc-2)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:50.405358'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 108
+    fring_size: 47
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-2 city-loc-5)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:50.496907'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 109
+    fring_size: 46
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-2 city-loc-3)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:50.587330'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 110
+    fring_size: 45
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-1 city-loc-5)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:50.689269'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 111
+    fring_size: 44
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-1 city-loc-4)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:50.818998'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 112
+    fring_size: 43
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-5 city-loc-4)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:50.934380'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 113
+    fring_size: 42
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-5 city-loc-3)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:51.039262'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 114
+    fring_size: 41
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (drive truck-2 city-loc-4 city-loc-5)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:51.144762'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 115
+    fring_size: 40
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-5 city-loc-1)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:51.239546'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 116
+    fring_size: 39
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (drive truck-2 city-loc-4 city-loc-5)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:51.334665'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 117
+    fring_size: 38
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (drive truck-1 city-loc-2 city-loc-3)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:51.433375'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 118
+    fring_size: 37
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-3 city-loc-5)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:51.523982'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 119
+    fring_size: 36
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-3 city-loc-2)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:51.621692'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 120
+    fring_size: 35
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-2 city-loc-5)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:51.711079'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 121
+    fring_size: 34
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-2 city-loc-3)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:51.804952'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 122
+    fring_size: 33
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-2 city-loc-5)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:51.897258'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 123
+    fring_size: 32
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-1 city-loc-4)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:51.994724'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 124
+    fring_size: 31
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-3 city-loc-2)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:52.114905'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 125
+    fring_size: 30
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (drive truck-2 city-loc-3 city-loc-2)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:52.235205'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 126
+    fring_size: 29
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (drive truck-2 city-loc-2 city-loc-5)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:52.337602'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 127
+    fring_size: 28
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (drive truck-2 city-loc-2 city-loc-3)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:52.433487'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 128
+    fring_size: 27
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (drive truck-2 city-loc-1 city-loc-5)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:52.525846'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 129
+    fring_size: 26
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (drive truck-1 city-loc-5 city-loc-2)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:52.624102'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 130
+    fring_size: 25
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (drive truck-2 city-loc-1 city-loc-4)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:52.722034'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 131
+    fring_size: 24
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (drive truck-1 city-loc-5 city-loc-4)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:52.818368'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 132
+    fring_size: 23
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (drive truck-1 city-loc-5 city-loc-1)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:52.911892'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 133
+    fring_size: 22
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-4 city-loc-5)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:53.005073'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 134
+    fring_size: 21
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-2 city-loc-5)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:53.099458'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 135
+    fring_size: 20
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (drive truck-1 city-loc-3 city-loc-5)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:53.221199'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 136
+    fring_size: 19
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (drive truck-1 city-loc-3 city-loc-2)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:53.312737'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 137
+    fring_size: 18
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-4 city-loc-1)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:53.403924'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 138
+    fring_size: 17
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (drive truck-1 city-loc-1 city-loc-4)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:53.496169'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 139
+    fring_size: 16
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-2 city-loc-3)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:53.583254'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 140
+    fring_size: 15
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-5 city-loc-1)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:53.670919'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 141
+    fring_size: 14
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-1 city-loc-4)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:53.762313'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 142
+    fring_size: 13
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-3 city-loc-5)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:53.851750'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 143
+    fring_size: 12
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-2 city-loc-3)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:53.941722'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 144
+    fring_size: 11
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-5 city-loc-2)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:54.031276'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 145
+    fring_size: 10
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-1 city-loc-5)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:54.127468'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 146
+    fring_size: 9
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-5 city-loc-3)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:54.219002'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 147
+    fring_size: 8
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-1 city-loc-4)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:54.326034'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 148
+    fring_size: 7
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2),
+        (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-4 city-loc-5)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:54.416308'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 149
+    fring_size: 6
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (drive truck-1 city-loc-1 city-loc-5)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:54.508005'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 150
+    fring_size: 5
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-1 city-loc-5)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:54.601365'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 151
+    fring_size: 4
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-3 city-loc-2)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:54.697635'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 152
+    fring_size: 3
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-3 city-loc-5)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:54.818003'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 153
+    fring_size: 2
+    fring_first_20: (D:3,C:2), (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (drive truck-1 city-loc-5 city-loc-2)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:54.945679'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 154
+    fring_size: 1
+    fring_first_20: (D:3,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-4 city-loc-1)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:55.046021'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 155
+    fring_size: 0
+    fring_first_20: ''
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-0 capacity-1)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        - (drive truck-1 city-loc-2 city-loc-5)
+        repair_set: 'pick-up,(capacity ?v ?s2),precPos,-1
+
+            drive,(at ?v ?l1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: drop
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:55.048169'
+level: INFO
+issuer: instance_solver
+event_type: results
+data:
+    goal: not_found
+
+
+---
+timestamp: '2024-10-06T08:21:55.048856'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.3 minutes = 16.87 seconds
+
+
+---
+timestamp: '2024-10-06T08:21:55.146024'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+

@@ -1,0 +1,613 @@
+---
+timestamp: '2024-10-07T14:02:21.652166'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/8 BFS-full-log length1-15/bfs_length_9_elevators-opt08-strips_pp02-err-rate-0-5.yaml
+    instance_id: elevators-opt08-strips/pp02-err-rate-0-5
+    search_algorithm: bfs
+    plan_length: 9
+    domain_class: elevators-opt08-strips
+    instance_name: pp02-err-rate-0-5
+    ground_plan:
+    - (board p1 slow1-0 n4 n0 n1)
+    - (move-up-slow slow1-0 n4 n6)
+    - (leave p1 slow1-0 n6 n1 n0)
+    - (board p2 slow0-0 n2 n0 n1)
+    - (move-down-slow slow0-0 n2 n1)
+    - (leave p2 slow0-0 n1 n1 n0)
+    - (board p0 fast0 n0 n0 n1)
+    - (move-up-fast fast0 n0 n4)
+    - (leave p0 fast0 n4 n1 n0)
+    lifted_plan:
+    - board
+    - move-up-slow
+    - leave
+    - board
+    - move-down-slow
+    - leave
+    - board
+    - move-up-fast
+    - leave
+
+
+---
+timestamp: '2024-10-07T14:02:21.667300'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2024-10-07T14:02:21.816893'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: board
+        num_neighbours: 0
+        first_10_possible_groundings: null
+    current_state:
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - n2
+        - n5
+        hash: -7110114131481402368
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: next
+        args: !!python/tuple
+        - n0
+        - n1
+        hash: -2170987714816671222
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - n0
+        - n6
+        hash: 8589439069151928861
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: next
+        args: !!python/tuple
+        - n6
+        - n7
+        hash: -8142146096128656864
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: passenger-at
+        args: !!python/tuple
+        - p2
+        - n2
+        hash: 6250914005519468580
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - n1
+        - n6
+        hash: 6132647614648624678
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - n4
+        - n6
+        hash: 4864239775896842281
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - n3
+        - n8
+        hash: 824403054722518060
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: next
+        args: !!python/tuple
+        - n3
+        - n4
+        hash: -3092901557743103945
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: can-hold
+        args: !!python/tuple
+        - fast0
+        - n2
+        hash: 4366096503336184896
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - n2
+        - n3
+        hash: 879844333449427012
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: passengers
+        args: !!python/tuple
+        - fast0
+        - n0
+        hash: -6952239363658190249
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - n4
+        - n8
+        hash: 4286907485746481773
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: reachable-floor
+        args: !!python/tuple
+        - slow1-0
+        - n4
+        hash: 488277817836044401
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - n0
+        - n1
+        hash: -2355451351257116046
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: reachable-floor
+        args: !!python/tuple
+        - fast1
+        - n0
+        hash: -8609663671590667150
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - n0
+        - n3
+        hash: -6268775061868118923
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: can-hold
+        args: !!python/tuple
+        - fast1
+        - n2
+        hash: -922519958261385093
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: can-hold
+        args: !!python/tuple
+        - fast1
+        - n3
+        hash: 8308147450037139070
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: reachable-floor
+        args: !!python/tuple
+        - slow0-0
+        - n3
+        hash: -1486198772550170487
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: reachable-floor
+        args: !!python/tuple
+        - fast0
+        - n0
+        hash: -8409128130876002678
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: passenger-at
+        args: !!python/tuple
+        - p1
+        - n4
+        hash: 4779846912480304784
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: can-hold
+        args: !!python/tuple
+        - fast0
+        - n1
+        hash: 8023649318378438291
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: can-hold
+        args: !!python/tuple
+        - fast0
+        - n3
+        hash: 8508682990751803542
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: next
+        args: !!python/tuple
+        - n1
+        - n2
+        hash: -1972698120170439526
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - n3
+        - n4
+        hash: -3277365194183548769
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: can-hold
+        args: !!python/tuple
+        - slow1-0
+        - n2
+        hash: -249162032603430227
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - n0
+        - n5
+        hash: 1540338641260114616
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: passengers
+        args: !!python/tuple
+        - slow1-0
+        - n0
+        hash: 6319196874277059773
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - n4
+        - n5
+        hash: -2184860651994971964
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: lift-at
+        args: !!python/tuple
+        - fast1
+        - n8
+        hash: 1441180093336110794
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: next
+        args: !!python/tuple
+        - n7
+        - n8
+        hash: 1035339882782664907
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: reachable-floor
+        args: !!python/tuple
+        - fast1
+        - n8
+        hash: 5080458627298059468
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: reachable-floor
+        args: !!python/tuple
+        - fast0
+        - n6
+        hash: -1058028592407921459
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: can-hold
+        args: !!python/tuple
+        - fast1
+        - n1
+        hash: 7133390239765236430
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - n1
+        - n4
+        hash: 1453547075592197341
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: passengers
+        args: !!python/tuple
+        - slow0-0
+        - n0
+        hash: -3233186659956548895
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: reachable-floor
+        args: !!python/tuple
+        - slow0-0
+        - n4
+        hash: 4294557436429081832
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: lift-at
+        args: !!python/tuple
+        - slow1-0
+        - n4
+        hash: 8249714068948790518
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - n0
+        - n2
+        hash: 299629697892419833
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: next
+        args: !!python/tuple
+        - n5
+        - n6
+        hash: 5465719897790580992
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - n1
+        - n2
+        hash: -2157161756610884350
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: reachable-floor
+        args: !!python/tuple
+        - fast1
+        - n6
+        hash: -1948287671021123320
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: reachable-floor
+        args: !!python/tuple
+        - slow0-0
+        - n2
+        hash: 683848604226000141
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - n6
+        - n7
+        hash: 3074105052505593103
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: lift-at
+        args: !!python/tuple
+        - fast0
+        - n0
+        hash: -647691879763256561
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: reachable-floor
+        args: !!python/tuple
+        - fast0
+        - n8
+        hash: -1635360882558281967
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - n0
+        - n7
+        hash: -8496896445490445543
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - n5
+        - n8
+        hash: -1738384131055864532
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: reachable-floor
+        args: !!python/tuple
+        - slow1-0
+        - n5
+        hash: 4430911793192446767
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - n7
+        - n8
+        hash: 850876246342220083
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - n2
+        - n7
+        hash: -6436357971055805125
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - n5
+        - n7
+        hash: -1094088006116080834
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: next
+        args: !!python/tuple
+        - n2
+        - n3
+        hash: 8110337258524728661
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - n2
+        - n8
+        hash: 4449734927142956886
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - n1
+        - n3
+        hash: 1985424730804734296
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - n3
+        - n5
+        hash: 665268781172853597
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: reachable-floor
+        args: !!python/tuple
+        - slow0-0
+        - n1
+        hash: 8739758802252621664
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - n2
+        - n6
+        hash: -61013703589588123
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - n5
+        - n6
+        hash: 5281256261350136168
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: passenger-at
+        args: !!python/tuple
+        - p0
+        - n0
+        hash: -4854152630853750409
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - n6
+        - n8
+        hash: 8872117029821449597
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: reachable-floor
+        args: !!python/tuple
+        - slow1-0
+        - n8
+        hash: -1852262035513528962
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: can-hold
+        args: !!python/tuple
+        - slow1-0
+        - n1
+        hash: -4197687806030720128
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: reachable-floor
+        args: !!python/tuple
+        - fast0
+        - n4
+        hash: -5737129131464348796
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - n0
+        - n8
+        hash: 1699472914809779079
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: reachable-floor
+        args: !!python/tuple
+        - slow1-0
+        - n7
+        hash: -1207965910573745264
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: lift-at
+        args: !!python/tuple
+        - slow0-0
+        - n2
+        hash: 8445284855338746258
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - n1
+        - n5
+        hash: -8652205639776583781
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: reachable-floor
+        args: !!python/tuple
+        - slow0-0
+        - n0
+        hash: 6710639357900333467
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: can-hold
+        args: !!python/tuple
+        - slow0-0
+        - n2
+        hash: -4048961002479936092
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: reachable-floor
+        args: !!python/tuple
+        - fast0
+        - n2
+        hash: 9098906110042121129
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: passengers
+        args: !!python/tuple
+        - fast1
+        - n0
+        hash: -106745615737997896
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: reachable-floor
+        args: !!python/tuple
+        - slow1-0
+        - n6
+        hash: 5167378356892471738
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - n3
+        - n7
+        hash: -4973608922593338434
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: reachable-floor
+        args: !!python/tuple
+        - fast1
+        - n4
+        hash: 7420998480647632831
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - n2
+        - n4
+        hash: -4050390704747478071
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: next
+        args: !!python/tuple
+        - n4
+        - n5
+        hash: 5045632273080329685
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: reachable-floor
+        args: !!python/tuple
+        - fast1
+        - n2
+        hash: 8208647031428919268
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - n3
+        - n6
+        hash: 1401735344872878568
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - n1
+        - n8
+        hash: -886992777757376022
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: can-hold
+        args: !!python/tuple
+        - slow0-0
+        - n1
+        hash: -391408187437682697
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - n0
+        - n4
+        hash: -6800652717080655878
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - n1
+        - n7
+        hash: -242696652817592324
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - n4
+        - n7
+        hash: -1511104491569374721
+
+
+---
+timestamp: '2024-10-07T14:02:21.847597'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: Command '['/home/nader/projects/lifted-white-plan-domain-repair/fd2/src/translate/translate.py',\
+    \ 'heuristic_tools/pass_to_grounder_domain.pddl', 'heuristic_tools/pass_to_grounder_task.pddl',\
+    \ '--sas-file', 'heuristic_tools/out.sas']' returned non-zero exit status 31..\
+    \ Stack trace: Traceback (most recent call last):\n  File \"/home/nader/projects/lifted-white-plan-domain-repair/instance_solver.py\"\
+    , line 83, in solve_instance\n    path, goal_node = searcher.find_path(logger=logger,\
+    \ log_interval=log_interval)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
+    \  File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 51, in find_path\n    for neighbor in current_node.get_neighbors():\n \
+    \                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 153, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    \ task, next_action_name)\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
+    \  File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/action_grounding_tools.py\"\
+    , line 102, in smart_grounder\n    subprocess.run(\n  File \"/home/nader/miniconda3/envs/planning/lib/python3.12/subprocess.py\"\
+    , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
+    \ Command '['/home/nader/projects/lifted-white-plan-domain-repair/fd2/src/translate/translate.py',\
+    \ 'heuristic_tools/pass_to_grounder_domain.pddl', 'heuristic_tools/pass_to_grounder_task.pddl',\
+    \ '--sas-file', 'heuristic_tools/out.sas']' returned non-zero exit status 31.\n"
+
+
+---
+timestamp: '2024-10-07T14:02:21.851056'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.0 minutes = 0.20 seconds
+
+
+---
+timestamp: '2024-10-07T14:02:21.969483'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+

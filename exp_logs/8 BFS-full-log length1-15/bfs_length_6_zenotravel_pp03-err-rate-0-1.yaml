@@ -1,0 +1,3684 @@
+---
+timestamp: '2024-10-06T08:22:12.299773'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/8 BFS-full-log length1-15/bfs_length_6_zenotravel_pp03-err-rate-0-1.yaml
+    instance_id: zenotravel/pp03-err-rate-0-1
+    search_algorithm: bfs
+    plan_length: 6
+    domain_class: zenotravel
+    instance_name: pp03-err-rate-0-1
+    ground_plan:
+    - (board person1 plane1 city0)
+    - (fly plane1 city0 city1 fl4 fl3)
+    - (board person3 plane1 city1)
+    - (debark person1 plane1 city1)
+    - (fly plane1 city1 city0 fl3 fl2)
+    - (debark person3 plane1 city0)
+    lifted_plan:
+    - board
+    - fly
+    - board
+    - debark
+    - fly
+    - debark
+
+
+---
+timestamp: '2024-10-06T08:22:12.304334'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2024-10-06T08:22:12.412341'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 2
+    fring_first_20: (D:1,C:0), (D:1,C:0)
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: board
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (board person1 plane1 city0)
+        - (board person2 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:12.863289'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 2
+    fring_size: 82
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0),
+        (D:1,C:0), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (board person1 plane1 city0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: fly
+        num_neighbours: 81
+        first_10_possible_groundings:
+        - (fly plane1 city0 city0 fl1 fl0)
+        - (fly plane1 city0 city0 fl2 fl1)
+        - (fly plane1 city0 city0 fl3 fl2)
+        - (fly plane1 city0 city0 fl4 fl3)
+        - (fly plane1 city0 city1 fl1 fl0)
+        - (fly plane1 city0 city1 fl2 fl1)
+        - (fly plane1 city0 city1 fl3 fl2)
+        - (fly plane1 city0 city1 fl4 fl3)
+        - (fly plane1 city0 city2 fl1 fl0)
+        - (fly plane1 city0 city2 fl2 fl1)
+
+
+---
+timestamp: '2024-10-06T08:22:12.968693'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 3
+    fring_size: 82
+    fring_first_20: (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0),
+        (D:1,C:0), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane1 city0 city0 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board person2 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:13.071942'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 4
+    fring_size: 83
+    fring_first_20: (D:4,C:0), (D:4,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0),
+        (D:2,C:0), (D:1,C:0), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane1 city0 city0 fl4 fl3)
+        - (board person2 plane1 city0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (debark person1 plane1 city0)
+        - (debark person2 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:13.369360'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 5
+    fring_size: 154
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0),
+        (D:4,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane1 city0 city0 fl4 fl3)
+        - (board person2 plane1 city0)
+        - (debark person1 plane1 city0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: fly
+        num_neighbours: 72
+        first_10_possible_groundings:
+        - (fly plane1 city0 city0 fl1 fl0)
+        - (fly plane1 city0 city0 fl2 fl1)
+        - (fly plane1 city0 city0 fl3 fl2)
+        - (fly plane1 city0 city1 fl1 fl0)
+        - (fly plane1 city0 city1 fl2 fl1)
+        - (fly plane1 city0 city1 fl3 fl2)
+        - (fly plane1 city0 city2 fl1 fl0)
+        - (fly plane1 city0 city2 fl2 fl1)
+        - (fly plane1 city0 city2 fl3 fl2)
+        - (fly plane1 city1 city0 fl1 fl0)
+
+
+---
+timestamp: '2024-10-06T08:22:13.483678'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 6
+    fring_size: 153
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0),
+        (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane1 city0 city0 fl4 fl3)
+        - (board person2 plane1 city0)
+        - (debark person1 plane1 city0)
+        - (fly plane1 city0 city0 fl3 fl2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person2 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:13.589743'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 7
+    fring_size: 152
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:2,C:0),
+        (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane1 city0 city0 fl4 fl3)
+        - (board person2 plane1 city0)
+        - (debark person1 plane1 city0)
+        - (fly plane1 city0 city1 fl3 fl2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person2 plane1 city1)
+
+
+---
+timestamp: '2024-10-06T08:22:13.688371'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 8
+    fring_size: 151
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:2,C:0), (D:2,C:0),
+        (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane1 city0 city0 fl4 fl3)
+        - (board person2 plane1 city0)
+        - (debark person1 plane1 city0)
+        - (fly plane1 city0 city2 fl3 fl2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person2 plane1 city2)
+
+
+---
+timestamp: '2024-10-06T08:22:13.787013'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 9
+    fring_size: 150
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0),
+        (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane1 city0 city0 fl4 fl3)
+        - (board person2 plane1 city0)
+        - (debark person1 plane1 city0)
+        - (fly plane2 city2 city0 fl5 fl4)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person2 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:13.883929'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 10
+    fring_size: 149
+    fring_first_20: (D:5,C:0), (D:4,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0),
+        (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane1 city0 city0 fl4 fl3)
+        - (board person2 plane1 city0)
+        - (debark person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person2 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:13.984782'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 11
+    fring_size: 148
+    fring_first_20: (D:4,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0),
+        (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane1 city0 city0 fl4 fl3)
+        - (board person2 plane1 city0)
+        - (debark person1 plane1 city0)
+        - (fly plane2 city2 city2 fl5 fl4)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person2 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:14.294580'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 12
+    fring_size: 219
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0),
+        (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane1 city0 city0 fl4 fl3)
+        - (board person2 plane1 city0)
+        - (debark person2 plane1 city0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: fly
+        num_neighbours: 72
+        first_10_possible_groundings:
+        - (fly plane1 city0 city0 fl1 fl0)
+        - (fly plane1 city0 city0 fl2 fl1)
+        - (fly plane1 city0 city0 fl3 fl2)
+        - (fly plane1 city0 city1 fl1 fl0)
+        - (fly plane1 city0 city1 fl2 fl1)
+        - (fly plane1 city0 city1 fl3 fl2)
+        - (fly plane1 city0 city2 fl1 fl0)
+        - (fly plane1 city0 city2 fl2 fl1)
+        - (fly plane1 city0 city2 fl3 fl2)
+        - (fly plane1 city1 city0 fl1 fl0)
+
+
+---
+timestamp: '2024-10-06T08:22:14.421404'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 13
+    fring_size: 218
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:2,C:0),
+        (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane1 city0 city0 fl4 fl3)
+        - (board person2 plane1 city0)
+        - (debark person2 plane1 city0)
+        - (fly plane1 city0 city0 fl3 fl2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:14.521503'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 14
+    fring_size: 217
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:2,C:0), (D:2,C:0),
+        (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane1 city0 city0 fl4 fl3)
+        - (board person2 plane1 city0)
+        - (debark person2 plane1 city0)
+        - (fly plane2 city2 city0 fl5 fl4)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:14.639223'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 15
+    fring_size: 216
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0),
+        (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane1 city0 city0 fl4 fl3)
+        - (board person2 plane1 city0)
+        - (debark person2 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:14.740566'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 16
+    fring_size: 215
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0),
+        (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane1 city0 city0 fl4 fl3)
+        - (board person2 plane1 city0)
+        - (debark person2 plane1 city0)
+        - (fly plane2 city2 city2 fl5 fl4)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:14.836863'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 17
+    fring_size: 214
+    fring_first_20: (D:5,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0),
+        (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane1 city0 city0 fl4 fl3)
+        - (board person2 plane1 city0)
+        - (debark person2 plane1 city0)
+        - (fly plane1 city0 city1 fl3 fl2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city1)
+
+
+---
+timestamp: '2024-10-06T08:22:14.937657'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 18
+    fring_size: 213
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane1 city0 city0 fl4 fl3)
+        - (board person2 plane1 city0)
+        - (debark person2 plane1 city0)
+        - (fly plane1 city0 city2 fl3 fl2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city2)
+
+
+---
+timestamp: '2024-10-06T08:22:15.035940'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 19
+    fring_size: 213
+    fring_first_20: (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city2 fl5 fl4)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board person2 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:15.134624'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 20
+    fring_size: 214
+    fring_first_20: (D:4,C:0), (D:4,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0),
+        (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city2 fl5 fl4)
+        - (board person2 plane1 city0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (debark person1 plane1 city0)
+        - (debark person2 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:15.466898'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 21
+    fring_size: 285
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0),
+        (D:4,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city2 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person1 plane1 city0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: fly
+        num_neighbours: 72
+        first_10_possible_groundings:
+        - (fly plane1 city0 city0 fl1 fl0)
+        - (fly plane1 city0 city0 fl2 fl1)
+        - (fly plane1 city0 city0 fl3 fl2)
+        - (fly plane1 city0 city0 fl4 fl3)
+        - (fly plane1 city0 city1 fl1 fl0)
+        - (fly plane1 city0 city1 fl2 fl1)
+        - (fly plane1 city0 city1 fl3 fl2)
+        - (fly plane1 city0 city1 fl4 fl3)
+        - (fly plane1 city0 city2 fl1 fl0)
+        - (fly plane1 city0 city2 fl2 fl1)
+
+
+---
+timestamp: '2024-10-06T08:22:15.594514'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 22
+    fring_size: 284
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0),
+        (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city2 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person1 plane1 city0)
+        - (fly plane1 city0 city0 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person2 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:15.735455'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 23
+    fring_size: 283
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:2,C:0),
+        (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city2 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person1 plane1 city0)
+        - (fly plane1 city0 city1 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person2 plane1 city1)
+
+
+---
+timestamp: '2024-10-06T08:22:15.881819'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 24
+    fring_size: 282
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:2,C:0), (D:2,C:0),
+        (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city2 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person1 plane1 city0)
+        - (fly plane1 city0 city2 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person2 plane1 city2)
+
+
+---
+timestamp: '2024-10-06T08:22:16.034870'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 25
+    fring_size: 281
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0),
+        (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city2 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person1 plane1 city0)
+        - (fly plane2 city2 city0 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person2 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:16.141505'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 26
+    fring_size: 280
+    fring_first_20: (D:5,C:0), (D:4,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0),
+        (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city2 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person1 plane1 city0)
+        - (fly plane2 city2 city1 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person2 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:16.243345'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 27
+    fring_size: 279
+    fring_first_20: (D:4,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city2 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person1 plane1 city0)
+        - (fly plane2 city2 city2 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person2 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:16.606561'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 28
+    fring_size: 350
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0),
+        (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city2 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person2 plane1 city0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: fly
+        num_neighbours: 72
+        first_10_possible_groundings:
+        - (fly plane1 city0 city0 fl1 fl0)
+        - (fly plane1 city0 city0 fl2 fl1)
+        - (fly plane1 city0 city0 fl3 fl2)
+        - (fly plane1 city0 city0 fl4 fl3)
+        - (fly plane1 city0 city1 fl1 fl0)
+        - (fly plane1 city0 city1 fl2 fl1)
+        - (fly plane1 city0 city1 fl3 fl2)
+        - (fly plane1 city0 city1 fl4 fl3)
+        - (fly plane1 city0 city2 fl1 fl0)
+        - (fly plane1 city0 city2 fl2 fl1)
+
+
+---
+timestamp: '2024-10-06T08:22:16.716523'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 29
+    fring_size: 349
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:2,C:0),
+        (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city2 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person2 plane1 city0)
+        - (fly plane1 city0 city0 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:16.829442'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 30
+    fring_size: 348
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:2,C:0), (D:2,C:0),
+        (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city2 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person2 plane1 city0)
+        - (fly plane1 city0 city1 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city1)
+
+
+---
+timestamp: '2024-10-06T08:22:16.942350'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 31
+    fring_size: 347
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0),
+        (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city2 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person2 plane1 city0)
+        - (fly plane2 city2 city0 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:17.048647'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 32
+    fring_size: 346
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0),
+        (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city2 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person2 plane1 city0)
+        - (fly plane2 city2 city1 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:17.189321'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 33
+    fring_size: 345
+    fring_first_20: (D:5,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city2 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person2 plane1 city0)
+        - (fly plane2 city2 city2 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:17.290297'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 34
+    fring_size: 344
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city2 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person2 plane1 city0)
+        - (fly plane1 city0 city2 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city2)
+
+
+---
+timestamp: '2024-10-06T08:22:17.392844'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 35
+    fring_size: 343
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane1 city0 city2 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: board
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:22:17.491840'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 36
+    fring_size: 345
+    fring_first_20: (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: board
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (board person2 plane1 city0)
+        - (board person3 plane2 city1)
+        - (board person4 plane2 city1)
+
+
+---
+timestamp: '2024-10-06T08:22:17.600671'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 37
+    fring_size: 346
+    fring_first_20: (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0),
+        (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person2 plane1 city0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (debark person1 plane1 city0)
+        - (debark person2 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:17.990302'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 38
+    fring_size: 417
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0),
+        (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person1 plane1 city0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: fly
+        num_neighbours: 72
+        first_10_possible_groundings:
+        - (fly plane1 city0 city0 fl1 fl0)
+        - (fly plane1 city0 city0 fl2 fl1)
+        - (fly plane1 city0 city0 fl3 fl2)
+        - (fly plane1 city0 city0 fl4 fl3)
+        - (fly plane1 city0 city1 fl1 fl0)
+        - (fly plane1 city0 city1 fl2 fl1)
+        - (fly plane1 city0 city1 fl3 fl2)
+        - (fly plane1 city0 city1 fl4 fl3)
+        - (fly plane1 city0 city2 fl1 fl0)
+        - (fly plane1 city0 city2 fl2 fl1)
+
+
+---
+timestamp: '2024-10-06T08:22:18.091316'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 39
+    fring_size: 416
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0),
+        (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person1 plane1 city0)
+        - (fly plane1 city0 city0 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person2 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:18.190989'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 40
+    fring_size: 415
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:3,C:0),
+        (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person1 plane1 city0)
+        - (fly plane2 city1 city0 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person2 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:18.292680'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 41
+    fring_size: 414
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0),
+        (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person1 plane1 city0)
+        - (fly plane2 city1 city1 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person2 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:18.392252'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 42
+    fring_size: 413
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0),
+        (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person1 plane1 city0)
+        - (fly plane2 city1 city2 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person2 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:18.521516'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 43
+    fring_size: 412
+    fring_first_20: (D:5,C:0), (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0),
+        (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person1 plane1 city0)
+        - (fly plane1 city0 city1 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person2 plane1 city1)
+
+
+---
+timestamp: '2024-10-06T08:22:18.630468'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 44
+    fring_size: 411
+    fring_first_20: (D:4,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person1 plane1 city0)
+        - (fly plane1 city0 city2 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person2 plane1 city2)
+
+
+---
+timestamp: '2024-10-06T08:22:19.050551'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 45
+    fring_size: 482
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0),
+        (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person2 plane1 city0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: fly
+        num_neighbours: 72
+        first_10_possible_groundings:
+        - (fly plane1 city0 city0 fl1 fl0)
+        - (fly plane1 city0 city0 fl2 fl1)
+        - (fly plane1 city0 city0 fl3 fl2)
+        - (fly plane1 city0 city0 fl4 fl3)
+        - (fly plane1 city0 city1 fl1 fl0)
+        - (fly plane1 city0 city1 fl2 fl1)
+        - (fly plane1 city0 city1 fl3 fl2)
+        - (fly plane1 city0 city1 fl4 fl3)
+        - (fly plane1 city0 city2 fl1 fl0)
+        - (fly plane1 city0 city2 fl2 fl1)
+
+
+---
+timestamp: '2024-10-06T08:22:19.162439'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 46
+    fring_size: 481
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:3,C:0),
+        (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person2 plane1 city0)
+        - (fly plane1 city0 city0 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:19.272198'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 47
+    fring_size: 480
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:3,C:0), (D:3,C:0),
+        (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person2 plane1 city0)
+        - (fly plane1 city0 city1 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city1)
+
+
+---
+timestamp: '2024-10-06T08:22:19.384923'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 48
+    fring_size: 479
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0),
+        (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person2 plane1 city0)
+        - (fly plane2 city1 city0 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:19.527234'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 49
+    fring_size: 478
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0),
+        (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person2 plane1 city0)
+        - (fly plane2 city1 city1 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:19.667740'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 50
+    fring_size: 477
+    fring_first_20: (D:5,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person2 plane1 city0)
+        - (fly plane2 city1 city2 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:19.807664'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 51
+    fring_size: 476
+    fring_first_20: (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person2 plane1 city0)
+        - (fly plane1 city0 city2 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city2)
+
+
+---
+timestamp: '2024-10-06T08:22:19.916918'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 52
+    fring_size: 477
+    fring_first_20: (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person3 plane2 city1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (debark person1 plane1 city0)
+        - (debark person3 plane2 city1)
+
+
+---
+timestamp: '2024-10-06T08:22:20.266575'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 53
+    fring_size: 548
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0),
+        (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person3 plane2 city1)
+        - (debark person1 plane1 city0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: fly
+        num_neighbours: 72
+        first_10_possible_groundings:
+        - (fly plane1 city0 city0 fl1 fl0)
+        - (fly plane1 city0 city0 fl2 fl1)
+        - (fly plane1 city0 city0 fl3 fl2)
+        - (fly plane1 city0 city0 fl4 fl3)
+        - (fly plane1 city0 city1 fl1 fl0)
+        - (fly plane1 city0 city1 fl2 fl1)
+        - (fly plane1 city0 city1 fl3 fl2)
+        - (fly plane1 city0 city1 fl4 fl3)
+        - (fly plane1 city0 city2 fl1 fl0)
+        - (fly plane1 city0 city2 fl2 fl1)
+
+
+---
+timestamp: '2024-10-06T08:22:20.384022'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 54
+    fring_size: 547
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0),
+        (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person3 plane2 city1)
+        - (debark person1 plane1 city0)
+        - (fly plane1 city0 city0 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person3 plane2 city1)
+
+
+---
+timestamp: '2024-10-06T08:22:20.528878'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 55
+    fring_size: 546
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:3,C:0),
+        (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person3 plane2 city1)
+        - (debark person1 plane1 city0)
+        - (fly plane1 city0 city1 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person3 plane2 city1)
+
+
+---
+timestamp: '2024-10-06T08:22:20.670775'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 56
+    fring_size: 545
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0),
+        (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person3 plane2 city1)
+        - (debark person1 plane1 city0)
+        - (fly plane1 city0 city2 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person3 plane2 city1)
+
+
+---
+timestamp: '2024-10-06T08:22:20.795162'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 57
+    fring_size: 544
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0),
+        (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person3 plane2 city1)
+        - (debark person1 plane1 city0)
+        - (fly plane2 city1 city0 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person3 plane2 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:20.896982'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 58
+    fring_size: 543
+    fring_first_20: (D:5,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person3 plane2 city1)
+        - (debark person1 plane1 city0)
+        - (fly plane2 city1 city1 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person3 plane2 city1)
+
+
+---
+timestamp: '2024-10-06T08:22:21.000934'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 59
+    fring_size: 542
+    fring_first_20: (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person3 plane2 city1)
+        - (debark person1 plane1 city0)
+        - (fly plane2 city1 city2 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person3 plane2 city2)
+
+
+---
+timestamp: '2024-10-06T08:22:21.371486'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 60
+    fring_size: 613
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0),
+        (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person3 plane2 city1)
+        - (debark person3 plane2 city1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: fly
+        num_neighbours: 72
+        first_10_possible_groundings:
+        - (fly plane1 city0 city0 fl1 fl0)
+        - (fly plane1 city0 city0 fl2 fl1)
+        - (fly plane1 city0 city0 fl3 fl2)
+        - (fly plane1 city0 city0 fl4 fl3)
+        - (fly plane1 city0 city1 fl1 fl0)
+        - (fly plane1 city0 city1 fl2 fl1)
+        - (fly plane1 city0 city1 fl3 fl2)
+        - (fly plane1 city0 city1 fl4 fl3)
+        - (fly plane1 city0 city2 fl1 fl0)
+        - (fly plane1 city0 city2 fl2 fl1)
+
+
+---
+timestamp: '2024-10-06T08:22:21.476548'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 61
+    fring_size: 612
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:3,C:0),
+        (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person3 plane2 city1)
+        - (debark person3 plane2 city1)
+        - (fly plane1 city0 city0 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:21.579736'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 62
+    fring_size: 611
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:3,C:0), (D:2,C:0),
+        (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person3 plane2 city1)
+        - (debark person3 plane2 city1)
+        - (fly plane1 city0 city1 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city1)
+
+
+---
+timestamp: '2024-10-06T08:22:21.694925'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 63
+    fring_size: 610
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0),
+        (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person3 plane2 city1)
+        - (debark person3 plane2 city1)
+        - (fly plane1 city0 city2 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city2)
+
+
+---
+timestamp: '2024-10-06T08:22:21.800228'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 64
+    fring_size: 609
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person3 plane2 city1)
+        - (debark person3 plane2 city1)
+        - (fly plane2 city1 city0 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:21.912018'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 65
+    fring_size: 608
+    fring_first_20: (D:5,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person3 plane2 city1)
+        - (debark person3 plane2 city1)
+        - (fly plane2 city1 city1 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:22.014516'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 66
+    fring_size: 607
+    fring_first_20: (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person3 plane2 city1)
+        - (debark person3 plane2 city1)
+        - (fly plane2 city1 city2 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:22.124245'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 67
+    fring_size: 608
+    fring_first_20: (D:4,C:0), (D:4,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person4 plane2 city1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (debark person1 plane1 city0)
+        - (debark person4 plane2 city1)
+
+
+---
+timestamp: '2024-10-06T08:22:22.456097'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 68
+    fring_size: 679
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0),
+        (D:4,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person4 plane2 city1)
+        - (debark person1 plane1 city0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: fly
+        num_neighbours: 72
+        first_10_possible_groundings:
+        - (fly plane1 city0 city0 fl1 fl0)
+        - (fly plane1 city0 city0 fl2 fl1)
+        - (fly plane1 city0 city0 fl3 fl2)
+        - (fly plane1 city0 city0 fl4 fl3)
+        - (fly plane1 city0 city1 fl1 fl0)
+        - (fly plane1 city0 city1 fl2 fl1)
+        - (fly plane1 city0 city1 fl3 fl2)
+        - (fly plane1 city0 city1 fl4 fl3)
+        - (fly plane1 city0 city2 fl1 fl0)
+        - (fly plane1 city0 city2 fl2 fl1)
+
+
+---
+timestamp: '2024-10-06T08:22:22.599988'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 69
+    fring_size: 678
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0),
+        (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person4 plane2 city1)
+        - (debark person1 plane1 city0)
+        - (fly plane1 city0 city0 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person4 plane2 city1)
+
+
+---
+timestamp: '2024-10-06T08:22:22.704354'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 70
+    fring_size: 677
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:2,C:0),
+        (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person4 plane2 city1)
+        - (debark person1 plane1 city0)
+        - (fly plane1 city0 city1 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person4 plane2 city1)
+
+
+---
+timestamp: '2024-10-06T08:22:22.841785'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 71
+    fring_size: 676
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:2,C:0), (D:2,C:0),
+        (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person4 plane2 city1)
+        - (debark person1 plane1 city0)
+        - (fly plane2 city1 city0 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person4 plane2 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:22.979231'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 72
+    fring_size: 675
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person4 plane2 city1)
+        - (debark person1 plane1 city0)
+        - (fly plane2 city1 city1 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person4 plane2 city1)
+
+
+---
+timestamp: '2024-10-06T08:22:23.089727'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 73
+    fring_size: 674
+    fring_first_20: (D:5,C:0), (D:4,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person4 plane2 city1)
+        - (debark person1 plane1 city0)
+        - (fly plane2 city1 city2 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person4 plane2 city2)
+
+
+---
+timestamp: '2024-10-06T08:22:23.195053'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 74
+    fring_size: 673
+    fring_first_20: (D:4,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person4 plane2 city1)
+        - (debark person1 plane1 city0)
+        - (fly plane1 city0 city2 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person4 plane2 city1)
+
+
+---
+timestamp: '2024-10-06T08:22:23.584070'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 75
+    fring_size: 744
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0),
+        (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person4 plane2 city1)
+        - (debark person4 plane2 city1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: fly
+        num_neighbours: 72
+        first_10_possible_groundings:
+        - (fly plane1 city0 city0 fl1 fl0)
+        - (fly plane1 city0 city0 fl2 fl1)
+        - (fly plane1 city0 city0 fl3 fl2)
+        - (fly plane1 city0 city0 fl4 fl3)
+        - (fly plane1 city0 city1 fl1 fl0)
+        - (fly plane1 city0 city1 fl2 fl1)
+        - (fly plane1 city0 city1 fl3 fl2)
+        - (fly plane1 city0 city1 fl4 fl3)
+        - (fly plane1 city0 city2 fl1 fl0)
+        - (fly plane1 city0 city2 fl2 fl1)
+
+
+---
+timestamp: '2024-10-06T08:22:23.682097'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 76
+    fring_size: 743
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:2,C:0),
+        (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person4 plane2 city1)
+        - (debark person4 plane2 city1)
+        - (fly plane1 city0 city0 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:23.783550'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 77
+    fring_size: 742
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:2,C:0), (D:2,C:0),
+        (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person4 plane2 city1)
+        - (debark person4 plane2 city1)
+        - (fly plane1 city0 city1 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city1)
+
+
+---
+timestamp: '2024-10-06T08:22:23.885214'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 78
+    fring_size: 741
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person4 plane2 city1)
+        - (debark person4 plane2 city1)
+        - (fly plane1 city0 city2 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city2)
+
+
+---
+timestamp: '2024-10-06T08:22:24.026086'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 79
+    fring_size: 740
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person4 plane2 city1)
+        - (debark person4 plane2 city1)
+        - (fly plane2 city1 city0 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:24.166274'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 80
+    fring_size: 739
+    fring_first_20: (D:5,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person4 plane2 city1)
+        - (debark person4 plane2 city1)
+        - (fly plane2 city1 city1 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:24.312718'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 81
+    fring_size: 738
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (board person4 plane2 city1)
+        - (debark person4 plane2 city1)
+        - (fly plane2 city1 city2 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:24.416412'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 82
+    fring_size: 739
+    fring_first_20: (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city0 fl5 fl4)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: board
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (board person2 plane1 city0)
+        - (board person2 plane2 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:24.529652'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 83
+    fring_size: 740
+    fring_first_20: (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city0 fl5 fl4)
+        - (board person2 plane1 city0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (debark person1 plane1 city0)
+        - (debark person2 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:24.971945'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 84
+    fring_size: 811
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0),
+        (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city0 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person1 plane1 city0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: fly
+        num_neighbours: 72
+        first_10_possible_groundings:
+        - (fly plane1 city0 city0 fl1 fl0)
+        - (fly plane1 city0 city0 fl2 fl1)
+        - (fly plane1 city0 city0 fl3 fl2)
+        - (fly plane1 city0 city0 fl4 fl3)
+        - (fly plane1 city0 city1 fl1 fl0)
+        - (fly plane1 city0 city1 fl2 fl1)
+        - (fly plane1 city0 city1 fl3 fl2)
+        - (fly plane1 city0 city1 fl4 fl3)
+        - (fly plane1 city0 city2 fl1 fl0)
+        - (fly plane1 city0 city2 fl2 fl1)
+
+
+---
+timestamp: '2024-10-06T08:22:25.075505'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 85
+    fring_size: 810
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0),
+        (D:3,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city0 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person1 plane1 city0)
+        - (fly plane1 city0 city0 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person2 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:25.174900'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 86
+    fring_size: 809
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:3,C:0),
+        (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city0 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person1 plane1 city0)
+        - (fly plane2 city0 city0 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person2 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:25.279050'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 87
+    fring_size: 808
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0),
+        (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city0 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person1 plane1 city0)
+        - (fly plane2 city0 city1 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person2 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:25.419248'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 88
+    fring_size: 807
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:1,C:0),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city0 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person1 plane1 city0)
+        - (fly plane2 city0 city2 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person2 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:25.526141'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 89
+    fring_size: 806
+    fring_first_20: (D:5,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city0 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person1 plane1 city0)
+        - (fly plane1 city0 city1 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person2 plane1 city1)
+
+
+---
+timestamp: '2024-10-06T08:22:25.656400'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 90
+    fring_size: 805
+    fring_first_20: (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city0 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person1 plane1 city0)
+        - (fly plane1 city0 city2 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person2 plane1 city2)
+
+
+---
+timestamp: '2024-10-06T08:22:26.085302'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 91
+    fring_size: 876
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0),
+        (D:3,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city0 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person2 plane1 city0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: fly
+        num_neighbours: 72
+        first_10_possible_groundings:
+        - (fly plane1 city0 city0 fl1 fl0)
+        - (fly plane1 city0 city0 fl2 fl1)
+        - (fly plane1 city0 city0 fl3 fl2)
+        - (fly plane1 city0 city0 fl4 fl3)
+        - (fly plane1 city0 city1 fl1 fl0)
+        - (fly plane1 city0 city1 fl2 fl1)
+        - (fly plane1 city0 city1 fl3 fl2)
+        - (fly plane1 city0 city1 fl4 fl3)
+        - (fly plane1 city0 city2 fl1 fl0)
+        - (fly plane1 city0 city2 fl2 fl1)
+
+
+---
+timestamp: '2024-10-06T08:22:26.182460'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 92
+    fring_size: 875
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:3,C:0),
+        (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city0 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person2 plane1 city0)
+        - (fly plane1 city0 city0 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:26.280067'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 93
+    fring_size: 874
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:3,C:0), (D:2,C:0),
+        (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city0 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person2 plane1 city0)
+        - (fly plane1 city0 city1 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city1)
+
+
+---
+timestamp: '2024-10-06T08:22:26.381326'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 94
+    fring_size: 873
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:3,C:0), (D:2,C:0), (D:1,C:0),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city0 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person2 plane1 city0)
+        - (fly plane1 city0 city2 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city2)
+
+
+---
+timestamp: '2024-10-06T08:22:26.484757'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 95
+    fring_size: 872
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:3,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city0 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person2 plane1 city0)
+        - (fly plane2 city0 city0 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:26.594153'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 96
+    fring_size: 871
+    fring_first_20: (D:5,C:0), (D:3,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city0 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person2 plane1 city0)
+        - (fly plane2 city0 city1 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:26.699649'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 97
+    fring_size: 870
+    fring_first_20: (D:3,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city0 fl5 fl4)
+        - (board person2 plane1 city0)
+        - (debark person2 plane1 city0)
+        - (fly plane2 city0 city2 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:26.811874'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 98
+    fring_size: 871
+    fring_first_20: (D:4,C:0), (D:4,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city0 fl5 fl4)
+        - (board person2 plane2 city0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (debark person1 plane1 city0)
+        - (debark person2 plane2 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:27.402040'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 99
+    fring_size: 942
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0),
+        (D:4,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city0 fl5 fl4)
+        - (board person2 plane2 city0)
+        - (debark person1 plane1 city0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: fly
+        num_neighbours: 72
+        first_10_possible_groundings:
+        - (fly plane1 city0 city0 fl1 fl0)
+        - (fly plane1 city0 city0 fl2 fl1)
+        - (fly plane1 city0 city0 fl3 fl2)
+        - (fly plane1 city0 city0 fl4 fl3)
+        - (fly plane1 city0 city1 fl1 fl0)
+        - (fly plane1 city0 city1 fl2 fl1)
+        - (fly plane1 city0 city1 fl3 fl2)
+        - (fly plane1 city0 city1 fl4 fl3)
+        - (fly plane1 city0 city2 fl1 fl0)
+        - (fly plane1 city0 city2 fl2 fl1)
+
+
+---
+timestamp: '2024-10-06T08:22:27.522328'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 100
+    fring_size: 941
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0),
+        (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city0 fl5 fl4)
+        - (board person2 plane2 city0)
+        - (debark person1 plane1 city0)
+        - (fly plane1 city0 city0 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person2 plane2 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:27.635169'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 101
+    fring_size: 940
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:2,C:0),
+        (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city0 fl5 fl4)
+        - (board person2 plane2 city0)
+        - (debark person1 plane1 city0)
+        - (fly plane1 city0 city1 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person2 plane2 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:27.735524'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 102
+    fring_size: 939
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:2,C:0), (D:1,C:0),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city0 fl5 fl4)
+        - (board person2 plane2 city0)
+        - (debark person1 plane1 city0)
+        - (fly plane2 city0 city0 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person2 plane2 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:27.870416'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 103
+    fring_size: 938
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city0 fl5 fl4)
+        - (board person2 plane2 city0)
+        - (debark person1 plane1 city0)
+        - (fly plane2 city0 city1 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person2 plane2 city1)
+
+
+---
+timestamp: '2024-10-06T08:22:28.008158'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 104
+    fring_size: 937
+    fring_first_20: (D:5,C:0), (D:4,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city0 fl5 fl4)
+        - (board person2 plane2 city0)
+        - (debark person1 plane1 city0)
+        - (fly plane2 city0 city2 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person2 plane2 city2)
+
+
+---
+timestamp: '2024-10-06T08:22:28.124203'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 105
+    fring_size: 936
+    fring_first_20: (D:4,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city0 fl5 fl4)
+        - (board person2 plane2 city0)
+        - (debark person1 plane1 city0)
+        - (fly plane1 city0 city2 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person2 plane2 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:28.504095'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 106
+    fring_size: 1007
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0),
+        (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city0 fl5 fl4)
+        - (board person2 plane2 city0)
+        - (debark person2 plane2 city0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: fly
+        num_neighbours: 72
+        first_10_possible_groundings:
+        - (fly plane1 city0 city0 fl1 fl0)
+        - (fly plane1 city0 city0 fl2 fl1)
+        - (fly plane1 city0 city0 fl3 fl2)
+        - (fly plane1 city0 city0 fl4 fl3)
+        - (fly plane1 city0 city1 fl1 fl0)
+        - (fly plane1 city0 city1 fl2 fl1)
+        - (fly plane1 city0 city1 fl3 fl2)
+        - (fly plane1 city0 city1 fl4 fl3)
+        - (fly plane1 city0 city2 fl1 fl0)
+        - (fly plane1 city0 city2 fl2 fl1)
+
+
+---
+timestamp: '2024-10-06T08:22:28.615770'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 107
+    fring_size: 1006
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:2,C:0),
+        (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city0 fl5 fl4)
+        - (board person2 plane2 city0)
+        - (debark person2 plane2 city0)
+        - (fly plane1 city0 city0 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:28.717571'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 108
+    fring_size: 1005
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:2,C:0), (D:1,C:0),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city0 fl5 fl4)
+        - (board person2 plane2 city0)
+        - (debark person2 plane2 city0)
+        - (fly plane1 city0 city1 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city1)
+
+
+---
+timestamp: '2024-10-06T08:22:28.820982'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 109
+    fring_size: 1004
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city0 fl5 fl4)
+        - (board person2 plane2 city0)
+        - (debark person2 plane2 city0)
+        - (fly plane1 city0 city2 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city2)
+
+
+---
+timestamp: '2024-10-06T08:22:28.932527'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 110
+    fring_size: 1003
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city0 fl5 fl4)
+        - (board person2 plane2 city0)
+        - (debark person2 plane2 city0)
+        - (fly plane2 city0 city0 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:29.039450'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 111
+    fring_size: 1002
+    fring_first_20: (D:5,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city0 fl5 fl4)
+        - (board person2 plane2 city0)
+        - (debark person2 plane2 city0)
+        - (fly plane2 city0 city1 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:29.142569'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 112
+    fring_size: 1001
+    fring_first_20: (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane2 city2 city0 fl5 fl4)
+        - (board person2 plane2 city0)
+        - (debark person2 plane2 city0)
+        - (fly plane2 city0 city2 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (debark person1 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:29.286670'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 113
+    fring_size: 1002
+    fring_first_20: (D:3,C:0), (D:3,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane1 city0 city1 fl4 fl3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: board
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (board person3 plane1 city1)
+        - (board person4 plane1 city1)
+
+
+---
+timestamp: '2024-10-06T08:22:29.422691'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 114
+    fring_size: 1003
+    fring_first_20: (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane1 city0 city1 fl4 fl3)
+        - (board person3 plane1 city1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (debark person1 plane1 city1)
+        - (debark person3 plane1 city1)
+
+
+---
+timestamp: '2024-10-06T08:22:29.796869'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 115
+    fring_size: 1074
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0),
+        (D:4,C:0), (D:3,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane1 city0 city1 fl4 fl3)
+        - (board person3 plane1 city1)
+        - (debark person1 plane1 city1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: fly
+        num_neighbours: 72
+        first_10_possible_groundings:
+        - (fly plane1 city0 city0 fl1 fl0)
+        - (fly plane1 city0 city0 fl2 fl1)
+        - (fly plane1 city0 city0 fl3 fl2)
+        - (fly plane1 city0 city1 fl1 fl0)
+        - (fly plane1 city0 city1 fl2 fl1)
+        - (fly plane1 city0 city1 fl3 fl2)
+        - (fly plane1 city0 city2 fl1 fl0)
+        - (fly plane1 city0 city2 fl2 fl1)
+        - (fly plane1 city0 city2 fl3 fl2)
+        - (fly plane1 city1 city0 fl1 fl0)
+
+
+---
+timestamp: '2024-10-06T08:22:29.945975'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 116
+    fring_size: 1074
+    fring_first_20: (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0),
+        (D:4,C:0), (D:3,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane1 city0 city1 fl4 fl3)
+        - (board person3 plane1 city1)
+        - (debark person1 plane1 city1)
+        - (fly plane1 city1 city0 fl3 fl2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: debark
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (debark person3 plane1 city0)
+
+
+---
+timestamp: '2024-10-06T08:22:29.948715'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: true
+    iteration: 117
+    fring_size: 1073
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0),
+        (D:3,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane1 city0 city1 fl4 fl3)
+        - (board person3 plane1 city1)
+        - (debark person1 plane1 city1)
+        - (fly plane1 city1 city0 fl3 fl2)
+        - (debark person3 plane1 city0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2024-10-06T08:22:29.950046'
+level: INFO
+issuer: instance_solver
+event_type: results
+data:
+    goal:
+        depth: 6
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane1 city0 city1 fl4 fl3)
+        - (board person3 plane1 city1)
+        - (debark person1 plane1 city1)
+        - (fly plane1 city1 city0 fl3 fl2)
+        - (debark person3 plane1 city0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2024-10-06T08:22:29.950918'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.3 minutes = 17.65 seconds
+
+
+---
+timestamp: '2024-10-06T08:22:30.309691'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+

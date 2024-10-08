@@ -1,0 +1,229 @@
+---
+timestamp: '2024-10-06T01:05:43.843294'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/8 BFS-full-log length1-15/bfs_length_5_tpp_pp01-err-rate-0-1.yaml
+    instance_id: tpp/pp01-err-rate-0-1
+    search_algorithm: bfs
+    plan_length: 5
+    domain_class: tpp
+    instance_name: pp01-err-rate-0-1
+    ground_plan:
+    - (drive truck1 depot1 market1)
+    - (buy truck1 goods1 market1 level0 level1 level0 level1)
+    - (load goods1 truck1 market1 level0 level1 level0 level1)
+    - (drive truck1 market1 depot1)
+    - (unload goods1 truck1 depot1 level0 level1 level0 level1)
+    lifted_plan:
+    - drive
+    - buy
+    - load
+    - drive
+    - unload
+
+
+---
+timestamp: '2024-10-06T01:05:43.846843'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2024-10-06T01:05:43.946048'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 2
+    fring_first_20: (D:1,C:0), (D:1,C:1)
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (drive truck1 depot1 market1)
+        - (drive truck1 market1 depot1)
+
+
+---
+timestamp: '2024-10-06T01:05:44.045221'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 2
+    fring_size: 2
+    fring_first_20: (D:2,C:0), (D:1,C:1)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (drive truck1 depot1 market1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: buy
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (buy truck1 goods1 market1 level0 level1 level0 level1)
+
+
+---
+timestamp: '2024-10-06T01:05:44.143634'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 3
+    fring_size: 2
+    fring_first_20: (D:3,C:0), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (drive truck1 depot1 market1)
+        - (buy truck1 goods1 market1 level0 level1 level0 level1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: load
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (load goods1 truck1 market1 level0 level1 level0 level1)
+
+
+---
+timestamp: '2024-10-06T01:05:44.279178'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 4
+    fring_size: 3
+    fring_first_20: (D:4,C:0), (D:4,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (drive truck1 depot1 market1)
+        - (buy truck1 goods1 market1 level0 level1 level0 level1)
+        - (load goods1 truck1 market1 level0 level1 level0 level1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (drive truck1 depot1 market1)
+        - (drive truck1 market1 depot1)
+
+
+---
+timestamp: '2024-10-06T01:05:44.404319'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 5
+    fring_size: 3
+    fring_first_20: (D:5,C:0), (D:4,C:1), (D:1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (drive truck1 depot1 market1)
+        - (buy truck1 goods1 market1 level0 level1 level0 level1)
+        - (load goods1 truck1 market1 level0 level1 level0 level1)
+        - (drive truck1 market1 depot1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: unload
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload goods1 truck1 depot1 level0 level1 level0 level1)
+
+
+---
+timestamp: '2024-10-06T01:05:44.406274'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: true
+    iteration: 6
+    fring_size: 2
+    fring_first_20: (D:4,C:1), (D:1,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (drive truck1 depot1 market1)
+        - (buy truck1 goods1 market1 level0 level1 level0 level1)
+        - (load goods1 truck1 market1 level0 level1 level0 level1)
+        - (drive truck1 market1 depot1)
+        - (unload goods1 truck1 depot1 level0 level1 level0 level1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2024-10-06T01:05:44.407950'
+level: INFO
+issuer: instance_solver
+event_type: results
+data:
+    goal:
+        depth: 5
+        ground_actions:
+        - (drive truck1 depot1 market1)
+        - (buy truck1 goods1 market1 level0 level1 level0 level1)
+        - (load goods1 truck1 market1 level0 level1 level0 level1)
+        - (drive truck1 market1 depot1)
+        - (unload goods1 truck1 depot1 level0 level1 level0 level1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2024-10-06T01:05:44.409423'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.0 minutes = 0.57 seconds
+
+
+---
+timestamp: '2024-10-06T01:05:44.488331'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+

@@ -1,0 +1,697 @@
+---
+timestamp: '2024-10-07T21:52:46.460554'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/8 BFS-full-log length1-15/bfs_length_10_blocks_pprobBLOCKS-4-1-err-rate-0-5.yaml
+    instance_id: blocks/pprobBLOCKS-4-1-err-rate-0-5
+    search_algorithm: bfs
+    plan_length: 10
+    domain_class: blocks
+    instance_name: pprobBLOCKS-4-1-err-rate-0-5
+    ground_plan:
+    - (unstack b c)
+    - (put-down b)
+    - (unstack c a)
+    - (put-down c)
+    - (unstack a d)
+    - (stack a b)
+    - (pick-up c)
+    - (stack c a)
+    - (pick-up d)
+    - (stack d c)
+    lifted_plan:
+    - unstack
+    - put-down
+    - unstack
+    - put-down
+    - unstack
+    - stack
+    - pick-up
+    - stack
+    - pick-up
+    - stack
+
+
+---
+timestamp: '2024-10-07T21:52:46.465084'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'pick-up,(holding ?x),effPos,1
+
+        unstack,(clear ?y),effPos,1'
+
+
+---
+timestamp: '2024-10-07T21:52:46.555657'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 1
+    fring_first_20: (D:1,C:0)
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: unstack
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unstack b c)
+
+
+---
+timestamp: '2024-10-07T21:52:46.681788'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 2
+    fring_size: 4
+    fring_first_20: (D:2,C:0), (D:2,C:1), (D:2,C:1), (D:2,C:1)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (unstack b c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: put-down
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (put-down a)
+        - (put-down b)
+        - (put-down c)
+        - (put-down d)
+
+
+---
+timestamp: '2024-10-07T21:52:46.769013'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 3
+    fring_size: 3
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (unstack b c)
+        - (put-down b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: unstack
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T21:52:46.870391'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 4
+    fring_size: 3
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:2,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (unstack b c)
+        - (put-down c)
+        repair_set: unstack,(holding ?y),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: unstack
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unstack c a)
+
+
+---
+timestamp: '2024-10-07T21:52:46.970806'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 5
+    fring_size: 6
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:2,C:1), (D:2,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (unstack b c)
+        - (put-down c)
+        - (unstack c a)
+        repair_set: unstack,(holding ?y),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: put-down
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (put-down a)
+        - (put-down b)
+        - (put-down c)
+        - (put-down d)
+
+
+---
+timestamp: '2024-10-07T21:52:47.067465'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 6
+    fring_size: 6
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:2,C:1), (D:2,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (unstack b c)
+        - (put-down c)
+        - (unstack c a)
+        - (put-down a)
+        repair_set: unstack,(holding ?y),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: unstack
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unstack a d)
+
+
+---
+timestamp: '2024-10-07T21:52:47.202547'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 7
+    fring_size: 21
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:2,C:1), (D:2,C:1), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (unstack b c)
+        - (put-down c)
+        - (unstack c a)
+        - (put-down a)
+        - (unstack a d)
+        repair_set: unstack,(holding ?y),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: stack
+        num_neighbours: 16
+        first_10_possible_groundings:
+        - (stack a a)
+        - (stack a b)
+        - (stack a c)
+        - (stack a d)
+        - (stack b a)
+        - (stack b b)
+        - (stack b c)
+        - (stack b d)
+        - (stack c a)
+        - (stack c b)
+
+
+---
+timestamp: '2024-10-07T21:52:47.308954'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 8
+    fring_size: 20
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:2,C:1), (D:2,C:1), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (unstack b c)
+        - (put-down c)
+        - (unstack c a)
+        - (put-down d)
+        repair_set: put-down,(holding ?x),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: unstack
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T21:52:47.401550'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 9
+    fring_size: 19
+    fring_first_20: (D:4,C:1), (D:2,C:1), (D:2,C:1), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (unstack b c)
+        - (put-down c)
+        - (unstack c a)
+        - (put-down b)
+        repair_set: unstack,(holding ?y),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: unstack
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T21:52:47.489851'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 10
+    fring_size: 18
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (unstack b c)
+        - (put-down c)
+        - (unstack c a)
+        - (put-down c)
+        repair_set: unstack,(holding ?y),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: unstack
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T21:52:47.578399'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 11
+    fring_size: 17
+    fring_first_20: (D:2,C:1), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (unstack b c)
+        - (put-down d)
+        repair_set: put-down,(holding ?x),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: unstack
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T21:52:47.667619'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 12
+    fring_size: 17
+    fring_first_20: (D:3,C:1), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (unstack b c)
+        - (put-down a)
+        repair_set: put-down,(holding ?x),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: unstack
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unstack a d)
+
+
+---
+timestamp: '2024-10-07T21:52:47.760622'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 13
+    fring_size: 18
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (unstack b c)
+        - (put-down a)
+        - (unstack a d)
+        repair_set: put-down,(holding ?x),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: put-down
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (put-down a)
+        - (put-down b)
+
+
+---
+timestamp: '2024-10-07T21:52:47.846388'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 14
+    fring_size: 17
+    fring_first_20: (D:4,C:1), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (unstack b c)
+        - (put-down a)
+        - (unstack a d)
+        - (put-down a)
+        repair_set: put-down,(holding ?x),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: unstack
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T21:52:47.962318'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 15
+    fring_size: 16
+    fring_first_20: (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (unstack b c)
+        - (put-down a)
+        - (unstack a d)
+        - (put-down b)
+        repair_set: put-down,(holding ?x),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: unstack
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T21:52:48.089785'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 16
+    fring_size: 17
+    fring_first_20: (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (unstack b c)
+        - (put-down c)
+        - (unstack c a)
+        - (put-down a)
+        - (unstack a d)
+        - (stack d c)
+        repair_set: 'unstack,(clear ?x),effPos,1
+
+            unstack,(holding ?y),effPos,1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up a)
+        - (pick-up d)
+
+
+---
+timestamp: '2024-10-07T21:52:48.207096'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 17
+    fring_size: 26
+    fring_first_20: (D:8,C:2), (D:8,C:2), (D:8,C:2), (D:8,C:2), (D:8,C:2), (D:8,C:2),
+        (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (unstack b c)
+        - (put-down c)
+        - (unstack c a)
+        - (put-down a)
+        - (unstack a d)
+        - (stack d c)
+        - (pick-up a)
+        repair_set: 'unstack,(clear ?x),effPos,1
+
+            unstack,(holding ?y),effPos,1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: stack
+        num_neighbours: 10
+        first_10_possible_groundings:
+        - (stack a b)
+        - (stack a c)
+        - (stack a d)
+        - (stack b a)
+        - (stack b b)
+        - (stack b c)
+        - (stack b d)
+        - (stack c a)
+        - (stack c b)
+        - (stack c d)
+
+
+---
+timestamp: '2024-10-07T21:52:48.304685'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 18
+    fring_size: 26
+    fring_first_20: (D:9,C:2), (D:8,C:2), (D:8,C:2), (D:8,C:2), (D:8,C:2), (D:8,C:2),
+        (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (unstack b c)
+        - (put-down c)
+        - (unstack c a)
+        - (put-down a)
+        - (unstack a d)
+        - (stack d c)
+        - (pick-up a)
+        - (stack a b)
+        repair_set: 'unstack,(clear ?x),effPos,1
+
+            unstack,(holding ?y),effPos,1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up d)
+
+
+---
+timestamp: '2024-10-07T21:52:48.419151'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 19
+    fring_size: 29
+    fring_first_20: (D:10,C:2), (D:8,C:2), (D:8,C:2), (D:8,C:2), (D:8,C:2), (D:8,C:2),
+        (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 9
+        ground_actions:
+        - (unstack b c)
+        - (put-down c)
+        - (unstack c a)
+        - (put-down a)
+        - (unstack a d)
+        - (stack d c)
+        - (pick-up a)
+        - (stack a b)
+        - (pick-up d)
+        repair_set: 'unstack,(clear ?x),effPos,1
+
+            unstack,(holding ?y),effPos,1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: stack
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (stack b a)
+        - (stack b c)
+        - (stack c a)
+        - (stack c b)
+
+
+---
+timestamp: '2024-10-07T21:52:48.420523'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: true
+    iteration: 20
+    fring_size: 28
+    fring_first_20: (D:8,C:2), (D:8,C:2), (D:8,C:2), (D:8,C:2), (D:8,C:2), (D:7,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 10
+        ground_actions:
+        - (unstack b c)
+        - (put-down c)
+        - (unstack c a)
+        - (put-down a)
+        - (unstack a d)
+        - (stack d c)
+        - (pick-up a)
+        - (stack a b)
+        - (pick-up d)
+        - (stack c a)
+        repair_set: 'unstack,(clear ?x),effPos,1
+
+            unstack,(holding ?y),effPos,1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2024-10-07T21:52:48.421628'
+level: INFO
+issuer: instance_solver
+event_type: results
+data:
+    goal:
+        depth: 10
+        ground_actions:
+        - (unstack b c)
+        - (put-down c)
+        - (unstack c a)
+        - (put-down a)
+        - (unstack a d)
+        - (stack d c)
+        - (pick-up a)
+        - (stack a b)
+        - (pick-up d)
+        - (stack c a)
+        repair_set: 'unstack,(clear ?x),effPos,1
+
+            unstack,(holding ?y),effPos,1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2024-10-07T21:52:48.422526'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.0 minutes = 1.96 seconds
+
+
+---
+timestamp: '2024-10-07T21:52:48.536751'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+

@@ -1,0 +1,1731 @@
+---
+timestamp: '2024-10-06T08:53:11.336205'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/8 BFS-full-log length1-15/bfs_length_7_ged-opt14-strips_pd-4-2-err-rate-0-5.yaml
+    instance_id: ged-opt14-strips/pd-4-2-err-rate-0-5
+    search_algorithm: bfs
+    plan_length: 7
+    domain_class: ged-opt14-strips
+    instance_name: pd-4-2-err-rate-0-5
+    ground_plan:
+    - (invert-single-gene-a sub3)
+    - (begin-cut sub4 sub3)
+    - (end-cut-1 sub3 sub1)
+    - (end-cut-2 sub4 sub1)
+    - (begin-transpose-splice sub2 sub4)
+    - (end-splice-1 sub3 sub2)
+    - (end-splice-2 sub3 sub4)
+    lifted_plan:
+    - invert-single-gene-a
+    - begin-cut
+    - end-cut-1
+    - end-cut-2
+    - begin-transpose-splice
+    - end-splice-1
+    - end-splice-2
+
+
+---
+timestamp: '2024-10-06T08:53:11.343833'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: invert-single-gene-a,(have-cut ),effPos,1
+
+
+---
+timestamp: '2024-10-06T08:53:11.469075'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 4
+    fring_first_20: (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0)
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: invert-single-gene-a
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (invert-single-gene-a sub1)
+        - (invert-single-gene-a sub2)
+        - (invert-single-gene-a sub3)
+        - (invert-single-gene-a sub4)
+
+
+---
+timestamp: '2024-10-06T08:53:11.597040'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 2
+    fring_size: 7
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:1,C:0),
+        (D:1,C:0)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (invert-single-gene-a sub1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: begin-cut
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (begin-cut sub1 sub2)
+        - (begin-cut sub2 sub4)
+        - (begin-cut sub3 sub1)
+        - (begin-cut sub4 sub3)
+
+
+---
+timestamp: '2024-10-06T08:53:11.715128'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 3
+    fring_size: 7
+    fring_first_20: (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:1,C:0),
+        (D:1,C:0)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (invert-single-gene-a sub1)
+        - (begin-cut sub1 sub2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-cut-1
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-cut-1 sub2 sub4)
+
+
+---
+timestamp: '2024-10-06T08:53:11.860333'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 4
+    fring_size: 7
+    fring_first_20: (D:4,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:1,C:0),
+        (D:1,C:0)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (invert-single-gene-a sub1)
+        - (begin-cut sub1 sub2)
+        - (end-cut-1 sub2 sub4)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-cut-2
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-cut-2 sub1 sub4)
+
+
+---
+timestamp: '2024-10-06T08:53:11.992393'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 5
+    fring_size: 9
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (invert-single-gene-a sub1)
+        - (begin-cut sub1 sub2)
+        - (end-cut-1 sub2 sub4)
+        - (end-cut-2 sub1 sub4)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: begin-transpose-splice
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (begin-transpose-splice sub1 sub4)
+        - (begin-transpose-splice sub3 sub1)
+        - (begin-transpose-splice sub4 sub3)
+
+
+---
+timestamp: '2024-10-06T08:53:12.101254'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 6
+    fring_size: 9
+    fring_first_20: (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (invert-single-gene-a sub1)
+        - (begin-cut sub3 sub1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-cut-1
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-cut-1 sub1 sub2)
+
+
+---
+timestamp: '2024-10-06T08:53:12.207544'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 7
+    fring_size: 9
+    fring_first_20: (D:4,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (invert-single-gene-a sub1)
+        - (begin-cut sub3 sub1)
+        - (end-cut-1 sub1 sub2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-cut-2
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-cut-2 sub3 sub2)
+
+
+---
+timestamp: '2024-10-06T08:53:12.326165'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 8
+    fring_size: 11
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (invert-single-gene-a sub1)
+        - (begin-cut sub3 sub1)
+        - (end-cut-1 sub1 sub2)
+        - (end-cut-2 sub3 sub2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: begin-transpose-splice
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (begin-transpose-splice sub2 sub4)
+        - (begin-transpose-splice sub3 sub2)
+        - (begin-transpose-splice sub4 sub3)
+
+
+---
+timestamp: '2024-10-06T08:53:12.430072'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 9
+    fring_size: 11
+    fring_first_20: (D:3,C:0), (D:2,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (invert-single-gene-a sub1)
+        - (begin-cut sub4 sub3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-cut-1
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-cut-1 sub3 sub1)
+
+
+---
+timestamp: '2024-10-06T08:53:12.540628'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 10
+    fring_size: 11
+    fring_first_20: (D:4,C:0), (D:2,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (invert-single-gene-a sub1)
+        - (begin-cut sub4 sub3)
+        - (end-cut-1 sub3 sub1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-cut-2
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-cut-2 sub4 sub1)
+
+
+---
+timestamp: '2024-10-06T08:53:12.664519'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 11
+    fring_size: 13
+    fring_first_20: (D:2,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (invert-single-gene-a sub1)
+        - (begin-cut sub4 sub3)
+        - (end-cut-1 sub3 sub1)
+        - (end-cut-2 sub4 sub1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: begin-transpose-splice
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (begin-transpose-splice sub1 sub2)
+        - (begin-transpose-splice sub2 sub4)
+        - (begin-transpose-splice sub4 sub1)
+
+
+---
+timestamp: '2024-10-06T08:53:12.772612'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 12
+    fring_size: 13
+    fring_first_20: (D:3,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (invert-single-gene-a sub1)
+        - (begin-cut sub2 sub4)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-cut-1
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-cut-1 sub4 sub3)
+
+
+---
+timestamp: '2024-10-06T08:53:12.880098'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 13
+    fring_size: 13
+    fring_first_20: (D:4,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (invert-single-gene-a sub1)
+        - (begin-cut sub2 sub4)
+        - (end-cut-1 sub4 sub3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-cut-2
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-cut-2 sub2 sub3)
+
+
+---
+timestamp: '2024-10-06T08:53:13.009065'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 14
+    fring_size: 15
+    fring_first_20: (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (invert-single-gene-a sub1)
+        - (begin-cut sub2 sub4)
+        - (end-cut-1 sub4 sub3)
+        - (end-cut-2 sub2 sub3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: begin-transpose-splice
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (begin-transpose-splice sub1 sub2)
+        - (begin-transpose-splice sub2 sub3)
+        - (begin-transpose-splice sub3 sub1)
+
+
+---
+timestamp: '2024-10-06T08:53:13.166445'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 15
+    fring_size: 18
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:1,C:0),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (invert-single-gene-a sub4)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: begin-cut
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (begin-cut sub1 sub2)
+        - (begin-cut sub2 sub4)
+        - (begin-cut sub3 sub1)
+        - (begin-cut sub4 sub3)
+
+
+---
+timestamp: '2024-10-06T08:53:13.279871'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 16
+    fring_size: 18
+    fring_first_20: (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:1,C:0),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (invert-single-gene-a sub4)
+        - (begin-cut sub1 sub2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-cut-1
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-cut-1 sub2 sub4)
+
+
+---
+timestamp: '2024-10-06T08:53:13.400639'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 17
+    fring_size: 18
+    fring_first_20: (D:4,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:1,C:0),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (invert-single-gene-a sub4)
+        - (begin-cut sub1 sub2)
+        - (end-cut-1 sub2 sub4)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-cut-2
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-cut-2 sub1 sub4)
+
+
+---
+timestamp: '2024-10-06T08:53:13.528789'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 18
+    fring_size: 20
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:1,C:0), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (invert-single-gene-a sub4)
+        - (begin-cut sub1 sub2)
+        - (end-cut-1 sub2 sub4)
+        - (end-cut-2 sub1 sub4)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: begin-transpose-splice
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (begin-transpose-splice sub1 sub4)
+        - (begin-transpose-splice sub3 sub1)
+        - (begin-transpose-splice sub4 sub3)
+
+
+---
+timestamp: '2024-10-06T08:53:13.634031'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 19
+    fring_size: 20
+    fring_first_20: (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:1,C:0), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (invert-single-gene-a sub4)
+        - (begin-cut sub2 sub4)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-cut-1
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-cut-1 sub4 sub3)
+
+
+---
+timestamp: '2024-10-06T08:53:13.743872'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 20
+    fring_size: 20
+    fring_first_20: (D:4,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:1,C:0), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (invert-single-gene-a sub4)
+        - (begin-cut sub2 sub4)
+        - (end-cut-1 sub4 sub3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-cut-2
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-cut-2 sub2 sub3)
+
+
+---
+timestamp: '2024-10-06T08:53:13.890163'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 21
+    fring_size: 22
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (invert-single-gene-a sub4)
+        - (begin-cut sub2 sub4)
+        - (end-cut-1 sub4 sub3)
+        - (end-cut-2 sub2 sub3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: begin-transpose-splice
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (begin-transpose-splice sub1 sub2)
+        - (begin-transpose-splice sub2 sub3)
+        - (begin-transpose-splice sub3 sub1)
+
+
+---
+timestamp: '2024-10-06T08:53:13.997259'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 22
+    fring_size: 22
+    fring_first_20: (D:3,C:0), (D:2,C:0), (D:1,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (invert-single-gene-a sub4)
+        - (begin-cut sub3 sub1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-cut-1
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-cut-1 sub1 sub2)
+
+
+---
+timestamp: '2024-10-06T08:53:14.144555'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 23
+    fring_size: 22
+    fring_first_20: (D:4,C:0), (D:2,C:0), (D:1,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (invert-single-gene-a sub4)
+        - (begin-cut sub3 sub1)
+        - (end-cut-1 sub1 sub2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-cut-2
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-cut-2 sub3 sub2)
+
+
+---
+timestamp: '2024-10-06T08:53:14.300938'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 24
+    fring_size: 24
+    fring_first_20: (D:2,C:0), (D:1,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (invert-single-gene-a sub4)
+        - (begin-cut sub3 sub1)
+        - (end-cut-1 sub1 sub2)
+        - (end-cut-2 sub3 sub2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: begin-transpose-splice
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (begin-transpose-splice sub2 sub4)
+        - (begin-transpose-splice sub3 sub2)
+        - (begin-transpose-splice sub4 sub3)
+
+
+---
+timestamp: '2024-10-06T08:53:14.448681'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 25
+    fring_size: 24
+    fring_first_20: (D:3,C:0), (D:1,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (invert-single-gene-a sub4)
+        - (begin-cut sub4 sub3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-cut-1
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-cut-1 sub3 sub1)
+
+
+---
+timestamp: '2024-10-06T08:53:14.575578'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 26
+    fring_size: 24
+    fring_first_20: (D:4,C:0), (D:1,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (invert-single-gene-a sub4)
+        - (begin-cut sub4 sub3)
+        - (end-cut-1 sub3 sub1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-cut-2
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-cut-2 sub4 sub1)
+
+
+---
+timestamp: '2024-10-06T08:53:14.708682'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 27
+    fring_size: 26
+    fring_first_20: (D:1,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (invert-single-gene-a sub4)
+        - (begin-cut sub4 sub3)
+        - (end-cut-1 sub3 sub1)
+        - (end-cut-2 sub4 sub1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: begin-transpose-splice
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (begin-transpose-splice sub1 sub2)
+        - (begin-transpose-splice sub2 sub4)
+        - (begin-transpose-splice sub4 sub1)
+
+
+---
+timestamp: '2024-10-06T08:53:14.834539'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 28
+    fring_size: 29
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (invert-single-gene-a sub3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: begin-cut
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (begin-cut sub1 sub2)
+        - (begin-cut sub2 sub4)
+        - (begin-cut sub3 sub1)
+        - (begin-cut sub4 sub3)
+
+
+---
+timestamp: '2024-10-06T08:53:14.943545'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 29
+    fring_size: 29
+    fring_first_20: (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (invert-single-gene-a sub3)
+        - (begin-cut sub1 sub2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-cut-1
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-cut-1 sub2 sub4)
+
+
+---
+timestamp: '2024-10-06T08:53:15.054765'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 30
+    fring_size: 29
+    fring_first_20: (D:4,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (invert-single-gene-a sub3)
+        - (begin-cut sub1 sub2)
+        - (end-cut-1 sub2 sub4)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-cut-2
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-cut-2 sub1 sub4)
+
+
+---
+timestamp: '2024-10-06T08:53:15.188862'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 31
+    fring_size: 31
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (invert-single-gene-a sub3)
+        - (begin-cut sub1 sub2)
+        - (end-cut-1 sub2 sub4)
+        - (end-cut-2 sub1 sub4)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: begin-transpose-splice
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (begin-transpose-splice sub1 sub4)
+        - (begin-transpose-splice sub3 sub1)
+        - (begin-transpose-splice sub4 sub3)
+
+
+---
+timestamp: '2024-10-06T08:53:15.299931'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 32
+    fring_size: 31
+    fring_first_20: (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (invert-single-gene-a sub3)
+        - (begin-cut sub2 sub4)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-cut-1
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-cut-1 sub4 sub3)
+
+
+---
+timestamp: '2024-10-06T08:53:15.405613'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 33
+    fring_size: 31
+    fring_first_20: (D:4,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (invert-single-gene-a sub3)
+        - (begin-cut sub2 sub4)
+        - (end-cut-1 sub4 sub3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-cut-2
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-cut-2 sub2 sub3)
+
+
+---
+timestamp: '2024-10-06T08:53:15.536636'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 34
+    fring_size: 33
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (invert-single-gene-a sub3)
+        - (begin-cut sub2 sub4)
+        - (end-cut-1 sub4 sub3)
+        - (end-cut-2 sub2 sub3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: begin-transpose-splice
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (begin-transpose-splice sub1 sub2)
+        - (begin-transpose-splice sub2 sub3)
+        - (begin-transpose-splice sub3 sub1)
+
+
+---
+timestamp: '2024-10-06T08:53:15.657958'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 35
+    fring_size: 33
+    fring_first_20: (D:3,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (invert-single-gene-a sub3)
+        - (begin-cut sub3 sub1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-cut-1
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-cut-1 sub1 sub2)
+
+
+---
+timestamp: '2024-10-06T08:53:15.806711'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 36
+    fring_size: 33
+    fring_first_20: (D:4,C:0), (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (invert-single-gene-a sub3)
+        - (begin-cut sub3 sub1)
+        - (end-cut-1 sub1 sub2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-cut-2
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-cut-2 sub3 sub2)
+
+
+---
+timestamp: '2024-10-06T08:53:15.982140'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 37
+    fring_size: 35
+    fring_first_20: (D:2,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (invert-single-gene-a sub3)
+        - (begin-cut sub3 sub1)
+        - (end-cut-1 sub1 sub2)
+        - (end-cut-2 sub3 sub2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: begin-transpose-splice
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (begin-transpose-splice sub2 sub4)
+        - (begin-transpose-splice sub3 sub2)
+        - (begin-transpose-splice sub4 sub3)
+
+
+---
+timestamp: '2024-10-06T08:53:16.146335'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 38
+    fring_size: 35
+    fring_first_20: (D:3,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (invert-single-gene-a sub3)
+        - (begin-cut sub4 sub3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-cut-1
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-cut-1 sub3 sub1)
+
+
+---
+timestamp: '2024-10-06T08:53:16.254426'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 39
+    fring_size: 35
+    fring_first_20: (D:4,C:0), (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (invert-single-gene-a sub3)
+        - (begin-cut sub4 sub3)
+        - (end-cut-1 sub3 sub1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-cut-2
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-cut-2 sub4 sub1)
+
+
+---
+timestamp: '2024-10-06T08:53:16.381216'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 40
+    fring_size: 37
+    fring_first_20: (D:1,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (invert-single-gene-a sub3)
+        - (begin-cut sub4 sub3)
+        - (end-cut-1 sub3 sub1)
+        - (end-cut-2 sub4 sub1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: begin-transpose-splice
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (begin-transpose-splice sub1 sub2)
+        - (begin-transpose-splice sub2 sub4)
+        - (begin-transpose-splice sub4 sub1)
+
+
+---
+timestamp: '2024-10-06T08:53:16.510637'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 41
+    fring_size: 40
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (invert-single-gene-a sub2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: begin-cut
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (begin-cut sub1 sub2)
+        - (begin-cut sub2 sub4)
+        - (begin-cut sub3 sub1)
+        - (begin-cut sub4 sub3)
+
+
+---
+timestamp: '2024-10-06T08:53:16.618068'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 42
+    fring_size: 40
+    fring_first_20: (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (invert-single-gene-a sub2)
+        - (begin-cut sub1 sub2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-cut-1
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-cut-1 sub2 sub4)
+
+
+---
+timestamp: '2024-10-06T08:53:16.764371'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 43
+    fring_size: 40
+    fring_first_20: (D:4,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (invert-single-gene-a sub2)
+        - (begin-cut sub1 sub2)
+        - (end-cut-1 sub2 sub4)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-cut-2
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-cut-2 sub1 sub4)
+
+
+---
+timestamp: '2024-10-06T08:53:16.889877'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 44
+    fring_size: 42
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (invert-single-gene-a sub2)
+        - (begin-cut sub1 sub2)
+        - (end-cut-1 sub2 sub4)
+        - (end-cut-2 sub1 sub4)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: begin-transpose-splice
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (begin-transpose-splice sub1 sub4)
+        - (begin-transpose-splice sub3 sub1)
+        - (begin-transpose-splice sub4 sub3)
+
+
+---
+timestamp: '2024-10-06T08:53:17.000338'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 45
+    fring_size: 42
+    fring_first_20: (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (invert-single-gene-a sub2)
+        - (begin-cut sub2 sub4)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-cut-1
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-cut-1 sub4 sub3)
+
+
+---
+timestamp: '2024-10-06T08:53:17.136780'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 46
+    fring_size: 42
+    fring_first_20: (D:4,C:0), (D:2,C:0), (D:2,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (invert-single-gene-a sub2)
+        - (begin-cut sub2 sub4)
+        - (end-cut-1 sub4 sub3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-cut-2
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-cut-2 sub2 sub3)
+
+
+---
+timestamp: '2024-10-06T08:53:17.254729'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 47
+    fring_size: 44
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (invert-single-gene-a sub2)
+        - (begin-cut sub2 sub4)
+        - (end-cut-1 sub4 sub3)
+        - (end-cut-2 sub2 sub3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: begin-transpose-splice
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (begin-transpose-splice sub1 sub2)
+        - (begin-transpose-splice sub2 sub3)
+        - (begin-transpose-splice sub3 sub1)
+
+
+---
+timestamp: '2024-10-06T08:53:17.363467'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 48
+    fring_size: 44
+    fring_first_20: (D:3,C:0), (D:2,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (invert-single-gene-a sub2)
+        - (begin-cut sub4 sub3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-cut-1
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-cut-1 sub3 sub1)
+
+
+---
+timestamp: '2024-10-06T08:53:17.465352'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 49
+    fring_size: 44
+    fring_first_20: (D:4,C:0), (D:2,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (invert-single-gene-a sub2)
+        - (begin-cut sub4 sub3)
+        - (end-cut-1 sub3 sub1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-cut-2
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-cut-2 sub4 sub1)
+
+
+---
+timestamp: '2024-10-06T08:53:17.587473'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 50
+    fring_size: 46
+    fring_first_20: (D:2,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (invert-single-gene-a sub2)
+        - (begin-cut sub4 sub3)
+        - (end-cut-1 sub3 sub1)
+        - (end-cut-2 sub4 sub1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: begin-transpose-splice
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (begin-transpose-splice sub1 sub2)
+        - (begin-transpose-splice sub2 sub4)
+        - (begin-transpose-splice sub4 sub1)
+
+
+---
+timestamp: '2024-10-06T08:53:17.690679'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 51
+    fring_size: 46
+    fring_first_20: (D:3,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (invert-single-gene-a sub2)
+        - (begin-cut sub3 sub1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-cut-1
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-cut-1 sub1 sub2)
+
+
+---
+timestamp: '2024-10-06T08:53:17.796546'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 52
+    fring_size: 46
+    fring_first_20: (D:4,C:0), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (invert-single-gene-a sub2)
+        - (begin-cut sub3 sub1)
+        - (end-cut-1 sub1 sub2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-cut-2
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-cut-2 sub3 sub2)
+
+
+---
+timestamp: '2024-10-06T08:53:17.919304'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 53
+    fring_size: 48
+    fring_first_20: (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (invert-single-gene-a sub2)
+        - (begin-cut sub3 sub1)
+        - (end-cut-1 sub1 sub2)
+        - (end-cut-2 sub3 sub2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: begin-transpose-splice
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (begin-transpose-splice sub2 sub4)
+        - (begin-transpose-splice sub3 sub2)
+        - (begin-transpose-splice sub4 sub3)
+
+
+---
+timestamp: '2024-10-06T08:53:18.025425'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 54
+    fring_size: 48
+    fring_first_20: (D:6,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1),
+        (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1), (D:5,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (invert-single-gene-a sub3)
+        - (begin-cut sub3 sub1)
+        - (end-cut-1 sub1 sub2)
+        - (end-cut-2 sub3 sub2)
+        - (begin-transpose-splice sub4 sub3)
+        repair_set: invert-single-gene-a,(have-cut ),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: end-splice-1
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-splice-1 sub1 sub4)
+
+
+---
+timestamp: '2024-10-06T08:53:18.123866'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 6
+        ground_actions:
+        - (invert-single-gene-a sub3)
+        - (begin-cut sub3 sub1)
+        - (end-cut-1 sub1 sub2)
+        - (end-cut-2 sub3 sub2)
+        - (begin-transpose-splice sub4 sub3)
+        - (end-splice-1 sub1 sub4)
+        repair_set: invert-single-gene-a,(have-cut ),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: end-splice-2
+        num_neighbours: 0
+        first_10_possible_groundings: null
+    current_state:
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: '='
+        args: !!python/tuple
+        - sub4
+        - sub1
+        hash: -3992458683827497598
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: splice-point-1
+        args: !!python/tuple
+        - sub1
+        hash: -8642720102175023809
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: splice-point-2
+        args: !!python/tuple
+        - sub3
+        hash: -6508564813193193944
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: normal
+        args: !!python/tuple
+        - sub1
+        hash: 7740269064107068556
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: cw
+        args: !!python/tuple
+        - sub3
+        - sub2
+        hash: 5273316223512740941
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: inverted
+        args: !!python/tuple
+        - sub3
+        hash: -5752437605311853970
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: splicing-last
+        args: !!python/tuple []
+        hash: -5157008286657583507
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: present
+        args: !!python/tuple
+        - sub3
+        hash: -4251026438272833838
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: present
+        args: !!python/tuple
+        - sub1
+        hash: -2528090045719854350
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: normal
+        args: !!python/tuple
+        - sub4
+        hash: -1178976981935777131
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: cw
+        args: !!python/tuple
+        - sub2
+        - sub4
+        hash: -4659341480349753515
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: normal
+        args: !!python/tuple
+        - sub2
+        hash: -7087704204434455528
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: cw
+        args: !!python/tuple
+        - sub4
+        - sub1
+        hash: 7874605444795958265
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: present
+        args: !!python/tuple
+        - sub4
+        hash: -7048978708778331909
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: last-cut-point
+        args: !!python/tuple
+        - sub3
+        hash: 5373623055602346749
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: present
+        args: !!python/tuple
+        - sub2
+        hash: 5489038142432541310
+    - !!python/object:fd.pddl.f_expression.Assign
+        fluent: !!python/object:fd.pddl.f_expression.PrimitiveNumericExpression
+            symbol: total-cost
+            args: !!python/tuple []
+            hash: -8418799372377107301
+        expression: !!python/object:fd.pddl.f_expression.NumericConstant
+            value: 0
+
+
+---
+timestamp: '2024-10-06T08:53:18.129704'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: Command '['/home/nader/projects/lifted-white-plan-domain-repair/fd2/src/translate/translate.py',\
+    \ 'heuristic_tools/pass_to_grounder_domain.pddl', 'heuristic_tools/pass_to_grounder_task.pddl',\
+    \ '--sas-file', 'heuristic_tools/out.sas']' returned non-zero exit status 31..\
+    \ Stack trace: Traceback (most recent call last):\n  File \"/home/nader/projects/lifted-white-plan-domain-repair/instance_solver.py\"\
+    , line 83, in solve_instance\n    path, goal_node = searcher.find_path(logger=logger,\
+    \ log_interval=log_interval)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
+    \  File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 51, in find_path\n    for neighbor in current_node.get_neighbors():\n \
+    \                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 153, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    \ task, next_action_name)\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
+    \  File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/action_grounding_tools.py\"\
+    , line 102, in smart_grounder\n    subprocess.run(\n  File \"/home/nader/miniconda3/envs/planning/lib/python3.12/subprocess.py\"\
+    , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
+    \ Command '['/home/nader/projects/lifted-white-plan-domain-repair/fd2/src/translate/translate.py',\
+    \ 'heuristic_tools/pass_to_grounder_domain.pddl', 'heuristic_tools/pass_to_grounder_task.pddl',\
+    \ '--sas-file', 'heuristic_tools/out.sas']' returned non-zero exit status 31.\n"
+
+
+---
+timestamp: '2024-10-06T08:53:18.131997'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.1 minutes = 6.80 seconds
+
+
+---
+timestamp: '2024-10-06T08:53:18.298171'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+

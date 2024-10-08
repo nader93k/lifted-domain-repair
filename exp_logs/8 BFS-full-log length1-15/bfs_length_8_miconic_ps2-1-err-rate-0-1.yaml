@@ -1,0 +1,89 @@
+---
+timestamp: '2024-10-06T14:19:59.995630'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/8 BFS-full-log length1-15/bfs_length_8_miconic_ps2-1-err-rate-0-1.yaml
+    instance_id: miconic/ps2-1-err-rate-0-1
+    search_algorithm: bfs
+    plan_length: 8
+    domain_class: miconic
+    instance_name: ps2-1-err-rate-0-1
+    ground_plan:
+    - (board f0 p0)
+    - (up f0 f1)
+    - (depart f1 p0)
+    - (down f1 f0)
+    - (up f0 f3)
+    - (board f3 p1)
+    - (down f3 f0)
+    - (depart f0 p1)
+    lifted_plan:
+    - board
+    - up
+    - depart
+    - down
+    - up
+    - board
+    - down
+    - depart
+
+
+---
+timestamp: '2024-10-06T14:19:59.999187'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: board,(above ?p ?p),precPos,-1
+
+
+---
+timestamp: '2024-10-06T14:20:00.106968'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 0
+    fring_first_20: ''
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: board
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:20:00.108234'
+level: INFO
+issuer: instance_solver
+event_type: results
+data:
+    goal: not_found
+
+
+---
+timestamp: '2024-10-06T14:20:00.108844'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.0 minutes = 0.12 seconds
+
+
+---
+timestamp: '2024-10-06T14:20:00.204386'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+

@@ -1,0 +1,4115 @@
+---
+timestamp: '2024-10-06T14:20:01.807629'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/8 BFS-full-log length1-15/bfs_length_8_miconic_ps2-0-err-rate-0-5.yaml
+    instance_id: miconic/ps2-0-err-rate-0-5
+    search_algorithm: bfs
+    plan_length: 8
+    domain_class: miconic
+    instance_name: ps2-0-err-rate-0-5
+    ground_plan:
+    - (up f0 f1)
+    - (board f1 p1)
+    - (up f1 f2)
+    - (up f2 f3)
+    - (board f3 p0)
+    - (depart f3 p1)
+    - (down f3 f2)
+    - (depart f2 p0)
+    lifted_plan:
+    - up
+    - board
+    - up
+    - up
+    - board
+    - depart
+    - down
+    - depart
+
+
+---
+timestamp: '2024-10-06T14:20:01.814708'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'board,(boarded ?p),effPos,1
+
+        board,(served ?p),effPos,1'
+
+
+---
+timestamp: '2024-10-06T14:20:02.123847'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 6
+    fring_first_20: (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: up
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (up f0 f1)
+        - (up f0 f2)
+        - (up f0 f3)
+        - (up f1 f2)
+        - (up f1 f3)
+        - (up f2 f3)
+
+
+---
+timestamp: '2024-10-06T14:20:02.420440'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 2
+    fring_size: 6
+    fring_first_20: (D:2,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (up f0 f1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f1 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:02.663951'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 3
+    fring_size: 8
+    fring_first_20: (D:3,C:0), (D:3,C:0), (D:1,C:0), (D:1,C:0), (D:3,C:1), (D:1,C:1),
+        (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (up f0 f1)
+        - (board f1 p1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: up
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (up f1 f2)
+        - (up f1 f3)
+        - (up f2 f3)
+
+
+---
+timestamp: '2024-10-06T14:20:02.953911'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 4
+    fring_size: 8
+    fring_first_20: (D:4,C:0), (D:3,C:0), (D:1,C:0), (D:1,C:0), (D:3,C:1), (D:1,C:1),
+        (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (up f0 f1)
+        - (board f1 p1)
+        - (up f1 f2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (up f2 f3)
+
+
+---
+timestamp: '2024-10-06T14:20:03.211680'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 5
+    fring_size: 8
+    fring_first_20: (D:5,C:0), (D:3,C:0), (D:1,C:0), (D:1,C:0), (D:3,C:1), (D:1,C:1),
+        (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f0 f1)
+        - (board f1 p1)
+        - (up f1 f2)
+        - (up f2 f3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:03.456616'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 6
+    fring_size: 8
+    fring_first_20: (D:3,C:0), (D:1,C:0), (D:1,C:0), (D:6,C:1), (D:3,C:1), (D:1,C:1),
+        (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f0 f1)
+        - (board f1 p1)
+        - (up f1 f2)
+        - (up f2 f3)
+        - (board f3 p0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: depart
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:03.715554'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 7
+    fring_size: 7
+    fring_first_20: (D:1,C:0), (D:1,C:0), (D:6,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (up f0 f1)
+        - (board f1 p1)
+        - (up f1 f3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: up
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:20:03.959653'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 8
+    fring_size: 7
+    fring_first_20: (D:2,C:0), (D:1,C:0), (D:6,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (up f0 f3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:04.256746'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 9
+    fring_size: 6
+    fring_first_20: (D:1,C:0), (D:6,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (up f0 f3)
+        - (board f3 p0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: up
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:20:04.447420'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 10
+    fring_size: 5
+    fring_first_20: (D:6,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (up f0 f2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: board
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:20:04.694806'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 11
+    fring_size: 10
+    fring_first_20: (D:7,C:1), (D:7,C:1), (D:7,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1), (D:7,C:2), (D:7,C:2), (D:7,C:2)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (up f0 f1)
+        - (board f1 p1)
+        - (up f1 f2)
+        - (up f2 f3)
+        - (board f3 p0)
+        - (depart f3 p1)
+        repair_set: board,(boarded ?p),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: down
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (down f1 f0)
+        - (down f2 f0)
+        - (down f2 f1)
+        - (down f3 f0)
+        - (down f3 f1)
+        - (down f3 f2)
+
+
+---
+timestamp: '2024-10-06T14:20:04.930177'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 12
+    fring_size: 9
+    fring_first_20: (D:7,C:1), (D:7,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1),
+        (D:7,C:2), (D:7,C:2), (D:7,C:2)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (up f0 f1)
+        - (board f1 p1)
+        - (up f1 f2)
+        - (up f2 f3)
+        - (board f3 p0)
+        - (depart f3 p1)
+        - (down f3 f0)
+        repair_set: board,(boarded ?p),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:20:05.157809'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 13
+    fring_size: 8
+    fring_first_20: (D:7,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:7,C:2),
+        (D:7,C:2), (D:7,C:2)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (up f0 f1)
+        - (board f1 p1)
+        - (up f1 f2)
+        - (up f2 f3)
+        - (board f3 p0)
+        - (depart f3 p1)
+        - (down f3 f1)
+        repair_set: board,(boarded ?p),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:20:05.448340'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 14
+    fring_size: 8
+    fring_first_20: (D:3,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2),
+        (D:7,C:2), (D:7,C:2)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (up f0 f1)
+        - (board f1 p1)
+        - (up f1 f2)
+        - (up f2 f3)
+        - (board f3 p0)
+        - (depart f3 p1)
+        - (down f3 f2)
+        repair_set: board,(boarded ?p),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (depart f2 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:05.698594'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 15
+    fring_size: 10
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1),
+        (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (up f0 f1)
+        - (board f1 p1)
+        - (up f2 f3)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: up
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (up f1 f2)
+        - (up f1 f3)
+        - (up f2 f3)
+
+
+---
+timestamp: '2024-10-06T14:20:05.901526'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 16
+    fring_size: 10
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:4,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1),
+        (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f0 f1)
+        - (board f1 p1)
+        - (up f2 f3)
+        - (up f1 f2)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:06.199253'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 17
+    fring_size: 11
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2),
+        (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f0 f1)
+        - (board f1 p1)
+        - (up f2 f3)
+        - (up f1 f2)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (depart f2 p0)
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:06.409998'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 18
+    fring_size: 11
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2),
+        (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f0 f1)
+        - (board f1 p1)
+        - (up f2 f3)
+        - (up f1 f3)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:06.631471'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 19
+    fring_size: 11
+    fring_first_20: (D:4,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2),
+        (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f0 f1)
+        - (board f1 p1)
+        - (up f2 f3)
+        - (up f1 f3)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:06.803677'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 20
+    fring_size: 12
+    fring_first_20: (D:5,C:1), (D:5,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2),
+        (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f0 f1)
+        - (board f1 p1)
+        - (up f2 f3)
+        - (up f2 f3)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (board f1 p1)
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:06.985635'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 21
+    fring_size: 12
+    fring_first_20: (D:5,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2),
+        (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f0 f1)
+        - (board f1 p1)
+        - (up f2 f3)
+        - (up f2 f3)
+        - (board f1 p1)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:07.155323'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 22
+    fring_size: 12
+    fring_first_20: (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2),
+        (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f0 f1)
+        - (board f1 p1)
+        - (up f2 f3)
+        - (up f2 f3)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:07.331456'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 23
+    fring_size: 12
+    fring_first_20: (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2),
+        (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (up f2 f3)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:07.506239'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 24
+    fring_size: 17
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: up
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (up f0 f1)
+        - (up f0 f2)
+        - (up f0 f3)
+        - (up f1 f2)
+        - (up f1 f3)
+        - (up f2 f3)
+
+
+---
+timestamp: '2024-10-06T14:20:07.654432'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 25
+    fring_size: 19
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2),
+        (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f0 f1)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: up
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (up f1 f2)
+        - (up f1 f3)
+        - (up f2 f3)
+
+
+---
+timestamp: '2024-10-06T14:20:07.821147'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 26
+    fring_size: 19
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:4,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2),
+        (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f0 f1)
+        - (up f1 f2)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:08.002281'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 27
+    fring_size: 20
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f0 f1)
+        - (up f1 f2)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (depart f2 p0)
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:08.157536'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 28
+    fring_size: 20
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f0 f1)
+        - (up f1 f3)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:08.299812'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 29
+    fring_size: 20
+    fring_first_20: (D:4,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f0 f1)
+        - (up f1 f3)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:08.451671'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 30
+    fring_size: 21
+    fring_first_20: (D:5,C:1), (D:5,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f0 f1)
+        - (up f2 f3)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (board f1 p1)
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:08.576904'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 31
+    fring_size: 21
+    fring_first_20: (D:5,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f0 f1)
+        - (up f2 f3)
+        - (board f1 p1)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:08.728696'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 32
+    fring_size: 21
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:1,C:1),
+        (D:1,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f0 f1)
+        - (up f2 f3)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:08.891521'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 33
+    fring_size: 26
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2),
+        (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f1 f2)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: up
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (up f0 f1)
+        - (up f0 f2)
+        - (up f0 f3)
+        - (up f1 f2)
+        - (up f1 f3)
+        - (up f2 f3)
+
+
+---
+timestamp: '2024-10-06T14:20:09.053935'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 34
+    fring_size: 27
+    fring_first_20: (D:5,C:1), (D:5,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1),
+        (D:4,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1),
+        (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f1 f2)
+        - (up f0 f1)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (board f1 p1)
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:09.251513'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 35
+    fring_size: 28
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2),
+        (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f1 f2)
+        - (up f0 f1)
+        - (board f1 p1)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (depart f2 p0)
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:09.430548'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 36
+    fring_size: 29
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2),
+        (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f1 f2)
+        - (up f0 f1)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (depart f2 p0)
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:09.552001'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 37
+    fring_size: 29
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2),
+        (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f1 f2)
+        - (up f1 f2)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:09.670989'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 38
+    fring_size: 30
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2),
+        (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f1 f2)
+        - (up f1 f2)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (depart f2 p0)
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:09.818226'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 39
+    fring_size: 30
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2),
+        (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f1 f2)
+        - (up f1 f3)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:09.938511'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 40
+    fring_size: 31
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f1 f2)
+        - (up f1 f3)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (depart f2 p0)
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:10.062958'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 41
+    fring_size: 31
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:4,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f1 f2)
+        - (up f2 f3)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:10.194361'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 42
+    fring_size: 31
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f1 f2)
+        - (up f2 f3)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:10.341691'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 43
+    fring_size: 31
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f1 f2)
+        - (up f0 f2)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:10.482485'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 44
+    fring_size: 32
+    fring_first_20: (D:4,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:1,C:1),
+        (D:1,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f1 f2)
+        - (up f0 f2)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (depart f2 p0)
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:10.599396'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 45
+    fring_size: 32
+    fring_first_20: (D:5,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:1,C:1),
+        (D:1,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f1 f2)
+        - (up f0 f3)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:10.747015'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 46
+    fring_size: 33
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1),
+        (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f1 f2)
+        - (up f0 f3)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (depart f2 p0)
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:10.856245'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 47
+    fring_size: 32
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2),
+        (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f0 f3)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: up
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:20:10.990870'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 48
+    fring_size: 32
+    fring_first_20: (D:4,C:1), (D:3,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2),
+        (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f0 f2)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (up f2 f3)
+
+
+---
+timestamp: '2024-10-06T14:20:11.132447'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 49
+    fring_size: 32
+    fring_first_20: (D:5,C:1), (D:3,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2),
+        (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f0 f2)
+        - (up f2 f3)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:11.249091'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 50
+    fring_size: 32
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2),
+        (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f0 f2)
+        - (up f2 f3)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:11.422291'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 51
+    fring_size: 37
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1),
+        (D:3,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f1 f3)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: up
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (up f0 f1)
+        - (up f0 f2)
+        - (up f0 f3)
+        - (up f1 f2)
+        - (up f1 f3)
+        - (up f2 f3)
+
+
+---
+timestamp: '2024-10-06T14:20:11.568097'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 52
+    fring_size: 38
+    fring_first_20: (D:5,C:1), (D:5,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1),
+        (D:4,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2),
+        (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f1 f3)
+        - (up f0 f1)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (board f1 p1)
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:11.710550'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 53
+    fring_size: 38
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1),
+        (D:3,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f1 f3)
+        - (up f0 f1)
+        - (board f1 p1)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:11.844766'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 54
+    fring_size: 38
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:3,C:1),
+        (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f1 f3)
+        - (up f0 f1)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:11.991787'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 55
+    fring_size: 38
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:3,C:1),
+        (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f1 f3)
+        - (up f0 f2)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:12.116013'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 56
+    fring_size: 39
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:3,C:1), (D:1,C:1),
+        (D:1,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f1 f3)
+        - (up f0 f2)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (depart f2 p0)
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:12.248081'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 57
+    fring_size: 39
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:3,C:1), (D:1,C:1),
+        (D:1,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f1 f3)
+        - (up f0 f3)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:12.373006'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 58
+    fring_size: 39
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1),
+        (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f1 f3)
+        - (up f0 f3)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:12.500733'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 59
+    fring_size: 39
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:4,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1),
+        (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f1 f3)
+        - (up f1 f3)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:12.642380'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 60
+    fring_size: 39
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2),
+        (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f1 f3)
+        - (up f1 f3)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:12.785522'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 61
+    fring_size: 39
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2),
+        (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f1 f3)
+        - (up f2 f3)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:12.918063'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 62
+    fring_size: 39
+    fring_first_20: (D:4,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2),
+        (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f1 f3)
+        - (up f2 f3)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:13.047620'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 63
+    fring_size: 39
+    fring_first_20: (D:5,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2),
+        (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f1 f3)
+        - (up f1 f2)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:13.189995'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 64
+    fring_size: 40
+    fring_first_20: (D:3,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2),
+        (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f1 f3)
+        - (up f1 f2)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (depart f2 p0)
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:13.337504'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 65
+    fring_size: 45
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1),
+        (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f2 f3)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: up
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (up f0 f1)
+        - (up f0 f2)
+        - (up f0 f3)
+        - (up f1 f2)
+        - (up f1 f3)
+        - (up f2 f3)
+
+
+---
+timestamp: '2024-10-06T14:20:13.479336'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 66
+    fring_size: 46
+    fring_first_20: (D:5,C:1), (D:5,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1),
+        (D:4,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f2 f3)
+        - (up f0 f1)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (board f1 p1)
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:13.619772'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 67
+    fring_size: 46
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1),
+        (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f2 f3)
+        - (up f0 f1)
+        - (board f1 p1)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:13.739019'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 68
+    fring_size: 46
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:1,C:1),
+        (D:1,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f2 f3)
+        - (up f0 f1)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:13.839452'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 69
+    fring_size: 46
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:1,C:1),
+        (D:1,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f2 f3)
+        - (up f0 f2)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:13.953639'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 70
+    fring_size: 47
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:1,C:1), (D:1,C:1),
+        (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f2 f3)
+        - (up f0 f2)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (depart f2 p0)
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:14.072078'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 71
+    fring_size: 47
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:1,C:1), (D:1,C:1),
+        (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f2 f3)
+        - (up f0 f3)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:14.171956'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 72
+    fring_size: 47
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2),
+        (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f2 f3)
+        - (up f0 f3)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:14.303262'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 73
+    fring_size: 47
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:4,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2),
+        (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f2 f3)
+        - (up f1 f3)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:14.406365'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 74
+    fring_size: 47
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2),
+        (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f2 f3)
+        - (up f1 f3)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:14.513201'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 75
+    fring_size: 47
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2),
+        (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f2 f3)
+        - (up f2 f3)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:14.643285'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 76
+    fring_size: 47
+    fring_first_20: (D:4,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2),
+        (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f2 f3)
+        - (up f2 f3)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:14.738827'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 77
+    fring_size: 47
+    fring_first_20: (D:5,C:1), (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2),
+        (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f2 f3)
+        - (up f1 f2)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:14.882760'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 78
+    fring_size: 48
+    fring_first_20: (D:1,C:1), (D:1,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f2 f3)
+        - (board f3 p0)
+        - (up f2 f3)
+        - (up f1 f2)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (depart f2 p0)
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:14.985039'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 79
+    fring_size: 47
+    fring_first_20: (D:1,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (up f1 f2)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:20:15.077934'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 80
+    fring_size: 47
+    fring_first_20: (D:2,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (up f1 f3)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:15.218866'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 81
+    fring_size: 52
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: up
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (up f0 f1)
+        - (up f0 f2)
+        - (up f0 f3)
+        - (up f1 f2)
+        - (up f1 f3)
+        - (up f2 f3)
+
+
+---
+timestamp: '2024-10-06T14:20:15.341139'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 82
+    fring_size: 54
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f0 f1)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: up
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (up f1 f2)
+        - (up f1 f3)
+        - (up f2 f3)
+
+
+---
+timestamp: '2024-10-06T14:20:15.436853'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 83
+    fring_size: 54
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:4,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:3,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f0 f1)
+        - (up f1 f2)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:15.535378'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 84
+    fring_size: 55
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f0 f1)
+        - (up f1 f2)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (depart f2 p0)
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:15.631509'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 85
+    fring_size: 55
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f0 f1)
+        - (up f1 f3)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:15.729500'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 86
+    fring_size: 55
+    fring_first_20: (D:4,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f0 f1)
+        - (up f1 f3)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:15.857553'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 87
+    fring_size: 56
+    fring_first_20: (D:5,C:1), (D:5,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:3,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f0 f1)
+        - (up f2 f3)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (board f1 p1)
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:15.983306'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 88
+    fring_size: 56
+    fring_first_20: (D:5,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1),
+        (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f0 f1)
+        - (up f2 f3)
+        - (board f1 p1)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:16.081502'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 89
+    fring_size: 56
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:8,C:2),
+        (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f0 f1)
+        - (up f2 f3)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:16.186892'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 90
+    fring_size: 56
+    fring_first_20: (D:4,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:8,C:2),
+        (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f0 f2)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (up f2 f3)
+
+
+---
+timestamp: '2024-10-06T14:20:16.290037'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 91
+    fring_size: 56
+    fring_first_20: (D:5,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:8,C:2),
+        (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f0 f2)
+        - (up f2 f3)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:16.388144'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 92
+    fring_size: 56
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:8,C:2), (D:7,C:2),
+        (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f0 f2)
+        - (up f2 f3)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:16.487760'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 93
+    fring_size: 55
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2),
+        (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f0 f3)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: up
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T14:20:16.591983'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 94
+    fring_size: 60
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1),
+        (D:3,C:1), (D:3,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f2 f3)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: up
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (up f0 f1)
+        - (up f0 f2)
+        - (up f0 f3)
+        - (up f1 f2)
+        - (up f1 f3)
+        - (up f2 f3)
+
+
+---
+timestamp: '2024-10-06T14:20:16.690252'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 95
+    fring_size: 61
+    fring_first_20: (D:5,C:1), (D:5,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1),
+        (D:4,C:1), (D:3,C:1), (D:3,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f2 f3)
+        - (up f0 f1)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (board f1 p1)
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:16.795016'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 96
+    fring_size: 61
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1),
+        (D:3,C:1), (D:3,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f2 f3)
+        - (up f0 f1)
+        - (board f1 p1)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:16.895270'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 97
+    fring_size: 61
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:3,C:1),
+        (D:3,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f2 f3)
+        - (up f0 f1)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:16.998558'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 98
+    fring_size: 61
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:3,C:1),
+        (D:3,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f2 f3)
+        - (up f0 f2)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:17.113199'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 99
+    fring_size: 62
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:3,C:1), (D:3,C:1),
+        (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f2 f3)
+        - (up f0 f2)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (depart f2 p0)
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:17.216301'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 100
+    fring_size: 62
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:3,C:1), (D:3,C:1),
+        (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f2 f3)
+        - (up f0 f3)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:17.322961'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 101
+    fring_size: 62
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:3,C:1), (D:3,C:1), (D:8,C:2),
+        (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f2 f3)
+        - (up f0 f3)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:17.424076'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 102
+    fring_size: 62
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:4,C:1), (D:3,C:1), (D:3,C:1), (D:8,C:2),
+        (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f2 f3)
+        - (up f2 f3)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:17.535588'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 103
+    fring_size: 62
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:3,C:1), (D:3,C:1), (D:8,C:2), (D:7,C:2),
+        (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f2 f3)
+        - (up f2 f3)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:17.647907'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 104
+    fring_size: 62
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:3,C:1), (D:3,C:1), (D:8,C:2), (D:7,C:2),
+        (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f2 f3)
+        - (up f1 f2)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:17.793982'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 105
+    fring_size: 63
+    fring_first_20: (D:4,C:1), (D:3,C:1), (D:3,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2),
+        (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f2 f3)
+        - (up f1 f2)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (depart f2 p0)
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:17.892096'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 106
+    fring_size: 63
+    fring_first_20: (D:5,C:1), (D:3,C:1), (D:3,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2),
+        (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f2 f3)
+        - (up f1 f3)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:18.029003'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 107
+    fring_size: 63
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f2 f3)
+        - (up f1 f3)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:18.170282'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 108
+    fring_size: 68
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1),
+        (D:3,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f1 f2)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: up
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (up f0 f1)
+        - (up f0 f2)
+        - (up f0 f3)
+        - (up f1 f2)
+        - (up f1 f3)
+        - (up f2 f3)
+
+
+---
+timestamp: '2024-10-06T14:20:18.269508'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 109
+    fring_size: 69
+    fring_first_20: (D:5,C:1), (D:5,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1),
+        (D:4,C:1), (D:3,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f1 f2)
+        - (up f0 f1)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (board f1 p1)
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:18.372883'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 110
+    fring_size: 70
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1),
+        (D:3,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f1 f2)
+        - (up f0 f1)
+        - (board f1 p1)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (depart f2 p0)
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:18.482079'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 111
+    fring_size: 71
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:3,C:1),
+        (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f1 f2)
+        - (up f0 f1)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (depart f2 p0)
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:18.577744'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 112
+    fring_size: 71
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:3,C:1),
+        (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f1 f2)
+        - (up f0 f2)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:18.676820'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 113
+    fring_size: 72
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:3,C:1), (D:8,C:2),
+        (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f1 f2)
+        - (up f0 f2)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (depart f2 p0)
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:18.771904'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 114
+    fring_size: 72
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:3,C:1), (D:8,C:2),
+        (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f1 f2)
+        - (up f0 f3)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:18.869843'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 115
+    fring_size: 73
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:3,C:1), (D:8,C:2), (D:7,C:2),
+        (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f1 f2)
+        - (up f0 f3)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (depart f2 p0)
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:18.963244'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 116
+    fring_size: 73
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:4,C:1), (D:3,C:1), (D:8,C:2), (D:7,C:2),
+        (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f1 f2)
+        - (up f1 f2)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:19.062193'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 117
+    fring_size: 74
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:3,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2),
+        (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f1 f2)
+        - (up f1 f2)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (depart f2 p0)
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:19.181215'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 118
+    fring_size: 74
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:3,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2),
+        (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f1 f2)
+        - (up f2 f3)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:19.300499'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 119
+    fring_size: 74
+    fring_first_20: (D:4,C:1), (D:3,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f1 f2)
+        - (up f2 f3)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:19.395434'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 120
+    fring_size: 74
+    fring_first_20: (D:5,C:1), (D:3,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f1 f2)
+        - (up f1 f3)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:19.495296'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 121
+    fring_size: 75
+    fring_first_20: (D:3,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f1 f2)
+        - (up f1 f3)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (depart f2 p0)
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:19.602677'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 122
+    fring_size: 80
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1),
+        (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f1 f3)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: up
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (up f0 f1)
+        - (up f0 f2)
+        - (up f0 f3)
+        - (up f1 f2)
+        - (up f1 f3)
+        - (up f2 f3)
+
+
+---
+timestamp: '2024-10-06T14:20:19.700764'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 123
+    fring_size: 81
+    fring_first_20: (D:5,C:1), (D:5,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1),
+        (D:4,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f1 f3)
+        - (up f0 f1)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (board f1 p1)
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:19.798313'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 124
+    fring_size: 81
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1),
+        (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f1 f3)
+        - (up f0 f1)
+        - (board f1 p1)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:19.895520'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 125
+    fring_size: 81
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:8,C:2),
+        (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f1 f3)
+        - (up f0 f1)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:20.005466'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 126
+    fring_size: 81
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:8,C:2),
+        (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f1 f3)
+        - (up f0 f2)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:20.127983'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 127
+    fring_size: 82
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:8,C:2), (D:7,C:2),
+        (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f1 f3)
+        - (up f0 f2)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (depart f2 p0)
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:20.245087'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 128
+    fring_size: 82
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:8,C:2), (D:7,C:2),
+        (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f1 f3)
+        - (up f2 f3)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:20.344439'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 129
+    fring_size: 82
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:4,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2),
+        (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f1 f3)
+        - (up f2 f3)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:20.444799'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 130
+    fring_size: 82
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:4,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2),
+        (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f1 f3)
+        - (up f0 f3)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:20.567220'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 131
+    fring_size: 82
+    fring_first_20: (D:4,C:1), (D:4,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f1 f3)
+        - (up f0 f3)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:20.690848'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 132
+    fring_size: 82
+    fring_first_20: (D:5,C:1), (D:4,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f1 f3)
+        - (up f1 f2)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:20.803262'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 133
+    fring_size: 83
+    fring_first_20: (D:4,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f1 f3)
+        - (up f1 f2)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (depart f2 p0)
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:20.908273'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 134
+    fring_size: 83
+    fring_first_20: (D:5,C:1), (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f1 f3)
+        - (up f1 f3)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (board f3 p0)
+
+
+---
+timestamp: '2024-10-06T14:20:21.021621'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 135
+    fring_size: 83
+    fring_first_20: (D:8,C:2), (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (up f1 f3)
+        - (board f3 p0)
+        - (up f1 f3)
+        - (up f1 f3)
+        - (board f3 p0)
+        repair_set: up,(lift-at ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: depart
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (depart f3 p1)
+
+
+---
+timestamp: '2024-10-06T14:20:21.023249'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: true
+    iteration: 136
+    fring_size: 82
+    fring_first_20: (D:7,C:2), (D:7,C:2), (D:7,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2),
+        (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2), (D:6,C:2)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (up f0 f1)
+        - (board f1 p1)
+        - (up f1 f2)
+        - (up f2 f3)
+        - (board f3 p0)
+        - (depart f3 p1)
+        - (down f3 f2)
+        - (depart f2 p0)
+        repair_set: 'board,(boarded ?p),effPos,1
+
+            board,(served ?p),effPos,1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2024-10-06T14:20:21.025285'
+level: INFO
+issuer: instance_solver
+event_type: results
+data:
+    goal:
+        depth: 8
+        ground_actions:
+        - (up f0 f1)
+        - (board f1 p1)
+        - (up f1 f2)
+        - (up f2 f3)
+        - (board f3 p0)
+        - (depart f3 p1)
+        - (down f3 f2)
+        - (depart f2 p0)
+        repair_set: 'board,(boarded ?p),effPos,1
+
+            board,(served ?p),effPos,1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2024-10-06T14:20:21.026411'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.3 minutes = 19.24 seconds
+
+
+---
+timestamp: '2024-10-06T14:20:21.182676'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+

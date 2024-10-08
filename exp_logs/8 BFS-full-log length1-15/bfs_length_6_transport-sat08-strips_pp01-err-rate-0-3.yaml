@@ -1,0 +1,133 @@
+---
+timestamp: '2024-10-06T08:21:57.465568'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/8 BFS-full-log length1-15/bfs_length_6_transport-sat08-strips_pp01-err-rate-0-3.yaml
+    instance_id: transport-sat08-strips/pp01-err-rate-0-3
+    search_algorithm: bfs
+    plan_length: 6
+    domain_class: transport-sat08-strips
+    instance_name: pp01-err-rate-0-3
+    ground_plan:
+    - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+    - (pick-up truck-1 city-loc-4 package-2 capacity-0 capacity-1)
+    - (drive truck-1 city-loc-4 city-loc-5)
+    - (drop truck-1 city-loc-5 package-1 capacity-0 capacity-1)
+    - (drive truck-1 city-loc-5 city-loc-2)
+    - (drop truck-1 city-loc-2 package-2 capacity-1 capacity-2)
+    lifted_plan:
+    - pick-up
+    - pick-up
+    - drive
+    - drop
+    - drive
+    - drop
+
+
+---
+timestamp: '2024-10-06T08:21:57.469379'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: pick-up,(capacity ?v ?s1),effPos,1
+
+
+---
+timestamp: '2024-10-06T08:21:57.566389'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 2
+    fring_first_20: (D:1,C:0), (D:1,C:0)
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+
+
+---
+timestamp: '2024-10-06T08:21:57.656517'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 2
+    fring_size: 1
+    fring_first_20: (D:1,C:0)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-1 capacity-1 capacity-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:57.750265'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 3
+    fring_size: 0
+    fring_first_20: ''
+    current_node:
+        depth: 1
+        ground_actions:
+        - (pick-up truck-1 city-loc-4 package-2 capacity-1 capacity-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T08:21:57.751617'
+level: INFO
+issuer: instance_solver
+event_type: results
+data:
+    goal: not_found
+
+
+---
+timestamp: '2024-10-06T08:21:57.751995'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.0 minutes = 0.29 seconds
+
+
+---
+timestamp: '2024-10-06T08:21:57.837989'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+

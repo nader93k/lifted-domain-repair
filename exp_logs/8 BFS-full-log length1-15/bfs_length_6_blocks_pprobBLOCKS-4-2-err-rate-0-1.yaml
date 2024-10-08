@@ -1,0 +1,639 @@
+---
+timestamp: '2024-10-06T01:06:11.599981'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/8 BFS-full-log length1-15/bfs_length_6_blocks_pprobBLOCKS-4-2-err-rate-0-1.yaml
+    instance_id: blocks/pprobBLOCKS-4-2-err-rate-0-1
+    search_algorithm: bfs
+    plan_length: 6
+    domain_class: blocks
+    instance_name: pprobBLOCKS-4-2-err-rate-0-1
+    ground_plan:
+    - (unstack c b)
+    - (stack c d)
+    - (pick-up b)
+    - (stack b c)
+    - (pick-up a)
+    - (stack a b)
+    lifted_plan:
+    - unstack
+    - stack
+    - pick-up
+    - stack
+    - pick-up
+    - stack
+
+
+---
+timestamp: '2024-10-06T01:06:11.602808'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2024-10-06T01:06:11.695359'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 1
+    fring_first_20: (D:1,C:0)
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: unstack
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unstack c b)
+
+
+---
+timestamp: '2024-10-06T01:06:11.792389'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 2
+    fring_size: 3
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (unstack c b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (stack c a)
+        - (stack c b)
+        - (stack c d)
+
+
+---
+timestamp: '2024-10-06T01:06:11.884228'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 3
+    fring_size: 4
+    fring_first_20: (D:3,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (unstack c b)
+        - (stack c a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up b)
+        - (pick-up d)
+
+
+---
+timestamp: '2024-10-06T01:06:11.974853'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 4
+    fring_size: 5
+    fring_first_20: (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (unstack c b)
+        - (stack c a)
+        - (pick-up b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack b c)
+        - (stack b d)
+
+
+---
+timestamp: '2024-10-06T01:06:12.068488'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 5
+    fring_size: 5
+    fring_first_20: (D:5,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (unstack c b)
+        - (stack c a)
+        - (pick-up b)
+        - (stack b c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up d)
+
+
+---
+timestamp: '2024-10-06T01:06:12.158952'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 6
+    fring_size: 4
+    fring_first_20: (D:4,C:0), (D:3,C:0), (D:2,C:0), (D:2,C:0)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (unstack c b)
+        - (stack c a)
+        - (pick-up b)
+        - (stack b c)
+        - (pick-up d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (stack d b)
+
+
+---
+timestamp: '2024-10-06T01:06:12.251781'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 7
+    fring_size: 3
+    fring_first_20: (D:3,C:0), (D:2,C:0), (D:2,C:0)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (unstack c b)
+        - (stack c a)
+        - (pick-up b)
+        - (stack b d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T01:06:12.343636'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 8
+    fring_size: 4
+    fring_first_20: (D:4,C:0), (D:4,C:0), (D:2,C:0), (D:2,C:0)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (unstack c b)
+        - (stack c a)
+        - (pick-up d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack d b)
+        - (stack d c)
+
+
+---
+timestamp: '2024-10-06T01:06:12.434955'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 9
+    fring_size: 3
+    fring_first_20: (D:4,C:0), (D:2,C:0), (D:2,C:0)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (unstack c b)
+        - (stack c a)
+        - (pick-up d)
+        - (stack d b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T01:06:12.525612'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 10
+    fring_size: 3
+    fring_first_20: (D:5,C:0), (D:2,C:0), (D:2,C:0)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (unstack c b)
+        - (stack c a)
+        - (pick-up d)
+        - (stack d c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up b)
+
+
+---
+timestamp: '2024-10-06T01:06:12.623793'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 11
+    fring_size: 2
+    fring_first_20: (D:2,C:0), (D:2,C:0)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (unstack c b)
+        - (stack c a)
+        - (pick-up d)
+        - (stack d c)
+        - (pick-up b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (stack b d)
+
+
+---
+timestamp: '2024-10-06T01:06:12.748122'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 12
+    fring_size: 3
+    fring_first_20: (D:3,C:0), (D:3,C:0), (D:2,C:0)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (unstack c b)
+        - (stack c d)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick-up a)
+        - (pick-up b)
+
+
+---
+timestamp: '2024-10-06T01:06:12.870473'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 13
+    fring_size: 4
+    fring_first_20: (D:4,C:0), (D:4,C:0), (D:3,C:0), (D:2,C:0)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (unstack c b)
+        - (stack c d)
+        - (pick-up a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack a b)
+        - (stack a c)
+
+
+---
+timestamp: '2024-10-06T01:06:12.953179'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 14
+    fring_size: 3
+    fring_first_20: (D:4,C:0), (D:3,C:0), (D:2,C:0)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (unstack c b)
+        - (stack c d)
+        - (pick-up a)
+        - (stack a b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T01:06:13.043628'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 15
+    fring_size: 3
+    fring_first_20: (D:5,C:0), (D:3,C:0), (D:2,C:0)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (unstack c b)
+        - (stack c d)
+        - (pick-up a)
+        - (stack a c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up b)
+
+
+---
+timestamp: '2024-10-06T01:06:13.140830'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 16
+    fring_size: 3
+    fring_first_20: (D:3,C:0), (D:2,C:0), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (unstack c b)
+        - (stack c d)
+        - (pick-up a)
+        - (stack a c)
+        - (pick-up b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (stack b a)
+
+
+---
+timestamp: '2024-10-06T01:06:13.232436'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 17
+    fring_size: 4
+    fring_first_20: (D:4,C:0), (D:4,C:0), (D:2,C:0), (D:6,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (unstack c b)
+        - (stack c d)
+        - (pick-up b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (stack b a)
+        - (stack b c)
+
+
+---
+timestamp: '2024-10-06T01:06:13.315133'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 18
+    fring_size: 3
+    fring_first_20: (D:4,C:0), (D:2,C:0), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (unstack c b)
+        - (stack c d)
+        - (pick-up b)
+        - (stack b a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-06T01:06:13.404099'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 19
+    fring_size: 3
+    fring_first_20: (D:5,C:0), (D:2,C:0), (D:6,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (unstack c b)
+        - (stack c d)
+        - (pick-up b)
+        - (stack b c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pick-up
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up a)
+
+
+---
+timestamp: '2024-10-06T01:06:13.489994'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 20
+    fring_size: 3
+    fring_first_20: (D:6,C:0), (D:2,C:0), (D:6,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (unstack c b)
+        - (stack c d)
+        - (pick-up b)
+        - (stack b c)
+        - (pick-up a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: stack
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (stack a b)
+
+
+---
+timestamp: '2024-10-06T01:06:13.491269'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: true
+    iteration: 21
+    fring_size: 2
+    fring_first_20: (D:2,C:0), (D:6,C:2)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (unstack c b)
+        - (stack c d)
+        - (pick-up b)
+        - (stack b c)
+        - (pick-up a)
+        - (stack a b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2024-10-06T01:06:13.492303'
+level: INFO
+issuer: instance_solver
+event_type: results
+data:
+    goal:
+        depth: 6
+        ground_actions:
+        - (unstack c b)
+        - (stack c d)
+        - (pick-up b)
+        - (stack b c)
+        - (pick-up a)
+        - (stack a b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2024-10-06T01:06:13.493078'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.0 minutes = 1.89 seconds
+
+
+---
+timestamp: '2024-10-06T01:06:13.570839'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+

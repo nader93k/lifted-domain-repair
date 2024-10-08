@@ -1,0 +1,91 @@
+---
+timestamp: '2024-10-07T20:36:26.526289'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/8 BFS-full-log length1-15/bfs_length_9_pegsol-08-strips_pp02-err-rate-0-3.yaml
+    instance_id: pegsol-08-strips/pp02-err-rate-0-3
+    search_algorithm: bfs
+    plan_length: 9
+    domain_class: pegsol-08-strips
+    instance_name: pp02-err-rate-0-3
+    ground_plan:
+    - (jump-new-move pos-4-3 pos-4-4 pos-4-5)
+    - (end-move pos-4-5)
+    - (jump-new-move pos-3-2 pos-3-3 pos-3-4)
+    - (end-move pos-3-4)
+    - (jump-new-move pos-2-4 pos-3-4 pos-4-4)
+    - (end-move pos-4-4)
+    - (jump-new-move pos-4-5 pos-4-4 pos-4-3)
+    - (end-move pos-4-3)
+    - (jump-new-move pos-5-3 pos-4-3 pos-3-3)
+    lifted_plan:
+    - jump-new-move
+    - end-move
+    - jump-new-move
+    - end-move
+    - jump-new-move
+    - end-move
+    - jump-new-move
+    - end-move
+    - jump-new-move
+
+
+---
+timestamp: '2024-10-07T20:36:26.531351'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: jump-new-move,(in-line ?from ?over ?from),precPos,-1
+
+
+---
+timestamp: '2024-10-07T20:36:26.632657'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 0
+    fring_first_20: ''
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: jump-new-move
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:36:26.633812'
+level: INFO
+issuer: instance_solver
+event_type: results
+data:
+    goal: not_found
+
+
+---
+timestamp: '2024-10-07T20:36:26.634250'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.0 minutes = 0.11 seconds
+
+
+---
+timestamp: '2024-10-07T20:36:26.681593'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+

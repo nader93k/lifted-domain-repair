@@ -1,0 +1,3591 @@
+---
+timestamp: '2024-10-07T20:46:22.667702'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/8 BFS-full-log length1-15/bfs_length_9_pipesworld-notankage_pp05-net1-b10-g4-err-rate-0-3.yaml
+    instance_id: pipesworld-notankage/pp05-net1-b10-g4-err-rate-0-3
+    search_algorithm: bfs
+    plan_length: 9
+    domain_class: pipesworld-notankage
+    instance_name: pp05-net1-b10-g4-err-rate-0-3
+    ground_plan:
+    - (pop-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+    - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+    - (push-unitarypipe s13 b6 a1 a3 b2 rat-a gasoleo)
+    - (push-unitarypipe s13 b4 a1 a3 b6 lco rat-a)
+    - (push-unitarypipe s12 b7 a1 a2 b9 gasoleo oc1b)
+    - (push-unitarypipe s12 b5 a1 a2 b7 gasoleo gasoleo)
+    - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+    - (pop-unitarypipe s12 b7 a1 a2 b9 gasoleo oc1b)
+    - (push-unitarypipe s12 b8 a1 a2 b7 lco gasoleo)
+    lifted_plan:
+    - pop-unitarypipe
+    - pop-unitarypipe
+    - push-unitarypipe
+    - push-unitarypipe
+    - push-unitarypipe
+    - push-unitarypipe
+    - pop-unitarypipe
+    - pop-unitarypipe
+    - push-unitarypipe
+
+
+---
+timestamp: '2024-10-07T20:46:22.673547'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: push-unitarypipe,(first ?batch-atom-in ?pipe),precPos,-1
+
+
+---
+timestamp: '2024-10-07T20:46:22.816790'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 10
+    fring_first_20: (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pop-unitarypipe
+        num_neighbours: 10
+        first_10_possible_groundings:
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        - (pop-unitarypipe s12 b0 a1 a2 b6 rat-a rat-a)
+        - (pop-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        - (pop-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+        - (pop-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        - (pop-unitarypipe s13 b1 a1 a3 b2 gasoleo gasoleo)
+        - (pop-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+        - (pop-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        - (pop-unitarypipe s13 b3 a1 a3 b2 oca1 gasoleo)
+
+
+---
+timestamp: '2024-10-07T20:46:22.955880'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 2
+    fring_size: 16
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (pop-unitarypipe s12 b0 a1 a2 b6 rat-a rat-a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pop-unitarypipe
+        num_neighbours: 7
+        first_10_possible_groundings:
+        - (pop-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        - (pop-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        - (pop-unitarypipe s13 b1 a1 a3 b2 gasoleo gasoleo)
+        - (pop-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+        - (pop-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        - (pop-unitarypipe s13 b3 a1 a3 b2 oca1 gasoleo)
+
+
+---
+timestamp: '2024-10-07T20:46:23.050797'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 3
+    fring_size: 15
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b0 a1 a2 b6 rat-a rat-a)
+        - (pop-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:23.147783'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 4
+    fring_size: 14
+    fring_first_20: (D:2,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b0 a1 a2 b6 rat-a rat-a)
+        - (pop-unitarypipe s13 b1 a1 a3 b2 gasoleo gasoleo)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:23.238007'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 5
+    fring_size: 13
+    fring_first_20: (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b0 a1 a2 b6 rat-a rat-a)
+        - (pop-unitarypipe s13 b3 a1 a3 b2 oca1 gasoleo)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:23.351629'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 6
+    fring_size: 18
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:1,C:0),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1),
+        (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (pop-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pop-unitarypipe
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        - (pop-unitarypipe s13 b1 a1 a3 b2 gasoleo gasoleo)
+        - (pop-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+        - (pop-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        - (pop-unitarypipe s13 b3 a1 a3 b2 oca1 gasoleo)
+
+
+---
+timestamp: '2024-10-07T20:46:23.470163'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 7
+    fring_size: 17
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:1,C:0), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:23.587341'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 8
+    fring_size: 16
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:1,C:0), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:23.677653'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 9
+    fring_size: 15
+    fring_first_20: (D:2,C:0), (D:1,C:0), (D:1,C:0), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+        - (pop-unitarypipe s13 b1 a1 a3 b2 gasoleo gasoleo)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:23.768022'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 10
+    fring_size: 14
+    fring_first_20: (D:1,C:0), (D:1,C:0), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+        - (pop-unitarypipe s13 b3 a1 a3 b2 oca1 gasoleo)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:23.889060'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 11
+    fring_size: 20
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (pop-unitarypipe s13 b3 a1 a3 b2 oca1 gasoleo)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pop-unitarypipe
+        num_neighbours: 7
+        first_10_possible_groundings:
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        - (pop-unitarypipe s12 b0 a1 a2 b6 rat-a rat-a)
+        - (pop-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        - (pop-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+        - (pop-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        - (pop-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+
+
+---
+timestamp: '2024-10-07T20:46:23.982627'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 12
+    fring_size: 19
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:1,C:0), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s13 b3 a1 a3 b2 oca1 gasoleo)
+        - (pop-unitarypipe s12 b0 a1 a2 b6 rat-a rat-a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:24.085259'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 13
+    fring_size: 18
+    fring_first_20: (D:2,C:0), (D:1,C:0), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1),
+        (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s13 b3 a1 a3 b2 oca1 gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:24.217325'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 14
+    fring_size: 17
+    fring_first_20: (D:1,C:0), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s13 b3 a1 a3 b2 oca1 gasoleo)
+        - (pop-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:24.354153'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 15
+    fring_size: 23
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (pop-unitarypipe s13 b1 a1 a3 b2 gasoleo gasoleo)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: pop-unitarypipe
+        num_neighbours: 7
+        first_10_possible_groundings:
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        - (pop-unitarypipe s12 b0 a1 a2 b6 rat-a rat-a)
+        - (pop-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        - (pop-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+        - (pop-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        - (pop-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+
+
+---
+timestamp: '2024-10-07T20:46:24.442677'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 16
+    fring_size: 22
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s13 b1 a1 a3 b2 gasoleo gasoleo)
+        - (pop-unitarypipe s12 b0 a1 a2 b6 rat-a rat-a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:24.534535'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 17
+    fring_size: 21
+    fring_first_20: (D:2,C:0), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s13 b1 a1 a3 b2 gasoleo gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:24.632770'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 18
+    fring_size: 20
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s13 b1 a1 a3 b2 gasoleo gasoleo)
+        - (pop-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:24.725390'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 19
+    fring_size: 19
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s13 b3 a1 a3 b2 oca1 gasoleo)
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:24.821437'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 20
+    fring_size: 18
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1),
+        (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+        - (pop-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:24.954906'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 21
+    fring_size: 17
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b0 a1 a2 b6 rat-a rat-a)
+        - (pop-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:25.060438'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 22
+    fring_size: 16
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b0 a1 a2 b6 rat-a rat-a)
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:25.159285'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 23
+    fring_size: 15
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s13 b1 a1 a3 b2 gasoleo gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:25.258450'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 24
+    fring_size: 14
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s13 b3 a1 a3 b2 oca1 gasoleo)
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:25.356197'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 25
+    fring_size: 13
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s13 b1 a1 a3 b2 gasoleo gasoleo)
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:25.447631'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 26
+    fring_size: 12
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s13 b3 a1 a3 b2 oca1 gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:25.543317'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 27
+    fring_size: 11
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1),
+        (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b0 a1 a2 b6 rat-a rat-a)
+        - (pop-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:25.638961'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 28
+    fring_size: 10
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s13 b1 a1 a3 b2 gasoleo gasoleo)
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:25.735562'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 29
+    fring_size: 9
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s13 b1 a1 a3 b2 gasoleo gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:25.829248'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 30
+    fring_size: 8
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b0 a1 a2 b6 rat-a rat-a)
+        - (pop-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:25.924642'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 31
+    fring_size: 7
+    fring_first_20: (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s13 b3 a1 a3 b2 oca1 gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:26.021342'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 32
+    fring_size: 6
+    fring_first_20: (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+        - (pop-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:26.157200'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 33
+    fring_size: 14
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: pop-unitarypipe
+        num_neighbours: 9
+        first_10_possible_groundings:
+        - (pop-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        - (pop-unitarypipe s12 b5 a1 a2 b5 gasoleo gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+        - (pop-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        - (pop-unitarypipe s13 b1 a1 a3 b2 gasoleo gasoleo)
+        - (pop-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+        - (pop-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        - (pop-unitarypipe s13 b3 a1 a3 b2 oca1 gasoleo)
+
+
+---
+timestamp: '2024-10-07T20:46:26.286056'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 34
+    fring_size: 15
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (push-unitarypipe s12 b5 a1 a2 b5 gasoleo gasoleo)
+        - (push-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+
+
+---
+timestamp: '2024-10-07T20:46:26.418711'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 35
+    fring_size: 14
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        - (push-unitarypipe s12 b5 a1 a2 b5 gasoleo gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:26.545032'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 36
+    fring_size: 13
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        - (push-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:26.657528'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 37
+    fring_size: 15
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b5 gasoleo gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (push-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        - (push-unitarypipe s12 b5 a1 a2 b5 gasoleo gasoleo)
+        - (push-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+
+
+---
+timestamp: '2024-10-07T20:46:26.787002'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 38
+    fring_size: 14
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b5 gasoleo gasoleo)
+        - (push-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:26.921277'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 39
+    fring_size: 13
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b5 gasoleo gasoleo)
+        - (push-unitarypipe s12 b5 a1 a2 b5 gasoleo gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:27.015603'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 40
+    fring_size: 12
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b5 gasoleo gasoleo)
+        - (push-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:27.111468'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 41
+    fring_size: 11
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        - (pop-unitarypipe s13 b3 a1 a3 b2 oca1 gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:27.229451'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 42
+    fring_size: 10
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1),
+        (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        - (pop-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:27.326846'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 43
+    fring_size: 9
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        - (pop-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:27.448684'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 44
+    fring_size: 8
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        - (pop-unitarypipe s13 b1 a1 a3 b2 gasoleo gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:27.561223'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 45
+    fring_size: 9
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (push-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        - (push-unitarypipe s12 b5 a1 a2 b5 gasoleo gasoleo)
+
+
+---
+timestamp: '2024-10-07T20:46:27.668456'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 46
+    fring_size: 8
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+        - (push-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:27.763774'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 47
+    fring_size: 7
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+        - (push-unitarypipe s12 b5 a1 a2 b5 gasoleo gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:27.857585'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 48
+    fring_size: 6
+    fring_first_20: (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:27.975342'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 49
+    fring_size: 8
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (push-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        - (push-unitarypipe s12 b5 a1 a2 b5 gasoleo gasoleo)
+        - (push-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+
+
+---
+timestamp: '2024-10-07T20:46:28.071398'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 50
+    fring_size: 7
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+        - (push-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:28.164501'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 51
+    fring_size: 6
+    fring_first_20: (D:3,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+        - (push-unitarypipe s12 b5 a1 a2 b5 gasoleo gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:28.259581'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 52
+    fring_size: 5
+    fring_first_20: (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+        - (push-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:28.403342'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 53
+    fring_size: 12
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (pop-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: pop-unitarypipe
+        num_neighbours: 8
+        first_10_possible_groundings:
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        - (pop-unitarypipe s12 b0 a1 a2 b6 rat-a rat-a)
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        - (pop-unitarypipe s12 b9 a1 a2 b9 oc1b oc1b)
+        - (pop-unitarypipe s13 b1 a1 a3 b2 gasoleo gasoleo)
+        - (pop-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+        - (pop-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        - (pop-unitarypipe s13 b3 a1 a3 b2 oca1 gasoleo)
+
+
+---
+timestamp: '2024-10-07T20:46:28.507091'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 54
+    fring_size: 11
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:28.598298'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 55
+    fring_size: 10
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+        - (pop-unitarypipe s12 b0 a1 a2 b6 rat-a rat-a)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:28.697841'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 56
+    fring_size: 10
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (push-unitarypipe s12 b9 a1 a2 b9 oc1b oc1b)
+
+
+---
+timestamp: '2024-10-07T20:46:28.786996'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 57
+    fring_size: 9
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1),
+        (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        - (push-unitarypipe s12 b9 a1 a2 b9 oc1b oc1b)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:28.879927'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 58
+    fring_size: 8
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+        - (pop-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:29.011023'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 59
+    fring_size: 7
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+        - (pop-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:29.140385'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 60
+    fring_size: 6
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+        - (pop-unitarypipe s13 b3 a1 a3 b2 oca1 gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:29.259389'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 61
+    fring_size: 7
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+        - (pop-unitarypipe s12 b9 a1 a2 b9 oc1b oc1b)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (push-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        - (push-unitarypipe s12 b9 a1 a2 b9 oc1b oc1b)
+
+
+---
+timestamp: '2024-10-07T20:46:29.362551'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 62
+    fring_size: 6
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+        - (pop-unitarypipe s12 b9 a1 a2 b9 oc1b oc1b)
+        - (push-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:29.464373'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 63
+    fring_size: 5
+    fring_first_20: (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+        - (pop-unitarypipe s12 b9 a1 a2 b9 oc1b oc1b)
+        - (push-unitarypipe s12 b9 a1 a2 b9 oc1b oc1b)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:29.598302'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 64
+    fring_size: 4
+    fring_first_20: (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+        - (pop-unitarypipe s13 b1 a1 a3 b2 gasoleo gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:29.729712'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 65
+    fring_size: 11
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (pop-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: pop-unitarypipe
+        num_neighbours: 8
+        first_10_possible_groundings:
+        - (pop-unitarypipe s12 b0 a1 a2 b0 rat-a rat-a)
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        - (pop-unitarypipe s12 b0 a1 a2 b6 rat-a rat-a)
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        - (pop-unitarypipe s13 b1 a1 a3 b2 gasoleo gasoleo)
+        - (pop-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+        - (pop-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        - (pop-unitarypipe s13 b3 a1 a3 b2 oca1 gasoleo)
+
+
+---
+timestamp: '2024-10-07T20:46:29.835941'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 66
+    fring_size: 13
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        - (pop-unitarypipe s12 b0 a1 a2 b0 rat-a rat-a)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (push-unitarypipe s12 b0 a1 a2 b0 rat-a rat-a)
+        - (push-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        - (push-unitarypipe s12 b0 a1 a2 b6 rat-a rat-a)
+
+
+---
+timestamp: '2024-10-07T20:46:29.927572'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 67
+    fring_size: 12
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        - (pop-unitarypipe s12 b0 a1 a2 b0 rat-a rat-a)
+        - (push-unitarypipe s12 b0 a1 a2 b0 rat-a rat-a)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:30.022458'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 68
+    fring_size: 11
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        - (pop-unitarypipe s12 b0 a1 a2 b0 rat-a rat-a)
+        - (push-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:30.122937'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 69
+    fring_size: 10
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        - (pop-unitarypipe s12 b0 a1 a2 b0 rat-a rat-a)
+        - (push-unitarypipe s12 b0 a1 a2 b6 rat-a rat-a)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:30.216810'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 70
+    fring_size: 9
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        - (pop-unitarypipe s13 b3 a1 a3 b2 oca1 gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:30.313783'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 71
+    fring_size: 8
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1),
+        (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:30.413137'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 72
+    fring_size: 7
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        - (pop-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:30.520268'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 73
+    fring_size: 6
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        - (pop-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:30.626920'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 74
+    fring_size: 7
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        - (pop-unitarypipe s12 b0 a1 a2 b6 rat-a rat-a)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (push-unitarypipe s12 b0 a1 a2 b0 rat-a rat-a)
+        - (push-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+
+
+---
+timestamp: '2024-10-07T20:46:30.718474'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 75
+    fring_size: 6
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        - (pop-unitarypipe s12 b0 a1 a2 b6 rat-a rat-a)
+        - (push-unitarypipe s12 b0 a1 a2 b0 rat-a rat-a)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:30.814275'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 76
+    fring_size: 5
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        - (pop-unitarypipe s12 b0 a1 a2 b6 rat-a rat-a)
+        - (push-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:30.918763'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 77
+    fring_size: 6
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (push-unitarypipe s12 b0 a1 a2 b0 rat-a rat-a)
+        - (push-unitarypipe s12 b0 a1 a2 b6 rat-a rat-a)
+
+
+---
+timestamp: '2024-10-07T20:46:31.013090'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 78
+    fring_size: 5
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        - (push-unitarypipe s12 b0 a1 a2 b0 rat-a rat-a)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:31.109334'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 79
+    fring_size: 4
+    fring_first_20: (D:2,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        - (push-unitarypipe s12 b0 a1 a2 b6 rat-a rat-a)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:31.206512'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 80
+    fring_size: 3
+    fring_first_20: (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        - (pop-unitarypipe s13 b1 a1 a3 b2 gasoleo gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:31.353609'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 81
+    fring_size: 11
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (pop-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: pop-unitarypipe
+        num_neighbours: 9
+        first_10_possible_groundings:
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        - (pop-unitarypipe s12 b0 a1 a2 b6 rat-a rat-a)
+        - (pop-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        - (pop-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+        - (pop-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        - (pop-unitarypipe s13 b1 a1 a3 b1 gasoleo gasoleo)
+        - (pop-unitarypipe s13 b1 a1 a3 b2 gasoleo gasoleo)
+        - (pop-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+
+
+---
+timestamp: '2024-10-07T20:46:31.454684'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 82
+    fring_size: 10
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:31.548096'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 83
+    fring_size: 9
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:31.671689'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 84
+    fring_size: 8
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:31.823274'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 85
+    fring_size: 9
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        - (pop-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (push-unitarypipe s13 b1 a1 a3 b1 gasoleo gasoleo)
+        - (push-unitarypipe s13 b1 a1 a3 b2 gasoleo gasoleo)
+
+
+---
+timestamp: '2024-10-07T20:46:31.919816'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 86
+    fring_size: 8
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        - (pop-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+        - (push-unitarypipe s13 b1 a1 a3 b1 gasoleo gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:32.019814'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 87
+    fring_size: 7
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1),
+        (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        - (pop-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+        - (push-unitarypipe s13 b1 a1 a3 b2 gasoleo gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:32.141829'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 88
+    fring_size: 9
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        - (pop-unitarypipe s13 b1 a1 a3 b1 gasoleo gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (push-unitarypipe s13 b1 a1 a3 b1 gasoleo gasoleo)
+        - (push-unitarypipe s13 b1 a1 a3 b2 gasoleo gasoleo)
+        - (push-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+
+
+---
+timestamp: '2024-10-07T20:46:32.244809'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 89
+    fring_size: 8
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        - (pop-unitarypipe s13 b1 a1 a3 b1 gasoleo gasoleo)
+        - (push-unitarypipe s13 b1 a1 a3 b1 gasoleo gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:32.341717'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 90
+    fring_size: 7
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1),
+        (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        - (pop-unitarypipe s13 b1 a1 a3 b1 gasoleo gasoleo)
+        - (push-unitarypipe s13 b1 a1 a3 b2 gasoleo gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:32.439476'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 91
+    fring_size: 6
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        - (pop-unitarypipe s13 b1 a1 a3 b1 gasoleo gasoleo)
+        - (push-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:32.535044'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 92
+    fring_size: 5
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:32.669535'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 93
+    fring_size: 4
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        - (pop-unitarypipe s12 b0 a1 a2 b6 rat-a rat-a)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:32.792811'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 94
+    fring_size: 3
+    fring_first_20: (D:2,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:32.916895'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 95
+    fring_size: 4
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        - (pop-unitarypipe s13 b1 a1 a3 b2 gasoleo gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (push-unitarypipe s13 b1 a1 a3 b1 gasoleo gasoleo)
+        - (push-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+
+
+---
+timestamp: '2024-10-07T20:46:33.029248'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 96
+    fring_size: 3
+    fring_first_20: (D:3,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        - (pop-unitarypipe s13 b1 a1 a3 b2 gasoleo gasoleo)
+        - (push-unitarypipe s13 b1 a1 a3 b1 gasoleo gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:33.171792'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 97
+    fring_size: 2
+    fring_first_20: (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        - (pop-unitarypipe s13 b1 a1 a3 b2 gasoleo gasoleo)
+        - (push-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:33.378182'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 98
+    fring_size: 11
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: pop-unitarypipe
+        num_neighbours: 10
+        first_10_possible_groundings:
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        - (pop-unitarypipe s12 b0 a1 a2 b6 rat-a rat-a)
+        - (pop-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        - (pop-unitarypipe s12 b5 a1 a2 b5 gasoleo gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+        - (pop-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+        - (pop-unitarypipe s13 b1 a1 a3 b2 gasoleo gasoleo)
+        - (pop-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+        - (pop-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        - (pop-unitarypipe s13 b3 a1 a3 b2 oca1 gasoleo)
+
+
+---
+timestamp: '2024-10-07T20:46:33.474455'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 99
+    fring_size: 10
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:33.574570'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 100
+    fring_size: 9
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        - (pop-unitarypipe s12 b0 a1 a2 b6 rat-a rat-a)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:33.677774'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 101
+    fring_size: 10
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (push-unitarypipe s12 b5 a1 a2 b5 gasoleo gasoleo)
+        - (push-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+
+
+---
+timestamp: '2024-10-07T20:46:33.770032'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 102
+    fring_size: 9
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+        - (push-unitarypipe s12 b5 a1 a2 b5 gasoleo gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:33.859715'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 103
+    fring_size: 8
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+        - (push-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:33.957036'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 104
+    fring_size: 7
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        - (pop-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:34.057006'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 105
+    fring_size: 6
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        - (pop-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:34.155843'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 106
+    fring_size: 5
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        - (pop-unitarypipe s13 b1 a1 a3 b2 gasoleo gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:34.264091'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 107
+    fring_size: 6
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (push-unitarypipe s12 b5 a1 a2 b5 gasoleo gasoleo)
+        - (push-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+
+
+---
+timestamp: '2024-10-07T20:46:34.358724'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 108
+    fring_size: 5
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+        - (push-unitarypipe s12 b5 a1 a2 b5 gasoleo gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:34.450591'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 109
+    fring_size: 4
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+        - (push-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:34.543338'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 110
+    fring_size: 3
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        - (pop-unitarypipe s13 b3 a1 a3 b2 oca1 gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:34.654233'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 111
+    fring_size: 5
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:2,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b5 gasoleo gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (push-unitarypipe s12 b5 a1 a2 b5 gasoleo gasoleo)
+        - (push-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+        - (push-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+
+
+---
+timestamp: '2024-10-07T20:46:34.748485'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 112
+    fring_size: 4
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:2,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b5 gasoleo gasoleo)
+        - (push-unitarypipe s12 b5 a1 a2 b5 gasoleo gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:34.842230'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 113
+    fring_size: 3
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b5 gasoleo gasoleo)
+        - (push-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:34.937000'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 114
+    fring_size: 2
+    fring_first_20: (D:2,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b5 gasoleo gasoleo)
+        - (push-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:35.044392'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 115
+    fring_size: 4
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (push-unitarypipe s12 b5 a1 a2 b5 gasoleo gasoleo)
+        - (push-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+        - (push-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+
+
+---
+timestamp: '2024-10-07T20:46:35.138306'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 116
+    fring_size: 3
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        - (push-unitarypipe s12 b5 a1 a2 b5 gasoleo gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:35.233736'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 117
+    fring_size: 2
+    fring_first_20: (D:3,C:1), (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        - (push-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:35.333369'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 118
+    fring_size: 1
+    fring_first_20: (D:1,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        - (pop-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        - (push-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:35.463491'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 119
+    fring_size: 9
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (pop-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: pop-unitarypipe
+        num_neighbours: 9
+        first_10_possible_groundings:
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        - (pop-unitarypipe s12 b0 a1 a2 b6 rat-a rat-a)
+        - (pop-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        - (pop-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+        - (pop-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        - (pop-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        - (pop-unitarypipe s13 b3 a1 a3 b2 oca1 gasoleo)
+        - (pop-unitarypipe s13 b3 a1 a3 b3 oca1 oca1)
+
+
+---
+timestamp: '2024-10-07T20:46:35.557160'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 120
+    fring_size: 8
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+        - (pop-unitarypipe s12 b0 a1 a2 b5 rat-a gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:35.650421'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 121
+    fring_size: 7
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+        - (pop-unitarypipe s12 b5 a1 a2 b0 gasoleo rat-a)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:35.755251'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 122
+    fring_size: 8
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+        - (pop-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (push-unitarypipe s13 b3 a1 a3 b2 oca1 gasoleo)
+        - (push-unitarypipe s13 b3 a1 a3 b3 oca1 oca1)
+
+
+---
+timestamp: '2024-10-07T20:46:35.847850'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 123
+    fring_size: 7
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+        - (pop-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        - (push-unitarypipe s13 b3 a1 a3 b2 oca1 gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:35.942889'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 124
+    fring_size: 6
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+        - (pop-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        - (push-unitarypipe s13 b3 a1 a3 b3 oca1 oca1)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:36.052827'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 125
+    fring_size: 8
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+        - (pop-unitarypipe s13 b3 a1 a3 b3 oca1 oca1)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (push-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        - (push-unitarypipe s13 b3 a1 a3 b2 oca1 gasoleo)
+        - (push-unitarypipe s13 b3 a1 a3 b3 oca1 oca1)
+
+
+---
+timestamp: '2024-10-07T20:46:36.143805'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 126
+    fring_size: 7
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+        - (pop-unitarypipe s13 b3 a1 a3 b3 oca1 oca1)
+        - (push-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:36.273034'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 127
+    fring_size: 6
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+        - (pop-unitarypipe s13 b3 a1 a3 b3 oca1 oca1)
+        - (push-unitarypipe s13 b3 a1 a3 b2 oca1 gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:36.367062'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 128
+    fring_size: 5
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+        - (pop-unitarypipe s13 b3 a1 a3 b3 oca1 oca1)
+        - (push-unitarypipe s13 b3 a1 a3 b3 oca1 oca1)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:36.470861'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 129
+    fring_size: 6
+    fring_first_20: (D:3,C:1), (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+        - (pop-unitarypipe s13 b3 a1 a3 b2 oca1 gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (push-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        - (push-unitarypipe s13 b3 a1 a3 b3 oca1 oca1)
+
+
+---
+timestamp: '2024-10-07T20:46:36.563751'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 130
+    fring_size: 5
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+        - (pop-unitarypipe s13 b3 a1 a3 b2 oca1 gasoleo)
+        - (push-unitarypipe s13 b3 a1 a3 b1 oca1 gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:36.658959'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 131
+    fring_size: 4
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pop-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+        - (pop-unitarypipe s13 b3 a1 a3 b2 oca1 gasoleo)
+        - (push-unitarypipe s13 b3 a1 a3 b3 oca1 oca1)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:36.758422'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 132
+    fring_size: 3
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+        - (pop-unitarypipe s12 b0 a1 a2 b6 rat-a rat-a)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:36.869264'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 133
+    fring_size: 2
+    fring_first_20: (D:2,C:1), (D:2,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+        - (pop-unitarypipe s12 b5 a1 a2 b6 gasoleo rat-a)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:36.970154'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 134
+    fring_size: 1
+    fring_first_20: (D:2,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+        - (pop-unitarypipe s12 b9 a1 a2 b5 oc1b gasoleo)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:37.064318'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 135
+    fring_size: 0
+    fring_first_20: ''
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pop-unitarypipe s13 b1 a1 a3 b3 gasoleo oca1)
+        - (pop-unitarypipe s12 b5 a1 a2 b9 gasoleo oc1b)
+        repair_set: pop-unitarypipe,(last ?last-batch-atom ?pipe),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: push-unitarypipe
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-07T20:46:37.065570'
+level: INFO
+issuer: instance_solver
+event_type: results
+data:
+    goal: not_found
+
+
+---
+timestamp: '2024-10-07T20:46:37.065954'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.2 minutes = 14.40 seconds
+
+
+---
+timestamp: '2024-10-07T20:46:37.202284'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+
