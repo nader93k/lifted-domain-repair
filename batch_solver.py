@@ -3,6 +3,7 @@ from custom_logger import StructuredLogger
 from exptools import list_instances, smart_instance_generator
 from pathlib import Path
 import os
+import sys
 import logging
 import subprocess
 import json
@@ -23,7 +24,6 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval, \
         )
         if os.path.isfile(log_file):
             continue
-        
         logger = StructuredLogger(log_file)
 
         cmd = [
@@ -80,9 +80,12 @@ if __name__ == "__main__":
     min_length = config['min_length']
     max_length = config['max_length']
     domain_class = config['domain_class']
-    instance_ids = config['instance_ids']
-    if instance_ids == 'load_instance_ids':
-        instance_ids = load_instance_ids
+    if len(sys.argv) > 1:
+        instance_ids = [sys.argv[1]]
+    else:
+        instance_ids = config['instance_ids']
+        if instance_ids == 'load_instance_ids':
+            instance_ids = load_instance_ids
     heuristic_relaxation = config['heuristic_relaxation']
     run_mode = config['run_mode']
 
