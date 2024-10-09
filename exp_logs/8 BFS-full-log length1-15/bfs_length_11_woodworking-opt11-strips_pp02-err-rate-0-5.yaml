@@ -1,0 +1,289 @@
+---
+timestamp: '2024-10-08T23:04:44.698542'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/8 BFS-full-log length1-15/bfs_length_11_woodworking-opt11-strips_pp02-err-rate-0-5.yaml
+    instance_id: woodworking-opt11-strips/pp02-err-rate-0-5
+    search_algorithm: bfs
+    plan_length: 11
+    domain_class: woodworking-opt11-strips
+    instance_name: pp02-err-rate-0-5
+    ground_plan:
+    - (do-saw-large b0 p2 saw0 oak rough s10 s8 s9 s7)
+    - (do-saw-medium b1 p0 saw0 pine rough s3 s2 s1)
+    - (do-saw-large b1 p1 saw0 pine rough s3 s1 s2 s0)
+    - (do-saw-medium b1 p3 saw0 pine rough s3 s2 s1)
+    - (do-plane p0 planer0 rough natural untreated)
+    - (do-glaze p0 glazer0 mauve)
+    - (do-plane p1 planer0 rough natural untreated)
+    - (do-glaze p1 glazer0 blue)
+    - (do-plane p2 planer0 rough natural untreated)
+    - (do-glaze p2 glazer0 white)
+    - (do-glaze p3 glazer0 mauve)
+    lifted_plan:
+    - do-saw-large
+    - do-saw-medium
+    - do-saw-large
+    - do-saw-medium
+    - do-plane
+    - do-glaze
+    - do-plane
+    - do-glaze
+    - do-plane
+    - do-glaze
+    - do-glaze
+
+
+---
+timestamp: '2024-10-08T23:04:44.707678'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: do-saw-medium,(boardsize-successor ?size_before ?size_after),precPos,-1
+
+
+---
+timestamp: '2024-10-08T23:04:44.910588'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 8
+    fring_first_20: (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-saw-large
+        num_neighbours: 8
+        first_10_possible_groundings:
+        - (do-saw-large b0 p1 saw0 oak rough s10 s8 s9 s7)
+        - (do-saw-large b0 p1 saw0 oak rough s4 s2 s3 s1)
+        - (do-saw-large b0 p1 saw0 oak rough s7 s5 s6 s4)
+        - (do-saw-large b0 p2 saw0 oak rough s10 s8 s9 s7)
+        - (do-saw-large b0 p2 saw0 oak rough s4 s2 s3 s1)
+        - (do-saw-large b0 p2 saw0 oak rough s7 s5 s6 s4)
+        - (do-saw-large b1 p1 saw0 pine rough s3 s1 s2 s0)
+        - (do-saw-large b1 p2 saw0 pine rough s3 s1 s2 s0)
+
+
+---
+timestamp: '2024-10-08T23:04:45.041881'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 2
+    fring_size: 7
+    fring_first_20: (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (do-saw-large b0 p1 saw0 oak rough s10 s8 s9 s7)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-saw-medium
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-08T23:04:45.155254'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 3
+    fring_size: 6
+    fring_first_20: (D:1,C:0), (D:1,C:0), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (do-saw-large b1 p1 saw0 pine rough s3 s1 s2 s0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-saw-medium
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-08T23:04:45.264239'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 4
+    fring_size: 5
+    fring_first_20: (D:1,C:0), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (do-saw-large b0 p2 saw0 oak rough s10 s8 s9 s7)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-saw-medium
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-08T23:04:45.428547'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 5
+    fring_size: 4
+    fring_first_20: (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (do-saw-large b1 p2 saw0 pine rough s3 s1 s2 s0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-saw-medium
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-08T23:04:45.553218'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 6
+    fring_size: 3
+    fring_first_20: (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (do-saw-large b0 p1 saw0 oak rough s7 s5 s6 s4)
+        repair_set: do-saw-large,(boardsize ?b ?size_before),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: do-saw-medium
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-08T23:04:45.664817'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 7
+    fring_size: 2
+    fring_first_20: (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (do-saw-large b0 p2 saw0 oak rough s7 s5 s6 s4)
+        repair_set: do-saw-large,(boardsize ?b ?size_before),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: do-saw-medium
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-08T23:04:45.772514'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 8
+    fring_size: 1
+    fring_first_20: (D:1,C:1)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (do-saw-large b0 p2 saw0 oak rough s4 s2 s3 s1)
+        repair_set: do-saw-large,(boardsize ?b ?size_before),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: do-saw-medium
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-08T23:04:45.895211'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 9
+    fring_size: 0
+    fring_first_20: ''
+    current_node:
+        depth: 1
+        ground_actions:
+        - (do-saw-large b0 p1 saw0 oak rough s4 s2 s3 s1)
+        repair_set: do-saw-large,(boardsize ?b ?size_before),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: do-saw-medium
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-08T23:04:45.896900'
+level: INFO
+issuer: instance_solver
+event_type: results
+data:
+    goal: not_found
+
+
+---
+timestamp: '2024-10-08T23:04:45.897588'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.0 minutes = 1.20 seconds
+
+
+---
+timestamp: '2024-10-08T23:04:45.985427'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+
