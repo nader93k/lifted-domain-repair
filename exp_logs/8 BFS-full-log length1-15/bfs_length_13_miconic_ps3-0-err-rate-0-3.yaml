@@ -1,0 +1,324 @@
+---
+timestamp: '2024-10-09T04:54:20.070265'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/8 BFS-full-log length1-15/bfs_length_13_miconic_ps3-0-err-rate-0-3.yaml
+    instance_id: miconic/ps3-0-err-rate-0-3
+    search_algorithm: bfs
+    plan_length: 13
+    domain_class: miconic
+    instance_name: ps3-0-err-rate-0-3
+    ground_plan:
+    - (up f0 f1)
+    - (board f1 p0)
+    - (up f1 f3)
+    - (board f3 p1)
+    - (down f3 f1)
+    - (depart f1 p1)
+    - (up f1 f4)
+    - (depart f4 p0)
+    - (down f4 f1)
+    - (up f1 f5)
+    - (board f5 p2)
+    - (down f5 f1)
+    - (depart f1 p2)
+    lifted_plan:
+    - up
+    - board
+    - up
+    - board
+    - down
+    - depart
+    - up
+    - depart
+    - down
+    - up
+    - board
+    - down
+    - depart
+
+
+---
+timestamp: '2024-10-09T04:54:20.074037'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'up,(destin ?f2 ?f1),precPos,-1
+
+        board,(passenger ?f),precPos,-1'
+
+
+---
+timestamp: '2024-10-09T04:54:20.203853'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 15
+    fring_first_20: (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:2),
+        (D:1,C:2), (D:1,C:2), (D:1,C:2), (D:1,C:2), (D:1,C:2), (D:1,C:2), (D:1,C:2),
+        (D:1,C:2), (D:1,C:2)
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: up
+        num_neighbours: 15
+        first_10_possible_groundings:
+        - (up f0 f1)
+        - (up f0 f2)
+        - (up f0 f3)
+        - (up f0 f4)
+        - (up f0 f5)
+        - (up f1 f2)
+        - (up f1 f3)
+        - (up f1 f4)
+        - (up f1 f5)
+        - (up f2 f3)
+
+
+---
+timestamp: '2024-10-09T04:54:20.304527'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 1
+        ground_actions:
+        - (up f0 f1)
+        repair_set: up,(destin ?f2 ?f1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: board
+        num_neighbours: 0
+        first_10_possible_groundings: null
+    current_state:
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: passenger
+        args: !!python/tuple
+        - p1
+        hash: -8584154916017670336
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: passenger
+        args: !!python/tuple
+        - p0
+        hash: 8204295883274088456
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: origin
+        args: !!python/tuple
+        - p2
+        - f5
+        hash: -5592570889275822135
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: floor
+        args: !!python/tuple
+        - f3
+        hash: 4202494427293276554
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - f1
+        - f2
+        hash: 6081685893123067594
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - f1
+        - f4
+        hash: -5998694883314432561
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: destin
+        args: !!python/tuple
+        - p2
+        - f1
+        hash: -1912250267004913136
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - f2
+        - f3
+        hash: 3273125559662404559
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: floor
+        args: !!python/tuple
+        - f0
+        hash: -7513371562242842280
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - f3
+        - f5
+        hash: -6518569185263703207
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: destin
+        args: !!python/tuple
+        - p1
+        - f1
+        hash: 2231773015191735384
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: floor
+        args: !!python/tuple
+        - f2
+        hash: -7515002664133542692
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - f0
+        - f2
+        hash: 6622879341976126301
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - f2
+        - f5
+        hash: 7514905391814439710
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: floor
+        args: !!python/tuple
+        - f1
+        hash: 3812484059396105502
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - f1
+        - f5
+        hash: -4141534083541023839
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: floor
+        args: !!python/tuple
+        - f4
+        hash: -1148639366861491231
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: lift-at
+        args: !!python/tuple
+        - f1
+        hash: 8106872046556149026
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - f0
+        - f3
+        hash: 2998545018400008037
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - f2
+        - f4
+        hash: -6476365617476731354
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - f4
+        - f5
+        hash: -1201205213749108441
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - f3
+        - f4
+        hash: -2666817307224539288
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: passenger
+        args: !!python/tuple
+        - p2
+        hash: 8874533297014205233
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: floor
+        args: !!python/tuple
+        - f5
+        hash: 708521432911917491
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - f0
+        - f5
+        hash: 7240324850552043188
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: origin
+        args: !!python/tuple
+        - p0
+        - f1
+        hash: -313916975368714763
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - f1
+        - f3
+        hash: -647561089159664776
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - f0
+        - f1
+        hash: -1789822732481531143
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: destin
+        args: !!python/tuple
+        - p0
+        - f4
+        hash: 3037070420693803706
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: origin
+        args: !!python/tuple
+        - p1
+        - f3
+        hash: 1355701849403648059
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: above
+        args: !!python/tuple
+        - f0
+        - f4
+        hash: -6750946158739127876
+
+
+---
+timestamp: '2024-10-09T04:54:20.313313'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: Grounder is passing unspected actionname=up,\
+    \ while we are waiting for action_name_in=board. Stack trace: Traceback (most\
+    \ recent call last):\n  File \"/home/nader/projects/lifted-white-plan-domain-repair/instance_solver.py\"\
+    , line 83, in solve_instance\n    path, goal_node = searcher.find_path(logger=logger,\
+    \ log_interval=log_interval)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
+    \  File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 51, in find_path\n    for neighbor in current_node.get_neighbors():\n \
+    \                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 149, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    \ task, next_action_name)\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
+    \  File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/action_grounding_tools.py\"\
+    , line 109, in smart_grounder\n    return _sas_parser(Path(sas_path), action_name)\n\
+    \           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/action_grounding_tools.py\"\
+    , line 133, in _sas_parser\n    assert action_name == action_name_in, f\"Grounder\
+    \ is passing unspected actionname={action_name}, while we are waiting for action_name_in={action_name_in}\"\
+    \n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Grounder is passing\
+    \ unspected actionname=up, while we are waiting for action_name_in=board\n"
+
+
+---
+timestamp: '2024-10-09T04:54:20.315461'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.0 minutes = 0.25 seconds
+
+
+---
+timestamp: '2024-10-09T04:54:20.383651'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+

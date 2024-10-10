@@ -1,0 +1,607 @@
+---
+timestamp: '2024-10-09T04:53:54.541818'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/8 BFS-full-log length1-15/bfs_length_13_freecell_pprobfreecell-3-2-err-rate-0-3.yaml
+    instance_id: freecell/pprobfreecell-3-2-err-rate-0-3
+    search_algorithm: bfs
+    plan_length: 13
+    domain_class: freecell
+    instance_name: pprobfreecell-3-2-err-rate-0-3
+    ground_plan:
+    - (sendtohome ca d2 c n1 c0 n0)
+    - (sendtohome-b da d n1 d0 n0 n1 n2)
+    - (sendtohome sa h3 s n1 s0 n0)
+    - (sendtofree h3 ha n4 n3)
+    - (sendtohome-b ha h n1 h0 n0 n2 n3)
+    - (sendtohome-b h2 h n2 ha n1 n3 n4)
+    - (sendtohome-b c2 c n2 ca n1 n4 n5)
+    - (sendtohome-b d2 d n2 da n1 n5 n6)
+    - (homefromfreecell h3 h n3 h2 n2 n3 n4)
+    - (sendtohome d3 s2 d n3 d2 n2)
+    - (sendtohome s2 c3 s n2 sa n1)
+    - (sendtohome-b c3 c n3 c2 n2 n6 n7)
+    - (sendtohome-b s3 s n3 s2 n2 n7 n8)
+    lifted_plan:
+    - sendtohome
+    - sendtohome-b
+    - sendtohome
+    - sendtofree
+    - sendtohome-b
+    - sendtohome-b
+    - sendtohome-b
+    - sendtohome-b
+    - homefromfreecell
+    - sendtohome
+    - sendtohome
+    - sendtohome-b
+    - sendtohome-b
+
+
+---
+timestamp: '2024-10-09T04:53:54.549769'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: sendtohome,(colspace ?card),precPos,-1
+
+
+---
+timestamp: '2024-10-09T04:53:54.654481'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: sendtohome
+        num_neighbours: 0
+        first_10_possible_groundings: null
+    current_state:
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: bottomcol
+        args: !!python/tuple
+        - c3
+        hash: -4060163166744088062
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: canstack
+        args: !!python/tuple
+        - c2
+        - h3
+        hash: -1784358762931043836
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: suit
+        args: !!python/tuple
+        - ca
+        - c
+        hash: 8929982586604652551
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: suit
+        args: !!python/tuple
+        - h0
+        - h
+        hash: 173162939627678739
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: canstack
+        args: !!python/tuple
+        - h2
+        - c3
+        hash: 7485669159304046611
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: successor
+        args: !!python/tuple
+        - n2
+        - n1
+        hash: 1910814103849312277
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: cellspace
+        args: !!python/tuple
+        - n4
+        hash: -1962168898799930349
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: successor
+        args: !!python/tuple
+        - n11
+        - n10
+        hash: -257820068716302309
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: suit
+        args: !!python/tuple
+        - s2
+        - s
+        hash: 2275855143043100700
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: successor
+        args: !!python/tuple
+        - n4
+        - n3
+        hash: -7237639312952879072
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: successor
+        args: !!python/tuple
+        - n6
+        - n5
+        hash: 3438740743702561
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: canstack
+        args: !!python/tuple
+        - ha
+        - c2
+        hash: -4400008872063145945
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: suit
+        args: !!python/tuple
+        - c3
+        - c
+        hash: 5587011762266402345
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: successor
+        args: !!python/tuple
+        - n9
+        - n8
+        hash: 5470013233338332716
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: canstack
+        args: !!python/tuple
+        - sa
+        - h2
+        hash: -2506402130241554379
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: suit
+        args: !!python/tuple
+        - ha
+        - h
+        hash: 2570534278269046856
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: suit
+        args: !!python/tuple
+        - h2
+        - h
+        hash: 7442887370867957328
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: home
+        args: !!python/tuple
+        - s0
+        hash: -8805340121369149852
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: canstack
+        args: !!python/tuple
+        - d2
+        - s3
+        hash: -44639962467019674
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: clear
+        args: !!python/tuple
+        - h2
+        hash: -5746481580799171478
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: value
+        args: !!python/tuple
+        - da
+        - n1
+        hash: 3496453390618287728
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: successor
+        args: !!python/tuple
+        - n13
+        - n12
+        hash: 6725892008240684164
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: clear
+        args: !!python/tuple
+        - d3
+        hash: 6396252447807922316
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: 'on'
+        args: !!python/tuple
+        - sa
+        - h3
+        hash: -3367845767924824404
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: suit
+        args: !!python/tuple
+        - d2
+        - d
+        hash: 2789006557227693751
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: home
+        args: !!python/tuple
+        - c0
+        hash: -3628357997138619208
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: clear
+        args: !!python/tuple
+        - s3
+        hash: -7067202684858817339
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: value
+        args: !!python/tuple
+        - h0
+        - n0
+        hash: 2587244485353840846
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: successor
+        args: !!python/tuple
+        - n1
+        - n0
+        hash: 3811384096486210773
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: bottomcol
+        args: !!python/tuple
+        - s3
+        hash: 7663776191134051029
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: 'on'
+        args: !!python/tuple
+        - s2
+        - c3
+        hash: 5066674451783253217
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: 'on'
+        args: !!python/tuple
+        - ca
+        - d2
+        hash: -8440981908886671643
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: value
+        args: !!python/tuple
+        - d0
+        - n0
+        hash: 8867321519755593448
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: canstack
+        args: !!python/tuple
+        - ha
+        - s2
+        hash: -590351662526074645
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: value
+        args: !!python/tuple
+        - d2
+        - n2
+        hash: 1753484192185530095
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: canstack
+        args: !!python/tuple
+        - ca
+        - h2
+        hash: 5050180489671511797
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: home
+        args: !!python/tuple
+        - d0
+        hash: 2185403347134679295
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: bottomcol
+        args: !!python/tuple
+        - h2
+        hash: 6336825389543208193
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: successor
+        args: !!python/tuple
+        - n8
+        - n7
+        hash: 7040657071068706564
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: canstack
+        args: !!python/tuple
+        - s2
+        - h3
+        hash: 8397640324120231687
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: clear
+        args: !!python/tuple
+        - ca
+        hash: 5664654152044678412
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: successor
+        args: !!python/tuple
+        - n10
+        - n9
+        hash: 4699101629689059085
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: canstack
+        args: !!python/tuple
+        - da
+        - s2
+        hash: 3630466616892214033
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: value
+        args: !!python/tuple
+        - c2
+        - n2
+        hash: -5962873401996905198
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: value
+        args: !!python/tuple
+        - c0
+        - n0
+        hash: -217076130146482925
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: successor
+        args: !!python/tuple
+        - n5
+        - n4
+        hash: -3102174485472363758
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: 'on'
+        args: !!python/tuple
+        - h3
+        - ha
+        hash: 6795120187324787477
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: value
+        args: !!python/tuple
+        - h3
+        - n3
+        hash: 8356315546343911196
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: 'on'
+        args: !!python/tuple
+        - d3
+        - s2
+        hash: -7792560262543373025
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: bottomcol
+        args: !!python/tuple
+        - ha
+        hash: 5183439647410459935
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: value
+        args: !!python/tuple
+        - ha
+        - n1
+        hash: 5588268975391788324
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: successor
+        args: !!python/tuple
+        - n12
+        - n11
+        hash: -4117111204494397656
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: clear
+        args: !!python/tuple
+        - da
+        hash: -3431483316385445079
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: canstack
+        args: !!python/tuple
+        - c2
+        - d3
+        hash: -6431652633500477654
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: clear
+        args: !!python/tuple
+        - sa
+        hash: 2267317487168485166
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: canstack
+        args: !!python/tuple
+        - s2
+        - d3
+        hash: 3146625267171581236
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: value
+        args: !!python/tuple
+        - ca
+        - n1
+        hash: 6527668154818165045
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: clear
+        args: !!python/tuple
+        - c2
+        hash: 5336436601556761915
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: canstack
+        args: !!python/tuple
+        - ca
+        - d2
+        hash: -2319899395165419715
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: suit
+        args: !!python/tuple
+        - da
+        - d
+        hash: 2384926850152039246
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: value
+        args: !!python/tuple
+        - c3
+        - n3
+        hash: -5153027522456277674
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: canstack
+        args: !!python/tuple
+        - sa
+        - d2
+        hash: 834509232097671511
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: canstack
+        args: !!python/tuple
+        - h2
+        - s3
+        hash: -6843214144996909210
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: suit
+        args: !!python/tuple
+        - d0
+        - d
+        hash: -2481217354554083993
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: value
+        args: !!python/tuple
+        - s2
+        - n2
+        hash: 2925680960776616303
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: suit
+        args: !!python/tuple
+        - s0
+        - s
+        hash: 8367341926014966130
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: colspace
+        args: !!python/tuple
+        - n1
+        hash: -7529427534518472840
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: value
+        args: !!python/tuple
+        - sa
+        - n1
+        hash: 2765721731510250364
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: successor
+        args: !!python/tuple
+        - n7
+        - n6
+        hash: 7315498303632820093
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: suit
+        args: !!python/tuple
+        - c0
+        - c
+        hash: -8051774032203424378
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: home
+        args: !!python/tuple
+        - h0
+        hash: -7272514153691818097
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: suit
+        args: !!python/tuple
+        - sa
+        - s
+        hash: 3677480853354153362
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: canstack
+        args: !!python/tuple
+        - d2
+        - c3
+        hash: 2279807370380024723
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: suit
+        args: !!python/tuple
+        - c2
+        - c
+        hash: 500766416505415592
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: successor
+        args: !!python/tuple
+        - n3
+        - n2
+        hash: 8382528678503182250
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: suit
+        args: !!python/tuple
+        - d3
+        - d
+        hash: -2917017515562295884
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: value
+        args: !!python/tuple
+        - s0
+        - n0
+        hash: -754148935695059525
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: suit
+        args: !!python/tuple
+        - s3
+        - s
+        hash: -4262813825074042436
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: bottomcol
+        args: !!python/tuple
+        - da
+        hash: 8651823653956934592
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: value
+        args: !!python/tuple
+        - d3
+        - n3
+        hash: 8907249432056528334
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: bottomcol
+        args: !!python/tuple
+        - d2
+        hash: -8079283783928580144
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: bottomcol
+        args: !!python/tuple
+        - c2
+        hash: -5425357884794778158
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: suit
+        args: !!python/tuple
+        - h3
+        - h
+        hash: -4640764133488338457
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: value
+        args: !!python/tuple
+        - h2
+        - n2
+        hash: -646732607359991313
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: canstack
+        args: !!python/tuple
+        - da
+        - c2
+        hash: 4908890328238048250
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: value
+        args: !!python/tuple
+        - s3
+        - n3
+        hash: 9203129418775930879
+
+
+---
+timestamp: '2024-10-09T04:53:54.673526'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: Grounder is passing unspected actionname=debark,\
+    \ while we are waiting for action_name_in=sendtohome. Stack trace: Traceback (most\
+    \ recent call last):\n  File \"/home/nader/projects/lifted-white-plan-domain-repair/instance_solver.py\"\
+    , line 83, in solve_instance\n    path, goal_node = searcher.find_path(logger=logger,\
+    \ log_interval=log_interval)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
+    \  File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 51, in find_path\n    for neighbor in current_node.get_neighbors():\n \
+    \                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 149, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    \ task, next_action_name)\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
+    \  File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/action_grounding_tools.py\"\
+    , line 109, in smart_grounder\n    return _sas_parser(Path(sas_path), action_name)\n\
+    \           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/action_grounding_tools.py\"\
+    , line 133, in _sas_parser\n    assert action_name == action_name_in, f\"Grounder\
+    \ is passing unspected actionname={action_name}, while we are waiting for action_name_in={action_name_in}\"\
+    \n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Grounder is passing\
+    \ unspected actionname=debark, while we are waiting for action_name_in=sendtohome\n"
+
+
+---
+timestamp: '2024-10-09T04:53:54.675477'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.0 minutes = 0.14 seconds
+
+
+---
+timestamp: '2024-10-09T04:53:54.734872'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+

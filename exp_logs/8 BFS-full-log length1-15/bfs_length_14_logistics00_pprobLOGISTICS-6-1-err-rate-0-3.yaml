@@ -1,0 +1,103 @@
+---
+timestamp: '2024-10-09T13:16:03.568468'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/8 BFS-full-log length1-15/bfs_length_14_logistics00_pprobLOGISTICS-6-1-err-rate-0-3.yaml
+    instance_id: logistics00/pprobLOGISTICS-6-1-err-rate-0-3
+    search_algorithm: bfs
+    plan_length: 14
+    domain_class: logistics00
+    instance_name: pprobLOGISTICS-6-1-err-rate-0-3
+    ground_plan:
+    - (load-truck obj22 tru2 pos2)
+    - (load-truck obj13 tru1 pos1)
+    - (load-truck obj12 tru1 pos1)
+    - (drive-truck tru1 pos1 apt1 cit1)
+    - (unload-truck obj13 tru1 apt1)
+    - (unload-truck obj12 tru1 apt1)
+    - (load-airplane obj13 apn1 apt1)
+    - (fly-airplane apn1 apt1 apt2)
+    - (unload-airplane obj13 apn1 apt2)
+    - (drive-truck tru2 pos2 apt2 cit2)
+    - (unload-truck obj22 tru2 apt2)
+    - (load-truck obj13 tru2 apt2)
+    - (drive-truck tru2 apt2 pos2 cit2)
+    - (unload-truck obj13 tru2 pos2)
+    lifted_plan:
+    - load-truck
+    - load-truck
+    - load-truck
+    - drive-truck
+    - unload-truck
+    - unload-truck
+    - load-airplane
+    - fly-airplane
+    - unload-airplane
+    - drive-truck
+    - unload-truck
+    - load-truck
+    - drive-truck
+    - unload-truck
+
+
+---
+timestamp: '2024-10-09T13:16:03.576703'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'load-airplane,(at ?loc ?airplane),precPos,-1
+
+        load-truck,(airport ?truck),precPos,-1'
+
+
+---
+timestamp: '2024-10-09T13:16:03.708519'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 0
+    fring_first_20: ''
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T13:16:03.709842'
+level: INFO
+issuer: instance_solver
+event_type: results
+data:
+    goal: not_found
+
+
+---
+timestamp: '2024-10-09T13:16:03.710504'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.0 minutes = 0.15 seconds
+
+
+---
+timestamp: '2024-10-09T13:16:03.792089'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+

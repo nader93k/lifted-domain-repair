@@ -1,0 +1,350 @@
+---
+timestamp: '2024-10-09T11:07:28.904619'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/8 BFS-full-log length1-15/bfs_length_14_ged-opt14-strips_pd-7-5-err-rate-0-3.yaml
+    instance_id: ged-opt14-strips/pd-7-5-err-rate-0-3
+    search_algorithm: bfs
+    plan_length: 14
+    domain_class: ged-opt14-strips
+    instance_name: pd-7-5-err-rate-0-3
+    ground_plan:
+    - (invert-single-gene-a g90)
+    - (begin-cut sub3 g90)
+    - (end-cut-1 g90 sub4)
+    - (end-cut-2 sub3 sub4)
+    - (begin-transpose-splice sub1 sub3)
+    - (end-splice-1 g90 sub1)
+    - (end-splice-2 g90 sub3)
+    - (reset-1 sub3)
+    - (begin-cut sub6 sub5)
+    - (end-cut-1 sub5 sub1)
+    - (end-cut-2 sub6 sub1)
+    - (begin-transpose-splice sub4 sub2)
+    - (end-splice-1 sub5 sub4)
+    - (end-splice-2 sub5 sub2)
+    lifted_plan:
+    - invert-single-gene-a
+    - begin-cut
+    - end-cut-1
+    - end-cut-2
+    - begin-transpose-splice
+    - end-splice-1
+    - end-splice-2
+    - reset-1
+    - begin-cut
+    - end-cut-1
+    - end-cut-2
+    - begin-transpose-splice
+    - end-splice-1
+    - end-splice-2
+
+
+---
+timestamp: '2024-10-09T11:07:28.912972'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: reset-1,(finished ),precPos,-1
+
+
+---
+timestamp: '2024-10-09T11:07:29.099852'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 7
+    fring_first_20: (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0),
+        (D:1,C:0)
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: invert-single-gene-a
+        num_neighbours: 7
+        first_10_possible_groundings:
+        - (invert-single-gene-a g90)
+        - (invert-single-gene-a sub1)
+        - (invert-single-gene-a sub2)
+        - (invert-single-gene-a sub3)
+        - (invert-single-gene-a sub4)
+        - (invert-single-gene-a sub5)
+        - (invert-single-gene-a sub6)
+
+
+---
+timestamp: '2024-10-09T11:07:29.302599'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 2
+    fring_size: 13
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0),
+        (D:2,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (invert-single-gene-a g90)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: begin-cut
+        num_neighbours: 7
+        first_10_possible_groundings:
+        - (begin-cut g90 sub4)
+        - (begin-cut sub1 sub3)
+        - (begin-cut sub2 sub6)
+        - (begin-cut sub3 g90)
+        - (begin-cut sub4 sub2)
+        - (begin-cut sub5 sub1)
+        - (begin-cut sub6 sub5)
+
+
+---
+timestamp: '2024-10-09T11:07:29.430569'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 3
+    fring_size: 13
+    fring_first_20: (D:3,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0),
+        (D:2,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (invert-single-gene-a g90)
+        - (begin-cut g90 sub4)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-cut-1
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-cut-1 sub4 sub2)
+
+
+---
+timestamp: '2024-10-09T11:07:29.544392'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 3
+        ground_actions:
+        - (invert-single-gene-a g90)
+        - (begin-cut g90 sub4)
+        - (end-cut-1 sub4 sub2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-cut-2
+        num_neighbours: 0
+        first_10_possible_groundings: null
+    current_state:
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: cw
+        args: !!python/tuple
+        - sub3
+        - g90
+        hash: -909057409500026368
+    - !!python/object:fd.pddl.f_expression.Assign
+        fluent: !!python/object:fd.pddl.f_expression.PrimitiveNumericExpression
+            symbol: total-cost
+            args: !!python/tuple []
+            hash: 1170363551447334297
+        expression: !!python/object:fd.pddl.f_expression.NumericConstant
+            value: 0
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: present
+        args: !!python/tuple
+        - sub2
+        hash: -8486215170106947644
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: cw
+        args: !!python/tuple
+        - sub1
+        - sub3
+        hash: -4777466081219477242
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: normal
+        args: !!python/tuple
+        - sub6
+        hash: -4490787751539670837
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: inverse-splice-next
+        args: !!python/tuple
+        - g90
+        hash: -7934150607560399153
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: s-first
+        args: !!python/tuple
+        - sub4
+        hash: -7936157595152949296
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: normal
+        args: !!python/tuple
+        - sub4
+        hash: 7428778759132894673
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: present
+        args: !!python/tuple
+        - g90
+        hash: 5855482532031363793
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: present
+        args: !!python/tuple
+        - sub3
+        hash: -8273171248473721197
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: cw
+        args: !!python/tuple
+        - sub6
+        - sub5
+        hash: -4507846226473564206
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: '='
+        args: !!python/tuple
+        - sub4
+        - sub2
+        hash: -394055479272110633
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: normal
+        args: !!python/tuple
+        - sub1
+        hash: 3384392635202558809
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: cut-point-2
+        args: !!python/tuple
+        - sub2
+        hash: -6284919843352150949
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: cw
+        args: !!python/tuple
+        - sub2
+        - sub6
+        hash: -7381165601620837985
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: inverted
+        args: !!python/tuple
+        - g90
+        hash: -6865932278213319392
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: present
+        args: !!python/tuple
+        - sub6
+        hash: -8941615841221613916
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: normal
+        args: !!python/tuple
+        - sub5
+        hash: -6857148256801765338
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: present
+        args: !!python/tuple
+        - sub4
+        hash: 2977950669450951594
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: normal
+        args: !!python/tuple
+        - sub2
+        hash: -4035387080425004565
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: last-cut-point
+        args: !!python/tuple
+        - g90
+        hash: 3068759675492500011
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: present
+        args: !!python/tuple
+        - sub5
+        hash: 7138767727225843199
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: s-last
+        args: !!python/tuple
+        - sub4
+        hash: 6752216236020370608
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: present
+        args: !!python/tuple
+        - sub1
+        hash: -1066435454479384270
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: cw
+        args: !!python/tuple
+        - sub5
+        - sub1
+        hash: 1007863806212718648
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: normal
+        args: !!python/tuple
+        - sub3
+        hash: -3822343158791778118
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: cut-point-1
+        args: !!python/tuple
+        - g90
+        hash: -6668728269624994820
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: cutting
+        args: !!python/tuple []
+        hash: 5621476223744052223
+
+
+---
+timestamp: '2024-10-09T11:07:29.552379'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: Command '['/home/nader/projects/lifted-white-plan-domain-repair/fd2/src/translate/translate.py',\
+    \ 'heuristic_tools/pass_to_grounder_domain.pddl', 'heuristic_tools/pass_to_grounder_task.pddl',\
+    \ '--sas-file', 'heuristic_tools/out.sas']' returned non-zero exit status 31..\
+    \ Stack trace: Traceback (most recent call last):\n  File \"/home/nader/projects/lifted-white-plan-domain-repair/instance_solver.py\"\
+    , line 83, in solve_instance\n    path, goal_node = searcher.find_path(logger=logger,\
+    \ log_interval=log_interval)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
+    \  File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 51, in find_path\n    for neighbor in current_node.get_neighbors():\n \
+    \                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 149, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    \ task, next_action_name)\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
+    \  File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/action_grounding_tools.py\"\
+    , line 102, in smart_grounder\n    subprocess.run(\n  File \"/home/nader/miniconda3/envs/planning/lib/python3.12/subprocess.py\"\
+    , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
+    \ Command '['/home/nader/projects/lifted-white-plan-domain-repair/fd2/src/translate/translate.py',\
+    \ 'heuristic_tools/pass_to_grounder_domain.pddl', 'heuristic_tools/pass_to_grounder_task.pddl',\
+    \ '--sas-file', 'heuristic_tools/out.sas']' returned non-zero exit status 31.\n"
+
+
+---
+timestamp: '2024-10-09T11:07:29.554779'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.0 minutes = 0.66 seconds
+
+
+---
+timestamp: '2024-10-09T11:07:29.681417'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+

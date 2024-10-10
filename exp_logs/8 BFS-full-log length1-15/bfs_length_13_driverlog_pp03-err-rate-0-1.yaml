@@ -1,0 +1,347 @@
+---
+timestamp: '2024-10-09T04:53:50.424633'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/8 BFS-full-log length1-15/bfs_length_13_driverlog_pp03-err-rate-0-1.yaml
+    instance_id: driverlog/pp03-err-rate-0-1
+    search_algorithm: bfs
+    plan_length: 13
+    domain_class: driverlog
+    instance_name: pp03-err-rate-0-1
+    ground_plan:
+    - (board-truck driver1 truck1 s1)
+    - (load-truck package3 truck1 s1)
+    - (walk driver2 s0 p2-0)
+    - (walk driver2 p2-0 s2)
+    - (drive-truck truck1 s1 s0 driver1)
+    - (load-truck package2 truck1 s0)
+    - (load-truck package1 truck1 s0)
+    - (drive-truck truck1 s0 s1 driver1)
+    - (unload-truck package2 truck1 s1)
+    - (unload-truck package1 truck1 s1)
+    - (drive-truck truck1 s1 s2 driver1)
+    - (unload-truck package3 truck1 s2)
+    - (drive-truck truck1 s2 s1 driver1)
+    lifted_plan:
+    - board-truck
+    - load-truck
+    - walk
+    - walk
+    - drive-truck
+    - load-truck
+    - load-truck
+    - drive-truck
+    - unload-truck
+    - unload-truck
+    - drive-truck
+    - unload-truck
+    - drive-truck
+
+
+---
+timestamp: '2024-10-09T04:53:50.429296'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: walk,(driver ?loc-to),precPos,-1
+
+
+---
+timestamp: '2024-10-09T04:53:50.519082'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: board-truck
+        num_neighbours: 0
+        first_10_possible_groundings: null
+    current_state:
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: path
+        args: !!python/tuple
+        - s0
+        - p2-0
+        hash: 2373082674664958466
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: path
+        args: !!python/tuple
+        - p2-1
+        - s1
+        hash: -7120458134190059262
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: obj
+        args: !!python/tuple
+        - package4
+        hash: -4189285704426270972
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: obj
+        args: !!python/tuple
+        - package1
+        hash: -7593130368068681723
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: location
+        args: !!python/tuple
+        - p0-1
+        hash: 3873482212755296006
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: path
+        args: !!python/tuple
+        - s1
+        - p0-1
+        hash: 6623558432144095878
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: path
+        args: !!python/tuple
+        - p2-1
+        - s2
+        hash: -3006261035297496440
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: link
+        args: !!python/tuple
+        - s0
+        - s2
+        hash: 7783862775738652549
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: obj
+        args: !!python/tuple
+        - package2
+        hash: 480197017804483341
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: path
+        args: !!python/tuple
+        - s0
+        - p0-1
+        hash: 5866934247920464782
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: link
+        args: !!python/tuple
+        - s2
+        - s1
+        hash: 6165212235407829400
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: at
+        args: !!python/tuple
+        - package2
+        - s0
+        hash: 8716574952871338270
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: location
+        args: !!python/tuple
+        - p2-0
+        hash: 4907662260548008736
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: location
+        args: !!python/tuple
+        - p2-1
+        hash: -4517451946970957404
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: path
+        args: !!python/tuple
+        - s1
+        - p2-1
+        hash: -1767375727582157532
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: link
+        args: !!python/tuple
+        - s2
+        - s0
+        hash: -6717240721466505435
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: path
+        args: !!python/tuple
+        - s2
+        - p2-0
+        hash: 1617236141196992809
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: path
+        args: !!python/tuple
+        - p0-1
+        - s1
+        hash: 1078511301741679277
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: at
+        args: !!python/tuple
+        - package4
+        - s1
+        hash: 2516198705235954099
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: path
+        args: !!python/tuple
+        - p0-1
+        - s0
+        hash: 2848166221971744563
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: at
+        args: !!python/tuple
+        - truck1
+        - s1
+        hash: -1861290033053517382
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: empty
+        args: !!python/tuple
+        - truck2
+        hash: -2530539506929419964
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: at
+        args: !!python/tuple
+        - driver1
+        - s1
+        hash: -9048929700407463354
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: obj
+        args: !!python/tuple
+        - package3
+        hash: -6046753886020513337
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: link
+        args: !!python/tuple
+        - s1
+        - s0
+        hash: -5894493541673446071
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: at
+        args: !!python/tuple
+        - driver2
+        - s0
+        hash: -8196295580552056113
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: empty
+        args: !!python/tuple
+        - truck1
+        hash: 800028642508051792
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: path
+        args: !!python/tuple
+        - s2
+        - p2-1
+        hash: -72125239788579117
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: driver
+        args: !!python/tuple
+        - driver2
+        hash: -3856247267739400876
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: location
+        args: !!python/tuple
+        - s0
+        hash: -7813912019543692201
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: driver
+        args: !!python/tuple
+        - driver1
+        hash: -3240318166011772457
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: truck
+        args: !!python/tuple
+        - truck2
+        hash: 6586559586207918424
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: at
+        args: !!python/tuple
+        - package3
+        - s1
+        hash: 4154600408242233051
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: at
+        args: !!python/tuple
+        - truck2
+        - s2
+        hash: 6525955487563245918
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: location
+        args: !!python/tuple
+        - s2
+        hash: 5931344944193500126
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: truck
+        args: !!python/tuple
+        - truck1
+        hash: -4131258955079793308
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: path
+        args: !!python/tuple
+        - p2-0
+        - s2
+        hash: 4292794295404573159
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: path
+        args: !!python/tuple
+        - p2-0
+        - s0
+        hash: -5657826471727467673
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: at
+        args: !!python/tuple
+        - package1
+        - s0
+        hash: -2155137277695626768
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: link
+        args: !!python/tuple
+        - s1
+        - s2
+        hash: -2860227825112411146
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: link
+        args: !!python/tuple
+        - s0
+        - s1
+        hash: -7731049108228605064
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: location
+        args: !!python/tuple
+        - s1
+        hash: -8893843401875220098
+
+
+---
+timestamp: '2024-10-09T04:53:50.527902'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: Grounder is passing unspected actionname=debark,\
+    \ while we are waiting for action_name_in=board-truck. Stack trace: Traceback\
+    \ (most recent call last):\n  File \"/home/nader/projects/lifted-white-plan-domain-repair/instance_solver.py\"\
+    , line 83, in solve_instance\n    path, goal_node = searcher.find_path(logger=logger,\
+    \ log_interval=log_interval)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
+    \  File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 51, in find_path\n    for neighbor in current_node.get_neighbors():\n \
+    \                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 149, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    \ task, next_action_name)\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
+    \  File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/action_grounding_tools.py\"\
+    , line 109, in smart_grounder\n    return _sas_parser(Path(sas_path), action_name)\n\
+    \           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/action_grounding_tools.py\"\
+    , line 133, in _sas_parser\n    assert action_name == action_name_in, f\"Grounder\
+    \ is passing unspected actionname={action_name}, while we are waiting for action_name_in={action_name_in}\"\
+    \n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Grounder is passing\
+    \ unspected actionname=debark, while we are waiting for action_name_in=board-truck\n"
+
+
+---
+timestamp: '2024-10-09T04:53:50.529755'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.0 minutes = 0.11 seconds
+
+
+---
+timestamp: '2024-10-09T04:53:50.601285'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+

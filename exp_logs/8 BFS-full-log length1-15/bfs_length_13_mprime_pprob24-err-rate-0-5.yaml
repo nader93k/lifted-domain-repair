@@ -1,0 +1,1186 @@
+---
+timestamp: '2024-10-09T04:58:01.590335'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/8 BFS-full-log length1-15/bfs_length_13_mprime_pprob24-err-rate-0-5.yaml
+    instance_id: mprime/pprob24-err-rate-0-5
+    search_algorithm: bfs
+    plan_length: 13
+    domain_class: mprime
+    instance_name: pprob24-err-rate-0-5
+    ground_plan:
+    - (feast curiosity muffin apple alsace goias)
+    - (drink chicken cherry alsace arizona surrey surrey arizona)
+    - (drink turkey tofu alsace arizona surrey surrey arizona)
+    - (feast achievement cherry tofu surrey arizona)
+    - (feast achievement tofu muffin surrey arizona)
+    - (feast achievement muffin apple arizona alsace)
+    - (overcome anger-12 achievement apple uranus saturn)
+    - (drink bacon apple bosnia manitoba goias surrey arizona)
+    - (feast achievement apple muffin surrey arizona)
+    - (feast achievement muffin tofu surrey arizona)
+    - (drink potato tofu bavaria guanabara moravia surrey arizona)
+    - (feast achievement tofu cherry surrey arizona)
+    - (succumb anger-12 achievement cherry uranus saturn)
+    lifted_plan:
+    - feast
+    - drink
+    - drink
+    - feast
+    - feast
+    - feast
+    - overcome
+    - drink
+    - feast
+    - feast
+    - drink
+    - feast
+    - succumb
+
+
+---
+timestamp: '2024-10-09T04:58:01.597642'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2024-10-09T04:58:02.562306'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 136
+    fring_first_20: (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:0), (D:1,C:1),
+        (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1),
+        (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: feast
+        num_neighbours: 136
+        first_10_possible_groundings:
+        - (feast curiosity chocolate apple alsace goias)
+        - (feast curiosity chocolate apple arizona alsace)
+        - (feast curiosity chocolate apple goias manitoba)
+        - (feast curiosity chocolate apple surrey arizona)
+        - (feast curiosity chocolate pepper alsace goias)
+        - (feast curiosity chocolate pepper arizona alsace)
+        - (feast curiosity chocolate pepper goias manitoba)
+        - (feast curiosity chocolate pepper surrey arizona)
+        - (feast curiosity melon muffin alsace goias)
+        - (feast curiosity melon muffin arizona alsace)
+
+
+---
+timestamp: '2024-10-09T05:01:14.661960'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 2
+    fring_size: 14895
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0),
+        (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0),
+        (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (feast curiosity muffin apple alsace goias)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drink
+        num_neighbours: 14760
+        first_10_possible_groundings:
+        - (drink apple apple alsace arizona surrey alsace goias)
+        - (drink apple apple alsace arizona surrey arizona alsace)
+        - (drink apple apple alsace arizona surrey bosnia oregon)
+        - (drink apple apple alsace arizona surrey goias manitoba)
+        - (drink apple apple alsace arizona surrey guanabara bavaria)
+        - (drink apple apple alsace arizona surrey manitoba bosnia)
+        - (drink apple apple alsace arizona surrey moravia guanabara)
+        - (drink apple apple alsace arizona surrey oregon moravia)
+        - (drink apple apple alsace arizona surrey surrey arizona)
+        - (drink apple apple bavaria guanabara moravia alsace goias)
+
+
+---
+timestamp: '2024-10-09T05:01:17.110735'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 2
+        ground_actions:
+        - (feast curiosity muffin apple alsace goias)
+        - (drink bacon apple bosnia manitoba goias surrey arizona)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drink
+        num_neighbours: 0
+        first_10_possible_groundings: null
+    current_state:
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: food
+        args: !!python/tuple
+        - melon
+        hash: 6185757286216133632
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: food
+        args: !!python/tuple
+        - turkey
+        hash: -5149985475829961214
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - bacon
+        - turkey
+        hash: 1179230453073722883
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - abrasion-27
+        hash: -766034318755171837
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: locale
+        args: !!python/tuple
+        - tofu
+        - surrey
+        hash: -8684142997821319672
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - hangover
+        - chicken
+        hash: 1682225554281197580
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - tofu
+        - cherry
+        hash: 5923826603187410957
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - depression-30
+        hash: -5110329621122947053
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - laceration
+        hash: 7523054586369578005
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - potato
+        - wurst
+        hash: 3945407800356939286
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - depression
+        hash: -6435531659315625440
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - boils-5
+        hash: 3755933515506096677
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - prostatitis-3
+        - pepper
+        hash: -2867772282113958873
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - abrasion
+        - chicken
+        hash: 3514981022628048937
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: food
+        args: !!python/tuple
+        - wurst
+        hash: -5005240317905841622
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - shrimp
+        - apple
+        hash: -8204658586987897812
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - dread-28
+        hash: 335939858776817199
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: harmony
+        args: !!python/tuple
+        - satiety
+        - saturn
+        hash: 2735701145697617459
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - melon
+        - potato
+        hash: 3469795964556039733
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - sciatica-29
+        - melon
+        hash: -3323463004684638667
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - boils
+        hash: -7674418358808823240
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: food
+        args: !!python/tuple
+        - apple
+        hash: -2122106344531577797
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - hangover-10
+        - wurst
+        hash: 3024482462265604155
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - sciatica-11
+        hash: 3418363096088980541
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - hangover-13
+        hash: -1960844780626923450
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - depression-14
+        hash: -7394282011312175027
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - chicken
+        - turkey
+        hash: 4844796661725072890
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: orbits
+        args: !!python/tuple
+        - saturn
+        - earth
+        hash: -5607789067335707051
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - angina
+        hash: 3285367418479763544
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: planet
+        args: !!python/tuple
+        - earth
+        hash: -9116474979346701735
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - muffin
+        - tofu
+        hash: -1351603503286930853
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - wurst
+        - potato
+        hash: 3027815420703446623
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: province
+        args: !!python/tuple
+        - manitoba
+        hash: -2898058429278336927
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: province
+        args: !!python/tuple
+        - arizona
+        hash: 459268724853898340
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: attacks
+        args: !!python/tuple
+        - surrey
+        - arizona
+        hash: -5842148561248956824
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - orange
+        - wurst
+        hash: 8393931997395650152
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - pepper
+        - melon
+        hash: -8604543104234491798
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - lettuce
+        - cherry
+        hash: -7708486841574394771
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - melon
+        - muffin
+        hash: 5513203344413355120
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - apple
+        - shrimp
+        hash: 8083544876269594738
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - melon
+        - pepper
+        hash: 1784599307938918004
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - laceration
+        - chicken
+        hash: 6330962874597692024
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: attacks
+        args: !!python/tuple
+        - oregon
+        - moravia
+        hash: 1638125763067217528
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - chicken
+        - cherry
+        hash: 5671879530933899388
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - abrasion-27
+        - melon
+        hash: -5924345066453054850
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - pepper
+        - chocolate
+        hash: 2532889049509876356
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - anger
+        hash: 6477258566792536711
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: locale
+        args: !!python/tuple
+        - melon
+        - bavaria
+        hash: -2457819090177838453
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: attacks
+        args: !!python/tuple
+        - guanabara
+        - bavaria
+        hash: -4808081418297256820
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - shrimp
+        - orange
+        hash: 2767249027624330893
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: harmony
+        args: !!python/tuple
+        - achievement
+        - saturn
+        hash: -1703354444951306608
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - prostatitis
+        hash: -3021729052273022319
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: locale
+        args: !!python/tuple
+        - orange
+        - goias
+        hash: 6549850405202124945
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: province
+        args: !!python/tuple
+        - bavaria
+        hash: -5034748697192740203
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - loneliness-31
+        hash: -3403057433050982245
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - depression-30
+        - melon
+        hash: 660917078695744671
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: province
+        args: !!python/tuple
+        - moravia
+        hash: -8662786490687936863
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: planet
+        args: !!python/tuple
+        - vulcan
+        hash: 8206260730190994594
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - depression-14
+        - orange
+        hash: 4501649978040640681
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - cherry
+        - chicken
+        hash: -5508848519303635791
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: attacks
+        args: !!python/tuple
+        - moravia
+        - guanabara
+        hash: 3862796641366653619
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - anger-12
+        hash: 7439609165454497974
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - dread-6
+        - shrimp
+        hash: -6188238307865295177
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - loneliness
+        hash: -6646459060858883399
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: planet
+        args: !!python/tuple
+        - saturn
+        hash: 4923705466323081401
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: food
+        args: !!python/tuple
+        - orange
+        hash: -5655826173700657989
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - dread-28
+        - melon
+        hash: -3467536122943639877
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: province
+        args: !!python/tuple
+        - oregon
+        hash: -7383408676694371649
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - angina-32
+        - wurst
+        hash: -7816593101014495549
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - grief-15
+        hash: 8514651663116862660
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - potato
+        - melon
+        hash: 7400652577945520326
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - anxiety
+        - lettuce
+        hash: 440855103553365705
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pleasure
+        args: !!python/tuple
+        - curiosity
+        hash: -5633482708775010613
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - loneliness-1
+        hash: 980228204381400780
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - pepper
+        - potato
+        hash: 2685067874368601293
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: food
+        args: !!python/tuple
+        - chicken
+        hash: -3322274081468108080
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: attacks
+        args: !!python/tuple
+        - arizona
+        - alsace
+        hash: -5775782976968621869
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - chicken
+        - tofu
+        hash: -7678648611306758443
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: locale
+        args: !!python/tuple
+        - shrimp
+        - arizona
+        hash: -587976828722118950
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: food
+        args: !!python/tuple
+        - lettuce
+        hash: 5512927436755987167
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - muffin
+        - melon
+        hash: 7725802416622744287
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - grief
+        hash: -907824620107054879
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - hangover
+        hash: 7859764488801394913
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - grief
+        - turkey
+        hash: -2961671724714684189
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - potato
+        - pepper
+        hash: 5604352114856796897
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - chocolate
+        - pepper
+        hash: 9026264917446376676
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - curiosity
+        - apple
+        hash: -541375116790619930
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: harmony
+        args: !!python/tuple
+        - curiosity
+        - earth
+        hash: 8907940541187079914
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - anger-9
+        - wurst
+        hash: -4823929591316229900
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: planet
+        args: !!python/tuple
+        - uranus
+        hash: 6498577010946290938
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: province
+        args: !!python/tuple
+        - surrey
+        hash: 2113509456954216698
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: attacks
+        args: !!python/tuple
+        - bosnia
+        - oregon
+        hash: -6601488415531553023
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - tofu
+        - muffin
+        hash: -815349428742226175
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - sciatica-11
+        - apple
+        hash: -7758647871892846333
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: food
+        args: !!python/tuple
+        - cherry
+        hash: 6517762878618873604
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - orange
+        - shrimp
+        hash: 1478053084743732997
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - abrasion-2
+        hash: -8130204748636957432
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - sciatica
+        - tofu
+        hash: -728950461232953591
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - laceration-7
+        hash: -3029771305402652393
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - loneliness-31
+        - potato
+        hash: -2920466123173400297
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: orbits
+        args: !!python/tuple
+        - uranus
+        - saturn
+        hash: -6212672303239658726
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - hangover-10
+        hash: -3161671052219983588
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - prostatitis-3
+        hash: 640465448496766243
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - chocolate
+        - apple
+        hash: 6455818379715631395
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - apple
+        - muffin
+        hash: 4544228085292213539
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: locale
+        args: !!python/tuple
+        - pepper
+        - bavaria
+        hash: -3242547180365276893
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - boils-5
+        - shrimp
+        hash: -7673024603187956950
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - angina-16
+        hash: -3687972307835317965
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: locale
+        args: !!python/tuple
+        - cherry
+        - surrey
+        hash: 7480239375585629491
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: attacks
+        args: !!python/tuple
+        - goias
+        - manitoba
+        hash: -4036374501168601802
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - loneliness
+        - tofu
+        hash: 2962510685192343351
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - laceration-7
+        - shrimp
+        hash: -1350152394852128455
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - muffin
+        - apple
+        hash: 3359055415803275577
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: locale
+        args: !!python/tuple
+        - apple
+        - arizona
+        hash: -450774594838979270
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - satiety
+        - bacon
+        hash: 2827337533047424828
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - cherry
+        - tofu
+        hash: -4620982318472943810
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - depression
+        - cherry
+        hash: 5337890798742420286
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - cherry
+        - lettuce
+        hash: -4279725589549083840
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - abrasion
+        hash: 7449156042361958724
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: food
+        args: !!python/tuple
+        - shrimp
+        hash: -1080453745317750457
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: province
+        args: !!python/tuple
+        - bosnia
+        hash: -275511811341190840
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: locale
+        args: !!python/tuple
+        - chocolate
+        - manitoba
+        hash: -5083899184209887929
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - angina
+        - turkey
+        hash: -1849798602858325686
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - dread
+        - lettuce
+        hash: -5208804649681057972
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pleasure
+        args: !!python/tuple
+        - satiety
+        hash: 7523587570182342481
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - dread-6
+        hash: 3940606524022665050
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: food
+        args: !!python/tuple
+        - tofu
+        hash: -6832765263621784227
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - wurst
+        - orange
+        hash: -4761547602813500579
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - grief-15
+        - orange
+        hash: -8960155383749438110
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - turkey
+        - bacon
+        hash: 4229179885667939180
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - anxiety-4
+        hash: 5662511117143035245
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - dread
+        hash: 4819544373076775791
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: food
+        args: !!python/tuple
+        - chocolate
+        hash: 1981358024957564276
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - prostatitis
+        - chicken
+        hash: -3514982130091439755
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: food
+        args: !!python/tuple
+        - muffin
+        hash: 7384665435158779768
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - anger-9
+        hash: 1276493658586707321
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: orbits
+        args: !!python/tuple
+        - vulcan
+        - uranus
+        hash: 272811355771516792
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - hangover-13
+        - orange
+        hash: -73498564522214533
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: food
+        args: !!python/tuple
+        - pepper
+        hash: 8054418781668710780
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - achievement
+        - cherry
+        hash: -5152266540373643396
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - angina-32
+        hash: 7835931754563943812
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - anxiety-26
+        hash: 1740490648744157064
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - angina-16
+        - shrimp
+        hash: 7367284762747402633
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: locale
+        args: !!python/tuple
+        - wurst
+        - arizona
+        hash: 1990496601636990347
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: attacks
+        args: !!python/tuple
+        - manitoba
+        - bosnia
+        hash: -6687270084914511469
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: locale
+        args: !!python/tuple
+        - chicken
+        - alsace
+        hash: 3444564793187996567
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: province
+        args: !!python/tuple
+        - alsace
+        hash: 3653498834977036186
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - turkey
+        - chicken
+        hash: 1689259928048821659
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: locale
+        args: !!python/tuple
+        - bacon
+        - bosnia
+        hash: 9208651091045065633
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: province
+        args: !!python/tuple
+        - guanabara
+        hash: -3175775779007955545
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - anxiety-4
+        - pepper
+        hash: -1641949818678484567
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - lettuce
+        - bacon
+        hash: 3567814467731143600
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - anger
+        - muffin
+        hash: 1488691090437850550
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - bacon
+        - lettuce
+        hash: -291966843858091078
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - jealousy-8
+        hash: -4004551998076141636
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: food
+        args: !!python/tuple
+        - potato
+        hash: -2264820533168078915
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pleasure
+        args: !!python/tuple
+        - achievement
+        hash: -2539973045975738434
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - anxiety-26
+        - melon
+        hash: -1817363888585490496
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: locale
+        args: !!python/tuple
+        - turkey
+        - alsace
+        hash: -2832128059127861820
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - apple
+        - chocolate
+        hash: 434365399368752069
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: food
+        args: !!python/tuple
+        - bacon
+        hash: -7094987988040779833
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: locale
+        args: !!python/tuple
+        - lettuce
+        - manitoba
+        hash: 9005414518768737736
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - boils
+        - lettuce
+        hash: -4312021352249447476
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - abrasion-2
+        - chocolate
+        hash: 8508653882245849041
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - loneliness-1
+        - pepper
+        hash: -8927630773030554668
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: eats
+        args: !!python/tuple
+        - tofu
+        - chicken
+        hash: -3916210356899570727
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: province
+        args: !!python/tuple
+        - goias
+        hash: 103001177215001564
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - jealousy
+        hash: 422691193028450270
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: locale
+        args: !!python/tuple
+        - bacon
+        - manitoba
+        hash: 273470608916130272
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - sciatica-29
+        hash: -8981080108543399455
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - jealousy-8
+        - pepper
+        hash: -4635603159964406302
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - jealousy
+        - lettuce
+        hash: -8159463569414061086
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - sciatica
+        hash: 4640677550068437995
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: craves
+        args: !!python/tuple
+        - anger-12
+        - apple
+        hash: -329242103963602449
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: locale
+        args: !!python/tuple
+        - muffin
+        - alsace
+        hash: -2362500308309938185
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: attacks
+        args: !!python/tuple
+        - alsace
+        - goias
+        hash: -1722995023135674888
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: pain
+        args: !!python/tuple
+        - anxiety
+        hash: 7356720786515398649
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: planet
+        args: !!python/tuple
+        - goias
+        hash: 20098415676751354
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: locale
+        args: !!python/tuple
+        - potato
+        - bavaria
+        hash: 758212530360823807
+
+
+---
+timestamp: '2024-10-09T05:01:17.156839'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: Grounder is passing unspected actionname=succumb,\
+    \ while we are waiting for action_name_in=drink. Stack trace: Traceback (most\
+    \ recent call last):\n  File \"/home/nader/projects/lifted-white-plan-domain-repair/instance_solver.py\"\
+    , line 83, in solve_instance\n    path, goal_node = searcher.find_path(logger=logger,\
+    \ log_interval=log_interval)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
+    \  File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 51, in find_path\n    for neighbor in current_node.get_neighbors():\n \
+    \                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 149, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    \ task, next_action_name)\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
+    \  File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/action_grounding_tools.py\"\
+    , line 109, in smart_grounder\n    return _sas_parser(Path(sas_path), action_name)\n\
+    \           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/action_grounding_tools.py\"\
+    , line 133, in _sas_parser\n    assert action_name == action_name_in, f\"Grounder\
+    \ is passing unspected actionname={action_name}, while we are waiting for action_name_in={action_name_in}\"\
+    \n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Grounder is passing\
+    \ unspected actionname=succumb, while we are waiting for action_name_in=drink\n"
+
+
+---
+timestamp: '2024-10-09T05:01:17.167563'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.1 hours = 3.3 minutes = 195.58 seconds
+
+
+---
+timestamp: '2024-10-09T05:01:21.574923'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+

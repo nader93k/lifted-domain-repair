@@ -1,0 +1,291 @@
+---
+timestamp: '2024-10-09T04:53:43.088209'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/8 BFS-full-log length1-15/bfs_length_12_zenotravel_pp06-err-rate-0-5.yaml
+    instance_id: zenotravel/pp06-err-rate-0-5
+    search_algorithm: bfs
+    plan_length: 12
+    domain_class: zenotravel
+    instance_name: pp06-err-rate-0-5
+    ground_plan:
+    - (fly plane2 city1 city0 fl3 fl2)
+    - (board person2 plane2 city0)
+    - (board person1 plane2 city0)
+    - (fly plane2 city0 city1 fl2 fl1)
+    - (board person4 plane2 city1)
+    - (debark person2 plane2 city1)
+    - (fly plane2 city1 city3 fl1 fl0)
+    - (debark person4 plane2 city3)
+    - (debark person1 plane2 city3)
+    - (board person5 plane1 city2)
+    - (fly plane1 city2 city1 fl5 fl4)
+    - (debark person5 plane1 city1)
+    lifted_plan:
+    - fly
+    - board
+    - board
+    - fly
+    - board
+    - debark
+    - fly
+    - debark
+    - debark
+    - board
+    - fly
+    - debark
+
+
+---
+timestamp: '2024-10-09T04:53:43.095610'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'fly,(fuel-level ?c1 ?c1),precPos,-1
+
+        debark,(in ?p ?c),precPos,-1'
+
+
+---
+timestamp: '2024-10-09T04:53:43.193424'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: fly
+        num_neighbours: 0
+        first_10_possible_groundings: null
+    current_state:
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: person
+        args: !!python/tuple
+        - person4
+        hash: 5247006941178062597
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: next
+        args: !!python/tuple
+        - fl5
+        - fl6
+        hash: 8941943002192024458
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: flevel
+        args: !!python/tuple
+        - fl3
+        hash: -8730960539437822578
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: flevel
+        args: !!python/tuple
+        - fl0
+        hash: -5524036313030819309
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: person
+        args: !!python/tuple
+        - person1
+        hash: -5325830911886354794
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: at
+        args: !!python/tuple
+        - plane1
+        - city2
+        hash: 1133962311637760793
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: flevel
+        args: !!python/tuple
+        - fl4
+        hash: 3745345988203492378
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: city
+        args: !!python/tuple
+        - city2
+        hash: 2956057429690462620
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: flevel
+        args: !!python/tuple
+        - fl5
+        hash: 5833712581665094815
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: aircraft
+        args: !!python/tuple
+        - plane2
+        hash: 6954629118470744481
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: at
+        args: !!python/tuple
+        - person3
+        - city3
+        hash: 712344375285617313
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: city
+        args: !!python/tuple
+        - city1
+        hash: -4240904853526439006
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: flevel
+        args: !!python/tuple
+        - fl6
+        hash: -4017210179378207445
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: flevel
+        args: !!python/tuple
+        - fl2
+        hash: 6942124027734088312
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: at
+        args: !!python/tuple
+        - plane2
+        - city1
+        hash: -3832454915215602898
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: at
+        args: !!python/tuple
+        - person4
+        - city1
+        hash: -6088904226658340942
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: at
+        args: !!python/tuple
+        - person1
+        - city0
+        hash: -2626767142774133069
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: person
+        args: !!python/tuple
+        - person2
+        hash: 1273200689094957495
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: aircraft
+        args: !!python/tuple
+        - plane1
+        hash: -31962566691803080
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: person
+        args: !!python/tuple
+        - person5
+        hash: 7933965617712437945
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: city
+        args: !!python/tuple
+        - city0
+        hash: -19445045367737156
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: fuel-level
+        args: !!python/tuple
+        - plane2
+        - fl3
+        hash: -4838849890696875965
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: next
+        args: !!python/tuple
+        - fl2
+        - fl3
+        hash: -6762014702880886204
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: fuel-level
+        args: !!python/tuple
+        - plane1
+        - fl5
+        hash: 7495278174042503493
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: city
+        args: !!python/tuple
+        - city3
+        hash: -1637641892148364217
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: at
+        args: !!python/tuple
+        - person5
+        - city2
+        hash: -5786678963166370615
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: flevel
+        args: !!python/tuple
+        - fl1
+        hash: 2229786652099328216
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: next
+        args: !!python/tuple
+        - fl3
+        - fl4
+        hash: 1663199203618852700
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: next
+        args: !!python/tuple
+        - fl4
+        - fl5
+        hash: 7171808375493379944
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: next
+        args: !!python/tuple
+        - fl1
+        - fl2
+        hash: 376368678820884841
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: at
+        args: !!python/tuple
+        - person2
+        - city0
+        hash: -2274015759420665366
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: next
+        args: !!python/tuple
+        - fl0
+        - fl1
+        hash: 2143167387732630383
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: person
+        args: !!python/tuple
+        - person3
+        hash: 119995591165255672
+
+
+---
+timestamp: '2024-10-09T04:53:43.203994'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: Grounder is passing unspected actionname=board,\
+    \ while we are waiting for action_name_in=fly. Stack trace: Traceback (most recent\
+    \ call last):\n  File \"/home/nader/projects/lifted-white-plan-domain-repair/instance_solver.py\"\
+    , line 83, in solve_instance\n    path, goal_node = searcher.find_path(logger=logger,\
+    \ log_interval=log_interval)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
+    \  File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 51, in find_path\n    for neighbor in current_node.get_neighbors():\n \
+    \                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 149, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    \ task, next_action_name)\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
+    \  File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/action_grounding_tools.py\"\
+    , line 109, in smart_grounder\n    return _sas_parser(Path(sas_path), action_name)\n\
+    \           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/action_grounding_tools.py\"\
+    , line 133, in _sas_parser\n    assert action_name == action_name_in, f\"Grounder\
+    \ is passing unspected actionname={action_name}, while we are waiting for action_name_in={action_name_in}\"\
+    \n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Grounder is passing\
+    \ unspected actionname=board, while we are waiting for action_name_in=fly\n"
+
+
+---
+timestamp: '2024-10-09T04:53:43.206076'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.0 minutes = 0.12 seconds
+
+
+---
+timestamp: '2024-10-09T04:53:43.296148'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+

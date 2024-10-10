@@ -1,0 +1,2431 @@
+---
+timestamp: '2024-10-09T14:14:15.437795'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/8 BFS-full-log length1-15/bfs_length_14_logistics98_pprob31-err-rate-0-5.yaml
+    instance_id: logistics98/pprob31-err-rate-0-5
+    search_algorithm: bfs
+    plan_length: 14
+    domain_class: logistics98
+    instance_name: pprob31-err-rate-0-5
+    ground_plan:
+    - (load-truck package1 truck4 city4-1)
+    - (drive-truck truck4 city4-1 city4-2 city4)
+    - (unload-truck package1 truck4 city4-2)
+    - (load-truck package3 truck1 city1-1)
+    - (fly-airplane plane1 city2-2 city3-2)
+    - (drive-truck truck1 city1-1 city1-2 city1)
+    - (unload-truck package3 truck1 city1-2)
+    - (load-truck package2 truck1 city1-2)
+    - (drive-truck truck1 city1-2 city1-1 city1)
+    - (unload-truck package2 truck1 city1-1)
+    - (fly-airplane plane1 city3-2 city4-2)
+    - (load-airplane package1 plane1 city4-2)
+    - (fly-airplane plane1 city4-2 city3-2)
+    - (unload-airplane package1 plane1 city3-2)
+    lifted_plan:
+    - load-truck
+    - drive-truck
+    - unload-truck
+    - load-truck
+    - fly-airplane
+    - drive-truck
+    - unload-truck
+    - load-truck
+    - drive-truck
+    - unload-truck
+    - fly-airplane
+    - load-airplane
+    - fly-airplane
+    - unload-airplane
+
+
+---
+timestamp: '2024-10-09T14:14:15.443446'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 3
+    repair: 'fly-airplane,(= ?airplane ?loc-to),precPos,-1
+
+        load-truck,(in ?truck ?truck),precPos,-1
+
+        fly-airplane,(in ?loc-from ?loc-from),effPos,1'
+
+
+---
+timestamp: '2024-10-09T14:14:15.545979'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 2
+    fring_first_20: (D:1,C:1), (D:1,C:1)
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: load-truck
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (load-truck package1 truck4 city4-1)
+        - (load-truck package3 truck1 city1-1)
+
+
+---
+timestamp: '2024-10-09T14:14:15.693992'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 2
+    fring_size: 21
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drive-truck
+        num_neighbours: 20
+        first_10_possible_groundings:
+        - (drive-truck truck1 city1-1 city1-1 city1)
+        - (drive-truck truck1 city1-1 city1-2 city1)
+        - (drive-truck truck1 city1-2 city1-1 city1)
+        - (drive-truck truck1 city1-2 city1-2 city1)
+        - (drive-truck truck2 city2-1 city2-1 city2)
+        - (drive-truck truck2 city2-1 city2-2 city2)
+        - (drive-truck truck2 city2-2 city2-1 city2)
+        - (drive-truck truck2 city2-2 city2-2 city2)
+        - (drive-truck truck3 city3-1 city3-1 city3)
+        - (drive-truck truck3 city3-1 city3-2 city3)
+
+
+---
+timestamp: '2024-10-09T14:14:15.827638'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 3
+    fring_size: 21
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck1 city1-1 city1-1 city1)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package1 truck4 city4-1)
+
+
+---
+timestamp: '2024-10-09T14:14:15.922048'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 4
+    fring_size: 20
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck1 city1-1 city1-1 city1)
+        - (unload-truck package1 truck4 city4-1)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:16.020873'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 5
+    fring_size: 20
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck2 city2-1 city2-2 city2)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package1 truck4 city4-1)
+
+
+---
+timestamp: '2024-10-09T14:14:16.112386'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 6
+    fring_size: 19
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck2 city2-1 city2-2 city2)
+        - (unload-truck package1 truck4 city4-1)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:16.213768'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 7
+    fring_size: 19
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck4 city4-1 city4-1 city4)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package1 truck4 city4-1)
+
+
+---
+timestamp: '2024-10-09T14:14:16.312456'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 8
+    fring_size: 18
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:1,C:1), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck4 city4-1 city4-1 city4)
+        - (unload-truck package1 truck4 city4-1)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:16.408185'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 9
+    fring_size: 18
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:1,C:1), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck3 city3-1 city3-2 city3)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package1 truck4 city4-1)
+
+
+---
+timestamp: '2024-10-09T14:14:16.502547'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 10
+    fring_size: 17
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:1,C:1), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck3 city3-1 city3-2 city3)
+        - (unload-truck package1 truck4 city4-1)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:16.599066'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 11
+    fring_size: 17
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:1,C:1), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck5 city5-1 city5-2 city5)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package1 truck4 city4-1)
+
+
+---
+timestamp: '2024-10-09T14:14:16.688670'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 12
+    fring_size: 16
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck5 city5-1 city5-2 city5)
+        - (unload-truck package1 truck4 city4-1)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:16.783462'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 13
+    fring_size: 16
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck1 city1-1 city1-2 city1)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package1 truck4 city4-1)
+
+
+---
+timestamp: '2024-10-09T14:14:16.876594'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 14
+    fring_size: 15
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck1 city1-1 city1-2 city1)
+        - (unload-truck package1 truck4 city4-1)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:16.985098'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 15
+    fring_size: 15
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck5 city5-1 city5-1 city5)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package1 truck4 city4-1)
+
+
+---
+timestamp: '2024-10-09T14:14:17.076457'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 16
+    fring_size: 14
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck5 city5-1 city5-1 city5)
+        - (unload-truck package1 truck4 city4-1)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:17.171595'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 17
+    fring_size: 14
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck3 city3-1 city3-1 city3)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package1 truck4 city4-1)
+
+
+---
+timestamp: '2024-10-09T14:14:17.259576'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 18
+    fring_size: 13
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:1,C:1), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck3 city3-1 city3-1 city3)
+        - (unload-truck package1 truck4 city4-1)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:17.355258'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 19
+    fring_size: 13
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:1,C:1), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck4 city4-1 city4-2 city4)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package1 truck4 city4-2)
+
+
+---
+timestamp: '2024-10-09T14:14:17.447645'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 20
+    fring_size: 12
+    fring_first_20: (D:2,C:1), (D:1,C:1), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck4 city4-1 city4-2 city4)
+        - (unload-truck package1 truck4 city4-2)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:17.544147'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 21
+    fring_size: 12
+    fring_first_20: (D:3,C:1), (D:1,C:1), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck2 city2-1 city2-1 city2)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package1 truck4 city4-1)
+
+
+---
+timestamp: '2024-10-09T14:14:17.638166'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 22
+    fring_size: 11
+    fring_first_20: (D:1,C:1), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck2 city2-1 city2-1 city2)
+        - (unload-truck package1 truck4 city4-1)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:17.806940'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 23
+    fring_size: 30
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: drive-truck
+        num_neighbours: 20
+        first_10_possible_groundings:
+        - (drive-truck truck1 city1-1 city1-1 city1)
+        - (drive-truck truck1 city1-1 city1-2 city1)
+        - (drive-truck truck1 city1-2 city1-1 city1)
+        - (drive-truck truck1 city1-2 city1-2 city1)
+        - (drive-truck truck2 city2-1 city2-1 city2)
+        - (drive-truck truck2 city2-1 city2-2 city2)
+        - (drive-truck truck2 city2-2 city2-1 city2)
+        - (drive-truck truck2 city2-2 city2-2 city2)
+        - (drive-truck truck3 city3-1 city3-1 city3)
+        - (drive-truck truck3 city3-1 city3-2 city3)
+
+
+---
+timestamp: '2024-10-09T14:14:17.914030'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 24
+    fring_size: 30
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck1 city1-1 city1-1 city1)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package3 truck1 city1-1)
+
+
+---
+timestamp: '2024-10-09T14:14:18.008582'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 25
+    fring_size: 29
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck1 city1-1 city1-1 city1)
+        - (unload-truck package3 truck1 city1-1)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:18.108583'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 26
+    fring_size: 29
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck1 city1-1 city1-2 city1)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package3 truck1 city1-2)
+
+
+---
+timestamp: '2024-10-09T14:14:18.203568'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 27
+    fring_size: 28
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck1 city1-1 city1-2 city1)
+        - (unload-truck package3 truck1 city1-2)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:18.316331'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 28
+    fring_size: 28
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:1), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck2 city2-1 city2-1 city2)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package3 truck1 city1-1)
+
+
+---
+timestamp: '2024-10-09T14:14:18.414434'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 29
+    fring_size: 27
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck2 city2-1 city2-1 city2)
+        - (unload-truck package3 truck1 city1-1)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:18.553865'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 30
+    fring_size: 27
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:1), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck5 city5-1 city5-2 city5)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package3 truck1 city1-1)
+
+
+---
+timestamp: '2024-10-09T14:14:18.654005'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 31
+    fring_size: 26
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck5 city5-1 city5-2 city5)
+        - (unload-truck package3 truck1 city1-1)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:18.752876'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 32
+    fring_size: 26
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck4 city4-1 city4-2 city4)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package3 truck1 city1-1)
+
+
+---
+timestamp: '2024-10-09T14:14:18.845825'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 33
+    fring_size: 25
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck4 city4-1 city4-2 city4)
+        - (unload-truck package3 truck1 city1-1)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:18.946627'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 34
+    fring_size: 25
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck5 city5-1 city5-1 city5)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package3 truck1 city1-1)
+
+
+---
+timestamp: '2024-10-09T14:14:19.042480'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 35
+    fring_size: 24
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck5 city5-1 city5-1 city5)
+        - (unload-truck package3 truck1 city1-1)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:19.177510'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 36
+    fring_size: 24
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck2 city2-1 city2-2 city2)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package3 truck1 city1-1)
+
+
+---
+timestamp: '2024-10-09T14:14:19.269824'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 37
+    fring_size: 23
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck2 city2-1 city2-2 city2)
+        - (unload-truck package3 truck1 city1-1)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:19.366955'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 38
+    fring_size: 23
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:2,C:1), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck3 city3-1 city3-2 city3)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package3 truck1 city1-1)
+
+
+---
+timestamp: '2024-10-09T14:14:19.462876'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 39
+    fring_size: 22
+    fring_first_20: (D:2,C:1), (D:2,C:1), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck3 city3-1 city3-2 city3)
+        - (unload-truck package3 truck1 city1-1)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:19.559701'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 40
+    fring_size: 22
+    fring_first_20: (D:3,C:1), (D:2,C:1), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck4 city4-1 city4-1 city4)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package3 truck1 city1-1)
+
+
+---
+timestamp: '2024-10-09T14:14:19.653655'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 41
+    fring_size: 21
+    fring_first_20: (D:2,C:1), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck4 city4-1 city4-1 city4)
+        - (unload-truck package3 truck1 city1-1)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:19.756026'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 42
+    fring_size: 21
+    fring_first_20: (D:3,C:1), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck3 city3-1 city3-1 city3)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package3 truck1 city1-1)
+
+
+---
+timestamp: '2024-10-09T14:14:19.851201'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 43
+    fring_size: 20
+    fring_first_20: (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck3 city3-1 city3-1 city3)
+        - (unload-truck package3 truck1 city1-1)
+        repair_set: load-truck,(in ?truck ?truck),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:19.984997'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 44
+    fring_size: 20
+    fring_first_20: (D:3,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck5 city5-2 city5-2 city5)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package1 truck4 city4-1)
+
+
+---
+timestamp: '2024-10-09T14:14:20.081731'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 45
+    fring_size: 19
+    fring_first_20: (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck5 city5-2 city5-2 city5)
+        - (unload-truck package1 truck4 city4-1)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:20.186926'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 46
+    fring_size: 19
+    fring_first_20: (D:3,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck3 city3-2 city3-1 city3)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package3 truck1 city1-1)
+
+
+---
+timestamp: '2024-10-09T14:14:20.282639'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 47
+    fring_size: 18
+    fring_first_20: (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck3 city3-2 city3-1 city3)
+        - (unload-truck package3 truck1 city1-1)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:20.407140'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 48
+    fring_size: 19
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck4 city4-2 city4-2 city4)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: unload-truck
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (unload-truck package1 truck4 city4-1)
+        - (unload-truck package1 truck4 city4-2)
+
+
+---
+timestamp: '2024-10-09T14:14:20.504407'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 49
+    fring_size: 18
+    fring_first_20: (D:3,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck4 city4-2 city4-2 city4)
+        - (unload-truck package1 truck4 city4-1)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:20.598714'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 50
+    fring_size: 17
+    fring_first_20: (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck4 city4-2 city4-2 city4)
+        - (unload-truck package1 truck4 city4-2)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:20.701026'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 51
+    fring_size: 17
+    fring_first_20: (D:3,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck1 city1-2 city1-2 city1)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package1 truck4 city4-1)
+
+
+---
+timestamp: '2024-10-09T14:14:20.792761'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 52
+    fring_size: 16
+    fring_first_20: (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck1 city1-2 city1-2 city1)
+        - (unload-truck package1 truck4 city4-1)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:20.891742'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 53
+    fring_size: 16
+    fring_first_20: (D:3,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck2 city2-2 city2-2 city2)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package3 truck1 city1-1)
+
+
+---
+timestamp: '2024-10-09T14:14:20.983550'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 54
+    fring_size: 15
+    fring_first_20: (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck2 city2-2 city2-2 city2)
+        - (unload-truck package3 truck1 city1-1)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:21.110364'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 55
+    fring_size: 15
+    fring_first_20: (D:3,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck2 city2-2 city2-1 city2)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package3 truck1 city1-1)
+
+
+---
+timestamp: '2024-10-09T14:14:21.208741'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 56
+    fring_size: 14
+    fring_first_20: (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck2 city2-2 city2-1 city2)
+        - (unload-truck package3 truck1 city1-1)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:21.303966'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 57
+    fring_size: 14
+    fring_first_20: (D:3,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck4 city4-2 city4-1 city4)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package1 truck4 city4-1)
+
+
+---
+timestamp: '2024-10-09T14:14:21.392886'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 58
+    fring_size: 13
+    fring_first_20: (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck4 city4-2 city4-1 city4)
+        - (unload-truck package1 truck4 city4-1)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:21.487507'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 59
+    fring_size: 13
+    fring_first_20: (D:3,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck2 city2-2 city2-2 city2)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package1 truck4 city4-1)
+
+
+---
+timestamp: '2024-10-09T14:14:21.582354'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 60
+    fring_size: 12
+    fring_first_20: (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck2 city2-2 city2-2 city2)
+        - (unload-truck package1 truck4 city4-1)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:21.681407'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 61
+    fring_size: 12
+    fring_first_20: (D:3,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck3 city3-2 city3-2 city3)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package3 truck1 city1-1)
+
+
+---
+timestamp: '2024-10-09T14:14:21.778173'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 62
+    fring_size: 11
+    fring_first_20: (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck3 city3-2 city3-2 city3)
+        - (unload-truck package3 truck1 city1-1)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:21.876018'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 63
+    fring_size: 11
+    fring_first_20: (D:3,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck1 city1-2 city1-1 city1)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package3 truck1 city1-1)
+
+
+---
+timestamp: '2024-10-09T14:14:21.976752'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 64
+    fring_size: 10
+    fring_first_20: (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck1 city1-2 city1-1 city1)
+        - (unload-truck package3 truck1 city1-1)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:22.077867'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 65
+    fring_size: 10
+    fring_first_20: (D:3,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck5 city5-2 city5-2 city5)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package3 truck1 city1-1)
+
+
+---
+timestamp: '2024-10-09T14:14:22.170447'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 66
+    fring_size: 9
+    fring_first_20: (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck5 city5-2 city5-2 city5)
+        - (unload-truck package3 truck1 city1-1)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:22.266705'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 67
+    fring_size: 9
+    fring_first_20: (D:3,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck4 city4-2 city4-1 city4)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package3 truck1 city1-1)
+
+
+---
+timestamp: '2024-10-09T14:14:22.358384'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 68
+    fring_size: 8
+    fring_first_20: (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck4 city4-2 city4-1 city4)
+        - (unload-truck package3 truck1 city1-1)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:22.465241'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 69
+    fring_size: 8
+    fring_first_20: (D:3,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck3 city3-2 city3-2 city3)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package1 truck4 city4-1)
+
+
+---
+timestamp: '2024-10-09T14:14:22.566687'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 70
+    fring_size: 7
+    fring_first_20: (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck3 city3-2 city3-2 city3)
+        - (unload-truck package1 truck4 city4-1)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:22.663944'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 71
+    fring_size: 7
+    fring_first_20: (D:3,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck5 city5-2 city5-1 city5)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package1 truck4 city4-1)
+
+
+---
+timestamp: '2024-10-09T14:14:22.758245'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 72
+    fring_size: 6
+    fring_first_20: (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck5 city5-2 city5-1 city5)
+        - (unload-truck package1 truck4 city4-1)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:22.863380'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 73
+    fring_size: 7
+    fring_first_20: (D:3,C:2), (D:3,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2),
+        (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck1 city1-2 city1-2 city1)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: unload-truck
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (unload-truck package3 truck1 city1-1)
+        - (unload-truck package3 truck1 city1-2)
+
+
+---
+timestamp: '2024-10-09T14:14:22.962837'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 74
+    fring_size: 6
+    fring_first_20: (D:3,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck1 city1-2 city1-2 city1)
+        - (unload-truck package3 truck1 city1-1)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:23.056092'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 75
+    fring_size: 5
+    fring_first_20: (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck1 city1-2 city1-2 city1)
+        - (unload-truck package3 truck1 city1-2)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:23.159853'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 76
+    fring_size: 5
+    fring_first_20: (D:3,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck4 city4-2 city4-2 city4)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package3 truck1 city1-1)
+
+
+---
+timestamp: '2024-10-09T14:14:23.254411'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 77
+    fring_size: 4
+    fring_first_20: (D:2,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck4 city4-2 city4-2 city4)
+        - (unload-truck package3 truck1 city1-1)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:23.352444'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 78
+    fring_size: 4
+    fring_first_20: (D:3,C:2), (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck3 city3-2 city3-1 city3)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package1 truck4 city4-1)
+
+
+---
+timestamp: '2024-10-09T14:14:23.443696'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 79
+    fring_size: 3
+    fring_first_20: (D:2,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck3 city3-2 city3-1 city3)
+        - (unload-truck package1 truck4 city4-1)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:23.539314'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 80
+    fring_size: 3
+    fring_first_20: (D:3,C:2), (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck1 city1-2 city1-1 city1)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package1 truck4 city4-1)
+
+
+---
+timestamp: '2024-10-09T14:14:23.631570'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 81
+    fring_size: 2
+    fring_first_20: (D:2,C:2), (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck1 city1-2 city1-1 city1)
+        - (unload-truck package1 truck4 city4-1)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:23.738664'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 82
+    fring_size: 2
+    fring_first_20: (D:3,C:2), (D:2,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck5 city5-2 city5-1 city5)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package3 truck1 city1-1)
+
+
+---
+timestamp: '2024-10-09T14:14:23.864159'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 83
+    fring_size: 1
+    fring_first_20: (D:2,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package3 truck1 city1-1)
+        - (drive-truck truck5 city5-2 city5-1 city5)
+        - (unload-truck package3 truck1 city1-1)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:23.960975'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 84
+    fring_size: 1
+    fring_first_20: (D:3,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck2 city2-2 city2-1 city2)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: unload-truck
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload-truck package1 truck4 city4-1)
+
+
+---
+timestamp: '2024-10-09T14:14:24.083258'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 85
+    fring_size: 0
+    fring_first_20: ''
+    current_node:
+        depth: 3
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck2 city2-2 city2-1 city2)
+        - (unload-truck package1 truck4 city4-1)
+        repair_set: 'load-truck,(in ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?truck ?loc-from),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: load-truck
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T14:14:24.084670'
+level: INFO
+issuer: instance_solver
+event_type: results
+data:
+    goal: not_found
+
+
+---
+timestamp: '2024-10-09T14:14:24.085055'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.1 minutes = 8.65 seconds
+
+
+---
+timestamp: '2024-10-09T14:14:24.190462'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+

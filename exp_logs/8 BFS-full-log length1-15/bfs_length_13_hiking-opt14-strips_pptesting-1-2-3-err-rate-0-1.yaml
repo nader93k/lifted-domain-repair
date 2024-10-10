@@ -1,0 +1,760 @@
+---
+timestamp: '2024-10-09T04:54:15.855407'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/8 BFS-full-log length1-15/bfs_length_13_hiking-opt14-strips_pptesting-1-2-3-err-rate-0-1.yaml
+    instance_id: hiking-opt14-strips/pptesting-1-2-3-err-rate-0-1
+    search_algorithm: bfs
+    plan_length: 13
+    domain_class: hiking-opt14-strips
+    instance_name: pptesting-1-2-3-err-rate-0-1
+    ground_plan:
+    - (put_down girl0 place0 tent0)
+    - (drive_tent girl0 place0 place1 car0 tent0)
+    - (drive guy0 place0 place1 car1)
+    - (drive_tent_passenger girl0 place1 place0 car0 tent0 guy0)
+    - (drive_tent girl0 place0 place1 car0 tent0)
+    - (put_up girl0 place1 tent0)
+    - (drive girl0 place1 place0 car0)
+    - (walk_together tent0 place1 guy0 place0 girl0 couple0)
+    - (put_down girl0 place1 tent0)
+    - (drive_tent girl0 place1 place2 car1 tent0)
+    - (put_up girl0 place2 tent0)
+    - (drive girl0 place2 place1 car1)
+    - (walk_together tent0 place2 guy0 place1 girl0 couple0)
+    lifted_plan:
+    - put_down
+    - drive_tent
+    - drive
+    - drive_tent_passenger
+    - drive_tent
+    - put_up
+    - drive
+    - walk_together
+    - put_down
+    - drive_tent
+    - put_up
+    - drive
+    - walk_together
+
+
+---
+timestamp: '2024-10-09T04:54:15.859596'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2024-10-09T04:54:15.965854'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 2
+    fring_first_20: (D:1,C:0), (D:1,C:0)
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: put_down
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (put_down girl0 place0 tent0)
+        - (put_down guy0 place0 tent0)
+
+
+---
+timestamp: '2024-10-09T04:54:16.227910'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 2
+    fring_size: 37
+    fring_first_20: (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0),
+        (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:1,C:0),
+        (D:2,C:3), (D:2,C:3), (D:2,C:3), (D:2,C:3), (D:2,C:3), (D:2,C:3), (D:2,C:3)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 36
+        first_10_possible_groundings:
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive_tent girl0 place0 place1 car0 tent0)
+        - (drive_tent girl0 place0 place1 car1 tent0)
+        - (drive_tent girl0 place0 place2 car0 tent0)
+        - (drive_tent girl0 place0 place2 car1 tent0)
+        - (drive_tent girl0 place1 place0 car0 tent0)
+        - (drive_tent girl0 place1 place0 car1 tent0)
+        - (drive_tent girl0 place1 place1 car0 tent0)
+        - (drive_tent girl0 place1 place1 car1 tent0)
+
+
+---
+timestamp: '2024-10-09T04:54:16.468342'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 3
+    fring_size: 72
+    fring_first_20: (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0),
+        (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:3,C:0), (D:2,C:0),
+        (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0), (D:2,C:0)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive
+        num_neighbours: 36
+        first_10_possible_groundings:
+        - (drive girl0 place0 place0 car0)
+        - (drive girl0 place0 place0 car1)
+        - (drive girl0 place0 place1 car0)
+        - (drive girl0 place0 place1 car1)
+        - (drive girl0 place0 place2 car0)
+        - (drive girl0 place0 place2 car1)
+        - (drive girl0 place1 place0 car0)
+        - (drive girl0 place1 place0 car1)
+        - (drive girl0 place1 place1 car0)
+        - (drive girl0 place1 place1 car1)
+
+
+---
+timestamp: '2024-10-09T04:54:16.814388'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 4
+    fring_size: 143
+    fring_first_20: (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0),
+        (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0),
+        (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive girl0 place0 place0 car0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent_passenger
+        num_neighbours: 72
+        first_10_possible_groundings:
+        - (drive_tent_passenger girl0 place0 place0 car0 tent0 girl0)
+        - (drive_tent_passenger girl0 place0 place0 car0 tent0 guy0)
+        - (drive_tent_passenger girl0 place0 place0 car1 tent0 girl0)
+        - (drive_tent_passenger girl0 place0 place0 car1 tent0 guy0)
+        - (drive_tent_passenger girl0 place0 place1 car0 tent0 girl0)
+        - (drive_tent_passenger girl0 place0 place1 car0 tent0 guy0)
+        - (drive_tent_passenger girl0 place0 place1 car1 tent0 girl0)
+        - (drive_tent_passenger girl0 place0 place1 car1 tent0 guy0)
+        - (drive_tent_passenger girl0 place0 place2 car0 tent0 girl0)
+        - (drive_tent_passenger girl0 place0 place2 car0 tent0 guy0)
+
+
+---
+timestamp: '2024-10-09T04:54:17.089347'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 5
+    fring_size: 178
+    fring_first_20: (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0),
+        (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0),
+        (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive girl0 place0 place0 car0)
+        - (drive_tent_passenger girl0 place0 place0 car0 tent0 girl0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 36
+        first_10_possible_groundings:
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive_tent girl0 place0 place1 car0 tent0)
+        - (drive_tent girl0 place0 place1 car1 tent0)
+        - (drive_tent girl0 place0 place2 car0 tent0)
+        - (drive_tent girl0 place0 place2 car1 tent0)
+        - (drive_tent girl0 place1 place0 car0 tent0)
+        - (drive_tent girl0 place1 place0 car1 tent0)
+        - (drive_tent girl0 place1 place1 car0 tent0)
+        - (drive_tent girl0 place1 place1 car1 tent0)
+
+
+---
+timestamp: '2024-10-09T04:54:17.191295'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 6
+    fring_size: 179
+    fring_first_20: (D:6,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0),
+        (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0),
+        (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive girl0 place0 place0 car0)
+        - (drive_tent_passenger girl0 place0 place0 car0 tent0 girl0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: put_up
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (put_up girl0 place0 tent0)
+        - (put_up guy0 place0 tent0)
+
+
+---
+timestamp: '2024-10-09T04:54:17.458328'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 7
+    fring_size: 214
+    fring_first_20: (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0),
+        (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:6,C:0),
+        (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive girl0 place0 place0 car0)
+        - (drive_tent_passenger girl0 place0 place0 car0 tent0 girl0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (put_up girl0 place0 tent0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive
+        num_neighbours: 36
+        first_10_possible_groundings:
+        - (drive girl0 place0 place0 car0)
+        - (drive girl0 place0 place0 car1)
+        - (drive girl0 place0 place1 car0)
+        - (drive girl0 place0 place1 car1)
+        - (drive girl0 place0 place2 car0)
+        - (drive girl0 place0 place2 car1)
+        - (drive girl0 place1 place0 car0)
+        - (drive girl0 place1 place0 car1)
+        - (drive girl0 place1 place1 car0)
+        - (drive girl0 place1 place1 car1)
+
+
+---
+timestamp: '2024-10-09T04:54:17.554897'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 8
+    fring_size: 213
+    fring_first_20: (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0),
+        (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:6,C:0), (D:5,C:0),
+        (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive girl0 place0 place0 car0)
+        - (drive_tent_passenger girl0 place0 place0 car0 tent0 girl0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (put_up girl0 place0 tent0)
+        - (drive girl0 place0 place0 car0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: walk_together
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T04:54:17.655038'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 9
+    fring_size: 212
+    fring_first_20: (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0),
+        (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0),
+        (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive girl0 place0 place0 car0)
+        - (drive_tent_passenger girl0 place0 place0 car0 tent0 girl0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (put_up girl0 place0 tent0)
+        - (drive guy0 place0 place0 car0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: walk_together
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T04:54:17.762053'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 10
+    fring_size: 211
+    fring_first_20: (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0),
+        (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0),
+        (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive girl0 place0 place0 car0)
+        - (drive_tent_passenger girl0 place0 place0 car0 tent0 girl0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (put_up girl0 place0 tent0)
+        - (drive guy0 place0 place0 car1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: walk_together
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T04:54:17.854536'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 11
+    fring_size: 210
+    fring_first_20: (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0),
+        (D:7,C:0), (D:7,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0),
+        (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive girl0 place0 place0 car0)
+        - (drive_tent_passenger girl0 place0 place0 car0 tent0 girl0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (put_up girl0 place0 tent0)
+        - (drive guy0 place0 place1 car0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: walk_together
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T04:54:17.948817'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 12
+    fring_size: 209
+    fring_first_20: (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0),
+        (D:7,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0),
+        (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive girl0 place0 place0 car0)
+        - (drive_tent_passenger girl0 place0 place0 car0 tent0 girl0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (put_up girl0 place0 tent0)
+        - (drive guy0 place0 place1 car1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: walk_together
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T04:54:18.043987'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 13
+    fring_size: 208
+    fring_first_20: (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0),
+        (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0),
+        (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive girl0 place0 place0 car0)
+        - (drive_tent_passenger girl0 place0 place0 car0 tent0 girl0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (put_up girl0 place0 tent0)
+        - (drive guy0 place0 place2 car0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: walk_together
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T04:54:18.137833'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 14
+    fring_size: 207
+    fring_first_20: (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:6,C:0),
+        (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0),
+        (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive girl0 place0 place0 car0)
+        - (drive_tent_passenger girl0 place0 place0 car0 tent0 girl0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (put_up girl0 place0 tent0)
+        - (drive guy0 place0 place2 car1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: walk_together
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T04:54:18.231400'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 15
+    fring_size: 206
+    fring_first_20: (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:6,C:0), (D:5,C:0),
+        (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0),
+        (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive girl0 place0 place0 car0)
+        - (drive_tent_passenger girl0 place0 place0 car0 tent0 girl0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (put_up girl0 place0 tent0)
+        - (drive girl0 place0 place0 car1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: walk_together
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T04:54:18.328600'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 16
+    fring_size: 205
+    fring_first_20: (D:7,C:0), (D:7,C:0), (D:7,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0),
+        (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0),
+        (D:5,C:0), (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive girl0 place0 place0 car0)
+        - (drive_tent_passenger girl0 place0 place0 car0 tent0 girl0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (put_up girl0 place0 tent0)
+        - (drive girl0 place0 place1 car0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: walk_together
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T04:54:18.421953'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 17
+    fring_size: 204
+    fring_first_20: (D:7,C:0), (D:7,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0),
+        (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0),
+        (D:5,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive girl0 place0 place0 car0)
+        - (drive_tent_passenger girl0 place0 place0 car0 tent0 girl0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (put_up girl0 place0 tent0)
+        - (drive girl0 place0 place1 car1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: walk_together
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T04:54:18.516824'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 18
+    fring_size: 203
+    fring_first_20: (D:7,C:0), (D:6,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0),
+        (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0), (D:5,C:0),
+        (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0), (D:4,C:0)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive girl0 place0 place0 car0)
+        - (drive_tent_passenger girl0 place0 place0 car0 tent0 girl0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (put_up girl0 place0 tent0)
+        - (drive girl0 place0 place2 car1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: walk_together
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-09T04:54:18.620847'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 7
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive girl0 place0 place0 car0)
+        - (drive_tent_passenger girl0 place0 place0 car0 tent0 girl0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (put_up girl0 place0 tent0)
+        - (drive girl0 place0 place2 car0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: walk_together
+        num_neighbours: 0
+        first_10_possible_groundings: null
+    current_state:
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: next
+        args: !!python/tuple
+        - place0
+        - place1
+        hash: -5203482512292107168
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: at_tent
+        args: !!python/tuple
+        - tent0
+        - place0
+        hash: 2581455242313088394
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: at_person
+        args: !!python/tuple
+        - guy0
+        - place0
+        hash: -4089429233837613909
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: at_car
+        args: !!python/tuple
+        - car0
+        - place2
+        hash: 8141964777616638511
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: at_person
+        args: !!python/tuple
+        - girl0
+        - place2
+        hash: 8846875028625961839
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: partners
+        args: !!python/tuple
+        - couple0
+        - guy0
+        - girl0
+        hash: 3510448116628023285
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: next
+        args: !!python/tuple
+        - place1
+        - place2
+        hash: -3582082835248595369
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: at_car
+        args: !!python/tuple
+        - car1
+        - place0
+        hash: -6416945303612800007
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: up
+        args: !!python/tuple
+        - tent0
+        hash: -7621114734457800998
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: walked
+        args: !!python/tuple
+        - couple0
+        - place0
+        hash: -6993018368308909921
+
+
+---
+timestamp: '2024-10-09T04:54:18.629296'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: Grounder is passing unspected actionname=up,\
+    \ while we are waiting for action_name_in=walk_together. Stack trace: Traceback\
+    \ (most recent call last):\n  File \"/home/nader/projects/lifted-white-plan-domain-repair/instance_solver.py\"\
+    , line 83, in solve_instance\n    path, goal_node = searcher.find_path(logger=logger,\
+    \ log_interval=log_interval)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
+    \  File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 51, in find_path\n    for neighbor in current_node.get_neighbors():\n \
+    \                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 149, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    \ task, next_action_name)\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
+    \  File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/action_grounding_tools.py\"\
+    , line 109, in smart_grounder\n    return _sas_parser(Path(sas_path), action_name)\n\
+    \           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/action_grounding_tools.py\"\
+    , line 133, in _sas_parser\n    assert action_name == action_name_in, f\"Grounder\
+    \ is passing unspected actionname={action_name}, while we are waiting for action_name_in={action_name_in}\"\
+    \n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Grounder is passing\
+    \ unspected actionname=up, while we are waiting for action_name_in=walk_together\n"
+
+
+---
+timestamp: '2024-10-09T04:54:18.631537'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.0 minutes = 2.78 seconds
+
+
+---
+timestamp: '2024-10-09T04:54:18.758554'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+

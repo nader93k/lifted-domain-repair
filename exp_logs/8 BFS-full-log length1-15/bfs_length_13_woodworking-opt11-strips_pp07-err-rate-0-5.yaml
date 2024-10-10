@@ -1,0 +1,67 @@
+---
+timestamp: '2024-10-09T11:03:49.914992'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/8 BFS-full-log length1-15/bfs_length_13_woodworking-opt11-strips_pp07-err-rate-0-5.yaml
+    instance_id: woodworking-opt11-strips/pp07-err-rate-0-5
+    search_algorithm: bfs
+    plan_length: 13
+    domain_class: woodworking-opt11-strips
+    instance_name: pp07-err-rate-0-5
+    ground_plan:
+    - (do-saw-medium b0 p4 saw0 teak rough s8 s7 s6)
+    - (do-saw-large b0 p0 saw0 teak rough s8 s6 s7 s5)
+    - (do-saw-small b0 p1 saw0 teak rough s8 s7)
+    - (do-saw-small b1 p3 saw0 oak smooth s4 s3)
+    - (do-saw-small b1 p2 saw0 oak smooth s4 s3)
+    - (do-saw-small b1 p5 saw0 oak smooth s4 s3)
+    - (do-glaze p4 glazer0 mauve)
+    - (do-plane p0 planer0 rough natural untreated)
+    - (do-plane p1 planer0 rough natural untreated)
+    - (do-grind p1 grinder0 smooth natural untreated untreated)
+    - (do-grind p2 grinder0 smooth natural untreated untreated)
+    - (do-immersion-varnish p2 immersion-varnisher0 mauve verysmooth)
+    - (do-immersion-varnish p5 immersion-varnisher0 natural smooth)
+    lifted_plan:
+    - do-saw-medium
+    - do-saw-large
+    - do-saw-small
+    - do-saw-small
+    - do-saw-small
+    - do-saw-small
+    - do-glaze
+    - do-plane
+    - do-plane
+    - do-grind
+    - do-grind
+    - do-immersion-varnish
+    - do-immersion-varnish
+
+
+---
+timestamp: '2024-10-09T11:03:49.924777'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred trying to get the vanilla repair: Problem is unsolvable\n\
+    Traceback (most recent call last):\n  File \"/home/nader/projects/lifted-white-plan-domain-repair/instance_solver.py\"\
+    , line 40, in solve_instance\n    gr = ground_repair(\n         ^^^^^^^^^^^^^^\n\
+    \  File \"/home/nader/projects/lifted-white-plan-domain-repair/vanilla_runs/run_songtuans_vanilla.py\"\
+    , line 22, in ground_repair\n    raise Exception(\"Problem is unsolvable\")\n\
+    Exception: Problem is unsolvable\n"
+
+
+---
+timestamp: '2024-10-09T11:03:50.004950'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: '> Eexception: instance id =woodworking-opt11-strips/pp07-err-rate-0-5, err:
+    Command ''[''/home/nader/miniconda3/envs/planning/bin/python'', ''instance_solver.py'',
+    ''bfs'', ''input/benchmarks-G1'', ''exp_logs/8 BFS-full-log length1-15/bfs_length_13_woodworking-opt11-strips_pp07-err-rate-0-5.yaml'',
+    ''1'', ''woodworking-opt11-strips/pp07-err-rate-0-5'']'' returned non-zero exit
+    status 1.'
+
+
