@@ -116,6 +116,7 @@ def ground(domain, problem, theory_outp=None, model_outp=None, lpopt_enabled=Fal
             "--r-mode",
             relaxation
         ]
+    print("calling", *command)
     subprocess.check_call(command)
 
 def adjust_type_name(_type):

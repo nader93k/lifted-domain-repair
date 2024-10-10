@@ -53,14 +53,15 @@ if __name__ == '__main__':
         if not args.ground_actions:
             command.extend(['--remove-action-predicates'])
         execute(command, stdout=theory_output)
-        print("ASP model being copied to %s" % theory_output)
+        print("(fd) ASP model being copied to %s" % theory_output)
     else:
         command=[dir_path+'/src/translate/pddl_to_prolog.py', domain_file,
                  instance_file, '--only-output-direct-program']
         if not args.ground_actions:
             command.extend(['--remove-action-predicates'])
+        print("Calling", *command)
         execute(command, stdout=theory_output)
-        print("ASP model being copied to %s" % theory_output)
+        print("(other) ASP model being copied to %s" % theory_output)
 
     # Produces extra theory file with actions
     command=[dir_path+'/src/translate/pddl_to_prolog.py', domain_file,
