@@ -137,19 +137,21 @@ def analyze_log_file(file_path: str) -> LogData:
         return LogData(file_name=os.path.basename(file_path), error=str(e))
 
 
+def get_unprocessed_files(folder_path: str, csv_file: str) -> List[str]:
+    all_yaml_files = [f for f in os.listdir(folder_path) if f.endswith('.yaml')]
+    processed_files = get_processed_files(csv_file)
+    return [f for f in all_yaml_files if f not in processed_files]
+
 def analyze_logs(folder_path: str) -> List[LogData]:
     all_log_data = []
-    yaml_files = [f for f in os.listdir(folder_path) if f.endswith('.yaml')]
-    total_files = len(yaml_files)
-    
     csv_file = 'results.csv'
-    processed_files = get_processed_files(csv_file)
     
-    for i, filename in enumerate(yaml_files, 1):
-        if filename in processed_files:
-            print(f"Skipping already processed file {i} out of {total_files}: {filename}")
-            continue
-        
+    unprocessed_files = get_unprocessed_files(folder_path, csv_file)
+    total_files = len(unprocessed_files)
+    
+    print(f"Found {total_files} unprocessed files.")
+    
+    for i, filename in enumerate(unprocessed_files, 1):
         file_path = os.path.join(folder_path, filename)
         log_data = analyze_log_file(file_path)
         all_log_data.append(log_data)

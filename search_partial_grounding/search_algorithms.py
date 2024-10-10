@@ -8,7 +8,7 @@ def log_iteration_info(logger, iteration, open_list, current_node, is_goal):
             "is_goal": is_goal,
             "iteration": iteration,
             "fring_size": len(open_list),
-            "fring_first_20": ", ".join(f"(D:{-nd},C:{fc})" for fc, nd, _ in sorted(open_list)[:20]),
+            "fring_first_20": ", ".join(f"(D:{-nd},H:{-hc},C:{fc})" for fc, hc, nd, _ in sorted(open_list)[:20]),
             "current_node": current_node.to_dict()
         }
         logger.log(issuer="Searcher", event_type="general", level=logging.INFO, message=log_data)
@@ -54,8 +54,8 @@ class AStar:
 
                 tentative_f_cost = neighbor.f_cost
 
-                if not any(node[2]==neighbor for node in open_list):
-                    heapq.heappush(open_list, (neighbor.f_cost, -neighbor.depth, neighbor))
+                if not any(node[3]==neighbor for node in open_list):
+                    heapq.heappush(open_list, (neighbor.f_cost, neighbor.h_cost, -neighbor.depth, neighbor))
                 elif tentative_f_cost >= neighbor.f_cost:
                     continue
 
