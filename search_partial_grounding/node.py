@@ -5,6 +5,7 @@ import logging
 import copy
 from fd.pddl.conditions import Conjunction, Atom
 from heuristic_tools.heuristic import Heurisitc
+import pickle
 
 
 
@@ -120,6 +121,18 @@ class Node:
         task = copy.deepcopy(self.original_task)
         task.set_init_state(self.current_state)
         h = Heurisitc(h_name="G_HMAX", relaxation=self.h_relaxation)
+
+        ### DEBUG #TODO: remove this
+        # print(f">>  Calculating H fro node with grounding:\n{self.ground_action_sequence}")
+        # actions = [(l,) for l in self.lifted_action_sequence]
+        # with open('domain.pkl', 'wb') as file:
+        #     pickle.dump(self.original_domain, file)
+        # with open('task.pkl', 'wb') as file:
+        #     pickle.dump(task, file)
+        # with open('actions.pkl', 'wb') as file:
+        #     pickle.dump(actions, file)
+        ### DEBUG Ends ####
+
         h_cost = h.evaluate(self.original_domain, task, [(l,) for l in self.lifted_action_sequence])
 
         return h_cost
