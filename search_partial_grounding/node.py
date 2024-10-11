@@ -120,7 +120,7 @@ class Node:
         # should be sth like: h(y(self.domain), d(self.task), self.lifted_action_sequence)
         task = copy.deepcopy(self.original_task)
         task.set_init_state(self.current_state)
-        h = Heurisitc(h_name="G_HMAX", relaxation=self.h_relaxation)
+        h = Heurisitc(h_name="L_HMAX", relaxation=self.h_relaxation)
 
         ### DEBUG #TODO: remove this
         # print(f">>  Calculating H fro node with grounding:\n{self.ground_action_sequence}")

@@ -85,7 +85,7 @@ if __name__ == "__main__":
     else:
         instance_ids = config['instance_ids']
         if instance_ids == 'load_instance_ids':
-            instance_ids = load_instance_ids
+            instance_ids = load_instance_ids()
     heuristic_relaxation = config['heuristic_relaxation']
     run_mode = config['run_mode']
 

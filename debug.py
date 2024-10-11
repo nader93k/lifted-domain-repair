@@ -10,5 +10,5 @@ with open('task.pkl', 'rb') as file:
 with open('actions.pkl', 'rb') as file:
     actions = pickle.load(file)
 
-h = Heurisitc(h_name="L_HMAX", relaxation=None)
+h = Heurisitc(h_name="L_HMAX", relaxation='unary')
 h_cost = h.evaluate(domain, task, actions)
