@@ -3,13 +3,12 @@ import shutil
 import subprocess
 from pathlib import Path
 from io import UnsupportedOperation
-
 from fd.pddl.effects import add_effect
-
 import fd.pddl.conditions
 from relaxation_generator.shortcuts import ground
 from fd.pddl.tasks import Task
 import copy
+import pickle
 
 #TODO: could allow to reduce datalog model
 #TODO: some h+ computation?
@@ -331,7 +330,6 @@ class Heurisitc:
     def evaluate(self, __domain, __task, action_sequence):
         domain = copy.deepcopy(__domain) # verbose
         task = copy.deepcopy(__task) # verbose
-
         integrate_action_sequence(domain, task, action_sequence)
 
         # Here we revert Songtuans datastructure to match the original FD translator format again
@@ -344,7 +342,28 @@ class Heurisitc:
         print_domain(domain, INPUT_MODEL_DOMAIN)
         print_problem(task, INPUT_MODEL_PROBLEM)
 
-        val = self.get_val()
+        try:
+            val = self.get_val()
+        except Exception as e:
+            with open('domain.pkl', 'wb') as file:
+                pickle.dump(__domain, file)
+            with open('task.pkl', 'wb') as file:
+                pickle.dump(__task, file)
+            with open('actions.pkl', 'wb') as file:
+                pickle.dump(action_sequence, file)
+            print(f"Saved pickles.")
+            raise
+
+        ### DEBUG #TODO: remove this
+        # print(f">>  Calculating H fro node with grounding:\n{self.ground_action_sequence}")
+        # actions = [(l,) for l in self.lifted_action_sequence]
+        # with open('domain.pkl', 'wb') as file:
+        #     pickle.dump(self.original_domain, file)
+        # with open('task.pkl', 'wb') as file:
+        #     pickle.dump(task, file)
+        # with open('actions.pkl', 'wb') as file:
+        #     pickle.dump(actions, file)
+        ### DEBUG Ends ####
 
         if val != -1:
             return val #TODO: (0, val) would be better

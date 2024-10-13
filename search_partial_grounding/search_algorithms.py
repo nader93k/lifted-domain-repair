@@ -34,12 +34,12 @@ class AStar:
         open_list = []
         closed_list = []
 
-        heapq.heappush(open_list, (self.initial_node.f_cost, -self.initial_node.depth, self.initial_node))
+        heapq.heappush(open_list, (self.initial_node.f_cost, self.initial_node.h_cost, -self.initial_node.depth, self.initial_node))
 
         iteration = 0
         while open_list:
             iteration += 1
-            current_node = heapq.heappop(open_list)[2]
+            current_node = heapq.heappop(open_list)[3]
 
             if current_node.is_goal():
 

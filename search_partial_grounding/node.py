@@ -83,7 +83,7 @@ class Node:
                 self.current_state = self.calculate_current_state()
             else:
                 self.current_state = None
-            self.h_cost = self.compute_h_cost() if self.h_cost_needed else 0
+            self.h_cost = self.compute_h_cost() if self.h_cost_needed and self.lifted_action_sequence else 0
             self.f_cost = self.g_cost + self.h_cost
 
 
