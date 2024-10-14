@@ -117,6 +117,12 @@ def ground(domain, problem, theory_outp=None, model_outp=None, lpopt_enabled=Fal
             relaxation
         ]
     print("calling", *command)
+    try:
+        result = subprocess.run(command, check=True, capture_output=True, text=True)
+        print(f"subprocess results: {result.stdout}")
+    except subprocess.CalledProcessError as e:
+        print(f"Command failed with return code {e.returncode}")
+        print(f"Error output:\n{e.stderr}")
     subprocess.check_call(command)
 
 def adjust_type_name(_type):
