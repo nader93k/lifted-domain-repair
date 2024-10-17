@@ -1,0 +1,91 @@
+---
+timestamp: '2024-10-13T01:46:09.189635'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/9 AStar-full-log length1-15/astar_length_9_woodworking-opt08-strips_pp01-err-rate-0-1.yaml
+    instance_id: woodworking-opt08-strips/pp01-err-rate-0-1
+    search_algorithm: astar
+    plan_length: 9
+    domain_class: woodworking-opt08-strips
+    instance_name: pp01-err-rate-0-1
+    ground_plan:
+    - (do-grind p2 grinder0 verysmooth natural colourfragments untreated)
+    - (do-glaze p2 glazer0 mauve)
+    - (do-saw-medium b0 p0 saw0 beech rough s3 s2 s1)
+    - (do-saw-medium b1 p1 saw0 cherry rough s3 s2 s1)
+    - (do-plane p1 planer0 rough natural untreated)
+    - (do-glaze p1 glazer0 green)
+    - (do-plane p0 planer0 rough natural untreated)
+    - (do-grind p0 grinder0 smooth natural untreated untreated)
+    - (do-immersion-varnish p0 immersion-varnisher0 mauve verysmooth)
+    lifted_plan:
+    - do-grind
+    - do-glaze
+    - do-saw-medium
+    - do-saw-medium
+    - do-plane
+    - do-glaze
+    - do-plane
+    - do-grind
+    - do-immersion-varnish
+
+
+---
+timestamp: '2024-10-13T01:46:09.196326'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2024-10-13T01:46:09.293813'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 0
+    fring_first_20: ''
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-13T01:46:09.294937'
+level: INFO
+issuer: instance_solver
+event_type: results
+data:
+    goal: not_found
+
+
+---
+timestamp: '2024-10-13T01:46:09.295301'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.0 minutes = 0.11 seconds
+
+
+---
+timestamp: '2024-10-13T01:46:09.374386'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+

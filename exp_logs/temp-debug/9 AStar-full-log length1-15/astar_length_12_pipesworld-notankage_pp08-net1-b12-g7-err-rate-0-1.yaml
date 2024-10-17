@@ -1,0 +1,103 @@
+---
+timestamp: '2024-10-13T01:49:42.822187'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/9 AStar-full-log length1-15/astar_length_12_pipesworld-notankage_pp08-net1-b12-g7-err-rate-0-1.yaml
+    instance_id: pipesworld-notankage/pp08-net1-b12-g7-err-rate-0-1
+    search_algorithm: astar
+    plan_length: 12
+    domain_class: pipesworld-notankage
+    instance_name: pp08-net1-b12-g7-err-rate-0-1
+    ground_plan:
+    - (pop-unitarypipe s13 b11 a1 a3 b1 gasoleo oc1b)
+    - (pop-unitarypipe s13 b7 a1 a3 b11 rat-a gasoleo)
+    - (pop-unitarypipe s13 b3 a1 a3 b7 gasoleo rat-a)
+    - (pop-unitarypipe s12 b4 a1 a2 b8 lco oc1b)
+    - (pop-unitarypipe s12 b5 a1 a2 b4 rat-a lco)
+    - (pop-unitarypipe s13 b6 a1 a3 b3 lco gasoleo)
+    - (pop-unitarypipe s12 b9 a1 a2 b5 lco rat-a)
+    - (push-unitarypipe s12 b1 a1 a2 b9 oc1b lco)
+    - (push-unitarypipe s12 b0 a1 a2 b1 lco oc1b)
+    - (pop-unitarypipe s12 b9 a1 a2 b0 lco lco)
+    - (pop-unitarypipe s12 b1 a1 a2 b9 oc1b lco)
+    - (push-unitarypipe s12 b0 a1 a2 b1 lco oc1b)
+    lifted_plan:
+    - pop-unitarypipe
+    - pop-unitarypipe
+    - pop-unitarypipe
+    - pop-unitarypipe
+    - pop-unitarypipe
+    - pop-unitarypipe
+    - pop-unitarypipe
+    - push-unitarypipe
+    - push-unitarypipe
+    - pop-unitarypipe
+    - pop-unitarypipe
+    - push-unitarypipe
+
+
+---
+timestamp: '2024-10-13T01:49:42.827163'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2024-10-13T01:49:43.110433'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: Command '['python3', '/home/nader/projects/lifted-white-plan-domain-repair/relaxation_generator/generate-asp-model.py',\
+    \ '--instance', 'heuristic_tools/problem-in.pddl', '--domain', 'heuristic_tools/domain-in.pddl',\
+    \ '-t', 'heuristic_tools/datalog.theory', '-m', 'heuristic_tools/datalog.model',\
+    \ '--lpopt-preprocessor', '--grounder', 'none', '--domain-print', 'heuristic_tools/domain-out.pddl',\
+    \ '--problem-print', 'heuristic_tools/problem-out.pddl']' returned non-zero exit\
+    \ status 1.. Stack trace: Traceback (most recent call last):\n  File \"/home/nader/projects/lifted-white-plan-domain-repair/instance_solver.py\"\
+    , line 82, in solve_instance\n    path, goal_node = searcher.find_path(logger=logger,\
+    \ log_interval=log_interval)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
+    \  File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 51, in find_path\n    for neighbor in current_node.get_neighbors():\n \
+    \                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 173, in get_neighbors\n    next_node = Node(\n                ^^^^^\n \
+    \ File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 86, in __init__\n    self.h_cost = self.compute_h_cost() if self.h_cost_needed\
+    \ and self.lifted_action_sequence else 0\n                  ^^^^^^^^^^^^^^^^^^^^^\n\
+    \  File \"/home/nader/projects/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 136, in compute_h_cost\n    h_cost = h.evaluate(self.original_domain, task,\
+    \ [(l,) for l in self.lifted_action_sequence])\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
+    \  File \"/home/nader/projects/lifted-white-plan-domain-repair/heuristic_tools/heuristic.py\"\
+    , line 346, in evaluate\n    val = self.get_val()\n          ^^^^^^^^^^^^^^\n\
+    \  File \"/home/nader/projects/lifted-white-plan-domain-repair/heuristic_tools/heuristic.py\"\
+    , line 299, in get_val\n    ground(**GROUND_CMD)\n  File \"/home/nader/projects/lifted-white-plan-domain-repair/relaxation_generator/shortcuts.py\"\
+    , line 120, in ground\n    subprocess.check_call(command)\n  File \"/home/nader/miniconda3/envs/planning/lib/python3.12/subprocess.py\"\
+    , line 413, in check_call\n    raise CalledProcessError(retcode, cmd)\nsubprocess.CalledProcessError:\
+    \ Command '['python3', '/home/nader/projects/lifted-white-plan-domain-repair/relaxation_generator/generate-asp-model.py',\
+    \ '--instance', 'heuristic_tools/problem-in.pddl', '--domain', 'heuristic_tools/domain-in.pddl',\
+    \ '-t', 'heuristic_tools/datalog.theory', '-m', 'heuristic_tools/datalog.model',\
+    \ '--lpopt-preprocessor', '--grounder', 'none', '--domain-print', 'heuristic_tools/domain-out.pddl',\
+    \ '--problem-print', 'heuristic_tools/problem-out.pddl']' returned non-zero exit\
+    \ status 1.\n"
+
+
+---
+timestamp: '2024-10-13T01:49:43.113560'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.0 minutes = 0.29 seconds
+
+
+---
+timestamp: '2024-10-13T01:49:43.174902'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+

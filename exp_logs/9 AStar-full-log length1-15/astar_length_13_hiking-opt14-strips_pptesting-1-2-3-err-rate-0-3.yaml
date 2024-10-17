@@ -1,0 +1,2497 @@
+---
+timestamp: '2024-10-16T07:40:26.083702'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/9 AStar-full-log length1-15/astar_length_13_hiking-opt14-strips_pptesting-1-2-3-err-rate-0-3.yaml
+    instance_id: hiking-opt14-strips/pptesting-1-2-3-err-rate-0-3
+    search_algorithm: astar
+    plan_length: 13
+    domain_class: hiking-opt14-strips
+    instance_name: pptesting-1-2-3-err-rate-0-3
+    ground_plan:
+    - (put_down girl0 place0 tent0)
+    - (drive_tent girl0 place0 place1 car0 tent0)
+    - (drive guy0 place0 place1 car1)
+    - (drive_tent_passenger girl0 place1 place0 car0 tent0 guy0)
+    - (drive_tent girl0 place0 place1 car0 tent0)
+    - (put_up girl0 place1 tent0)
+    - (drive girl0 place1 place0 car0)
+    - (walk_together tent0 place1 guy0 place0 girl0 couple0)
+    - (put_down girl0 place1 tent0)
+    - (drive_tent girl0 place1 place2 car1 tent0)
+    - (put_up girl0 place2 tent0)
+    - (drive girl0 place2 place1 car1)
+    - (walk_together tent0 place2 guy0 place1 girl0 couple0)
+    lifted_plan:
+    - put_down
+    - drive_tent
+    - drive
+    - drive_tent_passenger
+    - drive_tent
+    - put_up
+    - drive
+    - walk_together
+    - put_down
+    - drive_tent
+    - put_up
+    - drive
+    - walk_together
+
+
+---
+timestamp: '2024-10-16T07:40:26.089157'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: drive_tent,(at_car ?x4 ?x3),effPos,1
+
+
+---
+timestamp: '2024-10-16T07:40:29.449529'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 2
+    fring_first_20: (D:1,H:0,C:0), (D:1,H:0,C:0)
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: put_down
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (put_down girl0 place0 tent0)
+        - (put_down guy0 place0 tent0)
+
+
+---
+timestamp: '2024-10-16T07:40:48.432809'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 2
+    fring_size: 13
+    fring_first_20: (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive_tent girl0 place0 place1 car0 tent0)
+        - (drive_tent girl0 place0 place1 car1 tent0)
+        - (drive_tent girl0 place0 place2 car0 tent0)
+        - (drive_tent girl0 place0 place2 car1 tent0)
+        - (drive_tent guy0 place0 place0 car0 tent0)
+        - (drive_tent guy0 place0 place0 car1 tent0)
+        - (drive_tent guy0 place0 place1 car0 tent0)
+        - (drive_tent guy0 place0 place1 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:41:15.423201'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 3
+    fring_size: 30
+    fring_first_20: (D:3,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0), (D:3,H:-1,C:1),
+        (D:3,H:-1,C:1), (D:3,H:-1,C:1), (D:3,H:-1,C:1), (D:3,H:0,C:2), (D:3,H:0,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive
+        num_neighbours: 18
+        first_10_possible_groundings:
+        - (drive girl0 place0 place0 car1)
+        - (drive girl0 place0 place1 car1)
+        - (drive girl0 place0 place2 car1)
+        - (drive girl0 place1 place0 car1)
+        - (drive girl0 place1 place1 car1)
+        - (drive girl0 place1 place2 car1)
+        - (drive girl0 place2 place0 car1)
+        - (drive girl0 place2 place1 car1)
+        - (drive girl0 place2 place2 car1)
+        - (drive guy0 place0 place0 car1)
+
+
+---
+timestamp: '2024-10-16T07:42:12.396925'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 4
+    fring_size: 65
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive girl0 place0 place0 car1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent_passenger
+        num_neighbours: 36
+        first_10_possible_groundings:
+        - (drive_tent_passenger girl0 place0 place0 car1 tent0 girl0)
+        - (drive_tent_passenger girl0 place0 place0 car1 tent0 guy0)
+        - (drive_tent_passenger girl0 place0 place1 car1 tent0 girl0)
+        - (drive_tent_passenger girl0 place0 place1 car1 tent0 guy0)
+        - (drive_tent_passenger girl0 place0 place2 car1 tent0 girl0)
+        - (drive_tent_passenger girl0 place0 place2 car1 tent0 guy0)
+        - (drive_tent_passenger girl0 place1 place0 car1 tent0 girl0)
+        - (drive_tent_passenger girl0 place1 place0 car1 tent0 guy0)
+        - (drive_tent_passenger girl0 place1 place1 car1 tent0 girl0)
+        - (drive_tent_passenger girl0 place1 place1 car1 tent0 guy0)
+
+
+---
+timestamp: '2024-10-16T07:42:21.384181'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 5
+    fring_size: 70
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive girl0 place0 place0 car1)
+        - (drive_tent_passenger girl0 place0 place0 car1 tent0 girl0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive_tent girl0 place0 place1 car1 tent0)
+        - (drive_tent girl0 place0 place2 car1 tent0)
+        - (drive_tent guy0 place0 place0 car1 tent0)
+        - (drive_tent guy0 place0 place1 car1 tent0)
+        - (drive_tent guy0 place0 place2 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:42:30.288719'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 6
+    fring_size: 75
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive girl0 place0 place0 car1)
+        - (drive_tent_passenger girl0 place0 place0 car1 tent0 guy0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive_tent girl0 place0 place1 car1 tent0)
+        - (drive_tent girl0 place0 place2 car1 tent0)
+        - (drive_tent guy0 place0 place0 car1 tent0)
+        - (drive_tent guy0 place0 place1 car1 tent0)
+        - (drive_tent guy0 place0 place2 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:42:38.664907'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 7
+    fring_size: 80
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive girl0 place0 place0 car1)
+        - (drive_tent_passenger guy0 place0 place0 car1 tent0 girl0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive_tent girl0 place0 place1 car1 tent0)
+        - (drive_tent girl0 place0 place2 car1 tent0)
+        - (drive_tent guy0 place0 place0 car1 tent0)
+        - (drive_tent guy0 place0 place1 car1 tent0)
+        - (drive_tent guy0 place0 place2 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:42:48.849233'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 8
+    fring_size: 85
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive girl0 place0 place0 car1)
+        - (drive_tent_passenger guy0 place0 place2 car1 tent0 girl0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place2 place0 car1 tent0)
+        - (drive_tent girl0 place2 place1 car1 tent0)
+        - (drive_tent girl0 place2 place2 car1 tent0)
+        - (drive_tent guy0 place2 place0 car1 tent0)
+        - (drive_tent guy0 place2 place1 car1 tent0)
+        - (drive_tent guy0 place2 place2 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:42:53.336148'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 9
+    fring_size: 87
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive girl0 place0 place0 car1)
+        - (drive_tent_passenger guy0 place0 place2 car1 tent0 guy0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (drive_tent guy0 place2 place0 car1 tent0)
+        - (drive_tent guy0 place2 place1 car1 tent0)
+        - (drive_tent guy0 place2 place2 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:43:02.493896'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 10
+    fring_size: 92
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive girl0 place0 place0 car1)
+        - (drive_tent_passenger guy0 place0 place0 car1 tent0 guy0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive_tent girl0 place0 place1 car1 tent0)
+        - (drive_tent girl0 place0 place2 car1 tent0)
+        - (drive_tent guy0 place0 place0 car1 tent0)
+        - (drive_tent guy0 place0 place1 car1 tent0)
+        - (drive_tent guy0 place0 place2 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:43:11.470346'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 11
+    fring_size: 97
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive girl0 place0 place0 car1)
+        - (drive_tent_passenger guy0 place0 place1 car1 tent0 girl0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place1 place0 car1 tent0)
+        - (drive_tent girl0 place1 place1 car1 tent0)
+        - (drive_tent girl0 place1 place2 car1 tent0)
+        - (drive_tent guy0 place1 place0 car1 tent0)
+        - (drive_tent guy0 place1 place1 car1 tent0)
+        - (drive_tent guy0 place1 place2 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:43:15.535641'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 12
+    fring_size: 99
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:1,H:0,C:0), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive girl0 place0 place0 car1)
+        - (drive_tent_passenger guy0 place0 place1 car1 tent0 guy0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (drive_tent guy0 place1 place0 car1 tent0)
+        - (drive_tent guy0 place1 place1 car1 tent0)
+        - (drive_tent guy0 place1 place2 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:43:19.855002'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 13
+    fring_size: 101
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:1,H:0,C:0), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive girl0 place0 place0 car1)
+        - (drive_tent_passenger girl0 place0 place1 car1 tent0 girl0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (drive_tent girl0 place1 place0 car1 tent0)
+        - (drive_tent girl0 place1 place1 car1 tent0)
+        - (drive_tent girl0 place1 place2 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:43:28.181420'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 14
+    fring_size: 106
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0),
+        (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive girl0 place0 place0 car1)
+        - (drive_tent_passenger girl0 place0 place1 car1 tent0 guy0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place1 place0 car1 tent0)
+        - (drive_tent girl0 place1 place1 car1 tent0)
+        - (drive_tent girl0 place1 place2 car1 tent0)
+        - (drive_tent guy0 place1 place0 car1 tent0)
+        - (drive_tent guy0 place1 place1 car1 tent0)
+        - (drive_tent guy0 place1 place2 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:43:32.354725'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 15
+    fring_size: 108
+    fring_first_20: (D:4,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0), (D:5,H:-1,C:1),
+        (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive girl0 place0 place0 car1)
+        - (drive_tent_passenger girl0 place0 place2 car1 tent0 girl0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (drive_tent girl0 place2 place0 car1 tent0)
+        - (drive_tent girl0 place2 place1 car1 tent0)
+        - (drive_tent girl0 place2 place2 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:43:40.620026'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 16
+    fring_size: 113
+    fring_first_20: (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0), (D:5,H:-1,C:1), (D:5,H:-1,C:1),
+        (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive girl0 place0 place0 car1)
+        - (drive_tent_passenger girl0 place0 place2 car1 tent0 guy0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place2 place0 car1 tent0)
+        - (drive_tent girl0 place2 place1 car1 tent0)
+        - (drive_tent girl0 place2 place2 car1 tent0)
+        - (drive_tent guy0 place2 place0 car1 tent0)
+        - (drive_tent guy0 place2 place1 car1 tent0)
+        - (drive_tent guy0 place2 place2 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:44:33.075808'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 17
+    fring_size: 148
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive guy0 place0 place0 car1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent_passenger
+        num_neighbours: 36
+        first_10_possible_groundings:
+        - (drive_tent_passenger girl0 place0 place0 car1 tent0 girl0)
+        - (drive_tent_passenger girl0 place0 place0 car1 tent0 guy0)
+        - (drive_tent_passenger girl0 place0 place1 car1 tent0 girl0)
+        - (drive_tent_passenger girl0 place0 place1 car1 tent0 guy0)
+        - (drive_tent_passenger girl0 place0 place2 car1 tent0 girl0)
+        - (drive_tent_passenger girl0 place0 place2 car1 tent0 guy0)
+        - (drive_tent_passenger girl0 place1 place0 car1 tent0 girl0)
+        - (drive_tent_passenger girl0 place1 place0 car1 tent0 guy0)
+        - (drive_tent_passenger girl0 place1 place1 car1 tent0 girl0)
+        - (drive_tent_passenger girl0 place1 place1 car1 tent0 guy0)
+
+
+---
+timestamp: '2024-10-16T07:44:40.606472'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 18
+    fring_size: 153
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive guy0 place0 place0 car1)
+        - (drive_tent_passenger girl0 place0 place0 car1 tent0 girl0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive_tent girl0 place0 place1 car1 tent0)
+        - (drive_tent girl0 place0 place2 car1 tent0)
+        - (drive_tent guy0 place0 place0 car1 tent0)
+        - (drive_tent guy0 place0 place1 car1 tent0)
+        - (drive_tent guy0 place0 place2 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:44:48.906286'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 19
+    fring_size: 158
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive guy0 place0 place0 car1)
+        - (drive_tent_passenger girl0 place0 place0 car1 tent0 guy0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive_tent girl0 place0 place1 car1 tent0)
+        - (drive_tent girl0 place0 place2 car1 tent0)
+        - (drive_tent guy0 place0 place0 car1 tent0)
+        - (drive_tent guy0 place0 place1 car1 tent0)
+        - (drive_tent guy0 place0 place2 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:44:53.586485'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 20
+    fring_size: 160
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive guy0 place0 place0 car1)
+        - (drive_tent_passenger girl0 place0 place1 car1 tent0 girl0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (drive_tent girl0 place1 place0 car1 tent0)
+        - (drive_tent girl0 place1 place1 car1 tent0)
+        - (drive_tent girl0 place1 place2 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:45:01.988988'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 21
+    fring_size: 165
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive guy0 place0 place0 car1)
+        - (drive_tent_passenger girl0 place0 place1 car1 tent0 guy0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place1 place0 car1 tent0)
+        - (drive_tent girl0 place1 place1 car1 tent0)
+        - (drive_tent girl0 place1 place2 car1 tent0)
+        - (drive_tent guy0 place1 place0 car1 tent0)
+        - (drive_tent guy0 place1 place1 car1 tent0)
+        - (drive_tent guy0 place1 place2 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:45:10.058004'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 22
+    fring_size: 167
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive guy0 place0 place0 car1)
+        - (drive_tent_passenger girl0 place0 place2 car1 tent0 girl0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (drive_tent girl0 place2 place0 car1 tent0)
+        - (drive_tent girl0 place2 place1 car1 tent0)
+        - (drive_tent girl0 place2 place2 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:45:19.552613'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 23
+    fring_size: 172
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive guy0 place0 place0 car1)
+        - (drive_tent_passenger girl0 place0 place2 car1 tent0 guy0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place2 place0 car1 tent0)
+        - (drive_tent girl0 place2 place1 car1 tent0)
+        - (drive_tent girl0 place2 place2 car1 tent0)
+        - (drive_tent guy0 place2 place0 car1 tent0)
+        - (drive_tent guy0 place2 place1 car1 tent0)
+        - (drive_tent guy0 place2 place2 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:45:28.173051'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 24
+    fring_size: 177
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:1,H:0,C:0), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive guy0 place0 place0 car1)
+        - (drive_tent_passenger guy0 place0 place0 car1 tent0 girl0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive_tent girl0 place0 place1 car1 tent0)
+        - (drive_tent girl0 place0 place2 car1 tent0)
+        - (drive_tent guy0 place0 place0 car1 tent0)
+        - (drive_tent guy0 place0 place1 car1 tent0)
+        - (drive_tent guy0 place0 place2 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:45:36.886380'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 25
+    fring_size: 182
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:1,H:0,C:0), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive guy0 place0 place0 car1)
+        - (drive_tent_passenger guy0 place0 place0 car1 tent0 guy0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive_tent girl0 place0 place1 car1 tent0)
+        - (drive_tent girl0 place0 place2 car1 tent0)
+        - (drive_tent guy0 place0 place0 car1 tent0)
+        - (drive_tent guy0 place0 place1 car1 tent0)
+        - (drive_tent guy0 place0 place2 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:45:44.870952'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 26
+    fring_size: 187
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0),
+        (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive guy0 place0 place0 car1)
+        - (drive_tent_passenger guy0 place0 place1 car1 tent0 girl0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place1 place0 car1 tent0)
+        - (drive_tent girl0 place1 place1 car1 tent0)
+        - (drive_tent girl0 place1 place2 car1 tent0)
+        - (drive_tent guy0 place1 place0 car1 tent0)
+        - (drive_tent guy0 place1 place1 car1 tent0)
+        - (drive_tent guy0 place1 place2 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:45:49.641753'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 27
+    fring_size: 189
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0), (D:5,H:-1,C:1),
+        (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive guy0 place0 place0 car1)
+        - (drive_tent_passenger guy0 place0 place2 car1 tent0 guy0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (drive_tent guy0 place2 place0 car1 tent0)
+        - (drive_tent guy0 place2 place1 car1 tent0)
+        - (drive_tent guy0 place2 place2 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:45:53.986360'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 28
+    fring_size: 191
+    fring_first_20: (D:4,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0), (D:5,H:-1,C:1), (D:5,H:-1,C:1),
+        (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive guy0 place0 place0 car1)
+        - (drive_tent_passenger guy0 place0 place1 car1 tent0 guy0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (drive_tent guy0 place1 place0 car1 tent0)
+        - (drive_tent guy0 place1 place1 car1 tent0)
+        - (drive_tent guy0 place1 place2 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:46:02.788654'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 29
+    fring_size: 196
+    fring_first_20: (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:1,H:0,C:0), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1),
+        (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive guy0 place0 place0 car1)
+        - (drive_tent_passenger guy0 place0 place2 car1 tent0 girl0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place2 place0 car1 tent0)
+        - (drive_tent girl0 place2 place1 car1 tent0)
+        - (drive_tent girl0 place2 place2 car1 tent0)
+        - (drive_tent guy0 place2 place0 car1 tent0)
+        - (drive_tent guy0 place2 place1 car1 tent0)
+        - (drive_tent guy0 place2 place2 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:46:31.758613'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 30
+    fring_size: 213
+    fring_first_20: (D:3,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0), (D:5,H:-1,C:1), (D:5,H:-1,C:1),
+        (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive
+        num_neighbours: 18
+        first_10_possible_groundings:
+        - (drive girl0 place0 place0 car0)
+        - (drive girl0 place0 place1 car0)
+        - (drive girl0 place0 place2 car0)
+        - (drive girl0 place1 place0 car0)
+        - (drive girl0 place1 place1 car0)
+        - (drive girl0 place1 place2 car0)
+        - (drive girl0 place2 place0 car0)
+        - (drive girl0 place2 place1 car0)
+        - (drive girl0 place2 place2 car0)
+        - (drive guy0 place0 place0 car0)
+
+
+---
+timestamp: '2024-10-16T07:47:23.487177'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 31
+    fring_size: 248
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive girl0 place0 place0 car0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent_passenger
+        num_neighbours: 36
+        first_10_possible_groundings:
+        - (drive_tent_passenger girl0 place0 place0 car0 tent0 girl0)
+        - (drive_tent_passenger girl0 place0 place0 car0 tent0 guy0)
+        - (drive_tent_passenger girl0 place0 place1 car0 tent0 girl0)
+        - (drive_tent_passenger girl0 place0 place1 car0 tent0 guy0)
+        - (drive_tent_passenger girl0 place0 place2 car0 tent0 girl0)
+        - (drive_tent_passenger girl0 place0 place2 car0 tent0 guy0)
+        - (drive_tent_passenger girl0 place1 place0 car0 tent0 girl0)
+        - (drive_tent_passenger girl0 place1 place0 car0 tent0 guy0)
+        - (drive_tent_passenger girl0 place1 place1 car0 tent0 girl0)
+        - (drive_tent_passenger girl0 place1 place1 car0 tent0 guy0)
+
+
+---
+timestamp: '2024-10-16T07:47:33.141250'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 32
+    fring_size: 253
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive girl0 place0 place0 car0)
+        - (drive_tent_passenger girl0 place0 place0 car0 tent0 girl0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive_tent girl0 place0 place1 car0 tent0)
+        - (drive_tent girl0 place0 place2 car0 tent0)
+        - (drive_tent guy0 place0 place0 car0 tent0)
+        - (drive_tent guy0 place0 place1 car0 tent0)
+        - (drive_tent guy0 place0 place2 car0 tent0)
+
+
+---
+timestamp: '2024-10-16T07:47:41.945298'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 33
+    fring_size: 258
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive girl0 place0 place0 car0)
+        - (drive_tent_passenger girl0 place0 place0 car0 tent0 guy0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive_tent girl0 place0 place1 car0 tent0)
+        - (drive_tent girl0 place0 place2 car0 tent0)
+        - (drive_tent guy0 place0 place0 car0 tent0)
+        - (drive_tent guy0 place0 place1 car0 tent0)
+        - (drive_tent guy0 place0 place2 car0 tent0)
+
+
+---
+timestamp: '2024-10-16T07:47:50.869927'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 34
+    fring_size: 263
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive girl0 place0 place0 car0)
+        - (drive_tent_passenger guy0 place0 place0 car0 tent0 girl0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive_tent girl0 place0 place1 car0 tent0)
+        - (drive_tent girl0 place0 place2 car0 tent0)
+        - (drive_tent guy0 place0 place0 car0 tent0)
+        - (drive_tent guy0 place0 place1 car0 tent0)
+        - (drive_tent guy0 place0 place2 car0 tent0)
+
+
+---
+timestamp: '2024-10-16T07:47:59.083196'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 35
+    fring_size: 268
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive girl0 place0 place0 car0)
+        - (drive_tent_passenger guy0 place0 place0 car0 tent0 guy0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive_tent girl0 place0 place1 car0 tent0)
+        - (drive_tent girl0 place0 place2 car0 tent0)
+        - (drive_tent guy0 place0 place0 car0 tent0)
+        - (drive_tent guy0 place0 place1 car0 tent0)
+        - (drive_tent guy0 place0 place2 car0 tent0)
+
+
+---
+timestamp: '2024-10-16T07:48:07.835701'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 36
+    fring_size: 273
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive girl0 place0 place0 car0)
+        - (drive_tent_passenger guy0 place0 place1 car0 tent0 girl0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place1 place0 car0 tent0)
+        - (drive_tent girl0 place1 place1 car0 tent0)
+        - (drive_tent girl0 place1 place2 car0 tent0)
+        - (drive_tent guy0 place1 place0 car0 tent0)
+        - (drive_tent guy0 place1 place1 car0 tent0)
+        - (drive_tent guy0 place1 place2 car0 tent0)
+
+
+---
+timestamp: '2024-10-16T07:48:11.891421'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 37
+    fring_size: 275
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive girl0 place0 place0 car0)
+        - (drive_tent_passenger guy0 place0 place2 car0 tent0 guy0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (drive_tent guy0 place2 place0 car0 tent0)
+        - (drive_tent guy0 place2 place1 car0 tent0)
+        - (drive_tent guy0 place2 place2 car0 tent0)
+
+
+---
+timestamp: '2024-10-16T07:48:16.575199'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 38
+    fring_size: 277
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:1,H:0,C:0), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive girl0 place0 place0 car0)
+        - (drive_tent_passenger guy0 place0 place1 car0 tent0 guy0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (drive_tent guy0 place1 place0 car0 tent0)
+        - (drive_tent guy0 place1 place1 car0 tent0)
+        - (drive_tent guy0 place1 place2 car0 tent0)
+
+
+---
+timestamp: '2024-10-16T07:48:24.763861'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 39
+    fring_size: 282
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:1,H:0,C:0), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive girl0 place0 place0 car0)
+        - (drive_tent_passenger guy0 place0 place2 car0 tent0 girl0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place2 place0 car0 tent0)
+        - (drive_tent girl0 place2 place1 car0 tent0)
+        - (drive_tent girl0 place2 place2 car0 tent0)
+        - (drive_tent guy0 place2 place0 car0 tent0)
+        - (drive_tent guy0 place2 place1 car0 tent0)
+        - (drive_tent guy0 place2 place2 car0 tent0)
+
+
+---
+timestamp: '2024-10-16T07:48:28.972002'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 40
+    fring_size: 284
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0),
+        (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive girl0 place0 place0 car0)
+        - (drive_tent_passenger girl0 place0 place1 car0 tent0 girl0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (drive_tent girl0 place1 place0 car0 tent0)
+        - (drive_tent girl0 place1 place1 car0 tent0)
+        - (drive_tent girl0 place1 place2 car0 tent0)
+
+
+---
+timestamp: '2024-10-16T07:48:38.728016'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 41
+    fring_size: 289
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0), (D:5,H:-1,C:1),
+        (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive girl0 place0 place0 car0)
+        - (drive_tent_passenger girl0 place0 place1 car0 tent0 guy0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place1 place0 car0 tent0)
+        - (drive_tent girl0 place1 place1 car0 tent0)
+        - (drive_tent girl0 place1 place2 car0 tent0)
+        - (drive_tent guy0 place1 place0 car0 tent0)
+        - (drive_tent guy0 place1 place1 car0 tent0)
+        - (drive_tent guy0 place1 place2 car0 tent0)
+
+
+---
+timestamp: '2024-10-16T07:48:43.406339'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 42
+    fring_size: 291
+    fring_first_20: (D:4,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0), (D:5,H:-1,C:1), (D:5,H:-1,C:1),
+        (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive girl0 place0 place0 car0)
+        - (drive_tent_passenger girl0 place0 place2 car0 tent0 girl0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (drive_tent girl0 place2 place0 car0 tent0)
+        - (drive_tent girl0 place2 place1 car0 tent0)
+        - (drive_tent girl0 place2 place2 car0 tent0)
+
+
+---
+timestamp: '2024-10-16T07:48:51.831346'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 43
+    fring_size: 296
+    fring_first_20: (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:1,H:0,C:0), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1),
+        (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive girl0 place0 place0 car0)
+        - (drive_tent_passenger girl0 place0 place2 car0 tent0 guy0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place2 place0 car0 tent0)
+        - (drive_tent girl0 place2 place1 car0 tent0)
+        - (drive_tent girl0 place2 place2 car0 tent0)
+        - (drive_tent guy0 place2 place0 car0 tent0)
+        - (drive_tent guy0 place2 place1 car0 tent0)
+        - (drive_tent guy0 place2 place2 car0 tent0)
+
+
+---
+timestamp: '2024-10-16T07:49:47.717913'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 44
+    fring_size: 331
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive guy0 place0 place0 car0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent_passenger
+        num_neighbours: 36
+        first_10_possible_groundings:
+        - (drive_tent_passenger girl0 place0 place0 car0 tent0 girl0)
+        - (drive_tent_passenger girl0 place0 place0 car0 tent0 guy0)
+        - (drive_tent_passenger girl0 place0 place1 car0 tent0 girl0)
+        - (drive_tent_passenger girl0 place0 place1 car0 tent0 guy0)
+        - (drive_tent_passenger girl0 place0 place2 car0 tent0 girl0)
+        - (drive_tent_passenger girl0 place0 place2 car0 tent0 guy0)
+        - (drive_tent_passenger girl0 place1 place0 car0 tent0 girl0)
+        - (drive_tent_passenger girl0 place1 place0 car0 tent0 guy0)
+        - (drive_tent_passenger girl0 place1 place1 car0 tent0 girl0)
+        - (drive_tent_passenger girl0 place1 place1 car0 tent0 guy0)
+
+
+---
+timestamp: '2024-10-16T07:49:56.191196'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 45
+    fring_size: 336
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive guy0 place0 place0 car0)
+        - (drive_tent_passenger girl0 place0 place0 car0 tent0 girl0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive_tent girl0 place0 place1 car0 tent0)
+        - (drive_tent girl0 place0 place2 car0 tent0)
+        - (drive_tent guy0 place0 place0 car0 tent0)
+        - (drive_tent guy0 place0 place1 car0 tent0)
+        - (drive_tent guy0 place0 place2 car0 tent0)
+
+
+---
+timestamp: '2024-10-16T07:50:08.254992'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 46
+    fring_size: 341
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive guy0 place0 place0 car0)
+        - (drive_tent_passenger girl0 place0 place0 car0 tent0 guy0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive_tent girl0 place0 place1 car0 tent0)
+        - (drive_tent girl0 place0 place2 car0 tent0)
+        - (drive_tent guy0 place0 place0 car0 tent0)
+        - (drive_tent guy0 place0 place1 car0 tent0)
+        - (drive_tent guy0 place0 place2 car0 tent0)
+
+
+---
+timestamp: '2024-10-16T07:50:13.577209'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 47
+    fring_size: 343
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive guy0 place0 place0 car0)
+        - (drive_tent_passenger girl0 place0 place1 car0 tent0 girl0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (drive_tent girl0 place1 place0 car0 tent0)
+        - (drive_tent girl0 place1 place1 car0 tent0)
+        - (drive_tent girl0 place1 place2 car0 tent0)
+
+
+---
+timestamp: '2024-10-16T07:50:21.646983'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 48
+    fring_size: 348
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive guy0 place0 place0 car0)
+        - (drive_tent_passenger girl0 place0 place1 car0 tent0 guy0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place1 place0 car0 tent0)
+        - (drive_tent girl0 place1 place1 car0 tent0)
+        - (drive_tent girl0 place1 place2 car0 tent0)
+        - (drive_tent guy0 place1 place0 car0 tent0)
+        - (drive_tent guy0 place1 place1 car0 tent0)
+        - (drive_tent guy0 place1 place2 car0 tent0)
+
+
+---
+timestamp: '2024-10-16T07:50:29.630491'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 49
+    fring_size: 353
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive guy0 place0 place0 car0)
+        - (drive_tent_passenger guy0 place0 place0 car0 tent0 girl0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive_tent girl0 place0 place1 car0 tent0)
+        - (drive_tent girl0 place0 place2 car0 tent0)
+        - (drive_tent guy0 place0 place0 car0 tent0)
+        - (drive_tent guy0 place0 place1 car0 tent0)
+        - (drive_tent guy0 place0 place2 car0 tent0)
+
+
+---
+timestamp: '2024-10-16T07:50:37.415198'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 50
+    fring_size: 358
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:1,H:0,C:0), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive guy0 place0 place0 car0)
+        - (drive_tent_passenger guy0 place0 place0 car0 tent0 guy0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place0 place0 car0 tent0)
+        - (drive_tent girl0 place0 place1 car0 tent0)
+        - (drive_tent girl0 place0 place2 car0 tent0)
+        - (drive_tent guy0 place0 place0 car0 tent0)
+        - (drive_tent guy0 place0 place1 car0 tent0)
+        - (drive_tent guy0 place0 place2 car0 tent0)
+
+
+---
+timestamp: '2024-10-16T07:50:45.709776'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 51
+    fring_size: 363
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:1,H:0,C:0), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive guy0 place0 place0 car0)
+        - (drive_tent_passenger guy0 place0 place1 car0 tent0 girl0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place1 place0 car0 tent0)
+        - (drive_tent girl0 place1 place1 car0 tent0)
+        - (drive_tent girl0 place1 place2 car0 tent0)
+        - (drive_tent guy0 place1 place0 car0 tent0)
+        - (drive_tent guy0 place1 place1 car0 tent0)
+        - (drive_tent guy0 place1 place2 car0 tent0)
+
+
+---
+timestamp: '2024-10-16T07:50:55.946566'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 52
+    fring_size: 368
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0),
+        (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive guy0 place0 place0 car0)
+        - (drive_tent_passenger guy0 place0 place2 car0 tent0 girl0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place2 place0 car0 tent0)
+        - (drive_tent girl0 place2 place1 car0 tent0)
+        - (drive_tent girl0 place2 place2 car0 tent0)
+        - (drive_tent guy0 place2 place0 car0 tent0)
+        - (drive_tent guy0 place2 place1 car0 tent0)
+        - (drive_tent guy0 place2 place2 car0 tent0)
+
+
+---
+timestamp: '2024-10-16T07:51:00.235301'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 53
+    fring_size: 370
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0), (D:5,H:-1,C:1),
+        (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive guy0 place0 place0 car0)
+        - (drive_tent_passenger guy0 place0 place2 car0 tent0 guy0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (drive_tent guy0 place2 place0 car0 tent0)
+        - (drive_tent guy0 place2 place1 car0 tent0)
+        - (drive_tent guy0 place2 place2 car0 tent0)
+
+
+---
+timestamp: '2024-10-16T07:51:04.641396'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 54
+    fring_size: 372
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0), (D:5,H:-1,C:1), (D:5,H:-1,C:1),
+        (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive guy0 place0 place0 car0)
+        - (drive_tent_passenger guy0 place0 place1 car0 tent0 guy0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (drive_tent guy0 place1 place0 car0 tent0)
+        - (drive_tent guy0 place1 place1 car0 tent0)
+        - (drive_tent guy0 place1 place2 car0 tent0)
+
+
+---
+timestamp: '2024-10-16T07:51:08.873647'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 55
+    fring_size: 374
+    fring_first_20: (D:4,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:1,H:0,C:0), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1),
+        (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive guy0 place0 place0 car0)
+        - (drive_tent_passenger girl0 place0 place2 car0 tent0 girl0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (drive_tent girl0 place2 place0 car0 tent0)
+        - (drive_tent girl0 place2 place1 car0 tent0)
+        - (drive_tent girl0 place2 place2 car0 tent0)
+
+
+---
+timestamp: '2024-10-16T07:51:17.370230'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 56
+    fring_size: 379
+    fring_first_20: (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:1,H:0,C:0), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1),
+        (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive guy0 place0 place0 car0)
+        - (drive_tent_passenger girl0 place0 place2 car0 tent0 guy0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place2 place0 car0 tent0)
+        - (drive_tent girl0 place2 place1 car0 tent0)
+        - (drive_tent girl0 place2 place2 car0 tent0)
+        - (drive_tent guy0 place2 place0 car0 tent0)
+        - (drive_tent guy0 place2 place1 car0 tent0)
+        - (drive_tent guy0 place2 place2 car0 tent0)
+
+
+---
+timestamp: '2024-10-16T07:51:44.658506'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 57
+    fring_size: 396
+    fring_first_20: (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:1,H:0,C:0), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1),
+        (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place2 car0 tent0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive
+        num_neighbours: 18
+        first_10_possible_groundings:
+        - (drive girl0 place0 place0 car1)
+        - (drive girl0 place0 place1 car1)
+        - (drive girl0 place0 place2 car1)
+        - (drive girl0 place1 place0 car1)
+        - (drive girl0 place1 place1 car1)
+        - (drive girl0 place1 place2 car1)
+        - (drive girl0 place2 place0 car1)
+        - (drive girl0 place2 place1 car1)
+        - (drive girl0 place2 place2 car1)
+        - (drive guy0 place0 place0 car1)
+
+
+---
+timestamp: '2024-10-16T07:52:38.347777'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 58
+    fring_size: 431
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place2 car0 tent0)
+        - (drive guy0 place0 place2 car1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent_passenger
+        num_neighbours: 36
+        first_10_possible_groundings:
+        - (drive_tent_passenger girl0 place0 place0 car1 tent0 girl0)
+        - (drive_tent_passenger girl0 place0 place0 car1 tent0 guy0)
+        - (drive_tent_passenger girl0 place0 place1 car1 tent0 girl0)
+        - (drive_tent_passenger girl0 place0 place1 car1 tent0 guy0)
+        - (drive_tent_passenger girl0 place0 place2 car1 tent0 girl0)
+        - (drive_tent_passenger girl0 place0 place2 car1 tent0 guy0)
+        - (drive_tent_passenger girl0 place1 place0 car1 tent0 girl0)
+        - (drive_tent_passenger girl0 place1 place0 car1 tent0 guy0)
+        - (drive_tent_passenger girl0 place1 place1 car1 tent0 girl0)
+        - (drive_tent_passenger girl0 place1 place1 car1 tent0 guy0)
+
+
+---
+timestamp: '2024-10-16T07:52:42.500919'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 59
+    fring_size: 433
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place2 car0 tent0)
+        - (drive guy0 place0 place2 car1)
+        - (drive_tent_passenger girl0 place2 place0 car1 tent0 girl0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive_tent girl0 place0 place1 car1 tent0)
+        - (drive_tent girl0 place0 place2 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:52:51.140481'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 60
+    fring_size: 438
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place2 car0 tent0)
+        - (drive guy0 place0 place2 car1)
+        - (drive_tent_passenger girl0 place2 place0 car1 tent0 guy0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive_tent girl0 place0 place1 car1 tent0)
+        - (drive_tent girl0 place0 place2 car1 tent0)
+        - (drive_tent guy0 place0 place0 car1 tent0)
+        - (drive_tent guy0 place0 place1 car1 tent0)
+        - (drive_tent guy0 place0 place2 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:52:55.682835'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 61
+    fring_size: 440
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0), (D:3,H:0,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place2 car0 tent0)
+        - (drive guy0 place0 place2 car1)
+        - (drive_tent_passenger girl0 place2 place1 car1 tent0 girl0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (drive_tent girl0 place1 place0 car1 tent0)
+        - (drive_tent girl0 place1 place1 car1 tent0)
+        - (drive_tent girl0 place1 place2 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:53:05.359901'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 62
+    fring_size: 445
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0), (D:3,H:0,C:1), (D:3,H:0,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place2 car0 tent0)
+        - (drive guy0 place0 place2 car1)
+        - (drive_tent_passenger guy0 place2 place0 car1 tent0 girl0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place0 place0 car1 tent0)
+        - (drive_tent girl0 place0 place1 car1 tent0)
+        - (drive_tent girl0 place0 place2 car1 tent0)
+        - (drive_tent guy0 place0 place0 car1 tent0)
+        - (drive_tent guy0 place0 place1 car1 tent0)
+        - (drive_tent guy0 place0 place2 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:53:09.917538'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 63
+    fring_size: 447
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:1,H:0,C:0), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place2 car0 tent0)
+        - (drive guy0 place0 place2 car1)
+        - (drive_tent_passenger guy0 place2 place0 car1 tent0 guy0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (drive_tent guy0 place0 place0 car1 tent0)
+        - (drive_tent guy0 place0 place1 car1 tent0)
+        - (drive_tent guy0 place0 place2 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:53:18.250893'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 64
+    fring_size: 452
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:1,H:0,C:0), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place2 car0 tent0)
+        - (drive guy0 place0 place2 car1)
+        - (drive_tent_passenger guy0 place2 place1 car1 tent0 girl0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place1 place0 car1 tent0)
+        - (drive_tent girl0 place1 place1 car1 tent0)
+        - (drive_tent girl0 place1 place2 car1 tent0)
+        - (drive_tent guy0 place1 place0 car1 tent0)
+        - (drive_tent guy0 place1 place1 car1 tent0)
+        - (drive_tent guy0 place1 place2 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:53:22.386851'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 65
+    fring_size: 454
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0),
+        (D:3,H:0,C:1), (D:3,H:0,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place2 car0 tent0)
+        - (drive guy0 place0 place2 car1)
+        - (drive_tent_passenger guy0 place2 place1 car1 tent0 guy0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (drive_tent guy0 place1 place0 car1 tent0)
+        - (drive_tent guy0 place1 place1 car1 tent0)
+        - (drive_tent guy0 place1 place2 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:53:31.592534'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 66
+    fring_size: 459
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0), (D:3,H:0,C:1),
+        (D:3,H:0,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place2 car0 tent0)
+        - (drive guy0 place0 place2 car1)
+        - (drive_tent_passenger guy0 place2 place2 car1 tent0 girl0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place2 place0 car1 tent0)
+        - (drive_tent girl0 place2 place1 car1 tent0)
+        - (drive_tent girl0 place2 place2 car1 tent0)
+        - (drive_tent guy0 place2 place0 car1 tent0)
+        - (drive_tent guy0 place2 place1 car1 tent0)
+        - (drive_tent guy0 place2 place2 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:53:39.692316'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 67
+    fring_size: 464
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0), (D:3,H:0,C:1), (D:3,H:0,C:1),
+        (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place2 car0 tent0)
+        - (drive guy0 place0 place2 car1)
+        - (drive_tent_passenger guy0 place2 place2 car1 tent0 guy0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place2 place0 car1 tent0)
+        - (drive_tent girl0 place2 place1 car1 tent0)
+        - (drive_tent girl0 place2 place2 car1 tent0)
+        - (drive_tent guy0 place2 place0 car1 tent0)
+        - (drive_tent guy0 place2 place1 car1 tent0)
+        - (drive_tent guy0 place2 place2 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:53:47.832744'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 68
+    fring_size: 469
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:1,H:0,C:0), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:5,H:-1,C:1),
+        (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place2 car0 tent0)
+        - (drive guy0 place0 place2 car1)
+        - (drive_tent_passenger girl0 place2 place1 car1 tent0 guy0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place1 place0 car1 tent0)
+        - (drive_tent girl0 place1 place1 car1 tent0)
+        - (drive_tent girl0 place1 place2 car1 tent0)
+        - (drive_tent guy0 place1 place0 car1 tent0)
+        - (drive_tent guy0 place1 place1 car1 tent0)
+        - (drive_tent guy0 place1 place2 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:53:56.077289'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 69
+    fring_size: 474
+    fring_first_20: (D:4,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:1,H:0,C:0), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1),
+        (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place2 car0 tent0)
+        - (drive guy0 place0 place2 car1)
+        - (drive_tent_passenger girl0 place2 place2 car1 tent0 girl0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place2 place0 car1 tent0)
+        - (drive_tent girl0 place2 place1 car1 tent0)
+        - (drive_tent girl0 place2 place2 car1 tent0)
+        - (drive_tent guy0 place2 place0 car1 tent0)
+        - (drive_tent guy0 place2 place1 car1 tent0)
+        - (drive_tent guy0 place2 place2 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:54:06.525329'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 70
+    fring_size: 479
+    fring_first_20: (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0),
+        (D:3,H:0,C:1), (D:3,H:0,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1),
+        (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place2 car0 tent0)
+        - (drive guy0 place0 place2 car1)
+        - (drive_tent_passenger girl0 place2 place2 car1 tent0 guy0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive_tent
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (drive_tent girl0 place2 place0 car1 tent0)
+        - (drive_tent girl0 place2 place1 car1 tent0)
+        - (drive_tent girl0 place2 place2 car1 tent0)
+        - (drive_tent guy0 place2 place0 car1 tent0)
+        - (drive_tent guy0 place2 place1 car1 tent0)
+        - (drive_tent guy0 place2 place2 car1 tent0)
+
+
+---
+timestamp: '2024-10-16T07:54:33.339581'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 71
+    fring_size: 496
+    fring_first_20: (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0),
+        (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:5,H:-1,C:1),
+        (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1), (D:5,H:-1,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place2 car1 tent0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive
+        num_neighbours: 18
+        first_10_possible_groundings:
+        - (drive girl0 place0 place0 car0)
+        - (drive girl0 place0 place1 car0)
+        - (drive girl0 place0 place2 car0)
+        - (drive girl0 place1 place0 car0)
+        - (drive girl0 place1 place1 car0)
+        - (drive girl0 place1 place2 car0)
+        - (drive girl0 place2 place0 car0)
+        - (drive girl0 place2 place1 car0)
+        - (drive girl0 place2 place2 car0)
+        - (drive guy0 place0 place0 car0)
+
+
+---
+timestamp: '2024-10-16T07:55:24.669027'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+

@@ -1,0 +1,95 @@
+---
+timestamp: '2024-10-13T01:48:56.084169'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/9 AStar-full-log length1-15/astar_length_11_transport-sat08-strips_pp11-err-rate-0-1.yaml
+    instance_id: transport-sat08-strips/pp11-err-rate-0-1
+    search_algorithm: astar
+    plan_length: 11
+    domain_class: transport-sat08-strips
+    instance_name: pp11-err-rate-0-1
+    ground_plan:
+    - (drive truck-2 city-2-loc-1 city-2-loc-3)
+    - (drive truck-2 city-2-loc-3 city-1-loc-1)
+    - (drive truck-2 city-1-loc-1 city-1-loc-3)
+    - (drive truck-2 city-1-loc-3 city-1-loc-2)
+    - (pick-up truck-2 city-1-loc-2 package-1 capacity-2 capacity-3)
+    - (pick-up truck-2 city-1-loc-2 package-2 capacity-1 capacity-2)
+    - (drive truck-2 city-1-loc-2 city-1-loc-3)
+    - (drive truck-2 city-1-loc-3 city-1-loc-1)
+    - (drive truck-2 city-1-loc-1 city-2-loc-3)
+    - (drop truck-2 city-2-loc-3 package-1 capacity-1 capacity-2)
+    - (drop truck-2 city-2-loc-3 package-2 capacity-2 capacity-3)
+    lifted_plan:
+    - drive
+    - drive
+    - drive
+    - drive
+    - pick-up
+    - pick-up
+    - drive
+    - drive
+    - drive
+    - drop
+    - drop
+
+
+---
+timestamp: '2024-10-13T01:48:56.087938'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2024-10-13T01:48:56.175856'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 0
+    fring_first_20: ''
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: drive
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-13T01:48:56.176864'
+level: INFO
+issuer: instance_solver
+event_type: results
+data:
+    goal: not_found
+
+
+---
+timestamp: '2024-10-13T01:48:56.177213'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.0 minutes = 0.10 seconds
+
+
+---
+timestamp: '2024-10-13T01:48:56.235298'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+

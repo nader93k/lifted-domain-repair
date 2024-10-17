@@ -1,0 +1,206 @@
+---
+timestamp: '2024-10-14T11:41:08.927310'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/9 AStar-full-log length1-15/astar_length_6_mystery_pprob26-err-rate-0-3.yaml
+    instance_id: mystery/pprob26-err-rate-0-3
+    search_algorithm: astar
+    plan_length: 6
+    domain_class: mystery
+    instance_name: pprob26-err-rate-0-3
+    ground_plan:
+    - (overcome boils entertainment haroset earth neptune)
+    - (feast entertainment haroset rice oregon bavaria)
+    - (feast entertainment rice pistachio manitoba oregon)
+    - (feast entertainment pistachio turkey moravia kentucky)
+    - (feast entertainment turkey papaya manitoba oregon)
+    - (succumb boils entertainment papaya earth neptune)
+    lifted_plan:
+    - overcome
+    - feast
+    - feast
+    - feast
+    - feast
+    - succumb
+
+
+---
+timestamp: '2024-10-14T11:41:08.932179'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: feast,(orbits ?l2 ?l2),precPos,-1
+
+
+---
+timestamp: '2024-10-14T11:41:15.911727'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 5
+    fring_first_20: (D:1,H:-1,C:1), (D:1,H:-1,C:1), (D:1,H:-1,C:1), (D:1,H:-1,C:2),
+        (D:1,H:-1,C:2)
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: overcome
+        num_neighbours: 5
+        first_10_possible_groundings:
+        - (overcome boils entertainment haroset earth neptune)
+        - (overcome depression learning marzipan earth neptune)
+        - (overcome jealousy satisfaction snickers earth neptune)
+        - (overcome jealousy satisfaction snickers neptune venus)
+        - (overcome jealousy satisfaction snickers venus saturn)
+
+
+---
+timestamp: '2024-10-14T11:41:16.002739'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 2
+    fring_size: 4
+    fring_first_20: (D:1,H:-1,C:1), (D:1,H:-1,C:1), (D:1,H:-1,C:2), (D:1,H:-1,C:2)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (overcome boils entertainment haroset earth neptune)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 1
+        f_cost: 1
+        next_lifted_action: feast
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-14T11:41:16.094307'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 3
+    fring_size: 3
+    fring_first_20: (D:1,H:-1,C:1), (D:1,H:-1,C:2), (D:1,H:-1,C:2)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (overcome depression learning marzipan earth neptune)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 1
+        f_cost: 1
+        next_lifted_action: feast
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-14T11:41:16.187727'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 4
+    fring_size: 2
+    fring_first_20: (D:1,H:-1,C:2), (D:1,H:-1,C:2)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (overcome jealousy satisfaction snickers venus saturn)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 1
+        f_cost: 1
+        next_lifted_action: feast
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-14T11:41:16.287054'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 5
+    fring_size: 1
+    fring_first_20: (D:1,H:-1,C:2)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (overcome jealousy satisfaction snickers neptune venus)
+        repair_set: overcome,(harmony ?v ?s2),precPos,-1
+        g_cost: 1
+        h_cost: 1
+        f_cost: 2
+        next_lifted_action: feast
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-14T11:41:16.386731'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 6
+    fring_size: 0
+    fring_first_20: ''
+    current_node:
+        depth: 1
+        ground_actions:
+        - (overcome jealousy satisfaction snickers earth neptune)
+        repair_set: overcome,(harmony ?v ?s2),precPos,-1
+        g_cost: 1
+        h_cost: 1
+        f_cost: 2
+        next_lifted_action: feast
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-10-14T11:41:16.388365'
+level: INFO
+issuer: instance_solver
+event_type: results
+data:
+    goal: not_found
+
+
+---
+timestamp: '2024-10-14T11:41:16.388841'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.1 minutes = 7.46 seconds
+
+
+---
+timestamp: '2024-10-14T11:41:16.487011'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+

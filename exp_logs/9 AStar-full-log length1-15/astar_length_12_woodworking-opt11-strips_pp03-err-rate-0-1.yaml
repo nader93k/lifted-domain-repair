@@ -1,0 +1,2247 @@
+---
+timestamp: '2024-10-16T04:11:12.476684'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/9 AStar-full-log length1-15/astar_length_12_woodworking-opt11-strips_pp03-err-rate-0-1.yaml
+    instance_id: woodworking-opt11-strips/pp03-err-rate-0-1
+    search_algorithm: astar
+    plan_length: 12
+    domain_class: woodworking-opt11-strips
+    instance_name: pp03-err-rate-0-1
+    ground_plan:
+    - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+    - (do-saw-medium b1 p0 saw0 mahogany smooth s6 s5 s4)
+    - (do-saw-medium b1 p1 saw0 mahogany smooth s6 s5 s4)
+    - (do-saw-medium b1 p3 saw0 mahogany smooth s6 s5 s4)
+    - (do-saw-small b1 p2 saw0 mahogany smooth s6 s5)
+    - (do-plane p4 planer0 rough natural untreated)
+    - (do-immersion-varnish p4 immersion-varnisher0 green smooth)
+    - (do-glaze p0 glazer0 mauve)
+    - (do-grind p1 grinder0 smooth natural untreated untreated)
+    - (do-immersion-varnish p1 immersion-varnisher0 green verysmooth)
+    - (do-glaze p3 glazer0 white)
+    - (do-glaze p2 glazer0 mauve)
+    lifted_plan:
+    - do-saw-large
+    - do-saw-medium
+    - do-saw-medium
+    - do-saw-medium
+    - do-saw-small
+    - do-plane
+    - do-immersion-varnish
+    - do-glaze
+    - do-grind
+    - do-immersion-varnish
+    - do-glaze
+    - do-glaze
+
+
+---
+timestamp: '2024-10-16T04:11:12.485356'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: do-glaze,(colour ?x ?newcolour),effPos,1
+
+
+---
+timestamp: '2024-10-16T04:11:20.040965'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 4
+    fring_first_20: (D:1,H:0,C:0), (D:1,H:0,C:0), (D:1,H:0,C:1), (D:1,H:0,C:1)
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-saw-large
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (do-saw-large b0 p4 saw0 teak rough s3 s1 s2 s0)
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-large b1 p4 saw0 mahogany smooth s3 s1 s2 s0)
+        - (do-saw-large b1 p4 saw0 mahogany smooth s6 s4 s5 s3)
+
+
+---
+timestamp: '2024-10-16T04:11:58.846007'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 2
+    fring_size: 24
+    fring_first_20: (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0),
+        (D:2,H:0,C:1), (D:2,H:0,C:1), (D:2,H:0,C:1), (D:2,H:0,C:1), (D:2,H:0,C:1),
+        (D:2,H:0,C:1), (D:2,H:0,C:1), (D:2,H:0,C:1), (D:2,H:0,C:1), (D:2,H:0,C:1)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-saw-medium
+        num_neighbours: 21
+        first_10_possible_groundings:
+        - (do-saw-medium b0 p0 saw0 teak rough s2 s1 s0)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p0 saw0 teak rough s4 s3 s2)
+        - (do-saw-medium b0 p0 saw0 teak rough s6 s5 s4)
+        - (do-saw-medium b0 p1 saw0 teak rough s2 s1 s0)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s4 s3 s2)
+        - (do-saw-medium b0 p1 saw0 teak rough s6 s5 s4)
+        - (do-saw-medium b0 p3 saw0 teak rough s2 s1 s0)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+
+
+---
+timestamp: '2024-10-16T04:12:24.661607'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 3
+    fring_size: 37
+    fring_first_20: (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0),
+        (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0),
+        (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-saw-medium
+        num_neighbours: 14
+        first_10_possible_groundings:
+        - (do-saw-medium b0 p1 saw0 teak rough s2 s1 s0)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s4 s3 s2)
+        - (do-saw-medium b0 p1 saw0 teak rough s6 s5 s4)
+        - (do-saw-medium b0 p3 saw0 teak rough s2 s1 s0)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s4 s3 s2)
+        - (do-saw-medium b0 p3 saw0 teak rough s6 s5 s4)
+        - (do-saw-medium b1 p1 saw0 mahogany smooth s2 s1 s0)
+        - (do-saw-medium b1 p1 saw0 mahogany smooth s4 s3 s2)
+
+
+---
+timestamp: '2024-10-16T04:12:36.653785'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 4
+    fring_size: 43
+    fring_first_20: (D:4,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0),
+        (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:1,H:0,C:0), (D:4,H:0,C:1), (D:4,H:0,C:1), (D:4,H:0,C:1)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-saw-medium
+        num_neighbours: 7
+        first_10_possible_groundings:
+        - (do-saw-medium b0 p3 saw0 teak rough s2 s1 s0)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s4 s3 s2)
+        - (do-saw-medium b0 p3 saw0 teak rough s6 s5 s4)
+        - (do-saw-medium b1 p3 saw0 mahogany smooth s2 s1 s0)
+        - (do-saw-medium b1 p3 saw0 mahogany smooth s4 s3 s2)
+        - (do-saw-medium b1 p3 saw0 mahogany smooth s6 s5 s4)
+
+
+---
+timestamp: '2024-10-16T04:12:57.258297'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 5
+    fring_size: 54
+    fring_first_20: (D:5,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0),
+        (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:1,H:0,C:0)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-saw-small
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-saw-small b0 p2 saw0 teak rough s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s3 s2)
+        - (do-saw-small b0 p2 saw0 teak rough s4 s3)
+        - (do-saw-small b0 p2 saw0 teak rough s5 s4)
+        - (do-saw-small b0 p2 saw0 teak rough s6 s5)
+        - (do-saw-small b1 p2 saw0 mahogany smooth s1 s0)
+        - (do-saw-small b1 p2 saw0 mahogany smooth s2 s1)
+        - (do-saw-small b1 p2 saw0 mahogany smooth s3 s2)
+        - (do-saw-small b1 p2 saw0 mahogany smooth s4 s3)
+
+
+---
+timestamp: '2024-10-16T04:13:15.197886'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 6
+    fring_size: 63
+    fring_first_20: (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0),
+        (D:5,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-plane
+        num_neighbours: 10
+        first_10_possible_groundings:
+        - (do-plane p0 planer0 rough natural untreated)
+        - (do-plane p0 planer0 smooth natural untreated)
+        - (do-plane p1 planer0 rough natural untreated)
+        - (do-plane p1 planer0 smooth natural untreated)
+        - (do-plane p2 planer0 rough natural untreated)
+        - (do-plane p2 planer0 smooth natural untreated)
+        - (do-plane p3 planer0 rough natural untreated)
+        - (do-plane p3 planer0 smooth natural untreated)
+        - (do-plane p4 planer0 rough natural untreated)
+        - (do-plane p4 planer0 smooth natural untreated)
+
+
+---
+timestamp: '2024-10-16T04:13:18.744242'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 7
+    fring_size: 64
+    fring_first_20: (D:7,H:0,C:0), (D:7,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0),
+        (D:6,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0),
+        (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p0 planer0 rough natural untreated)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-immersion-varnish
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (do-immersion-varnish p0 immersion-varnisher0 green smooth)
+        - (do-immersion-varnish p0 immersion-varnisher0 mauve smooth)
+
+
+---
+timestamp: '2024-10-16T04:13:31.014799'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 8
+    fring_size: 71
+    fring_first_20: (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0),
+        (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:7,H:0,C:0), (D:6,H:0,C:0),
+        (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0),
+        (D:5,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p0 planer0 rough natural untreated)
+        - (do-immersion-varnish p0 immersion-varnisher0 green smooth)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-glaze
+        num_neighbours: 8
+        first_10_possible_groundings:
+        - (do-glaze p1 glazer0 mauve)
+        - (do-glaze p1 glazer0 white)
+        - (do-glaze p2 glazer0 mauve)
+        - (do-glaze p2 glazer0 white)
+        - (do-glaze p3 glazer0 mauve)
+        - (do-glaze p3 glazer0 white)
+        - (do-glaze p4 glazer0 mauve)
+        - (do-glaze p4 glazer0 white)
+
+
+---
+timestamp: '2024-10-16T04:13:48.602009'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 9
+    fring_size: 82
+    fring_first_20: (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0),
+        (D:8,H:0,C:0), (D:8,H:0,C:0), (D:7,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0),
+        (D:6,H:0,C:0), (D:6,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p0 planer0 rough natural untreated)
+        - (do-immersion-varnish p0 immersion-varnisher0 green smooth)
+        - (do-glaze p1 glazer0 mauve)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p0 grinder0 smooth green colourfragments untreated)
+        - (do-grind p0 grinder0 smooth green untreated untreated)
+        - (do-grind p0 grinder0 smooth green varnished colourfragments)
+        - (do-grind p0 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p0 grinder0 smooth natural untreated untreated)
+        - (do-grind p0 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p0 grinder0 verysmooth green colourfragments untreated)
+        - (do-grind p0 grinder0 verysmooth green untreated untreated)
+        - (do-grind p0 grinder0 verysmooth green varnished colourfragments)
+        - (do-grind p0 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:14:05.946071'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 10
+    fring_size: 93
+    fring_first_20: (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0),
+        (D:8,H:0,C:0), (D:7,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0),
+        (D:6,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p0 planer0 rough natural untreated)
+        - (do-immersion-varnish p0 immersion-varnisher0 green smooth)
+        - (do-glaze p1 glazer0 white)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p0 grinder0 smooth green colourfragments untreated)
+        - (do-grind p0 grinder0 smooth green untreated untreated)
+        - (do-grind p0 grinder0 smooth green varnished colourfragments)
+        - (do-grind p0 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p0 grinder0 smooth natural untreated untreated)
+        - (do-grind p0 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p0 grinder0 verysmooth green colourfragments untreated)
+        - (do-grind p0 grinder0 verysmooth green untreated untreated)
+        - (do-grind p0 grinder0 verysmooth green varnished colourfragments)
+        - (do-grind p0 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:14:23.666006'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 11
+    fring_size: 104
+    fring_first_20: (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0),
+        (D:7,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0),
+        (D:5,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p0 planer0 rough natural untreated)
+        - (do-immersion-varnish p0 immersion-varnisher0 green smooth)
+        - (do-glaze p2 glazer0 mauve)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p0 grinder0 smooth green colourfragments untreated)
+        - (do-grind p0 grinder0 smooth green untreated untreated)
+        - (do-grind p0 grinder0 smooth green varnished colourfragments)
+        - (do-grind p0 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p0 grinder0 smooth natural untreated untreated)
+        - (do-grind p0 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p0 grinder0 verysmooth green colourfragments untreated)
+        - (do-grind p0 grinder0 verysmooth green untreated untreated)
+        - (do-grind p0 grinder0 verysmooth green varnished colourfragments)
+        - (do-grind p0 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:14:42.792170'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 12
+    fring_size: 115
+    fring_first_20: (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:7,H:0,C:0),
+        (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:5,H:0,C:0),
+        (D:5,H:0,C:0), (D:5,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0),
+        (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p0 planer0 rough natural untreated)
+        - (do-immersion-varnish p0 immersion-varnisher0 green smooth)
+        - (do-glaze p2 glazer0 white)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p0 grinder0 smooth green colourfragments untreated)
+        - (do-grind p0 grinder0 smooth green untreated untreated)
+        - (do-grind p0 grinder0 smooth green varnished colourfragments)
+        - (do-grind p0 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p0 grinder0 smooth natural untreated untreated)
+        - (do-grind p0 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p0 grinder0 verysmooth green colourfragments untreated)
+        - (do-grind p0 grinder0 verysmooth green untreated untreated)
+        - (do-grind p0 grinder0 verysmooth green varnished colourfragments)
+        - (do-grind p0 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:15:00.795150'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 13
+    fring_size: 126
+    fring_first_20: (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:7,H:0,C:0), (D:6,H:0,C:0),
+        (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0),
+        (D:5,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0),
+        (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p0 planer0 rough natural untreated)
+        - (do-immersion-varnish p0 immersion-varnisher0 green smooth)
+        - (do-glaze p3 glazer0 mauve)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p0 grinder0 smooth green colourfragments untreated)
+        - (do-grind p0 grinder0 smooth green untreated untreated)
+        - (do-grind p0 grinder0 smooth green varnished colourfragments)
+        - (do-grind p0 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p0 grinder0 smooth natural untreated untreated)
+        - (do-grind p0 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p0 grinder0 verysmooth green colourfragments untreated)
+        - (do-grind p0 grinder0 verysmooth green untreated untreated)
+        - (do-grind p0 grinder0 verysmooth green varnished colourfragments)
+        - (do-grind p0 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:15:23.122065'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 14
+    fring_size: 137
+    fring_first_20: (D:8,H:0,C:0), (D:8,H:0,C:0), (D:7,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0),
+        (D:6,H:0,C:0), (D:6,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0),
+        (D:3,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p0 planer0 rough natural untreated)
+        - (do-immersion-varnish p0 immersion-varnisher0 green smooth)
+        - (do-glaze p4 glazer0 mauve)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p0 grinder0 smooth green colourfragments untreated)
+        - (do-grind p0 grinder0 smooth green untreated untreated)
+        - (do-grind p0 grinder0 smooth green varnished colourfragments)
+        - (do-grind p0 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p0 grinder0 smooth natural untreated untreated)
+        - (do-grind p0 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p0 grinder0 verysmooth green colourfragments untreated)
+        - (do-grind p0 grinder0 verysmooth green untreated untreated)
+        - (do-grind p0 grinder0 verysmooth green varnished colourfragments)
+        - (do-grind p0 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:15:40.005447'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 15
+    fring_size: 148
+    fring_first_20: (D:8,H:0,C:0), (D:7,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0),
+        (D:6,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0),
+        (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p0 planer0 rough natural untreated)
+        - (do-immersion-varnish p0 immersion-varnisher0 green smooth)
+        - (do-glaze p4 glazer0 white)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p0 grinder0 smooth green colourfragments untreated)
+        - (do-grind p0 grinder0 smooth green untreated untreated)
+        - (do-grind p0 grinder0 smooth green varnished colourfragments)
+        - (do-grind p0 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p0 grinder0 smooth natural untreated untreated)
+        - (do-grind p0 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p0 grinder0 verysmooth green colourfragments untreated)
+        - (do-grind p0 grinder0 verysmooth green untreated untreated)
+        - (do-grind p0 grinder0 verysmooth green varnished colourfragments)
+        - (do-grind p0 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:15:57.327128'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 16
+    fring_size: 159
+    fring_first_20: (D:7,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0),
+        (D:5,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p0 planer0 rough natural untreated)
+        - (do-immersion-varnish p0 immersion-varnisher0 green smooth)
+        - (do-glaze p3 glazer0 white)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p0 grinder0 smooth green colourfragments untreated)
+        - (do-grind p0 grinder0 smooth green untreated untreated)
+        - (do-grind p0 grinder0 smooth green varnished colourfragments)
+        - (do-grind p0 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p0 grinder0 smooth natural untreated untreated)
+        - (do-grind p0 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p0 grinder0 verysmooth green colourfragments untreated)
+        - (do-grind p0 grinder0 verysmooth green untreated untreated)
+        - (do-grind p0 grinder0 verysmooth green varnished colourfragments)
+        - (do-grind p0 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:16:09.759445'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 17
+    fring_size: 166
+    fring_first_20: (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0),
+        (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0),
+        (D:6,H:0,C:0), (D:6,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p0 planer0 rough natural untreated)
+        - (do-immersion-varnish p0 immersion-varnisher0 mauve smooth)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-glaze
+        num_neighbours: 8
+        first_10_possible_groundings:
+        - (do-glaze p1 glazer0 mauve)
+        - (do-glaze p1 glazer0 white)
+        - (do-glaze p2 glazer0 mauve)
+        - (do-glaze p2 glazer0 white)
+        - (do-glaze p3 glazer0 mauve)
+        - (do-glaze p3 glazer0 white)
+        - (do-glaze p4 glazer0 mauve)
+        - (do-glaze p4 glazer0 white)
+
+
+---
+timestamp: '2024-10-16T04:16:26.875764'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 18
+    fring_size: 177
+    fring_first_20: (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0),
+        (D:8,H:0,C:0), (D:8,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0),
+        (D:6,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p0 planer0 rough natural untreated)
+        - (do-immersion-varnish p0 immersion-varnisher0 mauve smooth)
+        - (do-glaze p1 glazer0 mauve)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p0 grinder0 smooth mauve colourfragments untreated)
+        - (do-grind p0 grinder0 smooth mauve untreated untreated)
+        - (do-grind p0 grinder0 smooth mauve varnished colourfragments)
+        - (do-grind p0 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p0 grinder0 smooth natural untreated untreated)
+        - (do-grind p0 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p0 grinder0 verysmooth mauve colourfragments untreated)
+        - (do-grind p0 grinder0 verysmooth mauve untreated untreated)
+        - (do-grind p0 grinder0 verysmooth mauve varnished colourfragments)
+        - (do-grind p0 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:16:43.594965'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 19
+    fring_size: 188
+    fring_first_20: (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0),
+        (D:8,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0),
+        (D:5,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p0 planer0 rough natural untreated)
+        - (do-immersion-varnish p0 immersion-varnisher0 mauve smooth)
+        - (do-glaze p1 glazer0 white)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p0 grinder0 smooth mauve colourfragments untreated)
+        - (do-grind p0 grinder0 smooth mauve untreated untreated)
+        - (do-grind p0 grinder0 smooth mauve varnished colourfragments)
+        - (do-grind p0 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p0 grinder0 smooth natural untreated untreated)
+        - (do-grind p0 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p0 grinder0 verysmooth mauve colourfragments untreated)
+        - (do-grind p0 grinder0 verysmooth mauve untreated untreated)
+        - (do-grind p0 grinder0 verysmooth mauve varnished colourfragments)
+        - (do-grind p0 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:17:00.801834'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 20
+    fring_size: 199
+    fring_first_20: (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0),
+        (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:5,H:0,C:0),
+        (D:5,H:0,C:0), (D:5,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0),
+        (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p0 planer0 rough natural untreated)
+        - (do-immersion-varnish p0 immersion-varnisher0 mauve smooth)
+        - (do-glaze p2 glazer0 mauve)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p0 grinder0 smooth mauve colourfragments untreated)
+        - (do-grind p0 grinder0 smooth mauve untreated untreated)
+        - (do-grind p0 grinder0 smooth mauve varnished colourfragments)
+        - (do-grind p0 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p0 grinder0 smooth natural untreated untreated)
+        - (do-grind p0 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p0 grinder0 verysmooth mauve colourfragments untreated)
+        - (do-grind p0 grinder0 verysmooth mauve untreated untreated)
+        - (do-grind p0 grinder0 verysmooth mauve varnished colourfragments)
+        - (do-grind p0 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:17:26.586483'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 21
+    fring_size: 210
+    fring_first_20: (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:6,H:0,C:0),
+        (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0),
+        (D:5,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0),
+        (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p0 planer0 rough natural untreated)
+        - (do-immersion-varnish p0 immersion-varnisher0 mauve smooth)
+        - (do-glaze p2 glazer0 white)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p0 grinder0 smooth mauve colourfragments untreated)
+        - (do-grind p0 grinder0 smooth mauve untreated untreated)
+        - (do-grind p0 grinder0 smooth mauve varnished colourfragments)
+        - (do-grind p0 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p0 grinder0 smooth natural untreated untreated)
+        - (do-grind p0 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p0 grinder0 verysmooth mauve colourfragments untreated)
+        - (do-grind p0 grinder0 verysmooth mauve untreated untreated)
+        - (do-grind p0 grinder0 verysmooth mauve varnished colourfragments)
+        - (do-grind p0 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:17:44.705152'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 22
+    fring_size: 221
+    fring_first_20: (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0),
+        (D:6,H:0,C:0), (D:6,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0),
+        (D:3,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p0 planer0 rough natural untreated)
+        - (do-immersion-varnish p0 immersion-varnisher0 mauve smooth)
+        - (do-glaze p3 glazer0 mauve)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p0 grinder0 smooth mauve colourfragments untreated)
+        - (do-grind p0 grinder0 smooth mauve untreated untreated)
+        - (do-grind p0 grinder0 smooth mauve varnished colourfragments)
+        - (do-grind p0 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p0 grinder0 smooth natural untreated untreated)
+        - (do-grind p0 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p0 grinder0 verysmooth mauve colourfragments untreated)
+        - (do-grind p0 grinder0 verysmooth mauve untreated untreated)
+        - (do-grind p0 grinder0 verysmooth mauve varnished colourfragments)
+        - (do-grind p0 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:18:03.228647'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 23
+    fring_size: 232
+    fring_first_20: (D:8,H:0,C:0), (D:8,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0),
+        (D:6,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0),
+        (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p0 planer0 rough natural untreated)
+        - (do-immersion-varnish p0 immersion-varnisher0 mauve smooth)
+        - (do-glaze p3 glazer0 white)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p0 grinder0 smooth mauve colourfragments untreated)
+        - (do-grind p0 grinder0 smooth mauve untreated untreated)
+        - (do-grind p0 grinder0 smooth mauve varnished colourfragments)
+        - (do-grind p0 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p0 grinder0 smooth natural untreated untreated)
+        - (do-grind p0 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p0 grinder0 verysmooth mauve colourfragments untreated)
+        - (do-grind p0 grinder0 verysmooth mauve untreated untreated)
+        - (do-grind p0 grinder0 verysmooth mauve varnished colourfragments)
+        - (do-grind p0 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:18:20.803623'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 24
+    fring_size: 243
+    fring_first_20: (D:8,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0),
+        (D:5,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p0 planer0 rough natural untreated)
+        - (do-immersion-varnish p0 immersion-varnisher0 mauve smooth)
+        - (do-glaze p4 glazer0 white)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p0 grinder0 smooth mauve colourfragments untreated)
+        - (do-grind p0 grinder0 smooth mauve untreated untreated)
+        - (do-grind p0 grinder0 smooth mauve varnished colourfragments)
+        - (do-grind p0 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p0 grinder0 smooth natural untreated untreated)
+        - (do-grind p0 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p0 grinder0 verysmooth mauve colourfragments untreated)
+        - (do-grind p0 grinder0 verysmooth mauve untreated untreated)
+        - (do-grind p0 grinder0 verysmooth mauve varnished colourfragments)
+        - (do-grind p0 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:18:36.978171'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 25
+    fring_size: 254
+    fring_first_20: (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:5,H:0,C:0),
+        (D:5,H:0,C:0), (D:5,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0),
+        (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p0 planer0 rough natural untreated)
+        - (do-immersion-varnish p0 immersion-varnisher0 mauve smooth)
+        - (do-glaze p4 glazer0 mauve)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p0 grinder0 smooth mauve colourfragments untreated)
+        - (do-grind p0 grinder0 smooth mauve untreated untreated)
+        - (do-grind p0 grinder0 smooth mauve varnished colourfragments)
+        - (do-grind p0 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p0 grinder0 smooth natural untreated untreated)
+        - (do-grind p0 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p0 grinder0 verysmooth mauve colourfragments untreated)
+        - (do-grind p0 grinder0 verysmooth mauve untreated untreated)
+        - (do-grind p0 grinder0 verysmooth mauve varnished colourfragments)
+        - (do-grind p0 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:18:40.168670'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 26
+    fring_size: 255
+    fring_first_20: (D:7,H:0,C:0), (D:7,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0),
+        (D:5,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p2 planer0 rough natural untreated)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-immersion-varnish
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (do-immersion-varnish p2 immersion-varnisher0 green smooth)
+        - (do-immersion-varnish p2 immersion-varnisher0 mauve smooth)
+
+
+---
+timestamp: '2024-10-16T04:18:51.400416'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 27
+    fring_size: 262
+    fring_first_20: (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0),
+        (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:7,H:0,C:0), (D:6,H:0,C:0),
+        (D:6,H:0,C:0), (D:6,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p2 planer0 rough natural untreated)
+        - (do-immersion-varnish p2 immersion-varnisher0 green smooth)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-glaze
+        num_neighbours: 8
+        first_10_possible_groundings:
+        - (do-glaze p0 glazer0 mauve)
+        - (do-glaze p0 glazer0 white)
+        - (do-glaze p1 glazer0 mauve)
+        - (do-glaze p1 glazer0 white)
+        - (do-glaze p3 glazer0 mauve)
+        - (do-glaze p3 glazer0 white)
+        - (do-glaze p4 glazer0 mauve)
+        - (do-glaze p4 glazer0 white)
+
+
+---
+timestamp: '2024-10-16T04:19:09.754983'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 28
+    fring_size: 273
+    fring_first_20: (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0),
+        (D:8,H:0,C:0), (D:8,H:0,C:0), (D:7,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0),
+        (D:6,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p2 planer0 rough natural untreated)
+        - (do-immersion-varnish p2 immersion-varnisher0 green smooth)
+        - (do-glaze p0 glazer0 mauve)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p2 grinder0 smooth green colourfragments untreated)
+        - (do-grind p2 grinder0 smooth green untreated untreated)
+        - (do-grind p2 grinder0 smooth green varnished colourfragments)
+        - (do-grind p2 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p2 grinder0 smooth natural untreated untreated)
+        - (do-grind p2 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p2 grinder0 verysmooth green colourfragments untreated)
+        - (do-grind p2 grinder0 verysmooth green untreated untreated)
+        - (do-grind p2 grinder0 verysmooth green varnished colourfragments)
+        - (do-grind p2 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:19:26.923494'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 29
+    fring_size: 284
+    fring_first_20: (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0),
+        (D:8,H:0,C:0), (D:7,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0),
+        (D:5,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p2 planer0 rough natural untreated)
+        - (do-immersion-varnish p2 immersion-varnisher0 green smooth)
+        - (do-glaze p0 glazer0 white)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p2 grinder0 smooth green colourfragments untreated)
+        - (do-grind p2 grinder0 smooth green untreated untreated)
+        - (do-grind p2 grinder0 smooth green varnished colourfragments)
+        - (do-grind p2 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p2 grinder0 smooth natural untreated untreated)
+        - (do-grind p2 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p2 grinder0 verysmooth green colourfragments untreated)
+        - (do-grind p2 grinder0 verysmooth green untreated untreated)
+        - (do-grind p2 grinder0 verysmooth green varnished colourfragments)
+        - (do-grind p2 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:19:44.040182'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 30
+    fring_size: 295
+    fring_first_20: (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0),
+        (D:7,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:5,H:0,C:0),
+        (D:5,H:0,C:0), (D:5,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0),
+        (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p2 planer0 rough natural untreated)
+        - (do-immersion-varnish p2 immersion-varnisher0 green smooth)
+        - (do-glaze p1 glazer0 mauve)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p2 grinder0 smooth green colourfragments untreated)
+        - (do-grind p2 grinder0 smooth green untreated untreated)
+        - (do-grind p2 grinder0 smooth green varnished colourfragments)
+        - (do-grind p2 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p2 grinder0 smooth natural untreated untreated)
+        - (do-grind p2 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p2 grinder0 verysmooth green colourfragments untreated)
+        - (do-grind p2 grinder0 verysmooth green untreated untreated)
+        - (do-grind p2 grinder0 verysmooth green varnished colourfragments)
+        - (do-grind p2 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:20:00.695151'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 31
+    fring_size: 306
+    fring_first_20: (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:7,H:0,C:0),
+        (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0),
+        (D:5,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0),
+        (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p2 planer0 rough natural untreated)
+        - (do-immersion-varnish p2 immersion-varnisher0 green smooth)
+        - (do-glaze p1 glazer0 white)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p2 grinder0 smooth green colourfragments untreated)
+        - (do-grind p2 grinder0 smooth green untreated untreated)
+        - (do-grind p2 grinder0 smooth green varnished colourfragments)
+        - (do-grind p2 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p2 grinder0 smooth natural untreated untreated)
+        - (do-grind p2 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p2 grinder0 verysmooth green colourfragments untreated)
+        - (do-grind p2 grinder0 verysmooth green untreated untreated)
+        - (do-grind p2 grinder0 verysmooth green varnished colourfragments)
+        - (do-grind p2 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:20:23.734691'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 32
+    fring_size: 317
+    fring_first_20: (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:7,H:0,C:0), (D:6,H:0,C:0),
+        (D:6,H:0,C:0), (D:6,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0),
+        (D:3,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p2 planer0 rough natural untreated)
+        - (do-immersion-varnish p2 immersion-varnisher0 green smooth)
+        - (do-glaze p3 glazer0 mauve)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p2 grinder0 smooth green colourfragments untreated)
+        - (do-grind p2 grinder0 smooth green untreated untreated)
+        - (do-grind p2 grinder0 smooth green varnished colourfragments)
+        - (do-grind p2 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p2 grinder0 smooth natural untreated untreated)
+        - (do-grind p2 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p2 grinder0 verysmooth green colourfragments untreated)
+        - (do-grind p2 grinder0 verysmooth green untreated untreated)
+        - (do-grind p2 grinder0 verysmooth green varnished colourfragments)
+        - (do-grind p2 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:20:41.018858'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 33
+    fring_size: 328
+    fring_first_20: (D:8,H:0,C:0), (D:8,H:0,C:0), (D:7,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0),
+        (D:6,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0),
+        (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p2 planer0 rough natural untreated)
+        - (do-immersion-varnish p2 immersion-varnisher0 green smooth)
+        - (do-glaze p3 glazer0 white)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p2 grinder0 smooth green colourfragments untreated)
+        - (do-grind p2 grinder0 smooth green untreated untreated)
+        - (do-grind p2 grinder0 smooth green varnished colourfragments)
+        - (do-grind p2 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p2 grinder0 smooth natural untreated untreated)
+        - (do-grind p2 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p2 grinder0 verysmooth green colourfragments untreated)
+        - (do-grind p2 grinder0 verysmooth green untreated untreated)
+        - (do-grind p2 grinder0 verysmooth green varnished colourfragments)
+        - (do-grind p2 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:20:57.565806'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 34
+    fring_size: 339
+    fring_first_20: (D:8,H:0,C:0), (D:7,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0),
+        (D:5,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p2 planer0 rough natural untreated)
+        - (do-immersion-varnish p2 immersion-varnisher0 green smooth)
+        - (do-glaze p4 glazer0 mauve)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p2 grinder0 smooth green colourfragments untreated)
+        - (do-grind p2 grinder0 smooth green untreated untreated)
+        - (do-grind p2 grinder0 smooth green varnished colourfragments)
+        - (do-grind p2 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p2 grinder0 smooth natural untreated untreated)
+        - (do-grind p2 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p2 grinder0 verysmooth green colourfragments untreated)
+        - (do-grind p2 grinder0 verysmooth green untreated untreated)
+        - (do-grind p2 grinder0 verysmooth green varnished colourfragments)
+        - (do-grind p2 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:21:15.255141'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 35
+    fring_size: 350
+    fring_first_20: (D:7,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:5,H:0,C:0),
+        (D:5,H:0,C:0), (D:5,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0),
+        (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p2 planer0 rough natural untreated)
+        - (do-immersion-varnish p2 immersion-varnisher0 green smooth)
+        - (do-glaze p4 glazer0 white)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p2 grinder0 smooth green colourfragments untreated)
+        - (do-grind p2 grinder0 smooth green untreated untreated)
+        - (do-grind p2 grinder0 smooth green varnished colourfragments)
+        - (do-grind p2 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p2 grinder0 smooth natural untreated untreated)
+        - (do-grind p2 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p2 grinder0 verysmooth green colourfragments untreated)
+        - (do-grind p2 grinder0 verysmooth green untreated untreated)
+        - (do-grind p2 grinder0 verysmooth green varnished colourfragments)
+        - (do-grind p2 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:21:27.301702'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 36
+    fring_size: 357
+    fring_first_20: (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0),
+        (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0),
+        (D:6,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p2 planer0 rough natural untreated)
+        - (do-immersion-varnish p2 immersion-varnisher0 mauve smooth)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-glaze
+        num_neighbours: 8
+        first_10_possible_groundings:
+        - (do-glaze p0 glazer0 mauve)
+        - (do-glaze p0 glazer0 white)
+        - (do-glaze p1 glazer0 mauve)
+        - (do-glaze p1 glazer0 white)
+        - (do-glaze p3 glazer0 mauve)
+        - (do-glaze p3 glazer0 white)
+        - (do-glaze p4 glazer0 mauve)
+        - (do-glaze p4 glazer0 white)
+
+
+---
+timestamp: '2024-10-16T04:21:44.665666'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 37
+    fring_size: 368
+    fring_first_20: (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0),
+        (D:8,H:0,C:0), (D:8,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0),
+        (D:5,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p2 planer0 rough natural untreated)
+        - (do-immersion-varnish p2 immersion-varnisher0 mauve smooth)
+        - (do-glaze p0 glazer0 mauve)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p2 grinder0 smooth mauve colourfragments untreated)
+        - (do-grind p2 grinder0 smooth mauve untreated untreated)
+        - (do-grind p2 grinder0 smooth mauve varnished colourfragments)
+        - (do-grind p2 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p2 grinder0 smooth natural untreated untreated)
+        - (do-grind p2 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p2 grinder0 verysmooth mauve colourfragments untreated)
+        - (do-grind p2 grinder0 verysmooth mauve untreated untreated)
+        - (do-grind p2 grinder0 verysmooth mauve varnished colourfragments)
+        - (do-grind p2 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:22:00.853786'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 38
+    fring_size: 379
+    fring_first_20: (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0),
+        (D:8,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:5,H:0,C:0),
+        (D:5,H:0,C:0), (D:5,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0),
+        (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p2 planer0 rough natural untreated)
+        - (do-immersion-varnish p2 immersion-varnisher0 mauve smooth)
+        - (do-glaze p0 glazer0 white)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p2 grinder0 smooth mauve colourfragments untreated)
+        - (do-grind p2 grinder0 smooth mauve untreated untreated)
+        - (do-grind p2 grinder0 smooth mauve varnished colourfragments)
+        - (do-grind p2 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p2 grinder0 smooth natural untreated untreated)
+        - (do-grind p2 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p2 grinder0 verysmooth mauve colourfragments untreated)
+        - (do-grind p2 grinder0 verysmooth mauve untreated untreated)
+        - (do-grind p2 grinder0 verysmooth mauve varnished colourfragments)
+        - (do-grind p2 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:22:19.042333'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 39
+    fring_size: 390
+    fring_first_20: (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0),
+        (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0),
+        (D:5,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0),
+        (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p2 planer0 rough natural untreated)
+        - (do-immersion-varnish p2 immersion-varnisher0 mauve smooth)
+        - (do-glaze p1 glazer0 mauve)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p2 grinder0 smooth mauve colourfragments untreated)
+        - (do-grind p2 grinder0 smooth mauve untreated untreated)
+        - (do-grind p2 grinder0 smooth mauve varnished colourfragments)
+        - (do-grind p2 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p2 grinder0 smooth natural untreated untreated)
+        - (do-grind p2 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p2 grinder0 verysmooth mauve colourfragments untreated)
+        - (do-grind p2 grinder0 verysmooth mauve untreated untreated)
+        - (do-grind p2 grinder0 verysmooth mauve varnished colourfragments)
+        - (do-grind p2 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:22:34.940415'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 40
+    fring_size: 401
+    fring_first_20: (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:6,H:0,C:0),
+        (D:6,H:0,C:0), (D:6,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0),
+        (D:3,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p2 planer0 rough natural untreated)
+        - (do-immersion-varnish p2 immersion-varnisher0 mauve smooth)
+        - (do-glaze p1 glazer0 white)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p2 grinder0 smooth mauve colourfragments untreated)
+        - (do-grind p2 grinder0 smooth mauve untreated untreated)
+        - (do-grind p2 grinder0 smooth mauve varnished colourfragments)
+        - (do-grind p2 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p2 grinder0 smooth natural untreated untreated)
+        - (do-grind p2 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p2 grinder0 verysmooth mauve colourfragments untreated)
+        - (do-grind p2 grinder0 verysmooth mauve untreated untreated)
+        - (do-grind p2 grinder0 verysmooth mauve varnished colourfragments)
+        - (do-grind p2 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:22:51.325210'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 41
+    fring_size: 412
+    fring_first_20: (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0),
+        (D:6,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0),
+        (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p2 planer0 rough natural untreated)
+        - (do-immersion-varnish p2 immersion-varnisher0 mauve smooth)
+        - (do-glaze p3 glazer0 mauve)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p2 grinder0 smooth mauve colourfragments untreated)
+        - (do-grind p2 grinder0 smooth mauve untreated untreated)
+        - (do-grind p2 grinder0 smooth mauve varnished colourfragments)
+        - (do-grind p2 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p2 grinder0 smooth natural untreated untreated)
+        - (do-grind p2 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p2 grinder0 verysmooth mauve colourfragments untreated)
+        - (do-grind p2 grinder0 verysmooth mauve untreated untreated)
+        - (do-grind p2 grinder0 verysmooth mauve varnished colourfragments)
+        - (do-grind p2 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:23:08.432879'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 42
+    fring_size: 423
+    fring_first_20: (D:8,H:0,C:0), (D:8,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0),
+        (D:5,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p2 planer0 rough natural untreated)
+        - (do-immersion-varnish p2 immersion-varnisher0 mauve smooth)
+        - (do-glaze p3 glazer0 white)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p2 grinder0 smooth mauve colourfragments untreated)
+        - (do-grind p2 grinder0 smooth mauve untreated untreated)
+        - (do-grind p2 grinder0 smooth mauve varnished colourfragments)
+        - (do-grind p2 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p2 grinder0 smooth natural untreated untreated)
+        - (do-grind p2 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p2 grinder0 verysmooth mauve colourfragments untreated)
+        - (do-grind p2 grinder0 verysmooth mauve untreated untreated)
+        - (do-grind p2 grinder0 verysmooth mauve varnished colourfragments)
+        - (do-grind p2 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:23:25.013622'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 43
+    fring_size: 434
+    fring_first_20: (D:8,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:5,H:0,C:0),
+        (D:5,H:0,C:0), (D:5,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0),
+        (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p2 planer0 rough natural untreated)
+        - (do-immersion-varnish p2 immersion-varnisher0 mauve smooth)
+        - (do-glaze p4 glazer0 mauve)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p2 grinder0 smooth mauve colourfragments untreated)
+        - (do-grind p2 grinder0 smooth mauve untreated untreated)
+        - (do-grind p2 grinder0 smooth mauve varnished colourfragments)
+        - (do-grind p2 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p2 grinder0 smooth natural untreated untreated)
+        - (do-grind p2 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p2 grinder0 verysmooth mauve colourfragments untreated)
+        - (do-grind p2 grinder0 verysmooth mauve untreated untreated)
+        - (do-grind p2 grinder0 verysmooth mauve varnished colourfragments)
+        - (do-grind p2 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:23:41.613275'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 44
+    fring_size: 445
+    fring_first_20: (D:6,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0),
+        (D:5,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0),
+        (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p2 planer0 rough natural untreated)
+        - (do-immersion-varnish p2 immersion-varnisher0 mauve smooth)
+        - (do-glaze p4 glazer0 white)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p2 grinder0 smooth mauve colourfragments untreated)
+        - (do-grind p2 grinder0 smooth mauve untreated untreated)
+        - (do-grind p2 grinder0 smooth mauve varnished colourfragments)
+        - (do-grind p2 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p2 grinder0 smooth natural untreated untreated)
+        - (do-grind p2 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p2 grinder0 verysmooth mauve colourfragments untreated)
+        - (do-grind p2 grinder0 verysmooth mauve untreated untreated)
+        - (do-grind p2 grinder0 verysmooth mauve varnished colourfragments)
+        - (do-grind p2 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:23:44.454265'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 45
+    fring_size: 446
+    fring_first_20: (D:7,H:0,C:0), (D:7,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:5,H:0,C:0),
+        (D:5,H:0,C:0), (D:5,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0),
+        (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p4 planer0 rough natural untreated)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-immersion-varnish
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (do-immersion-varnish p4 immersion-varnisher0 green smooth)
+        - (do-immersion-varnish p4 immersion-varnisher0 mauve smooth)
+
+
+---
+timestamp: '2024-10-16T04:23:55.440066'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 46
+    fring_size: 453
+    fring_first_20: (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0),
+        (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:7,H:0,C:0), (D:6,H:0,C:0),
+        (D:6,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p4 planer0 rough natural untreated)
+        - (do-immersion-varnish p4 immersion-varnisher0 green smooth)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-glaze
+        num_neighbours: 8
+        first_10_possible_groundings:
+        - (do-glaze p0 glazer0 mauve)
+        - (do-glaze p0 glazer0 white)
+        - (do-glaze p1 glazer0 mauve)
+        - (do-glaze p1 glazer0 white)
+        - (do-glaze p2 glazer0 mauve)
+        - (do-glaze p2 glazer0 white)
+        - (do-glaze p3 glazer0 mauve)
+        - (do-glaze p3 glazer0 white)
+
+
+---
+timestamp: '2024-10-16T04:24:14.695344'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 47
+    fring_size: 464
+    fring_first_20: (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0),
+        (D:8,H:0,C:0), (D:8,H:0,C:0), (D:7,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0),
+        (D:5,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p4 planer0 rough natural untreated)
+        - (do-immersion-varnish p4 immersion-varnisher0 green smooth)
+        - (do-glaze p0 glazer0 mauve)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p4 grinder0 smooth green colourfragments untreated)
+        - (do-grind p4 grinder0 smooth green untreated untreated)
+        - (do-grind p4 grinder0 smooth green varnished colourfragments)
+        - (do-grind p4 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p4 grinder0 smooth natural untreated untreated)
+        - (do-grind p4 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p4 grinder0 verysmooth green colourfragments untreated)
+        - (do-grind p4 grinder0 verysmooth green untreated untreated)
+        - (do-grind p4 grinder0 verysmooth green varnished colourfragments)
+        - (do-grind p4 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:24:31.091790'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 48
+    fring_size: 475
+    fring_first_20: (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0),
+        (D:8,H:0,C:0), (D:7,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:5,H:0,C:0),
+        (D:5,H:0,C:0), (D:5,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0),
+        (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p4 planer0 rough natural untreated)
+        - (do-immersion-varnish p4 immersion-varnisher0 green smooth)
+        - (do-glaze p0 glazer0 white)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p4 grinder0 smooth green colourfragments untreated)
+        - (do-grind p4 grinder0 smooth green untreated untreated)
+        - (do-grind p4 grinder0 smooth green varnished colourfragments)
+        - (do-grind p4 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p4 grinder0 smooth natural untreated untreated)
+        - (do-grind p4 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p4 grinder0 verysmooth green colourfragments untreated)
+        - (do-grind p4 grinder0 verysmooth green untreated untreated)
+        - (do-grind p4 grinder0 verysmooth green varnished colourfragments)
+        - (do-grind p4 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:24:48.215181'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 49
+    fring_size: 486
+    fring_first_20: (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0),
+        (D:7,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0),
+        (D:5,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0),
+        (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p4 planer0 rough natural untreated)
+        - (do-immersion-varnish p4 immersion-varnisher0 green smooth)
+        - (do-glaze p1 glazer0 mauve)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p4 grinder0 smooth green colourfragments untreated)
+        - (do-grind p4 grinder0 smooth green untreated untreated)
+        - (do-grind p4 grinder0 smooth green varnished colourfragments)
+        - (do-grind p4 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p4 grinder0 smooth natural untreated untreated)
+        - (do-grind p4 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p4 grinder0 verysmooth green colourfragments untreated)
+        - (do-grind p4 grinder0 verysmooth green untreated untreated)
+        - (do-grind p4 grinder0 verysmooth green varnished colourfragments)
+        - (do-grind p4 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:25:09.534402'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 50
+    fring_size: 497
+    fring_first_20: (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:7,H:0,C:0),
+        (D:6,H:0,C:0), (D:6,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0),
+        (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0),
+        (D:3,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p4 planer0 rough natural untreated)
+        - (do-immersion-varnish p4 immersion-varnisher0 green smooth)
+        - (do-glaze p1 glazer0 white)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p4 grinder0 smooth green colourfragments untreated)
+        - (do-grind p4 grinder0 smooth green untreated untreated)
+        - (do-grind p4 grinder0 smooth green varnished colourfragments)
+        - (do-grind p4 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p4 grinder0 smooth natural untreated untreated)
+        - (do-grind p4 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p4 grinder0 verysmooth green colourfragments untreated)
+        - (do-grind p4 grinder0 verysmooth green untreated untreated)
+        - (do-grind p4 grinder0 verysmooth green varnished colourfragments)
+        - (do-grind p4 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:25:29.264409'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 51
+    fring_size: 508
+    fring_first_20: (D:8,H:0,C:0), (D:8,H:0,C:0), (D:8,H:0,C:0), (D:7,H:0,C:0), (D:6,H:0,C:0),
+        (D:6,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:4,H:0,C:0),
+        (D:4,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0),
+        (D:3,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p4 planer0 rough natural untreated)
+        - (do-immersion-varnish p4 immersion-varnisher0 green smooth)
+        - (do-glaze p2 glazer0 mauve)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p4 grinder0 smooth green colourfragments untreated)
+        - (do-grind p4 grinder0 smooth green untreated untreated)
+        - (do-grind p4 grinder0 smooth green varnished colourfragments)
+        - (do-grind p4 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p4 grinder0 smooth natural untreated untreated)
+        - (do-grind p4 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p4 grinder0 verysmooth green colourfragments untreated)
+        - (do-grind p4 grinder0 verysmooth green untreated untreated)
+        - (do-grind p4 grinder0 verysmooth green varnished colourfragments)
+        - (do-grind p4 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:25:48.883273'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 52
+    fring_size: 519
+    fring_first_20: (D:8,H:0,C:0), (D:8,H:0,C:0), (D:7,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0),
+        (D:5,H:0,C:0), (D:5,H:0,C:0), (D:5,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0),
+        (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p4 planer0 rough natural untreated)
+        - (do-immersion-varnish p4 immersion-varnisher0 green smooth)
+        - (do-glaze p2 glazer0 white)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p4 grinder0 smooth green colourfragments untreated)
+        - (do-grind p4 grinder0 smooth green untreated untreated)
+        - (do-grind p4 grinder0 smooth green varnished colourfragments)
+        - (do-grind p4 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p4 grinder0 smooth natural untreated untreated)
+        - (do-grind p4 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p4 grinder0 verysmooth green colourfragments untreated)
+        - (do-grind p4 grinder0 verysmooth green untreated untreated)
+        - (do-grind p4 grinder0 verysmooth green varnished colourfragments)
+        - (do-grind p4 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:26:08.506147'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 53
+    fring_size: 530
+    fring_first_20: (D:8,H:0,C:0), (D:7,H:0,C:0), (D:6,H:0,C:0), (D:6,H:0,C:0), (D:5,H:0,C:0),
+        (D:5,H:0,C:0), (D:5,H:0,C:0), (D:4,H:0,C:0), (D:4,H:0,C:0), (D:3,H:0,C:0),
+        (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:3,H:0,C:0), (D:2,H:0,C:0),
+        (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0), (D:2,H:0,C:0)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+        - (do-saw-medium b0 p0 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p1 saw0 teak rough s3 s2 s1)
+        - (do-saw-medium b0 p3 saw0 teak rough s3 s2 s1)
+        - (do-saw-small b0 p2 saw0 teak rough s1 s0)
+        - (do-plane p4 planer0 rough natural untreated)
+        - (do-immersion-varnish p4 immersion-varnisher0 green smooth)
+        - (do-glaze p3 glazer0 mauve)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: do-grind
+        num_neighbours: 12
+        first_10_possible_groundings:
+        - (do-grind p4 grinder0 smooth green colourfragments untreated)
+        - (do-grind p4 grinder0 smooth green untreated untreated)
+        - (do-grind p4 grinder0 smooth green varnished colourfragments)
+        - (do-grind p4 grinder0 smooth natural colourfragments untreated)
+        - (do-grind p4 grinder0 smooth natural untreated untreated)
+        - (do-grind p4 grinder0 smooth natural varnished colourfragments)
+        - (do-grind p4 grinder0 verysmooth green colourfragments untreated)
+        - (do-grind p4 grinder0 verysmooth green untreated untreated)
+        - (do-grind p4 grinder0 verysmooth green varnished colourfragments)
+        - (do-grind p4 grinder0 verysmooth natural colourfragments untreated)
+
+
+---
+timestamp: '2024-10-16T04:26:11.442434'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+

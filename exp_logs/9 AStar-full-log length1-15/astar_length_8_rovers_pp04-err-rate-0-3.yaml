@@ -1,0 +1,1022 @@
+---
+timestamp: '2024-10-14T23:06:51.351761'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/9 AStar-full-log length1-15/astar_length_8_rovers_pp04-err-rate-0-3.yaml
+    instance_id: rovers/pp04-err-rate-0-3
+    search_algorithm: astar
+    plan_length: 8
+    domain_class: rovers
+    instance_name: pp04-err-rate-0-3
+    ground_plan:
+    - (calibrate rover1 camera0 objective0 waypoint2)
+    - (navigate rover1 waypoint2 waypoint1)
+    - (take_image rover1 waypoint1 objective0 camera0 high_res)
+    - (communicate_image_data rover1 general objective0 high_res waypoint1 waypoint2)
+    - (sample_rock rover1 rover1store waypoint1)
+    - (communicate_rock_data rover1 general waypoint1 waypoint1 waypoint2)
+    - (sample_soil rover0 rover0store waypoint3)
+    - (communicate_soil_data rover0 general waypoint3 waypoint3 waypoint2)
+    lifted_plan:
+    - calibrate
+    - navigate
+    - take_image
+    - communicate_image_data
+    - sample_rock
+    - communicate_rock_data
+    - sample_soil
+    - communicate_soil_data
+
+
+---
+timestamp: '2024-10-14T23:06:51.357327'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: calibrate,(calibrated ?i ?r),effPos,1
+
+
+---
+timestamp: '2024-10-14T23:06:54.503949'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 2
+    fring_first_20: (D:1,H:-1,C:1), (D:1,H:-1,C:1)
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: calibrate
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (calibrate rover0 camera1 objective0 waypoint3)
+        - (calibrate rover1 camera0 objective0 waypoint2)
+
+
+---
+timestamp: '2024-10-14T23:07:07.324320'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 2
+    fring_size: 9
+    fring_first_20: (D:2,H:-1,C:1), (D:2,H:-1,C:1), (D:2,H:-1,C:1), (D:1,H:-1,C:1),
+        (D:2,H:-1,C:2), (D:2,H:-1,C:2), (D:2,H:-1,C:2), (D:2,H:-1,C:2), (D:2,H:-1,C:2)
+    current_node:
+        depth: 1
+        ground_actions:
+        - (calibrate rover0 camera1 objective0 waypoint3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 1
+        f_cost: 1
+        next_lifted_action: navigate
+        num_neighbours: 8
+        first_10_possible_groundings:
+        - (navigate rover0 waypoint1 waypoint3)
+        - (navigate rover0 waypoint3 waypoint1)
+        - (navigate rover1 waypoint0 waypoint1)
+        - (navigate rover1 waypoint1 waypoint0)
+        - (navigate rover1 waypoint1 waypoint2)
+        - (navigate rover1 waypoint2 waypoint1)
+        - (navigate rover1 waypoint2 waypoint3)
+        - (navigate rover1 waypoint3 waypoint2)
+
+
+---
+timestamp: '2024-10-14T23:07:25.944197'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 3
+    fring_size: 21
+    fring_first_20: (D:2,H:-1,C:1), (D:2,H:-1,C:1), (D:1,H:-1,C:1), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:2,H:-1,C:2), (D:2,H:-1,C:2), (D:2,H:-1,C:2),
+        (D:2,H:-1,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (calibrate rover0 camera1 objective0 waypoint3)
+        - (navigate rover0 waypoint3 waypoint1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 1
+        f_cost: 1
+        next_lifted_action: take_image
+        num_neighbours: 13
+        first_10_possible_groundings:
+        - (take_image rover0 waypoint1 objective0 camera1 colour)
+        - (take_image rover0 waypoint1 objective0 camera1 low_res)
+        - (take_image rover0 waypoint1 objective0 camera2 low_res)
+        - (take_image rover0 waypoint1 objective1 camera1 colour)
+        - (take_image rover0 waypoint1 objective1 camera1 low_res)
+        - (take_image rover0 waypoint1 objective1 camera2 low_res)
+        - (take_image rover0 waypoint1 objective2 camera1 colour)
+        - (take_image rover0 waypoint1 objective2 camera1 low_res)
+        - (take_image rover0 waypoint1 objective2 camera2 low_res)
+        - (take_image rover1 waypoint2 objective0 camera0 colour)
+
+
+---
+timestamp: '2024-10-14T23:07:38.951390'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 4
+    fring_size: 29
+    fring_first_20: (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1),
+        (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:2,H:-1,C:1),
+        (D:1,H:-1,C:1), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2)
+    current_node:
+        depth: 2
+        ground_actions:
+        - (calibrate rover0 camera1 objective0 waypoint3)
+        - (navigate rover1 waypoint2 waypoint1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 1
+        f_cost: 1
+        next_lifted_action: take_image
+        num_neighbours: 9
+        first_10_possible_groundings:
+        - (take_image rover0 waypoint3 objective0 camera1 colour)
+        - (take_image rover0 waypoint3 objective0 camera1 low_res)
+        - (take_image rover0 waypoint3 objective0 camera2 low_res)
+        - (take_image rover1 waypoint1 objective0 camera0 colour)
+        - (take_image rover1 waypoint1 objective0 camera0 high_res)
+        - (take_image rover1 waypoint1 objective1 camera0 colour)
+        - (take_image rover1 waypoint1 objective1 camera0 high_res)
+        - (take_image rover1 waypoint1 objective2 camera0 colour)
+        - (take_image rover1 waypoint1 objective2 camera0 high_res)
+
+
+---
+timestamp: '2024-10-14T23:07:40.304904'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 5
+    fring_size: 29
+    fring_first_20: (D:4,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1),
+        (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:2,H:-1,C:1),
+        (D:1,H:-1,C:1), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (calibrate rover0 camera1 objective0 waypoint3)
+        - (navigate rover1 waypoint2 waypoint1)
+        - (take_image rover0 waypoint3 objective0 camera1 colour)
+        repair_set: calibrate,(calibrated ?i ?r),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: communicate_image_data
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (communicate_image_data rover0 general objective0 colour waypoint3 waypoint2)
+
+
+---
+timestamp: '2024-10-14T23:07:41.778982'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 6
+    fring_size: 29
+    fring_first_20: (D:5,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1),
+        (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:2,H:-1,C:1),
+        (D:1,H:-1,C:1), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (calibrate rover0 camera1 objective0 waypoint3)
+        - (navigate rover1 waypoint2 waypoint1)
+        - (take_image rover0 waypoint3 objective0 camera1 colour)
+        - (communicate_image_data rover0 general objective0 colour waypoint3 waypoint2)
+        repair_set: calibrate,(calibrated ?i ?r),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: sample_rock
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (sample_rock rover1 rover1store waypoint1)
+
+
+---
+timestamp: '2024-10-14T23:07:43.026649'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 7
+    fring_size: 29
+    fring_first_20: (D:6,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1),
+        (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:2,H:-1,C:1),
+        (D:1,H:-1,C:1), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (calibrate rover0 camera1 objective0 waypoint3)
+        - (navigate rover1 waypoint2 waypoint1)
+        - (take_image rover0 waypoint3 objective0 camera1 colour)
+        - (communicate_image_data rover0 general objective0 colour waypoint3 waypoint2)
+        - (sample_rock rover1 rover1store waypoint1)
+        repair_set: calibrate,(calibrated ?i ?r),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: communicate_rock_data
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (communicate_rock_data rover1 general waypoint1 waypoint1 waypoint2)
+
+
+---
+timestamp: '2024-10-14T23:07:44.483924'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 8
+    fring_size: 29
+    fring_first_20: (D:7,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1),
+        (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:2,H:-1,C:1),
+        (D:1,H:-1,C:1), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (calibrate rover0 camera1 objective0 waypoint3)
+        - (navigate rover1 waypoint2 waypoint1)
+        - (take_image rover0 waypoint3 objective0 camera1 colour)
+        - (communicate_image_data rover0 general objective0 colour waypoint3 waypoint2)
+        - (sample_rock rover1 rover1store waypoint1)
+        - (communicate_rock_data rover1 general waypoint1 waypoint1 waypoint2)
+        repair_set: calibrate,(calibrated ?i ?r),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: sample_soil
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (sample_soil rover0 rover0store waypoint3)
+
+
+---
+timestamp: '2024-10-14T23:07:44.585935'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 9
+    fring_size: 28
+    fring_first_20: (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1),
+        (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:2,H:-1,C:1), (D:1,H:-1,C:1),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (calibrate rover0 camera1 objective0 waypoint3)
+        - (navigate rover1 waypoint2 waypoint1)
+        - (take_image rover0 waypoint3 objective0 camera1 colour)
+        - (communicate_image_data rover0 general objective0 colour waypoint3 waypoint2)
+        - (sample_rock rover1 rover1store waypoint1)
+        - (communicate_rock_data rover1 general waypoint1 waypoint1 waypoint2)
+        - (sample_soil rover0 rover0store waypoint3)
+        repair_set: calibrate,(calibrated ?i ?r),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: communicate_soil_data
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (communicate_soil_data rover0 general waypoint3 waypoint3 waypoint2)
+
+
+---
+timestamp: '2024-10-14T23:07:45.928425'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 10
+    fring_size: 28
+    fring_first_20: (D:4,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1),
+        (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:2,H:-1,C:1), (D:1,H:-1,C:1),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (calibrate rover0 camera1 objective0 waypoint3)
+        - (navigate rover1 waypoint2 waypoint1)
+        - (take_image rover1 waypoint1 objective0 camera0 colour)
+        repair_set: take_image,(calibrated ?i ?r),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: communicate_image_data
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (communicate_image_data rover1 general objective0 colour waypoint1 waypoint2)
+
+
+---
+timestamp: '2024-10-14T23:07:47.193467'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 11
+    fring_size: 28
+    fring_first_20: (D:5,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1),
+        (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:2,H:-1,C:1), (D:1,H:-1,C:1),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (calibrate rover0 camera1 objective0 waypoint3)
+        - (navigate rover1 waypoint2 waypoint1)
+        - (take_image rover1 waypoint1 objective0 camera0 colour)
+        - (communicate_image_data rover1 general objective0 colour waypoint1 waypoint2)
+        repair_set: take_image,(calibrated ?i ?r),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: sample_rock
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (sample_rock rover1 rover1store waypoint1)
+
+
+---
+timestamp: '2024-10-14T23:07:48.471679'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 12
+    fring_size: 28
+    fring_first_20: (D:6,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1),
+        (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:2,H:-1,C:1), (D:1,H:-1,C:1),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (calibrate rover0 camera1 objective0 waypoint3)
+        - (navigate rover1 waypoint2 waypoint1)
+        - (take_image rover1 waypoint1 objective0 camera0 colour)
+        - (communicate_image_data rover1 general objective0 colour waypoint1 waypoint2)
+        - (sample_rock rover1 rover1store waypoint1)
+        repair_set: take_image,(calibrated ?i ?r),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: communicate_rock_data
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (communicate_rock_data rover1 general waypoint1 waypoint1 waypoint2)
+
+
+---
+timestamp: '2024-10-14T23:07:49.738027'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 13
+    fring_size: 28
+    fring_first_20: (D:7,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1),
+        (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:2,H:-1,C:1), (D:1,H:-1,C:1),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (calibrate rover0 camera1 objective0 waypoint3)
+        - (navigate rover1 waypoint2 waypoint1)
+        - (take_image rover1 waypoint1 objective0 camera0 colour)
+        - (communicate_image_data rover1 general objective0 colour waypoint1 waypoint2)
+        - (sample_rock rover1 rover1store waypoint1)
+        - (communicate_rock_data rover1 general waypoint1 waypoint1 waypoint2)
+        repair_set: take_image,(calibrated ?i ?r),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: sample_soil
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (sample_soil rover0 rover0store waypoint3)
+
+
+---
+timestamp: '2024-10-14T23:07:49.842291'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 14
+    fring_size: 27
+    fring_first_20: (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1),
+        (D:3,H:0,C:1), (D:3,H:0,C:1), (D:2,H:-1,C:1), (D:1,H:-1,C:1), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (calibrate rover0 camera1 objective0 waypoint3)
+        - (navigate rover1 waypoint2 waypoint1)
+        - (take_image rover1 waypoint1 objective0 camera0 colour)
+        - (communicate_image_data rover1 general objective0 colour waypoint1 waypoint2)
+        - (sample_rock rover1 rover1store waypoint1)
+        - (communicate_rock_data rover1 general waypoint1 waypoint1 waypoint2)
+        - (sample_soil rover0 rover0store waypoint3)
+        repair_set: take_image,(calibrated ?i ?r),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: communicate_soil_data
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (communicate_soil_data rover0 general waypoint3 waypoint3 waypoint2)
+
+
+---
+timestamp: '2024-10-14T23:07:51.249800'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 15
+    fring_size: 27
+    fring_first_20: (D:4,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1),
+        (D:3,H:0,C:1), (D:3,H:0,C:1), (D:2,H:-1,C:1), (D:1,H:-1,C:1), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (calibrate rover0 camera1 objective0 waypoint3)
+        - (navigate rover1 waypoint2 waypoint1)
+        - (take_image rover1 waypoint1 objective2 camera0 colour)
+        repair_set: take_image,(calibrated ?i ?r),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: communicate_image_data
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (communicate_image_data rover1 general objective2 colour waypoint1 waypoint2)
+
+
+---
+timestamp: '2024-10-14T23:07:52.697788'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 16
+    fring_size: 27
+    fring_first_20: (D:5,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1),
+        (D:3,H:0,C:1), (D:3,H:0,C:1), (D:2,H:-1,C:1), (D:1,H:-1,C:1), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (calibrate rover0 camera1 objective0 waypoint3)
+        - (navigate rover1 waypoint2 waypoint1)
+        - (take_image rover1 waypoint1 objective2 camera0 colour)
+        - (communicate_image_data rover1 general objective2 colour waypoint1 waypoint2)
+        repair_set: take_image,(calibrated ?i ?r),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: sample_rock
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (sample_rock rover1 rover1store waypoint1)
+
+
+---
+timestamp: '2024-10-14T23:07:54.143951'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 17
+    fring_size: 27
+    fring_first_20: (D:6,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1),
+        (D:3,H:0,C:1), (D:3,H:0,C:1), (D:2,H:-1,C:1), (D:1,H:-1,C:1), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (calibrate rover0 camera1 objective0 waypoint3)
+        - (navigate rover1 waypoint2 waypoint1)
+        - (take_image rover1 waypoint1 objective2 camera0 colour)
+        - (communicate_image_data rover1 general objective2 colour waypoint1 waypoint2)
+        - (sample_rock rover1 rover1store waypoint1)
+        repair_set: take_image,(calibrated ?i ?r),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: communicate_rock_data
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (communicate_rock_data rover1 general waypoint1 waypoint1 waypoint2)
+
+
+---
+timestamp: '2024-10-14T23:07:55.514238'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 18
+    fring_size: 27
+    fring_first_20: (D:7,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1),
+        (D:3,H:0,C:1), (D:3,H:0,C:1), (D:2,H:-1,C:1), (D:1,H:-1,C:1), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (calibrate rover0 camera1 objective0 waypoint3)
+        - (navigate rover1 waypoint2 waypoint1)
+        - (take_image rover1 waypoint1 objective2 camera0 colour)
+        - (communicate_image_data rover1 general objective2 colour waypoint1 waypoint2)
+        - (sample_rock rover1 rover1store waypoint1)
+        - (communicate_rock_data rover1 general waypoint1 waypoint1 waypoint2)
+        repair_set: take_image,(calibrated ?i ?r),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: sample_soil
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (sample_soil rover0 rover0store waypoint3)
+
+
+---
+timestamp: '2024-10-14T23:07:55.657608'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 19
+    fring_size: 26
+    fring_first_20: (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1),
+        (D:3,H:0,C:1), (D:2,H:-1,C:1), (D:1,H:-1,C:1), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (calibrate rover0 camera1 objective0 waypoint3)
+        - (navigate rover1 waypoint2 waypoint1)
+        - (take_image rover1 waypoint1 objective2 camera0 colour)
+        - (communicate_image_data rover1 general objective2 colour waypoint1 waypoint2)
+        - (sample_rock rover1 rover1store waypoint1)
+        - (communicate_rock_data rover1 general waypoint1 waypoint1 waypoint2)
+        - (sample_soil rover0 rover0store waypoint3)
+        repair_set: take_image,(calibrated ?i ?r),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: communicate_soil_data
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (communicate_soil_data rover0 general waypoint3 waypoint3 waypoint2)
+
+
+---
+timestamp: '2024-10-14T23:07:57.271393'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 20
+    fring_size: 26
+    fring_first_20: (D:4,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1),
+        (D:3,H:0,C:1), (D:2,H:-1,C:1), (D:1,H:-1,C:1), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (calibrate rover0 camera1 objective0 waypoint3)
+        - (navigate rover1 waypoint2 waypoint1)
+        - (take_image rover1 waypoint1 objective2 camera0 high_res)
+        repair_set: take_image,(calibrated ?i ?r),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: communicate_image_data
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (communicate_image_data rover1 general objective2 high_res waypoint1 waypoint2)
+
+
+---
+timestamp: '2024-10-14T23:07:58.764918'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 21
+    fring_size: 26
+    fring_first_20: (D:5,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1),
+        (D:3,H:0,C:1), (D:2,H:-1,C:1), (D:1,H:-1,C:1), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (calibrate rover0 camera1 objective0 waypoint3)
+        - (navigate rover1 waypoint2 waypoint1)
+        - (take_image rover1 waypoint1 objective2 camera0 high_res)
+        - (communicate_image_data rover1 general objective2 high_res waypoint1 waypoint2)
+        repair_set: take_image,(calibrated ?i ?r),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: sample_rock
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (sample_rock rover1 rover1store waypoint1)
+
+
+---
+timestamp: '2024-10-14T23:08:00.224580'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 22
+    fring_size: 26
+    fring_first_20: (D:6,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1),
+        (D:3,H:0,C:1), (D:2,H:-1,C:1), (D:1,H:-1,C:1), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (calibrate rover0 camera1 objective0 waypoint3)
+        - (navigate rover1 waypoint2 waypoint1)
+        - (take_image rover1 waypoint1 objective2 camera0 high_res)
+        - (communicate_image_data rover1 general objective2 high_res waypoint1 waypoint2)
+        - (sample_rock rover1 rover1store waypoint1)
+        repair_set: take_image,(calibrated ?i ?r),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: communicate_rock_data
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (communicate_rock_data rover1 general waypoint1 waypoint1 waypoint2)
+
+
+---
+timestamp: '2024-10-14T23:08:02.078038'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 23
+    fring_size: 26
+    fring_first_20: (D:7,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1),
+        (D:3,H:0,C:1), (D:2,H:-1,C:1), (D:1,H:-1,C:1), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (calibrate rover0 camera1 objective0 waypoint3)
+        - (navigate rover1 waypoint2 waypoint1)
+        - (take_image rover1 waypoint1 objective2 camera0 high_res)
+        - (communicate_image_data rover1 general objective2 high_res waypoint1 waypoint2)
+        - (sample_rock rover1 rover1store waypoint1)
+        - (communicate_rock_data rover1 general waypoint1 waypoint1 waypoint2)
+        repair_set: take_image,(calibrated ?i ?r),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: sample_soil
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (sample_soil rover0 rover0store waypoint3)
+
+
+---
+timestamp: '2024-10-14T23:08:02.204855'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 24
+    fring_size: 25
+    fring_first_20: (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1),
+        (D:2,H:-1,C:1), (D:1,H:-1,C:1), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (calibrate rover0 camera1 objective0 waypoint3)
+        - (navigate rover1 waypoint2 waypoint1)
+        - (take_image rover1 waypoint1 objective2 camera0 high_res)
+        - (communicate_image_data rover1 general objective2 high_res waypoint1 waypoint2)
+        - (sample_rock rover1 rover1store waypoint1)
+        - (communicate_rock_data rover1 general waypoint1 waypoint1 waypoint2)
+        - (sample_soil rover0 rover0store waypoint3)
+        repair_set: take_image,(calibrated ?i ?r),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: communicate_soil_data
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (communicate_soil_data rover0 general waypoint3 waypoint3 waypoint2)
+
+
+---
+timestamp: '2024-10-14T23:08:03.936875'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 25
+    fring_size: 25
+    fring_first_20: (D:4,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1),
+        (D:2,H:-1,C:1), (D:1,H:-1,C:1), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2)
+    current_node:
+        depth: 3
+        ground_actions:
+        - (calibrate rover0 camera1 objective0 waypoint3)
+        - (navigate rover1 waypoint2 waypoint1)
+        - (take_image rover1 waypoint1 objective0 camera0 high_res)
+        repair_set: take_image,(calibrated ?i ?r),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: communicate_image_data
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (communicate_image_data rover1 general objective0 high_res waypoint1 waypoint2)
+
+
+---
+timestamp: '2024-10-14T23:08:05.706622'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 26
+    fring_size: 25
+    fring_first_20: (D:5,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1),
+        (D:2,H:-1,C:1), (D:1,H:-1,C:1), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2)
+    current_node:
+        depth: 4
+        ground_actions:
+        - (calibrate rover0 camera1 objective0 waypoint3)
+        - (navigate rover1 waypoint2 waypoint1)
+        - (take_image rover1 waypoint1 objective0 camera0 high_res)
+        - (communicate_image_data rover1 general objective0 high_res waypoint1 waypoint2)
+        repair_set: take_image,(calibrated ?i ?r),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: sample_rock
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (sample_rock rover1 rover1store waypoint1)
+
+
+---
+timestamp: '2024-10-14T23:08:07.099060'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 27
+    fring_size: 25
+    fring_first_20: (D:6,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1),
+        (D:2,H:-1,C:1), (D:1,H:-1,C:1), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2)
+    current_node:
+        depth: 5
+        ground_actions:
+        - (calibrate rover0 camera1 objective0 waypoint3)
+        - (navigate rover1 waypoint2 waypoint1)
+        - (take_image rover1 waypoint1 objective0 camera0 high_res)
+        - (communicate_image_data rover1 general objective0 high_res waypoint1 waypoint2)
+        - (sample_rock rover1 rover1store waypoint1)
+        repair_set: take_image,(calibrated ?i ?r),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: communicate_rock_data
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (communicate_rock_data rover1 general waypoint1 waypoint1 waypoint2)
+
+
+---
+timestamp: '2024-10-14T23:08:08.437935'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 28
+    fring_size: 25
+    fring_first_20: (D:7,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1),
+        (D:2,H:-1,C:1), (D:1,H:-1,C:1), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2)
+    current_node:
+        depth: 6
+        ground_actions:
+        - (calibrate rover0 camera1 objective0 waypoint3)
+        - (navigate rover1 waypoint2 waypoint1)
+        - (take_image rover1 waypoint1 objective0 camera0 high_res)
+        - (communicate_image_data rover1 general objective0 high_res waypoint1 waypoint2)
+        - (sample_rock rover1 rover1store waypoint1)
+        - (communicate_rock_data rover1 general waypoint1 waypoint1 waypoint2)
+        repair_set: take_image,(calibrated ?i ?r),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: sample_soil
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (sample_soil rover0 rover0store waypoint3)
+
+
+---
+timestamp: '2024-10-14T23:08:08.544994'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 29
+    fring_size: 25
+    fring_first_20: (D:8,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1),
+        (D:2,H:-1,C:1), (D:1,H:-1,C:1), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2)
+    current_node:
+        depth: 7
+        ground_actions:
+        - (calibrate rover0 camera1 objective0 waypoint3)
+        - (navigate rover1 waypoint2 waypoint1)
+        - (take_image rover1 waypoint1 objective0 camera0 high_res)
+        - (communicate_image_data rover1 general objective0 high_res waypoint1 waypoint2)
+        - (sample_rock rover1 rover1store waypoint1)
+        - (communicate_rock_data rover1 general waypoint1 waypoint1 waypoint2)
+        - (sample_soil rover0 rover0store waypoint3)
+        repair_set: take_image,(calibrated ?i ?r),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: communicate_soil_data
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (communicate_soil_data rover0 general waypoint3 waypoint3 waypoint2)
+
+
+---
+timestamp: '2024-10-14T23:08:08.547645'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: true
+    iteration: 30
+    fring_size: 24
+    fring_first_20: (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:3,H:0,C:1), (D:2,H:-1,C:1),
+        (D:1,H:-1,C:1), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2),
+        (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:3,H:-1,C:2), (D:2,H:-1,C:2)
+    current_node:
+        depth: 8
+        ground_actions:
+        - (calibrate rover0 camera1 objective0 waypoint3)
+        - (navigate rover1 waypoint2 waypoint1)
+        - (take_image rover1 waypoint1 objective0 camera0 high_res)
+        - (communicate_image_data rover1 general objective0 high_res waypoint1 waypoint2)
+        - (sample_rock rover1 rover1store waypoint1)
+        - (communicate_rock_data rover1 general waypoint1 waypoint1 waypoint2)
+        - (sample_soil rover0 rover0store waypoint3)
+        - (communicate_soil_data rover0 general waypoint3 waypoint3 waypoint2)
+        repair_set: take_image,(calibrated ?i ?r),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2024-10-14T23:08:08.550202'
+level: INFO
+issuer: instance_solver
+event_type: results
+data:
+    goal:
+        depth: 8
+        ground_actions:
+        - (calibrate rover0 camera1 objective0 waypoint3)
+        - (navigate rover1 waypoint2 waypoint1)
+        - (take_image rover1 waypoint1 objective0 camera0 high_res)
+        - (communicate_image_data rover1 general objective0 high_res waypoint1 waypoint2)
+        - (sample_rock rover1 rover1store waypoint1)
+        - (communicate_rock_data rover1 general waypoint1 waypoint1 waypoint2)
+        - (sample_soil rover0 rover0store waypoint3)
+        - (communicate_soil_data rover0 general waypoint3 waypoint3 waypoint2)
+        repair_set: take_image,(calibrated ?i ?r),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2024-10-14T23:08:08.552087'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 1.3 minutes = 77.20 seconds
+
+
+---
+timestamp: '2024-10-14T23:08:08.694845'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+
