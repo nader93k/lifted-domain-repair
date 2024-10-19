@@ -61,7 +61,7 @@ def get_action_conditions_with_add_del(domain, problem, outp):
         "--only-output-direct-program",
         "--integrate-action-cost"
     ]
-    print("calling", *command)
+    # print("calling", *command)
     with open(outp, "w") as f:
         subprocess.check_call(command, stdout=f)
 
@@ -116,10 +116,10 @@ def ground(domain, problem, theory_outp=None, model_outp=None, lpopt_enabled=Fal
             "--r-mode",
             relaxation
         ]
-    print("calling", *command)
+    # print("calling", *command)
     try:
         result = subprocess.run(command, check=True, capture_output=True, text=True)
-        print(f"subprocess results: {result.stdout}")
+        # print(f"subprocess results: {result.stdout}")
     except subprocess.CalledProcessError as e:
         print(f"Command failed with return code {e.returncode}")
         print(f"Error output:\n{e.stderr}")
@@ -242,7 +242,7 @@ def call_transformer(inp, argument, outp):
         argument,
         inp
     ]
-    print("calling", *command)
+    # print("calling", *command)
 
     create_tmp = outp is None
     if create_tmp:
@@ -366,8 +366,8 @@ def to_mutex_list(f, unique_type_obj_map):
     return li
 
 def mutex_printout_equal_check(tmp_file1, tmp_file2, all_output=False):
-    if all_output:
-        print("Checking mutex printout equal.")
+    # if all_output:
+    #     print("Checking mutex printout equal.")
 
     with open(tmp_file1, "r") as f1:
         with open(tmp_file2, "r") as f2:

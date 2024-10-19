@@ -318,7 +318,7 @@ def _get_predicate_id_and_arity(context, text, type_dict, predicate_dict):
         if the_type is not None and not SEEN_WARNING_TYPE_PREDICATE_NAME_CLASH:
             msg = ("Warning: name clash between type and predicate %r.\n"
                    "Interpreting as predicate in conditions.") % text
-            print(msg, file=sys.stderr)
+            # print(msg, file=sys.stderr)
             SEEN_WARNING_TYPE_PREDICATE_NAME_CLASH = True
         return the_predicate.name, the_predicate.get_arity()
     else:
@@ -692,7 +692,7 @@ def parse_domain_pddl(context, domain_pddl):
             if (seen_fields and
                 correct_order.index(seen_fields[-1]) > correct_order.index(field)):
                 msg = f"\nWarning: {field} specification not allowed here (cf. PDDL BNF)"
-                print(msg, file=sys.stderr)
+                # print(msg, file=sys.stderr)
             seen_fields.append(field)
             if field == ":requirements":
                 requirements = parse_requirements(context, opt[1:])
