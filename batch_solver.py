@@ -59,7 +59,7 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval, \
             raise NotImplementedError
 
 
-def load_instance_ids(file_path='instance_ids_nonzero_h.json'):
+def load_instance_ids(file_path):
     with open(file_path, 'r') as file:
         instance_ids = json.load(file)
     print(f"Successfully loaded {len(instance_ids)} instance IDs from JSON file.")
@@ -85,7 +85,9 @@ if __name__ == "__main__":
     else:
         instance_ids = config['instance_ids']
         if instance_ids == 'load_instance_ids':
-            instance_ids = load_instance_ids()
+            instance_ids = load_instance_ids('instance_ids_nonzero_h.json')
+        elif instance_ids == 'instance_ids_small_exp_set':
+            instance_ids = load_instance_ids('instance_ids_small_exp_set.json')
     heuristic_relaxation = config['heuristic_relaxation']
     run_mode = config['run_mode']
 

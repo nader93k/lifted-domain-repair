@@ -64,18 +64,22 @@ def solve_instance(search_algorithm, benchmark_path, log_file, log_interval, ins
         ground_action_sequence=[],
         parent=None,
         is_initial_node=True,
-        h_cost_needed=True if search_algorithm in ('astar',) else False,
+        h_cost_needed=True if search_algorithm in ('astar', 'greedy') else False,
         heuristic_relaxation=heuristic_relaxation
     )
     match search_algorithm:
-        case 'astar' | 'bfs':
+        case 'astar':
             search_class = AStar
+            searcher = AStar(initial_node, g_cost_multiplier=1, h_cost_multiplier=1)
+        case 'bfs':
+            searcher = AStar(initial_node, g_cost_multiplier=1, h_cost_multiplier=0)
+        case 'greedy':
+            searcher = AStar(initial_node, g_cost_multiplier=0, h_cost_multiplier=1)
         case 'dfs':
             raise NotImplementedError
             # search_class = DFS
         case _:
             raise NotImplementedError("Search algorithm not supported.")
-    searcher = search_class(initial_node)
 
     log_data_results = {}
     try:
