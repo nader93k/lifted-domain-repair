@@ -1,4 +1,4 @@
-from search_partial_grounding import smart_grounder, AStar, Node
+from search_partial_grounding import smart_grounder, AStar, Node, DFS
 from search_partial_grounding.action_grounding_tools import smart_grounder
 #TODO: Fina a better place for ground_repair
 from vanilla_runs.run_songtuans_vanilla import ground_repair
@@ -76,8 +76,7 @@ def solve_instance(search_algorithm, benchmark_path, log_file, log_interval, ins
         case 'greedy':
             searcher = AStar(initial_node, g_cost_multiplier=0, h_cost_multiplier=1)
         case 'dfs':
-            raise NotImplementedError
-            # search_class = DFS
+            searcher = DFS(initial_node)
         case _:
             raise NotImplementedError("Search algorithm not supported.")
 
