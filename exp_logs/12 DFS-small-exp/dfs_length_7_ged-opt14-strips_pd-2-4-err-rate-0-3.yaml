@@ -1,0 +1,307 @@
+---
+timestamp: '2024-10-21T02:52:59.580881'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/12 DFS-small-exp/dfs_length_7_ged-opt14-strips_pd-2-4-err-rate-0-3.yaml
+    instance_id: ged-opt14-strips/pd-2-4-err-rate-0-3
+    search_algorithm: dfs
+    plan_length: 7
+    domain_class: ged-opt14-strips
+    instance_name: pd-2-4-err-rate-0-3
+    ground_plan:
+    - (invert-single-gene-a sub3)
+    - (begin-cut sub3 sub4)
+    - (end-cut-1 sub4 sub1)
+    - (end-cut-2 sub3 sub1)
+    - (begin-transpose-splice sub2 sub3)
+    - (end-splice-1 sub4 sub2)
+    - (end-splice-2 sub4 sub3)
+    lifted_plan:
+    - invert-single-gene-a
+    - begin-cut
+    - end-cut-1
+    - end-cut-2
+    - begin-transpose-splice
+    - end-splice-1
+    - end-splice-2
+
+
+---
+timestamp: '2024-10-21T02:52:59.587808'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: end-cut-2,(cw ?x ?y),effPos,1
+
+
+---
+timestamp: '2024-10-21T02:52:59.719876'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 1
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: invert-single-gene-a
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (invert-single-gene-a sub1)
+        - (invert-single-gene-a sub2)
+        - (invert-single-gene-a sub3)
+        - (invert-single-gene-a sub4)
+
+
+---
+timestamp: '2024-10-21T02:52:59.846446'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 2
+    fring_size: 1
+    current_node:
+        depth: 1
+        ground_actions:
+        - (invert-single-gene-a sub4)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: begin-cut
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (begin-cut sub1 sub2)
+        - (begin-cut sub2 sub3)
+        - (begin-cut sub3 sub4)
+        - (begin-cut sub4 sub1)
+
+
+---
+timestamp: '2024-10-21T02:52:59.951615'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 3
+    fring_size: 1
+    current_node:
+        depth: 2
+        ground_actions:
+        - (invert-single-gene-a sub4)
+        - (begin-cut sub4 sub1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-cut-1
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-cut-1 sub1 sub2)
+
+
+---
+timestamp: '2024-10-21T02:53:00.068660'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 4
+    fring_size: 1
+    current_node:
+        depth: 3
+        ground_actions:
+        - (invert-single-gene-a sub4)
+        - (begin-cut sub4 sub1)
+        - (end-cut-1 sub1 sub2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-cut-2
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-cut-2 sub4 sub2)
+
+
+---
+timestamp: '2024-10-21T02:53:00.212912'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 5
+    fring_size: 1
+    current_node:
+        depth: 4
+        ground_actions:
+        - (invert-single-gene-a sub4)
+        - (begin-cut sub4 sub1)
+        - (end-cut-1 sub1 sub2)
+        - (end-cut-2 sub4 sub2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: begin-transpose-splice
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (begin-transpose-splice sub2 sub3)
+        - (begin-transpose-splice sub3 sub4)
+
+
+---
+timestamp: '2024-10-21T02:53:00.319002'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 6
+    fring_size: 1
+    current_node:
+        depth: 5
+        ground_actions:
+        - (invert-single-gene-a sub4)
+        - (begin-cut sub4 sub1)
+        - (end-cut-1 sub1 sub2)
+        - (end-cut-2 sub4 sub2)
+        - (begin-transpose-splice sub3 sub4)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-splice-1
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-splice-1 sub1 sub3)
+
+
+---
+timestamp: '2024-10-21T02:53:00.430913'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 7
+    fring_size: 1
+    current_node:
+        depth: 6
+        ground_actions:
+        - (invert-single-gene-a sub4)
+        - (begin-cut sub4 sub1)
+        - (end-cut-1 sub1 sub2)
+        - (end-cut-2 sub4 sub2)
+        - (begin-transpose-splice sub3 sub4)
+        - (end-splice-1 sub1 sub3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: end-splice-2
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (end-splice-2 sub1 sub4)
+
+
+---
+timestamp: '2024-10-21T02:53:00.432736'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: true
+    iteration: 8
+    fring_size: 1
+    current_node:
+        depth: 7
+        ground_actions:
+        - (invert-single-gene-a sub4)
+        - (begin-cut sub4 sub1)
+        - (end-cut-1 sub1 sub2)
+        - (end-cut-2 sub4 sub2)
+        - (begin-transpose-splice sub3 sub4)
+        - (end-splice-1 sub1 sub3)
+        - (end-splice-2 sub1 sub4)
+        repair_set: 'begin-transpose-splice,(normal ?y),effPos,1
+
+            begin-transpose-splice,(cw ?y ?x),effPos,1
+
+            end-cut-2,(cw ?y ?x),effPos,1
+
+            end-cut-1,(cw ?x ?y),effPos,1
+
+            end-splice-1,(inverted ?y),effPos,1'
+        g_cost: 5
+        h_cost: 0
+        f_cost: 5
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2024-10-21T02:53:00.434587'
+level: INFO
+issuer: instance_solver
+event_type: results
+data:
+    goal:
+        depth: 7
+        ground_actions:
+        - (invert-single-gene-a sub4)
+        - (begin-cut sub4 sub1)
+        - (end-cut-1 sub1 sub2)
+        - (end-cut-2 sub4 sub2)
+        - (begin-transpose-splice sub3 sub4)
+        - (end-splice-1 sub1 sub3)
+        - (end-splice-2 sub1 sub4)
+        repair_set: 'begin-transpose-splice,(normal ?y),effPos,1
+
+            begin-transpose-splice,(cw ?y ?x),effPos,1
+
+            end-cut-2,(cw ?y ?x),effPos,1
+
+            end-cut-1,(cw ?x ?y),effPos,1
+
+            end-splice-1,(inverted ?y),effPos,1'
+        g_cost: 5
+        h_cost: 0
+        f_cost: 5
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2024-10-21T02:53:00.436324'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.0 minutes = 0.86 seconds
+
+
+---
+timestamp: '2024-10-21T02:53:00.540026'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+
