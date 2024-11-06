@@ -1,16 +1,20 @@
 ###### MAIN
-search_algorithm: bb
+search_algorithm: bfs
 heuristic_relaxation: zeroary
+lift_prob: 0.6
 instance_ids: instance_ids_small_exp_set
+# instance_ids: visitall-opt11-strips/pproblem02-full-err-rate-0-1
 min_length: 1
 max_length: 15
 timeout_seconds: 900  # 15 * 60
 order: increasing
 benchmark_path: ./input/benchmarks-G1
-log_folder: ./exp_logs_debug
+log_folder: ./exp_logs/13 BFS-lifted-prob06
 log_interval: 1
 domain_class: null
 run_mode: subprocess
+
+
 
 ###### Supported Values
 # search_algorithm: astar, bfs, greedy

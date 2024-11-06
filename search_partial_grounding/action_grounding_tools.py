@@ -3,24 +3,43 @@ from heuristic_tools import heuristic
 import subprocess
 import os
 from pathlib import Path
-from collections import defaultdict
 import re
-from typing import List, Dict
+from typing import List
+import random
 
 
 
-def read_action_names(file_path):
+def read_lifted_actions(file_path, lift_prob=0.0, random_seed=0) -> list[list[str]]:
+    random.seed(random_seed)
     result = []
     with open(file_path, 'r') as file:
         for line in file:
             line = line.strip()
             if line.startswith('('):
-                first_word = line.split()[0][1:]  # Remove the opening parenthesis
-                result.append(first_word)
+                line = line.lstrip('(').rstrip(')')
+
+                parts = line.split()
+                if not parts:
+                    continue
+                    
+                action_name = parts[0]
+                parameters = parts[1:]
+                
+                # Process parameters - maybe add ? to each
+                processed_params = []
+                for param in parameters:
+                    if random.random() < lift_prob:
+                        processed_params.append('?' + param)
+                    else:
+                        processed_params.append(param)
+                
+                processed_line = [action_name] + processed_params
+                result.append(processed_line)
+
     return result
 
 
-def read_ground_actions(file_path):
+def read_ground_actions(file_path: str) -> list[str]:
     result = []
     with open(file_path, 'r') as file:
         for line in file:
@@ -80,7 +99,7 @@ def all_action_groundings(white_action_names, domain, task):
 #     return d
     
 
-def smart_grounder(domain_in, task_in, action_name) -> List[str]:
+def smart_grounder(domain_in, task_in, lifted_action) -> List[str]:
     aux_folder = r'heuristic_tools/'
     domain_path = aux_folder + "pass_to_grounder_domain.pddl"
     task_path = aux_folder + "pass_to_grounder_task.pddl"
@@ -89,7 +108,7 @@ def smart_grounder(domain_in, task_in, action_name) -> List[str]:
     domain = copy.deepcopy(domain_in) # verbose
     task = copy.deepcopy(task_in) # verbose
 
-    heuristic.integrate_action_sequence(domain, task, [(action_name,)])
+    heuristic.integrate_action_sequence(domain, task, [lifted_action])
     heuristic.revert_to_fd_structure(domain, task)
 
     heuristic.print_domain(domain, domain_path)
@@ -106,7 +125,7 @@ def smart_grounder(domain_in, task_in, action_name) -> List[str]:
             stderr=devnull
         )
     
-    return _sas_parser(Path(sas_path), action_name)
+    return _sas_parser(Path(sas_path), lifted_action[0])
 
 
 def _sas_parser(file_path: Path, action_name_in: str) -> List[str]:

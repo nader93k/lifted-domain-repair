@@ -11,9 +11,10 @@ import sys
 import traceback
 
 
-def solve_instance(search_algorithm, benchmark_path, log_file, log_interval, instance_id, heuristic_relaxation):
+def solve_instance(search_algorithm, benchmark_path, log_file, log_interval, instance_id, heuristic_relaxation, lift_prob):
     log_interval = int(log_interval)
-    instance = list_instances(benchmark_path, instance_ids=[instance_id])[0]
+    instance = list_instances(benchmark_path, instance_ids=[instance_id], lift_prob=lift_prob)[0]
+
 
     start_time = time.time()
 
@@ -102,7 +103,7 @@ def solve_instance(search_algorithm, benchmark_path, log_file, log_interval, ins
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, format='%(message)s')
 
-    if len(sys.argv) not in (6, 7):
+    if len(sys.argv) not in (7, 8):
         print("Usage: python instance_solver.py <search_algorithm> <benchmark_path> <log_folder> <log_interval> <instance_id> <heuristic_relaxation>")
         sys.exit(1)
     search_algorithm = sys.argv[1]
@@ -111,7 +112,8 @@ if __name__ == "__main__":
     log_file = Path(sys.argv[3])
     log_interval = int(sys.argv[4])
     instance_id = sys.argv[5]
-    heuristic_relaxation = sys.argv[6] if(len(sys.argv)==7) else None
+    lift_prob = float(sys.argv[6])
+    heuristic_relaxation = sys.argv[7] if(len(sys.argv)==8) else None
 
     solve_instance(
         search_algorithm=search_algorithm,
@@ -119,5 +121,6 @@ if __name__ == "__main__":
         log_file=log_file,
         log_interval=log_interval,
         instance_id=instance_id,
-        heuristic_relaxation=heuristic_relaxation
+        heuristic_relaxation=heuristic_relaxation,
+        lift_prob=lift_prob
     )
