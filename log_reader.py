@@ -217,7 +217,6 @@ def append_to_csv(log_data: LogData):
         writer.writerow(row)
 
 if __name__ == "__main__":
-    # folder_path = './exp_logs/9 AStar-full-log length1-15'
-    folder_path = './exp_logs/8 BFS-full-log length1-15'
+    folder_path = './exp_logs/12 DFS-small-exp'
     all_log_data = analyze_logs(folder_path)
     print(f"\nAnalysis complete. Processed {len(all_log_data)} new log files.")

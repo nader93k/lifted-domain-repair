@@ -5,8 +5,6 @@ import logging
 import copy
 from fd.pddl.conditions import Conjunction, Atom
 from heuristic_tools.heuristic import Heurisitc
-import pickle
-
 
 
 class Node:
@@ -14,6 +12,7 @@ class Node:
     original_task = None
     grounder = None
     logger = None
+
 
     @classmethod
     def set_grounder(cls, value):
@@ -28,6 +27,7 @@ class Node:
     @classmethod
     def set_task(cls, value):
         cls.original_task = value
+
 
     @classmethod
     def set_logger(cls, logger):
@@ -60,8 +60,6 @@ class Node:
         self.neighbours = []
         self.possible_groundings = None
         self.h_relaxation = heuristic_relaxation
-
-
 
         if is_initial_node:
             # TODO: review the claim below
@@ -195,6 +193,7 @@ class Node:
             return False
         return self.ground_action_sequence == other.ground_action_sequence
 
+
     def to_dict(self):
         next_lifted = None if len(self.lifted_action_sequence) == 0 else str(self.lifted_action_sequence[0])
         return {
@@ -209,6 +208,7 @@ class Node:
             "first_10_possible_groundings": self.possible_groundings[:10] if self.possible_groundings is not None else self.possible_groundings
         }
     
+
     def __str__(self):
         node_dict = self.to_dict()
         return "\n".join([f"> {key}: {value}" for key, value in node_dict.items()])

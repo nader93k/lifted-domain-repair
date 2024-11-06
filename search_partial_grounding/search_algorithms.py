@@ -1,6 +1,5 @@
-# astar_algorithm.py
-import heapq
 import logging
+import heapq
 
 
 def log_iteration_info(logger, iteration, open_list, current_node, is_goal):
@@ -41,16 +40,17 @@ class AStar(Searcher):
     """
 
 
-    def __init__(self, initial_node, g_cost_multiplier=1, h_cost_multiplier=1):
+    def __init__(self, initial_node, g_cost_multiplier=1, h_cost_multiplier=1, prune_func=None):
         super().__init__(initial_node)
         self.g_cost_multiplier = g_cost_multiplier
         self.h_cost_multiplier = h_cost_multiplier 
+        self.prune_func = prune_func or (lambda _: False)  # Default to never prune if no function provided
     
 
-    def calculate_f_cost(self, node):  ##### Added new method to calculate f_cost
+    def calculate_f_cost(self, node):
        return (self.g_cost_multiplier * node.g_cost) + self.calculate_h_cost(node)
 
-    def calculate_h_cost(self, node):  ##### Added new method to calculate f_cost
+    def calculate_h_cost(self, node):
        return self.h_cost_multiplier * node.h_cost
 
 
@@ -80,9 +80,10 @@ class AStar(Searcher):
 
                 # tentative_f_cost = neighbor.f_cost
                 if not any(node[3]==neighbor for node in open_list):
-                    f_cost = self.calculate_f_cost(neighbor)
-                    h_cost = self.calculate_h_cost(neighbor)
-                    heapq.heappush(open_list, (f_cost, h_cost, -neighbor.depth, neighbor))
+                    if not self.prune_func(neighbor):
+                        f_cost = self.calculate_f_cost(neighbor)
+                        h_cost = self.calculate_h_cost(neighbor)
+                        heapq.heappush(open_list, (f_cost, h_cost, -neighbor.depth, neighbor))
                 # elif tentative_f_cost >= neighbor.f_cost: continue
                 else: raise Exception("Identical node generation detected. Debug is needed.")
 
@@ -92,6 +93,38 @@ class AStar(Searcher):
                 log_iteration_info(logger, iteration, open_list, current_node, is_goal=False)
 
         return None, None  # No path found
+
+
+class BranchBound(Searcher):
+    def __init__(self, initial_node):
+        super().__init__(initial_node)
+
+    def prune_strategy(self, node, current_best_cost):
+        """
+        Default pruning strategy that decides whether to prune a node based on its cost.
+        
+        Args:
+            node: The node to evaluate for pruning
+            current_best_cost: The cost of the current best solution
+            
+        Returns:
+            bool: True if the node should be pruned, False otherwise
+        """
+        return node.h_cost + node.g_cost >= current_best_cost
+    
+    def find_path(self, logger, log_interval):
+        current_best_cost = float('inf')
+        while True:
+            #TODO add error handling for this
+            searcher = AStar(self.initial_node,
+                             g_cost_multiplier=0,
+                             h_cost_multiplier=1,
+                             prune_func=lambda node: self.prune_strategy(node, current_best_cost)
+            )
+            _, goal_node = searcher.find_path(logger=logger, log_interval=log_interval)
+            if not goal_node:
+                break
+            current_best_cost = goal_node.g_cost
 
 
 class DFS(Searcher):

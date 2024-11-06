@@ -1,4 +1,4 @@
-from search_partial_grounding import smart_grounder, AStar, Node, DFS
+from search_partial_grounding import smart_grounder, AStar, Node, DFS, BranchBound
 from search_partial_grounding.action_grounding_tools import smart_grounder
 #TODO: Fina a better place for ground_repair
 from vanilla_runs.run_songtuans_vanilla import ground_repair
@@ -64,7 +64,7 @@ def solve_instance(search_algorithm, benchmark_path, log_file, log_interval, ins
         ground_action_sequence=[],
         parent=None,
         is_initial_node=True,
-        h_cost_needed=True if search_algorithm in ('astar', 'greedy') else False,
+        h_cost_needed=False if search_algorithm in ('dfs', 'bfs') else True,
         heuristic_relaxation=heuristic_relaxation
     )
     match search_algorithm:
@@ -77,22 +77,17 @@ def solve_instance(search_algorithm, benchmark_path, log_file, log_interval, ins
             searcher = AStar(initial_node, g_cost_multiplier=0, h_cost_multiplier=1)
         case 'dfs':
             searcher = DFS(initial_node)
+        case 'bb':
+            searcher = BranchBound(initial_node)
         case _:
             raise NotImplementedError("Search algorithm not supported.")
 
-    log_data_results = {}
     try:
-        path, goal_node = searcher.find_path(logger=logger, log_interval=log_interval)
-        if goal_node:
-            log_data_results['goal'] = goal_node.to_dict()
-        else:
-            log_data_results['goal'] = 'not_found'
-        logger.log(issuer="instance_solver", event_type="results", level=logging.INFO, message=log_data_results)
+        searcher.find_path(logger=logger, log_interval=log_interval)
     except Exception as e:
         stack_trace = traceback.format_exc()
         log_data_error = f"An error occurred during A* search: {str(e)}. Stack trace: {stack_trace}"
         logger.log(issuer="instance_solver", event_type="error", level=logging.ERROR, message=log_data_error)
-        path, goal_node = None, None
     
     # Logging
     end_time = time.time()
