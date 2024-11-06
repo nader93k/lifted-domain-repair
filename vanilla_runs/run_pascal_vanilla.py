@@ -7,6 +7,7 @@ sys.path.insert(0, project_root)
 
 import subprocess
 from heuristic_tools import Heurisitc
+from heuristic_tools import heuristic
 import heuristic_tools
 from pathlib import Path
 import copy
@@ -51,8 +52,8 @@ if __name__ == '__main__':
     ############
 
     action_sequence = plan[0]._steps
-    h = Heurisitc(h_name="G_HMAX", relaxation="none")
-    print("Initial Heuristic value was:", h.evaluate(domain, task, action_sequence))
+    # h = Heurisitc(h_name="G_HMAX", relaxation="none")
+    # print("Initial Heuristic value was:", h.evaluate(domain, task, action_sequence))
 
 
     ############
@@ -63,6 +64,8 @@ if __name__ == '__main__':
 
     domain2 = copy.deepcopy(domain) # verbose
     task2 = copy.deepcopy(task) # verbose
+
+
     heuristic.integrate_action_sequence(domain2, task2, action_sequence)
 
     domain_pddl = aux_folder + "pass_to_grounder_domain.pddl"
@@ -73,10 +76,7 @@ if __name__ == '__main__':
 
 
     print("== Grounding")
-
-    current_dir = os.path.dirname(__file__)
-    current_dir = Path(__file__).parent
-    grounder = os.path.join(current_dir, 'fd2', 'src', 'translate', 'translate.py')
+    grounder = os.path.join(project_root, 'fd2', 'src', 'translate', 'translate.py')
     print("Using grounder", grounder)
 
     sas_file = aux_folder + "out.sas"
@@ -88,11 +88,11 @@ if __name__ == '__main__':
     # Example: Repairing
     ############
 
-    repairer = Repairer()
-    if repairer.repair(domain, [(task, plan)]): # type: ignore
-        repairer.write(out_file)
-        print("Repair done")
-        s = repairer.get_repairs_string()
-        # print(s)
-    else:
-        print("Problem is unsolvable")
+    # repairer = Repairer()
+    # if repairer.repair(domain, [(task, plan)]): # type: ignore
+    #     repairer.write(out_file)
+    #     print("Repair done")
+    #     s = repairer.get_repairs_string()
+    #     # print(s)
+    # else:
+    #     print("Problem is unsolvable")
