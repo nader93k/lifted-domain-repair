@@ -18,7 +18,7 @@ from repairer import *
 
 
 def grounder(domain_in, task_in, lifted_action) -> List[str]:
-    aux_folder = r'heuristic_tools/'
+    aux_folder = r'../heuristic_tools/'
     domain_path = aux_folder + "pass_to_grounder_domain.pddl"
     task_path = aux_folder + "pass_to_grounder_task.pddl"
     sas_path = aux_folder + 'out.sas'
@@ -34,7 +34,7 @@ def grounder(domain_in, task_in, lifted_action) -> List[str]:
 
     project_path = Path(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     print(project_path)
-    project_path = '/home/nader/projects/lifted-white-plan-domain-repair'
+    project_path = '..'
     grounder = os.path.join(project_path, 'fd2', 'src', 'translate', 'translate.py')
     # TODO: change file transactions to memory transactions for efficiency later. 
     with open('/dev/null', 'w') as devnull:
