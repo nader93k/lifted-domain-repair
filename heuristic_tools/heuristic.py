@@ -140,6 +140,7 @@ GOAL_PRED = 'final___goal'
 COUNTER_PRED = 'current_plan_step'
 APPLIED_PRED = 'applied_plan_step'
 NUM_PAR = '?next_plan_step_num'
+obj_pred = lambda obj: f"fix_obj_{obj}"
 make_num = lambda i: f"n{i}"
 to_eff = lambda lit: make_eff(fd.pddl.effects.SimpleEffect(lit))
 
@@ -194,10 +195,12 @@ def integrate_action_sequence(domain, task, action_sequence):
                            fd.pddl.predicates.Predicate(APPLIED_PRED, [fd.pddl.pddl_types.TypedObject(NUM_PAR, 'object')])]
 
     # copy action schema per plan step
+    to_be_fixed = set()
     new_actions = []
     for i, action_step in enumerate(action_sequence):
         action_name = action_step[0]
         action_constants = [(obj, j) for j, obj in enumerate(action_step[1:]) if obj[0] != '?']
+        to_be_fixed |= set(obj for obj, _ in action_constants)
 
         new_action = copy.deepcopy(name_to_action[action_name]) # verbose
         var_remap = dict((new_action.parameters[j].name, obj) for obj, j in action_constants)
@@ -206,6 +209,9 @@ def integrate_action_sequence(domain, task, action_sequence):
 
         # conditions to increase counter
         add_to_pre(fd.pddl.conditions.Atom(COUNTER_PRED, [make_num(i)]), new_action)
+        for var, obj in var_remap.items():
+            add_to_pre(fd.pddl.conditions.Atom(obj_pred(obj), [var]), new_action)
+
         add_to_eff(fd.pddl.conditions.Atom(COUNTER_PRED, [make_num(i+1)]), new_action)
         add_to_eff(fd.pddl.conditions.Atom(APPLIED_PRED, [make_num(i)]), new_action)
         add_to_eff(fd.pddl.conditions.NegatedAtom(COUNTER_PRED, [make_num(i)]), new_action)
@@ -213,6 +219,10 @@ def integrate_action_sequence(domain, task, action_sequence):
         new_actions.append(new_action)
 
     task._init.append(fd.pddl.conditions.Atom(COUNTER_PRED, [make_num(0)]))
+    for obj in to_be_fixed:
+        task._init.append(fd.pddl.conditions.Atom(obj_pred(obj), [obj]))
+
+    domain._predicates += [fd.pddl.predicates.Predicate(obj_pred(obj), [fd.pddl.pddl_types.TypedObject(NUM_PAR, 'object')]) for obj in to_be_fixed]
 
     domain._actions = new_actions
     task._goal = fd.pddl.conditions.Conjunction([
