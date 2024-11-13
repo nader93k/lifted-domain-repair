@@ -1,0 +1,62 @@
+###### MAIN
+search_algorithm: bb
+heuristic_relaxation: zeroary
+instance_ids: instance_ids_small_exp_set
+min_length: 1
+max_length: 15
+timeout_seconds: 900  # 15 * 60
+order: increasing
+benchmark_path: ./input/benchmarks-G1
+log_folder: ./exp_logs/14 BB-allgrounded
+log_interval: 1
+domain_class: null
+run_mode: subprocess
+
+###### Supported Values
+# search_algorithm: astar, bfs, greedy
+# heuristic_relaxation: zeroary, null, unary
+# run_mode: subprocess, pycall
+
+
+###### AStar
+# benchmark_path: ./input/benchmarks-G1
+# search_algorithm: astar
+# log_folder: ./exp_logs/10
+# log_interval: 1
+# timeout_seconds: 900  # 15 * 60
+# order: increasing
+# min_length: 1
+# max_length: 15
+# domain_class: null
+# instance_ids: instance_ids_small_exp_set
+# heuristic_relaxation: zeroary
+# run_mode: subprocess
+
+###### DEBUG
+# benchmark_path: ./input/benchmarks-G1
+# search_algorithm: astar
+# log_folder: ./exp_logs_debug
+# log_interval: 1
+# timeout_seconds: 900  # 15 * 60
+# order: increasing
+# min_length: 5
+# max_length: 15
+# domain_class: null
+# instance_ids: mprime/pprob24-err-rate-0-3
+# heuristic_relaxation: null
+# run_mode: subprocess
+
+
+###### MISC
+# benchmark_path: ./input/benchmarks-G1
+# search_algorithm: astar
+# log_folder: ./exp_logs/9 AStar-full-log length1-15
+# log_interval: 1
+# timeout_seconds: 900  # 15 * 60
+# order: increasing
+# min_length: 1
+# max_length: 15
+# domain_class: null
+# instance_ids: visitall-opt11-strips/pproblem02-full-err-rate-0-1
+# heuristic_relaxation: unary
+# run_mode: subprocess
