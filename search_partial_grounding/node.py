@@ -131,7 +131,7 @@ class Node:
         #     pickle.dump(actions, file)
         ### DEBUG Ends ####
 
-        h_cost = h.evaluate(self.original_domain, task, [(l,) for l in self.lifted_action_sequence])
+        h_cost = h.evaluate(self.original_domain, task, self.lifted_action_sequence)
 
         return h_cost
 
@@ -141,9 +141,9 @@ class Node:
         if self.f_cost == float('inf'):
             raise ValueError("Can't expand this node.")
         
-        next_action_name = self.lifted_action_sequence[0]
         task = copy.deepcopy(self.original_task)
         task.set_init_state(self.current_state)
+
 
         # Precondition relaxing
         # If a precondition is not satisfied then don't check it
@@ -157,7 +157,7 @@ class Node:
         # action.precondition = Conjunction([])
 
         try:
-            self.possible_groundings = Node.grounder(domain, task, next_action_name)
+            self.possible_groundings = Node.grounder(domain, task, self.lifted_action_sequence[0])
         except Exception as error:
             log_data_error = {
                 'current_node': self.to_dict(),

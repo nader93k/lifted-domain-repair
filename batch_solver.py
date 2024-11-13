@@ -13,7 +13,8 @@ import yaml
 
 def run_process(search_algorithm, benchmark_path, log_folder, log_interval, \
                 timeout_seconds, order, min_length, max_length, heuristic_relaxation, \
-                domain_class=None, instance_ids=[], run_mode='subprocess'):
+                domain_class=None, instance_ids=[], lift_prob=0.0, run_mode='subprocess'):
+    
     instance_list = list_instances(benchmark_path, domain_class, instance_ids)
     for instance in smart_instance_generator(instance_list, min_length=min_length
                                              , max_length=max_length
@@ -33,7 +34,8 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval, \
                 str(benchmark_path),
                 log_file,
                 str(log_interval),
-                instance.identifier
+                instance.identifier,
+                str(lift_prob)
             ]
         if heuristic_relaxation:
             cmd.append(heuristic_relaxation)
@@ -90,6 +92,7 @@ if __name__ == "__main__":
             instance_ids = load_instance_ids('instance_ids_small_exp_set.json')
     heuristic_relaxation = config['heuristic_relaxation']
     run_mode = config['run_mode']
+    lift_prob = config['lift_prob']
 
     print(f"Loaded configuration from: {config_file}")
     
@@ -104,4 +107,6 @@ if __name__ == "__main__":
                , domain_class=domain_class
                , instance_ids=instance_ids
                , heuristic_relaxation=heuristic_relaxation
-               , run_mode=run_mode)
+               , lift_prob=lift_prob
+               , run_mode=run_mode
+               )
