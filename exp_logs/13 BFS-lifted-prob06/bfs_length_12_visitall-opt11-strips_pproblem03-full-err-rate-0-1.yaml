@@ -1,0 +1,1096 @@
+---
+timestamp: '2024-11-13T13:17:06.353047'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/13 BFS-lifted-prob06/bfs_length_12_visitall-opt11-strips_pproblem03-full-err-rate-0-1.yaml
+    instance_id: visitall-opt11-strips/pproblem03-full-err-rate-0-1
+    search_algorithm: bfs
+    plan_length: 12
+    domain_class: visitall-opt11-strips
+    instance_name: pproblem03-full-err-rate-0-1
+    ground_plan:
+    - (move loc-x1-y1 loc-x0-y1)
+    - (move loc-x0-y1 loc-x0-y0)
+    - (move loc-x0-y0 loc-x1-y0)
+    - (move loc-x1-y0 loc-x1-y1)
+    - (move loc-x1-y1 loc-x1-y2)
+    - (move loc-x1-y2 loc-x0-y2)
+    - (move loc-x0-y2 loc-x1-y2)
+    - (move loc-x1-y2 loc-x1-y1)
+    - (move loc-x1-y1 loc-x2-y1)
+    - (move loc-x2-y1 loc-x2-y2)
+    - (move loc-x2-y2 loc-x2-y1)
+    - (move loc-x2-y1 loc-x2-y0)
+    lifted_plan:
+    -   - move
+        - loc-x1-y1
+        - loc-x0-y1
+    -   - move
+        - ?loc-x0-y1
+        - ?loc-x0-y0
+    -   - move
+        - ?loc-x0-y0
+        - ?loc-x1-y0
+    -   - move
+        - loc-x1-y0
+        - ?loc-x1-y1
+    -   - move
+        - ?loc-x1-y1
+        - ?loc-x1-y2
+    -   - move
+        - loc-x1-y2
+        - ?loc-x0-y2
+    -   - move
+        - ?loc-x0-y2
+        - loc-x1-y2
+    -   - move
+        - loc-x1-y2
+        - ?loc-x1-y1
+    -   - move
+        - loc-x1-y1
+        - loc-x2-y1
+    -   - move
+        - loc-x2-y1
+        - loc-x2-y2
+    -   - move
+        - ?loc-x2-y2
+        - loc-x2-y1
+    -   - move
+        - loc-x2-y1
+        - loc-x2-y0
+
+
+---
+timestamp: '2024-11-13T13:17:06.357096'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: move,(at-robot ?curpos),precPos,-1
+
+
+---
+timestamp: '2024-11-13T13:17:06.446029'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 1
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''move'', ''loc-x1-y1'', ''loc-x0-y1'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (move loc-x1-y1 loc-x0-y1)
+
+
+---
+timestamp: '2024-11-13T13:17:06.557545'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 2
+    fring_size: 24
+    current_node:
+        depth: 1
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''move'', ''?loc-x0-y1'', ''?loc-x0-y0'']'
+        num_neighbours: 24
+        first_10_possible_groundings:
+        - (move loc-x0-y0 loc-x0-y1)
+        - (move loc-x0-y0 loc-x1-y0)
+        - (move loc-x0-y1 loc-x0-y0)
+        - (move loc-x0-y1 loc-x0-y2)
+        - (move loc-x0-y1 loc-x1-y1)
+        - (move loc-x0-y2 loc-x0-y1)
+        - (move loc-x0-y2 loc-x1-y2)
+        - (move loc-x1-y0 loc-x0-y0)
+        - (move loc-x1-y0 loc-x1-y1)
+        - (move loc-x1-y0 loc-x2-y0)
+
+
+---
+timestamp: '2024-11-13T13:17:06.650388'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 3
+    fring_size: 23
+    current_node:
+        depth: 2
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x0-y0 loc-x0-y1)
+        repair_set: move,(at-robot ?curpos),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''?loc-x0-y0'', ''?loc-x1-y0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:06.739047'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 4
+    fring_size: 22
+    current_node:
+        depth: 2
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x0-y1 loc-x0-y0)
+        repair_set: move,(at-robot ?curpos),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''?loc-x0-y0'', ''?loc-x1-y0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:06.826014'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 5
+    fring_size: 21
+    current_node:
+        depth: 2
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x0-y2 loc-x1-y2)
+        repair_set: move,(at-robot ?curpos),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''?loc-x0-y0'', ''?loc-x1-y0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:06.910396'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 6
+    fring_size: 20
+    current_node:
+        depth: 2
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x1-y2 loc-x0-y2)
+        repair_set: move,(at-robot ?curpos),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''?loc-x0-y0'', ''?loc-x1-y0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:07.007257'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 7
+    fring_size: 19
+    current_node:
+        depth: 2
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x2-y2 loc-x2-y1)
+        repair_set: move,(at-robot ?curpos),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''?loc-x0-y0'', ''?loc-x1-y0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:07.098286'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 8
+    fring_size: 18
+    current_node:
+        depth: 2
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x2-y2 loc-x1-y2)
+        repair_set: move,(at-robot ?curpos),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''?loc-x0-y0'', ''?loc-x1-y0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:07.191623'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 9
+    fring_size: 17
+    current_node:
+        depth: 2
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x2-y1 loc-x2-y2)
+        repair_set: move,(at-robot ?curpos),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''?loc-x0-y0'', ''?loc-x1-y0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:07.278946'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 10
+    fring_size: 16
+    current_node:
+        depth: 2
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x2-y1 loc-x2-y0)
+        repair_set: move,(at-robot ?curpos),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''?loc-x0-y0'', ''?loc-x1-y0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:07.373999'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 11
+    fring_size: 15
+    current_node:
+        depth: 2
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x2-y1 loc-x1-y1)
+        repair_set: move,(at-robot ?curpos),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''?loc-x0-y0'', ''?loc-x1-y0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:07.462457'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 12
+    fring_size: 14
+    current_node:
+        depth: 2
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x2-y0 loc-x2-y1)
+        repair_set: move,(at-robot ?curpos),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''?loc-x0-y0'', ''?loc-x1-y0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:07.578253'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 13
+    fring_size: 13
+    current_node:
+        depth: 2
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x2-y0 loc-x1-y0)
+        repair_set: move,(at-robot ?curpos),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''?loc-x0-y0'', ''?loc-x1-y0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:07.678460'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 14
+    fring_size: 12
+    current_node:
+        depth: 2
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x1-y2 loc-x2-y2)
+        repair_set: move,(at-robot ?curpos),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''?loc-x0-y0'', ''?loc-x1-y0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:07.784800'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 15
+    fring_size: 15
+    current_node:
+        depth: 2
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x1-y1 loc-x2-y1)
+        repair_set: move,(at-robot ?curpos),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''?loc-x0-y0'', ''?loc-x1-y0'']'
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x1-y1 loc-x1-y0)
+        - (move loc-x1-y1 loc-x1-y2)
+        - (move loc-x1-y1 loc-x2-y1)
+
+
+---
+timestamp: '2024-11-13T13:17:07.869431'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 16
+    fring_size: 14
+    current_node:
+        depth: 3
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x1-y1 loc-x2-y1)
+        - (move loc-x1-y1 loc-x0-y1)
+        repair_set: move,(at-robot ?curpos),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''loc-x1-y0'', ''?loc-x1-y1'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:07.954396'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 17
+    fring_size: 13
+    current_node:
+        depth: 3
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x1-y1 loc-x2-y1)
+        - (move loc-x1-y1 loc-x1-y0)
+        repair_set: move,(at-robot ?curpos),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''loc-x1-y0'', ''?loc-x1-y1'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:08.052843'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 18
+    fring_size: 12
+    current_node:
+        depth: 3
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x1-y1 loc-x2-y1)
+        - (move loc-x1-y1 loc-x1-y2)
+        repair_set: move,(at-robot ?curpos),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''loc-x1-y0'', ''?loc-x1-y1'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:08.171314'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 19
+    fring_size: 11
+    current_node:
+        depth: 3
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x1-y1 loc-x2-y1)
+        - (move loc-x1-y1 loc-x2-y1)
+        repair_set: move,(at-robot ?curpos),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''loc-x1-y0'', ''?loc-x1-y1'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:08.297698'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 20
+    fring_size: 14
+    current_node:
+        depth: 2
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x1-y1 loc-x1-y0)
+        repair_set: move,(at-robot ?curpos),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''?loc-x0-y0'', ''?loc-x1-y0'']'
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x1-y1 loc-x1-y0)
+        - (move loc-x1-y1 loc-x1-y2)
+        - (move loc-x1-y1 loc-x2-y1)
+
+
+---
+timestamp: '2024-11-13T13:17:08.415504'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 21
+    fring_size: 13
+    current_node:
+        depth: 3
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x1-y1 loc-x1-y0)
+        - (move loc-x1-y1 loc-x0-y1)
+        repair_set: move,(at-robot ?curpos),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''loc-x1-y0'', ''?loc-x1-y1'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:08.512528'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 22
+    fring_size: 12
+    current_node:
+        depth: 3
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x1-y1 loc-x1-y0)
+        - (move loc-x1-y1 loc-x1-y0)
+        repair_set: move,(at-robot ?curpos),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''loc-x1-y0'', ''?loc-x1-y1'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:08.611839'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 23
+    fring_size: 11
+    current_node:
+        depth: 3
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x1-y1 loc-x1-y0)
+        - (move loc-x1-y1 loc-x2-y1)
+        repair_set: move,(at-robot ?curpos),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''loc-x1-y0'', ''?loc-x1-y1'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:08.712721'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 24
+    fring_size: 10
+    current_node:
+        depth: 3
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x1-y1 loc-x1-y0)
+        - (move loc-x1-y1 loc-x1-y2)
+        repair_set: move,(at-robot ?curpos),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''loc-x1-y0'', ''?loc-x1-y1'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:08.804827'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 25
+    fring_size: 13
+    current_node:
+        depth: 2
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x1-y1 loc-x0-y1)
+        repair_set: move,(at-robot ?curpos),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''?loc-x0-y0'', ''?loc-x1-y0'']'
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x1-y1 loc-x1-y0)
+        - (move loc-x1-y1 loc-x1-y2)
+        - (move loc-x1-y1 loc-x2-y1)
+
+
+---
+timestamp: '2024-11-13T13:17:08.892691'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 26
+    fring_size: 12
+    current_node:
+        depth: 3
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x1-y1 loc-x0-y1)
+        repair_set: move,(at-robot ?curpos),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''loc-x1-y0'', ''?loc-x1-y1'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:08.984660'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 27
+    fring_size: 11
+    current_node:
+        depth: 3
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x1-y1 loc-x1-y2)
+        repair_set: move,(at-robot ?curpos),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''loc-x1-y0'', ''?loc-x1-y1'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:09.071011'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 28
+    fring_size: 10
+    current_node:
+        depth: 3
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x1-y1 loc-x2-y1)
+        repair_set: move,(at-robot ?curpos),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''loc-x1-y0'', ''?loc-x1-y1'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:09.158588'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 29
+    fring_size: 9
+    current_node:
+        depth: 3
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x1-y1 loc-x1-y0)
+        repair_set: move,(at-robot ?curpos),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''loc-x1-y0'', ''?loc-x1-y1'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:09.244291'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 30
+    fring_size: 8
+    current_node:
+        depth: 2
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x1-y0 loc-x2-y0)
+        repair_set: move,(at-robot ?curpos),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''?loc-x0-y0'', ''?loc-x1-y0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:09.331772'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 31
+    fring_size: 7
+    current_node:
+        depth: 2
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x0-y1 loc-x1-y1)
+        repair_set: move,(at-robot ?curpos),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''?loc-x0-y0'', ''?loc-x1-y0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:09.427090'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 32
+    fring_size: 10
+    current_node:
+        depth: 2
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x1-y1 loc-x1-y2)
+        repair_set: move,(at-robot ?curpos),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''?loc-x0-y0'', ''?loc-x1-y0'']'
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x1-y1 loc-x1-y0)
+        - (move loc-x1-y1 loc-x1-y2)
+        - (move loc-x1-y1 loc-x2-y1)
+
+
+---
+timestamp: '2024-11-13T13:17:09.515688'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 33
+    fring_size: 9
+    current_node:
+        depth: 3
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x1-y1 loc-x1-y2)
+        - (move loc-x1-y1 loc-x0-y1)
+        repair_set: move,(at-robot ?curpos),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''loc-x1-y0'', ''?loc-x1-y1'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:09.606311'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 34
+    fring_size: 8
+    current_node:
+        depth: 3
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x1-y1 loc-x1-y2)
+        - (move loc-x1-y1 loc-x1-y0)
+        repair_set: move,(at-robot ?curpos),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''loc-x1-y0'', ''?loc-x1-y1'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:09.696510'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 35
+    fring_size: 7
+    current_node:
+        depth: 3
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x1-y1 loc-x1-y2)
+        - (move loc-x1-y1 loc-x2-y1)
+        repair_set: move,(at-robot ?curpos),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''loc-x1-y0'', ''?loc-x1-y1'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:09.783079'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 36
+    fring_size: 6
+    current_node:
+        depth: 3
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x1-y1 loc-x1-y2)
+        - (move loc-x1-y1 loc-x1-y2)
+        repair_set: move,(at-robot ?curpos),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''loc-x1-y0'', ''?loc-x1-y1'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:09.867439'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 37
+    fring_size: 5
+    current_node:
+        depth: 2
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x1-y0 loc-x1-y1)
+        repair_set: move,(at-robot ?curpos),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''?loc-x0-y0'', ''?loc-x1-y0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:09.954949'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 38
+    fring_size: 4
+    current_node:
+        depth: 2
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x1-y0 loc-x0-y0)
+        repair_set: move,(at-robot ?curpos),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''?loc-x0-y0'', ''?loc-x1-y0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:10.046760'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 39
+    fring_size: 3
+    current_node:
+        depth: 2
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x1-y2 loc-x1-y1)
+        repair_set: move,(at-robot ?curpos),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''?loc-x0-y0'', ''?loc-x1-y0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:10.136942'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 40
+    fring_size: 2
+    current_node:
+        depth: 2
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x0-y2 loc-x0-y1)
+        repair_set: move,(at-robot ?curpos),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''?loc-x0-y0'', ''?loc-x1-y0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:10.221221'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 41
+    fring_size: 1
+    current_node:
+        depth: 2
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x0-y0 loc-x1-y0)
+        repair_set: move,(at-robot ?curpos),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''?loc-x0-y0'', ''?loc-x1-y0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:10.307197'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 42
+    fring_size: 0
+    current_node:
+        depth: 2
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x0-y1 loc-x0-y2)
+        repair_set: move,(at-robot ?curpos),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''?loc-x0-y0'', ''?loc-x1-y0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:10.308576'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.1 minutes = 3.96 seconds
+
+
+---
+timestamp: '2024-11-13T13:17:10.419618'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+

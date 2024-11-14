@@ -1,0 +1,681 @@
+---
+timestamp: '2024-11-13T13:17:01.824410'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/13 BFS-lifted-prob06/bfs_length_12_transport-opt08-strips_pp22-err-rate-0-1.yaml
+    instance_id: transport-opt08-strips/pp22-err-rate-0-1
+    search_algorithm: bfs
+    plan_length: 12
+    domain_class: transport-opt08-strips
+    instance_name: pp22-err-rate-0-1
+    ground_plan:
+    - (pick-up truck-2 city-2-loc-2 package-1 capacity-3 capacity-4)
+    - (drive truck-2 city-2-loc-2 city-1-loc-2)
+    - (pick-up truck-2 city-1-loc-2 package-2 capacity-2 capacity-3)
+    - (drop truck-2 city-1-loc-2 package-1 capacity-2 capacity-3)
+    - (drive truck-2 city-1-loc-2 city-2-loc-2)
+    - (drop truck-2 city-2-loc-2 package-2 capacity-3 capacity-4)
+    - (drive truck-1 city-3-loc-1 city-3-loc-2)
+    - (pick-up truck-1 city-3-loc-2 package-3 capacity-1 capacity-2)
+    - (drive truck-1 city-3-loc-2 city-3-loc-1)
+    - (drive truck-1 city-3-loc-1 city-1-loc-2)
+    - (drive truck-1 city-1-loc-2 city-1-loc-1)
+    - (drop truck-1 city-1-loc-1 package-3 capacity-1 capacity-2)
+    lifted_plan:
+    -   - pick-up
+        - truck-2
+        - city-2-loc-2
+        - ?package-1
+        - ?capacity-3
+        - ?capacity-4
+    -   - drive
+        - ?truck-2
+        - city-2-loc-2
+        - ?city-1-loc-2
+    -   - pick-up
+        - ?truck-2
+        - ?city-1-loc-2
+        - package-2
+        - ?capacity-2
+        - ?capacity-3
+    -   - drop
+        - truck-2
+        - city-1-loc-2
+        - ?package-1
+        - capacity-2
+        - capacity-3
+    -   - drive
+        - truck-2
+        - city-1-loc-2
+        - ?city-2-loc-2
+    -   - drop
+        - truck-2
+        - city-2-loc-2
+        - package-2
+        - ?capacity-3
+        - ?capacity-4
+    -   - drive
+        - ?truck-1
+        - city-3-loc-1
+        - city-3-loc-2
+    -   - pick-up
+        - truck-1
+        - ?city-3-loc-2
+        - package-3
+        - ?capacity-1
+        - capacity-2
+    -   - drive
+        - ?truck-1
+        - ?city-3-loc-2
+        - city-3-loc-1
+    -   - drive
+        - ?truck-1
+        - city-3-loc-1
+        - city-1-loc-2
+    -   - drive
+        - ?truck-1
+        - ?city-1-loc-2
+        - city-1-loc-1
+    -   - drop
+        - ?truck-1
+        - ?city-1-loc-1
+        - package-3
+        - ?capacity-1
+        - ?capacity-2
+
+
+---
+timestamp: '2024-11-13T13:17:01.830448'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: drop,(at ?p ?l),effPos,1
+
+
+---
+timestamp: '2024-11-13T13:17:01.968613'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 4
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''pick-up'', ''truck-2'', ''city-2-loc-2'', ''?package-1'',
+            ''?capacity-3'', ''?capacity-4'']'
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (pick-up truck-2 city-2-loc-2 package-1 capacity-0 capacity-1)
+        - (pick-up truck-2 city-2-loc-2 package-1 capacity-1 capacity-2)
+        - (pick-up truck-2 city-2-loc-2 package-1 capacity-2 capacity-3)
+        - (pick-up truck-2 city-2-loc-2 package-1 capacity-3 capacity-4)
+
+
+---
+timestamp: '2024-11-13T13:17:02.092289'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 2
+    fring_size: 5
+    current_node:
+        depth: 1
+        ground_actions:
+        - (pick-up truck-2 city-2-loc-2 package-1 capacity-3 capacity-4)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drive'', ''?truck-2'', ''city-2-loc-2'', ''?city-1-loc-2'']'
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (drive truck-2 city-2-loc-2 city-1-loc-2)
+        - (drive truck-2 city-2-loc-2 city-2-loc-1)
+
+
+---
+timestamp: '2024-11-13T13:17:02.234657'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 3
+    fring_size: 7
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pick-up truck-2 city-2-loc-2 package-1 capacity-3 capacity-4)
+        - (drive truck-2 city-2-loc-2 city-1-loc-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''pick-up'', ''?truck-2'', ''?city-1-loc-2'', ''package-2'',
+            ''?capacity-2'', ''?capacity-3'']'
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (pick-up truck-2 city-1-loc-2 package-2 capacity-0 capacity-1)
+        - (pick-up truck-2 city-1-loc-2 package-2 capacity-1 capacity-2)
+        - (pick-up truck-2 city-1-loc-2 package-2 capacity-2 capacity-3)
+
+
+---
+timestamp: '2024-11-13T13:17:02.337536'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 4
+    fring_size: 8
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick-up truck-2 city-2-loc-2 package-1 capacity-3 capacity-4)
+        - (drive truck-2 city-2-loc-2 city-1-loc-2)
+        - (pick-up truck-2 city-1-loc-2 package-2 capacity-2 capacity-3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drop'', ''truck-2'', ''city-1-loc-2'', ''?package-1'',
+            ''capacity-2'', ''capacity-3'']'
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (drop truck-2 city-1-loc-2 package-1 capacity-2 capacity-3)
+        - (drop truck-2 city-1-loc-2 package-2 capacity-2 capacity-3)
+
+
+---
+timestamp: '2024-11-13T13:17:02.447867'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 5
+    fring_size: 10
+    current_node:
+        depth: 4
+        ground_actions:
+        - (pick-up truck-2 city-2-loc-2 package-1 capacity-3 capacity-4)
+        - (drive truck-2 city-2-loc-2 city-1-loc-2)
+        - (pick-up truck-2 city-1-loc-2 package-2 capacity-2 capacity-3)
+        - (drop truck-2 city-1-loc-2 package-1 capacity-2 capacity-3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drive'', ''truck-2'', ''city-1-loc-2'', ''?city-2-loc-2'']'
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (drive truck-2 city-1-loc-2 city-1-loc-1)
+        - (drive truck-2 city-1-loc-2 city-2-loc-2)
+        - (drive truck-2 city-1-loc-2 city-3-loc-1)
+
+
+---
+timestamp: '2024-11-13T13:17:02.571544'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 6
+    fring_size: 9
+    current_node:
+        depth: 5
+        ground_actions:
+        - (pick-up truck-2 city-2-loc-2 package-1 capacity-3 capacity-4)
+        - (drive truck-2 city-2-loc-2 city-1-loc-2)
+        - (pick-up truck-2 city-1-loc-2 package-2 capacity-2 capacity-3)
+        - (drop truck-2 city-1-loc-2 package-1 capacity-2 capacity-3)
+        - (drive truck-2 city-1-loc-2 city-1-loc-1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drop'', ''truck-2'', ''city-2-loc-2'', ''package-2'',
+            ''?capacity-3'', ''?capacity-4'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:02.702156'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 7
+    fring_size: 9
+    current_node:
+        depth: 5
+        ground_actions:
+        - (pick-up truck-2 city-2-loc-2 package-1 capacity-3 capacity-4)
+        - (drive truck-2 city-2-loc-2 city-1-loc-2)
+        - (pick-up truck-2 city-1-loc-2 package-2 capacity-2 capacity-3)
+        - (drop truck-2 city-1-loc-2 package-1 capacity-2 capacity-3)
+        - (drive truck-2 city-1-loc-2 city-2-loc-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drop'', ''truck-2'', ''city-2-loc-2'', ''package-2'',
+            ''?capacity-3'', ''?capacity-4'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (drop truck-2 city-2-loc-2 package-2 capacity-3 capacity-4)
+
+
+---
+timestamp: '2024-11-13T13:17:02.833722'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 8
+    fring_size: 9
+    current_node:
+        depth: 6
+        ground_actions:
+        - (pick-up truck-2 city-2-loc-2 package-1 capacity-3 capacity-4)
+        - (drive truck-2 city-2-loc-2 city-1-loc-2)
+        - (pick-up truck-2 city-1-loc-2 package-2 capacity-2 capacity-3)
+        - (drop truck-2 city-1-loc-2 package-1 capacity-2 capacity-3)
+        - (drive truck-2 city-1-loc-2 city-2-loc-2)
+        - (drop truck-2 city-2-loc-2 package-2 capacity-3 capacity-4)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drive'', ''?truck-1'', ''city-3-loc-1'', ''city-3-loc-2'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (drive truck-1 city-3-loc-1 city-3-loc-2)
+
+
+---
+timestamp: '2024-11-13T13:17:02.945572'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 9
+    fring_size: 9
+    current_node:
+        depth: 7
+        ground_actions:
+        - (pick-up truck-2 city-2-loc-2 package-1 capacity-3 capacity-4)
+        - (drive truck-2 city-2-loc-2 city-1-loc-2)
+        - (pick-up truck-2 city-1-loc-2 package-2 capacity-2 capacity-3)
+        - (drop truck-2 city-1-loc-2 package-1 capacity-2 capacity-3)
+        - (drive truck-2 city-1-loc-2 city-2-loc-2)
+        - (drop truck-2 city-2-loc-2 package-2 capacity-3 capacity-4)
+        - (drive truck-1 city-3-loc-1 city-3-loc-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''pick-up'', ''truck-1'', ''?city-3-loc-2'', ''package-3'',
+            ''?capacity-1'', ''capacity-2'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick-up truck-1 city-3-loc-2 package-3 capacity-1 capacity-2)
+
+
+---
+timestamp: '2024-11-13T13:17:03.051829'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 10
+    fring_size: 9
+    current_node:
+        depth: 8
+        ground_actions:
+        - (pick-up truck-2 city-2-loc-2 package-1 capacity-3 capacity-4)
+        - (drive truck-2 city-2-loc-2 city-1-loc-2)
+        - (pick-up truck-2 city-1-loc-2 package-2 capacity-2 capacity-3)
+        - (drop truck-2 city-1-loc-2 package-1 capacity-2 capacity-3)
+        - (drive truck-2 city-1-loc-2 city-2-loc-2)
+        - (drop truck-2 city-2-loc-2 package-2 capacity-3 capacity-4)
+        - (drive truck-1 city-3-loc-1 city-3-loc-2)
+        - (pick-up truck-1 city-3-loc-2 package-3 capacity-1 capacity-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drive'', ''?truck-1'', ''?city-3-loc-2'', ''city-3-loc-1'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (drive truck-1 city-3-loc-2 city-3-loc-1)
+
+
+---
+timestamp: '2024-11-13T13:17:03.169254'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 11
+    fring_size: 9
+    current_node:
+        depth: 9
+        ground_actions:
+        - (pick-up truck-2 city-2-loc-2 package-1 capacity-3 capacity-4)
+        - (drive truck-2 city-2-loc-2 city-1-loc-2)
+        - (pick-up truck-2 city-1-loc-2 package-2 capacity-2 capacity-3)
+        - (drop truck-2 city-1-loc-2 package-1 capacity-2 capacity-3)
+        - (drive truck-2 city-1-loc-2 city-2-loc-2)
+        - (drop truck-2 city-2-loc-2 package-2 capacity-3 capacity-4)
+        - (drive truck-1 city-3-loc-1 city-3-loc-2)
+        - (pick-up truck-1 city-3-loc-2 package-3 capacity-1 capacity-2)
+        - (drive truck-1 city-3-loc-2 city-3-loc-1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drive'', ''?truck-1'', ''city-3-loc-1'', ''city-1-loc-2'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (drive truck-1 city-3-loc-1 city-1-loc-2)
+
+
+---
+timestamp: '2024-11-13T13:17:03.302681'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 12
+    fring_size: 9
+    current_node:
+        depth: 10
+        ground_actions:
+        - (pick-up truck-2 city-2-loc-2 package-1 capacity-3 capacity-4)
+        - (drive truck-2 city-2-loc-2 city-1-loc-2)
+        - (pick-up truck-2 city-1-loc-2 package-2 capacity-2 capacity-3)
+        - (drop truck-2 city-1-loc-2 package-1 capacity-2 capacity-3)
+        - (drive truck-2 city-1-loc-2 city-2-loc-2)
+        - (drop truck-2 city-2-loc-2 package-2 capacity-3 capacity-4)
+        - (drive truck-1 city-3-loc-1 city-3-loc-2)
+        - (pick-up truck-1 city-3-loc-2 package-3 capacity-1 capacity-2)
+        - (drive truck-1 city-3-loc-2 city-3-loc-1)
+        - (drive truck-1 city-3-loc-1 city-1-loc-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drive'', ''?truck-1'', ''?city-1-loc-2'', ''city-1-loc-1'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (drive truck-1 city-1-loc-2 city-1-loc-1)
+
+
+---
+timestamp: '2024-11-13T13:17:03.458685'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 13
+    fring_size: 11
+    current_node:
+        depth: 11
+        ground_actions:
+        - (pick-up truck-2 city-2-loc-2 package-1 capacity-3 capacity-4)
+        - (drive truck-2 city-2-loc-2 city-1-loc-2)
+        - (pick-up truck-2 city-1-loc-2 package-2 capacity-2 capacity-3)
+        - (drop truck-2 city-1-loc-2 package-1 capacity-2 capacity-3)
+        - (drive truck-2 city-1-loc-2 city-2-loc-2)
+        - (drop truck-2 city-2-loc-2 package-2 capacity-3 capacity-4)
+        - (drive truck-1 city-3-loc-1 city-3-loc-2)
+        - (pick-up truck-1 city-3-loc-2 package-3 capacity-1 capacity-2)
+        - (drive truck-1 city-3-loc-2 city-3-loc-1)
+        - (drive truck-1 city-3-loc-1 city-1-loc-2)
+        - (drive truck-1 city-1-loc-2 city-1-loc-1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drop'', ''?truck-1'', ''?city-1-loc-1'', ''package-3'',
+            ''?capacity-1'', ''?capacity-2'']'
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (drop truck-1 city-1-loc-1 package-3 capacity-1 capacity-2)
+        - (drop truck-1 city-1-loc-1 package-3 capacity-2 capacity-3)
+        - (drop truck-1 city-1-loc-1 package-3 capacity-3 capacity-4)
+
+
+---
+timestamp: '2024-11-13T13:17:03.582180'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 14
+    fring_size: 10
+    current_node:
+        depth: 5
+        ground_actions:
+        - (pick-up truck-2 city-2-loc-2 package-1 capacity-3 capacity-4)
+        - (drive truck-2 city-2-loc-2 city-1-loc-2)
+        - (pick-up truck-2 city-1-loc-2 package-2 capacity-2 capacity-3)
+        - (drop truck-2 city-1-loc-2 package-1 capacity-2 capacity-3)
+        - (drive truck-2 city-1-loc-2 city-3-loc-1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drop'', ''truck-2'', ''city-2-loc-2'', ''package-2'',
+            ''?capacity-3'', ''?capacity-4'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:03.691310'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 15
+    fring_size: 12
+    current_node:
+        depth: 4
+        ground_actions:
+        - (pick-up truck-2 city-2-loc-2 package-1 capacity-3 capacity-4)
+        - (drive truck-2 city-2-loc-2 city-1-loc-2)
+        - (pick-up truck-2 city-1-loc-2 package-2 capacity-2 capacity-3)
+        - (drop truck-2 city-1-loc-2 package-2 capacity-2 capacity-3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drive'', ''truck-2'', ''city-1-loc-2'', ''?city-2-loc-2'']'
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (drive truck-2 city-1-loc-2 city-1-loc-1)
+        - (drive truck-2 city-1-loc-2 city-2-loc-2)
+        - (drive truck-2 city-1-loc-2 city-3-loc-1)
+
+
+---
+timestamp: '2024-11-13T13:17:03.820467'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 16
+    fring_size: 11
+    current_node:
+        depth: 5
+        ground_actions:
+        - (pick-up truck-2 city-2-loc-2 package-1 capacity-3 capacity-4)
+        - (drive truck-2 city-2-loc-2 city-1-loc-2)
+        - (pick-up truck-2 city-1-loc-2 package-2 capacity-2 capacity-3)
+        - (drop truck-2 city-1-loc-2 package-2 capacity-2 capacity-3)
+        - (drive truck-2 city-1-loc-2 city-1-loc-1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drop'', ''truck-2'', ''city-2-loc-2'', ''package-2'',
+            ''?capacity-3'', ''?capacity-4'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:03.947825'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 17
+    fring_size: 10
+    current_node:
+        depth: 5
+        ground_actions:
+        - (pick-up truck-2 city-2-loc-2 package-1 capacity-3 capacity-4)
+        - (drive truck-2 city-2-loc-2 city-1-loc-2)
+        - (pick-up truck-2 city-1-loc-2 package-2 capacity-2 capacity-3)
+        - (drop truck-2 city-1-loc-2 package-2 capacity-2 capacity-3)
+        - (drive truck-2 city-1-loc-2 city-3-loc-1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drop'', ''truck-2'', ''city-2-loc-2'', ''package-2'',
+            ''?capacity-3'', ''?capacity-4'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:04.046594'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 18
+    fring_size: 9
+    current_node:
+        depth: 5
+        ground_actions:
+        - (pick-up truck-2 city-2-loc-2 package-1 capacity-3 capacity-4)
+        - (drive truck-2 city-2-loc-2 city-1-loc-2)
+        - (pick-up truck-2 city-1-loc-2 package-2 capacity-2 capacity-3)
+        - (drop truck-2 city-1-loc-2 package-2 capacity-2 capacity-3)
+        - (drive truck-2 city-1-loc-2 city-2-loc-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drop'', ''truck-2'', ''city-2-loc-2'', ''package-2'',
+            ''?capacity-3'', ''?capacity-4'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:04.146357'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 19
+    fring_size: 8
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pick-up truck-2 city-2-loc-2 package-1 capacity-3 capacity-4)
+        - (drive truck-2 city-2-loc-2 city-2-loc-1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''pick-up'', ''?truck-2'', ''?city-1-loc-2'', ''package-2'',
+            ''?capacity-2'', ''?capacity-3'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:17:04.147770'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: true
+    iteration: 20
+    fring_size: 7
+    current_node:
+        depth: 12
+        ground_actions:
+        - (pick-up truck-2 city-2-loc-2 package-1 capacity-3 capacity-4)
+        - (drive truck-2 city-2-loc-2 city-1-loc-2)
+        - (pick-up truck-2 city-1-loc-2 package-2 capacity-2 capacity-3)
+        - (drop truck-2 city-1-loc-2 package-1 capacity-2 capacity-3)
+        - (drive truck-2 city-1-loc-2 city-2-loc-2)
+        - (drop truck-2 city-2-loc-2 package-2 capacity-3 capacity-4)
+        - (drive truck-1 city-3-loc-1 city-3-loc-2)
+        - (pick-up truck-1 city-3-loc-2 package-3 capacity-1 capacity-2)
+        - (drive truck-1 city-3-loc-2 city-3-loc-1)
+        - (drive truck-1 city-3-loc-1 city-1-loc-2)
+        - (drive truck-1 city-1-loc-2 city-1-loc-1)
+        - (drop truck-1 city-1-loc-1 package-3 capacity-1 capacity-2)
+        repair_set: drop,(at ?p ?l),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2024-11-13T13:17:04.149546'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.0 minutes = 2.33 seconds
+
+
+---
+timestamp: '2024-11-13T13:17:04.232475'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+

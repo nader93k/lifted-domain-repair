@@ -1,0 +1,932 @@
+---
+timestamp: '2024-11-13T13:11:48.833555'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/13 BFS-lifted-prob06/bfs_length_5_mprime_pprob31-err-rate-0-5.yaml
+    instance_id: mprime/pprob31-err-rate-0-5
+    search_algorithm: bfs
+    plan_length: 5
+    domain_class: mprime
+    instance_name: pprob31-err-rate-0-5
+    ground_plan:
+    - (feast love ham cantelope quebec kentucky)
+    - (overcome prostatitis learning grapefruit earth saturn)
+    - (feast learning grapefruit ham alsace quebec)
+    - (feast learning ham cantelope alsace quebec)
+    - (succumb prostatitis learning cantelope earth saturn)
+    lifted_plan:
+    -   - feast
+        - love
+        - ham
+        - ?cantelope
+        - ?quebec
+        - ?kentucky
+    -   - overcome
+        - ?prostatitis
+        - learning
+        - ?grapefruit
+        - ?earth
+        - ?saturn
+    -   - feast
+        - learning
+        - ?grapefruit
+        - ?ham
+        - alsace
+        - quebec
+    -   - feast
+        - ?learning
+        - ham
+        - cantelope
+        - alsace
+        - quebec
+    -   - succumb
+        - ?prostatitis
+        - learning
+        - cantelope
+        - earth
+        - ?saturn
+
+
+---
+timestamp: '2024-11-13T13:11:48.842348'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: overcome,(fears ?c ?v),effPos,1
+
+
+---
+timestamp: '2024-11-13T13:11:49.001921'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 6
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''ham'', ''?cantelope'', ''?quebec'',
+            ''?kentucky'']'
+        num_neighbours: 6
+        first_10_possible_groundings:
+        - (feast love ham cantelope alsace quebec)
+        - (feast love ham cantelope quebec kentucky)
+        - (feast love ham grapefruit alsace quebec)
+        - (feast love ham grapefruit quebec kentucky)
+        - (feast love ham muffin alsace quebec)
+        - (feast love ham muffin quebec kentucky)
+
+
+---
+timestamp: '2024-11-13T13:11:49.106532'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 2
+    fring_size: 7
+    current_node:
+        depth: 1
+        ground_actions:
+        - (feast love ham cantelope quebec kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''overcome'', ''?prostatitis'', ''learning'', ''?grapefruit'',
+            ''?earth'', ''?saturn'']'
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (overcome grief learning grapefruit earth saturn)
+        - (overcome prostatitis learning grapefruit earth saturn)
+
+
+---
+timestamp: '2024-11-13T13:11:49.280033'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 3
+    fring_size: 21
+    current_node:
+        depth: 2
+        ground_actions:
+        - (feast love ham cantelope quebec kentucky)
+        - (overcome grief learning grapefruit earth saturn)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''learning'', ''?grapefruit'', ''?ham'',
+            ''alsace'', ''quebec'']'
+        num_neighbours: 15
+        first_10_possible_groundings:
+        - (feast learning cantelope bacon alsace quebec)
+        - (feast learning cantelope chocolate alsace quebec)
+        - (feast learning cantelope ham alsace quebec)
+        - (feast learning chicken bacon alsace quebec)
+        - (feast learning chicken muffin alsace quebec)
+        - (feast learning chocolate cantelope alsace quebec)
+        - (feast learning chocolate haroset alsace quebec)
+        - (feast learning grapefruit ham alsace quebec)
+        - (feast learning grapefruit haroset alsace quebec)
+        - (feast learning ham cantelope alsace quebec)
+
+
+---
+timestamp: '2024-11-13T13:11:49.381453'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 4
+    fring_size: 21
+    current_node:
+        depth: 3
+        ground_actions:
+        - (feast love ham cantelope quebec kentucky)
+        - (overcome grief learning grapefruit earth saturn)
+        - (feast learning grapefruit ham alsace quebec)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''?learning'', ''ham'', ''cantelope'', ''alsace'',
+            ''quebec'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (feast learning ham cantelope alsace quebec)
+
+
+---
+timestamp: '2024-11-13T13:11:49.504132'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 5
+    fring_size: 21
+    current_node:
+        depth: 4
+        ground_actions:
+        - (feast love ham cantelope quebec kentucky)
+        - (overcome grief learning grapefruit earth saturn)
+        - (feast learning grapefruit ham alsace quebec)
+        - (feast learning ham cantelope alsace quebec)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''succumb'', ''?prostatitis'', ''learning'', ''cantelope'',
+            ''earth'', ''?saturn'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (succumb abrasion learning cantelope earth saturn)
+        - (succumb anger learning cantelope earth saturn)
+        - (succumb angina learning cantelope earth saturn)
+        - (succumb depression learning cantelope earth saturn)
+        - (succumb dread learning cantelope earth saturn)
+        - (succumb grief learning cantelope earth saturn)
+        - (succumb hangover learning cantelope earth saturn)
+        - (succumb loneliness learning cantelope earth saturn)
+        - (succumb prostatitis learning cantelope earth saturn)
+        - (succumb sciatica learning cantelope earth saturn)
+
+
+---
+timestamp: '2024-11-13T13:11:49.609147'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 6
+    fring_size: 20
+    current_node:
+        depth: 3
+        ground_actions:
+        - (feast love ham cantelope quebec kentucky)
+        - (overcome grief learning grapefruit earth saturn)
+        - (feast learning grapefruit haroset alsace quebec)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''?learning'', ''ham'', ''cantelope'', ''alsace'',
+            ''quebec'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:11:49.775130'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 7
+    fring_size: 34
+    current_node:
+        depth: 2
+        ground_actions:
+        - (feast love ham cantelope quebec kentucky)
+        - (overcome prostatitis learning grapefruit earth saturn)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''learning'', ''?grapefruit'', ''?ham'',
+            ''alsace'', ''quebec'']'
+        num_neighbours: 15
+        first_10_possible_groundings:
+        - (feast learning cantelope bacon alsace quebec)
+        - (feast learning cantelope chocolate alsace quebec)
+        - (feast learning cantelope ham alsace quebec)
+        - (feast learning chicken bacon alsace quebec)
+        - (feast learning chicken muffin alsace quebec)
+        - (feast learning chocolate cantelope alsace quebec)
+        - (feast learning chocolate haroset alsace quebec)
+        - (feast learning grapefruit ham alsace quebec)
+        - (feast learning grapefruit haroset alsace quebec)
+        - (feast learning ham cantelope alsace quebec)
+
+
+---
+timestamp: '2024-11-13T13:11:49.883324'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 8
+    fring_size: 34
+    current_node:
+        depth: 3
+        ground_actions:
+        - (feast love ham cantelope quebec kentucky)
+        - (overcome prostatitis learning grapefruit earth saturn)
+        - (feast learning grapefruit ham alsace quebec)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''?learning'', ''ham'', ''cantelope'', ''alsace'',
+            ''quebec'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (feast learning ham cantelope alsace quebec)
+
+
+---
+timestamp: '2024-11-13T13:11:50.030727'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 9
+    fring_size: 34
+    current_node:
+        depth: 4
+        ground_actions:
+        - (feast love ham cantelope quebec kentucky)
+        - (overcome prostatitis learning grapefruit earth saturn)
+        - (feast learning grapefruit ham alsace quebec)
+        - (feast learning ham cantelope alsace quebec)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''succumb'', ''?prostatitis'', ''learning'', ''cantelope'',
+            ''earth'', ''?saturn'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (succumb abrasion learning cantelope earth saturn)
+        - (succumb anger learning cantelope earth saturn)
+        - (succumb angina learning cantelope earth saturn)
+        - (succumb depression learning cantelope earth saturn)
+        - (succumb dread learning cantelope earth saturn)
+        - (succumb grief learning cantelope earth saturn)
+        - (succumb hangover learning cantelope earth saturn)
+        - (succumb loneliness learning cantelope earth saturn)
+        - (succumb prostatitis learning cantelope earth saturn)
+        - (succumb sciatica learning cantelope earth saturn)
+
+
+---
+timestamp: '2024-11-13T13:11:50.130206'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 10
+    fring_size: 33
+    current_node:
+        depth: 3
+        ground_actions:
+        - (feast love ham cantelope quebec kentucky)
+        - (overcome prostatitis learning grapefruit earth saturn)
+        - (feast learning grapefruit haroset alsace quebec)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''?learning'', ''ham'', ''cantelope'', ''alsace'',
+            ''quebec'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:11:50.235154'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 11
+    fring_size: 34
+    current_node:
+        depth: 1
+        ground_actions:
+        - (feast love ham muffin quebec kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''overcome'', ''?prostatitis'', ''learning'', ''?grapefruit'',
+            ''?earth'', ''?saturn'']'
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (overcome grief learning grapefruit earth saturn)
+        - (overcome prostatitis learning grapefruit earth saturn)
+
+
+---
+timestamp: '2024-11-13T13:11:50.387030'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 12
+    fring_size: 48
+    current_node:
+        depth: 2
+        ground_actions:
+        - (feast love ham muffin quebec kentucky)
+        - (overcome grief learning grapefruit earth saturn)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''learning'', ''?grapefruit'', ''?ham'',
+            ''alsace'', ''quebec'']'
+        num_neighbours: 15
+        first_10_possible_groundings:
+        - (feast learning cantelope bacon alsace quebec)
+        - (feast learning cantelope chocolate alsace quebec)
+        - (feast learning cantelope ham alsace quebec)
+        - (feast learning chicken bacon alsace quebec)
+        - (feast learning chicken muffin alsace quebec)
+        - (feast learning chocolate cantelope alsace quebec)
+        - (feast learning chocolate haroset alsace quebec)
+        - (feast learning grapefruit ham alsace quebec)
+        - (feast learning grapefruit haroset alsace quebec)
+        - (feast learning ham cantelope alsace quebec)
+
+
+---
+timestamp: '2024-11-13T13:11:50.487728'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 13
+    fring_size: 48
+    current_node:
+        depth: 3
+        ground_actions:
+        - (feast love ham muffin quebec kentucky)
+        - (overcome grief learning grapefruit earth saturn)
+        - (feast learning grapefruit ham alsace quebec)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''?learning'', ''ham'', ''cantelope'', ''alsace'',
+            ''quebec'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (feast learning ham cantelope alsace quebec)
+
+
+---
+timestamp: '2024-11-13T13:11:50.627993'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 14
+    fring_size: 48
+    current_node:
+        depth: 4
+        ground_actions:
+        - (feast love ham muffin quebec kentucky)
+        - (overcome grief learning grapefruit earth saturn)
+        - (feast learning grapefruit ham alsace quebec)
+        - (feast learning ham cantelope alsace quebec)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''succumb'', ''?prostatitis'', ''learning'', ''cantelope'',
+            ''earth'', ''?saturn'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (succumb abrasion learning cantelope earth saturn)
+        - (succumb anger learning cantelope earth saturn)
+        - (succumb angina learning cantelope earth saturn)
+        - (succumb depression learning cantelope earth saturn)
+        - (succumb dread learning cantelope earth saturn)
+        - (succumb grief learning cantelope earth saturn)
+        - (succumb hangover learning cantelope earth saturn)
+        - (succumb loneliness learning cantelope earth saturn)
+        - (succumb prostatitis learning cantelope earth saturn)
+        - (succumb sciatica learning cantelope earth saturn)
+
+
+---
+timestamp: '2024-11-13T13:11:50.722661'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 15
+    fring_size: 47
+    current_node:
+        depth: 3
+        ground_actions:
+        - (feast love ham muffin quebec kentucky)
+        - (overcome grief learning grapefruit earth saturn)
+        - (feast learning grapefruit haroset alsace quebec)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''?learning'', ''ham'', ''cantelope'', ''alsace'',
+            ''quebec'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:11:50.891725'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 16
+    fring_size: 61
+    current_node:
+        depth: 2
+        ground_actions:
+        - (feast love ham muffin quebec kentucky)
+        - (overcome prostatitis learning grapefruit earth saturn)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''learning'', ''?grapefruit'', ''?ham'',
+            ''alsace'', ''quebec'']'
+        num_neighbours: 15
+        first_10_possible_groundings:
+        - (feast learning cantelope bacon alsace quebec)
+        - (feast learning cantelope chocolate alsace quebec)
+        - (feast learning cantelope ham alsace quebec)
+        - (feast learning chicken bacon alsace quebec)
+        - (feast learning chicken muffin alsace quebec)
+        - (feast learning chocolate cantelope alsace quebec)
+        - (feast learning chocolate haroset alsace quebec)
+        - (feast learning grapefruit ham alsace quebec)
+        - (feast learning grapefruit haroset alsace quebec)
+        - (feast learning ham cantelope alsace quebec)
+
+
+---
+timestamp: '2024-11-13T13:11:50.997967'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 17
+    fring_size: 61
+    current_node:
+        depth: 3
+        ground_actions:
+        - (feast love ham muffin quebec kentucky)
+        - (overcome prostatitis learning grapefruit earth saturn)
+        - (feast learning grapefruit ham alsace quebec)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''?learning'', ''ham'', ''cantelope'', ''alsace'',
+            ''quebec'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (feast learning ham cantelope alsace quebec)
+
+
+---
+timestamp: '2024-11-13T13:11:51.124859'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 18
+    fring_size: 61
+    current_node:
+        depth: 4
+        ground_actions:
+        - (feast love ham muffin quebec kentucky)
+        - (overcome prostatitis learning grapefruit earth saturn)
+        - (feast learning grapefruit ham alsace quebec)
+        - (feast learning ham cantelope alsace quebec)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''succumb'', ''?prostatitis'', ''learning'', ''cantelope'',
+            ''earth'', ''?saturn'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (succumb abrasion learning cantelope earth saturn)
+        - (succumb anger learning cantelope earth saturn)
+        - (succumb angina learning cantelope earth saturn)
+        - (succumb depression learning cantelope earth saturn)
+        - (succumb dread learning cantelope earth saturn)
+        - (succumb grief learning cantelope earth saturn)
+        - (succumb hangover learning cantelope earth saturn)
+        - (succumb loneliness learning cantelope earth saturn)
+        - (succumb prostatitis learning cantelope earth saturn)
+        - (succumb sciatica learning cantelope earth saturn)
+
+
+---
+timestamp: '2024-11-13T13:11:51.218723'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 19
+    fring_size: 60
+    current_node:
+        depth: 3
+        ground_actions:
+        - (feast love ham muffin quebec kentucky)
+        - (overcome prostatitis learning grapefruit earth saturn)
+        - (feast learning grapefruit haroset alsace quebec)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''?learning'', ''ham'', ''cantelope'', ''alsace'',
+            ''quebec'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:11:51.329468'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 20
+    fring_size: 61
+    current_node:
+        depth: 1
+        ground_actions:
+        - (feast love ham grapefruit quebec kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''overcome'', ''?prostatitis'', ''learning'', ''?grapefruit'',
+            ''?earth'', ''?saturn'']'
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (overcome grief learning grapefruit earth saturn)
+        - (overcome prostatitis learning grapefruit earth saturn)
+
+
+---
+timestamp: '2024-11-13T13:11:51.478371'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 21
+    fring_size: 75
+    current_node:
+        depth: 2
+        ground_actions:
+        - (feast love ham grapefruit quebec kentucky)
+        - (overcome grief learning grapefruit earth saturn)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''learning'', ''?grapefruit'', ''?ham'',
+            ''alsace'', ''quebec'']'
+        num_neighbours: 15
+        first_10_possible_groundings:
+        - (feast learning cantelope bacon alsace quebec)
+        - (feast learning cantelope chocolate alsace quebec)
+        - (feast learning cantelope ham alsace quebec)
+        - (feast learning chicken bacon alsace quebec)
+        - (feast learning chicken muffin alsace quebec)
+        - (feast learning chocolate cantelope alsace quebec)
+        - (feast learning chocolate haroset alsace quebec)
+        - (feast learning grapefruit ham alsace quebec)
+        - (feast learning grapefruit haroset alsace quebec)
+        - (feast learning ham cantelope alsace quebec)
+
+
+---
+timestamp: '2024-11-13T13:11:51.578084'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 22
+    fring_size: 75
+    current_node:
+        depth: 3
+        ground_actions:
+        - (feast love ham grapefruit quebec kentucky)
+        - (overcome grief learning grapefruit earth saturn)
+        - (feast learning grapefruit ham alsace quebec)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''?learning'', ''ham'', ''cantelope'', ''alsace'',
+            ''quebec'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (feast learning ham cantelope alsace quebec)
+
+
+---
+timestamp: '2024-11-13T13:11:51.712092'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 23
+    fring_size: 75
+    current_node:
+        depth: 4
+        ground_actions:
+        - (feast love ham grapefruit quebec kentucky)
+        - (overcome grief learning grapefruit earth saturn)
+        - (feast learning grapefruit ham alsace quebec)
+        - (feast learning ham cantelope alsace quebec)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''succumb'', ''?prostatitis'', ''learning'', ''cantelope'',
+            ''earth'', ''?saturn'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (succumb abrasion learning cantelope earth saturn)
+        - (succumb anger learning cantelope earth saturn)
+        - (succumb angina learning cantelope earth saturn)
+        - (succumb depression learning cantelope earth saturn)
+        - (succumb dread learning cantelope earth saturn)
+        - (succumb grief learning cantelope earth saturn)
+        - (succumb hangover learning cantelope earth saturn)
+        - (succumb loneliness learning cantelope earth saturn)
+        - (succumb prostatitis learning cantelope earth saturn)
+        - (succumb sciatica learning cantelope earth saturn)
+
+
+---
+timestamp: '2024-11-13T13:11:51.817770'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 24
+    fring_size: 74
+    current_node:
+        depth: 3
+        ground_actions:
+        - (feast love ham grapefruit quebec kentucky)
+        - (overcome grief learning grapefruit earth saturn)
+        - (feast learning grapefruit haroset alsace quebec)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''?learning'', ''ham'', ''cantelope'', ''alsace'',
+            ''quebec'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:11:52.001216'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 25
+    fring_size: 88
+    current_node:
+        depth: 2
+        ground_actions:
+        - (feast love ham grapefruit quebec kentucky)
+        - (overcome prostatitis learning grapefruit earth saturn)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''learning'', ''?grapefruit'', ''?ham'',
+            ''alsace'', ''quebec'']'
+        num_neighbours: 15
+        first_10_possible_groundings:
+        - (feast learning cantelope bacon alsace quebec)
+        - (feast learning cantelope chocolate alsace quebec)
+        - (feast learning cantelope ham alsace quebec)
+        - (feast learning chicken bacon alsace quebec)
+        - (feast learning chicken muffin alsace quebec)
+        - (feast learning chocolate cantelope alsace quebec)
+        - (feast learning chocolate haroset alsace quebec)
+        - (feast learning grapefruit ham alsace quebec)
+        - (feast learning grapefruit haroset alsace quebec)
+        - (feast learning ham cantelope alsace quebec)
+
+
+---
+timestamp: '2024-11-13T13:11:52.105877'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 26
+    fring_size: 88
+    current_node:
+        depth: 3
+        ground_actions:
+        - (feast love ham grapefruit quebec kentucky)
+        - (overcome prostatitis learning grapefruit earth saturn)
+        - (feast learning grapefruit ham alsace quebec)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''?learning'', ''ham'', ''cantelope'', ''alsace'',
+            ''quebec'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (feast learning ham cantelope alsace quebec)
+
+
+---
+timestamp: '2024-11-13T13:11:52.244408'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 27
+    fring_size: 88
+    current_node:
+        depth: 4
+        ground_actions:
+        - (feast love ham grapefruit quebec kentucky)
+        - (overcome prostatitis learning grapefruit earth saturn)
+        - (feast learning grapefruit ham alsace quebec)
+        - (feast learning ham cantelope alsace quebec)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''succumb'', ''?prostatitis'', ''learning'', ''cantelope'',
+            ''earth'', ''?saturn'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (succumb abrasion learning cantelope earth saturn)
+        - (succumb anger learning cantelope earth saturn)
+        - (succumb angina learning cantelope earth saturn)
+        - (succumb depression learning cantelope earth saturn)
+        - (succumb dread learning cantelope earth saturn)
+        - (succumb grief learning cantelope earth saturn)
+        - (succumb hangover learning cantelope earth saturn)
+        - (succumb loneliness learning cantelope earth saturn)
+        - (succumb prostatitis learning cantelope earth saturn)
+        - (succumb sciatica learning cantelope earth saturn)
+
+
+---
+timestamp: '2024-11-13T13:11:52.352268'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 28
+    fring_size: 87
+    current_node:
+        depth: 3
+        ground_actions:
+        - (feast love ham grapefruit quebec kentucky)
+        - (overcome prostatitis learning grapefruit earth saturn)
+        - (feast learning grapefruit haroset alsace quebec)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''?learning'', ''ham'', ''cantelope'', ''alsace'',
+            ''quebec'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:11:52.353586'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: true
+    iteration: 29
+    fring_size: 86
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love ham muffin quebec kentucky)
+        - (overcome grief learning grapefruit earth saturn)
+        - (feast learning grapefruit ham alsace quebec)
+        - (feast learning ham cantelope alsace quebec)
+        - (succumb prostatitis learning cantelope earth saturn)
+        repair_set: succumb,(fears ?c ?v),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2024-11-13T13:11:52.354764'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.1 minutes = 3.52 seconds
+
+
+---
+timestamp: '2024-11-13T13:11:52.466595'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+
