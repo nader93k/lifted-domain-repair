@@ -12,7 +12,7 @@ from statistics import mean, median
 ALL_COLUMNS = [
     'file_name', 'problem_name', 'plan_length', 'num_ground_repair', 'str_ground_repair',
     'run_time', 'error', 'results_exists',
-    'result_depth', 'result_repair_set', 'result_g_cost', 'result_h_cost', 'result_f_cost',
+    'result_depth', 'result_repair_set', 'result_g_cost', 'result_h_cost', 'result_f_cost', 'result_iterative_g_costs',
     'num_neighbours'
 ]
 
@@ -80,6 +80,7 @@ class LogData:
     str_ground_repair: Optional[str] = None
     run_time: Optional[float] = None
     results: Optional[Dict] = None
+    iterative_g_costs: Optional[str] = None
     error: Optional[str] = None
     searcher_data: SearcherIterationData = field(default_factory=SearcherIterationData)
     num_neighbours: Optional[int] = None
@@ -109,14 +110,15 @@ def extract_data(yaml_docs: List[dict], file_name: str) -> LogData:
         
         ## read the result nodes
         if type(data) is dict and "is_goal" in data.keys():
-            result = {
-                'depth': data['current_node']['depth'],
-                'repair_set': data['current_node']['repair_set'],
-                'g_cost': data['current_node']['g_cost'],
-                'h_cost': data['current_node']['h_cost'],
-                'f_cost': data['current_node']['f_cost']
-            }
-            results.append(result)
+            if data['is_goal'] is True:
+                result = {
+                    'depth': data['current_node']['depth'],
+                    'repair_set': data['current_node']['repair_set'],
+                    'g_cost': data['current_node']['g_cost'],
+                    'h_cost': data['current_node']['h_cost'],
+                    'f_cost': data['current_node']['f_cost']
+                }
+                results.append(result)
         
         if issuer == 'instance_solver':
             ## read Meta-data
@@ -149,9 +151,8 @@ def extract_data(yaml_docs: List[dict], file_name: str) -> LogData:
             log_data.num_neighbours = num_neighbours
     
     log_data.error = "; ".join(errors)
-    if results:
-        x = 1
-    log_data.results = results.pop() if results else None
+    log_data.iterative_g_costs = ", ".join([str(r['g_cost']) for r in results])
+    log_data.results = results[-1] if results else None
 
     return log_data
 
@@ -235,6 +236,7 @@ def append_to_csv(log_data: LogData):
     if log_data.results:
         for key, value in log_data.results.items():
             row[f'result_{key}'] = value
+        row['result_iterative_g_costs'] = log_data.iterative_g_costs
     
     for metric, values in aggregates.items():
         for agg_type, value in values.items():
@@ -249,8 +251,8 @@ def append_to_csv(log_data: LogData):
         writer.writerow(row)
 
 if __name__ == "__main__":
-    folder_path = './exp_logs/13 BFS-lifted-prob06'
-
+    folder_path = './exp_logs/14 BB-allgrounded'
+    
     # ## TODO: Remove these debug lines
     # if os.path.exists("results.csv"):
     #     os.remove("results.csv")
