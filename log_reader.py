@@ -251,7 +251,7 @@ def append_to_csv(log_data: LogData):
         writer.writerow(row)
 
 if __name__ == "__main__":
-    folder_path = './exp_logs/14 BB-allgrounded'
+    folder_path = './exp_logs/10 Greedy-small-exp-zeroary'
     
     # ## TODO: Remove these debug lines
     # if os.path.exists("results.csv"):
