@@ -29,6 +29,9 @@ from tarski.syntax.transform.universal_effect_elimination import expand_universa
 
 from utils import *
 
+dprint = lambda *args, **kwargs: None
+dprint = print
+
 if __name__ == '__main__':
     args = parse_arguments()
 
@@ -43,7 +46,7 @@ if __name__ == '__main__':
 
     theory_output = args.theory_output
     theory_output_with_actions = args.theory_output.replace(".theory", "-with-actions.theory")
-    # print("Saving extra copy of theory with actions to %s" % theory_output_with_actions)
+    dprint("Saving extra copy of theory with actions to %s" % theory_output_with_actions)
 
     dir_path = os.path.dirname(os.path.realpath(__file__))
     if args.fd_split or args.htd_split:
@@ -53,15 +56,15 @@ if __name__ == '__main__':
         if not args.ground_actions:
             command.extend(['--remove-action-predicates'])
         execute(command, stdout=theory_output)
-        # print("(fd) ASP model being copied to %s" % theory_output)
+        dprint("(fd) ASP model being copied to %s" % theory_output)
     else:
         command=[dir_path+'/src/translate/pddl_to_prolog.py', domain_file,
                  instance_file, '--only-output-direct-program']
         if not args.ground_actions:
             command.extend(['--remove-action-predicates'])
-        # print("Calling", *command)
+        dprint("Calling", *command)
         execute(command, stdout=theory_output)
-        # print("(other) ASP model being copied to %s" % theory_output)
+        dprint("(other) ASP model being copied to %s" % theory_output)
 
     # Produces extra theory file with actions
     command=[dir_path+'/src/translate/pddl_to_prolog.py', domain_file,
@@ -69,7 +72,7 @@ if __name__ == '__main__':
     if args.inequality_rules:
         command.extend(['--inequality-rules'])
     execute(command, stdout=theory_output_with_actions)
-    # print("ASP model *with actions* being copied to %s" % theory_output_with_actions)
+    dprint("ASP model *with actions* being copied to %s" % theory_output_with_actions)
 
     add_repair_actions(theory_output)
 

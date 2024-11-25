@@ -1,4 +1,5 @@
 import collections
+import itertools
 import shutil
 import subprocess
 from pathlib import Path
@@ -9,6 +10,45 @@ from relaxation_generator.shortcuts import ground
 from fd.pddl.tasks import Task
 import copy
 import pickle
+import contextlib
+import os
+import sys
+import time
+import heapq
+
+# next two definitions copied from Fast Downward
+
+class Timer:
+    def __init__(self):
+        self.start_time = time.time()
+        self.start_clock = self._clock()
+
+    def _clock(self):
+        times = os.times()
+        return times[0] + times[1]
+
+    def __str__(self):
+        return "[%.3fs CPU, %.3fs wall-clock]" % (
+            self._clock() - self.start_clock,
+            time.time() - self.start_time)
+
+DEBUG = True
+@contextlib.contextmanager
+def timing(text, block=False):
+    if not DEBUG:
+        return
+    timer = Timer()
+    if block:
+        print("%s..." % text)
+    else:
+        print("%s..." % text, end=' ')
+    sys.stdout.flush()
+    yield
+    if block:
+        print("%s: %s" % (text, timer))
+    else:
+        print(timer)
+    sys.stdout.flush()
 
 #TODO: could allow to reduce datalog model
 #TODO: some h+ computation?
@@ -18,6 +58,9 @@ import pickle
 H_NAMES = ["L_HMAX", "L_HADD", "L_HFF", "G_HMAX", "G_HADD", "G_HFF", "G_LM_CUT"]
 RELAXATIONS = ["none", "unary", "zeroary"]
 
+dprint = lambda *args, **kwargs: None
+if DEBUG:
+    dprint = print
 
 BASE_FOLDER = r'heuristic_tools/'
 INPUT_MODEL_DOMAIN = BASE_FOLDER + "domain-in.pddl"
@@ -50,13 +93,17 @@ FAST_DOWNWARD_PY = parent_dir / 'fd2' / 'fast-downward.py'
 
 def _get_heuristic(command, look_for):
     output_file = BASE_FOLDER + "heuristic_value.tmp"
-    with open(output_file, "w") as f:
-        subprocess.run(command, stdout=f)
 
-    with open(output_file, "r") as file:
-        for line in file:
-            if look_for in line:
-                return line.split(":")[1].strip()
+    with timing("Calling Heuristic", block=True):
+        with open(output_file, "w") as f:
+            dprint("Running", *command)
+            subprocess.run(command, stdout=f)
+
+    with timing("Parsing Heuristic Value", block=True):
+        with open(output_file, "r") as file:
+            for line in file:
+                if look_for in line:
+                    return line.split(":")[1].strip()
 
     assert False, "shouldn't reach this"
     return None
@@ -136,6 +183,7 @@ def make_eff(eff):
     assert len(res) == 1
     return res[0]
 
+FREE_PRED = 'empty___precondition'
 GOAL_PRED = 'final___goal'
 COUNTER_PRED = 'current_plan_step'
 APPLIED_PRED = 'applied_plan_step'
@@ -154,6 +202,21 @@ def add_to_pre(atom, action):
     elif type(pre) == fd.pddl.conditions.Atom:
         pre = fd.pddl.conditions.Conjunction([pre])
         pre.parts = tuple(list(pre.parts) + [atom])
+    else:
+        raise UnsupportedOperation(f"type {type(pre)} not supported yet")
+
+def datalog_pre(action):
+    li = []
+    _datalog_pre(li, action.precondition)
+    return li
+
+def _datalog_pre(acc, pre):
+    if type(pre) == fd.pddl.conditions.Conjunction:
+        for part in pre.parts:
+            _datalog_pre(acc, part)
+    elif type(pre) == fd.pddl.conditions.Atom or type(pre) == fd.pddl.conditions.NegatedAtom:
+        if not pre.negated:
+            acc.append(pre)
     else:
         raise UnsupportedOperation(f"type {type(pre)} not supported yet")
 
@@ -275,12 +338,235 @@ def integrate_pre_repair(domain, task, ref_action):
         fd.pddl.conditions.Atom(GOAL_PRED, [])
     ])
 
+class DatalogRule:
+    def __init__(self, head, body, cost):
+        assert type(cost) is int or type(cost) is float or cost is None
+        self.head = head
+        self.body = body
+        self.cost = cost
+
+DL_GOAL = "pred_dl_goal"
+def pddl_to_datalog_rules(domain):
+    rules = []
+
+    for action in domain.actions:
+        rule_body = datalog_pre(action)
+
+        for eff in action.effects:
+            assert type(eff.condition) is fd.pddl.conditions.Truth
+
+            lit = eff.literal
+            if not lit.negated:
+                rules.append(DatalogRule(lit, rule_body, None))
+
+    return rules
+
+def add_goal_rule(domain, task):
+    rule_body = []
+    _datalog_pre(rule_body, task.goal)
+    domain.predicates.append(fd.pddl.predicates.Predicate(DL_GOAL, []))
+    pars = [] # formally -- but since grounded always empty -- list(set(arg for atom in rule_body for arg in atom.args if arg[0] == "?"))
+    domain.actions.append(fd.pddl.actions.Action(
+        name="achieve___goal",
+        parameters=pars,
+        num_external_parameters=len(pars),
+        precondition=fd.pddl.conditions.Conjunction(rule_body),
+        effects=[to_eff(fd.pddl.conditions.Atom(GOAL_PRED, []))],
+        cost=0
+    ))
+
+def add_free_atom(task):
+    task.init.append(fd.pddl.conditions.Atom(FREE_PRED, []))
+
+def get_pars(atom):
+    return set(arg for arg in atom.args if arg[0] == "?")
+
+tmp_pred = lambda i: f"tmp___pred{i}"
+
+def binarize_datalog(dl_rules):
+    new_rules = []
+
+    for rule in dl_rules:
+        if len(rule.body) == 0:
+            rule.body.append(fd.pddl.conditions.Atom(FREE_PRED, []))
+        else:
+            head_pars = get_pars(rule.head)
+            par_count = collections.defaultdict(lambda: 0)
+            removed = set()
+            temporaries = [atom for atom in rule.body]
+            def local_superset(el1, el2):
+                pars_el2 = get_pars(el2)
+
+                for par in get_pars(el1):
+                    if not ((par in pars_el2) or (par_count[par] == 1) or (par in head_pars)):
+                        return False
+
+                return True
+
+            def add_rule(i, j):
+                assert i not in removed
+                assert i != j
+                assert i < len(rule.body)
+                assert j < len(rule.body)
+                removed.add(i)
+                local_par_count = collections.defaultdict(lambda: 0)
+                for atom in [first, second]:
+                    for arg in set(atom.args):
+                        if arg[0] == "?":
+                            local_par_count[arg] += 1
+
+                tmp_pars = list(sorted(set(par for par in itertools.chain(get_pars(temporaries[i]),get_pars(temporaries[j])) if (par in head_pars or par_count[par] > local_par_count[par]))))
+                tmp_atom = fd.pddl.Atom(tmp_pred(len(new_rules)), tmp_pars)
+                temporaries[j] = tmp_atom
+
+                new_rules.append(DatalogRule(tmp_atom, [temporaries[i], temporaries[j]], 0))
+
+                for arg in tmp_pars:
+                    par_count[arg] += 1
+
+                for arg, val in local_par_count.items():
+                    par_count[arg] -= val
+
+            def get_unremoved(i=0):
+                while True:
+                    if i not in removed:
+                        return i
+                    i += 1
+
+            for atom in rule.body:
+                for arg in set(atom.args):
+                    if arg[0] == "?":
+                        par_count[arg] += 1
+
+            while len(rule.body) > len(removed)+1:
+                old_removed_count = len(removed)
+                for i, first in enumerate(rule.body):
+                    if i in removed:
+                        continue
+                    if old_removed_count != len(removed):
+                        break
+                    for j, second in enumerate(rule.body):
+                        if first == second:
+                            continue
+                        if j in removed:
+                            continue
+                        if local_superset(first, second):
+                            add_rule(i, j)
+                            break
+
+                if old_removed_count == len(removed):
+                    i = get_unremoved()
+                    j = get_unremoved(i+1)
+                    add_rule(i, j)
+
+            new_rules.append(DatalogRule(rule.head, temporaries[get_unremoved()], rule.cost))
+
+    return new_rules
+
+def other_pos(pos):
+    assert pos == 0 or pos == 1
+    return 1 if pos == 0 else 0
+
+def dl_exploration(init, rules, comb_f=max):
+    #TODO: could think about how to queue non-repairs first and delaying generation of repair atoms
+
+    fact_cost = dict()
+    priority_queue = []
+
+    for el in init:
+        if type(el) is fd.pddl.Atom:
+            priority_queue.append()
+        else:
+            assert type(el) is fd.pddl.f_expression.Assign and el.expression.value == 0 and el.fluent.symbol == 'total-cost'
+
+    heapq.heapify(priority_queue)
+
+    # TODO: descr
+    own_container_mapper = dict()
+
+    # TODO: descr
+    other_container_mapper = dict()
+
+    for rule in rules:
+        if len(rule.body) == 2:
+            # compute intersect
+            assert False, "TODO"
+
+            # map from
+        else:
+            assert False, "TODO"
+
+
+    while GOAL_FACT not in fact_cost:
+        current_cost, current_fact = heapq.heappop(priority_queue)
+
+        assert False, "Check that atoms can work in dict (eq, hash?)"
+        if current_fact in fact_cost and fact_cost[current_fact] < current_cost:
+            continue
+        fact_cost[current_fact] = current_cost
+
+        # TODO: instead of all rules use a map
+        for pos, rule in matching_rules[current_fact.predicate]:
+            if not can_match(current_fact, rule.body[pos]):
+                continue
+
+            if len(rule.body) == 2:
+                assert False, "(get matching atoms by key)"
+                matching_atoms = None
+                for other_fact in matching_atoms:
+                    if not can_match(current_fact, rule.body[other_pos(pos)]):
+                        continue
+
+                    combined_cost = rule.cost + comb_f(current_cost, other_f_cost)
+                    combined_fact = TODO
+
+                    if combined_fact in fact_cost and fact_cost[combined_fact] <= current_cost:
+                        continue
+
+                    fact_cost[combined_fact] = combined_cost
+                    heapq.heappush(priority_queue, (combined_cost, combined_fact))
+            else:
+                assert len(rule.body) == 1
+                assert False, "TODO: implement me"
+
+    INFTY = None
+    assert False, "TODO: define INFTY"
+    return fact_cost[GOAL_FACT] if GOAL_FACT in fact_cost else INFTY
+
+
+def allow_free_act(domain):
+    assert False, "TODO: intregrate repair actions"
+
+
+def set_rule_cost(dl_rules):
+    for rule in dl_rules:
+        assert rule.cost is None
+        rule.cost = 1
+
+    assert False, "If repair, then 1, else 0"
+
+
 class Heurisitc:
     def __init__(self, h_name, relaxation):
         self.h_name = h_name
         self.relaxation = relaxation
+        self.no_legacy = True
 
-    def get_val(self):
+    def get_val(self, domain, task):
+        if self.no_legacy:
+            return self.new_get_val(domain, task)
+        else:
+            return self.legacy_get_val()
+
+    def new_get_val(self, domain, task):
+        add_goal_rule(domain, task)
+        add_free_atom(task)
+        dl_rules = pddl_to_datalog_rules(domain)
+        set_rule_cost(dl_rules)
+        binarized_dl_rules = binarize_datalog(dl_rules)
+        return dl_exploration(task.init, binarized_dl_rules)
+
+    def legacy_get_val(self):
         GROUND_CMD = {
             "domain": INPUT_MODEL_DOMAIN,
             "problem": INPUT_MODEL_PROBLEM,
@@ -306,17 +592,22 @@ class Heurisitc:
         if self.relaxation:
             GROUND_CMD["relaxation"] = self.relaxation
 
-        ground(**GROUND_CMD)
+        with timing("Grounding/Transforimng", block=True):
+            ground(**GROUND_CMD)
 
-        if self.h_name.startswith("L_"):
-            val = get_pwl_value(self.h_name, OUTPUT_MODEL_DOMAIN, OUTPUT_MODEL_PROBLEM)
-        else:
-            val = get_fd_value(self.h_name, OUTPUT_MODEL_DOMAIN, OUTPUT_MODEL_PROBLEM)
+        dprint("GROUNDED", "now computing heuristic")
+
+        with timing("Calculating heuristic value", block=True):
+            if self.h_name.startswith("L_"):
+                val = get_pwl_value(self.h_name, OUTPUT_MODEL_DOMAIN, OUTPUT_MODEL_PROBLEM)
+            else:
+                val = get_fd_value(self.h_name, OUTPUT_MODEL_DOMAIN, OUTPUT_MODEL_PROBLEM)
         return val
 
     def re_run(self, __domain, __task, action_sequence):
-        shutil.copyfile(OUTPUT_MODEL_DOMAIN, OLD_OUTPUT_MODEL_DOMAIN)
-        shutil.copyfile(OUTPUT_MODEL_PROBLEM, OLD_OUTPUT_MODEL_PROBLEM)
+        if not self.no_legacy:
+            shutil.copyfile(OUTPUT_MODEL_DOMAIN, OLD_OUTPUT_MODEL_DOMAIN)
+            shutil.copyfile(OUTPUT_MODEL_PROBLEM, OLD_OUTPUT_MODEL_PROBLEM)
 
         domain = copy.deepcopy(__domain) # verbose
         task = copy.deepcopy(__task) # verbose
@@ -324,8 +615,13 @@ class Heurisitc:
         integrate_pre_repair(domain, task, action_sequence[0])
 
         revert_to_fd_structure(domain, task)
-        print_domain(domain, INPUT_MODEL_DOMAIN)
-        print_problem(task, INPUT_MODEL_PROBLEM)
+
+        if self.no_legacy:
+            allow_free_act(domain)
+
+        if not self.no_legacy:
+            print_domain(domain, INPUT_MODEL_DOMAIN)
+            print_problem(task, INPUT_MODEL_PROBLEM)
 
         # hack to evaluate this with h_add
         old_h = self.h_name
@@ -338,9 +634,12 @@ class Heurisitc:
         return val
 
     def evaluate(self, __domain, __task, action_sequence):
-        domain = copy.deepcopy(__domain) # verbose
-        task = copy.deepcopy(__task) # verbose
-        integrate_action_sequence(domain, task, action_sequence)
+        with timing("Copying domain and task", block=True):
+            domain = copy.deepcopy(__domain) # verbose
+            task = copy.deepcopy(__task) # verbose
+
+        with timing("Integrating action sequence", block=True):
+            integrate_action_sequence(domain, task, action_sequence)
 
         # Here we revert Songtuans datastructure to match the original FD translator format again
         # This allows us to use the provided printout functions of the translator
@@ -348,12 +647,19 @@ class Heurisitc:
         # ---
         # Copying here is definetly a big performance bottle neck
         # But we ignore this for now
-        revert_to_fd_structure(domain, task)
-        print_domain(domain, INPUT_MODEL_DOMAIN)
-        print_problem(task, INPUT_MODEL_PROBLEM)
+        with timing("Reverting to FD structure", block=True):
+            revert_to_fd_structure(domain, task)
+
+        if self.no_legacy:
+            allow_free_act(domain)
+
+        with timing("Dumping files", block=True):
+            if not self.no_legacy:
+                print_domain(domain, INPUT_MODEL_DOMAIN)
+                print_problem(task, INPUT_MODEL_PROBLEM)
 
         try:
-            val = self.get_val()
+            val = self.get_val(domain, task)
         except Exception as e:
             with open('domain.pkl', 'wb') as file:
                 pickle.dump(__domain, file)

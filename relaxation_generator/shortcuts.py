@@ -14,6 +14,9 @@ import uuid
 from tarski.utils.command import execute
 import shutil
 
+dprint = lambda *args, **kwargs: None
+dprint = print
+
 CURRENT_FILE_PATH = os.path.abspath(__file__)
 CURRENT_DIR = os.path.dirname(CURRENT_FILE_PATH)
 #TMP_DIR = os.path.join(CURRENT_DIR, ".tmp")
@@ -116,10 +119,10 @@ def ground(domain, problem, theory_outp=None, model_outp=None, lpopt_enabled=Fal
             "--r-mode",
             relaxation
         ]
-    # print("calling", *command)
+    dprint("calling", *command)
     try:
         result = subprocess.run(command, check=True, capture_output=True, text=True)
-        # print(f"subprocess results: {result.stdout}")
+        dprint(f"subprocess results: {result.stdout}")
     except subprocess.CalledProcessError as e:
         print(f"Command failed with return code {e.returncode}")
         print(f"Error output:\n{e.stderr}")

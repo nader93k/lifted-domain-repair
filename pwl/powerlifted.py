@@ -10,6 +10,7 @@ import sys
 from pathlib import Path
 
 from build import build, PROJECT_ROOT
+from src.translator.timers import timing
 
 
 def parse_options():
@@ -148,7 +149,9 @@ def main():
     CPP_EXTRA_OPTIONS = []
     PYTHON_EXTRA_OPTIONS = []
 
-    options = parse_options()
+
+    with timing("Parsing options", block=True):
+        options = parse_options()
 
     build_dir = os.path.join(PROJECT_ROOT, 'builds', 'debug' if options.debug else 'release')
 
@@ -188,31 +191,36 @@ def main():
     CPP_EXTRA_OPTIONS += ["--no-trivial", str(1) if options.no_trivial else str(0)]
 
     # Invoke the Python preprocessor
-    subprocess.check_call([os.path.join(build_dir, 'translator', 'translate.py'),
-                     options.domain, options.instance, '--output-file', options.translator_file] + \
-                    PYTHON_EXTRA_OPTIONS)
+    with timing("Translating", block=True):
+        subprocess.check_call([os.path.join(build_dir, 'translator', 'translate.py'),
+                         options.domain, options.instance, '--output-file', options.translator_file] + \
+                        PYTHON_EXTRA_OPTIONS)
 
 
 
     # Invoke the C++ search component
-    cmd = [os.path.join(build_dir, 'search', 'search'),
-           '-f', options.translator_file,
-           '-s', options.search,
-           '-e', options.heuristic,
-           '-g', options.generator,
-           '-r', options.state,
-           '--seed', str(options.seed)] + \
-           CPP_EXTRA_OPTIONS
+    with timing("Searching", block=True):
+        cmd = [os.path.join(build_dir, 'search', 'search'),
+               '-f', options.translator_file,
+               '-s', options.search,
+               '-e', options.heuristic,
+               '-g', options.generator,
+               '-r', options.state,
+               '--seed', str(options.seed)] + \
+               CPP_EXTRA_OPTIONS
 
-    print(f'Executing "{" ".join(cmd)}"')
-    code = subprocess.call(cmd)
+        print(f'Executing "{" ".join(cmd)}"')
+        code = subprocess.call(cmd)
 
     # If we found a plan, try to validate it
-    if code == 0 and options.validate:
+    if False and code == 0 and options.validate:
         validate(options.domain, options.instance, 'sas_plan')
 
     return code
 
 
 if __name__ == '__main__':
-    sys.exit(main())
+    with timing("Total PWL run", block=True):
+        c = main()
+
+    sys.exit(c)

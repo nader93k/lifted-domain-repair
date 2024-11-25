@@ -45,5 +45,5 @@ plan = [PositivePlan(ground_action_sequence)]
 
 
 action_sequence = plan[0]._steps
-h = Heurisitc(h_name="G_HMAX", relaxation="zeroary")
+h = Heurisitc(h_name="L_HMAX", relaxation="zeroary")
 print("Initial Heuristic value was:", h.evaluate(domain, task, action_sequence))
