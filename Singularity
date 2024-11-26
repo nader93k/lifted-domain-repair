@@ -3,8 +3,9 @@ Bootstrap: docker
 From: ubuntu:20.04
 
 %environment
-    # TODO: in case we need to specify variables here
-    export TODO=/path 
+    # for htd
+    export LD_LIBRARY_PATH="$/lib:/usr/lib:/usr/local/lib"
+    export DYLD_LIBRARY_PATH=LD_LIBRARY_PATH
 
 %files
     ## Copy current folder (== 'porject dir') to /repair-project
