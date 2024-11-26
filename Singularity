@@ -1,6 +1,6 @@
 # Build the container, install dependencies
 Bootstrap: docker
-From: ubuntu:22.04
+From: ubuntu:20.04
 
 %environment
     # TODO: in case we need to specify variables here
@@ -11,27 +11,33 @@ From: ubuntu:22.04
     . /repair-project
 
 %post
+    export DEBIAN_FRONTEND=noninteractive
+
     # install standard build/python tools
     apt-get update
     apt-get -y install --no-install-recommends \
-               python3.9 \
-               python3.9-venv \
+               wget \
+               tar \
+               python3.8 \
+               python3.8-venv \
+               python3.8-distutils \
+               python3-pip \
                cmake \
                g++ \
                make \
                build-essential \
                autotools-dev \
-               libboost-all-dev=1.74.0.3ubuntu7 \
-               libboost-program-options1.74-dev
+               libboost-all-dev \
+               libboost-program-options-dev
 
     # isntall python dependencies
-    pip install 'python-sat[aiger,approxmc,cryptosat,pblib]'
-    pip install tarski==0.4.0
+    python3.8 -m pip install 'python-sat[aiger,approxmc,cryptosat,pblib]'
+    python3.8 -m pip install tarski==0.4.0
 
     # install lpopt
     wget https://dbai.tuwien.ac.at/proj/lpopt/lpopt-2.2-x86_64.tar.gz
     tar -xvzf lpopt-2.2-x86_64.tar.gz
-    sudo mv lpopt-2.2-x86_64/* /usr/bin/
+    mv lpopt-2.2-x86_64/* /usr/bin/
     rm lpopt-2.2-x86_64.tar.gz
 
     # install htd
@@ -41,7 +47,7 @@ From: ubuntu:22.04
     mkdir build && cd build
     cmake ..
     make
-    sudo make install
+    make install
     cd ../..
     rm -rf htd-1.2 htd-1.2.zip
 
@@ -57,4 +63,4 @@ From: ubuntu:22.04
 
 %runscript
     #TODO: should be set to whatever we actually want to run
-    python3 debug.py
+    python3.8 /repair-project/debug.py
