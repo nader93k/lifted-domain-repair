@@ -17,7 +17,7 @@ From: ubuntu:20.04
     apt-get update
     apt-get -y install --no-install-recommends \
                wget \
-               tar \
+               p7zip-full \
                python3.8 \
                python3.8-venv \
                python3.8-distutils \
@@ -42,14 +42,12 @@ From: ubuntu:20.04
 
     # install htd
     wget https://github.com/mabseher/htd/archive/refs/tags/1.2.zip -O htd-1.2.zip
-    unzip htd-1.2.zip
+    7z x htd-1.2.zip -ohtd-1.2
     cd htd-1.2
-    mkdir build && cd build
-    cmake ..
     make
     make install
-    cd ../..
-    rm -rf htd-1.2 htd-1.2.zip
+    cd ..
+    rm -rf htd-1.2.zip
 
     # compile local sources
     cd /repair-project
