@@ -44,19 +44,22 @@ From: ubuntu:20.04
     wget https://github.com/mabseher/htd/archive/refs/tags/1.2.zip -O htd-1.2.zip
     7z x htd-1.2.zip -ohtd-1.2
     cd htd-1.2
-    make
+    cd htd-1.2
+    mkdir build && cd build
+    cmake ..
+    make -j8
     make install
-    cd ..
+    cd ../..
     rm -rf htd-1.2.zip
 
     # compile local sources
-    cd /repair-project
-    cd relaxation_generator
-    python3 build.py
-    cd ../fd2
-    python3 build.py
-    cd ../pwl
-    python3 build.py
+    #cd /repair-project
+    #cd relaxation_generator
+    #python3 build.py
+    #cd ../fd2
+    #python3 build.py
+    #cd ../pwl
+    #python3 build.py
 
 
 %runscript
