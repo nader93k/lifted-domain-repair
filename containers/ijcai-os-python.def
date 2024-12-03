@@ -1,0 +1,47 @@
+Bootstrap: docker
+From: ubuntu:20.04
+
+%environment
+    # for htd
+    export LD_LIBRARY_PATH="/lib:/usr/lib:/usr/local/lib"
+    export DYLD_LIBRARY_PATH=$LD_LIBRARY_PATH
+    # Add Python 3.13 to path
+    export PATH="/usr/local/bin:$PATH"
+
+%post
+    export DEBIAN_FRONTEND=noninteractive
+
+    # install standard build tools
+    apt-get update
+    apt-get -y install --no-install-recommends \
+        wget \
+        p7zip-full \
+        cmake \
+        g++ \
+        make \
+        build-essential \
+        autotools-dev \
+        libboost-all-dev \
+        libboost-program-options-dev \
+        zlib1g-dev \
+        libssl-dev \
+        libffi-dev \
+        libsqlite3-dev \
+        libbz2-dev \
+        liblzma-dev \
+        tk-dev \
+        software-properties-common \
+        gpg-agent
+
+    # Install Python 3.13 from deadsnakes PPA
+    add-apt-repository -y ppa:deadsnakes/ppa
+    apt-get update
+    apt-get install -y python3.13 python3.13-dev
+    
+    # Verify Python installation
+    python3.13 --version
+    
+    # Install pip for Python 3.13
+    wget https://bootstrap.pypa.io/get-pip.py
+    python3.13 get-pip.py
+    rm get-pip.py
