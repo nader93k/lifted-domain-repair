@@ -460,7 +460,7 @@ def binarize_datalog(dl_rules):
                     j = get_unremoved(i+1)
                     add_rule(i, j)
 
-            new_rules.append(DatalogRule(rule.head, temporaries[get_unremoved()], rule.cost))
+            new_rules.append(DatalogRule(rule.head, [temporaries[get_unremoved()]], rule.cost))
 
     return new_rules
 
@@ -490,15 +490,34 @@ def create_creator(atoms, proj_vars):
 
     return creator
 
-def combine_or_project(atoms, combiner):
-    assert False, "todo, const"
-    res = [None for _ in range(combiner)]
+def combine_or_project(atoms, combiner, pos_to_const):
+    res = [None for _ in range(len(combiner))]
 
     for atom_pos, arg_pos, end_pos in combiner:
         res[end_pos] = atoms[atom_pos].args[arg_pos]
 
+    for i, arg in pos_to_const:
+        res[i] = arg
+
     assert not any(a == None for a in res)
-    return res
+    return tuple(res)
+
+def can_match(gr_atom, l_atom):
+    assert gr_atom.predicate == l_atom.predicate
+    assigned = dict()
+    for g_arg, l_arg in zip(gr_atom.args, l_atom.args):
+        if l_arg[0] != "?":
+            if g_arg != l_arg:
+                return False
+        else:
+            if l_arg in assigned and assigned[l_arg] != g_arg:
+                return False
+            assigned[l_arg] = g_arg
+
+    return True
+
+def pos_to_const(atom):
+    dict((i, arg) for i, arg in enumerate(atom.args) if arg[0] != "?")
 
 
 def dl_exploration(init, rules, comb_f=max):
@@ -526,10 +545,10 @@ def dl_exploration(init, rules, comb_f=max):
 
     projections = dict()
     combinations = dict()
-    rule_body_pos_container = dict()
+    rule_body_pos_container = collections.defaultdict(lambda: collections.defaultdict(lambda: set()))
     for i, rule in enumerate(rules):
         assert 1 <= len(rule.body) <= 2, rule.body
-        shared_vars = list(sorted(intersection([vars_of(atom) in rule.body])))
+        shared_vars = list(sorted(intersection([vars_of(atom) for atom in rule.body])))
         shared_vars = dict((v, i) for i, v in enumerate(shared_vars))
 
         for j, atom in enumerate(rule.body):
@@ -539,47 +558,48 @@ def dl_exploration(init, rules, comb_f=max):
             matching_rules[atom.predicate].append((i, j))
 
         v_to_pos = collections.defaultdict(lambda: [])
-        for z, arg in enumerate(atom.args):
+        for z, arg in enumerate(rule.head.args):
             if arg[0] == "?":
                 v_to_pos[arg].append(z)
-        combinations[i] = create_creator(rule.body, v_to_pos)
+        combinations[i] = (create_creator(rule.body, v_to_pos), pos_to_const(rule.head))
 
-
+    GOAL_FACT = fd.pddl.conditions.Atom(GOAL_PRED, [])
     while GOAL_FACT not in fact_cost:
         current_cost, current_fact = heapq.heappop(priority_queue)
 
-        assert False, "Check that atoms can work in dict (eq, hash?)"
         if current_fact in fact_cost and fact_cost[current_fact] < current_cost:
             continue
         fact_cost[current_fact] = current_cost
 
-        # TODO: instead of all rules use a map
-        for rule, body_pos in matching_rules[current_fact.predicate]:
-            if not can_match(current_fact, rule.body[pos]):
+        for rule_id, body_pos in matching_rules[current_fact.predicate]:
+            _rule = rules[rule_id]
+            if not can_match(current_fact, _rule.body[body_pos]):
                 continue
 
-            projection = project([atom], projections[(rule, body_pos)])
-            assert False, "insert into container"
+            projection = combine_or_project([atom], projections[(rule_id, body_pos)], [])
+            rule_body_pos_container[(rule_id, other_pos(body_pos))][projection].add(current_fact)
 
             if len(rule.body) == 2:
-                contained = rule_body_pos_container[projection]
+                contained = rule_body_pos_container[(rule_id, other_pos(body_pos))][projection]
 
                 for other_fact in contained:
-                    combined_cost = rule.cost + comb_f(current_cost, other_f_cost)
+                    other_f_cost = fact_cost[other_fact]
+                    combined_cost = _rule.cost + comb_f(current_cost, other_f_cost)
 
                     to_combine = [current_fact, other_fact] if body_pos == 0 else [other_fact, current_fact]
-                    combined_args = combine(to_combine, combinations[rule])
-
-                    combined_fact = todo
-
-                    if combined_fact in fact_cost and fact_cost[combined_fact] <= current_cost:
-                        continue
-
-                    fact_cost[combined_fact] = combined_cost
-                    heapq.heappush(priority_queue, (combined_cost, combined_fact))
+                    combined_args = combine_or_project(to_combine, *combinations[rule_id])
             else:
                 assert len(rule.body) == 1
-                assert False, "TODO: implement me"
+                combined_cost = _rule.cost + current_cost
+                combined_args = combine_or_project([current_fact], *combinations[rule_id])
+
+            combined_fact = fd.pddl.conditions.Atom(_rule.head.predicate, combined_args)
+
+            if combined_fact in fact_cost and fact_cost[combined_fact] <= current_cost:
+                continue
+
+            fact_cost[combined_fact] = combined_cost
+            heapq.heappush(priority_queue, (combined_cost, combined_fact))
 
     INFTY = None
     assert False, "TODO: define INFTY"
