@@ -188,7 +188,8 @@ GOAL_PRED = 'final___goal'
 COUNTER_PRED = 'current_plan_step'
 APPLIED_PRED = 'applied_plan_step'
 NUM_PAR = '?next_plan_step_num'
-obj_pred = lambda obj: f"fix_obj_{obj}"
+fix_obj_start = "fix_obj_"
+obj_pred = lambda obj: f"{fix_obj_start}{obj}"
 make_num = lambda i: f"n{i}"
 to_eff = lambda lit: make_eff(fd.pddl.effects.SimpleEffect(lit))
 
@@ -534,16 +535,34 @@ def dl_exploration(init, rules, comb_f=max):
     return fact_cost[GOAL_FACT] if GOAL_FACT in fact_cost else INFTY
 
 
-def allow_free_act(domain):
-    assert False, "TODO: intregrate repair actions"
+UNREPAIRABLE = {COUNTER_PRED, APPLIED_PRED}
+def integrate_repair_actions(domain):
+    new_preds = []
 
+    for action in domain._actions:
+        action.cost = 0
 
-def set_rule_cost(dl_rules):
-    for rule in dl_rules:
-        assert rule.cost is None
-        rule.cost = 1
+    for pred in domain._predicates:
+        if pred.name in UNREPAIRABLE or pred.name.startswith(fix_obj_start):
+            continue
 
-    assert False, "If repair, then 1, else 0"
+        new_pred_name = pred.name + "__for_free"
+        new_preds.append(fd.pddl.predicates.Predicate(new_pred_name, []))
+
+        action_args = copy.deepcopy(pred.arguments)
+
+        pre_atom = fd.pddl.conditions.Atom(new_pred_name, [])
+        eff_atom = fd.pddl.conditions.Atom(pred.name, [arg.name for arg in action_args])
+
+        domain._actions.append(fd.pddl.actions.Action(name=f"activate_{new_pred_name}",
+                                                      parameters=action_args,
+                                                      num_external_parameters=len(action_args),
+                                                      precondition=pre_atom,
+                                                      effects=[to_eff(eff_atom)],
+                                                      cost=1))
+
+    for pred in new_preds:
+        domain._predicates.append(pred)
 
 
 class Heurisitc:
@@ -562,7 +581,6 @@ class Heurisitc:
         add_goal_rule(domain, task)
         add_free_atom(task)
         dl_rules = pddl_to_datalog_rules(domain)
-        set_rule_cost(dl_rules)
         binarized_dl_rules = binarize_datalog(dl_rules)
         return dl_exploration(task.init, binarized_dl_rules)
 
@@ -614,10 +632,10 @@ class Heurisitc:
 
         integrate_pre_repair(domain, task, action_sequence[0])
 
-        revert_to_fd_structure(domain, task)
-
         if self.no_legacy:
-            allow_free_act(domain)
+            integrate_repair_actions(domain)
+
+        revert_to_fd_structure(domain, task)
 
         if not self.no_legacy:
             print_domain(domain, INPUT_MODEL_DOMAIN)
@@ -641,6 +659,11 @@ class Heurisitc:
         with timing("Integrating action sequence", block=True):
             integrate_action_sequence(domain, task, action_sequence)
 
+
+        if self.no_legacy:
+            with timing("Adding repair actions", block=True):
+                integrate_repair_actions(domain)
+
         # Here we revert Songtuans datastructure to match the original FD translator format again
         # This allows us to use the provided printout functions of the translator
         # To pass it on to another program as .pddl
@@ -649,9 +672,6 @@ class Heurisitc:
         # But we ignore this for now
         with timing("Reverting to FD structure", block=True):
             revert_to_fd_structure(domain, task)
-
-        if self.no_legacy:
-            allow_free_act(domain)
 
         with timing("Dumping files", block=True):
             if not self.no_legacy:
