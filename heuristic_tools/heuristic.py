@@ -655,7 +655,7 @@ class Heurisitc:
         add_free_atom(task)
         dl_rules = pddl_to_datalog_rules(domain)
         binarized_dl_rules = binarize_datalog(dl_rules)
-        return dl_exploration(task.init, binarized_dl_rules)
+        return dl_exploration(task.init, binarized_dl_rules, max if "HMAX" in self.h_name else lambda x,y: x+y)
 
     def legacy_get_val(self):
         GROUND_CMD = {
