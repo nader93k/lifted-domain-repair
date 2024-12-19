@@ -341,7 +341,7 @@ def integrate_pre_repair(domain, task, ref_action):
 
 class DatalogRule:
     def __init__(self, head, body, cost):
-        assert type(cost) is int or type(cost) is float or cost is None
+        assert type(cost) is int or type(cost) is float
         self.head = head
         self.body = body
         self.cost = cost
@@ -358,7 +358,7 @@ def pddl_to_datalog_rules(domain):
 
             lit = eff.literal
             if not lit.negated:
-                rules.append(DatalogRule(lit, rule_body, None))
+                rules.append(DatalogRule(lit, rule_body, action.cost))
 
     return rules
 
@@ -491,12 +491,12 @@ def create_creator(atoms, proj_vars):
     return creator
 
 def combine_or_project(atoms, combiner, pos_to_const):
-    res = [None for _ in range(len(combiner))]
+    res = [None for _ in range(len(combiner)+len(pos_to_const))]
 
     for atom_pos, arg_pos, end_pos in combiner:
         res[end_pos] = atoms[atom_pos].args[arg_pos]
 
-    for i, arg in pos_to_const:
+    for i, arg in pos_to_const.items():
         res[i] = arg
 
     assert not any(a == None for a in res)
@@ -517,7 +517,7 @@ def can_match(gr_atom, l_atom):
     return True
 
 def pos_to_const(atom):
-    dict((i, arg) for i, arg in enumerate(atom.args) if arg[0] != "?")
+    return dict((i, arg) for i, arg in enumerate(atom.args) if arg[0] != "?")
 
 
 def dl_exploration(init, rules, comb_f=max):
@@ -565,6 +565,9 @@ def dl_exploration(init, rules, comb_f=max):
 
     GOAL_FACT = fd.pddl.conditions.Atom(GOAL_PRED, [])
     while GOAL_FACT not in fact_cost:
+        if not priority_queue:
+            break
+
         current_cost, current_fact = heapq.heappop(priority_queue)
 
         if current_fact in fact_cost and fact_cost[current_fact] < current_cost:
@@ -576,7 +579,7 @@ def dl_exploration(init, rules, comb_f=max):
             if not can_match(current_fact, _rule.body[body_pos]):
                 continue
 
-            projection = combine_or_project([atom], projections[(rule_id, body_pos)], [])
+            projection = combine_or_project([atom], projections[(rule_id, body_pos)], dict())
             rule_body_pos_container[(rule_id, other_pos(body_pos))][projection].add(current_fact)
 
             if len(rule.body) == 2:
@@ -601,8 +604,7 @@ def dl_exploration(init, rules, comb_f=max):
             fact_cost[combined_fact] = combined_cost
             heapq.heappush(priority_queue, (combined_cost, combined_fact))
 
-    INFTY = None
-    assert False, "TODO: define INFTY"
+    INFTY = -1
     return fact_cost[GOAL_FACT] if GOAL_FACT in fact_cost else INFTY
 
 
