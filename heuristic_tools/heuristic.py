@@ -468,6 +468,39 @@ def other_pos(pos):
     assert pos == 0 or pos == 1
     return 1 if pos == 0 else 0
 
+def intersection(li):
+    result = li[0]
+
+    for s in li[1:]:
+        result = result.intersection(s)
+
+    return result
+
+def vars_of(atom):
+    return set(arg for arg in atom.args if arg[0] == "?")
+
+def create_creator(atoms, proj_vars):
+    seen = set()
+    creator = []
+    for j, atom in enumerate(atoms):
+        for i, v in enumerate(atom.args):
+            if v in proj_vars and v not in seen:
+                creator.append((j, i, proj_vars[v]))
+                seen.insert(v)
+
+    return creator
+
+def combine_or_project(atoms, combiner):
+    assert False, "todo, const"
+    res = [None for _ in range(combiner)]
+
+    for atom_pos, arg_pos, end_pos in combiner:
+        res[end_pos] = atoms[atom_pos].args[arg_pos]
+
+    assert not any(a == None for a in res)
+    return res
+
+
 def dl_exploration(init, rules, comb_f=max):
     #TODO: could think about how to queue non-repairs first and delaying generation of repair atoms
 
@@ -476,26 +509,40 @@ def dl_exploration(init, rules, comb_f=max):
 
     for el in init:
         if type(el) is fd.pddl.Atom:
-            priority_queue.append()
+            priority_queue.append((0, el))
+            fact_cost[el] = 0
         else:
             assert type(el) is fd.pddl.f_expression.Assign and el.expression.value == 0 and el.fluent.symbol == 'total-cost'
 
     heapq.heapify(priority_queue)
 
-    # TODO: descr
-    own_container_mapper = dict()
+    matching_rules = collections.defaultdict(lambda: list())
+    for i, rule in enumerate(rules):
+        for j, atom in enumerate(rule.body):
+            matching_rules[atom.predicate].append((i, j))
 
-    # TODO: descr
-    other_container_mapper = dict()
+    for k, v in matching_rules.items():
+        matching_rules[k] = list(sorted(set(v)))
 
-    for rule in rules:
-        if len(rule.body) == 2:
-            # compute intersect
-            assert False, "TODO"
+    projections = dict()
+    combinations = dict()
+    rule_body_pos_container = dict()
+    for i, rule in enumerate(rules):
+        assert 1 <= len(rule.body) <= 2, rule.body
+        shared_vars = list(sorted(intersection([vars_of(atom) in rule.body])))
+        shared_vars = dict((v, i) for i, v in enumerate(shared_vars))
 
-            # map from
-        else:
-            assert False, "TODO"
+        for j, atom in enumerate(rule.body):
+            creator = create_creator([atom], shared_vars)
+            projections[(i, j)] = creator
+
+            matching_rules[atom.predicate].append((i, j))
+
+        v_to_pos = collections.defaultdict(lambda: [])
+        for z, arg in enumerate(atom.args):
+            if arg[0] == "?":
+                v_to_pos[arg].append(z)
+        combinations[i] = create_creator(rule.body, v_to_pos)
 
 
     while GOAL_FACT not in fact_cost:
@@ -507,19 +554,23 @@ def dl_exploration(init, rules, comb_f=max):
         fact_cost[current_fact] = current_cost
 
         # TODO: instead of all rules use a map
-        for pos, rule in matching_rules[current_fact.predicate]:
+        for rule, body_pos in matching_rules[current_fact.predicate]:
             if not can_match(current_fact, rule.body[pos]):
                 continue
 
-            if len(rule.body) == 2:
-                assert False, "(get matching atoms by key)"
-                matching_atoms = None
-                for other_fact in matching_atoms:
-                    if not can_match(current_fact, rule.body[other_pos(pos)]):
-                        continue
+            projection = project([atom], projections[(rule, body_pos)])
+            assert False, "insert into container"
 
+            if len(rule.body) == 2:
+                contained = rule_body_pos_container[projection]
+
+                for other_fact in contained:
                     combined_cost = rule.cost + comb_f(current_cost, other_f_cost)
-                    combined_fact = TODO
+
+                    to_combine = [current_fact, other_fact] if body_pos == 0 else [other_fact, current_fact]
+                    combined_args = combine(to_combine, combinations[rule])
+
+                    combined_fact = todo
 
                     if combined_fact in fact_cost and fact_cost[combined_fact] <= current_cost:
                         continue
