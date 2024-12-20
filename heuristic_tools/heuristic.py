@@ -32,23 +32,23 @@ class Timer:
             self._clock() - self.start_clock,
             time.time() - self.start_time)
 
-DEBUG = True
+DEBUG = False
 @contextlib.contextmanager
 def timing(text, block=False):
-    if not DEBUG:
-        return
-    timer = Timer()
-    if block:
-        print("%s..." % text)
-    else:
-        print("%s..." % text, end=' ')
-    sys.stdout.flush()
+    if DEBUG:
+        timer = Timer()
+        if block:
+            print("%s..." % text)
+        else:
+            print("%s..." % text, end=' ')
+        sys.stdout.flush()
     yield
-    if block:
-        print("%s: %s" % (text, timer))
-    else:
-        print(timer)
-    sys.stdout.flush()
+    if DEBUG:
+        if block:
+            print("%s: %s" % (text, timer))
+        else:
+            print(timer)
+        sys.stdout.flush()
 
 #TODO: could allow to reduce datalog model
 #TODO: some h+ computation?
@@ -59,7 +59,7 @@ H_NAMES = ["L_HMAX", "L_HADD", "L_HFF", "G_HMAX", "G_HADD", "G_HFF", "G_LM_CUT"]
 RELAXATIONS = ["none", "unary", "zeroary"]
 
 dprint = lambda *args, **kwargs: None
-if DEBUG:
+if not DEBUG:
     dprint = print
 
 BASE_FOLDER = r'heuristic_tools/'

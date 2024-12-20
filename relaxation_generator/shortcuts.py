@@ -14,7 +14,7 @@ import uuid
 from tarski.utils.command import execute
 import shutil
 
-dprint = lambda *args, **kwargs: None
+#dprint = lambda *args, **kwargs: None
 dprint = print
 
 CURRENT_FILE_PATH = os.path.abspath(__file__)

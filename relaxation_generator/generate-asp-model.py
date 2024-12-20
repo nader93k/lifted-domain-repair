@@ -29,7 +29,7 @@ from tarski.syntax.transform.universal_effect_elimination import expand_universa
 
 from utils import *
 
-dprint = lambda *args, **kwargs: None
+#dprint = lambda *args, **kwargs: None
 dprint = print
 
 if __name__ == '__main__':
