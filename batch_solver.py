@@ -27,15 +27,16 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval, \
             continue
         logger = StructuredLogger(log_file)
 
+        interpreter_path = sys.executable
         cmd = [
-                "/home/nader/miniconda3/envs/planning/bin/python",
+                interpreter_path,
                 "instance_solver.py",
                 search_algorithm,
                 str(benchmark_path),
                 log_file,
                 str(log_interval),
                 instance.identifier,
-                str(lift_prob)
+                str(lift_prob) if run_mode == 'subprocess' else float(lift_prob)
             ]
         if heuristic_relaxation:
             cmd.append(heuristic_relaxation)
