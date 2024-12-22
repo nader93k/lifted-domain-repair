@@ -1,0 +1,1644 @@
+---
+timestamp: '2024-11-13T13:12:15.821712'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/13 BFS-lifted-prob06/bfs_length_7_mprime_pprob21-err-rate-0-5.yaml
+    instance_id: mprime/pprob21-err-rate-0-5
+    search_algorithm: bfs
+    plan_length: 7
+    domain_class: mprime
+    instance_name: pprob21-err-rate-0-5
+    ground_plan:
+    - (feast love flounder wurst alsace kentucky)
+    - (feast learning lemon apple alsace kentucky)
+    - (overcome sciatica love wurst uranus neptune)
+    - (drink snickers wurst goias kentucky alsace alsace kentucky)
+    - (feast love wurst snickers alsace kentucky)
+    - (feast love snickers apple alsace kentucky)
+    - (succumb sciatica love apple uranus neptune)
+    lifted_plan:
+    -   - feast
+        - love
+        - flounder
+        - ?wurst
+        - ?alsace
+        - ?kentucky
+    -   - feast
+        - ?learning
+        - lemon
+        - ?apple
+        - ?alsace
+        - ?kentucky
+    -   - overcome
+        - sciatica
+        - ?love
+        - ?wurst
+        - uranus
+        - neptune
+    -   - drink
+        - ?snickers
+        - wurst
+        - goias
+        - kentucky
+        - alsace
+        - ?alsace
+        - kentucky
+    -   - feast
+        - love
+        - wurst
+        - ?snickers
+        - ?alsace
+        - ?kentucky
+    -   - feast
+        - love
+        - snickers
+        - apple
+        - ?alsace
+        - kentucky
+    -   - succumb
+        - ?sciatica
+        - love
+        - ?apple
+        - ?uranus
+        - neptune
+
+
+---
+timestamp: '2024-11-13T13:12:15.828627'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'succumb,(fears ?c ?v),precPos,-1
+
+        drink,(locale ?n1 ?l12),effPos,1'
+
+
+---
+timestamp: '2024-11-13T13:12:15.964545'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 2
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''flounder'', ''?wurst'', ''?alsace'',
+            ''?kentucky'']'
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (feast love flounder apple alsace kentucky)
+        - (feast love flounder wurst alsace kentucky)
+
+
+---
+timestamp: '2024-11-13T13:12:16.077550'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 2
+    fring_size: 4
+    current_node:
+        depth: 1
+        ground_actions:
+        - (feast love flounder apple alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''?learning'', ''lemon'', ''?apple'', ''?alsace'',
+            ''?kentucky'']'
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (feast learning lemon apple alsace kentucky)
+        - (feast learning lemon muffin alsace kentucky)
+        - (feast learning lemon wurst alsace kentucky)
+
+
+---
+timestamp: '2024-11-13T13:12:16.177331'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 3
+    fring_size: 3
+    current_node:
+        depth: 2
+        ground_actions:
+        - (feast love flounder apple alsace kentucky)
+        - (feast learning lemon apple alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''overcome'', ''sciatica'', ''?love'', ''?wurst'', ''uranus'',
+            ''neptune'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:16.277238'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 4
+    fring_size: 2
+    current_node:
+        depth: 2
+        ground_actions:
+        - (feast love flounder apple alsace kentucky)
+        - (feast learning lemon muffin alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''overcome'', ''sciatica'', ''?love'', ''?wurst'', ''uranus'',
+            ''neptune'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:16.382213'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 5
+    fring_size: 1
+    current_node:
+        depth: 2
+        ground_actions:
+        - (feast love flounder apple alsace kentucky)
+        - (feast learning lemon wurst alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''overcome'', ''sciatica'', ''?love'', ''?wurst'', ''uranus'',
+            ''neptune'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:16.496288'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 6
+    fring_size: 3
+    current_node:
+        depth: 1
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''?learning'', ''lemon'', ''?apple'', ''?alsace'',
+            ''?kentucky'']'
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (feast learning lemon apple alsace kentucky)
+        - (feast learning lemon muffin alsace kentucky)
+        - (feast learning lemon wurst alsace kentucky)
+
+
+---
+timestamp: '2024-11-13T13:12:16.615937'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 7
+    fring_size: 3
+    current_node:
+        depth: 2
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon apple alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''overcome'', ''sciatica'', ''?love'', ''?wurst'', ''uranus'',
+            ''neptune'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (overcome sciatica love wurst uranus neptune)
+
+
+---
+timestamp: '2024-11-13T13:12:16.728418'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 8
+    fring_size: 5
+    current_node:
+        depth: 3
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon apple alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drink'', ''?snickers'', ''wurst'', ''goias'', ''kentucky'',
+            ''alsace'', ''?alsace'', ''kentucky'']'
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (drink okra wurst goias kentucky alsace alsace kentucky)
+        - (drink popover wurst goias kentucky alsace alsace kentucky)
+        - (drink snickers wurst goias kentucky alsace alsace kentucky)
+
+
+---
+timestamp: '2024-11-13T13:12:16.855874'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 9
+    fring_size: 8
+    current_node:
+        depth: 4
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon apple alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink okra wurst goias kentucky alsace alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''wurst'', ''?snickers'', ''?alsace'',
+            ''?kentucky'']'
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (feast love wurst flounder alsace kentucky)
+        - (feast love wurst lemon alsace kentucky)
+        - (feast love wurst muffin alsace kentucky)
+        - (feast love wurst snickers alsace kentucky)
+
+
+---
+timestamp: '2024-11-13T13:12:16.956029'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 10
+    fring_size: 7
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon apple alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink okra wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst flounder alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:17.053801'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 11
+    fring_size: 6
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon apple alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink okra wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst lemon alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:17.152983'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 12
+    fring_size: 5
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon apple alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink okra wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst muffin alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:17.251168'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 13
+    fring_size: 4
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon apple alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink okra wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst snickers alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:17.370923'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 14
+    fring_size: 7
+    current_node:
+        depth: 4
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon apple alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink snickers wurst goias kentucky alsace alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''wurst'', ''?snickers'', ''?alsace'',
+            ''?kentucky'']'
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (feast love wurst flounder alsace kentucky)
+        - (feast love wurst lemon alsace kentucky)
+        - (feast love wurst muffin alsace kentucky)
+        - (feast love wurst snickers alsace kentucky)
+
+
+---
+timestamp: '2024-11-13T13:12:17.467511'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 15
+    fring_size: 6
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon apple alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink snickers wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst flounder alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:17.563731'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 16
+    fring_size: 5
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon apple alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink snickers wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst muffin alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:17.666542'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 17
+    fring_size: 4
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon apple alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink snickers wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst snickers alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:17.761164'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 18
+    fring_size: 3
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon apple alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink snickers wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst lemon alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:17.881553'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 19
+    fring_size: 6
+    current_node:
+        depth: 4
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon apple alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink popover wurst goias kentucky alsace alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''wurst'', ''?snickers'', ''?alsace'',
+            ''?kentucky'']'
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (feast love wurst flounder alsace kentucky)
+        - (feast love wurst lemon alsace kentucky)
+        - (feast love wurst muffin alsace kentucky)
+        - (feast love wurst snickers alsace kentucky)
+
+
+---
+timestamp: '2024-11-13T13:12:18.015434'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 20
+    fring_size: 5
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon apple alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink popover wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst flounder alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:18.122080'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 21
+    fring_size: 4
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon apple alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink popover wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst snickers alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:18.219131'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 22
+    fring_size: 3
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon apple alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink popover wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst lemon alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:18.345725'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 23
+    fring_size: 2
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon apple alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink popover wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst muffin alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:18.459610'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 24
+    fring_size: 2
+    current_node:
+        depth: 2
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon wurst alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''overcome'', ''sciatica'', ''?love'', ''?wurst'', ''uranus'',
+            ''neptune'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (overcome sciatica love wurst uranus neptune)
+
+
+---
+timestamp: '2024-11-13T13:12:18.585439'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 25
+    fring_size: 4
+    current_node:
+        depth: 3
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon wurst alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drink'', ''?snickers'', ''wurst'', ''goias'', ''kentucky'',
+            ''alsace'', ''?alsace'', ''kentucky'']'
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (drink okra wurst goias kentucky alsace alsace kentucky)
+        - (drink popover wurst goias kentucky alsace alsace kentucky)
+        - (drink snickers wurst goias kentucky alsace alsace kentucky)
+
+
+---
+timestamp: '2024-11-13T13:12:18.720727'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 26
+    fring_size: 7
+    current_node:
+        depth: 4
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon wurst alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink okra wurst goias kentucky alsace alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''wurst'', ''?snickers'', ''?alsace'',
+            ''?kentucky'']'
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (feast love wurst flounder alsace kentucky)
+        - (feast love wurst lemon alsace kentucky)
+        - (feast love wurst muffin alsace kentucky)
+        - (feast love wurst snickers alsace kentucky)
+
+
+---
+timestamp: '2024-11-13T13:12:18.824975'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 27
+    fring_size: 6
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon wurst alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink okra wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst flounder alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:18.936027'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 28
+    fring_size: 5
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon wurst alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink okra wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst muffin alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:19.078658'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 29
+    fring_size: 4
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon wurst alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink okra wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst snickers alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:19.185999'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 30
+    fring_size: 3
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon wurst alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink okra wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst lemon alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:19.317027'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 31
+    fring_size: 6
+    current_node:
+        depth: 4
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon wurst alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink snickers wurst goias kentucky alsace alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''wurst'', ''?snickers'', ''?alsace'',
+            ''?kentucky'']'
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (feast love wurst flounder alsace kentucky)
+        - (feast love wurst lemon alsace kentucky)
+        - (feast love wurst muffin alsace kentucky)
+        - (feast love wurst snickers alsace kentucky)
+
+
+---
+timestamp: '2024-11-13T13:12:19.456277'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 32
+    fring_size: 5
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon wurst alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink snickers wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst flounder alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:19.558484'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 33
+    fring_size: 4
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon wurst alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink snickers wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst snickers alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:19.656782'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 34
+    fring_size: 3
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon wurst alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink snickers wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst lemon alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:19.795362'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 35
+    fring_size: 2
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon wurst alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink snickers wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst muffin alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:19.927466'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 36
+    fring_size: 5
+    current_node:
+        depth: 4
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon wurst alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink popover wurst goias kentucky alsace alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''wurst'', ''?snickers'', ''?alsace'',
+            ''?kentucky'']'
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (feast love wurst flounder alsace kentucky)
+        - (feast love wurst lemon alsace kentucky)
+        - (feast love wurst muffin alsace kentucky)
+        - (feast love wurst snickers alsace kentucky)
+
+
+---
+timestamp: '2024-11-13T13:12:20.025033'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 37
+    fring_size: 4
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon wurst alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink popover wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst flounder alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:20.127435'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 38
+    fring_size: 3
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon wurst alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink popover wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst lemon alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:20.227029'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 39
+    fring_size: 2
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon wurst alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink popover wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst snickers alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:20.332299'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 40
+    fring_size: 1
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon wurst alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink popover wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst muffin alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:20.450986'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 41
+    fring_size: 1
+    current_node:
+        depth: 2
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon muffin alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''overcome'', ''sciatica'', ''?love'', ''?wurst'', ''uranus'',
+            ''neptune'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (overcome sciatica love wurst uranus neptune)
+
+
+---
+timestamp: '2024-11-13T13:12:20.589003'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 42
+    fring_size: 3
+    current_node:
+        depth: 3
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon muffin alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drink'', ''?snickers'', ''wurst'', ''goias'', ''kentucky'',
+            ''alsace'', ''?alsace'', ''kentucky'']'
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (drink okra wurst goias kentucky alsace alsace kentucky)
+        - (drink popover wurst goias kentucky alsace alsace kentucky)
+        - (drink snickers wurst goias kentucky alsace alsace kentucky)
+
+
+---
+timestamp: '2024-11-13T13:12:20.741432'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 43
+    fring_size: 6
+    current_node:
+        depth: 4
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon muffin alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink okra wurst goias kentucky alsace alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''wurst'', ''?snickers'', ''?alsace'',
+            ''?kentucky'']'
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (feast love wurst flounder alsace kentucky)
+        - (feast love wurst lemon alsace kentucky)
+        - (feast love wurst muffin alsace kentucky)
+        - (feast love wurst snickers alsace kentucky)
+
+
+---
+timestamp: '2024-11-13T13:12:20.839261'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 44
+    fring_size: 5
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon muffin alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink okra wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst flounder alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:20.946045'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 45
+    fring_size: 4
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon muffin alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink okra wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst snickers alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:21.048565'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 46
+    fring_size: 3
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon muffin alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink okra wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst lemon alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:21.145672'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 47
+    fring_size: 2
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon muffin alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink okra wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst muffin alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:21.266191'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 48
+    fring_size: 5
+    current_node:
+        depth: 4
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon muffin alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink snickers wurst goias kentucky alsace alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''wurst'', ''?snickers'', ''?alsace'',
+            ''?kentucky'']'
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (feast love wurst flounder alsace kentucky)
+        - (feast love wurst lemon alsace kentucky)
+        - (feast love wurst muffin alsace kentucky)
+        - (feast love wurst snickers alsace kentucky)
+
+
+---
+timestamp: '2024-11-13T13:12:21.365692'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 49
+    fring_size: 4
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon muffin alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink snickers wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst flounder alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:21.462229'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 50
+    fring_size: 3
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon muffin alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink snickers wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst lemon alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:21.563843'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 51
+    fring_size: 2
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon muffin alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink snickers wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst snickers alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:21.663469'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 52
+    fring_size: 1
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon muffin alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink snickers wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst muffin alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:21.797839'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 53
+    fring_size: 4
+    current_node:
+        depth: 4
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon muffin alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink popover wurst goias kentucky alsace alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''wurst'', ''?snickers'', ''?alsace'',
+            ''?kentucky'']'
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (feast love wurst flounder alsace kentucky)
+        - (feast love wurst lemon alsace kentucky)
+        - (feast love wurst muffin alsace kentucky)
+        - (feast love wurst snickers alsace kentucky)
+
+
+---
+timestamp: '2024-11-13T13:12:21.903424'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 54
+    fring_size: 3
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon muffin alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink popover wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst flounder alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:22.037446'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 55
+    fring_size: 2
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon muffin alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink popover wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst muffin alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:22.144008'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 56
+    fring_size: 1
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon muffin alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink popover wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst lemon alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:22.243699'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 57
+    fring_size: 0
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon muffin alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink popover wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst snickers alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:12:22.244959'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.1 minutes = 6.43 seconds
+
+
+---
+timestamp: '2024-11-13T13:12:22.318573'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+

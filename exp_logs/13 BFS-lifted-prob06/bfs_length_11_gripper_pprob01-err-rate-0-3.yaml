@@ -1,0 +1,1776 @@
+---
+timestamp: '2024-11-13T13:14:52.523347'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/13 BFS-lifted-prob06/bfs_length_11_gripper_pprob01-err-rate-0-3.yaml
+    instance_id: gripper/pprob01-err-rate-0-3
+    search_algorithm: bfs
+    plan_length: 11
+    domain_class: gripper
+    instance_name: pprob01-err-rate-0-3
+    ground_plan:
+    - (pick ball1 rooma left)
+    - (pick ball2 rooma right)
+    - (move rooma roomb)
+    - (drop ball1 roomb left)
+    - (drop ball2 roomb right)
+    - (move roomb rooma)
+    - (pick ball3 rooma left)
+    - (pick ball4 rooma right)
+    - (move rooma roomb)
+    - (drop ball3 roomb left)
+    - (drop ball4 roomb right)
+    lifted_plan:
+    -   - pick
+        - ball1
+        - rooma
+        - ?left
+    -   - pick
+        - ?ball2
+        - ?rooma
+        - ?right
+    -   - move
+        - rooma
+        - ?roomb
+    -   - drop
+        - ?ball1
+        - ?roomb
+        - left
+    -   - drop
+        - ?ball2
+        - ?roomb
+        - right
+    -   - move
+        - roomb
+        - ?rooma
+    -   - pick
+        - ball3
+        - rooma
+        - left
+    -   - pick
+        - ball4
+        - ?rooma
+        - right
+    -   - move
+        - rooma
+        - roomb
+    -   - drop
+        - ?ball3
+        - ?roomb
+        - ?left
+    -   - drop
+        - ball4
+        - roomb
+        - right
+
+
+---
+timestamp: '2024-11-13T13:14:52.527352'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: pick,(carry ?obj ?gripper),effPos,1
+
+
+---
+timestamp: '2024-11-13T13:14:52.625365'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 2
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''pick'', ''ball1'', ''rooma'', ''?left'']'
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (pick ball1 rooma left)
+        - (pick ball1 rooma right)
+
+
+---
+timestamp: '2024-11-13T13:14:52.741822'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 2
+    fring_size: 4
+    current_node:
+        depth: 1
+        ground_actions:
+        - (pick ball1 rooma left)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''pick'', ''?ball2'', ''?rooma'', ''?right'']'
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (pick ball2 rooma right)
+        - (pick ball3 rooma right)
+        - (pick ball4 rooma right)
+
+
+---
+timestamp: '2024-11-13T13:14:52.864009'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 3
+    fring_size: 5
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pick ball1 rooma left)
+        - (pick ball2 rooma right)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''move'', ''rooma'', ''?roomb'']'
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (move rooma rooma)
+        - (move rooma roomb)
+
+
+---
+timestamp: '2024-11-13T13:14:52.994439'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 4
+    fring_size: 8
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick ball1 rooma left)
+        - (pick ball2 rooma right)
+        - (move rooma rooma)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drop'', ''?ball1'', ''?roomb'', ''left'']'
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (drop ball1 rooma left)
+        - (drop ball2 rooma left)
+        - (drop ball3 rooma left)
+        - (drop ball4 rooma left)
+
+
+---
+timestamp: '2024-11-13T13:14:53.093414'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 5
+    fring_size: 11
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick ball1 rooma left)
+        - (pick ball2 rooma right)
+        - (move rooma roomb)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drop'', ''?ball1'', ''?roomb'', ''left'']'
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (drop ball1 roomb left)
+        - (drop ball2 roomb left)
+        - (drop ball3 roomb left)
+        - (drop ball4 roomb left)
+
+
+---
+timestamp: '2024-11-13T13:14:53.178980'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 6
+    fring_size: 12
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pick ball1 rooma left)
+        - (pick ball4 rooma right)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''move'', ''rooma'', ''?roomb'']'
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (move rooma rooma)
+        - (move rooma roomb)
+
+
+---
+timestamp: '2024-11-13T13:14:53.273241'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 7
+    fring_size: 15
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick ball1 rooma left)
+        - (pick ball4 rooma right)
+        - (move rooma rooma)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drop'', ''?ball1'', ''?roomb'', ''left'']'
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (drop ball1 rooma left)
+        - (drop ball2 rooma left)
+        - (drop ball3 rooma left)
+        - (drop ball4 rooma left)
+
+
+---
+timestamp: '2024-11-13T13:14:53.396241'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 8
+    fring_size: 18
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick ball1 rooma left)
+        - (pick ball4 rooma right)
+        - (move rooma roomb)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drop'', ''?ball1'', ''?roomb'', ''left'']'
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (drop ball1 roomb left)
+        - (drop ball2 roomb left)
+        - (drop ball3 roomb left)
+        - (drop ball4 roomb left)
+
+
+---
+timestamp: '2024-11-13T13:14:53.500544'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 9
+    fring_size: 19
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pick ball1 rooma left)
+        - (pick ball3 rooma right)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''move'', ''rooma'', ''?roomb'']'
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (move rooma rooma)
+        - (move rooma roomb)
+
+
+---
+timestamp: '2024-11-13T13:14:53.599261'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 10
+    fring_size: 22
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick ball1 rooma left)
+        - (pick ball3 rooma right)
+        - (move rooma rooma)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drop'', ''?ball1'', ''?roomb'', ''left'']'
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (drop ball1 rooma left)
+        - (drop ball2 rooma left)
+        - (drop ball3 rooma left)
+        - (drop ball4 rooma left)
+
+
+---
+timestamp: '2024-11-13T13:14:53.697691'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 11
+    fring_size: 25
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick ball1 rooma left)
+        - (pick ball3 rooma right)
+        - (move rooma roomb)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drop'', ''?ball1'', ''?roomb'', ''left'']'
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (drop ball1 roomb left)
+        - (drop ball2 roomb left)
+        - (drop ball3 roomb left)
+        - (drop ball4 roomb left)
+
+
+---
+timestamp: '2024-11-13T13:14:53.821950'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 12
+    fring_size: 27
+    current_node:
+        depth: 1
+        ground_actions:
+        - (pick ball1 rooma right)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''pick'', ''?ball2'', ''?rooma'', ''?right'']'
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (pick ball2 rooma left)
+        - (pick ball3 rooma left)
+        - (pick ball4 rooma left)
+
+
+---
+timestamp: '2024-11-13T13:14:53.941146'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 13
+    fring_size: 28
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball2 rooma left)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''move'', ''rooma'', ''?roomb'']'
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (move rooma rooma)
+        - (move rooma roomb)
+
+
+---
+timestamp: '2024-11-13T13:14:54.064902'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 14
+    fring_size: 31
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball2 rooma left)
+        - (move rooma rooma)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drop'', ''?ball1'', ''?roomb'', ''left'']'
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (drop ball1 rooma left)
+        - (drop ball2 rooma left)
+        - (drop ball3 rooma left)
+        - (drop ball4 rooma left)
+
+
+---
+timestamp: '2024-11-13T13:14:54.205464'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 15
+    fring_size: 34
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball2 rooma left)
+        - (move rooma roomb)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drop'', ''?ball1'', ''?roomb'', ''left'']'
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (drop ball1 roomb left)
+        - (drop ball2 roomb left)
+        - (drop ball3 roomb left)
+        - (drop ball4 roomb left)
+
+
+---
+timestamp: '2024-11-13T13:14:54.324826'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 16
+    fring_size: 35
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball3 rooma left)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''move'', ''rooma'', ''?roomb'']'
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (move rooma rooma)
+        - (move rooma roomb)
+
+
+---
+timestamp: '2024-11-13T13:14:54.426801'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 17
+    fring_size: 38
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball3 rooma left)
+        - (move rooma rooma)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drop'', ''?ball1'', ''?roomb'', ''left'']'
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (drop ball1 rooma left)
+        - (drop ball2 rooma left)
+        - (drop ball3 rooma left)
+        - (drop ball4 rooma left)
+
+
+---
+timestamp: '2024-11-13T13:14:54.526064'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 18
+    fring_size: 41
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball3 rooma left)
+        - (move rooma roomb)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drop'', ''?ball1'', ''?roomb'', ''left'']'
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (drop ball1 roomb left)
+        - (drop ball2 roomb left)
+        - (drop ball3 roomb left)
+        - (drop ball4 roomb left)
+
+
+---
+timestamp: '2024-11-13T13:14:54.647798'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 19
+    fring_size: 42
+    current_node:
+        depth: 2
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball4 rooma left)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''move'', ''rooma'', ''?roomb'']'
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (move rooma rooma)
+        - (move rooma roomb)
+
+
+---
+timestamp: '2024-11-13T13:14:54.744491'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 20
+    fring_size: 45
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball4 rooma left)
+        - (move rooma rooma)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drop'', ''?ball1'', ''?roomb'', ''left'']'
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (drop ball1 rooma left)
+        - (drop ball2 rooma left)
+        - (drop ball3 rooma left)
+        - (drop ball4 rooma left)
+
+
+---
+timestamp: '2024-11-13T13:14:54.871398'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 21
+    fring_size: 48
+    current_node:
+        depth: 3
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball4 rooma left)
+        - (move rooma roomb)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drop'', ''?ball1'', ''?roomb'', ''left'']'
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (drop ball1 roomb left)
+        - (drop ball2 roomb left)
+        - (drop ball3 roomb left)
+        - (drop ball4 roomb left)
+
+
+---
+timestamp: '2024-11-13T13:14:54.965303'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 22
+    fring_size: 47
+    current_node:
+        depth: 4
+        ground_actions:
+        - (pick ball1 rooma left)
+        - (pick ball4 rooma right)
+        - (move rooma rooma)
+        - (drop ball3 rooma left)
+        repair_set: drop,(carry ?obj ?gripper),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''drop'', ''?ball2'', ''?roomb'', ''right'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:14:55.057688'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 23
+    fring_size: 46
+    current_node:
+        depth: 4
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball2 rooma left)
+        - (move rooma roomb)
+        - (drop ball1 roomb left)
+        repair_set: drop,(carry ?obj ?gripper),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''drop'', ''?ball2'', ''?roomb'', ''right'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:14:55.144059'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 24
+    fring_size: 45
+    current_node:
+        depth: 4
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball2 rooma left)
+        - (move rooma roomb)
+        - (drop ball4 roomb left)
+        repair_set: drop,(carry ?obj ?gripper),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''drop'', ''?ball2'', ''?roomb'', ''right'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:14:55.231408'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 25
+    fring_size: 44
+    current_node:
+        depth: 4
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball3 rooma left)
+        - (move rooma roomb)
+        - (drop ball4 roomb left)
+        repair_set: drop,(carry ?obj ?gripper),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''drop'', ''?ball2'', ''?roomb'', ''right'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:14:55.326454'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 26
+    fring_size: 44
+    current_node:
+        depth: 4
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball4 rooma left)
+        - (move rooma rooma)
+        - (drop ball4 rooma left)
+        repair_set: pick,(carry ?obj ?gripper),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''drop'', ''?ball2'', ''?roomb'', ''right'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (drop ball1 rooma right)
+
+
+---
+timestamp: '2024-11-13T13:14:55.414753'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 27
+    fring_size: 43
+    current_node:
+        depth: 5
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball4 rooma left)
+        - (move rooma rooma)
+        - (drop ball4 rooma left)
+        - (drop ball1 rooma right)
+        repair_set: pick,(carry ?obj ?gripper),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''roomb'', ''?rooma'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:14:55.504485'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 28
+    fring_size: 42
+    current_node:
+        depth: 4
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball4 rooma left)
+        - (move rooma roomb)
+        - (drop ball3 roomb left)
+        repair_set: drop,(carry ?obj ?gripper),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''drop'', ''?ball2'', ''?roomb'', ''right'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:14:55.592601'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 29
+    fring_size: 41
+    current_node:
+        depth: 4
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball4 rooma left)
+        - (move rooma roomb)
+        - (drop ball2 roomb left)
+        repair_set: drop,(carry ?obj ?gripper),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''drop'', ''?ball2'', ''?roomb'', ''right'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:14:55.679374'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 30
+    fring_size: 40
+    current_node:
+        depth: 4
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball4 rooma left)
+        - (move rooma roomb)
+        - (drop ball1 roomb left)
+        repair_set: drop,(carry ?obj ?gripper),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''drop'', ''?ball2'', ''?roomb'', ''right'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:14:55.768050'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 31
+    fring_size: 39
+    current_node:
+        depth: 4
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball4 rooma left)
+        - (move rooma rooma)
+        - (drop ball3 rooma left)
+        repair_set: drop,(carry ?obj ?gripper),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''drop'', ''?ball2'', ''?roomb'', ''right'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:14:55.859135'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 32
+    fring_size: 39
+    current_node:
+        depth: 4
+        ground_actions:
+        - (pick ball1 rooma left)
+        - (pick ball3 rooma right)
+        - (move rooma roomb)
+        - (drop ball1 roomb left)
+        repair_set: pick,(carry ?obj ?gripper),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''drop'', ''?ball2'', ''?roomb'', ''right'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (drop ball3 roomb right)
+
+
+---
+timestamp: '2024-11-13T13:14:55.948040'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 33
+    fring_size: 40
+    current_node:
+        depth: 5
+        ground_actions:
+        - (pick ball1 rooma left)
+        - (pick ball3 rooma right)
+        - (move rooma roomb)
+        - (drop ball1 roomb left)
+        - (drop ball3 roomb right)
+        repair_set: pick,(carry ?obj ?gripper),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''roomb'', ''?rooma'']'
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (move roomb rooma)
+        - (move roomb roomb)
+
+
+---
+timestamp: '2024-11-13T13:14:56.041761'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 34
+    fring_size: 39
+    current_node:
+        depth: 6
+        ground_actions:
+        - (pick ball1 rooma left)
+        - (pick ball3 rooma right)
+        - (move rooma roomb)
+        - (drop ball1 roomb left)
+        - (drop ball3 roomb right)
+        - (move roomb rooma)
+        repair_set: pick,(carry ?obj ?gripper),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''pick'', ''ball3'', ''rooma'', ''left'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:14:56.138651'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 35
+    fring_size: 38
+    current_node:
+        depth: 6
+        ground_actions:
+        - (pick ball1 rooma left)
+        - (pick ball3 rooma right)
+        - (move rooma roomb)
+        - (drop ball1 roomb left)
+        - (drop ball3 roomb right)
+        - (move roomb roomb)
+        repair_set: pick,(carry ?obj ?gripper),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''pick'', ''ball3'', ''rooma'', ''left'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:14:56.225848'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 36
+    fring_size: 37
+    current_node:
+        depth: 4
+        ground_actions:
+        - (pick ball1 rooma left)
+        - (pick ball3 rooma right)
+        - (move rooma rooma)
+        - (drop ball2 rooma left)
+        repair_set: drop,(carry ?obj ?gripper),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''drop'', ''?ball2'', ''?roomb'', ''right'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:14:56.334328'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 37
+    fring_size: 37
+    current_node:
+        depth: 4
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball3 rooma left)
+        - (move rooma roomb)
+        - (drop ball3 roomb left)
+        repair_set: pick,(carry ?obj ?gripper),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''drop'', ''?ball2'', ''?roomb'', ''right'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (drop ball1 roomb right)
+
+
+---
+timestamp: '2024-11-13T13:14:56.446190'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 38
+    fring_size: 38
+    current_node:
+        depth: 5
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball3 rooma left)
+        - (move rooma roomb)
+        - (drop ball3 roomb left)
+        - (drop ball1 roomb right)
+        repair_set: pick,(carry ?obj ?gripper),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''roomb'', ''?rooma'']'
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (move roomb rooma)
+        - (move roomb roomb)
+
+
+---
+timestamp: '2024-11-13T13:14:56.531574'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 39
+    fring_size: 37
+    current_node:
+        depth: 6
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball3 rooma left)
+        - (move rooma roomb)
+        - (drop ball3 roomb left)
+        - (drop ball1 roomb right)
+        - (move roomb rooma)
+        repair_set: pick,(carry ?obj ?gripper),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''pick'', ''ball3'', ''rooma'', ''left'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:14:56.618578'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 40
+    fring_size: 36
+    current_node:
+        depth: 6
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball3 rooma left)
+        - (move rooma roomb)
+        - (drop ball3 roomb left)
+        - (drop ball1 roomb right)
+        - (move roomb roomb)
+        repair_set: pick,(carry ?obj ?gripper),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''pick'', ''ball3'', ''rooma'', ''left'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:14:56.711244'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 41
+    fring_size: 36
+    current_node:
+        depth: 4
+        ground_actions:
+        - (pick ball1 rooma left)
+        - (pick ball3 rooma right)
+        - (move rooma rooma)
+        - (drop ball1 rooma left)
+        repair_set: pick,(carry ?obj ?gripper),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''drop'', ''?ball2'', ''?roomb'', ''right'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (drop ball3 rooma right)
+
+
+---
+timestamp: '2024-11-13T13:14:56.797976'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 42
+    fring_size: 35
+    current_node:
+        depth: 5
+        ground_actions:
+        - (pick ball1 rooma left)
+        - (pick ball3 rooma right)
+        - (move rooma rooma)
+        - (drop ball1 rooma left)
+        - (drop ball3 rooma right)
+        repair_set: pick,(carry ?obj ?gripper),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''roomb'', ''?rooma'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:14:56.887741'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 43
+    fring_size: 35
+    current_node:
+        depth: 4
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball3 rooma left)
+        - (move rooma rooma)
+        - (drop ball3 rooma left)
+        repair_set: pick,(carry ?obj ?gripper),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''drop'', ''?ball2'', ''?roomb'', ''right'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (drop ball1 rooma right)
+
+
+---
+timestamp: '2024-11-13T13:14:56.969967'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 44
+    fring_size: 34
+    current_node:
+        depth: 5
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball3 rooma left)
+        - (move rooma rooma)
+        - (drop ball3 rooma left)
+        - (drop ball1 rooma right)
+        repair_set: pick,(carry ?obj ?gripper),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''roomb'', ''?rooma'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:14:57.057885'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 45
+    fring_size: 34
+    current_node:
+        depth: 4
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball4 rooma left)
+        - (move rooma roomb)
+        - (drop ball4 roomb left)
+        repair_set: pick,(carry ?obj ?gripper),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''drop'', ''?ball2'', ''?roomb'', ''right'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (drop ball1 roomb right)
+
+
+---
+timestamp: '2024-11-13T13:14:57.147232'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 46
+    fring_size: 35
+    current_node:
+        depth: 5
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball4 rooma left)
+        - (move rooma roomb)
+        - (drop ball4 roomb left)
+        - (drop ball1 roomb right)
+        repair_set: pick,(carry ?obj ?gripper),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''roomb'', ''?rooma'']'
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (move roomb rooma)
+        - (move roomb roomb)
+
+
+---
+timestamp: '2024-11-13T13:14:57.241097'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 47
+    fring_size: 35
+    current_node:
+        depth: 6
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball4 rooma left)
+        - (move rooma roomb)
+        - (drop ball4 roomb left)
+        - (drop ball1 roomb right)
+        - (move roomb rooma)
+        repair_set: pick,(carry ?obj ?gripper),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''pick'', ''ball3'', ''rooma'', ''left'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick ball3 rooma left)
+
+
+---
+timestamp: '2024-11-13T13:14:57.326072'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 48
+    fring_size: 34
+    current_node:
+        depth: 7
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball4 rooma left)
+        - (move rooma roomb)
+        - (drop ball4 roomb left)
+        - (drop ball1 roomb right)
+        - (move roomb rooma)
+        - (pick ball3 rooma left)
+        repair_set: pick,(carry ?obj ?gripper),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''pick'', ''ball4'', ''?rooma'', ''right'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:14:57.412491'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 49
+    fring_size: 33
+    current_node:
+        depth: 6
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball4 rooma left)
+        - (move rooma roomb)
+        - (drop ball4 roomb left)
+        - (drop ball1 roomb right)
+        - (move roomb roomb)
+        repair_set: pick,(carry ?obj ?gripper),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''pick'', ''ball3'', ''rooma'', ''left'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:14:57.497880'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 50
+    fring_size: 32
+    current_node:
+        depth: 4
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball3 rooma left)
+        - (move rooma rooma)
+        - (drop ball1 rooma left)
+        repair_set: drop,(carry ?obj ?gripper),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''drop'', ''?ball2'', ''?roomb'', ''right'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:14:57.586255'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 51
+    fring_size: 32
+    current_node:
+        depth: 4
+        ground_actions:
+        - (pick ball1 rooma left)
+        - (pick ball2 rooma right)
+        - (move rooma rooma)
+        - (drop ball1 rooma left)
+        repair_set: pick,(carry ?obj ?gripper),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''drop'', ''?ball2'', ''?roomb'', ''right'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (drop ball2 rooma right)
+
+
+---
+timestamp: '2024-11-13T13:14:57.674946'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 52
+    fring_size: 31
+    current_node:
+        depth: 5
+        ground_actions:
+        - (pick ball1 rooma left)
+        - (pick ball2 rooma right)
+        - (move rooma rooma)
+        - (drop ball1 rooma left)
+        - (drop ball2 rooma right)
+        repair_set: pick,(carry ?obj ?gripper),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''roomb'', ''?rooma'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:14:57.775378'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 53
+    fring_size: 30
+    current_node:
+        depth: 4
+        ground_actions:
+        - (pick ball1 rooma left)
+        - (pick ball2 rooma right)
+        - (move rooma roomb)
+        - (drop ball3 roomb left)
+        repair_set: drop,(carry ?obj ?gripper),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''drop'', ''?ball2'', ''?roomb'', ''right'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:14:57.887031'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 54
+    fring_size: 29
+    current_node:
+        depth: 4
+        ground_actions:
+        - (pick ball1 rooma left)
+        - (pick ball3 rooma right)
+        - (move rooma roomb)
+        - (drop ball2 roomb left)
+        repair_set: drop,(carry ?obj ?gripper),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''drop'', ''?ball2'', ''?roomb'', ''right'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:14:57.989788'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 55
+    fring_size: 28
+    current_node:
+        depth: 4
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball2 rooma left)
+        - (move rooma roomb)
+        - (drop ball3 roomb left)
+        repair_set: drop,(carry ?obj ?gripper),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''drop'', ''?ball2'', ''?roomb'', ''right'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-11-13T13:14:58.118256'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 56
+    fring_size: 28
+    current_node:
+        depth: 4
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball2 rooma left)
+        - (move rooma roomb)
+        - (drop ball2 roomb left)
+        repair_set: pick,(carry ?obj ?gripper),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''drop'', ''?ball2'', ''?roomb'', ''right'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (drop ball1 roomb right)
+
+
+---
+timestamp: '2024-11-13T13:14:58.245044'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 57
+    fring_size: 29
+    current_node:
+        depth: 5
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball2 rooma left)
+        - (move rooma roomb)
+        - (drop ball2 roomb left)
+        - (drop ball1 roomb right)
+        repair_set: pick,(carry ?obj ?gripper),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''roomb'', ''?rooma'']'
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (move roomb rooma)
+        - (move roomb roomb)
+
+
+---
+timestamp: '2024-11-13T13:14:58.366166'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 58
+    fring_size: 29
+    current_node:
+        depth: 6
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball2 rooma left)
+        - (move rooma roomb)
+        - (drop ball2 roomb left)
+        - (drop ball1 roomb right)
+        - (move roomb rooma)
+        repair_set: pick,(carry ?obj ?gripper),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''pick'', ''ball3'', ''rooma'', ''left'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick ball3 rooma left)
+
+
+---
+timestamp: '2024-11-13T13:14:58.465818'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 59
+    fring_size: 29
+    current_node:
+        depth: 7
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball2 rooma left)
+        - (move rooma roomb)
+        - (drop ball2 roomb left)
+        - (drop ball1 roomb right)
+        - (move roomb rooma)
+        - (pick ball3 rooma left)
+        repair_set: pick,(carry ?obj ?gripper),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''pick'', ''ball4'', ''?rooma'', ''right'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (pick ball4 rooma right)
+
+
+---
+timestamp: '2024-11-13T13:14:58.567178'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 60
+    fring_size: 29
+    current_node:
+        depth: 8
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball2 rooma left)
+        - (move rooma roomb)
+        - (drop ball2 roomb left)
+        - (drop ball1 roomb right)
+        - (move roomb rooma)
+        - (pick ball3 rooma left)
+        - (pick ball4 rooma right)
+        repair_set: pick,(carry ?obj ?gripper),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''move'', ''rooma'', ''roomb'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (move rooma roomb)
+
+
+---
+timestamp: '2024-11-13T13:14:58.692086'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 61
+    fring_size: 30
+    current_node:
+        depth: 9
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball2 rooma left)
+        - (move rooma roomb)
+        - (drop ball2 roomb left)
+        - (drop ball1 roomb right)
+        - (move roomb rooma)
+        - (pick ball3 rooma left)
+        - (pick ball4 rooma right)
+        - (move rooma roomb)
+        repair_set: pick,(carry ?obj ?gripper),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''drop'', ''?ball3'', ''?roomb'', ''?left'']'
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (drop ball3 roomb left)
+        - (drop ball4 roomb right)
+
+
+---
+timestamp: '2024-11-13T13:14:58.814994'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 62
+    fring_size: 30
+    current_node:
+        depth: 10
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball2 rooma left)
+        - (move rooma roomb)
+        - (drop ball2 roomb left)
+        - (drop ball1 roomb right)
+        - (move roomb rooma)
+        - (pick ball3 rooma left)
+        - (pick ball4 rooma right)
+        - (move rooma roomb)
+        - (drop ball3 roomb left)
+        repair_set: pick,(carry ?obj ?gripper),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''drop'', ''ball4'', ''roomb'', ''right'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (drop ball4 roomb right)
+
+
+---
+timestamp: '2024-11-13T13:14:58.816428'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: true
+    iteration: 63
+    fring_size: 29
+    current_node:
+        depth: 11
+        ground_actions:
+        - (pick ball1 rooma right)
+        - (pick ball2 rooma left)
+        - (move rooma roomb)
+        - (drop ball2 roomb left)
+        - (drop ball1 roomb right)
+        - (move roomb rooma)
+        - (pick ball3 rooma left)
+        - (pick ball4 rooma right)
+        - (move rooma roomb)
+        - (drop ball3 roomb left)
+        - (drop ball4 roomb right)
+        repair_set: pick,(carry ?obj ?gripper),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2024-11-13T13:14:58.817553'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.1 minutes = 6.30 seconds
+
+
+---
+timestamp: '2024-11-13T13:14:58.887421'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+

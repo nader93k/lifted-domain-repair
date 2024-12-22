@@ -30,16 +30,24 @@ struct ObjectOrVarRef {
     ull _is_variable: 1;
     ull index: size_minus<ull>(1);
 
-    bool operator==(const ObjectOrVarRef& other) const = default;
-    bool operator!=(const ObjectOrVarRef& other) const = default;
+    bool operator==(const ObjectOrVarRef& other) const {
+        return _is_variable == other._is_variable && index == other.index;
+    }
+    bool operator!=(const ObjectOrVarRef& other) const {
+        return !(*this == other);
+    }
 };
 
 struct Atom {
     PredicateRef head;
     std::vector<ObjectOrVarRef> args;
 
-    bool operator==(const Atom& other) const = default;
-    bool operator!=(const Atom& other) const = default;
+    bool operator==(const Atom& other) const {
+        return head == other.head && args == other.args;
+    }
+    bool operator!=(const Atom& other) const {
+        return !(*this == other);
+    }
 };
 
 struct Rule {
@@ -53,8 +61,15 @@ struct MutexPar {
     ull _is_counted: 1;
     ull associated_type: size_minus<ull>(1);
 
-    bool operator==(const MutexPar& other) const = default;
-    bool operator!=(const MutexPar& other) const = default;
+    bool operator==(const MutexPar& other) const {
+        return _is_variable == other._is_variable && 
+               index == other.index && 
+               _is_counted == other._is_counted && 
+               associated_type == other.associated_type;
+    }
+    bool operator!=(const MutexPar& other) const {
+        return !(*this == other);
+    }
 };
 
 struct MutexParToUll {

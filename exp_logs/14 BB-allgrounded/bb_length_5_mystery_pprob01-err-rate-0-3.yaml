@@ -1,0 +1,353 @@
+---
+timestamp: '2024-11-14T07:04:43.712017'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/14 BB-allgrounded/bb_length_5_mystery_pprob01-err-rate-0-3.yaml
+    instance_id: mystery/pprob01-err-rate-0-3
+    search_algorithm: bb
+    plan_length: 5
+    domain_class: mystery
+    instance_name: pprob01-err-rate-0-3
+    ground_plan:
+    - (overcome abrasion rest pork uranus venus)
+    - (feast rest pork lamb alsace quebec)
+    - (feast rest lamb flounder surrey pennsylvania)
+    - (feast rest flounder rice pennsylvania alsace)
+    - (succumb abrasion rest rice uranus venus)
+    lifted_plan:
+    -   - overcome
+        - abrasion
+        - rest
+        - pork
+        - uranus
+        - venus
+    -   - feast
+        - rest
+        - pork
+        - lamb
+        - alsace
+        - quebec
+    -   - feast
+        - rest
+        - lamb
+        - flounder
+        - surrey
+        - pennsylvania
+    -   - feast
+        - rest
+        - flounder
+        - rice
+        - pennsylvania
+        - alsace
+    -   - succumb
+        - abrasion
+        - rest
+        - rice
+        - uranus
+        - venus
+
+
+---
+timestamp: '2024-11-14T07:04:43.716368'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: succumb,(craves ?c ?n),effPos,1
+
+
+---
+timestamp: '2024-11-14T07:04:45.261066'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 1
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''overcome'', ''abrasion'', ''rest'', ''pork'', ''uranus'',
+            ''venus'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (overcome abrasion rest pork uranus venus)
+
+
+---
+timestamp: '2024-11-14T07:04:46.649738'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 2
+    fring_size: 1
+    current_node:
+        depth: 1
+        ground_actions:
+        - (overcome abrasion rest pork uranus venus)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''rest'', ''pork'', ''lamb'', ''alsace'',
+            ''quebec'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (feast rest pork lamb alsace quebec)
+
+
+---
+timestamp: '2024-11-14T07:04:47.871398'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 3
+    fring_size: 1
+    current_node:
+        depth: 2
+        ground_actions:
+        - (overcome abrasion rest pork uranus venus)
+        - (feast rest pork lamb alsace quebec)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''rest'', ''lamb'', ''flounder'', ''surrey'',
+            ''pennsylvania'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (feast rest lamb flounder surrey pennsylvania)
+
+
+---
+timestamp: '2024-11-14T07:04:49.275832'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 4
+    fring_size: 1
+    current_node:
+        depth: 3
+        ground_actions:
+        - (overcome abrasion rest pork uranus venus)
+        - (feast rest pork lamb alsace quebec)
+        - (feast rest lamb flounder surrey pennsylvania)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''rest'', ''flounder'', ''rice'', ''pennsylvania'',
+            ''alsace'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (feast rest flounder rice pennsylvania alsace)
+
+
+---
+timestamp: '2024-11-14T07:04:49.373414'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 5
+    fring_size: 1
+    current_node:
+        depth: 4
+        ground_actions:
+        - (overcome abrasion rest pork uranus venus)
+        - (feast rest pork lamb alsace quebec)
+        - (feast rest lamb flounder surrey pennsylvania)
+        - (feast rest flounder rice pennsylvania alsace)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''succumb'', ''abrasion'', ''rest'', ''rice'', ''uranus'',
+            ''venus'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (succumb abrasion rest rice uranus venus)
+
+
+---
+timestamp: '2024-11-14T07:04:49.374557'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: true
+    iteration: 6
+    fring_size: 0
+    current_node:
+        depth: 5
+        ground_actions:
+        - (overcome abrasion rest pork uranus venus)
+        - (feast rest pork lamb alsace quebec)
+        - (feast rest lamb flounder surrey pennsylvania)
+        - (feast rest flounder rice pennsylvania alsace)
+        - (succumb abrasion rest rice uranus venus)
+        repair_set: succumb,(craves ?c ?n),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2024-11-14T07:04:50.681010'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 1
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''overcome'', ''abrasion'', ''rest'', ''pork'', ''uranus'',
+            ''venus'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (overcome abrasion rest pork uranus venus)
+
+
+---
+timestamp: '2024-11-14T07:04:51.951239'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 2
+    fring_size: 1
+    current_node:
+        depth: 1
+        ground_actions:
+        - (overcome abrasion rest pork uranus venus)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''rest'', ''pork'', ''lamb'', ''alsace'',
+            ''quebec'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (feast rest pork lamb alsace quebec)
+
+
+---
+timestamp: '2024-11-14T07:04:53.257606'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 3
+    fring_size: 1
+    current_node:
+        depth: 2
+        ground_actions:
+        - (overcome abrasion rest pork uranus venus)
+        - (feast rest pork lamb alsace quebec)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''rest'', ''lamb'', ''flounder'', ''surrey'',
+            ''pennsylvania'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (feast rest lamb flounder surrey pennsylvania)
+
+
+---
+timestamp: '2024-11-14T07:04:54.586643'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 4
+    fring_size: 1
+    current_node:
+        depth: 3
+        ground_actions:
+        - (overcome abrasion rest pork uranus venus)
+        - (feast rest pork lamb alsace quebec)
+        - (feast rest lamb flounder surrey pennsylvania)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''rest'', ''flounder'', ''rice'', ''pennsylvania'',
+            ''alsace'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (feast rest flounder rice pennsylvania alsace)
+
+
+---
+timestamp: '2024-11-14T07:04:54.677797'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 5
+    fring_size: 0
+    current_node:
+        depth: 4
+        ground_actions:
+        - (overcome abrasion rest pork uranus venus)
+        - (feast rest pork lamb alsace quebec)
+        - (feast rest lamb flounder surrey pennsylvania)
+        - (feast rest flounder rice pennsylvania alsace)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''succumb'', ''abrasion'', ''rest'', ''rice'', ''uranus'',
+            ''venus'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (succumb abrasion rest rice uranus venus)
+
+
+---
+timestamp: '2024-11-14T07:04:54.679005'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.2 minutes = 10.97 seconds
+
+
+---
+timestamp: '2024-11-14T07:04:54.753351'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+

@@ -1,20 +1,40 @@
 ###### MAIN
-search_algorithm: bb
-heuristic_relaxation: zeroary
-instance_ids: instance_ids_small_exp_set
-min_length: 1
-max_length: 15
-timeout_seconds: 900  # 15 * 60
-order: increasing
 benchmark_path: ./input/benchmarks-G1
+search_algorithm: astar
 log_folder: ./exp_logs_debug
 log_interval: 1
-domain_class: null
-run_mode: subprocess
+timeout_seconds: 900  # 15 * 60
+order: increasing
+min_length: 5
+max_length: 15
+domain_class: blocks
+instance_ids: null
+heuristic_relaxation: none
+run_mode: pycall
+lift_prob: 1.0
+
+
 
 ###### Supported Values
 # search_algorithm: astar, bfs, greedy
 # heuristic_relaxation: zeroary, null, unary
+
+
+###### bfs-prob06
+# search_algorithm: bfs
+# heuristic_relaxation: zeroary
+# lift_prob: 0.6
+# instance_ids: instance_ids_small_exp_set
+# # instance_ids: visitall-opt11-strips/pproblem02-full-err-rate-0-1
+# min_length: 1
+# max_length: 15
+# timeout_seconds: 900  # 15 * 60
+# order: increasing
+# benchmark_path: ./input/benchmarks-G1
+# log_folder: ./exp_logs/13 BFS-lifted-prob06
+# log_interval: 1
+# domain_class: null
+# run_mode: subprocess
 
 
 ###### AStar
@@ -59,3 +79,20 @@ run_mode: subprocess
 # instance_ids: visitall-opt11-strips/pproblem02-full-err-rate-0-1
 # heuristic_relaxation: unary
 # run_mode: subprocess
+
+
+
+####### NO relaxation
+# search_algorithm: bfs
+# heuristic_relaxation: zeroary
+# instance_ids: instance_ids_small_exp_set
+# min_length: 1
+# max_length: 15
+# timeout_seconds: 900  # 15 * 60
+# order: increasing
+# benchmark_path: ./input/benchmarks-G1
+# log_folder: ./exp_logs/15 BFS-lifted-prob06-no-relaxation
+# log_interval: 1
+# domain_class: null
+# run_mode: subprocess
+# lift_prob: 0.6
