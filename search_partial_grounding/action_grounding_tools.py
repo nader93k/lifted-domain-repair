@@ -9,7 +9,7 @@ import random
 
 
 
-def read_lifted_actions(file_path, lift_prob=0.0, random_seed=0) -> list[list[str]]:
+def read_lifted_actions(file_path, lift_prob=0.0, random_seed=0) -> List[List[str]]:
     random.seed(random_seed)
     result = []
     with open(file_path, 'r') as file:
@@ -39,7 +39,7 @@ def read_lifted_actions(file_path, lift_prob=0.0, random_seed=0) -> list[list[st
     return result
 
 
-def read_ground_actions(file_path: str) -> list[str]:
+def read_ground_actions(file_path: str) -> List[str]:
     result = []
     with open(file_path, 'r') as file:
         for line in file:

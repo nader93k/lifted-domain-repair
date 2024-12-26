@@ -1,0 +1,50 @@
+Bootstrap: localimage
+From: ijcai-os-python.sif
+
+
+%post
+    # Install python dependencies
+    python3 -m pip install 'python-sat[aiger,approxmc,cryptosat,pblib]'
+    python3 -m pip install tarski==0.4.0
+
+    # install lpopt
+    wget https://dbai.tuwien.ac.at/proj/lpopt/lpopt-2.2-x86_64.tar.gz
+    tar -xvzf lpopt-2.2-x86_64.tar.gz
+    mv lpopt-2.2-x86_64/* /usr/bin/
+    rm lpopt-2.2-x86_64.tar.gz
+
+    # install htd
+    wget https://github.com/mabseher/htd/archive/refs/tags/1.2.zip -O htd-1.2.zip
+    7z x htd-1.2.zip -ohtd-1.2
+    cd htd-1.2/htd-1.2
+    mkdir build && cd build
+    cmake ..
+    make -j8
+    make install
+    cd ../..
+    rm -rf htd-1.2.zip
+
+
+    # CMAKE INSTALLATION... prev command gives old version... TODO: Move this
+    wget https://github.com/Kitware/CMake/releases/download/v3.28.1/cmake-3.28.1.tar.gz
+    tar -zxvf cmake-3.28.1.tar.gz
+    cd cmake-3.28.1
+    ./bootstrap
+    make
+    make install
+
+    # compile local sources
+    # TODO: Move this to the top.
+    python3 -m pip install setuptools
+
+
+    cd lifted-white-plan-domain-repair/relaxation_generator
+    python3 build.py
+    cd lifted-white-plan-domain-repair/fd2
+    python3 build.py
+    cd lifted-white-plan-domain-repair/pwl
+    python3 build.py
+
+    # Clean up apt cache
+    apt-get clean
+    rm -rf /var/lib/apt/lists/*
