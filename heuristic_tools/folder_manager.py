@@ -4,6 +4,8 @@ import shutil
 from pathlib import Path
 import sys
 
+
+
 @contextlib.contextmanager
 def temporary_base_folder(new_base_folder):
     # Import the module containing the global variables
@@ -67,6 +69,7 @@ def temporary_base_folder(new_base_folder):
             'out.sas'
         ]
         
+        #TODO uncomment this for production
         # for file in files_to_remove:
         #     file_path = Path(new_base_folder) / file
         #     try:
@@ -140,7 +143,8 @@ def temporary_base_folder_old_h(new_base_folder):
             'datalog.model',
             'out.sas'
         ]
-        
+
+        #TODO uncomment this for production 
         # for file in files_to_remove:
         #     file_path = Path(new_base_folder) / file
         #     try:
@@ -148,3 +152,36 @@ def temporary_base_folder_old_h(new_base_folder):
         #             file_path.unlink()
         #     except Exception as e:
         #         print(f"Warning: Failed to remove {file_path}: {e}")
+
+
+
+
+
+@contextlib.contextmanager
+def temporary_base_folder_ground(base_path):
+    """Context manager that provides a temporary directory for the grounding process.
+    """
+    # Import here to avoid circular imports
+    from relaxation_generator.shortcuts import TMP_DIR
+    
+    # Store original TMP_DIR
+    original_tmp_dir = TMP_DIR
+    
+    try:
+        # Convert to Path and ensure absolute
+        base_path = Path(base_path).resolve()
+        base_path.mkdir(parents=True, exist_ok=True)
+        
+        # Update the global TMP_DIR
+        globals()['TMP_DIR'] = str(base_path)
+        
+        yield
+        
+    finally:
+        # Restore original TMP_DIR
+        globals()['TMP_DIR'] = original_tmp_dir
+        
+        #TODO uncomment for production
+        # Clean up temporary directory if it exists
+        # if 'base_path' in locals() and base_path.exists():
+        #     shutil.rmtree(base_path)

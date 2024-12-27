@@ -9,6 +9,7 @@ from relaxation_generator.shortcuts import ground
 from fd.pddl.tasks import Task
 import copy
 import pickle
+from heuristic_tools import temporary_base_folder_ground
 
 #TODO: could allow to reduce datalog model
 #TODO: some h+ computation?
@@ -276,9 +277,10 @@ def integrate_pre_repair(domain, task, ref_action):
     ])
 
 class Heurisitc:
-    def __init__(self, h_name, relaxation):
+    def __init__(self, h_name, relaxation, ground_base_folder):
         self.h_name = h_name
         self.relaxation = relaxation
+        self.ground_base_folder = ground_base_folder
 
     def get_val(self):
         GROUND_CMD = {
@@ -306,7 +308,8 @@ class Heurisitc:
         if self.relaxation:
             GROUND_CMD["relaxation"] = self.relaxation
 
-        ground(**GROUND_CMD)
+        with temporary_base_folder_ground(self.ground_base_folder):
+            ground(**GROUND_CMD)
 
         if self.h_name.startswith("L_"):
             val = get_pwl_value(self.h_name, OUTPUT_MODEL_DOMAIN, OUTPUT_MODEL_PROBLEM)
