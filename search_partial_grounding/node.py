@@ -119,12 +119,16 @@ class Node:
         # should be sth like: h(y(self.domain), d(self.task), self.lifted_action_sequence)
         task = copy.deepcopy(self.original_task)
         task.set_init_state(self.current_state)
-        h = Heurisitc(h_name="L_HADD", relaxation='none')
-        h_old = old_Heuristic(h_name="L_HMAX", relaxation='none')
 
-        if h!=h_old:
+        h = Heurisitc(h_name="L_HADD", relaxation='none')
+        h_cost = h.evaluate(self.original_domain, task, self.lifted_action_sequence)
+
+        h_old = old_Heuristic(h_name="L_HMAX", relaxation='none')
+        h_cost_old = h_old.evaluate(self.original_domain, task, self.lifted_action_sequence)
+
+        if h_cost!=h_cost_old:
             log_data_error = {
-                    'error': f"heuristic_mismatch: h={h}, h_old={h_old}"
+                    'error': f"heuristic_mismatch: h={h_cost}, h_old={h_cost_old}"
                 }
             self.logger.log(issuer="node", event_type="error", level=logging.ERROR, message=log_data_error)
 

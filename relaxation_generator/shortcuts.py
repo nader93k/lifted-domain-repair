@@ -74,7 +74,7 @@ def lpopt_optimize(f_name):
     command = [lpopt, "-f", f_name]
     temp_file = open(temporary_filename, "w+t")
     execute(command, stdout=temporary_filename)
-    os.rename(temporary_filename, f_name)
+    shutil.move(temporary_filename, f_name)
 
 def ground(domain, problem, theory_outp=None, model_outp=None, lpopt_enabled=False, domain_print=None, problem_print=None, grounder=None, relaxation=None):
     command = [
