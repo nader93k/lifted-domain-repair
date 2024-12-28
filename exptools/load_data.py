@@ -108,7 +108,7 @@ def list_instances(benchmark_path: Path, domain_class=None, instance_ids=[], lif
             instance = Instance(
                   domain_class=planning_folder.name
                 , instance_name=task_file.stem
-                , identifier = planning_folder.name + '/' + task_file.stem
+                , identifier = planning_folder.name + '__' + task_file.stem
                 , planning_task_file=task_file
                 , planning_domain_file=domain_file
                 , error_rate=error_rate
