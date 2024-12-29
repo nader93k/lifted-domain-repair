@@ -19,9 +19,6 @@ def process_csv(input_file, output_file, columns_to_include):
     # Handle 'results exists' column
     if 'results exists' in df.columns:
         df['results exists'] = df['results exists'].map({'True': True, 'False': False})
-        df = df[df['results exists'] == True]
-    else:
-        print("Warning: 'results exists' column not found. Skipping filtering step.")
 
     # Handle 'result g cost' column
     if 'result g cost' in df.columns:
@@ -48,11 +45,21 @@ def process_csv(input_file, output_file, columns_to_include):
     if 'str ground repair' in df.columns:
         df['str ground repair'] = df['str ground repair'].apply(lambda x: str(x) if pd.notna(x) else '')
 
-    # Extract run time in seconds
+    # Extract run time in seconds with improved handling
     if 'run time' in df.columns:
-        def extract_seconds(time_str):
-            match = re.search(r'=\s*([\d.]+)\s*seconds', time_str)
-            return float(match.group(1)) if match else np.nan
+        def extract_seconds(time_val):
+            if pd.isna(time_val):
+                return np.nan
+            
+            # If it's already a numeric value, try to convert directly
+            try:
+                return float(time_val)
+            except (ValueError, TypeError):
+                # If it's a string, try to extract seconds using regex
+                if isinstance(time_val, str):
+                    match = re.search(r'=\s*([\d.]+)\s*seconds', time_val)
+                    return float(match.group(1)) if match else np.nan
+                return np.nan
         
         df['run secs'] = df['run time'].apply(extract_seconds)
     else:
@@ -62,7 +69,11 @@ def process_csv(input_file, output_file, columns_to_include):
     df = df[df.columns[~df.columns.str.contains('Unnamed')]]
     
     # Filter the DataFrame to include only the specified columns (if they exist)
-    df_output = df[[col for col in columns_to_include if col in df.columns]]
+    existing_columns = [col for col in columns_to_include if col in df.columns]
+    if 'run secs' in df.columns and 'run secs' not in existing_columns:
+        existing_columns.append('run secs')
+    
+    df_output = df[existing_columns]
 
     # Save the result to a new CSV file
     df_output.to_csv(output_file, index=False, quoting=1)  # quoting=1 ensures all fields are quoted
@@ -88,47 +99,3 @@ columns_to_include = [
     'num neighbours sum'
 ]
 process_csv(input_file, output_file, columns_to_include)
-
-# columns_to_include = [
-#     'file name',
-#     'problem name',
-#     'plan length',
-#     'num ground repair',
-#     'str ground repair',
-#     'run time',
-#     'error',
-#     'results exists',
-#     'result depth',
-#     'result repair set',
-#     'result g cost',
-#     'result h cost',
-#     'result f cost',
-#     'iteration min',
-#     'iteration max',
-#     'iteration median',
-#     'iteration avg',
-#     'depth min',
-#     'depth max',
-#     'depth median',
-#     'depth avg',
-#     'branching factor min',
-#     'branching factor max',
-#     'branching factor median',
-#     'branching factor avg',
-#     'fringe size min',
-#     'fringe size max',
-#     'fringe size median',
-#     'fringe size avg',
-#     'h cost min',
-#     'h cost max',
-#     'h cost median',
-#     'h cost avg',
-#     'g cost min',
-#     'g cost max',
-#     'g cost median',
-#     'g cost avg',
-#     'f cost min',
-#     'f cost max',
-#     'f cost median',
-#     'f cost avg'
-# ]

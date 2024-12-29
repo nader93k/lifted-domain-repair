@@ -1,0 +1,493 @@
+---
+timestamp: '2024-11-14T07:13:50.122370'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/14 BB-allgrounded/bb_length_11_tpp_pp03-err-rate-0-1.yaml
+    instance_id: tpp/pp03-err-rate-0-1
+    search_algorithm: bb
+    plan_length: 11
+    domain_class: tpp
+    instance_name: pp03-err-rate-0-1
+    ground_plan:
+    - (drive truck1 depot1 market1)
+    - (buy truck1 goods3 market1 level0 level1 level0 level1)
+    - (load goods3 truck1 market1 level0 level1 level0 level1)
+    - (buy truck1 goods2 market1 level0 level1 level0 level1)
+    - (load goods2 truck1 market1 level0 level1 level0 level1)
+    - (buy truck1 goods1 market1 level0 level1 level0 level1)
+    - (load goods1 truck1 market1 level0 level1 level0 level1)
+    - (drive truck1 market1 depot1)
+    - (unload goods3 truck1 depot1 level0 level1 level0 level1)
+    - (unload goods2 truck1 depot1 level0 level1 level0 level1)
+    - (unload goods1 truck1 depot1 level0 level1 level0 level1)
+    lifted_plan:
+    -   - drive
+        - truck1
+        - depot1
+        - market1
+    -   - buy
+        - truck1
+        - goods3
+        - market1
+        - level0
+        - level1
+        - level0
+        - level1
+    -   - load
+        - goods3
+        - truck1
+        - market1
+        - level0
+        - level1
+        - level0
+        - level1
+    -   - buy
+        - truck1
+        - goods2
+        - market1
+        - level0
+        - level1
+        - level0
+        - level1
+    -   - load
+        - goods2
+        - truck1
+        - market1
+        - level0
+        - level1
+        - level0
+        - level1
+    -   - buy
+        - truck1
+        - goods1
+        - market1
+        - level0
+        - level1
+        - level0
+        - level1
+    -   - load
+        - goods1
+        - truck1
+        - market1
+        - level0
+        - level1
+        - level0
+        - level1
+    -   - drive
+        - truck1
+        - market1
+        - depot1
+    -   - unload
+        - goods3
+        - truck1
+        - depot1
+        - level0
+        - level1
+        - level0
+        - level1
+    -   - unload
+        - goods2
+        - truck1
+        - depot1
+        - level0
+        - level1
+        - level0
+        - level1
+    -   - unload
+        - goods1
+        - truck1
+        - depot1
+        - level0
+        - level1
+        - level0
+        - level1
+
+
+---
+timestamp: '2024-11-14T07:13:50.127813'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: buy,(loaded ?g ?t ?l4),effPos,1
+
+
+---
+timestamp: '2024-11-14T07:13:51.700850'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 1
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drive'', ''truck1'', ''depot1'', ''market1'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (drive truck1 depot1 market1)
+
+
+---
+timestamp: '2024-11-14T07:13:53.356248'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 2
+    fring_size: 1
+    current_node:
+        depth: 1
+        ground_actions:
+        - (drive truck1 depot1 market1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 1
+        f_cost: 1
+        next_lifted_action: '[''buy'', ''truck1'', ''goods3'', ''market1'', ''level0'',
+            ''level1'', ''level0'', ''level1'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (buy truck1 goods3 market1 level0 level1 level0 level1)
+
+
+---
+timestamp: '2024-11-14T07:13:54.827634'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 3
+    fring_size: 1
+    current_node:
+        depth: 2
+        ground_actions:
+        - (drive truck1 depot1 market1)
+        - (buy truck1 goods3 market1 level0 level1 level0 level1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 1
+        f_cost: 1
+        next_lifted_action: '[''load'', ''goods3'', ''truck1'', ''market1'', ''level0'',
+            ''level1'', ''level0'', ''level1'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (load goods3 truck1 market1 level0 level1 level0 level1)
+
+
+---
+timestamp: '2024-11-14T07:13:56.363782'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 4
+    fring_size: 1
+    current_node:
+        depth: 3
+        ground_actions:
+        - (drive truck1 depot1 market1)
+        - (buy truck1 goods3 market1 level0 level1 level0 level1)
+        - (load goods3 truck1 market1 level0 level1 level0 level1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 1
+        f_cost: 1
+        next_lifted_action: '[''buy'', ''truck1'', ''goods2'', ''market1'', ''level0'',
+            ''level1'', ''level0'', ''level1'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (buy truck1 goods2 market1 level0 level1 level0 level1)
+
+
+---
+timestamp: '2024-11-14T07:13:57.777633'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 5
+    fring_size: 1
+    current_node:
+        depth: 4
+        ground_actions:
+        - (drive truck1 depot1 market1)
+        - (buy truck1 goods3 market1 level0 level1 level0 level1)
+        - (load goods3 truck1 market1 level0 level1 level0 level1)
+        - (buy truck1 goods2 market1 level0 level1 level0 level1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 1
+        f_cost: 1
+        next_lifted_action: '[''load'', ''goods2'', ''truck1'', ''market1'', ''level0'',
+            ''level1'', ''level0'', ''level1'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (load goods2 truck1 market1 level0 level1 level0 level1)
+
+
+---
+timestamp: '2024-11-14T07:13:59.266083'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 6
+    fring_size: 1
+    current_node:
+        depth: 5
+        ground_actions:
+        - (drive truck1 depot1 market1)
+        - (buy truck1 goods3 market1 level0 level1 level0 level1)
+        - (load goods3 truck1 market1 level0 level1 level0 level1)
+        - (buy truck1 goods2 market1 level0 level1 level0 level1)
+        - (load goods2 truck1 market1 level0 level1 level0 level1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 1
+        f_cost: 1
+        next_lifted_action: '[''buy'', ''truck1'', ''goods1'', ''market1'', ''level0'',
+            ''level1'', ''level0'', ''level1'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (buy truck1 goods1 market1 level0 level1 level0 level1)
+
+
+---
+timestamp: '2024-11-14T07:14:00.695537'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 7
+    fring_size: 1
+    current_node:
+        depth: 6
+        ground_actions:
+        - (drive truck1 depot1 market1)
+        - (buy truck1 goods3 market1 level0 level1 level0 level1)
+        - (load goods3 truck1 market1 level0 level1 level0 level1)
+        - (buy truck1 goods2 market1 level0 level1 level0 level1)
+        - (load goods2 truck1 market1 level0 level1 level0 level1)
+        - (buy truck1 goods1 market1 level0 level1 level0 level1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 1
+        f_cost: 1
+        next_lifted_action: '[''load'', ''goods1'', ''truck1'', ''market1'', ''level0'',
+            ''level1'', ''level0'', ''level1'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (load goods1 truck1 market1 level0 level1 level0 level1)
+
+
+---
+timestamp: '2024-11-14T07:14:02.572197'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 8
+    fring_size: 1
+    current_node:
+        depth: 7
+        ground_actions:
+        - (drive truck1 depot1 market1)
+        - (buy truck1 goods3 market1 level0 level1 level0 level1)
+        - (load goods3 truck1 market1 level0 level1 level0 level1)
+        - (buy truck1 goods2 market1 level0 level1 level0 level1)
+        - (load goods2 truck1 market1 level0 level1 level0 level1)
+        - (buy truck1 goods1 market1 level0 level1 level0 level1)
+        - (load goods1 truck1 market1 level0 level1 level0 level1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 1
+        f_cost: 1
+        next_lifted_action: '[''drive'', ''truck1'', ''market1'', ''depot1'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (drive truck1 market1 depot1)
+
+
+---
+timestamp: '2024-11-14T07:14:04.523812'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 9
+    fring_size: 1
+    current_node:
+        depth: 8
+        ground_actions:
+        - (drive truck1 depot1 market1)
+        - (buy truck1 goods3 market1 level0 level1 level0 level1)
+        - (load goods3 truck1 market1 level0 level1 level0 level1)
+        - (buy truck1 goods2 market1 level0 level1 level0 level1)
+        - (load goods2 truck1 market1 level0 level1 level0 level1)
+        - (buy truck1 goods1 market1 level0 level1 level0 level1)
+        - (load goods1 truck1 market1 level0 level1 level0 level1)
+        - (drive truck1 market1 depot1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 1
+        f_cost: 1
+        next_lifted_action: '[''unload'', ''goods3'', ''truck1'', ''depot1'', ''level0'',
+            ''level1'', ''level0'', ''level1'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload goods3 truck1 depot1 level0 level1 level0 level1)
+
+
+---
+timestamp: '2024-11-14T07:14:06.094472'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 10
+    fring_size: 1
+    current_node:
+        depth: 9
+        ground_actions:
+        - (drive truck1 depot1 market1)
+        - (buy truck1 goods3 market1 level0 level1 level0 level1)
+        - (load goods3 truck1 market1 level0 level1 level0 level1)
+        - (buy truck1 goods2 market1 level0 level1 level0 level1)
+        - (load goods2 truck1 market1 level0 level1 level0 level1)
+        - (buy truck1 goods1 market1 level0 level1 level0 level1)
+        - (load goods1 truck1 market1 level0 level1 level0 level1)
+        - (drive truck1 market1 depot1)
+        - (unload goods3 truck1 depot1 level0 level1 level0 level1)
+        repair_set: buy,(loaded ?g ?t ?l4),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''unload'', ''goods2'', ''truck1'', ''depot1'', ''level0'',
+            ''level1'', ''level0'', ''level1'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload goods2 truck1 depot1 level0 level1 level0 level1)
+
+
+---
+timestamp: '2024-11-14T07:14:06.216848'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 11
+    fring_size: 1
+    current_node:
+        depth: 10
+        ground_actions:
+        - (drive truck1 depot1 market1)
+        - (buy truck1 goods3 market1 level0 level1 level0 level1)
+        - (load goods3 truck1 market1 level0 level1 level0 level1)
+        - (buy truck1 goods2 market1 level0 level1 level0 level1)
+        - (load goods2 truck1 market1 level0 level1 level0 level1)
+        - (buy truck1 goods1 market1 level0 level1 level0 level1)
+        - (load goods1 truck1 market1 level0 level1 level0 level1)
+        - (drive truck1 market1 depot1)
+        - (unload goods3 truck1 depot1 level0 level1 level0 level1)
+        - (unload goods2 truck1 depot1 level0 level1 level0 level1)
+        repair_set: buy,(loaded ?g ?t ?l4),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''unload'', ''goods1'', ''truck1'', ''depot1'', ''level0'',
+            ''level1'', ''level0'', ''level1'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (unload goods1 truck1 depot1 level0 level1 level0 level1)
+
+
+---
+timestamp: '2024-11-14T07:14:06.219179'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: true
+    iteration: 12
+    fring_size: 0
+    current_node:
+        depth: 11
+        ground_actions:
+        - (drive truck1 depot1 market1)
+        - (buy truck1 goods3 market1 level0 level1 level0 level1)
+        - (load goods3 truck1 market1 level0 level1 level0 level1)
+        - (buy truck1 goods2 market1 level0 level1 level0 level1)
+        - (load goods2 truck1 market1 level0 level1 level0 level1)
+        - (buy truck1 goods1 market1 level0 level1 level0 level1)
+        - (load goods1 truck1 market1 level0 level1 level0 level1)
+        - (drive truck1 market1 depot1)
+        - (unload goods3 truck1 depot1 level0 level1 level0 level1)
+        - (unload goods2 truck1 depot1 level0 level1 level0 level1)
+        - (unload goods1 truck1 depot1 level0 level1 level0 level1)
+        repair_set: buy,(loaded ?g ?t ?l4),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2024-11-14T07:14:08.187691'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 0
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drive'', ''truck1'', ''depot1'', ''market1'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (drive truck1 depot1 market1)
+
+
+---
+timestamp: '2024-11-14T07:14:08.188814'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.3 minutes = 18.07 seconds
+
+
+---
+timestamp: '2024-11-14T07:14:08.285721'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+

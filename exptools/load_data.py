@@ -2,8 +2,8 @@ import logging
 from pathlib import Path
 import re
 from model.plan import Domain, Task
-from search_partial_grounding import read_ground_actions, read_action_names
-from typing import List, Dict, Generator
+from search_partial_grounding import read_ground_actions, read_lifted_actions
+from typing import List, Dict
 import random
 
 
@@ -16,10 +16,12 @@ class Instance:
                  , planning_task_file: Path
                  , planning_domain_file: Path
                  , white_plan_file: Path
+                 , lift_prob: float = 0.0
                  ):
         self.domain_class = domain_class
         self.instance_name = instance_name
         self.identifier = identifier
+        self.lift_prob = lift_prob
 
         self.error_rate = error_rate
 
@@ -38,7 +40,7 @@ class Instance:
         else:
             self.white_plan_file = white_plan_file
 
-        self.plan_length = len(read_action_names(self.white_plan_file))
+        self.plan_length = len(read_lifted_actions(self.white_plan_file))
 
         self.planning_task = None
         self.planning_domain = None
@@ -54,8 +56,14 @@ class Instance:
             file_content = f.read()
             self.planning_domain = Domain(file_content)
 
-        self.lifted_plan = read_action_names(self.white_plan_file)
+        self.lifted_plan = read_lifted_actions(self.white_plan_file, self.lift_prob)
         self.ground_plan = read_ground_actions(self.white_plan_file)
+
+        # with open('lifted_plan.txt', 'w') as file:
+        #     file.write(str(self.lifted_plan))
+        #     file.flush()
+
+
 
 
 def _list_folders(directory: Path):
@@ -75,7 +83,7 @@ def _find_err_rate_substring(s):
         raise ValueError("Substring 'err-rate' not found in the given text")
 
 
-def list_instances(benchmark_path: Path, domain_class=None, instance_ids=[]):
+def list_instances(benchmark_path: Path, domain_class=None, instance_ids=[], lift_prob=0.0):
     """
     instance id example: 'blocks/pprobBLOCKS-5-0-err-rate-0-5'
     """
@@ -100,11 +108,12 @@ def list_instances(benchmark_path: Path, domain_class=None, instance_ids=[]):
             instance = Instance(
                   domain_class=planning_folder.name
                 , instance_name=task_file.stem
-                , identifier = planning_folder.name + '/' + task_file.stem
+                , identifier = planning_folder.name + '__' + task_file.stem
                 , planning_task_file=task_file
                 , planning_domain_file=domain_file
                 , error_rate=error_rate
-                , white_plan_file=plan_file)
+                , white_plan_file=plan_file
+                , lift_prob=lift_prob)
 
             if domain_class and instance.domain_class != domain_class:
                 continue

@@ -22,7 +22,11 @@ struct DistinctParConstraint {
     ull pos1;
     ull pos2;
 
-    bool operator==(const DistinctParConstraint& other) const = default;
+    bool operator==(const DistinctParConstraint& other) const {
+        return predicate == other.predicate && 
+               pos1 == other.pos1 && 
+               pos2 == other.pos2;
+    }
 };
 
 namespace std {

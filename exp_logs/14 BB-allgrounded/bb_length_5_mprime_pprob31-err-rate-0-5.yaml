@@ -1,0 +1,251 @@
+---
+timestamp: '2024-11-14T07:04:34.331842'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/14 BB-allgrounded/bb_length_5_mprime_pprob31-err-rate-0-5.yaml
+    instance_id: mprime/pprob31-err-rate-0-5
+    search_algorithm: bb
+    plan_length: 5
+    domain_class: mprime
+    instance_name: pprob31-err-rate-0-5
+    ground_plan:
+    - (feast love ham cantelope quebec kentucky)
+    - (overcome prostatitis learning grapefruit earth saturn)
+    - (feast learning grapefruit ham alsace quebec)
+    - (feast learning ham cantelope alsace quebec)
+    - (succumb prostatitis learning cantelope earth saturn)
+    lifted_plan:
+    -   - feast
+        - love
+        - ham
+        - cantelope
+        - quebec
+        - kentucky
+    -   - overcome
+        - prostatitis
+        - learning
+        - grapefruit
+        - earth
+        - saturn
+    -   - feast
+        - learning
+        - grapefruit
+        - ham
+        - alsace
+        - quebec
+    -   - feast
+        - learning
+        - ham
+        - cantelope
+        - alsace
+        - quebec
+    -   - succumb
+        - prostatitis
+        - learning
+        - cantelope
+        - earth
+        - saturn
+
+
+---
+timestamp: '2024-11-14T07:04:34.337979'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: overcome,(fears ?c ?v),effPos,1
+
+
+---
+timestamp: '2024-11-14T07:04:35.892625'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 1
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''ham'', ''cantelope'', ''quebec'',
+            ''kentucky'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (feast love ham cantelope quebec kentucky)
+
+
+---
+timestamp: '2024-11-14T07:04:37.444262'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 2
+    fring_size: 1
+    current_node:
+        depth: 1
+        ground_actions:
+        - (feast love ham cantelope quebec kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 1
+        f_cost: 1
+        next_lifted_action: '[''overcome'', ''prostatitis'', ''learning'', ''grapefruit'',
+            ''earth'', ''saturn'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (overcome prostatitis learning grapefruit earth saturn)
+
+
+---
+timestamp: '2024-11-14T07:04:38.825337'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 3
+    fring_size: 1
+    current_node:
+        depth: 2
+        ground_actions:
+        - (feast love ham cantelope quebec kentucky)
+        - (overcome prostatitis learning grapefruit earth saturn)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 1
+        f_cost: 1
+        next_lifted_action: '[''feast'', ''learning'', ''grapefruit'', ''ham'', ''alsace'',
+            ''quebec'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (feast learning grapefruit ham alsace quebec)
+
+
+---
+timestamp: '2024-11-14T07:04:40.305878'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 4
+    fring_size: 1
+    current_node:
+        depth: 3
+        ground_actions:
+        - (feast love ham cantelope quebec kentucky)
+        - (overcome prostatitis learning grapefruit earth saturn)
+        - (feast learning grapefruit ham alsace quebec)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 1
+        f_cost: 1
+        next_lifted_action: '[''feast'', ''learning'', ''ham'', ''cantelope'', ''alsace'',
+            ''quebec'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (feast learning ham cantelope alsace quebec)
+
+
+---
+timestamp: '2024-11-14T07:04:40.409840'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 5
+    fring_size: 1
+    current_node:
+        depth: 4
+        ground_actions:
+        - (feast love ham cantelope quebec kentucky)
+        - (overcome prostatitis learning grapefruit earth saturn)
+        - (feast learning grapefruit ham alsace quebec)
+        - (feast learning ham cantelope alsace quebec)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 1
+        f_cost: 1
+        next_lifted_action: '[''succumb'', ''prostatitis'', ''learning'', ''cantelope'',
+            ''earth'', ''saturn'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (succumb prostatitis learning cantelope earth saturn)
+
+
+---
+timestamp: '2024-11-14T07:04:40.411058'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: true
+    iteration: 6
+    fring_size: 0
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love ham cantelope quebec kentucky)
+        - (overcome prostatitis learning grapefruit earth saturn)
+        - (feast learning grapefruit ham alsace quebec)
+        - (feast learning ham cantelope alsace quebec)
+        - (succumb prostatitis learning cantelope earth saturn)
+        repair_set: overcome,(fears ?c ?v),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2024-11-14T07:04:41.809273'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 0
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''ham'', ''cantelope'', ''quebec'',
+            ''kentucky'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (feast love ham cantelope quebec kentucky)
+
+
+---
+timestamp: '2024-11-14T07:04:41.810349'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.1 minutes = 7.48 seconds
+
+
+---
+timestamp: '2024-11-14T07:04:41.917633'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: Subprocess finished with no exception.
+
+
