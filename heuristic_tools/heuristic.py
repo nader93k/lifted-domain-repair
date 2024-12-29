@@ -486,7 +486,7 @@ def create_creator(atoms, proj_vars):
         for i, v in enumerate(atom.args):
             if v in proj_vars and v not in seen:
                 creator.append((j, i, proj_vars[v]))
-                seen.insert(v)
+                seen.add(v)
 
     return creator
 
