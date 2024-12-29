@@ -78,6 +78,43 @@ class Domain:
     def clean(self):
         # Reset updated actions
         self._updated_actions = {}
+    
+
+    def to_pddl(self, action_filter=None):
+        """Generates the PDDL string representation of the domain."""
+
+        pddl_string = f"(define (domain {self._domain_name})\n"
+
+        pddl_string += f"  {self._domain_requirements.pddl()}\n"  # Added requirements here
+
+        pddl_string += "  (:types\n"
+        # for type_obj in list(set([str(t).strip() for t in self._types])):
+        for type_obj in list([t.pddl() for t in self._types]):
+            if type_obj not in ('object', 'object - object'):
+                pddl_string += "    " + str(type_obj) + "\n"
+        pddl_string += "  object)\n"
+
+        pddl_string += "  (:constants\n"
+        for const in self._constants:
+            pddl_string += "    " + const.pddl() + "\n"
+        pddl_string += "  )\n"
+
+        pddl_string += "  (:predicates\n"
+        for pred in self._predicates:
+            if pred.name != '=':
+                pddl_string += "    " + pred.pddl() + "\n"
+        pddl_string += "  )\n"
+
+        if action_filter:
+            actions_to_output = [a for a in self._actions if a.name == action_filter]
+        else:
+            actions_to_output = self._actions
+        for action in actions_to_output:
+            pddl_string += action.pddl(hide_cost=True) + "\n"
+
+        pddl_string += ")\n"
+
+        return pddl_string
 
 
 class Task:
@@ -126,3 +163,28 @@ class Task:
 
     def __str__(self):
         return self.__repr__()
+    
+    def to_pddl(self):
+        """Generates the PDDL string representation of the task."""
+
+        pddl_string = f"(define (problem {self._task_name})\n"
+        pddl_string += f"  (:domain {self._task_domain_name})\n"
+        pddl_string += "  " + self._task_requirements.pddl() + "\n"
+
+        pddl_string += "  (:objects\n"
+        for obj in self._objects:
+            pddl_string += "    " + obj.pddl() + "\n"
+        pddl_string += "  )\n"
+
+        pddl_string += "  (:init\n"
+        for atom in self._init:
+            pddl_string += "    " + atom.pddl() + "\n"
+        pddl_string += "  )\n"
+
+        pddl_string += "  (:goal\n"
+        pddl_string += "    " + self._goal.pddl() + "\n"
+        pddl_string += "  )\n"
+
+        pddl_string += ")\n"
+
+        return pddl_string
