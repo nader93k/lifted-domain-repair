@@ -1,5 +1,10 @@
+import cProfile
+import pstats
+from pstats import SortKey
 from search_partial_grounding import smart_grounder, AStar, Node, DFS, BranchBound
+# TODO remove the following line
 from search_partial_grounding.action_grounding_tools import smart_grounder
+from search_partial_grounding.lifted_pddl_grounder import ground_pddl
 #TODO: Fina a better place for ground_repair
 from vanilla_runs.run_songtuans_vanilla import ground_repair
 from custom_logger import StructuredLogger
@@ -11,11 +16,12 @@ import sys
 import traceback
 
 
+
 def solve_instance(search_algorithm, benchmark_path, log_file, log_interval, instance_id, lift_prob, heuristic_relaxation):
     log_interval = int(log_interval)
     instance = list_instances(benchmark_path, instance_ids=[instance_id], lift_prob=lift_prob)[0]
 
-    start_time = time.time()
+    start_time = time.process_time()
 
     instance.load_to_memory()
     logger = StructuredLogger(log_file)
@@ -51,8 +57,11 @@ def solve_instance(search_algorithm, benchmark_path, log_file, log_interval, ins
     }
     logger.log(issuer="instance_solver", event_type="ground_repair", level=logging.INFO, message=log_data_gr)
 
-    # Lifted repair
-    Node.set_grounder(smart_grounder)
+    # Profiler
+    profiler = cProfile.Profile()
+    profiler.enable()
+
+    Node.set_grounder(ground_pddl)
     Node.set_domain(instance.planning_domain)
     Node.set_task(instance.planning_task)
     Node.set_logger(logger)
@@ -85,13 +94,34 @@ def solve_instance(search_algorithm, benchmark_path, log_file, log_interval, ins
         logger.log(issuer="instance_solver", event_type="error", level=logging.ERROR, message=log_data_error)
     
     # Logging
-    end_time = time.time()
-    elapsed_time = end_time - start_time
+    elapsed_time = time.process_time() - start_time
     seconds = elapsed_time
     minutes = elapsed_time / 60
     hours = elapsed_time / 3600
     time_spent = f"{hours:.1f} hours = {minutes:.1f} minutes = {seconds:.2f} seconds"
     logger.log(issuer="instance_solver", event_type="time_spent", level=logging.INFO, message=time_spent)
+
+
+    profiler.disable()
+    # Get the stats file path (in same directory as log_file)
+    # import pdb; pdb.set_trace()
+    # stats_file = Path(log_file).parent / f"profile_stats_{instance_id}.prof"
+    # stats_txt = Path(log_file).parent / f"profile_stats_{instance_id}.txt"
+    # # Save binary stats file
+    # profiler.dump_stats(str(stats_file))
+    # # Create readable stats file
+    # with open(stats_txt, 'w') as f:
+    #     stats = pstats.Stats(profiler, stream=f)
+    #     stats.sort_stats(SortKey.CUMULATIVE)
+
+    #     # Print specific function stats if you want to focus on certain functions
+    #     f.write("\n=== Stats for specific functions ===\n")
+    #     stats.print_stats('grounder|Heuristic')  # Functions containing 'grounder' or 'Heuristic'
+        
+    #     # Print the most time-consuming functions
+    #     f.write("\n=== Most time-consuming functions (sorted by cumulative time) ===\n")
+    #     stats.print_stats(50)  # Top 20 functions
+
 
 
 if __name__ == "__main__":

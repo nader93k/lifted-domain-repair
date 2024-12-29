@@ -52,6 +52,9 @@ class Node:
         if self.logger is None:
             raise ValueError("Logger must be set before creating instances.")
 
+        # #TODO remove debug code
+        # if len(gr)
+
         self.is_initial_node = is_initial_node
         self.ground_action_sequence = ground_action_sequence
         self.lifted_action_sequence = lifted_action_sequence
@@ -144,7 +147,6 @@ class Node:
         task = copy.deepcopy(self.original_task)
         task.set_init_state(self.current_state)
 
-
         # Precondition relaxing
         # If a precondition is not satisfied then don't check it
         domain = copy.deepcopy(self.repaired_domain)
@@ -154,11 +156,12 @@ class Node:
         relaxed_pre = [part for part in action.precondition.parts if part.predicate in curr_state_names]
         # action.precondition = Conjunction(relaxed_pre)
 
-        # # TODO: remove this idea?
+        # TODO: remove this idea?
         # action.precondition = Conjunction([])
 
         try:
-            self.possible_groundings = Node.grounder(domain, task, self.lifted_action_sequence[0])
+            next_action_pddl = f"({' '.join(self.lifted_action_sequence[0])})"
+            self.possible_groundings = Node.grounder(domain, task, next_action_pddl)
         except Exception as error:
             log_data_error = {
                 'current_node': self.to_dict(),

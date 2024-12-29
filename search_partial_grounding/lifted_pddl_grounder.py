@@ -99,7 +99,7 @@ def ground_pddl(domain, task, lifted_action):
     Args:
         domain: The PDDL domain.
         task: The PDDL task.
-        lifted_action: The lifted action to be used in the domain.
+        lifted_action: The lifted action to be used in the domain. It must be a Python list like ['name', 'para1', '?para2'].
 
     Returns:
         The output of the grounder.
@@ -113,6 +113,7 @@ def ground_pddl(domain, task, lifted_action):
     base_dir = Path("/dev/shm/pddl_files")
     base_dir.mkdir(parents=True, exist_ok=True)
 
+    # debug_dir = '/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding'
     with tempfile.TemporaryDirectory(dir="/dev/shm/pddl_files/") as temp_dir:
         base_folder = Path(temp_dir)
 
@@ -133,6 +134,8 @@ def ground_pddl(domain, task, lifted_action):
         grounder_path = os.path.join(
             parent_dir, "search_partial_grounding", "grounder_service.py"
         )
+
+        # import pdb; pdb.set_trace()
 
         try:
             result = subprocess.run(
@@ -156,9 +159,6 @@ def ground_pddl(domain, task, lifted_action):
             print(f"Failed to run grounder: {str(e)}")
             raise
     
-        a = applicable_actions
-        # import pdb; pdb.set_trace()
-        # print('debug', applicable_actions)
         filtered = filter_actions(lifted_action, applicable_actions)
 
-        return filtered
+        return list(filtered)
