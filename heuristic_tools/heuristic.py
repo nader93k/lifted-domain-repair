@@ -309,7 +309,8 @@ def integrate_pre_repair(domain, task, ref_action):
     olds_preds = dict((pred.name, pred) for pred in domain.predicates)
     old_init = collections.defaultdict(lambda: [])
     for atom in task.init:
-        old_init[atom.predicate].append(atom)
+        if type(atom) is not fd.pddl.f_expression.Assign:
+            old_init[atom.predicate].append(atom)
 
     new_preds = []
     new_init = []
@@ -582,7 +583,7 @@ def dl_exploration(init, rules, comb_f=max):
                 continue
 
             projection = combine_or_project([atom], projections[(rule_id, body_pos)], dict())
-            rule_body_pos_container[(rule_id, other_pos(body_pos))][projection].add(current_fact)
+            rule_body_pos_container[(rule_id, body_pos)][projection].add(current_fact)
 
             if len(_rule.body) == 2:
                 contained = rule_body_pos_container[(rule_id, other_pos(body_pos))][projection]
@@ -593,18 +594,25 @@ def dl_exploration(init, rules, comb_f=max):
 
                     to_combine = [current_fact, other_fact] if body_pos == 0 else [other_fact, current_fact]
                     combined_args = combine_or_project(to_combine, *combinations[rule_id])
+                    combined_fact = fd.pddl.conditions.Atom(_rule.head.predicate, combined_args)
+
+                    if combined_fact in fact_cost and fact_cost[combined_fact] <= current_cost:
+                        continue
+
+                    fact_cost[combined_fact] = combined_cost
+                    heapq.heappush(priority_queue, (combined_cost, combined_fact))
             else:
                 assert len(_rule.body) == 1
                 combined_cost = _rule.cost + current_cost
                 combined_args = combine_or_project([current_fact], *combinations[rule_id])
 
-            combined_fact = fd.pddl.conditions.Atom(_rule.head.predicate, combined_args)
+                combined_fact = fd.pddl.conditions.Atom(_rule.head.predicate, combined_args)
 
-            if combined_fact in fact_cost and fact_cost[combined_fact] <= current_cost:
-                continue
+                if combined_fact in fact_cost and fact_cost[combined_fact] <= current_cost:
+                    continue
 
-            fact_cost[combined_fact] = combined_cost
-            heapq.heappush(priority_queue, (combined_cost, combined_fact))
+                fact_cost[combined_fact] = combined_cost
+                heapq.heappush(priority_queue, (combined_cost, combined_fact))
 
     INFTY = -1
     return fact_cost[GOAL_FACT] if GOAL_FACT in fact_cost else INFTY
@@ -698,6 +706,8 @@ class Heurisitc:
         return val
 
     def re_run(self, __domain, __task, action_sequence):
+        assert False, "With our current construction we can never return infty"
+
         if not self.no_legacy:
             shutil.copyfile(OUTPUT_MODEL_DOMAIN, OLD_OUTPUT_MODEL_DOMAIN)
             shutil.copyfile(OUTPUT_MODEL_PROBLEM, OLD_OUTPUT_MODEL_PROBLEM)
@@ -719,7 +729,7 @@ class Heurisitc:
         # hack to evaluate this with h_add
         old_h = self.h_name
         self.h_name = self.h_name[:2] + "HADD"
-        val = self.get_val()
+        val = self.get_val(domain, task)
         self.h_name = old_h
 
         assert val > 0, "Since last value was inf this needs to be > 0"
