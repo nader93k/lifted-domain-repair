@@ -5,15 +5,23 @@ from fd.pddl.conditions import Condition
 
 class Domain:
     def __init__(self, domain_string):
-        # Parse the domain string
-        self.domain_string = domain_string.strip()
-        parsed_domain = parse_nested_list(self.domain_string.splitlines())
+        domain_string = domain_string.strip()
+        parsed_domain = parse_nested_list(domain_string.splitlines())
         # Extract domain components
         (self._domain_name,
          self._domain_requirements,
          self._types, self._constants,
          self._predicates, _,
          self._actions, _) = parse_domain(parsed_domain)
+
+        # remove cost functionality
+        for action in self._actions:
+            if hasattr(action, 'cost'):
+                action.cost = None
+        
+        # remove '=' predicates
+        self._predicates = list(filter(lambda p: p.name != '=', self._predicates))
+
         # Create a dictionary of constants for quick lookup
         self._constant_dict = {o.name: o for o in self._constants}
         # Initialize sets and dictionaries for repairs and actions
@@ -21,6 +29,7 @@ class Domain:
         self._updated_actions = {}
         self._name_to_action = {a.name: a for a in self._actions}
         self._repaired = False
+    
 
     # Property getters and setters
     @property
@@ -88,7 +97,6 @@ class Domain:
         pddl_string += f"  {self._domain_requirements.pddl()}\n"  # Added requirements here
 
         pddl_string += "  (:types\n"
-        # for type_obj in list(set([str(t).strip() for t in self._types])):
         for type_obj in list([t.pddl() for t in self._types]):
             if type_obj not in ('object', 'object - object'):
                 pddl_string += "    " + str(type_obj) + "\n"
@@ -126,6 +134,10 @@ class Task:
         (self._task_name, self._task_domain_name,
          self._task_requirements, self._objects,
          self._init, self._goal, _) = parse_task(parsed_task)
+
+        # remove function related stuff
+        self._init = [x for x in self._init if not x.pddl().startswith('(=')]
+
         # Create a dictionary of objects for quick lookup
         self._obj_dict = {o.name: o for o in self._objects}
 
@@ -136,14 +148,13 @@ class Task:
         return self._obj_dict[name]
 
     def copy(self):
-        return Task(self.task_string)
+        return Task(self.to_pddl())
 
     def set_goal_empty(self):
         self._goal = Condition(tuple())
     
     def set_init_state(self, state):
         self._init = state
-
 
     # Property getters
     @property

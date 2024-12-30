@@ -24,7 +24,8 @@ def main():
         sys.exit(0)
     except Exception as e:
         print(f"Error: {str(e)}", file=sys.stderr)
-        sys.exit(1)
+        raise
+
 
 if __name__ == "__main__":
     main()

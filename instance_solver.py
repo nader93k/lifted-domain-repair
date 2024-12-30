@@ -73,6 +73,7 @@ def solve_instance(search_algorithm, benchmark_path, log_file, log_interval, ins
         h_cost_needed=False if search_algorithm in ('dfs', 'bfs') else True,
         heuristic_relaxation=heuristic_relaxation
     )
+
     if search_algorithm == 'astar':
         searcher = AStar(initial_node, g_cost_multiplier=1, h_cost_multiplier=1)
     elif search_algorithm == 'bfs':

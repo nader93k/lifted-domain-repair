@@ -113,7 +113,9 @@ def ground_pddl(domain, task, lifted_action):
     base_dir = Path("/dev/shm/pddl_files")
     base_dir.mkdir(parents=True, exist_ok=True)
 
+    # debug path:
     # debug_dir = '/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding'
+    # with tempfile.TemporaryDirectory(dir=debug_dir) as temp_dir:
     with tempfile.TemporaryDirectory(dir="/dev/shm/pddl_files/") as temp_dir:
         base_folder = Path(temp_dir)
 
@@ -153,7 +155,8 @@ def ground_pddl(domain, task, lifted_action):
             applicable_actions = eval(r)
 
         except subprocess.CalledProcessError as e:
-            print(f"Grounding failed with error: {e.stderr}")
+            error_msg = f"Failed to run grounder with unexpected error: {str(e)}"
+            print(error_msg)
             raise
         except Exception as e:
             print(f"Failed to run grounder: {str(e)}")

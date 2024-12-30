@@ -52,9 +52,6 @@ class Node:
         if self.logger is None:
             raise ValueError("Logger must be set before creating instances.")
 
-        # #TODO remove debug code
-        # if len(gr)
-
         self.is_initial_node = is_initial_node
         self.ground_action_sequence = ground_action_sequence
         self.lifted_action_sequence = lifted_action_sequence
@@ -86,7 +83,6 @@ class Node:
                 self.current_state = None
             self.h_cost = self.compute_h_cost() if self.h_cost_needed and self.lifted_action_sequence else 0
             self.f_cost = self.g_cost + self.h_cost
-
 
 
     def _ground_repair(self):
@@ -146,26 +142,31 @@ class Node:
         
         task = copy.deepcopy(self.original_task)
         task.set_init_state(self.current_state)
-
-        # Precondition relaxing
-        # If a precondition is not satisfied then don't check it
         domain = copy.deepcopy(self.repaired_domain)
-        next_action_name = self.lifted_action_sequence[0][0]
-        action = domain.get_action(next_action_name)
-        curr_state_names = [p.predicate for p in self.current_state if isinstance(p, Atom)]
-        relaxed_pre = [part for part in action.precondition.parts if part.predicate in curr_state_names]
+
+        # # Precondition relaxing
+        # # If a precondition is not satisfied then don't check it
+        # next_action_name = self.lifted_action_sequence[0][0]
+        # action = domain.get_action(next_action_name)
+        # curr_state_names = [p.predicate for p in self.current_state if isinstance(p, Atom)]
+        # relaxed_pre = [part for part in action.precondition.parts if part.predicate in curr_state_names]
         # action.precondition = Conjunction(relaxed_pre)
 
-        # TODO: remove this idea?
+        ## All preconditions relaxed
         # action.precondition = Conjunction([])
 
         try:
             next_action_pddl = f"({' '.join(self.lifted_action_sequence[0])})"
             self.possible_groundings = Node.grounder(domain, task, next_action_pddl)
-        except Exception as error:
+        except Exception as e:
+            error_msg = f"""Failed to run grounder with unexpected error: 
+            Error message: {str(e)}
+            STDERR: {e.stderr}
+            STDOUT: {e.stdout}"""
+            print(error_msg)
+
             log_data_error = {
-                'current_node': self.to_dict(),
-                'current_state': self.current_state
+                'current_node': self.to_dict(include_state=True)
             }
             self.logger.log(issuer="node", event_type="error", level=logging.ERROR, message=log_data_error)
             raise
@@ -198,9 +199,9 @@ class Node:
         return self.ground_action_sequence == other.ground_action_sequence
 
 
-    def to_dict(self):
+    def to_dict(self, include_state=False):
         next_lifted = None if len(self.lifted_action_sequence) == 0 else str(self.lifted_action_sequence[0])
-        return {
+        d = {
             "depth": self.depth,
             "ground_actions": self.ground_action_sequence,
             "repair_set": self.ground_repair_solution,
@@ -211,6 +212,10 @@ class Node:
             "num_neighbours": len(self.neighbours),
             "first_10_possible_groundings": self.possible_groundings[:10] if self.possible_groundings is not None else self.possible_groundings
         }
+        if include_state:
+            d["current_state"] = repr([x.pddl() for x in self.current_state])[1:-1]
+        
+        return d
     
 
     def __str__(self):
