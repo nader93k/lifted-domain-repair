@@ -539,7 +539,7 @@ def dl_exploration(init, rules, comb_f=max):
     matching_rules = collections.defaultdict(lambda: list())
     for i, rule in enumerate(rules):
         for j, atom in enumerate(rule.body):
-            matching_rules[rule.head.predicate].append((i, j))
+            matching_rules[atom.predicate].append((i, j))
 
     for k, v in matching_rules.items():
         matching_rules[k] = list(sorted(set(v)))
@@ -577,13 +577,14 @@ def dl_exploration(init, rules, comb_f=max):
 
         for rule_id, body_pos in matching_rules[current_fact.predicate]:
             _rule = rules[rule_id]
+            assert current_fact.predicate == _rule.body[body_pos].predicate
             if not can_match(current_fact, _rule.body[body_pos]):
                 continue
 
             projection = combine_or_project([atom], projections[(rule_id, body_pos)], dict())
             rule_body_pos_container[(rule_id, other_pos(body_pos))][projection].add(current_fact)
 
-            if len(rule.body) == 2:
+            if len(_rule.body) == 2:
                 contained = rule_body_pos_container[(rule_id, other_pos(body_pos))][projection]
 
                 for other_fact in contained:
@@ -593,8 +594,7 @@ def dl_exploration(init, rules, comb_f=max):
                     to_combine = [current_fact, other_fact] if body_pos == 0 else [other_fact, current_fact]
                     combined_args = combine_or_project(to_combine, *combinations[rule_id])
             else:
-                assert len(rule.body) == 1
-                assert current_fact.predicate == rule.body[0].predicate
+                assert len(_rule.body) == 1
                 combined_cost = _rule.cost + current_cost
                 combined_args = combine_or_project([current_fact], *combinations[rule_id])
 
