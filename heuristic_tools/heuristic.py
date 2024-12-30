@@ -485,7 +485,8 @@ def create_creator(atoms, proj_vars):
     for j, atom in enumerate(atoms):
         for i, v in enumerate(atom.args):
             if v in proj_vars and v not in seen:
-                creator.append((j, i, proj_vars[v]))
+                for k in proj_vars[v]:
+                    creator.append((j, i, k))
                 seen.add(v)
 
     return creator
@@ -549,7 +550,7 @@ def dl_exploration(init, rules, comb_f=max):
     for i, rule in enumerate(rules):
         assert 1 <= len(rule.body) <= 2, rule.body
         shared_vars = list(sorted(intersection([vars_of(atom) for atom in rule.body])))
-        shared_vars = dict((v, i) for i, v in enumerate(shared_vars))
+        shared_vars = dict((v, [i]) for i, v in enumerate(shared_vars))
 
         for j, atom in enumerate(rule.body):
             creator = create_creator([atom], shared_vars)
