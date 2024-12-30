@@ -1,0 +1,105 @@
+---
+timestamp: '2024-12-31T02:02:55.132926'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs_debug_2/bfs_length_8_ged-opt14-strips_pd-3-2-err-rate-0-3.yaml
+    instance_id: ged-opt14-strips__pd-3-2-err-rate-0-3
+    search_algorithm: bfs
+    plan_length: 8
+    domain_class: ged-opt14-strips
+    instance_name: pd-3-2-err-rate-0-3
+    ground_plan:
+    - (invert-single-gene-a sub3)
+    - (invert-single-gene-a sub4)
+    - (begin-cut sub3 g40)
+    - (end-cut-1 g40 sub4)
+    - (end-cut-2 sub3 sub4)
+    - (begin-transpose-splice sub2 sub3)
+    - (end-splice-1 g40 sub2)
+    - (end-splice-2 g40 sub3)
+    lifted_plan:
+    -   - invert-single-gene-a
+        - ?sub3
+    -   - invert-single-gene-a
+        - ?sub4
+    -   - begin-cut
+        - ?sub3
+        - ?g40
+    -   - end-cut-1
+        - ?g40
+        - ?sub4
+    -   - end-cut-2
+        - ?sub3
+        - ?sub4
+    -   - begin-transpose-splice
+        - ?sub2
+        - ?sub3
+    -   - end-splice-1
+        - ?g40
+        - ?sub2
+    -   - end-splice-2
+        - ?g40
+        - ?sub3
+
+
+---
+timestamp: '2024-12-31T02:02:55.148517'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: end-splice-1,(s-first ?x),precPos,-1
+
+
+---
+timestamp: '2024-12-31T02:05:10.682812'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 726
+    fring_size: 0
+    num_nodes_generated: 726
+    sum_h_cost: 0
+    sum_f_cost: 0
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 127.96173357963562
+    current_node:
+        depth: 6
+        ground_actions:
+        - (invert-single-gene-a g40)
+        - (invert-single-gene-a sub1)
+        - (begin-cut sub2 sub3)
+        - (end-cut-1 sub3 g40)
+        - (end-cut-2 sub2 g40)
+        - (begin-transpose-splice g40 sub4)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''end-splice-1'', ''?g40'', ''?sub2'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-31T02:05:10.685207'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '138.46'
+
+
+---
+timestamp: '2024-12-31T02:05:11.218344'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 140.33 seconds'
+
+

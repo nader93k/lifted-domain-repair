@@ -1,0 +1,90 @@
+---
+timestamp: '2024-12-31T02:02:57.071961'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs_debug_2/bfs_length_4_miconic_ps1-2-err-rate-0-3.yaml
+    instance_id: miconic__ps1-2-err-rate-0-3
+    search_algorithm: bfs
+    plan_length: 4
+    domain_class: miconic
+    instance_name: ps1-2-err-rate-0-3
+    ground_plan:
+    - (up f0 f1)
+    - (board f1 p0)
+    - (down f1 f0)
+    - (depart f0 p0)
+    lifted_plan:
+    -   - up
+        - ?f0
+        - ?f1
+    -   - board
+        - ?f1
+        - ?p0
+    -   - down
+        - ?f1
+        - ?f0
+    -   - depart
+        - ?f0
+        - ?p0
+
+
+---
+timestamp: '2024-12-31T02:02:57.074823'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'up,(not (lift-at ?f1)),effNeg,-1
+
+        board,(served ?p),effPos,1'
+
+
+---
+timestamp: '2024-12-31T02:02:59.146107'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 4
+    fring_size: 0
+    num_nodes_generated: 4
+    sum_h_cost: 0
+    sum_f_cost: 0
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 2.0643515586853027
+    current_node:
+        depth: 3
+        ground_actions:
+        - (up f0 f1)
+        - (board f1 p0)
+        - (down f1 f0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''depart'', ''?f0'', ''?p0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-31T02:02:59.147511'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '6.90'
+
+
+---
+timestamp: '2024-12-31T02:02:59.280069'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 8.39 seconds'
+
+

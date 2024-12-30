@@ -1,0 +1,108 @@
+---
+timestamp: '2024-12-31T02:39:17.966779'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs_debug_3/bfs_length_10_blocks_pprobBLOCKS-5-1-err-rate-0-3.yaml
+    instance_id: blocks__pprobBLOCKS-5-1-err-rate-0-3
+    search_algorithm: bfs
+    plan_length: 10
+    domain_class: blocks
+    instance_name: pprobBLOCKS-5-1-err-rate-0-3
+    ground_plan:
+    - (unstack b a)
+    - (put-down b)
+    - (unstack a d)
+    - (stack a e)
+    - (pick-up b)
+    - (stack b a)
+    - (pick-up c)
+    - (stack c b)
+    - (pick-up d)
+    - (stack d c)
+    lifted_plan:
+    -   - unstack
+        - ?b
+        - ?a
+    -   - put-down
+        - ?b
+    -   - unstack
+        - ?a
+        - ?d
+    -   - stack
+        - ?a
+        - ?e
+    -   - pick-up
+        - ?b
+    -   - stack
+        - ?b
+        - ?a
+    -   - pick-up
+        - ?c
+    -   - stack
+        - ?c
+        - ?b
+    -   - pick-up
+        - ?d
+    -   - stack
+        - ?d
+        - ?c
+
+
+---
+timestamp: '2024-12-31T02:39:17.971391'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'stack,(on ?x ?y),effPos,1
+
+        unstack,(holding ?x),effPos,1'
+
+
+---
+timestamp: '2024-12-31T02:39:18.417779'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 2
+    fring_size: 0
+    num_nodes_generated: 2
+    sum_h_cost: 0
+    sum_f_cost: 0
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 0.4431116580963135
+    current_node:
+        depth: 1
+        ground_actions:
+        - (unstack b a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''put-down'', ''?b'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-31T02:39:18.447085'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '6.03'
+
+
+---
+timestamp: '2024-12-31T02:39:18.572338'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 6.72 seconds'
+
+
