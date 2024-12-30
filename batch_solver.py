@@ -220,7 +220,7 @@ if __name__ == "__main__":
     domain_class = config['domain_class'] 
     heuristic_relaxation = config['heuristic_relaxation']
     lift_prob = config['lift_prob']
-    run_mode = config.get('run_mode', 'parallel')  # Default to parallel mode
+    run_mode = config.get('run_mode')
 
     # run on fixed instance_ids
     instance_ids = config['instance_ids']

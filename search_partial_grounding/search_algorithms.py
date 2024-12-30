@@ -2,20 +2,17 @@ import logging
 import heapq
 
 
-def log_iteration_info(logger, iteration, open_list, current_node, is_goal):
-    log_data = {
-        "is_goal": is_goal,
-        "iteration": iteration,
-        "fring_size": len(open_list),
-        # "fring_first_20": ", ".join(f"(D:{-nd},H:{-hc},C:{fc})" for fc, hc, nd, _ in sorted(open_list)[:20]),
-        "current_node": current_node.to_dict()
-    }
-    logger.log(issuer="Searcher", event_type="general", level=logging.INFO, message=log_data)
+
 
 
 class Searcher:
     def __init__(self, initial_node):
         self.initial_node = initial_node
+        self.num_nodes_generated = 1
+        self.sum_h_cost = 0
+        self.sum_f_cost = 0
+        self.sum_h_cost_time = 0
+        self.sum_grounding_time = 0
 
     def find_path(self, logger, log_interval):
         raise NotImplementedError("Subclasses must implement find_path method")
@@ -26,6 +23,22 @@ class Searcher:
             path.append(node)
             node = node.parent
         return path[::-1]
+    
+    def log_iteration_info(self, logger, iteration, open_list, current_node, final, is_goal):
+        log_data = {
+            "final": final,
+            "is_goal": is_goal,
+            "iteration": iteration,
+            "fring_size": len(open_list),
+            "num_nodes_generated": self.num_nodes_generated,
+            "sum_h_cost": self.sum_h_cost,
+            "sum_f_cost": self.sum_f_cost,
+            "sum_h_cost_time": self.sum_h_cost_time,
+            "sum_grounding_time": self.sum_grounding_time,
+            "current_node": current_node.to_dict()
+        }
+        event_type = "final" if final else "general"
+        logger.log(issuer="searcher", event_type=event_type, level=logging.INFO, message=log_data)
 
 
 class AStar(Searcher):
@@ -48,10 +61,14 @@ class AStar(Searcher):
     
 
     def calculate_f_cost(self, node):
-       return (self.g_cost_multiplier * node.g_cost) + self.calculate_h_cost(node)
+        f = (self.g_cost_multiplier * node.g_cost) + self.calculate_h_cost(node)
+        self.sum_f_cost += f
+        return f
 
     def calculate_h_cost(self, node):
-       return self.h_cost_multiplier * node.h_cost
+        h = self.h_cost_multiplier * node.h_cost
+        self.sum_h_cost += h
+        return h
 
 
     def find_path(self, logger, log_interval):
@@ -68,30 +85,31 @@ class AStar(Searcher):
             current_node = heapq.heappop(open_list)[3]
 
             if current_node.is_goal():
-
-                log_iteration_info(logger, iteration, open_list, current_node, is_goal=True)
+                self.log_iteration_info(logger, iteration, open_list, current_node, final=True, is_goal=True)
                 return self.reconstruct_path(current_node), current_node
 
             closed_list.append(current_node)
 
-            for neighbor in current_node.get_neighbors():
-                # if neighbor in closed_list:
-                #     continue
+            neighbours = current_node.get_neighbors()
+            self.num_nodes_generated += len(neighbours)
+            self.sum_h_cost_time += current_node.h_cost_time
+            self.sum_grounding_time += current_node.grounding_time
 
-                # tentative_f_cost = neighbor.f_cost
+            for neighbor in neighbours:
                 if not any(node[3]==neighbor for node in open_list):
                     if not self.prune_func(neighbor):
                         f_cost = self.calculate_f_cost(neighbor)
                         h_cost = self.calculate_h_cost(neighbor)
                         heapq.heappush(open_list, (f_cost, h_cost, -neighbor.depth, neighbor))
                 # elif tentative_f_cost >= neighbor.f_cost: continue
-                else: raise Exception("Identical node generation detected. Debug is needed.")
+                else: raise Exception("Identical node generation. Debug is needed.")
 
                 neighbor.parent = current_node
 
             if iteration % log_interval == 0:
-                log_iteration_info(logger, iteration, open_list, current_node, is_goal=False)
+                self.log_iteration_info(logger, iteration, open_list, current_node, final=True, is_goal=True)
 
+        self.log_iteration_info(logger, iteration, open_list, current_node, final=True, is_goal=True)
         return None, None  # No path found
 
 
@@ -153,28 +171,38 @@ class DFS(Searcher):
             # We don't need to track visited nodes for the same reason as above.
 
             if current_node.is_goal():
-                log_iteration_info(
+                self.log_iteration_info(
                     logger,
                     iteration,
-                    ['intentionally skipped logging this'],
+                    ['not logged'],
                     current_node,
+                    final=True,
                     is_goal=True)
                 return self.reconstruct_path(current_node), current_node
 
             neighbors = sorted(current_node.get_neighbors(), key=lambda x: x.g_cost)
+            self.num_nodes_generated += len(neighbours)
+            stack.extend(neighbors)
             # for neighbor in neighbors:
             #     if neighbor not in visited:
             #         stack.append(neighbor)
             # We don't need to check if neighbors are visited because each node is unique.
             # Instead, we can directly extend the stack with all neighbors.
-            stack.extend(neighbors)
-
             if iteration % log_interval == 0:
-                log_iteration_info(
+                self.log_iteration_info(
                     logger,
                     iteration,
-                    ['intentionally skipped logging this'],
+                    ['not logged'],
                     current_node,
-                    is_goal=False)
+                    final=True,
+                    is_goal=True)
 
+        self.log_iteration_info(
+                    logger,
+                    iteration,
+                    ['not logged'],
+                    current_node,
+                    final=True,
+                    is_goal=True)
+        
         return None, None  # No path found

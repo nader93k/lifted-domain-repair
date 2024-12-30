@@ -4,6 +4,7 @@ from fd.pddl.tasks import Task
 import os
 import tempfile
 import re
+from lifted_pddl import Parser
 
 
 
@@ -139,29 +140,11 @@ def ground_pddl(domain, task, lifted_action):
 
         # import pdb; pdb.set_trace()
 
-        try:
-            result = subprocess.run(
-                [
-                    python_path,
-                    grounder_path,
-                    "--domain_path", str(domain_path),
-                    "--task_path", str(task_path),
-                ],
-                capture_output=True,
-                text=True,
-                check=True,
-            )
-            r = result.stdout
-            applicable_actions = eval(r)
-
-        except subprocess.CalledProcessError as e:
-            error_msg = f"Failed to run grounder with unexpected error: {str(e)}"
-            print(error_msg)
-            raise
-        except Exception as e:
-            print(f"Failed to run grounder: {str(e)}")
-            raise
-    
+        
+        parser = Parser()
+        parser.parse_domain(domain_path)
+        parser.parse_problem(task_path)
+        actions = parser.get_applicable_actions()
+        applicable_actions = parser.encode_ground_actions_as_pddl(actions, 'str')    
         filtered = filter_actions(lifted_action, applicable_actions)
-
         return list(filtered)

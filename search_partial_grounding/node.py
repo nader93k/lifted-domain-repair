@@ -3,8 +3,9 @@ from model.plan import PositivePlan, apply_action_sequence
 from typing import List
 import logging
 import copy
+import time
 from fd.pddl.conditions import Conjunction, Atom
-from heuristic_tools.heuristic import Heurisitc
+# from heuristic_tools.heuristic import Heurisitc
 
 
 class Node:
@@ -59,6 +60,7 @@ class Node:
         self.parent = parent
         self.neighbours = []
         self.possible_groundings = None
+        self.grounding_time = None
         self.h_relaxation = heuristic_relaxation
 
         if is_initial_node:
@@ -69,6 +71,7 @@ class Node:
             self.depth = depth
             self.g_cost = 0
             self.h_cost = 0
+            self.h_cost_time = 0.0
             self.f_cost = 0
             self.repaired_domain = copy.deepcopy(self.original_domain)
             self.ground_repair_solution = None
@@ -81,7 +84,16 @@ class Node:
                 self.current_state = self.calculate_current_state()
             else:
                 self.current_state = None
-            self.h_cost = self.compute_h_cost() if self.h_cost_needed and self.lifted_action_sequence else 0
+            
+            if self.h_cost_needed:
+                start_time = time.time()
+                self.h_cost = self.compute_h_cost()
+                end_time = time.time()
+                self.h_cost_time = end_time - start_time
+            else:
+                self.h_cost = 0
+                self.h_cost_time = 0
+            
             self.f_cost = self.g_cost + self.h_cost
 
 
@@ -112,27 +124,13 @@ class Node:
 
 
     def compute_h_cost(self):
-        # TODO: debug & check
-        # will always be run after ground_repair(), and hence works with the repaired self.planning.domain.
-        # should be sth like: h(y(self.domain), d(self.task), self.lifted_action_sequence)
-        task = copy.deepcopy(self.original_task)
-        task.set_init_state(self.current_state)
-        h = Heurisitc(h_name="L_HMAX", relaxation=self.h_relaxation)
-
-        ### DEBUG #TODO: remove this
-        # print(f">>  Calculating H fro node with grounding:\n{self.ground_action_sequence}")
-        # actions = [(l,) for l in self.lifted_action_sequence]
-        # with open('domain.pkl', 'wb') as file:
-        #     pickle.dump(self.original_domain, file)
-        # with open('task.pkl', 'wb') as file:
-        #     pickle.dump(task, file)
-        # with open('actions.pkl', 'wb') as file:
-        #     pickle.dump(actions, file)
-        ### DEBUG Ends ####
-
-        h_cost = h.evaluate(self.original_domain, task, self.lifted_action_sequence)
-
-        return h_cost
+        raise NotImplementedError
+        # # TODO: debug & check
+        # task = copy.deepcopy(self.original_task)
+        # task.set_init_state(self.current_state)
+        # h = Heurisitc(h_name="L_HMAX", relaxation=self.h_relaxation)
+        # h_cost = h.evaluate(self.original_domain, task, self.lifted_action_sequence)
+        # return h_cost
 
 
     def get_neighbors(self):
@@ -157,14 +155,13 @@ class Node:
 
         try:
             next_action_pddl = f"({' '.join(self.lifted_action_sequence[0])})"
-            self.possible_groundings = Node.grounder(domain, task, next_action_pddl)
-        except Exception as e:
-            error_msg = f"""Failed to run grounder with unexpected error: 
-            Error message: {str(e)}
-            STDERR: {e.stderr}
-            STDOUT: {e.stdout}"""
-            print(error_msg)
 
+            start_time = time.time()
+            self.possible_groundings = Node.grounder(domain, task, next_action_pddl)
+            end_time = time.time()
+            self.grounding_time = end_time - start_time
+        except Exception as e:
+            print(e)
             log_data_error = {
                 'current_node': self.to_dict(include_state=True)
             }
@@ -217,6 +214,11 @@ class Node:
         
         return d
     
+    def get_timings(self):
+        if self.grounding_time is None:
+            raise NotImplementedError("The grounder function has not been used yet")
+        return self.h_cost_time, grounding_time
+        
 
     def __str__(self):
         node_dict = self.to_dict()
