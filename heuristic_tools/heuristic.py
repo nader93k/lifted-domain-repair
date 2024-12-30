@@ -539,7 +539,7 @@ def dl_exploration(init, rules, comb_f=max):
     matching_rules = collections.defaultdict(lambda: list())
     for i, rule in enumerate(rules):
         for j, atom in enumerate(rule.body):
-            matching_rules[atom.predicate].append((i, j))
+            matching_rules[rule.head.predicate].append((i, j))
 
     for k, v in matching_rules.items():
         matching_rules[k] = list(sorted(set(v)))
@@ -594,6 +594,7 @@ def dl_exploration(init, rules, comb_f=max):
                     combined_args = combine_or_project(to_combine, *combinations[rule_id])
             else:
                 assert len(rule.body) == 1
+                assert current_fact.predicate == rule.body[0].predicate
                 combined_cost = _rule.cost + current_cost
                 combined_args = combine_or_project([current_fact], *combinations[rule_id])
 
