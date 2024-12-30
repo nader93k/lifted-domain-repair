@@ -82,18 +82,17 @@ if __name__ == "__main__":
     order = config['order']
     min_length = config['min_length']
     max_length = config['max_length']
-    domain_class = config['domain_class']
-    if len(sys.argv) > 1:
-        instance_ids = [sys.argv[1]]
-    else:
-        instance_ids = config['instance_ids']
-        if instance_ids == 'load_instance_ids':
-            instance_ids = load_instance_ids('instance_ids_nonzero_h.json')
-        elif instance_ids == 'instance_ids_small_exp_set':
-            instance_ids = load_instance_ids('instance_ids_small_exp_set.json')
+    domain_class = config['domain_class'] 
     heuristic_relaxation = config['heuristic_relaxation']
-    run_mode = config['run_mode']
     lift_prob = config['lift_prob']
+    run_mode = config['run_mode']
+
+    # run on fixed instance_ids
+    instance_ids = config['instance_ids']
+    if instance_ids == 'load_instance_ids':
+        instance_ids = load_instance_ids('instance_ids_nonzero_h.json')
+    elif instance_ids == 'instance_ids_small_exp_set':
+        instance_ids = load_instance_ids('instance_ids_small_exp_set.json')
 
     print(f"Loaded configuration from: {config_file}")
     
@@ -110,4 +109,5 @@ if __name__ == "__main__":
                , heuristic_relaxation=heuristic_relaxation
                , lift_prob=lift_prob
                , run_mode=run_mode
+               , num_parallel_processes=num_parallel_processes
                )
