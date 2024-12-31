@@ -107,9 +107,9 @@ class AStar(Searcher):
                 neighbor.parent = current_node
 
             if iteration % log_interval == 0:
-                self.log_iteration_info(logger, iteration, open_list, current_node, final=True, is_goal=True)
+                self.log_iteration_info(logger, iteration, open_list, current_node, final=True, is_goal=False)
 
-        self.log_iteration_info(logger, iteration, open_list, current_node, final=True, is_goal=True)
+        self.log_iteration_info(logger, iteration, open_list, current_node, final=True, is_goal=False)
         return None, None  # No path found
 
 
@@ -195,7 +195,7 @@ class DFS(Searcher):
                     ['not logged'],
                     current_node,
                     final=True,
-                    is_goal=True)
+                    is_goal=False)
 
         self.log_iteration_info(
                     logger,
@@ -203,6 +203,6 @@ class DFS(Searcher):
                     ['not logged'],
                     current_node,
                     final=True,
-                    is_goal=True)
+                    is_goal=False)
         
         return None, None  # No path found

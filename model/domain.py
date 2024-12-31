@@ -1,6 +1,8 @@
 from fd.pddl.parser import parse_nested_list
 from fd.pddl.tasks import parse_domain, parse_task
 from fd.pddl.conditions import Condition
+from fd.pddl.predicates import Predicate
+
 
 
 class Domain:
@@ -18,7 +20,7 @@ class Domain:
         for action in self._actions:
             if hasattr(action, 'cost'):
                 action.cost = None
-        
+       
         # remove '=' predicates
         self._predicates = list(filter(lambda p: p.name != '=', self._predicates))
 
@@ -108,6 +110,7 @@ class Domain:
         pddl_string += "  )\n"
 
         pddl_string += "  (:predicates\n"
+        pddl_string += "    " + '(dummy-true)' + "\n"
         for pred in self._predicates:
             if pred.name != '=':
                 pddl_string += "    " + pred.pddl() + "\n"
@@ -188,6 +191,7 @@ class Task:
         pddl_string += "  )\n"
 
         pddl_string += "  (:init\n"
+        pddl_string += "    " + '(dummy-true)' + "\n"
         for atom in self._init:
             pddl_string += "    " + atom.pddl() + "\n"
         pddl_string += "  )\n"
