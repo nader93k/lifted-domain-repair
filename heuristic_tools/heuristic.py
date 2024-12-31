@@ -390,10 +390,15 @@ def add_free_atom(task, domain):
     for obj in task.objects:
         task.init.append(fd.pddl.conditions.Atom(ANY_OBJ, [obj.name]))
 
-    objects_for_type = dict()
+    type_to_preds = dict()
     for _type in domain.types:
         if _type.name != 'object':
-            assert False, "todo: implement me, add all objects for type and then add to initial state"
+            type_to_preds[_type.name] = [to_type_pred(_type.name)] + [to_type_pred(t) for t in _type.supertype_names if t != 'object']
+
+    for obj in task.objects:
+        if obj.type != 'object':
+            for type_pred in type_to_preds[obj.type]:
+                task.init.append(fd.pddl.conditions.Atom(type_pred, [obj.name]))
 
 def get_pars(atom):
     return set(arg for arg in atom.args if arg[0] == "?")
@@ -573,6 +578,7 @@ def dl_exploration(init, rules, comb_f=max):
         for j, atom in enumerate(rule.body):
             creator = create_creator([atom], shared_vars)
             projections[(i, j)] = creator
+            assert len(creator) <= len(atom.args)
 
             matching_rules[atom.predicate].append((i, j))
 
@@ -599,7 +605,7 @@ def dl_exploration(init, rules, comb_f=max):
             if not can_match(current_fact, _rule.body[body_pos]):
                 continue
 
-            projection = combine_or_project([atom], projections[(rule_id, body_pos)], dict())
+            projection = combine_or_project([current_fact], projections[(rule_id, body_pos)], dict())
             rule_body_pos_container[(rule_id, body_pos)][projection].add(current_fact)
 
             if len(_rule.body) == 2:
