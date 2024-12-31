@@ -58,6 +58,9 @@ def timing(text, block=False):
 H_NAMES = ["L_HMAX", "L_HADD", "L_HFF", "G_HMAX", "G_HADD", "G_HFF", "G_LM_CUT"]
 RELAXATIONS = ["none", "unary", "zeroary"]
 
+ANY_OBJ = "any_obj"
+to_type_pred = lambda v: f"typepred___{v}"
+
 dprint = lambda *args, **kwargs: None
 if not DEBUG:
     dprint = print
@@ -354,6 +357,10 @@ def pddl_to_datalog_rules(domain):
     for action in domain.actions:
         rule_body = datalog_pre(action)
 
+        for par in action.parameters:
+            if par.type != 'object':
+                rule_body.append(fd.pddl.Atom(to_type_pred(par.type), [par.name]))
+
         for eff in action.effects:
             assert type(eff.condition) is fd.pddl.conditions.Truth
 
@@ -377,8 +384,16 @@ def add_goal_rule(domain, task):
         cost=0
     ))
 
-def add_free_atom(task):
+def add_free_atom(task, domain):
     task.init.append(fd.pddl.conditions.Atom(FREE_PRED, []))
+
+    for obj in task.objects:
+        task.init.append(fd.pddl.conditions.Atom(ANY_OBJ, [obj.name]))
+
+    objects_for_type = dict()
+    for _type in domain.types:
+        if _type.name != 'object':
+            assert False, "todo: implement me, add all objects for type and then add to initial state"
 
 def get_pars(atom):
     return set(arg for arg in atom.args if arg[0] == "?")
@@ -391,6 +406,7 @@ def binarize_datalog(dl_rules):
     for rule in dl_rules:
         if len(rule.body) == 0:
             rule.body.append(fd.pddl.conditions.Atom(FREE_PRED, []))
+            new_rules.append(rule)
         else:
             head_pars = get_pars(rule.head)
             par_count = collections.defaultdict(lambda: 0)
@@ -419,9 +435,10 @@ def binarize_datalog(dl_rules):
 
                 tmp_pars = list(sorted(set(par for par in itertools.chain(get_pars(temporaries[i]),get_pars(temporaries[j])) if (par in head_pars or par_count[par] > local_par_count[par]))))
                 tmp_atom = fd.pddl.Atom(tmp_pred(len(new_rules)), tmp_pars)
-                temporaries[j] = tmp_atom
 
                 new_rules.append(DatalogRule(tmp_atom, [temporaries[i], temporaries[j]], 0))
+
+                temporaries[j] = tmp_atom
 
                 for arg in tmp_pars:
                     par_count[arg] += 1
@@ -638,15 +655,31 @@ def integrate_repair_actions(domain):
         eff_atom = fd.pddl.conditions.Atom(pred.name, [arg.name for arg in action_args])
 
         domain._actions.append(fd.pddl.actions.Action(name=f"activate_{new_pred_name}",
+                                                      parameters=[],
+                                                      num_external_parameters=0,
+                                                      precondition=fd.pddl.conditions.Conjunction([]),
+                                                      effects=[to_eff(pre_atom)],
+                                                      cost=1))
+
+        domain._actions.append(fd.pddl.actions.Action(name=f"use_{new_pred_name}",
                                                       parameters=action_args,
                                                       num_external_parameters=len(action_args),
                                                       precondition=pre_atom,
                                                       effects=[to_eff(eff_atom)],
-                                                      cost=1))
+                                                      cost=0))
 
     for pred in new_preds:
         domain._predicates.append(pred)
 
+def cover_head_rule(dl_rules):
+    """
+    If there are parameters that are not bound to a precondition, bind them with a wildcard condition.
+    """
+    for rule in dl_rules:
+        body_vars = set().union(*(get_pars(atom) for atom in rule.body))
+        for v in get_pars(rule.head):
+            if v not in body_vars:
+                rule.body.append(fd.pddl.Atom(ANY_OBJ, [v]))
 
 class Heurisitc:
     def __init__(self, h_name, relaxation):
@@ -662,8 +695,9 @@ class Heurisitc:
 
     def new_get_val(self, domain, task):
         add_goal_rule(domain, task)
-        add_free_atom(task)
+        add_free_atom(task, domain)
         dl_rules = pddl_to_datalog_rules(domain)
+        cover_head_rule(dl_rules)
         binarized_dl_rules = binarize_datalog(dl_rules)
         return dl_exploration(task.init, binarized_dl_rules, max if "HMAX" in self.h_name else lambda x,y: x+y)
 
@@ -706,7 +740,7 @@ class Heurisitc:
         return val
 
     def re_run(self, __domain, __task, action_sequence):
-        assert False, "With our current construction we can never return infty"
+        assert False, "With our current construction we should never be able to return infty"
 
         if not self.no_legacy:
             shutil.copyfile(OUTPUT_MODEL_DOMAIN, OLD_OUTPUT_MODEL_DOMAIN)
