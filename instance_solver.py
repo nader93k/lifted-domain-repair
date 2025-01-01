@@ -12,12 +12,13 @@ import logging
 import time
 import sys
 import traceback
+import resource
 
 
 
 def solve_instance(search_algorithm, benchmark_path, log_file, log_interval, instance_id, lift_prob, heuristic_relaxation):
     start_time = time.time()
-
+    
     log_interval = int(log_interval)
     instance = list_instances(benchmark_path, instance_ids=[instance_id], lift_prob=lift_prob)[0]
     instance.load_to_memory()
@@ -95,6 +96,9 @@ def solve_instance(search_algorithm, benchmark_path, log_file, log_interval, ins
 
 
 if __name__ == "__main__":
+    size = 8 * 1024 * 1024 * 1024  # 8GB in bytes
+    resource.setrlimit(resource.RLIMIT_AS, (size, size))
+
     logging.basicConfig(level=logging.INFO, format='%(message)s')
 
     if len(sys.argv) not in (7, 8):
