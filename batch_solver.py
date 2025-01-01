@@ -14,38 +14,35 @@ import resource
 from functools import partial
 import psutil
 from filelock import FileLock
-from multiprocessing import Manager
-
+from multiprocessing import Pool, Manager, cpu_count
 
 
 def limit_resources(worker_id):
     """Set CPU affinity for each worker process"""
-    # Read CPU list from /proc/self/status instead of SLURM environment
-    cpu_range = ''
-    with open('/proc/self/status', 'r') as f:
-        for line in f:
-            if line.startswith('Cpus_allowed_list:'):
-                cpu_range = line.strip().split('\t')[1]
-                break
-    
-    if cpu_range and '-' in cpu_range:
-        start, end = map(int, cpu_range.split('-'))
-        num_cpus = end - start + 1
-        # Map worker_id to the range [start, end]
-        assigned_cpu = start + (worker_id % num_cpus)
-        psutil.Process().cpu_affinity([assigned_cpu])
+    try:
+        with open('/proc/self/status', 'r') as f:
+            for line in f:
+                if line.startswith('Cpus_allowed_list:'):
+                    cpu_range = line.strip().split('\t')[1]
+                    if '-' in cpu_range:
+                        start, end = map(int, cpu_range.split('-'))
+                        num_cpus = end - start + 1
+                        assigned_cpu = start + (worker_id % num_cpus)
+                        psutil.Process().cpu_affinity([assigned_cpu])
+                    break
+    except Exception as e:
+        print(f"Warning: Could not set CPU affinity for worker {worker_id}: {e}", flush=True)
 
-
-def solve_instance_wrapper(worker_id, instance, params):
-    """Wrapper function to handle individual instance solving with timeout"""
+def worker_process(args):
+    """Worker process function that processes a single instance"""
+    worker_id, instance, params, checkpoint_file, lock_file = args
     start_time = datetime.datetime.now()
     print(f"[{start_time}] Worker {worker_id} starting instance {instance.identifier}", flush=True)
     
-    try:
-        limit_resources(worker_id)
-    except Exception as e:
-        print(f"Warning: Could not set CPU affinity for worker {worker_id}: {e}", flush=True)
+    # Set CPU affinity
+    limit_resources(worker_id)
     
+    # Prepare log file
     log_file = os.path.join(
         params['log_folder'],
         f"{params['search_algorithm']}_length_{instance.plan_length}_{instance.domain_class}_{instance.instance_name}.yaml"
@@ -53,11 +50,10 @@ def solve_instance_wrapper(worker_id, instance, params):
     
     if os.path.isfile(log_file):
         os.remove(log_file)
-        
-    logger = StructuredLogger(log_file)
-    interpreter_path = sys.executable
+    
+    # Prepare command
     cmd = [
-        interpreter_path,
+        sys.executable,
         "instance_solver.py",
         params['search_algorithm'],
         str(params['benchmark_path']),
@@ -69,52 +65,40 @@ def solve_instance_wrapper(worker_id, instance, params):
     
     if params['heuristic_relaxation']:
         cmd.append(params['heuristic_relaxation'])
-        
+    
     try:
         print(f"[{datetime.datetime.now()}] Worker {worker_id} executing subprocess for {instance.identifier}", flush=True)
         result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'])
         end_time = datetime.datetime.now()
         duration = (end_time - start_time).total_seconds()
-        
-        logger.log(
-            issuer="batch_solver",
-            event_type="general",
-            level=logging.INFO,
-            message=f"Subprocess finished successfully. Duration: {duration:.2f} seconds"
-        )
         print(f"[{end_time}] Worker {worker_id} completed {instance.identifier} in {duration:.2f} seconds", flush=True)
-        return True
+        
+        # Update checkpoint file
+        with FileLock(lock_file):
+            try:
+                with open(checkpoint_file, 'r') as f:
+                    completed = set(json.load(f))
+            except (FileNotFoundError, json.JSONDecodeError):
+                completed = set()
+            
+            completed.add(instance.identifier)
+            
+            with open(checkpoint_file, 'w') as f:
+                json.dump(list(completed), f)
+        
+        return True, instance.identifier
         
     except subprocess.TimeoutExpired:
         end_time = datetime.datetime.now()
         duration = (end_time - start_time).total_seconds()
-        logger.log(
-            issuer="batch_solver",
-            event_type="error",
-            level=logging.ERROR,
-            message=f"Subprocess timed out after {params['timeout_seconds']} seconds."
-        )
         print(f"[{end_time}] Worker {worker_id} TIMEOUT on {instance.identifier} after {duration:.2f} seconds", flush=True)
+        return False, instance.identifier
         
     except Exception as e:
         end_time = datetime.datetime.now()
         duration = (end_time - start_time).total_seconds()
-        logger.log(
-            issuer="batch_solver",
-            event_type="error",
-            level=logging.ERROR,
-            message=f"Exception: instance id={instance.identifier}, err: {e}"
-        )
         print(f"[{end_time}] Worker {worker_id} ERROR on {instance.identifier} after {duration:.2f} seconds: {e}", flush=True)
-        
-    return False
-
-
-def process_instance(args):
-    """Helper function to unpack arguments for solve_instance_wrapper"""
-    worker_id, instance, params = args
-    return solve_instance_wrapper(worker_id, instance, params)
-
+        return False, instance.identifier
 
 def run_process(search_algorithm, benchmark_path, log_folder, log_interval,
                 timeout_seconds, order, min_length, max_length, heuristic_relaxation,
@@ -123,6 +107,7 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval,
     start_time = datetime.datetime.now()
     print(f"[{start_time}] Batch solver started", flush=True)
     
+    # Determine number of workers
     with open('/proc/self/status', 'r') as f:
         for line in f:
             if line.startswith('Cpus_allowed_list:'):
@@ -130,14 +115,15 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval,
                 if '-' in cpu_list:
                     start, end = map(int, cpu_list.split('-'))
                     num_workers = end - start + 1
-                break
+                    break
     
-    print(f"Cpus_allowed_list from /proc/self/status: {cpu_list}", flush=True)  # Debug print
+    print(f"Cpus_allowed_list from /proc/self/status: {cpu_list}", flush=True)
     print(f"Running with {num_workers} worker processes", flush=True)
     
-    # Create log folder if it doesn't exist
+    # Create log folder
     os.makedirs(log_folder, exist_ok=True)
     
+    # Get instances
     instance_list = list_instances(benchmark_path, domain_class, instance_ids)
     instances = list(smart_instance_generator(
         instance_list,
@@ -148,6 +134,7 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval,
     
     print(f"Total instances to process: {len(instances)}", flush=True)
     
+    # Prepare parameters
     params = {
         'search_algorithm': search_algorithm,
         'benchmark_path': benchmark_path,
@@ -158,43 +145,39 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval,
         'lift_prob': lift_prob
     }
     
-    checkpoint_file = os.path.join(log_folder, "00 checkpoint.json")
+    # Setup checkpoint files
+    checkpoint_file = os.path.join(log_folder, "00_checkpoint.json")
     lock_file = checkpoint_file + ".lock"
     
-    # This is fine as is - single process
+    # Load checkpoint if exists
     if os.path.exists(checkpoint_file):
         with open(checkpoint_file, 'r') as f:
             completed_instances = set(json.load(f))
             print(f"Loaded {len(completed_instances)} completed instances from checkpoint", flush=True)
     else:
         completed_instances = set()
-
+    
+    # Filter remaining instances
     remaining_instances = [inst for inst in instances if inst.identifier not in completed_instances]
     print(f"Remaining instances to process: {len(remaining_instances)}", flush=True)
     
-    with Manager() as manager:
-        # Initialize with existing completed instances
-        shared_completed = manager.list(completed_instances)
+    # Prepare worker arguments
+    worker_args = [
+        (i % num_workers, instance, params, checkpoint_file, lock_file)
+        for i, instance in enumerate(remaining_instances)
+    ]
     
-        with ProcessPoolExecutor(max_workers=num_workers) as executor:
-            worker_assignments = [(i % num_workers, instance, params) 
-                                for i, instance in enumerate(remaining_instances)]
-            
-            for i, result in enumerate(executor.map(process_instance, worker_assignments)):
-                if result:
-                    instance_id = remaining_instances[i].identifier
-                    shared_completed.append(instance_id)
-                    
-                    with FileLock(lock_file):
-                        with open(checkpoint_file, 'w') as f:
-                            json.dump(list(set(shared_completed)), f)
-
-
+    # Process instances using Pool
+    with Pool(processes=num_workers) as pool:
+        results = pool.map(worker_process, worker_args)
+    
+    # Count successful completions
+    successful = sum(1 for success, _ in results if success)
     
     end_time = datetime.datetime.now()
     duration = (end_time - start_time).total_seconds()
     print(f"[{end_time}] Batch solver completed. Total duration: {duration:.2f} seconds", flush=True)
-    print(f"Total instances completed: {len(completed_instances)}", flush=True)
+    print(f"Successfully completed instances: {successful}/{len(remaining_instances)}", flush=True)
 
 
 def load_instance_ids(file_path):
