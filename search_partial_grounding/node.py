@@ -65,8 +65,6 @@ class Node:
         self.h_relaxation = heuristic_relaxation
 
         if is_initial_node:
-            # TODO: review the claim below
-            # These values are arbitrary numbers and won't affect the results.
             assert len(ground_action_sequence) == 0
             assert depth == 0
             self.depth = depth
@@ -191,7 +189,6 @@ class Node:
 
 
     def is_goal(self):
-        # check with @songtuan
         return len(self.lifted_action_sequence) == 0 and self.f_cost != float('inf')
 
 
@@ -222,7 +219,7 @@ class Node:
     def get_timings(self):
         if self.grounding_time is None:
             raise NotImplementedError("The grounder function has not been used yet")
-        return self.h_cost_time, grounding_time
+        return self.h_cost_time, self.grounding_time
         
 
     def __str__(self):

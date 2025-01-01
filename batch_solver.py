@@ -1,6 +1,6 @@
 from instance_solver import solve_instance
 from custom_logger import StructuredLogger
-from exptools import list_instances, smart_instance_generator
+from exptools import list_instances
 from pathlib import Path
 import os
 import sys
@@ -15,6 +15,7 @@ from functools import partial
 import psutil
 from filelock import FileLock
 from multiprocessing import Manager
+
 
 
 def limit_resources(worker_id):
