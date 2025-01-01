@@ -42,11 +42,7 @@ def worker_process(args):
     # Set CPU affinity
     limit_resources(worker_id)
     
-    # Prepare log file
-    log_file = os.path.join(
-        params['log_folder'],
-        f"{params['search_algorithm']}_length_{instance.plan_length}_{instance.domain_class}_{instance.instance_name}.yaml"
-    )
+    log_file = os.path.join(params['log_folder'], f"{instance.identifier}.yaml")
     
     if os.path.isfile(log_file):
         os.remove(log_file)
