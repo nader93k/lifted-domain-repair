@@ -13,32 +13,26 @@ from concurrent.futures import ProcessPoolExecutor
 import resource
 from functools import partial
 import psutil
+from filelock import FileLock
+from multiprocessing import Manager
 
 
 def limit_resources(worker_id):
     """Set CPU affinity for each worker process"""
-    try:
-        # Parse SLURM CPU list (e.g., "4-18")
-        cpu_range = os.environ.get('SLURM_CPU_BIND_LIST', '')
-        print('debug' + cpu_range)
-        if cpu_range and '-' in cpu_range:
-            start, end = map(int, cpu_range.split('-'))
-            num_cpus = end - start + 1
-            # Map worker_id to the range [start, end]
-            assigned_cpu = start + (worker_id % num_cpus)
-            psutil.Process().cpu_affinity([assigned_cpu])
-        
-            # Set memory limit if specified
-            if 'SLURM_MEM_PER_NODE' in os.environ:
-                total_mem = int(os.environ['SLURM_MEM_PER_NODE']) * 1024 * 1024 * 1024
-                mem_limit = total_mem // num_cpus
-                resource.setrlimit(resource.RLIMIT_AS, (mem_limit, mem_limit))
-                
-    except Exception as e:
-        print(f"Warning: Failed to set resource limits for worker {worker_id}: {e}", flush=True)
-            
-    except Exception as e:
-        print(f"Warning: Failed to set resource limits for worker {worker_id}: {e}", flush=True)
+    # Read CPU list from /proc/self/status instead of SLURM environment
+    cpu_range = ''
+    with open('/proc/self/status', 'r') as f:
+        for line in f:
+            if line.startswith('Cpus_allowed_list:'):
+                cpu_range = line.strip().split('\t')[1]
+                break
+    
+    if cpu_range and '-' in cpu_range:
+        start, end = map(int, cpu_range.split('-'))
+        num_cpus = end - start + 1
+        # Map worker_id to the range [start, end]
+        assigned_cpu = start + (worker_id % num_cpus)
+        psutil.Process().cpu_affinity([assigned_cpu])
 
 
 def solve_instance_wrapper(worker_id, instance, params):
@@ -57,8 +51,7 @@ def solve_instance_wrapper(worker_id, instance, params):
     )
     
     if os.path.isfile(log_file):
-        print(f"[{datetime.datetime.now()}] Worker {worker_id} skipping existing result for {instance.identifier}", flush=True)
-        return None
+        os.remove(log_file)
         
     logger = StructuredLogger(log_file)
     interpreter_path = sys.executable
@@ -129,15 +122,16 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval,
     start_time = datetime.datetime.now()
     print(f"[{start_time}] Batch solver started", flush=True)
     
-    # Get number of workers from SLURM CPU binding or use all available CPUs
-    cpu_list = os.environ.get('SLURM_CPU_BIND_LIST', '')
-    if cpu_list:
-        num_workers = sum(len(range(int(r.split('-')[0]), int(r.split('-')[1]) + 1)) 
-                         if '-' in r else 1 
-                         for r in cpu_list.split(','))
-    else:
-        num_workers = psutil.cpu_count()
+    with open('/proc/self/status', 'r') as f:
+        for line in f:
+            if line.startswith('Cpus_allowed_list:'):
+                cpu_list = line.strip().split('\t')[1]
+                if '-' in cpu_list:
+                    start, end = map(int, cpu_list.split('-'))
+                    num_workers = end - start + 1
+                break
     
+    print(f"Cpus_allowed_list from /proc/self/status: {cpu_list}", flush=True)  # Debug print
     print(f"Running with {num_workers} worker processes", flush=True)
     
     # Create log folder if it doesn't exist
@@ -163,7 +157,7 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval,
         'lift_prob': lift_prob
     }
     
-    checkpoint_file = os.path.join(log_folder, "checkpoint.json")
+    checkpoint_file = os.path.join(log_folder, "00 checkpoint.json")
     completed_instances = set()
     if os.path.exists(checkpoint_file):
         with open(checkpoint_file, 'r') as f:
@@ -171,22 +165,26 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval,
             print(f"Loaded {len(completed_instances)} completed instances from checkpoint", flush=True)
     
     # Filter out completed instances
-    instances = [inst for inst in instances if inst.identifier not in completed_instances]
-    print(f"Remaining instances to process: {len(instances)}", flush=True)
+    remaining_instances = [inst for inst in instances if inst.identifier not in completed_instances]
+    print(f"Remaining instances to process: {len(remaining_instances)}", flush=True)
+
+    import pdb; pdb.set_trace()
     
-    with ProcessPoolExecutor(max_workers=num_workers) as executor:
-        # Create a list of (worker_id, instance, params) tuples
-        worker_assignments = [(i % num_workers, instance, params) 
-                            for i, instance in enumerate(instances)]
-        
-        # Map using the helper function
-        for i, result in enumerate(executor.map(process_instance, worker_assignments)):
-            if result:  # If instance was processed successfully
-                instance_id = instances[i].identifier
-                completed_instances.add(instance_id)
-                # Update checkpoint after each successful completion
-                with open(checkpoint_file, 'w') as f:
-                    json.dump(list(completed_instances), f)
+    with Manager() as manager:
+        completed_instances = manager.list()
+    
+        with ProcessPoolExecutor(max_workers=num_workers) as executor:
+            worker_assignments = [(i % num_workers, instance, params) 
+                                for i, instance in enumerate(remaining_instances)]
+            
+            for i, result in enumerate(executor.map(process_instance, worker_assignments)):
+                if result:
+                    instance_id = remaining_instances[i].identifier
+                    completed_instances.append(instance_id)
+                    
+                    with FileLock(lock_file):
+                        with open(checkpoint_file, 'w') as f:
+                            json.dump(list(completed_instances), f)
     
     end_time = datetime.datetime.now()
     duration = (end_time - start_time).total_seconds()
