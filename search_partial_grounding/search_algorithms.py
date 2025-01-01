@@ -3,8 +3,6 @@ import heapq
 
 
 
-
-
 class Searcher:
     def __init__(self, initial_node):
         self.initial_node = initial_node
@@ -43,7 +41,7 @@ class Searcher:
 
 class AStar(Searcher):
     """
-    A class that implements the A* pathfinding algorithm.
+    A class that implements the A* tree search algorithm.
 
     Note:
         This implementation assumes that the Node class used has the following attributes:
@@ -76,13 +74,12 @@ class AStar(Searcher):
         closed_list = []
 
         f_cost = self.calculate_f_cost(self.initial_node)
-        h_cost = self.calculate_h_cost(self.initial_node)
-        heapq.heappush(open_list, (f_cost, h_cost, -self.initial_node.depth, self.initial_node))
+        heapq.heappush(open_list, (f_cost, -self.initial_node.depth, self.initial_node))
 
         iteration = 0
         while open_list:
             iteration += 1
-            current_node = heapq.heappop(open_list)[3]
+            current_node = heapq.heappop(open_list)[2]
 
             if current_node.is_goal():
                 self.log_iteration_info(logger, iteration, open_list, current_node, final=True, is_goal=True)
@@ -96,15 +93,14 @@ class AStar(Searcher):
             self.sum_grounding_time += current_node.grounding_time
 
             for neighbor in neighbours:
-                if not any(node[3]==neighbor for node in open_list):
+                if not any(node[2]==neighbor for node in open_list):
                     if not self.prune_func(neighbor):
                         f_cost = self.calculate_f_cost(neighbor)
-                        h_cost = self.calculate_h_cost(neighbor)
-                        heapq.heappush(open_list, (f_cost, h_cost, -neighbor.depth, neighbor))
-                # elif tentative_f_cost >= neighbor.f_cost: continue
+                        heapq.heappush(open_list, (f_cost, -neighbor.depth, neighbor))
+                        neighbor.parent = current_node
                 else: raise Exception("Identical node generation. Debug is needed.")
 
-                neighbor.parent = current_node
+                
 
             if iteration % log_interval == 0:
                 self.log_iteration_info(logger, iteration, open_list, current_node, final=True, is_goal=False)
@@ -133,7 +129,6 @@ class BranchBound(Searcher):
     def find_path(self, logger, log_interval):
         current_best_cost = float('inf')
         while True:
-            #TODO add error handling for this
             searcher = AStar(self.initial_node,
                              g_cost_multiplier=0,
                              h_cost_multiplier=1,
@@ -155,54 +150,27 @@ class DFS(Searcher):
 
     def find_path(self, logger, log_interval):
         stack = [self.initial_node]
-        # visited = set()
-        # The visited set is not necessary because distinct nodes cannot have equal children.
-        # This ensures we won't revisit nodes, eliminating the need for a visited set.
-
         iteration = 0
+        
         while stack:
             iteration += 1
             current_node = stack.pop()
 
-            # if current_node in visited:
-            #     continue
-            # This check is not needed because each node is unique and won't be revisited.
-            # visited.add(current_node)
-            # We don't need to track visited nodes for the same reason as above.
-
             if current_node.is_goal():
-                self.log_iteration_info(
-                    logger,
-                    iteration,
-                    ['not logged'],
-                    current_node,
-                    final=True,
-                    is_goal=True)
+                self.log_iteration_info(logger, iteration, ['not logged'], current_node, final=True, is_goal=True)
                 return self.reconstruct_path(current_node), current_node
 
-            neighbors = sorted(current_node.get_neighbors(), key=lambda x: x.g_cost)
-            self.num_nodes_generated += len(neighbours)
-            stack.extend(neighbors)
-            # for neighbor in neighbors:
-            #     if neighbor not in visited:
-            #         stack.append(neighbor)
-            # We don't need to check if neighbors are visited because each node is unique.
-            # Instead, we can directly extend the stack with all neighbors.
-            if iteration % log_interval == 0:
-                self.log_iteration_info(
-                    logger,
-                    iteration,
-                    ['not logged'],
-                    current_node,
-                    final=True,
-                    is_goal=False)
+            neighbors = sorted(current_node.get_neighbors(), key=lambda x: x.g_cost, reverse=True)
+            self.num_nodes_generated += len(neighbors)
+            self.sum_h_cost_time += current_node.h_cost_time
+            self.sum_grounding_time += current_node.grounding_time
+            
+            for neighbor in neighbors:
+                neighbor.parent = current_node
+                stack.append(neighbor)
 
-        self.log_iteration_info(
-                    logger,
-                    iteration,
-                    ['not logged'],
-                    current_node,
-                    final=True,
-                    is_goal=False)
-        
-        return None, None  # No path found
+            if iteration % log_interval == 0:
+                self.log_iteration_info(logger, iteration, ['not logged'], current_node, final=False, is_goal=False)
+
+        self.log_iteration_info(logger, iteration, ['not logged'], current_node, final=True, is_goal=False)
+        return None, None
