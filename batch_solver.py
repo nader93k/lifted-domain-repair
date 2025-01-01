@@ -1,6 +1,6 @@
 from instance_solver import solve_instance
 from custom_logger import StructuredLogger
-from exptools import list_instances
+from exptools import list_instances, smart_instance_generator
 from pathlib import Path
 import os
 import sys
@@ -160,18 +160,21 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval,
     
     checkpoint_file = os.path.join(log_folder, "00 checkpoint.json")
     lock_file = checkpoint_file + ".lock"
-    completed_instances = set()
+    
+    # This is fine as is - single process
     if os.path.exists(checkpoint_file):
         with open(checkpoint_file, 'r') as f:
             completed_instances = set(json.load(f))
             print(f"Loaded {len(completed_instances)} completed instances from checkpoint", flush=True)
-    
-    # Filter out completed instances
+    else:
+        completed_instances = set()
+
     remaining_instances = [inst for inst in instances if inst.identifier not in completed_instances]
     print(f"Remaining instances to process: {len(remaining_instances)}", flush=True)
     
     with Manager() as manager:
-        completed_instances = manager.list()
+        # Initialize with existing completed instances
+        shared_completed = manager.list(completed_instances)
     
         with ProcessPoolExecutor(max_workers=num_workers) as executor:
             worker_assignments = [(i % num_workers, instance, params) 
@@ -180,11 +183,13 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval,
             for i, result in enumerate(executor.map(process_instance, worker_assignments)):
                 if result:
                     instance_id = remaining_instances[i].identifier
-                    completed_instances.append(instance_id)
+                    shared_completed.append(instance_id)
                     
                     with FileLock(lock_file):
                         with open(checkpoint_file, 'w') as f:
-                            json.dump(list(set(completed_instances)), f)
+                            json.dump(list(set(shared_completed)), f)
+
+
     
     end_time = datetime.datetime.now()
     duration = (end_time - start_time).total_seconds()
