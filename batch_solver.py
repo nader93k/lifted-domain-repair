@@ -158,6 +158,7 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval,
     }
     
     checkpoint_file = os.path.join(log_folder, "00 checkpoint.json")
+    lock_file = checkpoint_file + ".lock"
     completed_instances = set()
     if os.path.exists(checkpoint_file):
         with open(checkpoint_file, 'r') as f:
@@ -182,7 +183,7 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval,
                     
                     with FileLock(lock_file):
                         with open(checkpoint_file, 'w') as f:
-                            json.dump(list(completed_instances), f)
+                            json.dump(list(set(completed_instances)), f)
     
     end_time = datetime.datetime.now()
     duration = (end_time - start_time).total_seconds()
