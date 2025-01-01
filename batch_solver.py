@@ -167,8 +167,6 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval,
     # Filter out completed instances
     remaining_instances = [inst for inst in instances if inst.identifier not in completed_instances]
     print(f"Remaining instances to process: {len(remaining_instances)}", flush=True)
-
-    import pdb; pdb.set_trace()
     
     with Manager() as manager:
         completed_instances = manager.list()
