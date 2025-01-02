@@ -1,0 +1,159 @@
+---
+timestamp: '2025-01-02T03:36:31.720854'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs_anu/00 all/miconic__ps3-3-err-rate-0-5.yaml
+    instance_id: miconic__ps3-3-err-rate-0-5
+    search_algorithm: bfs
+    plan_length: 12
+    domain_class: miconic
+    instance_name: ps3-3-err-rate-0-5
+    ground_plan:
+    - (board f0 p2)
+    - (up f0 f1)
+    - (board f1 p1)
+    - (down f1 f0)
+    - (up f0 f3)
+    - (depart f3 p1)
+    - (down f3 f0)
+    - (up f0 f5)
+    - (board f5 p0)
+    - (depart f5 p2)
+    - (down f5 f0)
+    - (depart f0 p0)
+    lifted_plan:
+    -   - board
+        - ?f0
+        - ?p2
+    -   - up
+        - ?f0
+        - ?f1
+    -   - board
+        - ?f1
+        - ?p1
+    -   - down
+        - ?f1
+        - ?f0
+    -   - up
+        - ?f0
+        - ?f3
+    -   - depart
+        - ?f3
+        - ?p1
+    -   - down
+        - ?f3
+        - ?f0
+    -   - up
+        - ?f0
+        - ?f5
+    -   - board
+        - ?f5
+        - ?p0
+    -   - depart
+        - ?f5
+        - ?p2
+    -   - down
+        - ?f5
+        - ?f0
+    -   - depart
+        - ?f0
+        - ?p0
+
+
+---
+timestamp: '2025-01-02T03:36:31.729915'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'depart,(served ?f),precPos,-1
+
+        up,(= ?f1 ?f2),effPos,1'
+
+
+---
+timestamp: '2025-01-02T03:36:32.145635'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 4
+        ground_actions:
+        - (board f0 p2)
+        - (up f0 f1)
+        - (board f1 p1)
+        - (down f1 f0)
+        repair_set: up,(= ?f1 ?f2),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''up'', ''?f0'', ''?f3'']'
+        num_neighbours: 0
+        first_10_possible_groundings: null
+        current_state: '''(lift-at f0)'', ''(origin p0 f5)'', ''(above f3 f5)'', ''(above
+            f0 f4)'', ''(passenger p2)'', ''(above f2 f4)'', ''(above f1 f5)'', ''(floor
+            f0)'', ''(destin p1 f3)'', ''(above f1 f3)'', ''(above f1 f2)'', ''(origin
+            p2 f0)'', ''(above f0 f5)'', ''(above f0 f2)'', ''(above f0 f1)'', ''(destin
+            p2 f5)'', ''(above f0 f3)'', ''(passenger p1)'', ''(above f2 f3)'', ''(above
+            f2 f5)'', ''(origin p1 f1)'', ''(boarded p1)'', ''(floor f4)'', ''(passenger
+            p0)'', ''(destin p0 f0)'', ''(boarded p2)'', ''(lift-at f1)'', ''(above
+            f3 f4)'', ''(above f1 f4)'', ''(floor f5)'', ''(floor f2)'', ''(floor
+            f1)'', ''(above f4 f5)'', ''(= f0 f1)'', ''(floor f3)'''
+
+
+---
+timestamp: '2025-01-02T03:36:32.155154'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: line 50:7 missing '(' at 'f0'. Stack trace:\
+    \ Traceback (most recent call last):\n  File \"instance_solver.py\", line 85,\
+    \ in solve_instance\n    searcher.find_path(logger=logger, log_interval=log_interval)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 90, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
+    \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 163, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 146, in ground_pddl\n    parser.parse_problem(task_path)\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 227, in parse_problem\n    problem = self._reader.parse_instance(problem_path)\n\
+    \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/tarski/io/fstrips.py\"\
+    , line 62, in parse_instance\n    self.parse_file(filename, 'problem')\n  File\
+    \ \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/tarski/io/fstrips.py\"\
+    , line 54, in parse_file\n    domain_parse_tree, _ = self.parser.parse_file(filename,\
+    \ start_rule)\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/tarski/io/_fstrips/reader.py\"\
+    , line 43, in parse_file\n    return self._parse_stream(stream, start_rule)\n\
+    \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/tarski/io/_fstrips/reader.py\"\
+    , line 51, in _parse_stream\n    tree = getattr(parser, start_rule)()\n  File\
+    \ \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/tarski/io/_fstrips/parser/parser.py\"\
+    , line 4922, in problem\n    self.init()\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/tarski/io/_fstrips/parser/parser.py\"\
+    , line 5363, in init\n    self.init_element()\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/tarski/io/_fstrips/parser/parser.py\"\
+    , line 5511, in init_element\n    self.flat_term()\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/tarski/io/_fstrips/parser/parser.py\"\
+    , line 5572, in flat_term\n    self.match(fstripsParser.T__0)\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/antlr4/Parser.py\"\
+    , line 118, in match\n    t = self._errHandler.recoverInline(self)\n  File \"\
+    /home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/antlr4/error/ErrorStrategy.py\"\
+    , line 392, in recoverInline\n    if self.singleTokenInsertion(recognizer):\n\
+    \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/antlr4/error/ErrorStrategy.py\"\
+    , line 425, in singleTokenInsertion\n    self.reportMissingToken(recognizer)\n\
+    \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/antlr4/error/ErrorStrategy.py\"\
+    , line 333, in reportMissingToken\n    recognizer.notifyErrorListeners(msg, t,\
+    \ None)\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/antlr4/Parser.py\"\
+    , line 314, in notifyErrorListeners\n    listener.syntaxError(self, offendingToken,\
+    \ line, column, msg, e)\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/antlr4/error/ErrorListener.py\"\
+    , line 60, in syntaxError\n    delegate.syntaxError(recognizer, offendingSymbol,\
+    \ line, column, msg, e)\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/tarski/io/_fstrips/reader.py\"\
+    , line 505, in syntaxError\n    raise ParsingError(msg)\ntarski.io._fstrips.reader.ParsingError:\
+    \ line 50:7 missing '(' at 'f0'\n"
+
+
+---
+timestamp: '2025-01-02T03:36:32.157870'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.54'
+
+

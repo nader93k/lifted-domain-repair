@@ -1,0 +1,133 @@
+---
+timestamp: '2025-01-02T00:46:55.173729'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs_anu/00 bfs relax-prec-delete lp1/bfs_length_13_ged-opt14-strips_pd-7-6-err-rate-0-5.yaml
+    instance_id: ged-opt14-strips__pd-7-6-err-rate-0-5
+    search_algorithm: bfs
+    plan_length: 13
+    domain_class: ged-opt14-strips
+    instance_name: pd-7-6-err-rate-0-5
+    ground_plan:
+    - (begin-cut sub4 g56)
+    - (end-cut-1 g56 sub1)
+    - (end-cut-2 sub4 sub1)
+    - (begin-transpose-splice sub2 sub4)
+    - (end-splice-1 g56 sub2)
+    - (end-splice-2 g56 sub4)
+    - (reset-1 sub4)
+    - (begin-cut sub1 sub5)
+    - (end-cut-1 sub5 sub3)
+    - (end-cut-2 sub1 sub3)
+    - (begin-transpose-splice g56 sub4)
+    - (end-splice-1 sub5 g56)
+    - (end-splice-2 sub5 sub4)
+    lifted_plan:
+    -   - begin-cut
+        - ?sub4
+        - ?g56
+    -   - end-cut-1
+        - ?g56
+        - ?sub1
+    -   - end-cut-2
+        - ?sub4
+        - ?sub1
+    -   - begin-transpose-splice
+        - ?sub2
+        - ?sub4
+    -   - end-splice-1
+        - ?g56
+        - ?sub2
+    -   - end-splice-2
+        - ?g56
+        - ?sub4
+    -   - reset-1
+        - ?sub4
+    -   - begin-cut
+        - ?sub1
+        - ?sub5
+    -   - end-cut-1
+        - ?sub5
+        - ?sub3
+    -   - end-cut-2
+        - ?sub1
+        - ?sub3
+    -   - begin-transpose-splice
+        - ?g56
+        - ?sub4
+    -   - end-splice-1
+        - ?sub5
+        - ?g56
+    -   - end-splice-2
+        - ?sub5
+        - ?sub4
+
+
+---
+timestamp: '2025-01-02T00:46:55.179315'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: begin-cut,(idle ),precPos,-1
+
+
+---
+timestamp: '2025-01-02T00:47:09.359998'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 278
+    fring_size: 637
+    num_nodes_generated: 915
+    sum_h_cost: 0
+    sum_f_cost: 1450
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 6.876757621765137
+    current_node:
+        depth: 13
+        ground_actions:
+        - (begin-cut sub1 sub5)
+        - (end-cut-1 sub5 sub3)
+        - (end-cut-2 sub1 sub3)
+        - (begin-transpose-splice g56 sub1)
+        - (end-splice-1 sub5 g56)
+        - (end-splice-2 sub5 sub1)
+        - (reset-1 sub1)
+        - (begin-cut sub2 sub4)
+        - (end-cut-1 sub4 g56)
+        - (end-cut-2 sub2 g56)
+        - (begin-transpose-splice sub5 sub1)
+        - (end-splice-1 sub4 sub5)
+        - (end-splice-2 sub4 sub1)
+        repair_set: begin-cut,(idle ),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2025-01-02T00:47:09.361741'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '15.31'
+
+
+---
+timestamp: '2025-01-02T00:47:10.074880'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 16.19 seconds'
+
+

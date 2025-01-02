@@ -110,6 +110,6 @@ def process_yaml_files(directory_path, output_csv):
 
 
 if __name__ == "__main__":
-    directory_path = "/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/00 bfs relax-prec-delete allproplems-length1-15"
+    directory_path = "/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/00 bfs relax-prec-delete lp1"
     output_csv = "exp_logs.csv"
     process_yaml_files(directory_path, output_csv)

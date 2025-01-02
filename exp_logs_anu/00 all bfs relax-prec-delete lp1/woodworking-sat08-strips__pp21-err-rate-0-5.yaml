@@ -1,0 +1,155 @@
+---
+timestamp: '2025-01-02T02:18:24.155057'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs_anu/00 all/woodworking-sat08-strips__pp21-err-rate-0-5.yaml
+    instance_id: woodworking-sat08-strips__pp21-err-rate-0-5
+    search_algorithm: bfs
+    plan_length: 8
+    domain_class: woodworking-sat08-strips
+    instance_name: pp21-err-rate-0-5
+    ground_plan:
+    - (do-saw-small b0 p0 saw0 oak rough s1 s0)
+    - (do-saw-large b1 p2 saw0 pine rough s6 s4 s5 s3)
+    - (do-saw-large b1 p1 saw0 pine rough s6 s4 s5 s3)
+    - (do-plane p1 planer0 rough natural untreated)
+    - (do-immersion-varnish p1 immersion-varnisher0 blue smooth)
+    - (do-plane p2 planer0 rough natural untreated)
+    - (do-plane p0 planer0 rough natural untreated)
+    - (do-immersion-varnish p0 immersion-varnisher0 natural smooth)
+    lifted_plan:
+    -   - do-saw-small
+        - ?b0
+        - ?p0
+        - ?saw0
+        - ?oak
+        - ?rough
+        - ?s1
+        - ?s0
+    -   - do-saw-large
+        - ?b1
+        - ?p2
+        - ?saw0
+        - ?pine
+        - ?rough
+        - ?s6
+        - ?s4
+        - ?s5
+        - ?s3
+    -   - do-saw-large
+        - ?b1
+        - ?p1
+        - ?saw0
+        - ?pine
+        - ?rough
+        - ?s6
+        - ?s4
+        - ?s5
+        - ?s3
+    -   - do-plane
+        - ?p1
+        - ?planer0
+        - ?rough
+        - ?natural
+        - ?untreated
+    -   - do-immersion-varnish
+        - ?p1
+        - ?immersion-varnisher0
+        - ?blue
+        - ?smooth
+    -   - do-plane
+        - ?p2
+        - ?planer0
+        - ?rough
+        - ?natural
+        - ?untreated
+    -   - do-plane
+        - ?p0
+        - ?planer0
+        - ?rough
+        - ?natural
+        - ?untreated
+    -   - do-immersion-varnish
+        - ?p0
+        - ?immersion-varnisher0
+        - ?natural
+        - ?smooth
+
+
+---
+timestamp: '2025-01-02T02:18:24.162632'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-02T02:18:24.277493'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''do-saw-small'', ''?b0'', ''?p0'', ''?saw0'', ''?oak'',
+            ''?rough'', ''?s1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: null
+        current_state: '''(boardsize b0 s1)'', ''(has-colour spray-varnisher0 blue)'',
+            ''(grind-treatment-change colourfragments untreated)'', ''(is-smooth smooth)'',
+            ''(boardsize-successor s5 s6)'', ''(boardsize-successor s1 s2)'', ''(has-colour
+            spray-varnisher0 natural)'', ''(grind-treatment-change untreated untreated)'',
+            ''(goalsize p1 large)'', ''(has-colour glazer0 blue)'', ''(wood b0 oak)'',
+            ''(has-colour immersion-varnisher0 blue)'', ''(is-smooth verysmooth)'',
+            ''(unused p0)'', ''(surface-condition b1 rough)'', ''(goalsize p2 large)'',
+            ''(available b1)'', ''(boardsize-successor s4 s5)'', ''(wood b1 pine)'',
+            ''(has-colour immersion-varnisher0 natural)'', ''(available b0)'', ''(boardsize-successor
+            s0 s1)'', ''(empty highspeed-saw0)'', ''(surface-condition b0 rough)'',
+            ''(boardsize-successor s2 s3)'', ''(boardsize-successor s3 s4)'', ''(goalsize
+            p0 small)'', ''(grind-treatment-change glazed untreated)'', ''(unused
+            p2)'', ''(grind-treatment-change varnished colourfragments)'', ''(boardsize
+            b1 s6)'', ''(unused p1)'''
+
+
+---
+timestamp: '2025-01-02T02:18:24.302614'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: 'small' is not in list. Stack trace: Traceback\
+    \ (most recent call last):\n  File \"instance_solver.py\", line 85, in solve_instance\n\
+    \    searcher.find_path(logger=logger, log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 90, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
+    \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 163, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 145, in ground_pddl\n    parser.parse_domain(domain_path)\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 213, in parse_domain\n    preconds_tuple = tuple([(preffix, precond.predicate.name,\
+    \ tuple([var_names.index(var.symbol) for var in precond.subterms])) for preffix,\
+    \ precond in preconds_list])\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 213, in <listcomp>\n    preconds_tuple = tuple([(preffix, precond.predicate.name,\
+    \ tuple([var_names.index(var.symbol) for var in precond.subterms])) for preffix,\
+    \ precond in preconds_list])\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 213, in <listcomp>\n    preconds_tuple = tuple([(preffix, precond.predicate.name,\
+    \ tuple([var_names.index(var.symbol) for var in precond.subterms])) for preffix,\
+    \ precond in preconds_list])\nValueError: 'small' is not in list\n"
+
+
+---
+timestamp: '2025-01-02T02:18:24.304135'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '3.12'
+
+

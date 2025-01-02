@@ -1,0 +1,111 @@
+---
+timestamp: '2025-01-02T14:15:57.906737'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs_anu/02 bfs relax-prec lp1/blocks__pprobBLOCKS-4-1-err-rate-0-5.yaml
+    instance_id: blocks__pprobBLOCKS-4-1-err-rate-0-5
+    search_algorithm: bfs
+    plan_length: 10
+    domain_class: blocks
+    instance_name: pprobBLOCKS-4-1-err-rate-0-5
+    ground_plan:
+    - (unstack b c)
+    - (put-down b)
+    - (unstack c a)
+    - (put-down c)
+    - (unstack a d)
+    - (stack a b)
+    - (pick-up c)
+    - (stack c a)
+    - (pick-up d)
+    - (stack d c)
+    lifted_plan:
+    -   - unstack
+        - ?b
+        - ?c
+    -   - put-down
+        - ?b
+    -   - unstack
+        - ?c
+        - ?a
+    -   - put-down
+        - ?c
+    -   - unstack
+        - ?a
+        - ?d
+    -   - stack
+        - ?a
+        - ?b
+    -   - pick-up
+        - ?c
+    -   - stack
+        - ?c
+        - ?a
+    -   - pick-up
+        - ?d
+    -   - stack
+        - ?d
+        - ?c
+
+
+---
+timestamp: '2025-01-02T14:15:57.917097'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'unstack,(clear ?y),effPos,1
+
+        pick-up,(holding ?x),effPos,1'
+
+
+---
+timestamp: '2025-01-02T14:15:58.868910'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 82
+    fring_size: 24
+    num_nodes_generated: 106
+    sum_h_cost: 0
+    sum_f_cost: 210
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 0.6538543701171875
+    current_node:
+        depth: 10
+        ground_actions:
+        - (unstack b c)
+        - (put-down c)
+        - (unstack c a)
+        - (put-down a)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up a)
+        - (stack d c)
+        - (pick-up d)
+        - (stack c a)
+        repair_set: 'stack,(clear ?y),precPos,-1
+
+            unstack,(holding ?y),effPos,1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2025-01-02T14:15:58.870175'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '2.22'
+
+

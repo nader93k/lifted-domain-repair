@@ -118,7 +118,7 @@ class Node:
         task = copy.deepcopy(self.original_task)
         plan = PositivePlan(self.ground_action_sequence)
         plan.compute_subs(self.repaired_domain, task)
-        state = apply_action_sequence(self.repaired_domain, task, plan, delete_relaxed=True)
+        state = apply_action_sequence(self.repaired_domain, task, plan, delete_relaxed=False)
         return state
 
 

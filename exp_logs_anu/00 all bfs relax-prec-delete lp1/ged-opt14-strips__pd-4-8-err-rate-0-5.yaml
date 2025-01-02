@@ -1,0 +1,83 @@
+---
+timestamp: '2025-01-02T05:26:33.492429'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs_anu/00 all/ged-opt14-strips__pd-4-8-err-rate-0-5.yaml
+    instance_id: ged-opt14-strips__pd-4-8-err-rate-0-5
+    search_algorithm: bfs
+    plan_length: 15
+    domain_class: ged-opt14-strips
+    instance_name: pd-4-8-err-rate-0-5
+    ground_plan:
+    - (invert-single-gene-b g54)
+    - (invert-single-gene-a sub7)
+    - (begin-cut sub1 g54)
+    - (end-cut-1 g54 sub5)
+    - (end-cut-2 sub1 sub5)
+    - (begin-transpose-splice sub3 sub1)
+    - (end-splice-1 g54 sub3)
+    - (end-splice-2 g54 sub1)
+    - (reset-1 sub1)
+    - (begin-cut sub4 sub2)
+    - (end-cut-1 sub2 sub8)
+    - (end-cut-2 sub4 sub8)
+    - (begin-transpose-splice sub6 sub3)
+    - (end-splice-1 sub2 sub6)
+    - (end-splice-2 sub2 sub3)
+    lifted_plan:
+    -   - invert-single-gene-b
+        - ?g54
+    -   - invert-single-gene-a
+        - ?sub7
+    -   - begin-cut
+        - ?sub1
+        - ?g54
+    -   - end-cut-1
+        - ?g54
+        - ?sub5
+    -   - end-cut-2
+        - ?sub1
+        - ?sub5
+    -   - begin-transpose-splice
+        - ?sub3
+        - ?sub1
+    -   - end-splice-1
+        - ?g54
+        - ?sub3
+    -   - end-splice-2
+        - ?g54
+        - ?sub1
+    -   - reset-1
+        - ?sub1
+    -   - begin-cut
+        - ?sub4
+        - ?sub2
+    -   - end-cut-1
+        - ?sub2
+        - ?sub8
+    -   - end-cut-2
+        - ?sub4
+        - ?sub8
+    -   - begin-transpose-splice
+        - ?sub6
+        - ?sub3
+    -   - end-splice-1
+        - ?sub2
+        - ?sub6
+    -   - end-splice-2
+        - ?sub2
+        - ?sub3
+
+
+---
+timestamp: '2025-01-02T05:26:33.498105'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: end-cut-1,(cut-point-2 ?y),effPos,1
+
+

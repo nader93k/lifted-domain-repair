@@ -1,0 +1,162 @@
+---
+timestamp: '2025-01-02T04:05:49.580323'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs_anu/00 all/miconic__ps3-2-err-rate-0-3.yaml
+    instance_id: miconic__ps3-2-err-rate-0-3
+    search_algorithm: bfs
+    plan_length: 12
+    domain_class: miconic
+    instance_name: ps3-2-err-rate-0-3
+    ground_plan:
+    - (up f0 f1)
+    - (board f1 p0)
+    - (down f1 f0)
+    - (depart f0 p0)
+    - (up f0 f3)
+    - (board f3 p2)
+    - (down f3 f0)
+    - (depart f0 p2)
+    - (up f0 f4)
+    - (board f4 p1)
+    - (down f4 f0)
+    - (depart f0 p1)
+    lifted_plan:
+    -   - up
+        - ?f0
+        - ?f1
+    -   - board
+        - ?f1
+        - ?p0
+    -   - down
+        - ?f1
+        - ?f0
+    -   - depart
+        - ?f0
+        - ?p0
+    -   - up
+        - ?f0
+        - ?f3
+    -   - board
+        - ?f3
+        - ?p2
+    -   - down
+        - ?f3
+        - ?f0
+    -   - depart
+        - ?f0
+        - ?p2
+    -   - up
+        - ?f0
+        - ?f4
+    -   - board
+        - ?f4
+        - ?p1
+    -   - down
+        - ?f4
+        - ?f0
+    -   - depart
+        - ?f0
+        - ?p1
+
+
+---
+timestamp: '2025-01-02T04:05:49.589484'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-02T04:05:49.639222'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 1
+        ground_actions:
+        - (up f0 f3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board'', ''?f1'', ''?p0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: null
+        current_state: '''(passenger p1)'', ''(above f1 f4)'', ''(floor f1)'', ''(origin
+            p0 f1)'', ''(destin p1 f0)'', ''(above f0 f2)'', ''(floor f0)'', ''(above
+            f0 f3)'', ''(floor f5)'', ''(above f2 f4)'', ''(destin p2 f0)'', ''(above
+            f0 f5)'', ''(above f3 f5)'', ''(lift-at f3)'', ''(origin p2 f3)'', ''(above
+            f1 f5)'', ''(above f0 f4)'', ''(above f4 f5)'', ''(origin p1 f4)'', ''(above
+            f1 f3)'', ''(above f2 f5)'', ''(above f0 f1)'', ''(above f1 f2)'', ''(destin
+            p0 f0)'', ''(floor f4)'', ''(floor f2)'', ''(lift-at f0)'', ''(floor f3)'',
+            ''(above f3 f4)'', ''(passenger p2)'', ''(above f2 f3)'', ''(passenger
+            p0)'''
+
+
+---
+timestamp: '2025-01-02T04:05:49.647293'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: line 28:8 mismatched input '=' expecting\
+    \ NAME. Stack trace: Traceback (most recent call last):\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/tarski/io/_fstrips/parser/parser.py\"\
+    , line 2532, in predicate\n    self.match(fstripsParser.NAME)\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/antlr4/Parser.py\"\
+    , line 118, in match\n    t = self._errHandler.recoverInline(self)\n  File \"\
+    /home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/antlr4/error/ErrorStrategy.py\"\
+    , line 396, in recoverInline\n    raise InputMismatchException(recognizer)\nantlr4.error.Errors.InputMismatchException:\
+    \ None\n\nDuring handling of the above exception, another exception occurred:\n\
+    \nTraceback (most recent call last):\n  File \"instance_solver.py\", line 85,\
+    \ in solve_instance\n    searcher.find_path(logger=logger, log_interval=log_interval)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 90, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
+    \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 163, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 145, in ground_pddl\n    parser.parse_domain(domain_path)\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 68, in parse_domain\n    self._reader.parse_domain(domain_path)\n  File\
+    \ \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/tarski/io/fstrips.py\"\
+    , line 58, in parse_domain\n    self.parse_file(filename, 'domain')\n  File \"\
+    /home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/tarski/io/fstrips.py\"\
+    , line 54, in parse_file\n    domain_parse_tree, _ = self.parser.parse_file(filename,\
+    \ start_rule)\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/tarski/io/_fstrips/reader.py\"\
+    , line 43, in parse_file\n    return self._parse_stream(stream, start_rule)\n\
+    \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/tarski/io/_fstrips/reader.py\"\
+    , line 51, in _parse_stream\n    tree = getattr(parser, start_rule)()\n  File\
+    \ \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/tarski/io/_fstrips/parser/parser.py\"\
+    , line 868, in domain\n    self.structureDef()\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/tarski/io/_fstrips/parser/parser.py\"\
+    , line 2639, in structureDef\n    self.actionDef()\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/tarski/io/_fstrips/parser/parser.py\"\
+    , line 2731, in actionDef\n    self.actionDefBody()\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/tarski/io/_fstrips/parser/parser.py\"\
+    , line 3090, in actionDefBody\n    self.effect()\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/tarski/io/_fstrips/parser/parser.py\"\
+    , line 4181, in effect\n    self.single_effect()\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/tarski/io/_fstrips/parser/parser.py\"\
+    , line 4419, in single_effect\n    self.atomic_effect()\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/tarski/io/_fstrips/parser/parser.py\"\
+    , line 4605, in atomic_effect\n    self.atomicTermFormula()\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/tarski/io/_fstrips/parser/parser.py\"\
+    , line 3641, in atomicTermFormula\n    self.predicate()\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/tarski/io/_fstrips/parser/parser.py\"\
+    , line 2535, in predicate\n    self._errHandler.reportError(self, re)\n  File\
+    \ \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/antlr4/error/ErrorStrategy.py\"\
+    , line 126, in reportError\n    self.reportInputMismatch(recognizer, e)\n  File\
+    \ \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/antlr4/error/ErrorStrategy.py\"\
+    , line 264, in reportInputMismatch\n    recognizer.notifyErrorListeners(msg, e.offendingToken,\
+    \ e)\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/antlr4/Parser.py\"\
+    , line 314, in notifyErrorListeners\n    listener.syntaxError(self, offendingToken,\
+    \ line, column, msg, e)\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/antlr4/error/ErrorListener.py\"\
+    , line 60, in syntaxError\n    delegate.syntaxError(recognizer, offendingSymbol,\
+    \ line, column, msg, e)\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/tarski/io/_fstrips/reader.py\"\
+    , line 505, in syntaxError\n    raise ParsingError(msg)\ntarski.io._fstrips.reader.ParsingError:\
+    \ line 28:8 mismatched input '=' expecting NAME\n"
+
+
+---
+timestamp: '2025-01-02T04:05:49.651068'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.20'
+
+

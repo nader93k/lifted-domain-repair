@@ -1,0 +1,128 @@
+---
+timestamp: '2025-01-02T01:58:41.830926'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs_anu/00 all/woodworking-opt08-strips__pp21-err-rate-0-5.yaml
+    instance_id: woodworking-opt08-strips__pp21-err-rate-0-5
+    search_algorithm: bfs
+    plan_length: 5
+    domain_class: woodworking-opt08-strips
+    instance_name: pp21-err-rate-0-5
+    ground_plan:
+    - (do-plane p1 planer0 rough blue varnished)
+    - (do-saw-large b0 p2 saw0 oak smooth s4 s2 s3 s1)
+    - (do-saw-small b0 p0 saw0 oak smooth s4 s3)
+    - (do-immersion-varnish p0 immersion-varnisher0 natural smooth)
+    - (do-immersion-varnish p2 immersion-varnisher0 red smooth)
+    lifted_plan:
+    -   - do-plane
+        - ?p1
+        - ?planer0
+        - ?rough
+        - ?blue
+        - ?varnished
+    -   - do-saw-large
+        - ?b0
+        - ?p2
+        - ?saw0
+        - ?oak
+        - ?smooth
+        - ?s4
+        - ?s2
+        - ?s3
+        - ?s1
+    -   - do-saw-small
+        - ?b0
+        - ?p0
+        - ?saw0
+        - ?oak
+        - ?smooth
+        - ?s4
+        - ?s3
+    -   - do-immersion-varnish
+        - ?p0
+        - ?immersion-varnisher0
+        - ?natural
+        - ?smooth
+    -   - do-immersion-varnish
+        - ?p2
+        - ?immersion-varnisher0
+        - ?red
+        - ?smooth
+
+
+---
+timestamp: '2025-01-02T01:58:41.835645'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-02T01:58:41.967293'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''do-plane'', ''?p1'', ''?planer0'', ''?rough'', ''?blue'',
+            ''?varnished'']'
+        num_neighbours: 0
+        first_10_possible_groundings: null
+        current_state: '''(has-colour immersion-varnisher0 red)'', ''(available p1)'',
+            ''(has-colour immersion-varnisher0 natural)'', ''(wood p1 oak)'', ''(grind-treatment-change
+            varnished colourfragments)'', ''(has-colour glazer0 red)'', ''(empty highspeed-saw0)'',
+            ''(boardsize-successor s0 s1)'', ''(boardsize-successor s2 s3)'', ''(unused
+            p2)'', ''(boardsize-successor s1 s2)'', ''(grind-treatment-change colourfragments
+            untreated)'', ''(boardsize b0 s4)'', ''(surface-condition p1 rough)'',
+            ''(goalsize p1 large)'', ''(goalsize p0 small)'', ''(is-smooth verysmooth)'',
+            ''(surface-condition b0 smooth)'', ''(grind-treatment-change glazed untreated)'',
+            ''(colour p1 blue)'', ''(goalsize p2 large)'', ''(wood b0 oak)'', ''(has-colour
+            spray-varnisher0 red)'', ''(has-colour spray-varnisher0 natural)'', ''(boardsize-successor
+            s3 s4)'', ''(is-smooth smooth)'', ''(treatment p1 varnished)'', ''(available
+            b0)'', ''(unused p0)'', ''(grind-treatment-change untreated untreated)'''
+
+
+---
+timestamp: '2025-01-02T01:58:41.973413'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: 'smooth' is not in list. Stack trace: Traceback\
+    \ (most recent call last):\n  File \"instance_solver.py\", line 85, in solve_instance\n\
+    \    searcher.find_path(logger=logger, log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 90, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
+    \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 163, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 145, in ground_pddl\n    parser.parse_domain(domain_path)\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 220, in parse_domain\n    effects = tuple([(isinstance(effect, AddEffect),\
+    \ effect.atom.predicate.name, tuple([var_names.index(var.symbol) for var in effect.atom.subterms]))\
+    \ for effect in effects])\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 220, in <listcomp>\n    effects = tuple([(isinstance(effect, AddEffect),\
+    \ effect.atom.predicate.name, tuple([var_names.index(var.symbol) for var in effect.atom.subterms]))\
+    \ for effect in effects])\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 220, in <listcomp>\n    effects = tuple([(isinstance(effect, AddEffect),\
+    \ effect.atom.predicate.name, tuple([var_names.index(var.symbol) for var in effect.atom.subterms]))\
+    \ for effect in effects])\nValueError: 'smooth' is not in list\n"
+
+
+---
+timestamp: '2025-01-02T01:58:41.974906'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '3.42'
+
+

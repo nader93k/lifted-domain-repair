@@ -1,0 +1,149 @@
+---
+timestamp: '2025-01-02T04:17:12.531629'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs_anu/00 all/data-network-opt18-strips__pp05-err-rate-0-3.yaml
+    instance_id: data-network-opt18-strips__pp05-err-rate-0-3
+    search_algorithm: bfs
+    plan_length: 14
+    domain_class: data-network-opt18-strips
+    instance_name: pp05-err-rate-0-3
+    ground_plan:
+    - (load data-0-7 server3 number3 number8 number0 number3)
+    - (send data-0-7 server3 server1 number3 number16 number0 number3)
+    - (load data-0-9 server1 number3 number16 number3 number6)
+    - (load data-0-4 server1 number1 number16 number6 number7)
+    - (process data-0-7 data-0-4 data-1-8 script13 server1 number2 number16 number7
+        number9)
+    - (process data-1-8 data-0-9 data-2-1 script3 server1 number3 number16 number9
+        number12)
+    - (send data-2-1 server1 server2 number3 number8 number0 number3)
+    - (save data-2-1 number3 server2)
+    - (process data-1-8 data-0-4 data-2-5 script2 server1 number1 number16 number12
+        number13)
+    - (send data-2-5 server1 server2 number1 number8 number3 number4)
+    - (save data-2-5 number1 server2)
+    - (process data-1-8 data-0-4 data-2-2 script8 server1 number2 number16 number13
+        number15)
+    - (send data-2-2 server1 server2 number2 number8 number4 number6)
+    - (save data-2-2 number2 server2)
+    lifted_plan:
+    -   - load
+        - ?data-0-7
+        - ?server3
+        - ?number3
+        - ?number8
+        - ?number0
+        - ?number3
+    -   - send
+        - ?data-0-7
+        - ?server3
+        - ?server1
+        - ?number3
+        - ?number16
+        - ?number0
+        - ?number3
+    -   - load
+        - ?data-0-9
+        - ?server1
+        - ?number3
+        - ?number16
+        - ?number3
+        - ?number6
+    -   - load
+        - ?data-0-4
+        - ?server1
+        - ?number1
+        - ?number16
+        - ?number6
+        - ?number7
+    -   - process
+        - ?data-0-7
+        - ?data-0-4
+        - ?data-1-8
+        - ?script13
+        - ?server1
+        - ?number2
+        - ?number16
+        - ?number7
+        - ?number9
+    -   - process
+        - ?data-1-8
+        - ?data-0-9
+        - ?data-2-1
+        - ?script3
+        - ?server1
+        - ?number3
+        - ?number16
+        - ?number9
+        - ?number12
+    -   - send
+        - ?data-2-1
+        - ?server1
+        - ?server2
+        - ?number3
+        - ?number8
+        - ?number0
+        - ?number3
+    -   - save
+        - ?data-2-1
+        - ?number3
+        - ?server2
+    -   - process
+        - ?data-1-8
+        - ?data-0-4
+        - ?data-2-5
+        - ?script2
+        - ?server1
+        - ?number1
+        - ?number16
+        - ?number12
+        - ?number13
+    -   - send
+        - ?data-2-5
+        - ?server1
+        - ?server2
+        - ?number1
+        - ?number8
+        - ?number3
+        - ?number4
+    -   - save
+        - ?data-2-5
+        - ?number1
+        - ?server2
+    -   - process
+        - ?data-1-8
+        - ?data-0-4
+        - ?data-2-2
+        - ?script8
+        - ?server1
+        - ?number2
+        - ?number16
+        - ?number13
+        - ?number15
+    -   - send
+        - ?data-2-2
+        - ?server1
+        - ?server2
+        - ?number2
+        - ?number8
+        - ?number4
+        - ?number6
+    -   - save
+        - ?data-2-2
+        - ?number2
+        - ?server2
+
+
+---
+timestamp: '2025-01-02T04:17:12.537753'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: send,(cached ?d ?to),effPos,1
+
+

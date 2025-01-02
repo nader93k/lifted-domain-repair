@@ -1,0 +1,158 @@
+---
+timestamp: '2025-01-02T02:18:20.515009'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs_anu/00 all/woodworking-opt08-strips__pp22-err-rate-0-1.yaml
+    instance_id: woodworking-opt08-strips__pp22-err-rate-0-1
+    search_algorithm: bfs
+    plan_length: 8
+    domain_class: woodworking-opt08-strips
+    instance_name: pp22-err-rate-0-1
+    ground_plan:
+    - (do-saw-large b0 p3 saw0 mahogany rough s5 s3 s4 s2)
+    - (do-saw-medium b0 p0 saw0 mahogany rough s5 s4 s3)
+    - (do-saw-large b1 p1 saw0 pine rough s5 s3 s4 s2)
+    - (do-saw-medium b1 p2 saw0 pine rough s5 s4 s3)
+    - (do-plane p2 planer0 rough natural untreated)
+    - (do-immersion-varnish p2 immersion-varnisher0 black smooth)
+    - (do-glaze p0 glazer0 black)
+    - (do-plane p1 planer0 rough natural untreated)
+    lifted_plan:
+    -   - do-saw-large
+        - ?b0
+        - ?p3
+        - ?saw0
+        - ?mahogany
+        - ?rough
+        - ?s5
+        - ?s3
+        - ?s4
+        - ?s2
+    -   - do-saw-medium
+        - ?b0
+        - ?p0
+        - ?saw0
+        - ?mahogany
+        - ?rough
+        - ?s5
+        - ?s4
+        - ?s3
+    -   - do-saw-large
+        - ?b1
+        - ?p1
+        - ?saw0
+        - ?pine
+        - ?rough
+        - ?s5
+        - ?s3
+        - ?s4
+        - ?s2
+    -   - do-saw-medium
+        - ?b1
+        - ?p2
+        - ?saw0
+        - ?pine
+        - ?rough
+        - ?s5
+        - ?s4
+        - ?s3
+    -   - do-plane
+        - ?p2
+        - ?planer0
+        - ?rough
+        - ?natural
+        - ?untreated
+    -   - do-immersion-varnish
+        - ?p2
+        - ?immersion-varnisher0
+        - ?black
+        - ?smooth
+    -   - do-glaze
+        - ?p0
+        - ?glazer0
+        - ?black
+    -   - do-plane
+        - ?p1
+        - ?planer0
+        - ?rough
+        - ?natural
+        - ?untreated
+
+
+---
+timestamp: '2025-01-02T02:18:20.526659'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-02T02:18:20.635601'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''do-saw-large'', ''?b0'', ''?p3'', ''?saw0'', ''?mahogany'',
+            ''?rough'', ''?s5'', ''?s3'', ''?s4'', ''?s2'']'
+        num_neighbours: 0
+        first_10_possible_groundings: null
+        current_state: '''(has-colour glazer0 black)'', ''(empty highspeed-saw0)'',
+            ''(goalsize p0 medium)'', ''(goalsize p1 large)'', ''(wood b1 pine)'',
+            ''(boardsize-successor s4 s5)'', ''(wood b0 mahogany)'', ''(boardsize-successor
+            s1 s2)'', ''(unused p1)'', ''(boardsize-successor s2 s3)'', ''(available
+            b1)'', ''(goalsize p3 large)'', ''(has-colour spray-varnisher0 natural)'',
+            ''(goalsize p2 medium)'', ''(boardsize b0 s5)'', ''(boardsize b1 s5)'',
+            ''(grind-treatment-change varnished colourfragments)'', ''(grind-treatment-change
+            colourfragments untreated)'', ''(unused p3)'', ''(unused p0)'', ''(available
+            b0)'', ''(grind-treatment-change glazed untreated)'', ''(has-colour immersion-varnisher0
+            natural)'', ''(has-colour glazer0 natural)'', ''(has-colour immersion-varnisher0
+            black)'', ''(unused p2)'', ''(has-colour spray-varnisher0 black)'', ''(boardsize-successor
+            s3 s4)'', ''(grind-treatment-change untreated untreated)'', ''(surface-condition
+            b0 rough)'', ''(surface-condition b1 rough)'', ''(is-smooth smooth)'',
+            ''(boardsize-successor s0 s1)'', ''(is-smooth verysmooth)'''
+
+
+---
+timestamp: '2025-01-02T02:18:20.654930'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: 'large' is not in list. Stack trace: Traceback\
+    \ (most recent call last):\n  File \"instance_solver.py\", line 85, in solve_instance\n\
+    \    searcher.find_path(logger=logger, log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 90, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
+    \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 163, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 145, in ground_pddl\n    parser.parse_domain(domain_path)\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 213, in parse_domain\n    preconds_tuple = tuple([(preffix, precond.predicate.name,\
+    \ tuple([var_names.index(var.symbol) for var in precond.subterms])) for preffix,\
+    \ precond in preconds_list])\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 213, in <listcomp>\n    preconds_tuple = tuple([(preffix, precond.predicate.name,\
+    \ tuple([var_names.index(var.symbol) for var in precond.subterms])) for preffix,\
+    \ precond in preconds_list])\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 213, in <listcomp>\n    preconds_tuple = tuple([(preffix, precond.predicate.name,\
+    \ tuple([var_names.index(var.symbol) for var in precond.subterms])) for preffix,\
+    \ precond in preconds_list])\nValueError: 'large' is not in list\n"
+
+
+---
+timestamp: '2025-01-02T02:18:20.656305'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '3.12'
+
+
