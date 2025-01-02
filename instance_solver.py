@@ -46,8 +46,8 @@ def solve_instance(search_algorithm, benchmark_path, log_file, log_interval, ins
         logger.log(issuer="instance_solver"
             , event_type="error"
             , level=logging.ERROR
-            , message=f"An error occurred trying to get the vanilla repair: {str(e)}\n{stack_trace}")
-        raise
+            , message=f"Can't perform vanilla repair: {str(e)}\n{stack_trace}")
+        exit()
 
     log_data_gr = {
         "repair_length": len(gr.strip().split('\n')) if gr.strip() else 0,
