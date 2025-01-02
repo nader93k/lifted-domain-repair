@@ -5,30 +5,50 @@ import glob
 
 # Predefined columns based on the specification
 COLUMNS = [
-    'log_file',
-    'instance_id',
-    'domain_class',
-    'search_algorithm',
-    'plan_length',
-    'repair_length',
-    'repair',
-    'goal_reached',
-    'num_nodes_generated',
-    'sum_h_cost',
-    'sum_f_cost',
-    'sum_h_cost_time',
-    'sum_grounding_time',
-    'search_time',
-    'goal_g_cost',   # New column
-    'goal_repair_set',  # New column
-    'error_message'
+    'log file',
+    'instance id',
+    'domain class',
+    'search algorithm',
+    'plan length',
+    'vanilla repair length',
+    'vanilla repair',
+    'goal reached',
+    'num nodes generated',
+    'sum h cost',
+    'sum f cost',
+    'sum h cost time',
+    'sum grounding time',
+    'search time',
+    'search g cost',   
+    'search repair set',
+    'repair length comparison',  # New column for comparison
+    'error message'
 ]
+
+def format_float(value):
+    """Format float values to 2 decimal places."""
+    return round(float(value), 2) if isinstance(value, (float, int)) else value
+
+def compare_repair_lengths(search_cost, vanilla_length):
+    """Compare search repair length with vanilla repair length."""
+    if search_cost is None or vanilla_length is None:
+        return None
+    try:
+        search_cost = float(search_cost)
+        vanilla_length = float(vanilla_length)
+        if search_cost < vanilla_length:
+            return 'shorter'
+        elif search_cost > vanilla_length:
+            return 'longer'
+        return 'equal'
+    except (TypeError, ValueError):
+        return None
 
 def process_yaml_file(file_path):
     """Process a single YAML file and extract relevant data in a single pass."""
     # Initialize all fields as None
     data = {column: None for column in COLUMNS}
-    data['goal_reached'] = False  # Default value for goal_reached is False
+    data['goal reached'] = False  # Default value for goal_reached is False
     
     try:
         with open(file_path, 'r') as f:
@@ -36,7 +56,7 @@ def process_yaml_file(file_path):
                 # Check for error level documents
                 level = str(doc.get('level', '')).lower()
                 if level == 'error':
-                    data['error_message'] = doc.get('data')
+                    data['error message'] = doc.get('data')
                     continue
                 
                 issuer = doc.get('issuer')
@@ -47,43 +67,49 @@ def process_yaml_file(file_path):
                     if event_type == 'metadata':
                         # Extract metadata
                         data.update({
-                            'log_file': doc_data.get('log_file'),
-                            'instance_id': doc_data.get('instance_id'),
-                            'search_algorithm': doc_data.get('search_algorithm'),
-                            'plan_length': doc_data.get('plan_length'),
-                            'domain_class': doc_data.get('domain_class')
+                            'log file': doc_data.get('log_file'),
+                            'instance id': doc_data.get('instance_id'),
+                            'search algorithm': doc_data.get('search_algorithm'),
+                            'plan length': doc_data.get('plan_length'),
+                            'domain class': doc_data.get('domain_class')
                         })
                     elif event_type == 'ground_repair':
                         # Extract repair data
                         data.update({
-                            'repair_length': doc_data.get('repair_length'),
-                            'repair': doc_data.get('repair')
+                            'vanilla repair length': doc_data.get('repair_length'),
+                            'vanilla repair': doc_data.get('repair')
                         })
                     elif event_type == 'timer_seconds':
                         # Extract search time
-                        data['search_time'] = doc_data
+                        data['search time'] = format_float(doc_data)
                 
                 elif issuer == 'searcher' and event_type == 'final':
                     # Extract searcher final data
                     is_goal = doc_data.get('is_goal', False)
-                    data['goal_reached'] = is_goal
+                    data['goal reached'] = is_goal
                     
                     if is_goal:
                         data.update({
-                            'num_nodes_generated': doc_data.get('num_nodes_generated'),
-                            'sum_h_cost': doc_data.get('sum_h_cost'),
-                            'sum_f_cost': doc_data.get('sum_f_cost'),
-                            'sum_h_cost_time': doc_data.get('sum_h_cost_time'),
-                            'sum_grounding_time': doc_data.get('sum_grounding_time')
+                            'num nodes generated': doc_data.get('num_nodes_generated'),
+                            'sum h cost': doc_data.get('sum_h_cost'),
+                            'sum f cost': doc_data.get('sum_f_cost'),
+                            'sum h cost time': format_float(doc_data.get('sum_h_cost_time')),
+                            'sum grounding time': format_float(doc_data.get('sum_grounding_time'))
                         })
                         
                         # Extract current_node data if available
                         current_node = doc_data.get('current_node', {})
                         if current_node:
                             data.update({
-                                'goal_g_cost': current_node.get('g_cost'),
-                                'goal_repair_set': current_node.get('repair_set')
+                                'search g cost': format_float(current_node.get('g_cost')),
+                                'search repair set': current_node.get('repair_set')
                             })
+        
+        # Add repair length comparison
+        data['repair length comparison'] = compare_repair_lengths(
+            data['search g cost'], 
+            data['vanilla repair length']
+        )
         
         return data
     
@@ -110,6 +136,7 @@ def process_yaml_files(directory_path, output_csv):
 
 
 if __name__ == "__main__":
-    directory_path = "/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/00 bfs relax-prec-delete lp1"
-    output_csv = "exp_logs.csv"
+    log_folder = "01 bfs relax-prec-delete lp1"
+    directory_path = f"/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/{log_folder}"
+    output_csv = f"00 logs_{log_folder}.csv"
     process_yaml_files(directory_path, output_csv)

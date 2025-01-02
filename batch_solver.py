@@ -8,6 +8,8 @@ import yaml
 import datetime
 from multiprocessing import Process, Queue, cpu_count
 import psutil
+import logging
+from custom_logger import StructuredLogger
 
 
 def get_allowed_cpus():
@@ -37,6 +39,8 @@ def worker(worker_id, task_queue, result_queue, params):
             if os.path.isfile(log_file):
                 os.remove(log_file)
             
+            logger = StructuredLogger(log_file)
+            
             # Prepare command
             cmd = [
                 sys.executable,
@@ -58,6 +62,12 @@ def worker(worker_id, task_queue, result_queue, params):
                 end_time = datetime.datetime.now()
                 duration = (end_time - start_time).total_seconds()
                 print(f"[{end_time}] Worker {worker_id} completed {instance.identifier} in {duration:.2f} seconds", flush=True)
+                logger.log(
+                    issuer="batch_solver",
+                    event_type="general",
+                    level=logging.INFO,
+                    message=f"Subprocess finished successfully. Duration: {duration:.2f} seconds"
+                )
                 
                 result_queue.put((True, instance.identifier))
                 
@@ -65,12 +75,24 @@ def worker(worker_id, task_queue, result_queue, params):
                 end_time = datetime.datetime.now()
                 duration = (end_time - start_time).total_seconds()
                 print(f"[{end_time}] Worker {worker_id} TIMEOUT on {instance.identifier} after {duration:.2f} seconds", flush=True)
+                logger.log(
+                    issuer="batch_solver",
+                    event_type="error",
+                    level=logging.ERROR,
+                    message=f"Subprocess timed out after {params['timeout_seconds']} seconds."
+                )
                 result_queue.put((True, instance.identifier))
                 
             except Exception as e:
                 end_time = datetime.datetime.now()
                 duration = (end_time - start_time).total_seconds()
                 print(f"[{end_time}] Worker {worker_id} ERROR on {instance.identifier} after {duration:.2f} seconds: {e}", flush=True)
+                logger.log(
+                    issuer="batch_solver",
+                    event_type="error",
+                    level=logging.ERROR,
+                    message=f"Exception: instance id={instance.identifier}, err: {e}"
+                )
                 result_queue.put((False, instance.identifier))
                 
         except Exception as e:
