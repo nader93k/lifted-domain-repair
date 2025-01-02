@@ -106,22 +106,36 @@ def prepare_data(benchmark_path, domain_class, instance_ids, min_length, max_len
         'lift_prob': lift_prob
     }
     
-    # Setup checkpoint file
+    # Setup checkpoint files
     checkpoint_file = os.path.join(log_folder, "00_checkpoint.json")
+    checkpoint_errors = os.path.join(log_folder, "00_checkpoint_errors.json")
     
-    # Load checkpoint if exists
-    if os.path.exists(checkpoint_file):
-        with open(checkpoint_file, 'r') as f:
-            completed_instances = set(json.load(f))
-            print(f"Loaded {len(completed_instances)} completed instances from checkpoint", flush=True)
-    else:
-        completed_instances = set()
+    # Create checkpoint files if they don't exist
+    for file_path in [checkpoint_file, checkpoint_errors]:
+        if not os.path.exists(file_path):
+            with open(file_path, 'w') as f:
+                json.dump([], f)
+            print(f"Created new checkpoint file: {file_path}", flush=True)
+    
+    # Load successful checkpoint
+    with open(checkpoint_file, 'r') as f:
+        completed_instances = set(json.load(f))
+        print(f"Loaded {len(completed_instances)} completed instances from checkpoint", flush=True)
+    
+    # Load error checkpoint
+    with open(checkpoint_errors, 'r') as f:
+        error_instances = set(json.load(f))
+        print(f"Loaded {len(error_instances)} error instances from checkpoint", flush=True)
+    
+    # Combine both sets for filtering
+    all_completed = completed_instances.union(error_instances)
     
     # Filter remaining instances
-    remaining_instances = [inst for inst in instances if inst.identifier not in completed_instances]
+    remaining_instances = [inst for inst in instances if inst.identifier not in all_completed]
     print(f"Remaining instances to process: {len(remaining_instances)}", flush=True)
     
-    return remaining_instances, params, checkpoint_file
+    return remaining_instances, params, checkpoint_file, checkpoint_errors
+
 
 def run_process(search_algorithm, benchmark_path, log_folder, log_interval,
                 timeout_seconds, order, min_length, max_length, heuristic_relaxation,
@@ -141,8 +155,8 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval,
     
     print(f"Running with {num_cpus} worker processes on CPUs: {allowed_cpus}", flush=True)
     
-    # Prepare data and parameters
-    remaining_instances, params, checkpoint_file = prepare_data(
+    # Prepare data and parameters (now includes both checkpoint files)
+    remaining_instances, params, checkpoint_file, checkpoint_errors = prepare_data(
         benchmark_path, domain_class, instance_ids, min_length, max_length,
         order, log_folder, search_algorithm, log_interval, timeout_seconds,
         heuristic_relaxation, lift_prob
@@ -167,7 +181,7 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval,
         processes.append(p)
         p.start()
     
-    # Collect results and update checkpoint file
+    # Collect results and update checkpoint files
     successful = 0
     total_processed = 0
     
@@ -181,7 +195,7 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval,
             successful += 1
             print(f"[{datetime.datetime.now()}] Instance {instance_id} completed successfully. Total successful: {successful}/{total_processed}", flush=True)
             
-            # Update checkpoint file
+            # Update success checkpoint file
             try:
                 with open(checkpoint_file, 'r') as f:
                     completed = set(json.load(f))
@@ -199,7 +213,28 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval,
                 os.fsync(f.fileno())  # Ensure the file is written to disk
             
             print(f"Updated checkpoint file with {len(completed)} completed instances", flush=True)
-        
+            
+        else:
+            # Update error checkpoint file
+            try:
+                with open(checkpoint_errors, 'r') as f:
+                    error_completed = set(json.load(f))
+                    print(f"Loaded existing error checkpoint with {len(error_completed)} error instances", flush=True)
+            except (FileNotFoundError, json.JSONDecodeError):
+                error_completed = set()
+                print(f"No existing error checkpoint found or invalid JSON. Creating new error checkpoint file", flush=True)
+            
+            error_completed.add(instance_id)
+            
+            # Write and flush the updated error checkpoint
+            with open(checkpoint_errors, 'w') as f:
+                json.dump(list(error_completed), f, indent=2)
+                f.flush()
+                os.fsync(f.fileno())  # Ensure the file is written to disk
+            
+            print(f"[{datetime.datetime.now()}] Instance {instance_id} completed with errors. Added to error checkpoint.", flush=True)
+            print(f"Updated error checkpoint file with {len(error_completed)} error instances", flush=True)
+    
     # Wait for all processes to complete
     for p in processes:
         p.join()
@@ -208,6 +243,25 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval,
     duration = (end_time - start_time).total_seconds()
     print(f"[{end_time}] Batch solver completed. Total duration: {duration:.2f} seconds", flush=True)
     print(f"Successfully completed instances: {successful}/{len(remaining_instances)}", flush=True)
+    
+    # Load final counts for comprehensive report
+    try:
+        with open(checkpoint_file, 'r') as f:
+            final_completed = len(json.load(f))
+    except (FileNotFoundError, json.JSONDecodeError):
+        final_completed = 0
+        
+    try:
+        with open(checkpoint_errors, 'r') as f:
+            final_errors = len(json.load(f))
+    except (FileNotFoundError, json.JSONDecodeError):
+        final_errors = 0
+        
+    print(f"Final status:", flush=True)
+    print(f"  Total successful completions: {final_completed}", flush=True)
+    print(f"  Total error completions: {final_errors}", flush=True)
+    print(f"  Total instances processed: {final_completed + final_errors}", flush=True)
+
 
 # Load instance IDs function remains the same
 def load_instance_ids(file_path):
