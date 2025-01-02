@@ -26,6 +26,7 @@ def worker(worker_id, task_queue, result_queue, params):
             # Get next task from queue
             instance = task_queue.get()
             if instance is None:  # Poison pill
+                print(f"[{datetime.datetime.now()}] Worker {worker_id} terminated.", flush=True)
                 break
                 
             start_time = datetime.datetime.now()
