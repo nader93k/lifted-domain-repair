@@ -139,7 +139,7 @@ def prepare_data(benchmark_path, domain_class, instance_ids, min_length, max_len
 
 def run_process(search_algorithm, benchmark_path, log_folder, log_interval,
                 timeout_seconds, order, min_length, max_length, heuristic_relaxation,
-                domain_class=None, instance_ids=[], lift_prob=0.0, run_mode='parallel'):
+                domain_class=None, instance_ids=[], lift_prob=0.0):
     
     start_time = datetime.datetime.now()
     print(f"[{start_time}] Batch solver started", flush=True)
@@ -290,7 +290,6 @@ if __name__ == "__main__":
     domain_class = config['domain_class'] 
     heuristic_relaxation = config['heuristic_relaxation']
     lift_prob = config['lift_prob']
-    run_mode = config.get('run_mode')
 
     # run on fixed instance_ids
     instance_ids = config['instance_ids']
@@ -316,6 +315,5 @@ if __name__ == "__main__":
         domain_class=domain_class,
         instance_ids=instance_ids,
         heuristic_relaxation=heuristic_relaxation,
-        lift_prob=lift_prob,
-        run_mode=run_mode
+        lift_prob=lift_prob
     )
