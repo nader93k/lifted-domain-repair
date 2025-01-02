@@ -21,8 +21,6 @@ def get_allowed_cpus():
 
 def worker(worker_id, task_queue, result_queue, params):
     """Worker process function that processes instances from the queue"""
-    print(f"Worker {worker_id} started", flush=True)
-    
     while True:
         try:
             # Get next task from queue
@@ -66,7 +64,7 @@ def worker(worker_id, task_queue, result_queue, params):
                 end_time = datetime.datetime.now()
                 duration = (end_time - start_time).total_seconds()
                 print(f"[{end_time}] Worker {worker_id} TIMEOUT on {instance.identifier} after {duration:.2f} seconds", flush=True)
-                result_queue.put((False, instance.identifier))
+                result_queue.put((True, instance.identifier))
                 
             except Exception as e:
                 end_time = datetime.datetime.now()
@@ -177,20 +175,31 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval,
         success, instance_id = result_queue.get()
         total_processed += 1
         
+        print(f"[{datetime.datetime.now()}] Processed {total_processed}/{len(remaining_instances)} instances. Current instance: {instance_id}", flush=True)
+        
         if success:
             successful += 1
+            print(f"[{datetime.datetime.now()}] Instance {instance_id} completed successfully. Total successful: {successful}/{total_processed}", flush=True)
+            
             # Update checkpoint file
             try:
                 with open(checkpoint_file, 'r') as f:
                     completed = set(json.load(f))
+                    print(f"Loaded existing checkpoint with {len(completed)} completed instances", flush=True)
             except (FileNotFoundError, json.JSONDecodeError):
                 completed = set()
+                print(f"No existing checkpoint found or invalid JSON. Creating new checkpoint file", flush=True)
             
             completed.add(instance_id)
             
+            # Write and flush the updated checkpoint
             with open(checkpoint_file, 'w') as f:
-                json.dump(list(completed), f)
-    
+                json.dump(list(completed), f, indent=2)
+                f.flush()
+                os.fsync(f.fileno())  # Ensure the file is written to disk
+            
+            print(f"Updated checkpoint file with {len(completed)} completed instances", flush=True)
+        
     # Wait for all processes to complete
     for p in processes:
         p.join()
