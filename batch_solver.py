@@ -212,7 +212,7 @@ def load_instance_ids(file_path):
 if __name__ == "__main__":
     print(f"[{datetime.datetime.now()}] Starting batch solver", flush=True)
     
-    config_file = 'config.yaml'
+    config_file = '00 config.yaml'
     with open(config_file, 'r') as config_file:
         config = yaml.safe_load(config_file)
     
