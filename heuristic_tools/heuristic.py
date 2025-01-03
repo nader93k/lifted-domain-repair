@@ -698,19 +698,40 @@ def verify_join_tree(dl_rules):
     for start in starts:
         end_params = get_pars(start.head)
 
-        def downward_chase(join_step, parent_pars, pars_seen, result_pars):
-            assert parent_pars == get_pars(join_step.head)
+        def downward_chase(join_step):
+            acc = set()
+            var_to_child = collections.defaultdict(lambda: [])
 
             for child in join_step.body:
                 child_pars = get_pars(child)
 
-                assert False, "TODO"
-
                 if child.predicate in tmp_to_rule:
-                    downward_chase(tmp_to_rule[child.predicate], child_pars, pars_seen | set(child_pars), result_pars)
+                    from_below = downward_chase(tmp_to_rule[child.predicate])
+                else:
+                    from_below = child_pars
 
+                for var in from_below:
+                    explains_why_needed = False
+                    if var_to_child[var]:
+                        explains_why_needed = True
+                        assert var in get_pars(join_step.head)
+                        assert var in child_pars
 
-        downward_chase(start, end_params, end_params, end_params)
+                        for other in var_to_child[var]:
+                            assert var in get_pars(other)
+                    if var in end_params:
+                        explains_why_needed = True
+                        assert var in child_pars
+                    if not explains_why_needed:
+                        please_explain_why_needed.add(var)
+
+                    var_to_child[var].append(child)
+
+                acc |= from_below
+
+            return acc
+        
+        downward_chase(start)
 
 
 class Heurisitc:
