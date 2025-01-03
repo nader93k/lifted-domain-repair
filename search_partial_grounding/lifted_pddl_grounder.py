@@ -1,5 +1,4 @@
 from pathlib import Path
-from fd.pddl.tasks import Task
 import os
 import tempfile
 from lifted_pddl import Parser
