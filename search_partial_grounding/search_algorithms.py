@@ -33,7 +33,7 @@ class Searcher:
             "sum_f_cost": self.sum_f_cost,
             "sum_h_cost_time": self.sum_h_cost_time,
             "sum_grounding_time": self.sum_grounding_time,
-            "current_node": current_node.to_dict()
+            "current_node": current_node.to_dict(include_state=False)
         }
         event_type = "final" if final else "general"
         logger.log(issuer="searcher", event_type=event_type, level=logging.INFO, message=log_data)

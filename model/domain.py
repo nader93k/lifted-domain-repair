@@ -68,6 +68,9 @@ class Domain:
             return self._updated_actions[name]
         return self._name_to_action[name]
 
+    def get_all_actions(self):
+        return [self.get_action(name) for name in [a.name for a in self._actions]]
+
     def get_constant(self, name):
         # Return constant if it exists, otherwise return None
         if name not in self._constant_dict:
@@ -116,9 +119,9 @@ class Domain:
         pddl_string += "  )\n"
 
         if action_filter:
-            actions_to_output = [a for a in self._actions if a.name == action_filter]
+            actions_to_output = [a for a in self.get_all_actions() if a.name == action_filter]
         else:
-            actions_to_output = self._actions
+            actions_to_output = self.get_all_actions()
         for action in actions_to_output:
             pddl_string += action.pddl(hide_cost=True) + "\n"
 
