@@ -85,7 +85,7 @@ class Domain:
                 action = self._name_to_action[target]
             updated_action = repair.apply(action)
             self._updated_actions[target] = updated_action
-
+    
     def clean(self):
         # Reset updated actions
         self._updated_actions = {}
@@ -112,8 +112,7 @@ class Domain:
         pddl_string += "  (:predicates\n"
         pddl_string += "    " + '(dummy-true)' + "\n"
         for pred in self._predicates:
-            if pred.name != '=':
-                pddl_string += "    " + pred.pddl() + "\n"
+            pddl_string += "    " + pred.pddl() + "\n"
         pddl_string += "  )\n"
 
         if action_filter:
