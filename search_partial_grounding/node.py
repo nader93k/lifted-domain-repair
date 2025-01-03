@@ -141,6 +141,8 @@ class Node:
         task.set_init_state(self.current_state)
         domain = copy.deepcopy(self.repaired_domain)
 
+        ## All preconditions relaxed
+        # action.precondition = Conjunction([])
         # Precondition relaxing
         # If a precondition is not satisfied then don't check it
         next_action_name = self.lifted_action_sequence[0][0]
@@ -152,9 +154,6 @@ class Node:
             action.precondition = Conjunction(relaxed_pre)
         else:
             action.precondition = Predicate('dummy-true', [])
-
-        ## All preconditions relaxed
-        # action.precondition = Conjunction([])
 
         try:
             next_action_pddl = f"({' '.join(self.lifted_action_sequence[0])})"

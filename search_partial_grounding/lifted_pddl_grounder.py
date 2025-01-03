@@ -1,9 +1,7 @@
-import subprocess
 from pathlib import Path
 from fd.pddl.tasks import Task
 import os
 import tempfile
-import re
 from lifted_pddl import Parser
 
 
@@ -131,20 +129,13 @@ def ground_pddl(domain, task, lifted_action):
         with open(task_path, "w") as f:
             content = task.to_pddl()
             f.write(content)
-
-        python_path = "/home/projects/u7899572/conda-envs/grounder/bin/python3"
-        parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        grounder_path = os.path.join(
-            parent_dir, "search_partial_grounding", "grounder_service.py"
-        )
-
-        # import pdb; pdb.set_trace()
-
-        
+ 
         parser = Parser()
         parser.parse_domain(domain_path)
         parser.parse_problem(task_path)
         actions = parser.get_applicable_actions()
-        applicable_actions = parser.encode_ground_actions_as_pddl(actions, 'str')    
+        applicable_actions = parser.encode_ground_actions_as_pddl(actions, 'str')
+        
         filtered = filter_actions(lifted_action, applicable_actions)
+
         return list(filtered)
