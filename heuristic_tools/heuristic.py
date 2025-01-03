@@ -32,7 +32,7 @@ class Timer:
             self._clock() - self.start_clock,
             time.time() - self.start_time)
 
-DEBUG = False
+DEBUG = True
 @contextlib.contextmanager
 def timing(text, block=False):
     if DEBUG:
@@ -403,7 +403,8 @@ def add_free_atom(task, domain):
 def get_pars(atom):
     return set(arg for arg in atom.args if arg[0] == "?")
 
-tmp_pred = lambda i: f"tmp___pred{i}"
+tmp_stub = "tmp___pred"
+tmp_pred = lambda i: f"{tmp_stub}{i}"
 
 def binarize_datalog(dl_rules):
     new_rules = []
@@ -597,7 +598,7 @@ def dl_exploration(init, rules, comb_f=max):
 
         if current_fact in fact_cost and fact_cost[current_fact] < current_cost:
             continue
-        fact_cost[current_fact] = current_cost
+        assert fact_cost[current_fact] == current_cost
 
         for rule_id, body_pos in matching_rules[current_fact.predicate]:
             _rule = rules[rule_id]
@@ -687,6 +688,31 @@ def cover_head_rule(dl_rules):
             if v not in body_vars:
                 rule.body.append(fd.pddl.Atom(ANY_OBJ, [v]))
 
+def log_stats(dl_rules):
+    print("Max arity", max(max(len(r.head.args), max(len(b.args) for b in r.body)) for r in dl_rules))
+
+def verify_join_tree(dl_rules):
+    starts = [rule for rule in dl_rules if not rule.head.predicate.startswith(tmp_stub)]
+    tmp_to_rule = dict((rule.head.predicate, rule) for rule in dl_rules if rule.head.predicate.startswith(tmp_stub))
+
+    for start in starts:
+        end_params = get_pars(start.head)
+
+        def downward_chase(join_step, parent_pars, pars_seen, result_pars):
+            assert parent_pars == get_pars(join_step.head)
+
+            for child in join_step.body:
+                child_pars = get_pars(child)
+
+                assert False, "TODO"
+
+                if child.predicate in tmp_to_rule:
+                    downward_chase(tmp_to_rule[child.predicate], child_pars, pars_seen | set(child_pars), result_pars)
+
+
+        downward_chase(start, end_params, end_params, end_params)
+
+
 class Heurisitc:
     def __init__(self, h_name, relaxation):
         self.h_name = h_name
@@ -705,6 +731,11 @@ class Heurisitc:
         dl_rules = pddl_to_datalog_rules(domain)
         cover_head_rule(dl_rules)
         binarized_dl_rules = binarize_datalog(dl_rules)
+
+        if DEBUG:
+            verify_join_tree(binarized_dl_rules)
+            log_stats(binarized_dl_rules)
+
         return dl_exploration(task.init, binarized_dl_rules, max if "HMAX" in self.h_name else lambda x,y: x+y)
 
     def legacy_get_val(self):
