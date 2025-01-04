@@ -664,7 +664,7 @@ def dl_exploration(init, rules, comb_f=max, unary_relaxed=False):
             priority_queue.append((0, pq_tie_breaker[el.predicate], el))
             fact_cost[el] = 0
         else:
-            assert type(el) is fd.pddl.f_expression.Assign and el.expression.value == 0 and el.fluent.symbol == 'total-cost'
+            assert type(el) is fd.pddl.f_expression.Assign
 
     heapq.heapify(priority_queue)
 
