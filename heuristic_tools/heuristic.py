@@ -32,7 +32,7 @@ class Timer:
             self._clock() - self.start_clock,
             time.time() - self.start_time)
 
-DEBUG = True
+DEBUG = False
 @contextlib.contextmanager
 def timing(text, block=False):
     if DEBUG:
@@ -636,7 +636,8 @@ def dl_exploration(init, rules, comb_f=max):
                 compress_atom(b)
 
         for atom in init:
-            compress_atom(atom)
+            if type(atom) != fd.pddl.f_expression.Assign:
+                compress_atom(atom)
 
         goal_pred_symbol = pred_compression[GOAL_PRED]
         pq_tie_breaker = dict((pred_compression[p], v) for p, v in pq_tie_breaker.items())
