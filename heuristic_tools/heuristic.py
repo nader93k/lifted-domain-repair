@@ -766,6 +766,28 @@ def verify_join_tree(dl_rules):
         expl -= end_params
         assert len(expl) == 0
 
+unary_pred = lambda pred, i: f"unary__{i}__{pred}"
+
+def unary_split_atom(atom):
+    if len(atom.args) == 0:
+        return [atom]
+    else:
+        return [fd.pddl.conditions.Atom(unary_pred(atom.predicate, i), [atom.args[i]]) for i in range(len(atom.args))]
+
+def unary_relax(init, rules):
+    old_rules = [r for r in rules]
+    rules.clear()
+
+    for rule in old_rules:
+        body = [unary_atom for b in rule.body for unary_atom in unary_split_atom(b)]
+        for unary_atom in unary_split_atom(rule.head):
+            rules.append(DatalogRule(unary_atom, body))
+        
+    old_init = [a for a in init]
+    init.clear()
+    for atom in old_init:
+        for unary_atom in unary_split_atom(atom):
+            init.append(unary_atom)
 
 class Heurisitc:
     def __init__(self, h_name, relaxation):
@@ -789,6 +811,11 @@ class Heurisitc:
         if DEBUG:
             verify_join_tree(binarized_dl_rules)
             log_stats(binarized_dl_rules)
+
+        if self.relaxation == "unary":
+            unary_relax(task.init, binarized_dl_rules)
+        elif self.relaxation == "zeroary":
+            zeroary_relax(task.init, binarized_dl_rules)
 
         return dl_exploration(task.init, binarized_dl_rules, max if "HMAX" in self.h_name else lambda x,y: x+y)
 
