@@ -57,6 +57,7 @@ def timing(text, block=False):
 # should later add a check that makes sure the options match
 H_NAMES = ["L_HMAX", "L_HADD", "L_HFF", "G_HMAX", "G_HADD", "G_HFF", "G_LM_CUT"]
 RELAXATIONS = ["none", "unary", "zeroary"]
+COMPRESS = True
 
 ANY_OBJ = "any_obj"
 to_type_pred = lambda v: f"typepred___{v}"
@@ -527,8 +528,14 @@ def intersection(li):
 
     return result
 
-def vars_of(atom):
-    return set(arg for arg in atom.args if arg[0] == "?")
+def __is_var(arg):
+    if not COMPRESS:
+        return arg[0] == "?"
+    else:
+        return arg >= 0
+
+def __vars_of(atom):
+    return set(arg for arg in atom.args if __is_var(arg))
 
 def create_creator(atoms, proj_vars):
     seen = set()
@@ -558,7 +565,7 @@ def can_match(gr_atom, l_atom):
     assert gr_atom.predicate == l_atom.predicate
     assigned = dict()
     for g_arg, l_arg in zip(gr_atom.args, l_atom.args):
-        if l_arg[0] != "?":
+        if not __is_var(l_arg):
             if g_arg != l_arg:
                 return False
         else:
@@ -568,8 +575,8 @@ def can_match(gr_atom, l_atom):
 
     return True
 
-def pos_to_const(atom):
-    return dict((i, arg) for i, arg in enumerate(atom.args) if arg[0] != "?")
+def __pos_to_const(atom):
+    return dict((i, arg) for i, arg in enumerate(atom.args) if not __is_var(arg))
 
 
 def _pq_tie_breaker(pred, arities):
@@ -587,10 +594,7 @@ def _pq_tie_breaker(pred, arities):
 
     return [repair_level, arity]
 
-
 def dl_exploration(init, rules, comb_f=max):
-    #TODO: could think about how to queue non-repairs first and delaying generation of repair atoms
-
     fact_cost = dict()
     priority_queue = []
     pq_tie_breaker = dict()
@@ -602,7 +606,44 @@ def dl_exploration(init, rules, comb_f=max):
                 arities[atom.predicate] = len(atom.args)
 
     for pred in arities.keys():
-            pq_tie_breaker[pred] = _pq_tie_breaker(pred, arities)
+        pq_tie_breaker[pred] = _pq_tie_breaker(pred, arities)
+
+    goal_pred_symbol = None
+    if COMPRESS:
+        pred_compression = dict()
+        obj_compression = dict()
+
+        def compress_atom(atom):
+            if type(atom.predicate) == str:
+                if atom.predicate not in pred_compression:
+                    pred_compression[atom.predicate] = len(pred_compression)
+                atom.predicate = pred_compression[atom.predicate]
+
+                atom.args = list(atom.args)
+                for i in range(len(atom.args)):
+                    assert type(atom.args[i]) == str
+                    if atom.args[i] not in obj_compression:
+                        # hack to use ints > 0 as vars, < 0 as objects
+                        obj_compression[atom.args[i]] = (1+len(obj_compression)) * (1 if atom.args[i][0] == "?" else -1)
+                    atom.args[i] = obj_compression[atom.args[i]]
+                atom.args = tuple(atom.args)
+            else:
+                assert all(type(arg) == int for arg in atom.args)
+
+        for rule in rules:
+            compress_atom(rule.head)
+            for b in rule.body:
+                compress_atom(b)
+
+        for atom in init:
+            compress_atom(atom)
+
+        goal_pred_symbol = pred_compression[GOAL_PRED]
+        pq_tie_breaker = dict((pred_compression[p], v) for p, v in pq_tie_breaker.items())
+    else:
+        goal_pred_symbol = GOAL_PRED
+
+    assert goal_pred_symbol is not None
 
     for el in init:
         if type(el) is fd.pddl.Atom:
@@ -626,7 +667,7 @@ def dl_exploration(init, rules, comb_f=max):
     rule_body_pos_container = collections.defaultdict(lambda: collections.defaultdict(lambda: set()))
     for i, rule in enumerate(rules):
         assert 1 <= len(rule.body) <= 2, rule.body
-        shared_vars = list(sorted(intersection([vars_of(atom) for atom in rule.body])))
+        shared_vars = list(sorted(intersection([__vars_of(atom) for atom in rule.body])))
         shared_vars = dict((v, [i]) for i, v in enumerate(shared_vars))
 
         for j, atom in enumerate(rule.body):
@@ -638,11 +679,11 @@ def dl_exploration(init, rules, comb_f=max):
 
         v_to_pos = collections.defaultdict(lambda: [])
         for z, arg in enumerate(rule.head.args):
-            if arg[0] == "?":
+            if __is_var(arg):
                 v_to_pos[arg].append(z)
-        combinations[i] = (create_creator(rule.body, v_to_pos), pos_to_const(rule.head))
+        combinations[i] = (create_creator(rule.body, v_to_pos), __pos_to_const(rule.head))
 
-    GOAL_FACT = fd.pddl.conditions.Atom(GOAL_PRED, [])
+    GOAL_FACT = fd.pddl.conditions.Atom(goal_pred_symbol, [])
     while GOAL_FACT not in fact_cost:
         if not priority_queue:
             break
