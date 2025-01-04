@@ -433,12 +433,12 @@ def binarize_datalog(dl_rules, init):
             par_count = collections.defaultdict(lambda: 0)
             removed = set()
             temporaries = [atom for atom in rule.body]
-            def local_superset(i, j):
+            def local_superset(i, j, use_heads):
                 el1, el2 = temporaries[i], temporaries[j]
                 pars_el2 = get_pars(el2)
 
                 for par in get_pars(el1):
-                    if not ((par in pars_el2) or (par_count[par] == 1) or (par in head_pars)):
+                    if not ((par in pars_el2) or (par_count[par] == 1) or (use_heads and par in head_pars)):
                         return False
 
                 return True
@@ -479,21 +479,30 @@ def binarize_datalog(dl_rules, init):
                     if arg[0] == "?":
                         par_count[arg] += 1
 
+            before_addition = len(new_rules)
             while len(rule.body) > len(removed)+1:
                 old_removed_count = len(removed)
-                for i, first in enumerate(rule.body):
-                    if i in removed:
-                        continue
+                #TODO: just use range instead enumerate
+
+                for use_heads in {False, True}:
                     if old_removed_count != len(removed):
                         break
-                    for j, second in enumerate(rule.body):
-                        if first == second:
+                    for i, first in enumerate(rule.body):
+                        if i in removed:
                             continue
-                        if j in removed:
-                            continue
-                        if local_superset(i, j):
-                            add_rule(i, j)
+                        if old_removed_count != len(removed):
                             break
+                        for j, second in enumerate(rule.body[:i]):
+                            if i == j:
+                                continue
+                            if j in removed:
+                                continue
+                            if local_superset(i, j, use_heads):
+                                add_rule(i, j)
+                                break
+                            if local_superset(j, i, use_heads):
+                                add_rule(j, i)
+                                break
 
                 if old_removed_count == len(removed):
                     i = get_unremoved()
@@ -501,6 +510,7 @@ def binarize_datalog(dl_rules, init):
                     add_rule(i, j)
 
             new_rules.append(DatalogRule(rule.head, [temporaries[get_unremoved()]], rule.cost))
+            assert len(new_rules) - before_addition == len(rule.body)
 
     return new_rules
 
