@@ -32,7 +32,7 @@ class Timer:
             self._clock() - self.start_clock,
             time.time() - self.start_time)
 
-DEBUG = True
+DEBUG = False
 @contextlib.contextmanager
 def timing(text, block=False):
     if DEBUG:
@@ -57,8 +57,12 @@ def timing(text, block=False):
 # should later add a check that makes sure the options match
 H_NAMES = ["L_HMAX", "L_HADD", "L_HFF", "G_HMAX", "G_HADD", "G_HFF", "G_LM_CUT"]
 RELAXATIONS = ["none", "unary", "zeroary"]
-COMPRESS = False
-IGNORE_REPAIRS = True
+COMPRESS = True
+if not COMPRESS:
+    assert DEBUG
+IGNORE_REPAIRS = False
+if IGNORE_REPAIRS:
+    assert DEBUG
 
 ANY_OBJ = "any_obj"
 to_type_pred = lambda v: f"typepred___{v}"
@@ -580,12 +584,15 @@ def __pos_to_const(atom):
     return dict((i, arg) for i, arg in enumerate(atom.args) if not __is_var(arg))
 
 
-def _pq_tie_breaker(pred, arities):
+def _pq_tie_breaker(pred, arities, unary_relaxed):
     if pred.endswith(FOR_FREE):
         repair_level = 2
-        org_pred = pred[:-len(FOR_FREE)]
-        assert org_pred in arities
-        arity = arities[org_pred]
+        if not unary_relaxed:
+            org_pred = pred[:-len(FOR_FREE)]
+            assert org_pred in arities
+            arity = arities[org_pred]
+        else:
+            arity = 1
     elif pred == FREE_PRED:
         repair_level = 1
         arity = 0 # doesn't matter
@@ -595,7 +602,7 @@ def _pq_tie_breaker(pred, arities):
 
     return [repair_level, arity]
 
-def dl_exploration(init, rules, comb_f=max):
+def dl_exploration(init, rules, comb_f=max, unary_relaxed=False):
     fact_cost = dict()
     priority_queue = []
     pq_tie_breaker = dict()
@@ -607,11 +614,12 @@ def dl_exploration(init, rules, comb_f=max):
                 arities[atom.predicate] = len(atom.args)
 
     for atom in init:
-        if atom.predicate not in arities:
-            arities[atom.predicate] = len(atom.args)
+        if type(atom) != fd.pddl.f_expression.Assign:
+            if atom.predicate not in arities:
+                arities[atom.predicate] = len(atom.args)
 
     for pred in arities.keys():
-        pq_tie_breaker[pred] = _pq_tie_breaker(pred, arities)
+        pq_tie_breaker[pred] = _pq_tie_breaker(pred, arities, unary_relaxed)
 
     goal_pred_symbol = None
     if COMPRESS:
@@ -794,7 +802,7 @@ def cover_head_rule(dl_rules):
                 rule.body.append(fd.pddl.Atom(ANY_OBJ, [v]))
 
 def log_stats(dl_rules):
-    print("Max arity", max(max(len(r.head.args), max(len(b.args) for b in r.body)) for r in dl_rules))
+    print("Max arity", max(max(len(r.head.args), max(len(b.args) for b in r.body) if r.body else 0) for r in dl_rules))
 
 def verify_join_tree(dl_rules):
     starts = [rule for rule in dl_rules if not rule.head.predicate.startswith(tmp_stub)]
@@ -860,9 +868,9 @@ def unary_relax(init, rules):
     for rule in old_rules:
         body = [unary_atom for b in rule.body for unary_atom in unary_split_atom(b)]
         for unary_atom in unary_split_atom(rule.head):
-            rules.append(DatalogRule(unary_atom, body))
+            rules.append(DatalogRule(unary_atom, body, rule.cost))
 
-    old_init = [a for a in init]
+    old_init = [a for a in init if type(a) != fd.pddl.f_expression.Assign]
     init.clear()
     for atom in old_init:
         for unary_atom in unary_split_atom(atom):
@@ -871,12 +879,13 @@ def unary_relax(init, rules):
 
 def zeroary_relax(init, rules):
     for rule in rules:
-        rule.head.args.clear()
+        rule.head.args = tuple()
         for atom in rule.body:
-            atom.args.clear()
+            atom.args = tuple()
 
     for atom in init:
-        atom.args.clear()
+        if type(atom) != fd.pddl.f_expression.Assign:
+            atom.args = tuple()
 
 
 def backward_filter(rules):
@@ -920,9 +929,8 @@ class Heurisitc:
         add_free_atom(task, domain)
         dl_rules = pddl_to_datalog_rules(domain)
         backward_filter(dl_rules)
+        assert dl_rules
         cover_head_rule(dl_rules)
-        dl_rules = dl_rules[3:]
-        assert DEBUG, "remove line above"
         binarized_dl_rules = binarize_datalog(dl_rules, task.init)
 
         if DEBUG:
@@ -934,7 +942,10 @@ class Heurisitc:
         elif self.relaxation == "zeroary":
             zeroary_relax(task.init, binarized_dl_rules)
 
-        return dl_exploration(task.init, binarized_dl_rules, max if "HMAX" in self.h_name else lambda x,y: x+y)
+        return dl_exploration(task.init,
+                              binarized_dl_rules,
+                              max if "HMAX" in self.h_name else lambda x,y: x+y,
+                              self.relaxation == "unary")
 
     def legacy_get_val(self):
         GROUND_CMD = {
