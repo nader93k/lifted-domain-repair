@@ -782,12 +782,21 @@ def unary_relax(init, rules):
         body = [unary_atom for b in rule.body for unary_atom in unary_split_atom(b)]
         for unary_atom in unary_split_atom(rule.head):
             rules.append(DatalogRule(unary_atom, body))
-        
+
     old_init = [a for a in init]
     init.clear()
     for atom in old_init:
         for unary_atom in unary_split_atom(atom):
             init.append(unary_atom)
+
+def zeroary_relax(init, rules):
+    for rule in rules:
+        rule.head.args.clear()
+        for atom in rule.body:
+            atom.args.clear()
+
+    for atom in init:
+        atom.args.clear()
 
 class Heurisitc:
     def __init__(self, h_name, relaxation):
