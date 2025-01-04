@@ -32,7 +32,7 @@ class Timer:
             self._clock() - self.start_clock,
             time.time() - self.start_time)
 
-DEBUG = False
+DEBUG = True
 @contextlib.contextmanager
 def timing(text, block=False):
     if DEBUG:
@@ -57,7 +57,8 @@ def timing(text, block=False):
 # should later add a check that makes sure the options match
 H_NAMES = ["L_HMAX", "L_HADD", "L_HFF", "G_HMAX", "G_HADD", "G_HFF", "G_LM_CUT"]
 RELAXATIONS = ["none", "unary", "zeroary"]
-COMPRESS = True
+COMPRESS = False
+IGNORE_REPAIRS = True
 
 ANY_OBJ = "any_obj"
 to_type_pred = lambda v: f"typepred___{v}"
@@ -388,7 +389,7 @@ def add_goal_rule(domain, task):
 def add_free_atom(task, domain):
     task.init.append(fd.pddl.conditions.Atom(FREE_PRED, []))
 
-    for obj in task.objects:
+    for obj in itertools.chain(task.objects, domain.constants):
         task.init.append(fd.pddl.conditions.Atom(ANY_OBJ, [obj.name]))
 
     type_to_preds = dict()
@@ -396,7 +397,7 @@ def add_free_atom(task, domain):
         if _type.name != 'object':
             type_to_preds[_type.name] = [to_type_pred(_type.name)] + [to_type_pred(t) for t in _type.supertype_names if t != 'object']
 
-    for obj in task.objects:
+    for obj in itertools.chain(task.objects, domain.constants):
         if obj.type != 'object':
             for type_pred in type_to_preds[obj.type]:
                 task.init.append(fd.pddl.conditions.Atom(type_pred, [obj.name]))
@@ -605,6 +606,10 @@ def dl_exploration(init, rules, comb_f=max):
             if atom.predicate not in arities:
                 arities[atom.predicate] = len(atom.args)
 
+    for atom in init:
+        if atom.predicate not in arities:
+            arities[atom.predicate] = len(atom.args)
+
     for pred in arities.keys():
         pq_tie_breaker[pred] = _pq_tie_breaker(pred, arities)
 
@@ -746,6 +751,9 @@ def integrate_repair_actions(domain):
     for action in domain._actions:
         action.cost = 0
 
+    if IGNORE_REPAIRS:
+        return
+
     for pred in domain._predicates:
         if pred.name in UNREPAIRABLE or pred.name.startswith(fix_obj_start):
             continue
@@ -860,6 +868,7 @@ def unary_relax(init, rules):
         for unary_atom in unary_split_atom(atom):
             init.append(unary_atom)
 
+
 def zeroary_relax(init, rules):
     for rule in rules:
         rule.head.args.clear()
@@ -868,6 +877,31 @@ def zeroary_relax(init, rules):
 
     for atom in init:
         atom.args.clear()
+
+
+def backward_filter(rules):
+    pred_graph = collections.defaultdict(lambda: [])
+
+    for rule in rules:
+        pred_graph[rule.head.predicate] += [atom.predicate for atom in rule.body]
+
+    seen = set()
+    q = [GOAL_PRED]
+    while q:
+        pred = q.pop()
+
+        if pred not in seen:
+            seen.add(pred)
+
+            for pred2 in pred_graph[pred]:
+                q.append(pred2)
+
+    old_rules = [r for r in rules]
+    rules.clear()
+    for rule in old_rules:
+        if rule.head.predicate in seen:
+            rules.append(rule)
+
 
 class Heurisitc:
     def __init__(self, h_name, relaxation):
@@ -885,7 +919,10 @@ class Heurisitc:
         add_goal_rule(domain, task)
         add_free_atom(task, domain)
         dl_rules = pddl_to_datalog_rules(domain)
+        backward_filter(dl_rules)
         cover_head_rule(dl_rules)
+        dl_rules = dl_rules[3:]
+        assert DEBUG, "remove line above"
         binarized_dl_rules = binarize_datalog(dl_rules, task.init)
 
         if DEBUG:
