@@ -434,7 +434,7 @@ def binarize_datalog(dl_rules):
                 assert j < len(rule.body)
                 removed.add(i)
                 local_par_count = collections.defaultdict(lambda: 0)
-                for atom in [first, second]:
+                for atom in [temporaries[i], temporaries[j]]:
                     for arg in set(atom.args):
                         if arg[0] == "?":
                             local_par_count[arg] += 1
@@ -701,37 +701,44 @@ def verify_join_tree(dl_rules):
         def downward_chase(join_step):
             acc = set()
             var_to_child = collections.defaultdict(lambda: [])
+            please_explain_why_needed = set()
 
             for child in join_step.body:
                 child_pars = get_pars(child)
 
                 if child.predicate in tmp_to_rule:
-                    from_below = downward_chase(tmp_to_rule[child.predicate])
+                    from_below, _please_explain_why_needed = downward_chase(tmp_to_rule[child.predicate])
                 else:
-                    from_below = child_pars
+                    from_below, _please_explain_why_needed = child_pars, set()
+
+                please_explain_why_needed |= _please_explain_why_needed
 
                 for var in from_below:
-                    explains_why_needed = False
                     if var_to_child[var]:
-                        explains_why_needed = True
-                        assert var in get_pars(join_step.head)
                         assert var in child_pars
 
                         for other in var_to_child[var]:
                             assert var in get_pars(other)
                     if var in end_params:
-                        explains_why_needed = True
                         assert var in child_pars
-                    if not explains_why_needed:
-                        please_explain_why_needed.add(var)
 
                     var_to_child[var].append(child)
 
                 acc |= from_below
 
-            return acc
-        
-        downward_chase(start)
+            please_explain_why_needed |= get_pars(join_step.head)
+            explained = set()
+            for var in please_explain_why_needed:
+                if len(var_to_child[var]) >= 2:
+                    explained.add(var)
+
+            please_explain_why_needed = please_explain_why_needed - explained
+
+            return acc, please_explain_why_needed
+
+        _, expl = downward_chase(start)
+        expl -= end_params
+        assert len(expl) == 0
 
 
 class Heurisitc:
