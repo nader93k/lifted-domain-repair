@@ -406,8 +406,21 @@ def get_pars(atom):
 tmp_stub = "tmp___pred"
 tmp_pred = lambda i: f"{tmp_stub}{i}"
 
-def binarize_datalog(dl_rules):
+def atom_sorter(head_pars, pred_sizes):
+    def f(atom):
+        p = get_pars(atom)
+        am_head_pars = len(p & head_pars)
+        pred_size = pred_sizes[atom.predicate]
+        return (am_head_pars, pred_size, len(p), atom.predicate, atom.args)
+
+    return f
+
+def binarize_datalog(dl_rules, init):
     new_rules = []
+    pred_sizes = collections.defaultdict(lambda: 0)
+
+    for atom in init:
+        pred_sizes[atom.predicate] += 1
 
     for rule in dl_rules:
         if len(rule.body) == 0:
@@ -415,10 +428,13 @@ def binarize_datalog(dl_rules):
             new_rules.append(rule)
         else:
             head_pars = get_pars(rule.head)
+            rule.body.sort(key=atom_sorter(head_pars, pred_sizes))
+
             par_count = collections.defaultdict(lambda: 0)
             removed = set()
             temporaries = [atom for atom in rule.body]
-            def local_superset(el1, el2):
+            def local_superset(i, j):
+                el1, el2 = temporaries[i], temporaries[j]
                 pars_el2 = get_pars(el2)
 
                 for par in get_pars(el1):
@@ -475,7 +491,7 @@ def binarize_datalog(dl_rules):
                             continue
                         if j in removed:
                             continue
-                        if local_superset(first, second):
+                        if local_superset(i, j):
                             add_rule(i, j)
                             break
 
@@ -758,7 +774,7 @@ class Heurisitc:
         add_free_atom(task, domain)
         dl_rules = pddl_to_datalog_rules(domain)
         cover_head_rule(dl_rules)
-        binarized_dl_rules = binarize_datalog(dl_rules)
+        binarized_dl_rules = binarize_datalog(dl_rules, task.init)
 
         if DEBUG:
             verify_join_tree(binarized_dl_rules)
