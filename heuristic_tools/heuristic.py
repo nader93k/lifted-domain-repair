@@ -420,7 +420,8 @@ def binarize_datalog(dl_rules, init):
     pred_sizes = collections.defaultdict(lambda: 0)
 
     for atom in init:
-        pred_sizes[atom.predicate] += 1
+        if type(atom) != fd.pddl.f_expression.Assign:
+            pred_sizes[atom.predicate] += 1
 
     for rule in dl_rules:
         if len(rule.body) == 0:
@@ -571,15 +572,41 @@ def pos_to_const(atom):
     return dict((i, arg) for i, arg in enumerate(atom.args) if arg[0] != "?")
 
 
+def _pq_tie_breaker(pred, arities):
+    if pred.endswith(FOR_FREE):
+        repair_level = 2
+        org_pred = pred[:-len(FOR_FREE)]
+        assert org_pred in arities
+        arity = arities[org_pred]
+    elif pred == FREE_PRED:
+        repair_level = 1
+        arity = 0 # doesn't matter
+    else:
+        repair_level = 0
+        arity = arities[pred]
+
+    return [repair_level, arity]
+
+
 def dl_exploration(init, rules, comb_f=max):
     #TODO: could think about how to queue non-repairs first and delaying generation of repair atoms
 
     fact_cost = dict()
     priority_queue = []
+    pq_tie_breaker = dict()
+    arities = dict()
+
+    for rule in rules:
+        for atom in itertools.chain([rule.head], rule.body):
+            if atom.predicate not in arities:
+                arities[atom.predicate] = len(atom.args)
+
+    for pred in arities.keys():
+            pq_tie_breaker[pred] = _pq_tie_breaker(pred, arities)
 
     for el in init:
         if type(el) is fd.pddl.Atom:
-            priority_queue.append((0, el))
+            priority_queue.append((0, pq_tie_breaker[el.predicate], el))
             fact_cost[el] = 0
         else:
             assert type(el) is fd.pddl.f_expression.Assign and el.expression.value == 0 and el.fluent.symbol == 'total-cost'
@@ -620,7 +647,7 @@ def dl_exploration(init, rules, comb_f=max):
         if not priority_queue:
             break
 
-        current_cost, current_fact = heapq.heappop(priority_queue)
+        current_cost, _, current_fact = heapq.heappop(priority_queue)
 
         if current_fact in fact_cost and fact_cost[current_fact] < current_cost:
             continue
@@ -650,7 +677,7 @@ def dl_exploration(init, rules, comb_f=max):
                         continue
 
                     fact_cost[combined_fact] = combined_cost
-                    heapq.heappush(priority_queue, (combined_cost, combined_fact))
+                    heapq.heappush(priority_queue, (combined_cost, pq_tie_breaker[combined_fact.predicate], combined_fact))
             else:
                 assert len(_rule.body) == 1
                 combined_cost = _rule.cost + current_cost
@@ -662,13 +689,15 @@ def dl_exploration(init, rules, comb_f=max):
                     continue
 
                 fact_cost[combined_fact] = combined_cost
-                heapq.heappush(priority_queue, (combined_cost, combined_fact))
+                heapq.heappush(priority_queue, (combined_cost, pq_tie_breaker[combined_fact.predicate], combined_fact))
 
     INFTY = -1
     return fact_cost[GOAL_FACT] if GOAL_FACT in fact_cost else INFTY
 
-
+ACTIVATE_STUB = "activate_"
+USE_STUB = "use_"
 UNREPAIRABLE = {COUNTER_PRED, APPLIED_PRED}
+FOR_FREE = "__for_free"
 def integrate_repair_actions(domain):
     new_preds = []
 
@@ -679,7 +708,7 @@ def integrate_repair_actions(domain):
         if pred.name in UNREPAIRABLE or pred.name.startswith(fix_obj_start):
             continue
 
-        new_pred_name = pred.name + "__for_free"
+        new_pred_name = pred.name + FOR_FREE
         new_preds.append(fd.pddl.predicates.Predicate(new_pred_name, []))
 
         action_args = copy.deepcopy(pred.arguments)
@@ -687,14 +716,14 @@ def integrate_repair_actions(domain):
         pre_atom = fd.pddl.conditions.Atom(new_pred_name, [])
         eff_atom = fd.pddl.conditions.Atom(pred.name, [arg.name for arg in action_args])
 
-        domain._actions.append(fd.pddl.actions.Action(name=f"activate_{new_pred_name}",
+        domain._actions.append(fd.pddl.actions.Action(name=f"{ACTIVATE_STUB}{new_pred_name}",
                                                       parameters=[],
                                                       num_external_parameters=0,
                                                       precondition=fd.pddl.conditions.Conjunction([]),
                                                       effects=[to_eff(pre_atom)],
                                                       cost=1))
 
-        domain._actions.append(fd.pddl.actions.Action(name=f"use_{new_pred_name}",
+        domain._actions.append(fd.pddl.actions.Action(name=f"{USE_STUB}{new_pred_name}",
                                                       parameters=action_args,
                                                       num_external_parameters=len(action_args),
                                                       precondition=pre_atom,
