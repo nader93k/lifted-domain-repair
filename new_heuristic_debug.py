@@ -54,8 +54,9 @@ with open(os.path.join(os.path.dirname(__file__), 'debug_log.txt'), 'w') as debu
             with temporary_base_folder_old_h(base_folder):
                 h_old = old_Heuristic(h_name="L_HMAX", relaxation='none', ground_base_folder=base_folder)
                 h_cost_old = h_old.evaluate(domain, task, plan)
+                end_time = time.time()
                 print(f"h_old_normal_disk={h_cost_old}", file=debug_log)
-            end_time = time.time()
+            
             wall_time = end_time - start_time
             
             print(f"Wall time - normal disk: {wall_time:.4f} seconds", file=debug_log)
@@ -69,8 +70,9 @@ with open(os.path.join(os.path.dirname(__file__), 'debug_log.txt'), 'w') as debu
             with temporary_base_folder_old_h(base_folder):
                 h_old = old_Heuristic(h_name="L_HMAX", relaxation='none', ground_base_folder=base_folder)
                 h_cost_old = h_old.evaluate(domain, task, plan)
+                end_time = time.time()
                 print(f"h_old_ram_disk={h_cost_old}", file=debug_log)
-            end_time = time.time()
+            
             wall_time = end_time - start_time
             print(f"Wall time - RAM disk: {wall_time:.3f} seconds", file=debug_log)
         except Exception as e:
@@ -80,10 +82,14 @@ with open(os.path.join(os.path.dirname(__file__), 'debug_log.txt'), 'w') as debu
         print("="*10 + f' NEW HEURISTIC ' + "="*10, file=debug_log)
         base_folder=f'heuristic_files_new/instance_{instance.identifier}/'
         try:
+            start_time = time.time()
             with temporary_base_folder(base_folder):
                 h_new = new_heuristic(h_name="L_HADD", relaxation='none')
                 h_cost_new = h_new.evaluate(domain, task, plan)
+                end_time = time.time()
+                wall_time = end_time - start_time
                 print(f"h_new={h_cost_new}", file=debug_log)
+                print(f"Wall time - RAM disk: {wall_time:.3f} seconds", file=debug_log)
 
                 # value comparison
                 print("="*10 + f'COMPARISON', file=debug_log)
