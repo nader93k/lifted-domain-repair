@@ -50,14 +50,12 @@ class AStar(Searcher):
         - We also used list for closed_list instead of having a closed_set for the same reason.
     """
 
-
     def __init__(self, initial_node, g_cost_multiplier=1, h_cost_multiplier=1, prune_func=None):
         super().__init__(initial_node)
         self.g_cost_multiplier = g_cost_multiplier
         self.h_cost_multiplier = h_cost_multiplier 
         self.prune_func = prune_func or (lambda _: False)  # Default to never prune if no function provided
     
-
     def calculate_f_cost(self, node):
         f = (self.g_cost_multiplier * node.g_cost) + self.calculate_h_cost(node)
         self.sum_f_cost += f
@@ -68,18 +66,18 @@ class AStar(Searcher):
         self.sum_h_cost += h
         return h
 
-
     def find_path(self, logger, log_interval):
         open_list = []
         closed_list = []
 
         f_cost = self.calculate_f_cost(self.initial_node)
-        heapq.heappush(open_list, (f_cost, -self.initial_node.depth, self.initial_node))
+        h_cost = self.calculate_h_cost(self.initial_node)
+        heapq.heappush(open_list, (f_cost, h_cost, -self.initial_node.depth, self.initial_node))
 
         iteration = 0
         while open_list:
             iteration += 1
-            current_node = heapq.heappop(open_list)[2]
+            current_node = heapq.heappop(open_list)[-1]
 
             if current_node.is_goal():
                 self.log_iteration_info(logger, iteration, open_list, current_node, final=True, is_goal=True)
@@ -93,14 +91,14 @@ class AStar(Searcher):
             self.sum_grounding_time += current_node.grounding_time
 
             for neighbor in neighbours:
-                if not any(node[2]==neighbor for node in open_list):
+                if not any(node[-1]==neighbor for node in open_list):
                     if not self.prune_func(neighbor):
                         f_cost = self.calculate_f_cost(neighbor)
-                        heapq.heappush(open_list, (f_cost, -neighbor.depth, neighbor))
+                        h_cost = self.calculate_h_cost(neighbor)
+                        heapq.heappush(open_list, (f_cost, h_cost, -neighbor.depth, neighbor))
                         neighbor.parent = current_node
-                else: raise Exception("Identical node generation. Debug is needed.")
-
-                
+                else: 
+                    raise Exception("Identical node generation. Debug is needed.")
 
             if iteration % log_interval == 0:
                 self.log_iteration_info(logger, iteration, open_list, current_node, final=True, is_goal=False)
