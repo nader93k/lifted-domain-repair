@@ -1,0 +1,241 @@
+---
+timestamp: '2024-12-29T20:23:29.383630'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/16 anu-bfs-prob1-no-relaxation/bfs_length_3_visitall-opt11-strips_pproblem02-full-err-rate-0-5.yaml
+    instance_id: visitall-opt11-strips__pproblem02-full-err-rate-0-5
+    search_algorithm: bfs
+    plan_length: 3
+    domain_class: visitall-opt11-strips
+    instance_name: pproblem02-full-err-rate-0-5
+    ground_plan:
+    - (move loc-x1-y1 loc-x0-y1)
+    - (move loc-x0-y1 loc-x0-y0)
+    - (move loc-x0-y0 loc-x1-y0)
+    lifted_plan:
+    -   - move
+        - ?loc-x1-y1
+        - ?loc-x0-y1
+    -   - move
+        - ?loc-x0-y1
+        - ?loc-x0-y0
+    -   - move
+        - ?loc-x0-y0
+        - ?loc-x1-y0
+
+
+---
+timestamp: '2024-12-29T20:23:29.385326'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: move,(visited ?nextpos),effPos,1
+
+
+---
+timestamp: '2024-12-29T20:23:29.523654'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 2
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''move'', ''?loc-x1-y1'', ''?loc-x0-y1'']'
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (move loc-x1-y1 loc-x1-y0)
+        - (move loc-x1-y1 loc-x0-y1)
+
+
+---
+timestamp: '2024-12-29T20:23:29.658289'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 2
+    fring_size: 3
+    current_node:
+        depth: 1
+        ground_actions:
+        - (move loc-x1-y1 loc-x1-y0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''move'', ''?loc-x0-y1'', ''?loc-x0-y0'']'
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (move loc-x1-y0 loc-x1-y1)
+        - (move loc-x1-y0 loc-x0-y0)
+
+
+---
+timestamp: '2024-12-29T20:23:29.791950'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 3
+    fring_size: 2
+    current_node:
+        depth: 2
+        ground_actions:
+        - (move loc-x1-y1 loc-x1-y0)
+        - (move loc-x1-y0 loc-x1-y1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''move'', ''?loc-x0-y0'', ''?loc-x1-y0'']'
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (move loc-x1-y1 loc-x1-y0)
+        - (move loc-x1-y1 loc-x0-y1)
+
+
+---
+timestamp: '2024-12-29T20:23:29.944043'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 4
+    fring_size: 2
+    current_node:
+        depth: 2
+        ground_actions:
+        - (move loc-x1-y1 loc-x1-y0)
+        - (move loc-x1-y0 loc-x0-y0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''move'', ''?loc-x0-y0'', ''?loc-x1-y0'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (move loc-x0-y0 loc-x1-y0)
+        - (move loc-x0-y0 loc-x0-y1)
+
+
+---
+timestamp: '2024-12-29T20:23:30.078922'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 5
+    fring_size: 3
+    current_node:
+        depth: 1
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''move'', ''?loc-x0-y1'', ''?loc-x0-y0'']'
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (move loc-x0-y1 loc-x1-y1)
+        - (move loc-x0-y1 loc-x0-y0)
+
+
+---
+timestamp: '2024-12-29T20:23:30.215210'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 6
+    fring_size: 2
+    current_node:
+        depth: 2
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x0-y1 loc-x1-y1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''move'', ''?loc-x0-y0'', ''?loc-x1-y0'']'
+        num_neighbours: 0
+        first_10_possible_groundings:
+        - (move loc-x1-y1 loc-x1-y0)
+        - (move loc-x1-y1 loc-x0-y1)
+
+
+---
+timestamp: '2024-12-29T20:23:30.360614'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 7
+    fring_size: 2
+    current_node:
+        depth: 2
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x0-y1 loc-x0-y0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''move'', ''?loc-x0-y0'', ''?loc-x1-y0'']'
+        num_neighbours: 1
+        first_10_possible_groundings:
+        - (move loc-x0-y0 loc-x1-y0)
+        - (move loc-x0-y0 loc-x0-y1)
+
+
+---
+timestamp: '2024-12-29T20:23:30.362184'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: true
+    iteration: 8
+    fring_size: 1
+    current_node:
+        depth: 3
+        ground_actions:
+        - (move loc-x1-y1 loc-x1-y0)
+        - (move loc-x1-y0 loc-x0-y0)
+        - (move loc-x0-y0 loc-x0-y1)
+        repair_set: move,(visited ?nextpos),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2024-12-29T20:23:30.363583'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.0 minutes = 0.08 seconds
+
+

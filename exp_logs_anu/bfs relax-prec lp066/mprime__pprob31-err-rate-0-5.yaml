@@ -1,0 +1,109 @@
+---
+timestamp: '2025-01-03T15:48:26.227152'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs_anu/02 bfs relax-prec lp066/mprime__pprob31-err-rate-0-5.yaml
+    instance_id: mprime__pprob31-err-rate-0-5
+    search_algorithm: bfs
+    plan_length: 5
+    domain_class: mprime
+    instance_name: pprob31-err-rate-0-5
+    ground_plan:
+    - (feast love ham cantelope quebec kentucky)
+    - (overcome prostatitis learning grapefruit earth saturn)
+    - (feast learning grapefruit ham alsace quebec)
+    - (feast learning ham cantelope alsace quebec)
+    - (succumb prostatitis learning cantelope earth saturn)
+    lifted_plan:
+    -   - feast
+        - love
+        - ham
+        - ?cantelope
+        - ?quebec
+        - ?kentucky
+    -   - overcome
+        - ?prostatitis
+        - learning
+        - ?grapefruit
+        - ?earth
+        - ?saturn
+    -   - feast
+        - learning
+        - ?grapefruit
+        - ?ham
+        - alsace
+        - ?quebec
+    -   - feast
+        - ?learning
+        - ham
+        - cantelope
+        - alsace
+        - quebec
+    -   - succumb
+        - ?prostatitis
+        - learning
+        - cantelope
+        - earth
+        - ?saturn
+
+
+---
+timestamp: '2025-01-03T15:48:26.230907'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: succumb,(fears ?c ?v),precPos,-1
+
+
+---
+timestamp: '2025-01-03T15:48:27.534596'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 29
+    fring_size: 5
+    num_nodes_generated: 34
+    sum_h_cost: 0
+    sum_f_cost: 6
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 1.056396722793579
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love ham muffin quebec kentucky)
+        - (overcome grief learning grapefruit earth saturn)
+        - (feast learning grapefruit ham alsace quebec)
+        - (feast learning ham cantelope alsace quebec)
+        - (succumb prostatitis learning cantelope earth saturn)
+        repair_set: succumb,(fears ?c ?v),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2025-01-03T15:48:27.535844'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '2.43'
+
+
+---
+timestamp: '2025-01-03T15:48:27.610840'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 2.73 seconds'
+
+

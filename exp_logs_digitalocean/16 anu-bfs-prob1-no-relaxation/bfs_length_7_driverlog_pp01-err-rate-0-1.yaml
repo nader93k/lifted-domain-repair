@@ -1,0 +1,2399 @@
+---
+timestamp: '2024-12-29T20:57:49.364192'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/16 anu-bfs-prob1-no-relaxation/bfs_length_7_driverlog_pp01-err-rate-0-1.yaml
+    instance_id: driverlog__pp01-err-rate-0-1
+    search_algorithm: bfs
+    plan_length: 7
+    domain_class: driverlog
+    instance_name: pp01-err-rate-0-1
+    ground_plan:
+    - (walk driver1 s2 p1-2)
+    - (walk driver1 p1-2 s1)
+    - (walk driver1 s1 p1-0)
+    - (walk driver1 p1-0 s0)
+    - (board-truck driver1 truck1 s0)
+    - (drive-truck truck1 s0 s1 driver1)
+    - (disembark-truck driver1 truck1 s1)
+    lifted_plan:
+    -   - walk
+        - ?driver1
+        - ?s2
+        - ?p1-2
+    -   - walk
+        - ?driver1
+        - ?p1-2
+        - ?s1
+    -   - walk
+        - ?driver1
+        - ?s1
+        - ?p1-0
+    -   - walk
+        - ?driver1
+        - ?p1-0
+        - ?s0
+    -   - board-truck
+        - ?driver1
+        - ?truck1
+        - ?s0
+    -   - drive-truck
+        - ?truck1
+        - ?s0
+        - ?s1
+        - ?driver1
+    -   - disembark-truck
+        - ?driver1
+        - ?truck1
+        - ?s1
+
+
+---
+timestamp: '2024-12-29T20:57:49.366885'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: walk,(in ?loc-from ?loc-from),effPos,1
+
+
+---
+timestamp: '2024-12-29T20:57:49.525501'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 2
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''walk'', ''?driver1'', ''?s2'', ''?p1-2'']'
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (walk driver2 s2 p1-2)
+        - (walk driver1 s2 p1-2)
+
+
+---
+timestamp: '2024-12-29T20:57:49.672588'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 2
+    fring_size: 4
+    current_node:
+        depth: 1
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''walk'', ''?driver1'', ''?p1-2'', ''?s1'']'
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (walk driver2 p1-2 s1)
+        - (walk driver2 p1-2 s2)
+        - (walk driver1 s2 p1-2)
+
+
+---
+timestamp: '2024-12-29T20:57:49.825076'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 3
+    fring_size: 6
+    current_node:
+        depth: 2
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''walk'', ''?driver1'', ''?s1'', ''?p1-0'']'
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (walk driver2 s1 p1-2)
+        - (walk driver2 s1 p1-0)
+        - (walk driver1 s2 p1-2)
+
+
+---
+timestamp: '2024-12-29T20:57:49.981234'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 4
+    fring_size: 8
+    current_node:
+        depth: 3
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s1)
+        - (walk driver2 s1 p1-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''walk'', ''?driver1'', ''?p1-0'', ''?s0'']'
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (walk driver2 p1-2 s1)
+        - (walk driver2 p1-2 s2)
+        - (walk driver1 s2 p1-2)
+
+
+---
+timestamp: '2024-12-29T20:57:50.120987'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 5
+    fring_size: 7
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s1)
+        - (walk driver2 s1 p1-2)
+        - (walk driver2 p1-2 s1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:50.264341'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 6
+    fring_size: 6
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s1)
+        - (walk driver2 s1 p1-2)
+        - (walk driver2 p1-2 s2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:50.406629'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 7
+    fring_size: 5
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s1)
+        - (walk driver2 s1 p1-2)
+        - (walk driver1 s2 p1-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:50.567665'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 8
+    fring_size: 8
+    current_node:
+        depth: 3
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s1)
+        - (walk driver1 s2 p1-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''walk'', ''?driver1'', ''?p1-0'', ''?s0'']'
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (walk driver2 s1 p1-2)
+        - (walk driver1 p1-2 s2)
+        - (walk driver1 p1-2 s1)
+        - (walk driver2 s1 p1-0)
+
+
+---
+timestamp: '2024-12-29T20:57:50.710546'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 9
+    fring_size: 7
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s1)
+        - (walk driver1 s2 p1-2)
+        - (walk driver2 s1 p1-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:50.854584'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 10
+    fring_size: 6
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s1)
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:51.004360'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 11
+    fring_size: 5
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s1)
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:51.152208'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 12
+    fring_size: 4
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s1)
+        - (walk driver1 s2 p1-2)
+        - (walk driver2 s1 p1-0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:51.314015'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 13
+    fring_size: 6
+    current_node:
+        depth: 3
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s1)
+        - (walk driver2 s1 p1-0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''walk'', ''?driver1'', ''?p1-0'', ''?s0'']'
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (walk driver2 p1-0 s0)
+        - (walk driver2 p1-0 s1)
+        - (walk driver1 s2 p1-2)
+
+
+---
+timestamp: '2024-12-29T20:57:51.466276'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 14
+    fring_size: 7
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s1)
+        - (walk driver2 s1 p1-0)
+        - (walk driver2 p1-0 s0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (board-truck driver2 truck1 s0)
+        - (board-truck driver2 truck2 s0)
+
+
+---
+timestamp: '2024-12-29T20:57:51.603295'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 15
+    fring_size: 6
+    current_node:
+        depth: 5
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s1)
+        - (walk driver2 s1 p1-0)
+        - (walk driver2 p1-0 s0)
+        - (board-truck driver2 truck1 s0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drive-truck'', ''?truck1'', ''?s0'', ''?s1'', ''?driver1'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:51.750164'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 16
+    fring_size: 5
+    current_node:
+        depth: 5
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s1)
+        - (walk driver2 s1 p1-0)
+        - (walk driver2 p1-0 s0)
+        - (board-truck driver2 truck2 s0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drive-truck'', ''?truck1'', ''?s0'', ''?s1'', ''?driver1'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:51.895196'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 17
+    fring_size: 4
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s1)
+        - (walk driver2 s1 p1-0)
+        - (walk driver1 s2 p1-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:52.040142'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 18
+    fring_size: 3
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s1)
+        - (walk driver2 s1 p1-0)
+        - (walk driver2 p1-0 s1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:52.204469'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 19
+    fring_size: 6
+    current_node:
+        depth: 2
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver1 s2 p1-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''walk'', ''?driver1'', ''?s1'', ''?p1-0'']'
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (walk driver1 p1-2 s2)
+        - (walk driver2 p1-2 s1)
+        - (walk driver1 p1-2 s1)
+        - (walk driver2 p1-2 s2)
+
+
+---
+timestamp: '2024-12-29T20:57:52.364424'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 20
+    fring_size: 8
+    current_node:
+        depth: 3
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''walk'', ''?driver1'', ''?p1-0'', ''?s0'']'
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (walk driver2 p1-2 s1)
+        - (walk driver2 p1-2 s2)
+        - (walk driver1 s2 p1-2)
+
+
+---
+timestamp: '2024-12-29T20:57:52.510810'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 21
+    fring_size: 7
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s2)
+        - (walk driver2 p1-2 s1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:52.648594'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 22
+    fring_size: 6
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s2)
+        - (walk driver2 p1-2 s2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:52.795843'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 23
+    fring_size: 5
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s2)
+        - (walk driver1 s2 p1-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:52.961203'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 24
+    fring_size: 7
+    current_node:
+        depth: 3
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver1 s2 p1-2)
+        - (walk driver2 p1-2 s2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''walk'', ''?driver1'', ''?p1-0'', ''?s0'']'
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (walk driver1 p1-2 s2)
+        - (walk driver1 p1-2 s1)
+        - (walk driver2 s2 p1-2)
+
+
+---
+timestamp: '2024-12-29T20:57:53.106649'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 25
+    fring_size: 6
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver1 s2 p1-2)
+        - (walk driver2 p1-2 s2)
+        - (walk driver1 p1-2 s2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:53.246976'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 26
+    fring_size: 5
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver1 s2 p1-2)
+        - (walk driver2 p1-2 s2)
+        - (walk driver1 p1-2 s1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:53.393837'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 27
+    fring_size: 4
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver1 s2 p1-2)
+        - (walk driver2 p1-2 s2)
+        - (walk driver2 s2 p1-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:53.555331'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 28
+    fring_size: 7
+    current_node:
+        depth: 3
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''walk'', ''?driver1'', ''?p1-0'', ''?s0'']'
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (walk driver1 s1 p1-0)
+        - (walk driver2 p1-2 s1)
+        - (walk driver1 s1 p1-2)
+        - (walk driver2 p1-2 s2)
+
+
+---
+timestamp: '2024-12-29T20:57:53.698548'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 29
+    fring_size: 6
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s1)
+        - (walk driver1 s1 p1-0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:53.844529'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 30
+    fring_size: 5
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s1)
+        - (walk driver1 s1 p1-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:53.992222'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 31
+    fring_size: 4
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s1)
+        - (walk driver2 p1-2 s2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:54.140737'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 32
+    fring_size: 3
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s1)
+        - (walk driver2 p1-2 s1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:54.304212'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 33
+    fring_size: 6
+    current_node:
+        depth: 3
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver1 s2 p1-2)
+        - (walk driver2 p1-2 s1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''walk'', ''?driver1'', ''?p1-0'', ''?s0'']'
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (walk driver2 s1 p1-2)
+        - (walk driver1 p1-2 s2)
+        - (walk driver1 p1-2 s1)
+        - (walk driver2 s1 p1-0)
+
+
+---
+timestamp: '2024-12-29T20:57:54.443706'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 34
+    fring_size: 5
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver1 s2 p1-2)
+        - (walk driver2 p1-2 s1)
+        - (walk driver2 s1 p1-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:54.590478'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 35
+    fring_size: 4
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver1 s2 p1-2)
+        - (walk driver2 p1-2 s1)
+        - (walk driver2 s1 p1-0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:54.730999'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 36
+    fring_size: 3
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver1 s2 p1-2)
+        - (walk driver2 p1-2 s1)
+        - (walk driver1 p1-2 s2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:54.879401'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 37
+    fring_size: 2
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver1 s2 p1-2)
+        - (walk driver2 p1-2 s1)
+        - (walk driver1 p1-2 s1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:55.032906'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 38
+    fring_size: 3
+    current_node:
+        depth: 2
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''walk'', ''?driver1'', ''?s1'', ''?p1-0'']'
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (walk driver2 s2 p1-2)
+        - (walk driver1 s2 p1-2)
+
+
+---
+timestamp: '2024-12-29T20:57:55.188781'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 39
+    fring_size: 5
+    current_node:
+        depth: 3
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s2)
+        - (walk driver2 s2 p1-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''walk'', ''?driver1'', ''?p1-0'', ''?s0'']'
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (walk driver2 p1-2 s1)
+        - (walk driver2 p1-2 s2)
+        - (walk driver1 s2 p1-2)
+
+
+---
+timestamp: '2024-12-29T20:57:55.327121'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 40
+    fring_size: 4
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s2)
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:55.473682'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 41
+    fring_size: 3
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s2)
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:55.622471'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 42
+    fring_size: 2
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s2)
+        - (walk driver2 s2 p1-2)
+        - (walk driver1 s2 p1-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:55.787981'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 43
+    fring_size: 4
+    current_node:
+        depth: 3
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s2)
+        - (walk driver1 s2 p1-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''walk'', ''?driver1'', ''?p1-0'', ''?s0'']'
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (walk driver1 p1-2 s2)
+        - (walk driver1 p1-2 s1)
+        - (walk driver2 s2 p1-2)
+
+
+---
+timestamp: '2024-12-29T20:57:55.926413'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 44
+    fring_size: 3
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s2)
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:56.071443'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 45
+    fring_size: 2
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s2)
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:56.214397'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 46
+    fring_size: 1
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s2)
+        - (walk driver1 s2 p1-2)
+        - (walk driver2 s2 p1-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:56.369325'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 47
+    fring_size: 3
+    current_node:
+        depth: 1
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''walk'', ''?driver1'', ''?p1-2'', ''?s1'']'
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (walk driver1 p1-2 s2)
+        - (walk driver1 p1-2 s1)
+        - (walk driver2 s2 p1-2)
+
+
+---
+timestamp: '2024-12-29T20:57:56.533115'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 48
+    fring_size: 4
+    current_node:
+        depth: 2
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''walk'', ''?driver1'', ''?s1'', ''?p1-0'']'
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (walk driver2 s2 p1-2)
+        - (walk driver1 s2 p1-2)
+
+
+---
+timestamp: '2024-12-29T20:57:56.689398'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 49
+    fring_size: 6
+    current_node:
+        depth: 3
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s2)
+        - (walk driver2 s2 p1-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''walk'', ''?driver1'', ''?p1-0'', ''?s0'']'
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (walk driver2 p1-2 s1)
+        - (walk driver2 p1-2 s2)
+        - (walk driver1 s2 p1-2)
+
+
+---
+timestamp: '2024-12-29T20:57:56.829945'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 50
+    fring_size: 5
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s2)
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:56.969822'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 51
+    fring_size: 4
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s2)
+        - (walk driver2 s2 p1-2)
+        - (walk driver1 s2 p1-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:57.118954'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 52
+    fring_size: 3
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s2)
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:57.280886'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 53
+    fring_size: 5
+    current_node:
+        depth: 3
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s2)
+        - (walk driver1 s2 p1-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''walk'', ''?driver1'', ''?p1-0'', ''?s0'']'
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (walk driver1 p1-2 s2)
+        - (walk driver1 p1-2 s1)
+        - (walk driver2 s2 p1-2)
+
+
+---
+timestamp: '2024-12-29T20:57:57.423027'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 54
+    fring_size: 4
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s2)
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:57.564841'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 55
+    fring_size: 3
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s2)
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:57.708181'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 56
+    fring_size: 2
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s2)
+        - (walk driver1 s2 p1-2)
+        - (walk driver2 s2 p1-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:57.872393'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 57
+    fring_size: 4
+    current_node:
+        depth: 2
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''walk'', ''?driver1'', ''?s1'', ''?p1-0'']'
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (walk driver1 s1 p1-0)
+        - (walk driver2 s2 p1-2)
+        - (walk driver1 s1 p1-2)
+
+
+---
+timestamp: '2024-12-29T20:57:58.028221'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 58
+    fring_size: 6
+    current_node:
+        depth: 3
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s1)
+        - (walk driver1 s1 p1-0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''walk'', ''?driver1'', ''?p1-0'', ''?s0'']'
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (walk driver1 p1-0 s0)
+        - (walk driver1 p1-0 s1)
+        - (walk driver2 s2 p1-2)
+
+
+---
+timestamp: '2024-12-29T20:57:58.177489'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 59
+    fring_size: 7
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s1)
+        - (walk driver1 s1 p1-0)
+        - (walk driver1 p1-0 s0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 2
+        first_10_possible_groundings:
+        - (board-truck driver1 truck2 s0)
+        - (board-truck driver1 truck1 s0)
+
+
+---
+timestamp: '2024-12-29T20:57:58.317341'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 60
+    fring_size: 6
+    current_node:
+        depth: 5
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s1)
+        - (walk driver1 s1 p1-0)
+        - (walk driver1 p1-0 s0)
+        - (board-truck driver1 truck2 s0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drive-truck'', ''?truck1'', ''?s0'', ''?s1'', ''?driver1'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:58.465992'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 61
+    fring_size: 5
+    current_node:
+        depth: 5
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s1)
+        - (walk driver1 s1 p1-0)
+        - (walk driver1 p1-0 s0)
+        - (board-truck driver1 truck1 s0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drive-truck'', ''?truck1'', ''?s0'', ''?s1'', ''?driver1'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:58.608533'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 62
+    fring_size: 4
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s1)
+        - (walk driver1 s1 p1-0)
+        - (walk driver2 s2 p1-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:58.751385'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 63
+    fring_size: 3
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s1)
+        - (walk driver1 s1 p1-0)
+        - (walk driver1 p1-0 s1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:58.913788'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 64
+    fring_size: 5
+    current_node:
+        depth: 3
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s1)
+        - (walk driver1 s1 p1-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''walk'', ''?driver1'', ''?p1-0'', ''?s0'']'
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (walk driver1 p1-2 s2)
+        - (walk driver1 p1-2 s1)
+        - (walk driver2 s2 p1-2)
+
+
+---
+timestamp: '2024-12-29T20:57:59.058722'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 65
+    fring_size: 4
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s1)
+        - (walk driver1 s1 p1-2)
+        - (walk driver1 p1-2 s2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:59.202869'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 66
+    fring_size: 3
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s1)
+        - (walk driver1 s1 p1-2)
+        - (walk driver1 p1-2 s1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:59.344559'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 67
+    fring_size: 2
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s1)
+        - (walk driver1 s1 p1-2)
+        - (walk driver2 s2 p1-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:59.512319'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 68
+    fring_size: 5
+    current_node:
+        depth: 3
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s1)
+        - (walk driver2 s2 p1-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''walk'', ''?driver1'', ''?p1-0'', ''?s0'']'
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (walk driver1 s1 p1-0)
+        - (walk driver2 p1-2 s1)
+        - (walk driver1 s1 p1-2)
+        - (walk driver2 p1-2 s2)
+
+
+---
+timestamp: '2024-12-29T20:57:59.654117'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 69
+    fring_size: 4
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s1)
+        - (walk driver2 s2 p1-2)
+        - (walk driver1 s1 p1-0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:59.800462'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 70
+    fring_size: 3
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s1)
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:57:59.956606'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 71
+    fring_size: 2
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s1)
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:58:00.103369'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 72
+    fring_size: 1
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s1)
+        - (walk driver2 s2 p1-2)
+        - (walk driver1 s1 p1-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:58:00.263791'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 73
+    fring_size: 4
+    current_node:
+        depth: 2
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver2 s2 p1-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''walk'', ''?driver1'', ''?s1'', ''?p1-0'']'
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (walk driver1 p1-2 s2)
+        - (walk driver2 p1-2 s1)
+        - (walk driver1 p1-2 s1)
+        - (walk driver2 p1-2 s2)
+
+
+---
+timestamp: '2024-12-29T20:58:00.425667'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 74
+    fring_size: 6
+    current_node:
+        depth: 3
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver2 s2 p1-2)
+        - (walk driver1 p1-2 s2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''walk'', ''?driver1'', ''?p1-0'', ''?s0'']'
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (walk driver2 p1-2 s1)
+        - (walk driver2 p1-2 s2)
+        - (walk driver1 s2 p1-2)
+
+
+---
+timestamp: '2024-12-29T20:58:00.564068'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 75
+    fring_size: 5
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver2 s2 p1-2)
+        - (walk driver1 p1-2 s2)
+        - (walk driver2 p1-2 s1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:58:00.708293'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 76
+    fring_size: 4
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver2 s2 p1-2)
+        - (walk driver1 p1-2 s2)
+        - (walk driver1 s2 p1-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:58:00.857557'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 77
+    fring_size: 3
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver2 s2 p1-2)
+        - (walk driver1 p1-2 s2)
+        - (walk driver2 p1-2 s2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:58:01.016603'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 78
+    fring_size: 5
+    current_node:
+        depth: 3
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''walk'', ''?driver1'', ''?p1-0'', ''?s0'']'
+        num_neighbours: 3
+        first_10_possible_groundings:
+        - (walk driver1 p1-2 s2)
+        - (walk driver1 p1-2 s1)
+        - (walk driver2 s2 p1-2)
+
+
+---
+timestamp: '2024-12-29T20:58:01.169048'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 79
+    fring_size: 4
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s2)
+        - (walk driver1 p1-2 s2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:58:01.312184'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 80
+    fring_size: 3
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s2)
+        - (walk driver1 p1-2 s1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:58:01.464709'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 81
+    fring_size: 2
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s2)
+        - (walk driver2 s2 p1-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:58:01.627607'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 82
+    fring_size: 5
+    current_node:
+        depth: 3
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver2 s2 p1-2)
+        - (walk driver1 p1-2 s1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''walk'', ''?driver1'', ''?p1-0'', ''?s0'']'
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (walk driver2 p1-2 s1)
+        - (walk driver1 s1 p1-0)
+        - (walk driver1 s1 p1-2)
+        - (walk driver2 p1-2 s2)
+
+
+---
+timestamp: '2024-12-29T20:58:01.767853'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 83
+    fring_size: 4
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver2 s2 p1-2)
+        - (walk driver1 p1-2 s1)
+        - (walk driver2 p1-2 s1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:58:01.910610'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 84
+    fring_size: 3
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver2 s2 p1-2)
+        - (walk driver1 p1-2 s1)
+        - (walk driver1 s1 p1-0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:58:02.056579'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 85
+    fring_size: 2
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver2 s2 p1-2)
+        - (walk driver1 p1-2 s1)
+        - (walk driver2 p1-2 s2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:58:02.198950'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 86
+    fring_size: 1
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver2 s2 p1-2)
+        - (walk driver1 p1-2 s1)
+        - (walk driver1 s1 p1-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:58:02.363764'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 87
+    fring_size: 4
+    current_node:
+        depth: 3
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''walk'', ''?driver1'', ''?p1-0'', ''?s0'']'
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (walk driver2 s1 p1-2)
+        - (walk driver1 p1-2 s2)
+        - (walk driver1 p1-2 s1)
+        - (walk driver2 s1 p1-0)
+
+
+---
+timestamp: '2024-12-29T20:58:02.503293'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 88
+    fring_size: 3
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s1)
+        - (walk driver2 s1 p1-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:58:02.642883'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 89
+    fring_size: 2
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s1)
+        - (walk driver1 p1-2 s1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:58:02.788462'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 90
+    fring_size: 1
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s1)
+        - (walk driver1 p1-2 s2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:58:02.930389'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 91
+    fring_size: 0
+    current_node:
+        depth: 4
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver2 s2 p1-2)
+        - (walk driver2 p1-2 s1)
+        - (walk driver2 s1 p1-0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''board-truck'', ''?driver1'', ''?truck1'', ''?s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2024-12-29T20:58:02.933155'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.0 minutes = 1.43 seconds
+
+

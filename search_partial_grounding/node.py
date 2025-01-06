@@ -3,8 +3,10 @@ from model.plan import PositivePlan, apply_action_sequence
 from typing import List
 import logging
 import copy
+import time
 from fd.pddl.conditions import Conjunction, Atom
-from heuristic_tools.heuristic import Heurisitc
+from fd.pddl.predicates import Predicate
+# from heuristic_tools.heuristic import Heurisitc
 
 
 class Node:
@@ -59,16 +61,16 @@ class Node:
         self.parent = parent
         self.neighbours = []
         self.possible_groundings = None
+        self.grounding_time = None
         self.h_relaxation = heuristic_relaxation
 
         if is_initial_node:
-            # TODO: review the claim below
-            # These values are arbitrary numbers and won't affect the results.
             assert len(ground_action_sequence) == 0
             assert depth == 0
             self.depth = depth
             self.g_cost = 0
             self.h_cost = 0
+            self.h_cost_time = 0.0
             self.f_cost = 0
             self.repaired_domain = copy.deepcopy(self.original_domain)
             self.ground_repair_solution = None
@@ -81,9 +83,17 @@ class Node:
                 self.current_state = self.calculate_current_state()
             else:
                 self.current_state = None
-            self.h_cost = self.compute_h_cost() if self.h_cost_needed and self.lifted_action_sequence else 0
+            
+            if self.h_cost_needed:
+                start_time = time.time()
+                self.h_cost = self.compute_h_cost()
+                end_time = time.time()
+                self.h_cost_time = end_time - start_time
+            else:
+                self.h_cost = 0
+                self.h_cost_time = 0
+            
             self.f_cost = self.g_cost + self.h_cost
-
 
 
     def _ground_repair(self):
@@ -113,27 +123,13 @@ class Node:
 
 
     def compute_h_cost(self):
-        # TODO: debug & check
-        # will always be run after ground_repair(), and hence works with the repaired self.planning.domain.
-        # should be sth like: h(y(self.domain), d(self.task), self.lifted_action_sequence)
-        task = copy.deepcopy(self.original_task)
-        task.set_init_state(self.current_state)
-        h = Heurisitc(h_name="L_HMAX", relaxation=self.h_relaxation)
-
-        ### DEBUG #TODO: remove this
-        # print(f">>  Calculating H fro node with grounding:\n{self.ground_action_sequence}")
-        # actions = [(l,) for l in self.lifted_action_sequence]
-        # with open('domain.pkl', 'wb') as file:
-        #     pickle.dump(self.original_domain, file)
-        # with open('task.pkl', 'wb') as file:
-        #     pickle.dump(task, file)
-        # with open('actions.pkl', 'wb') as file:
-        #     pickle.dump(actions, file)
-        ### DEBUG Ends ####
-
-        h_cost = h.evaluate(self.original_domain, task, self.lifted_action_sequence)
-
-        return h_cost
+        raise NotImplementedError
+        # # TODO: debug & check
+        # task = copy.deepcopy(self.original_task)
+        # task.set_init_state(self.current_state)
+        # h = Heurisitc(h_name="L_HMAX", relaxation=self.h_relaxation)
+        # h_cost = h.evaluate(self.original_domain, task, self.lifted_action_sequence)
+        # return h_cost
 
 
     def get_neighbors(self):
@@ -143,26 +139,33 @@ class Node:
         
         task = copy.deepcopy(self.original_task)
         task.set_init_state(self.current_state)
+        domain = copy.deepcopy(self.repaired_domain)
 
-
+        ## All preconditions relaxed
+        # action.precondition = Conjunction([])
         # Precondition relaxing
         # If a precondition is not satisfied then don't check it
-        domain = copy.deepcopy(self.repaired_domain)
         next_action_name = self.lifted_action_sequence[0][0]
         action = domain.get_action(next_action_name)
         curr_state_names = [p.predicate for p in self.current_state if isinstance(p, Atom)]
         relaxed_pre = [part for part in action.precondition.parts if part.predicate in curr_state_names]
-        action.precondition = Conjunction(relaxed_pre)
 
-        # # TODO: remove this idea?
-        # action.precondition = Conjunction([])
+        if relaxed_pre:
+            action.precondition = Conjunction(relaxed_pre)
+        else:
+            action.precondition = Predicate('dummy-true', [])
 
         try:
-            self.possible_groundings = Node.grounder(domain, task, self.lifted_action_sequence[0])
-        except Exception as error:
+            next_action_pddl = f"({' '.join(self.lifted_action_sequence[0])})"
+
+            start_time = time.time()
+            self.possible_groundings = Node.grounder(domain, task, next_action_pddl)
+            end_time = time.time()
+            self.grounding_time = end_time - start_time
+        except Exception as e:
+            print(e)
             log_data_error = {
-                'current_node': self.to_dict(),
-                'current_state': self.current_state
+                'current_node': self.to_dict(include_state=True)
             }
             self.logger.log(issuer="node", event_type="error", level=logging.ERROR, message=log_data_error)
             raise
@@ -185,7 +188,6 @@ class Node:
 
 
     def is_goal(self):
-        # check with @songtuan
         return len(self.lifted_action_sequence) == 0 and self.f_cost != float('inf')
 
 
@@ -195,9 +197,9 @@ class Node:
         return self.ground_action_sequence == other.ground_action_sequence
 
 
-    def to_dict(self):
+    def to_dict(self, include_state=False):
         next_lifted = None if len(self.lifted_action_sequence) == 0 else str(self.lifted_action_sequence[0])
-        return {
+        d = {
             "depth": self.depth,
             "ground_actions": self.ground_action_sequence,
             "repair_set": self.ground_repair_solution,
@@ -208,7 +210,16 @@ class Node:
             "num_neighbours": len(self.neighbours),
             "first_10_possible_groundings": self.possible_groundings[:10] if self.possible_groundings is not None else self.possible_groundings
         }
+        if include_state:
+            d["current_state"] = repr([x.pddl() for x in self.current_state])[1:-1]
+        
+        return d
     
+    def get_timings(self):
+        if self.grounding_time is None:
+            raise NotImplementedError("The grounder function has not been used yet")
+        return self.h_cost_time, self.grounding_time
+        
 
     def __str__(self):
         node_dict = self.to_dict()

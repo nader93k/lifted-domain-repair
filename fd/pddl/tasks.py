@@ -129,6 +129,12 @@ class Requirements(object):
     def pddl(self):
         return '(:requirements {0})'.format(' '.join(self.requirements))
 
+def replace_equals(nested_list):
+                return [replace_equals(item) if isinstance(item, list) 
+                        else 'equality-op' if item == '=' 
+                        else item 
+                        for item in nested_list]
+
 def parse_domain(domain_pddl):
     iterator = iter(domain_pddl)
 
@@ -168,11 +174,14 @@ def parse_domain(domain_pddl):
         elif field == ":constants":
             constants = pddl_types.parse_typed_list(opt[1:])
         elif field == ":predicates":
-            the_predicates = [predicates.Predicate.parse(entry)
-                              for entry in opt[1:]]
-            the_predicates += [predicates.Predicate("=",
-                                 [pddl_types.TypedObject("?x", "object"),
-                                  pddl_types.TypedObject("?y", "object")])]
+            the_predicates = []
+            for entry in opt[1:]:
+                entry = replace_equals(entry)
+                the_predicates.append(predicates.Predicate.parse(entry))
+            
+            # the_predicates += [predicates.Predicate("equality-op",
+            #                      [pddl_types.TypedObject("?x", "object"),
+            #                       pddl_types.TypedObject("?y", "object")])]
         elif field == ":functions":
             the_functions = pddl_types.parse_typed_list(opt[1:], constructor=functions.Function.parse, default_type="number")
     pddl_types.set_supertypes(the_types)
@@ -192,6 +201,8 @@ def parse_domain(domain_pddl):
             axiom = axioms.Axiom.parse(entry)
             the_axioms.append(axiom)
         else:
+            # import pdb; pdb.set_trace()
+            entry = replace_equals(entry)
             action = actions.Action.parse(entry)
             the_actions.append(action)
     yield the_actions

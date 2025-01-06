@@ -1,0 +1,205 @@
+---
+timestamp: '2024-12-29T20:58:03.973423'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs/16 anu-bfs-prob1-no-relaxation/bfs_length_7_ged-opt14-strips_pd-2-4-err-rate-0-1.yaml
+    instance_id: ged-opt14-strips__pd-2-4-err-rate-0-1
+    search_algorithm: bfs
+    plan_length: 7
+    domain_class: ged-opt14-strips
+    instance_name: pd-2-4-err-rate-0-1
+    ground_plan:
+    - (invert-single-gene-a sub3)
+    - (begin-cut sub3 sub4)
+    - (end-cut-1 sub4 sub1)
+    - (end-cut-2 sub3 sub1)
+    - (begin-transpose-splice sub2 sub3)
+    - (end-splice-1 sub4 sub2)
+    - (end-splice-2 sub4 sub3)
+    lifted_plan:
+    -   - invert-single-gene-a
+        - ?sub3
+    -   - begin-cut
+        - ?sub3
+        - ?sub4
+    -   - end-cut-1
+        - ?sub4
+        - ?sub1
+    -   - end-cut-2
+        - ?sub3
+        - ?sub1
+    -   - begin-transpose-splice
+        - ?sub2
+        - ?sub3
+    -   - end-splice-1
+        - ?sub4
+        - ?sub2
+    -   - end-splice-2
+        - ?sub4
+        - ?sub3
+
+
+---
+timestamp: '2024-12-29T20:58:03.977799'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: begin-cut,(duplicate ?x ?x),effPos,1
+
+
+---
+timestamp: '2024-12-29T20:58:04.173164'
+level: INFO
+issuer: Searcher
+event_type: general
+data:
+    is_goal: false
+    iteration: 1
+    fring_size: 4
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''invert-single-gene-a'', ''?sub3'']'
+        num_neighbours: 4
+        first_10_possible_groundings:
+        - (invert-single-gene-a sub2)
+        - (invert-single-gene-a sub3)
+        - (invert-single-gene-a sub1)
+        - (invert-single-gene-a sub4)
+
+
+---
+timestamp: '2024-12-29T20:58:04.336307'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 1
+        ground_actions:
+        - (invert-single-gene-a sub2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''begin-cut'', ''?sub3'', ''?sub4'']'
+        num_neighbours: 0
+        first_10_possible_groundings: null
+    current_state:
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: inverted
+        args: !!python/tuple
+        - sub2
+        hash: -7032019065660566079
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: present
+        args: !!python/tuple
+        - sub3
+        hash: 1631548861085051238
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: cw
+        args: !!python/tuple
+        - sub4
+        - sub1
+        hash: 1448179715107667654
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: normal
+        args: !!python/tuple
+        - sub1
+        hash: 4138839623939374182
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: cw
+        args: !!python/tuple
+        - sub2
+        - sub3
+        hash: -8746424962777359575
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: cw
+        args: !!python/tuple
+        - sub1
+        - sub2
+        hash: -4738268163250433110
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: normal
+        args: !!python/tuple
+        - sub4
+        hash: -8918462239591132980
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: present
+        args: !!python/tuple
+        - sub4
+        hash: 8470974386233070457
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: present
+        args: !!python/tuple
+        - sub1
+        hash: 7479889559038394131
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: cw
+        args: !!python/tuple
+        - sub3
+        - sub4
+        hash: 2515199832438380819
+    - !!python/object:fd.pddl.f_expression.Assign
+        fluent: !!python/object:fd.pddl.f_expression.PrimitiveNumericExpression
+            symbol: total-cost
+            args: !!python/tuple []
+            hash: 4271485807391778564
+        expression: !!python/object:fd.pddl.f_expression.NumericConstant
+            value: 0
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: normal
+        args: !!python/tuple
+        - sub3
+        hash: 2688856308970399417
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: idle
+        args: !!python/tuple []
+        hash: -3679203411152768836
+    - !!python/object:fd.pddl.conditions.Atom
+        predicate: present
+        args: !!python/tuple
+        - sub2
+        hash: -8146327218096488385
+
+
+---
+timestamp: '2024-12-29T20:58:04.344846'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: Command '['/home/projects/u7899572/conda-envs/grounder/bin/python3',\
+    \ '/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/grounder_service.py',\
+    \ '--domain_path', '/dev/shm/pddl_files/tmpf4cx9mey/domain_486588.pddl', '--task_path',\
+    \ '/dev/shm/pddl_files/tmpf4cx9mey/task_486588.pddl']' returned non-zero exit\
+    \ status 1.. Stack trace: Traceback (most recent call last):\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/instance_solver.py\"\
+    , line 90, in solve_instance\n    searcher.find_path(logger=logger, log_interval=log_interval)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 77, in find_path\n    for neighbor in current_node.get_neighbors():\n \
+    \ File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 164, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 141, in ground_pddl\n    result = subprocess.run(\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/subprocess.py\"\
+    , line 516, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
+    \ Command '['/home/projects/u7899572/conda-envs/grounder/bin/python3', '/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/grounder_service.py',\
+    \ '--domain_path', '/dev/shm/pddl_files/tmpf4cx9mey/domain_486588.pddl', '--task_path',\
+    \ '/dev/shm/pddl_files/tmpf4cx9mey/task_486588.pddl']' returned non-zero exit\
+    \ status 1.\n"
+
+
+---
+timestamp: '2024-12-29T20:58:04.348033'
+level: INFO
+issuer: instance_solver
+event_type: time_spent
+data: 0.0 hours = 0.0 minutes = 0.09 seconds
+
+

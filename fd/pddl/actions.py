@@ -124,9 +124,9 @@ class Action(object):
         else:
             return None
 
-    def pddl(self):
+    def pddl(self, hide_cost=False):
         cost = ''
-        if self.cost is not None:
+        if self.cost is not None and hide_cost is False:
              cost = self.cost.pddl()
         return "(:action {0}\n\t:parameters ({1})\n\t:precondition {2}\n\t:effect (and\n\t\t{3}))".format(self.name,
                                      '\n\t\t'.join(param.pddl() for param in self.parameters),
