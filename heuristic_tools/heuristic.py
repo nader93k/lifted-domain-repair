@@ -1046,13 +1046,13 @@ class Heurisitc:
         try:
             val = self.get_val(domain, task)
         except Exception as e:
-            with open('domain.pkl', 'wb') as file:
-                pickle.dump(__domain, file)
-            with open('task.pkl', 'wb') as file:
-                pickle.dump(__task, file)
-            with open('actions.pkl', 'wb') as file:
-                pickle.dump(action_sequence, file)
-            print(f"Saved pickles.")
+            # with open('domain.pkl', 'wb') as file:
+            #     pickle.dump(__domain, file)
+            # with open('task.pkl', 'wb') as file:
+            #     pickle.dump(__task, file)
+            # with open('actions.pkl', 'wb') as file:
+            #     pickle.dump(action_sequence, file)
+            # print(f"Saved pickles.")
             raise
 
         ### DEBUG #TODO: remove this
