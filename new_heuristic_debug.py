@@ -19,11 +19,11 @@ instance_list = list_instances(benchmark_path, None, [], lift_prob=1.0)
 
 
 # to run on an specific instance, you can pass instance_id like this:
-instance_list = list_instances(
-    benchmark_path,
-    None, 
-    ['mprime__pprob34-err-rate-0-3'],
-    lift_prob=1.0)
+# instance_list = list_instances(
+#     benchmark_path,
+#     None, 
+#     ['mprime__pprob34-err-rate-0-3'],
+#     lift_prob=1.0)
 
 with open(os.path.join(os.path.dirname(__file__), 'debug_log.txt'), 'w') as debug_log:
     for i, instance in enumerate(smart_instance_generator(
