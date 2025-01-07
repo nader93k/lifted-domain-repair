@@ -71,7 +71,7 @@ dprint = lambda *args, **kwargs: None
 if not DEBUG:
     dprint = print
 
-BASE_FOLDER = r'heuristic_tools/'
+BASE_FOLDER = ""
 INPUT_MODEL_DOMAIN = BASE_FOLDER + "domain-in.pddl"
 INPUT_MODEL_PROBLEM = BASE_FOLDER + "problem-in.pddl"
 OUTPUT_MODEL_DOMAIN = BASE_FOLDER + "domain-out.pddl"
