@@ -1,5 +1,5 @@
 import pkg_resources
-pkg_resources.require("tarski==0.4.0")
+# pkg_resources.require("tarski==0.4.0")
 
 import os, sys
 import subprocess

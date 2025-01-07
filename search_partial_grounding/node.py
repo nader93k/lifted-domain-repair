@@ -6,7 +6,7 @@ import copy
 import time
 from fd.pddl.conditions import Conjunction, Atom
 from fd.pddl.predicates import Predicate
-# from heuristic_tools.heuristic import Heurisitc
+from heuristic_tools.heuristic import Heurisitc
 
 
 DELETE_RELAXATION = False
@@ -129,13 +129,11 @@ class Node:
 
 
     def compute_h_cost(self):
-        raise NotImplementedError
-        # # TODO: debug & check
-        # task = copy.deepcopy(self.original_task)
-        # task.set_init_state(self.current_state)
-        # h = Heurisitc(h_name="L_HMAX", relaxation=self.h_relaxation)
-        # h_cost = h.evaluate(self.original_domain, task, self.lifted_action_sequence)
-        # return h_cost
+        task = copy.deepcopy(self.original_task)
+        task.set_init_state(self.current_state)
+        h = Heurisitc(h_name="L_HADD", relaxation=self.h_relaxation)
+        h_cost = h.evaluate(self.original_domain, task, self.lifted_action_sequence)
+        return h_cost
 
 
     def get_neighbors(self):

@@ -71,7 +71,7 @@ dprint = lambda *args, **kwargs: None
 if not DEBUG:
     dprint = print
 
-BASE_FOLDER = ""
+BASE_FOLDER = r'heuristic_tools/'
 INPUT_MODEL_DOMAIN = BASE_FOLDER + "domain-in.pddl"
 INPUT_MODEL_PROBLEM = BASE_FOLDER + "problem-in.pddl"
 OUTPUT_MODEL_DOMAIN = BASE_FOLDER + "domain-out.pddl"
@@ -1046,13 +1046,13 @@ class Heurisitc:
         try:
             val = self.get_val(domain, task)
         except Exception as e:
-            # with open('domain.pkl', 'wb') as file:
-            #     pickle.dump(__domain, file)
-            # with open('task.pkl', 'wb') as file:
-            #     pickle.dump(__task, file)
-            # with open('actions.pkl', 'wb') as file:
-            #     pickle.dump(action_sequence, file)
-            # print(f"Saved pickles.")
+            with open('domain.pkl', 'wb') as file:
+                pickle.dump(__domain, file)
+            with open('task.pkl', 'wb') as file:
+                pickle.dump(__task, file)
+            with open('actions.pkl', 'wb') as file:
+                pickle.dump(action_sequence, file)
+            print(f"Saved pickles.")
             raise
 
         ### DEBUG #TODO: remove this
