@@ -9,6 +9,12 @@ from fd.pddl.predicates import Predicate
 # from heuristic_tools.heuristic import Heurisitc
 
 
+DELETE_RELAXATION = False
+PREC_RELAX_CONFIG = ['missing', 'missing-and-negative', 'all']
+PREC_RELAX = PREC_RELAX_CONFIG[2]
+
+
+
 class Node:
     original_domain = None
     original_task = None
@@ -118,7 +124,7 @@ class Node:
         task = copy.deepcopy(self.original_task)
         plan = PositivePlan(self.ground_action_sequence)
         plan.compute_subs(self.repaired_domain, task)
-        state = apply_action_sequence(self.repaired_domain, task, plan, delete_relaxed=False)
+        state = apply_action_sequence(self.repaired_domain, task, plan, delete_relaxed=DELETE_RELAXATION)
         return state
 
 
@@ -141,19 +147,22 @@ class Node:
         task.set_init_state(self.current_state)
         domain = copy.deepcopy(self.repaired_domain)
 
-        ## All preconditions relaxed
-        # action.precondition = Conjunction([])
-        # Precondition relaxing
-        # If a precondition is not satisfied then don't check it
         next_action_name = self.lifted_action_sequence[0][0]
         action = domain.get_action(next_action_name)
-        curr_state_names = [p.predicate for p in self.current_state if isinstance(p, Atom)]
-        relaxed_pre = [part for part in action.precondition.parts if part.predicate in curr_state_names]
-
-        if relaxed_pre:
-            action.precondition = Conjunction(relaxed_pre)
-        else:
+        if PREC_RELAX == 'all':
             action.precondition = Predicate('dummy-true', [])
+        elif PREC_RELAX == 'missing-and-negative':
+            raise NotImplementedError
+        elif PREC_RELAX == 'missing':
+            curr_state_names = [p.predicate for p in self.current_state if isinstance(p, Atom)]
+            relaxed_pre = [part for part in action.precondition.parts if part.predicate in curr_state_names]
+            if relaxed_pre:
+                action.precondition = Conjunction(relaxed_pre)
+            else:
+                action.precondition = Predicate('dummy-true', [])
+        else:
+            raise ValueError
+
 
         try:
             next_action_pddl = f"({' '.join(self.lifted_action_sequence[0])})"
