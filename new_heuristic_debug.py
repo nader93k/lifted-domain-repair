@@ -28,8 +28,6 @@ with open(os.path.join(os.path.dirname(__file__), 'debug_log.txt'), 'w') as debu
         order='random'):
         instance.load_to_memory()
 
-
-
         # domain = instance.planning_domain
         # task = instance.planning_task
         # plan = instance.lifted_plan
