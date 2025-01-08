@@ -7,6 +7,8 @@ import time
 from fd.pddl.conditions import Conjunction, Atom
 from fd.pddl.predicates import Predicate
 from heuristic_tools.heuristic import Heurisitc
+import traceback
+import sys
 
 
 DELETE_RELAXATION = False
@@ -129,8 +131,29 @@ class Node:
 
 
     def compute_h_cost(self):
+        if len(self.lifted_action_sequence)==0:
+            return 0
+        
         task = copy.deepcopy(self.original_task)
         task.set_init_state(self.current_state)
+        try:
+            h = Heurisitc(h_name="L_HADD", relaxation=self.h_relaxation)
+            h_cost = h.evaluate(self.original_domain, task, self.lifted_action_sequence)
+            return h_cost
+        except Exception as e:
+            # with open('lifted_actions.pkl', 'wb') as f:
+            #     pickle.dump(self.lifted_action_sequence, f)
+            print(f"Error in heuristic computation: {str(e)}")
+            print("Stack trace:")
+            print()
+            traceback.print_exc()
+            print(e)
+            log_data_error = {
+                'current_node': self.to_dict(include_state=True)
+            }
+            self.logger.log(issuer="node", event_type="error", level=logging.ERROR, message=log_data_error)
+            sys.exit(1)
+
         h = Heurisitc(h_name="L_HADD", relaxation=self.h_relaxation)
         h_cost = h.evaluate(self.original_domain, task, self.lifted_action_sequence)
         return h_cost
