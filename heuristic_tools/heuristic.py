@@ -1,6 +1,5 @@
 import collections
 import itertools
-import itertools
 import shutil
 import subprocess
 from pathlib import Path
@@ -72,7 +71,7 @@ dprint = lambda *args, **kwargs: None
 if not DEBUG:
     dprint = print
 
-BASE_FOLDER = r''
+BASE_FOLDER = r'heuristic_tools/'
 INPUT_MODEL_DOMAIN = BASE_FOLDER + "domain-in.pddl"
 INPUT_MODEL_PROBLEM = BASE_FOLDER + "problem-in.pddl"
 OUTPUT_MODEL_DOMAIN = BASE_FOLDER + "domain-out.pddl"
@@ -109,16 +108,6 @@ def _get_heuristic(command, look_for):
             dprint("Running", *command)
             subprocess.run(command, stdout=f)
 
-    with timing("Calling Heuristic", block=True):
-        with open(output_file, "w") as f:
-            dprint("Running", *command)
-            subprocess.run(command, stdout=f)
-
-    with timing("Parsing Heuristic Value", block=True):
-        with open(output_file, "r") as file:
-            for line in file:
-                if look_for in line:
-                    return line.split(":")[1].strip()
     with timing("Parsing Heuristic Value", block=True):
         with open(output_file, "r") as file:
             for line in file:
@@ -204,13 +193,10 @@ def make_eff(eff):
     return res[0]
 
 FREE_PRED = 'empty___precondition'
-FREE_PRED = 'empty___precondition'
 GOAL_PRED = 'final___goal'
 COUNTER_PRED = 'current_plan_step'
 APPLIED_PRED = 'applied_plan_step'
 NUM_PAR = '?next_plan_step_num'
-fix_obj_start = "fix_obj_"
-obj_pred = lambda obj: f"{fix_obj_start}{obj}"
 fix_obj_start = "fix_obj_"
 obj_pred = lambda obj: f"{fix_obj_start}{obj}"
 make_num = lambda i: f"n{i}"
@@ -226,21 +212,6 @@ def add_to_pre(atom, action):
     elif type(pre) == fd.pddl.conditions.Atom:
         pre = fd.pddl.conditions.Conjunction([pre])
         pre.parts = tuple(list(pre.parts) + [atom])
-    else:
-        raise UnsupportedOperation(f"type {type(pre)} not supported yet")
-
-def datalog_pre(action):
-    li = []
-    _datalog_pre(li, action.precondition)
-    return li
-
-def _datalog_pre(acc, pre):
-    if type(pre) == fd.pddl.conditions.Conjunction:
-        for part in pre.parts:
-            _datalog_pre(acc, part)
-    elif type(pre) == fd.pddl.conditions.Atom or type(pre) == fd.pddl.conditions.NegatedAtom:
-        if not pre.negated:
-            acc.append(pre)
     else:
         raise UnsupportedOperation(f"type {type(pre)} not supported yet")
 
@@ -347,8 +318,6 @@ def integrate_pre_repair(domain, task, ref_action):
     olds_preds = dict((pred.name, pred) for pred in domain.predicates)
     old_init = collections.defaultdict(lambda: [])
     for atom in task.init:
-        if type(atom) is not fd.pddl.f_expression.Assign:
-            old_init[atom.predicate].append(atom)
         if type(atom) is not fd.pddl.f_expression.Assign:
             old_init[atom.predicate].append(atom)
 
@@ -948,38 +917,7 @@ class Heurisitc:
         self.h_name = h_name
         self.relaxation = relaxation
         self.no_legacy = True
-        self.no_legacy = True
 
-    def get_val(self, domain, task):
-        if self.no_legacy:
-            return self.new_get_val(domain, task)
-        else:
-            return self.legacy_get_val()
-
-    def new_get_val(self, domain, task):
-        add_goal_rule(domain, task)
-        add_free_atom(task, domain)
-        dl_rules = pddl_to_datalog_rules(domain)
-        backward_filter(dl_rules)
-        assert dl_rules
-        cover_head_rule(dl_rules)
-        binarized_dl_rules = binarize_datalog(dl_rules, task.init)
-
-        if DEBUG:
-            verify_join_tree(binarized_dl_rules)
-            log_stats(binarized_dl_rules)
-
-        if self.relaxation == "unary":
-            unary_relax(task.init, binarized_dl_rules)
-        elif self.relaxation == "zeroary":
-            zeroary_relax(task.init, binarized_dl_rules)
-
-        return dl_exploration(task.init,
-                              binarized_dl_rules,
-                              max if "HMAX" in self.h_name else lambda x,y: x+y,
-                              self.relaxation == "unary")
-
-    def legacy_get_val(self):
     def get_val(self, domain, task):
         if self.no_legacy:
             return self.new_get_val(domain, task)
@@ -1037,16 +975,7 @@ class Heurisitc:
 
         with timing("Grounding/Transforimng", block=True):
             ground(**GROUND_CMD)
-        with timing("Grounding/Transforimng", block=True):
-            ground(**GROUND_CMD)
 
-        dprint("GROUNDED", "now computing heuristic")
-
-        with timing("Calculating heuristic value", block=True):
-            if self.h_name.startswith("L_"):
-                val = get_pwl_value(self.h_name, OUTPUT_MODEL_DOMAIN, OUTPUT_MODEL_PROBLEM)
-            else:
-                val = get_fd_value(self.h_name, OUTPUT_MODEL_DOMAIN, OUTPUT_MODEL_PROBLEM)
         dprint("GROUNDED", "now computing heuristic")
 
         with timing("Calculating heuristic value", block=True):
@@ -1062,19 +991,11 @@ class Heurisitc:
         if not self.no_legacy:
             shutil.copyfile(OUTPUT_MODEL_DOMAIN, OLD_OUTPUT_MODEL_DOMAIN)
             shutil.copyfile(OUTPUT_MODEL_PROBLEM, OLD_OUTPUT_MODEL_PROBLEM)
-        assert False, "With our current construction we should never be able to return infty"
-
-        if not self.no_legacy:
-            shutil.copyfile(OUTPUT_MODEL_DOMAIN, OLD_OUTPUT_MODEL_DOMAIN)
-            shutil.copyfile(OUTPUT_MODEL_PROBLEM, OLD_OUTPUT_MODEL_PROBLEM)
 
         domain = copy.deepcopy(__domain) # verbose
         task = copy.deepcopy(__task) # verbose
 
         integrate_pre_repair(domain, task, action_sequence[0])
-
-        if self.no_legacy:
-            integrate_repair_actions(domain)
 
         if self.no_legacy:
             integrate_repair_actions(domain)
@@ -1085,14 +1006,9 @@ class Heurisitc:
             print_domain(domain, INPUT_MODEL_DOMAIN)
             print_problem(task, INPUT_MODEL_PROBLEM)
 
-        if not self.no_legacy:
-            print_domain(domain, INPUT_MODEL_DOMAIN)
-            print_problem(task, INPUT_MODEL_PROBLEM)
-
         # hack to evaluate this with h_add
         old_h = self.h_name
         self.h_name = self.h_name[:2] + "HADD"
-        val = self.get_val(domain, task)
         val = self.get_val(domain, task)
         self.h_name = old_h
 
@@ -1107,17 +1023,6 @@ class Heurisitc:
 
         with timing("Integrating action sequence", block=True):
             integrate_action_sequence(domain, task, action_sequence)
-        with timing("Copying domain and task", block=True):
-            domain = copy.deepcopy(__domain) # verbose
-            task = copy.deepcopy(__task) # verbose
-
-        with timing("Integrating action sequence", block=True):
-            integrate_action_sequence(domain, task, action_sequence)
-
-
-        if self.no_legacy:
-            with timing("Adding repair actions", block=True):
-                integrate_repair_actions(domain)
 
 
         if self.no_legacy:
@@ -1137,16 +1042,8 @@ class Heurisitc:
             if not self.no_legacy:
                 print_domain(domain, INPUT_MODEL_DOMAIN)
                 print_problem(task, INPUT_MODEL_PROBLEM)
-        with timing("Reverting to FD structure", block=True):
-            revert_to_fd_structure(domain, task)
-
-        with timing("Dumping files", block=True):
-            if not self.no_legacy:
-                print_domain(domain, INPUT_MODEL_DOMAIN)
-                print_problem(task, INPUT_MODEL_PROBLEM)
 
         try:
-            val = self.get_val(domain, task)
             val = self.get_val(domain, task)
         except Exception as e:
             with open('domain.pkl', 'wb') as file:
