@@ -15,7 +15,7 @@ import pickle
 
 
 
-benchmark_path = './input/benchmarks-G1'
+benchmark_path = '/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1'
 instance_list = list_instances(benchmark_path, None, [], lift_prob=1.0)
 debug_data_folder = '/home/remote/u7899572/lifted-white-plan-domain-repair/debug/debug_h_data/'
 
