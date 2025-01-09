@@ -728,7 +728,7 @@ def dl_exploration(init, rules, comb_f=max, unary_relaxed=False):
                     combined_args = combine_or_project(to_combine, *combinations[rule_id])
                     combined_fact = fd.pddl.conditions.Atom(_rule.head.predicate, combined_args)
 
-                    if combined_fact in fact_cost and fact_cost[combined_fact] <= current_cost:
+                    if combined_fact in fact_cost and fact_cost[combined_fact] <= combined_cost:
                         continue
 
                     fact_cost[combined_fact] = combined_cost
@@ -740,7 +740,7 @@ def dl_exploration(init, rules, comb_f=max, unary_relaxed=False):
 
                 combined_fact = fd.pddl.conditions.Atom(_rule.head.predicate, combined_args)
 
-                if combined_fact in fact_cost and fact_cost[combined_fact] <= current_cost:
+                if combined_fact in fact_cost and fact_cost[combined_fact] <= combined_cost:
                     continue
 
                 fact_cost[combined_fact] = combined_cost
