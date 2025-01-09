@@ -17,6 +17,7 @@ import pickle
 
 benchmark_path = './input/benchmarks-G1'
 instance_list = list_instances(benchmark_path, None, [], lift_prob=1.0)
+debug_data_folder = '/home/remote/u7899572/lifted-white-plan-domain-repair/debug/debug_h_data/'
 
 # to run on an specific instance, you can pass instance_id like this:
 instance_list = list_instances(
@@ -36,17 +37,17 @@ with open(os.path.join(os.path.dirname(__file__), 'debug_log.txt'), 'w') as debu
         # plan = instance.lifted_plan
 
         # Read actions.pkl
-        with open('actions.pkl', 'rb') as f:
+        with open(debug_data_folder+'actions.pkl', 'rb') as f:
             plan = pickle.load(f)
         print("Actions:", plan)
 
         # Read domain.pkl
-        with open('domain.pkl', 'rb') as f:
+        with open(debug_data_folder+'domain.pkl', 'rb') as f:
             domain = pickle.load(f)
         print("\nDomain:", domain.to_pddl())
 
         # Read task.pkl
-        with open('task.pkl', 'rb') as f:
+        with open(debug_data_folder+'task.pkl', 'rb') as f:
             task = pickle.load(f)
         print("\nTask:", task.to_pddl())
 
