@@ -13,7 +13,7 @@ import sys
 
 DELETE_RELAXATION = False
 PREC_RELAX_CONFIG = ['missing', 'missing-and-negative', 'all']
-PREC_RELAX = PREC_RELAX_CONFIG[2]
+PREC_RELAX = PREC_RELAX_CONFIG[0]
 
 
 
