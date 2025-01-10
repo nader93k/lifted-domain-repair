@@ -3,7 +3,7 @@ import csv
 import os
 import glob
 
-# Reordered columns list with new repair string comparison field and lift_prob
+# Reordered columns list with new error group field
 COLUMNS = [
     'log file',
     'instance id',
@@ -26,7 +26,8 @@ COLUMNS = [
     'repair length comparison',
     'repair string comparison',
     'error message',
-    'lift_prob'  # Added new column
+    'error group',  # Added new column
+    'lift_prob'
 ]
 
 def format_float(value):
@@ -54,6 +55,19 @@ def compare_repair_strings(search_repair, vanilla_repair):
         return None
     return str(search_repair).strip() == str(vanilla_repair).strip()
 
+def categorize_error(error_message):
+    """Categorize error messages into groups."""
+    if error_message is None:
+        return None
+        
+    error_message = str(error_message).lower()
+    
+    if 'memoryerror' in error_message:
+        return 'memory'
+    elif 'timed out' in error_message:
+        return 'time'
+    return error_message
+
 def process_yaml_file(file_path, lift_prob=None):
     """Process a single YAML file and extract relevant data in a single pass."""
     # Initialize all fields as None
@@ -67,7 +81,9 @@ def process_yaml_file(file_path, lift_prob=None):
                 # Check for error level documents
                 level = str(doc.get('level', '')).lower()
                 if level == 'error':
-                    data['error message'] = doc.get('data')
+                    error_msg = doc.get('data')
+                    data['error message'] = error_msg
+                    data['error group'] = categorize_error(error_msg)
                     continue
                 
                 issuer = doc.get('issuer')
@@ -119,6 +135,7 @@ def process_yaml_file(file_path, lift_prob=None):
                                 'search g cost': format_float(current_node.get('g_cost')),
                                 'search repair set': current_node.get('repair_set')
                             })
+        
         data['repair length comparison'] = compare_repair_lengths(
             data['search g cost'], 
             data['vanilla repair length']
@@ -135,14 +152,7 @@ def process_yaml_file(file_path, lift_prob=None):
         return data  # Return data with default values if there's an error
 
 def process_yaml_files(directory_path, output_csv, lift_prob=None, domain_class_list=None):
-    """Process all YAML files in the directory and save results to CSV.
-    
-    Args:
-        directory_path (str): Path to directory containing YAML files
-        output_csv (str): Path for output CSV file
-        lift_prob (str, optional): Lift probability value to include in output
-        domain_class_list (list, optional): List of domain classes to exclude from output
-    """
+    """Process all YAML files in the directory and save results to CSV."""
     yaml_files = glob.glob(os.path.join(directory_path, '*.yaml'))
     
     if not yaml_files:
@@ -165,7 +175,6 @@ def process_yaml_files(directory_path, output_csv, lift_prob=None, domain_class_
 
 
 if __name__ == "__main__":
-    
     log_folders = [
         'astar-unary relax-prec lp066',
         'astar-unary relax-prec lp1',

@@ -26,8 +26,14 @@ excluded_domains = [
     'pipesworld-notankage',
     'woodworking-opt08-strips',
     'woodworking-sat08-strips',
-    'woodworking-sat11-strips'
+    'woodworking-sat11-strips',
+    'woodworking-opt11-strips',
+    'tidybot-opt11-strips',
+    'data-network-opt18-strips',
+    'snake-opt18-strips'
+    'logistics00'
 ]
+
 
 exp_parent = '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/'
 csv_folder = '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_csv/'
