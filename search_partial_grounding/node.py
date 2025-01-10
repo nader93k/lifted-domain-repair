@@ -11,9 +11,9 @@ import traceback
 import sys
 
 
-DELETE_RELAXATION = False
+DELETE_RELAXATION = True
 PREC_RELAX_CONFIG = ['missing', 'missing-and-negative', 'all']
-PREC_RELAX = PREC_RELAX_CONFIG[0]
+PREC_RELAX = PREC_RELAX_CONFIG[1]
 
 
 
@@ -83,15 +83,9 @@ class Node:
             self.repaired_domain = copy.deepcopy(self.original_domain)
             self.ground_repair_solution = None
             init_atoms = [item for item in self.original_task.init if isinstance(item, Atom)]
-            self.current_state = copy.deepcopy(init_atoms)
         else:
             self.depth = depth
-            self.g_cost, self.ground_repair_solution, self.repaired_domain = self._ground_repair()
-            if self.g_cost != float('inf'):
-                self.current_state = self.calculate_current_state()
-            else:
-                self.current_state = None
-            
+            self.g_cost, self.ground_repair_solution, self.repaired_domain = self._ground_repair()            
             if self.h_cost_needed:
                 start_time = time.time()
                 self.h_cost = self.compute_h_cost()
@@ -122,12 +116,20 @@ class Node:
             return float('inf'), None, None
         
     
-    def calculate_current_state(self):
+    def calculate_current_state(self, delete_relaxation=False):
+        domain = copy.deepcopy(self.repaired_domain)
         task = copy.deepcopy(self.original_task)
         plan = PositivePlan(self.ground_action_sequence)
         plan.compute_subs(self.repaired_domain, task)
-        state = apply_action_sequence(self.repaired_domain, task, plan, delete_relaxed=DELETE_RELAXATION)
-        return state
+        try:
+            state = apply_action_sequence(domain, task, plan, delete_relaxed=delete_relaxation)
+            return state
+        except Exception as e:
+            # Handle the exception
+            print(f"domain: {domain.to_pddl()}")
+            print(f"task: {task.to_pddl()}")
+            print(f"plan: {plan._steps}")
+            raise
 
 
     def compute_h_cost(self):
@@ -135,6 +137,7 @@ class Node:
             return 0
         
         task = copy.deepcopy(self.original_task)
+        current_state = self.calculate_current_state(delete_relaxation=False)
         task.set_init_state(self.current_state)
         try:
             h = Heurisitc(h_name="L_HADD", relaxation=self.h_relaxation)
@@ -164,27 +167,39 @@ class Node:
         if self.f_cost == float('inf'):
             raise ValueError("Can't expand this node.")
         
+        #debug
+        norelax = self.calculate_current_state(delete_relaxation=False)
+        print(f"no relax \n {[(p, isinstance(p, Atom)) for p in norelax]}")
+        
+        current_state = self.calculate_current_state(delete_relaxation=DELETE_RELAXATION)
         task = copy.deepcopy(self.original_task)
-        task.set_init_state(self.current_state)
+        task.set_init_state(current_state)
         domain = copy.deepcopy(self.repaired_domain)
 
+        # Precondition relaxation
         next_action_name = self.lifted_action_sequence[0][0]
         action = domain.get_action(next_action_name)
+
+        print(f'--- before relaxation:\n {action.pddl()}')
         if PREC_RELAX == 'all':
             action.precondition = Predicate('dummy-true', [])
-        elif PREC_RELAX == 'missing-and-negative':
-            raise NotImplementedError
-        elif PREC_RELAX == 'missing':
-            curr_state_names = [p.predicate for p in self.current_state if isinstance(p, Atom)]
-            relaxed_pre = [part for part in action.precondition.parts if part.predicate in curr_state_names]
+        elif PREC_RELAX in ('missing', 'missing-and-negative'):
+            print(f"current state in grounder \n {[(p, isinstance(p, Atom)) for p in current_state]}")
+            # import pdb; pdb.set_trace()
+            curr_state_names = [p.predicate for p in current_state if isinstance(p, Atom)]
+            relaxed_pre = [literal for literal in action.precondition.parts if literal.predicate in curr_state_names]
+            if relaxed_pre and PREC_RELAX == 'missing-and-negative':
+                relaxed_pre = [literal for literal in relaxed_pre if not literal.negated]
             if relaxed_pre:
                 action.precondition = Conjunction(relaxed_pre)
             else:
-                action.precondition = Predicate('dummy-true', [])
+                action.precondition = Predicate('dummy-true', [])   
         else:
             raise ValueError
+    
+        print(f'+++ after relaxation:\n {action.pddl()}')
 
-
+        # Calling the action generator
         try:
             next_action_pddl = f"({' '.join(self.lifted_action_sequence[0])})"
 
