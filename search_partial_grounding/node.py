@@ -247,8 +247,8 @@ class Node:
             "first_10_possible_groundings": self.possible_groundings[:10] if self.possible_groundings is not None else self.possible_groundings
         }
         if include_state:
-            raise NotImplementedError
             # d["current_state"] = repr([x.pddl() for x in self.current_state])[1:-1]
+            d["current_state"] = 'not implemented!'
         
         return d
     
