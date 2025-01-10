@@ -3,7 +3,7 @@ import csv
 import os
 import glob
 
-# Reordered columns list with new repair string comparison field
+# Reordered columns list with new repair string comparison field and lift_prob
 COLUMNS = [
     'log file',
     'instance id',
@@ -25,7 +25,8 @@ COLUMNS = [
     'search repair set',
     'repair length comparison',
     'repair string comparison',
-    'error message'
+    'error message',
+    'lift_prob'  # Added new column
 ]
 
 def format_float(value):
@@ -53,11 +54,12 @@ def compare_repair_strings(search_repair, vanilla_repair):
         return None
     return str(search_repair).strip() == str(vanilla_repair).strip()
 
-def process_yaml_file(file_path):
+def process_yaml_file(file_path, lift_prob=None):
     """Process a single YAML file and extract relevant data in a single pass."""
     # Initialize all fields as None
     data = {column: None for column in COLUMNS}
     data['goal reached'] = False  # Default value for goal_reached is False
+    data['lift_prob'] = lift_prob  # Set lift_prob from parameter
     
     try:
         with open(file_path, 'r') as f:
@@ -132,8 +134,15 @@ def process_yaml_file(file_path):
         print(f"Error processing {file_path}: {str(e)}")
         return data  # Return data with default values if there's an error
 
-def process_yaml_files(directory_path, output_csv, lift_prob=None):
-    """Process all YAML files in the directory and save results to CSV."""
+def process_yaml_files(directory_path, output_csv, lift_prob=None, domain_class_list=None):
+    """Process all YAML files in the directory and save results to CSV.
+    
+    Args:
+        directory_path (str): Path to directory containing YAML files
+        output_csv (str): Path for output CSV file
+        lift_prob (str, optional): Lift probability value to include in output
+        domain_class_list (list, optional): List of domain classes to exclude from output
+    """
     yaml_files = glob.glob(os.path.join(directory_path, '*.yaml'))
     
     if not yaml_files:
@@ -146,7 +155,12 @@ def process_yaml_files(directory_path, output_csv, lift_prob=None):
         writer.writeheader()
         
         for yaml_file in yaml_files:
-            data = process_yaml_file(yaml_file)
+            data = process_yaml_file(yaml_file, lift_prob)
+            
+            # Skip if domain class is in exclusion list
+            if domain_class_list and data['domain class'] in domain_class_list:
+                continue
+                
             writer.writerow(data)
 
 
@@ -164,7 +178,12 @@ if __name__ == "__main__":
         'dfs relax-prec lp1'
     ]
     
+    # Example domain classes to exclude
+    domain_exclusions = []  # Add domain classes to exclude here
+    
     for log in log_folders:
         directory_path = f"/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/{log}"
         output_csv = f"{log}.csv"
-        process_yaml_files(directory_path, output_csv)
+        # Extract lift probability from folder name
+        lift_prob = next((x[2:] for x in log.split() if x.startswith('lp')), None)
+        process_yaml_files(directory_path, output_csv, lift_prob, domain_exclusions)
