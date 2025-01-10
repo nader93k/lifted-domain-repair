@@ -80,7 +80,7 @@ def _find_err_rate_substring(s):
     if match:
         return match.group(0)
     else:
-        raise ValueError("Substring 'err-rate' not found in the given text")
+        return None
 
 
 def list_instances(benchmark_path: Path, domain_class=None, instance_ids=[], lift_prob=0.0):

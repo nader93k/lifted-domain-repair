@@ -41,7 +41,7 @@ def apply_action_sequence(domain: Domain, task: Task, plan, delete_relaxed) -> L
         var_mapping = plan._var_mapping[pos][-1]
         unsat_atom = applicable(action, state, var_mapping)
         if unsat_atom is not None:
-            raise ValueError(f"Action {action} not applicable in current state")
+            raise ValueError(f"Action {action} not applicable in current state. Unsatisfied atom: {unsat_atom}")
         state = next_state(action, var_mapping, state, delete_relaxed=delete_relaxed)
     
     state = list(state)

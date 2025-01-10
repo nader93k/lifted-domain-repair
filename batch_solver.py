@@ -16,6 +16,10 @@ import resource
 
 
 
+DEBUG = True
+# DEBUG = False
+
+
 def get_allowed_cpus():
     """Get the list of allowed CPU cores for the current process"""
     try:
@@ -116,8 +120,11 @@ def worker(worker_id, task_queue, result_queue, params):
             
             try:
                 print(f"[{datetime.datetime.now()}] Worker {worker_id} executing subprocess for {instance.identifier}", flush=True)
-                result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'], 
-                                     capture_output=True, text=True)
+                if DEBUG:
+                    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'])
+                else:
+                    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],
+                                        capture_output=True, text=True)
                 
                 end_time = datetime.datetime.now()
                 duration = (end_time - start_time).total_seconds()
