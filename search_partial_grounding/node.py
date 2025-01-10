@@ -85,7 +85,7 @@ class Node:
             init_atoms = [item for item in self.original_task.init if isinstance(item, Atom)]
         else:
             self.depth = depth
-            self.g_cost, self.ground_repair_solution, self.repaired_domain = self._ground_repair()            
+            self.g_cost, self.ground_repair_solution, self.repaired_domain = self._ground_repair()
             if self.h_cost_needed:
                 start_time = time.time()
                 self.h_cost = self.compute_h_cost()
@@ -138,7 +138,7 @@ class Node:
         
         task = copy.deepcopy(self.original_task)
         current_state = self.calculate_current_state(delete_relaxation=False)
-        task.set_init_state(self.current_state)
+        task.set_init_state(current_state)
         try:
             h = Heurisitc(h_name="L_HADD", relaxation=self.h_relaxation)
             h_cost = h.evaluate(self.original_domain, task, self.lifted_action_sequence)
@@ -167,10 +167,6 @@ class Node:
         if self.f_cost == float('inf'):
             raise ValueError("Can't expand this node.")
         
-        #debug
-        norelax = self.calculate_current_state(delete_relaxation=False)
-        print(f"no relax \n {[(p, isinstance(p, Atom)) for p in norelax]}")
-        
         current_state = self.calculate_current_state(delete_relaxation=DELETE_RELAXATION)
         task = copy.deepcopy(self.original_task)
         task.set_init_state(current_state)
@@ -180,12 +176,9 @@ class Node:
         next_action_name = self.lifted_action_sequence[0][0]
         action = domain.get_action(next_action_name)
 
-        print(f'--- before relaxation:\n {action.pddl()}')
         if PREC_RELAX == 'all':
             action.precondition = Predicate('dummy-true', [])
         elif PREC_RELAX in ('missing', 'missing-and-negative'):
-            print(f"current state in grounder \n {[(p, isinstance(p, Atom)) for p in current_state]}")
-            # import pdb; pdb.set_trace()
             curr_state_names = [p.predicate for p in current_state if isinstance(p, Atom)]
             relaxed_pre = [literal for literal in action.precondition.parts if literal.predicate in curr_state_names]
             if relaxed_pre and PREC_RELAX == 'missing-and-negative':
@@ -196,8 +189,6 @@ class Node:
                 action.precondition = Predicate('dummy-true', [])   
         else:
             raise ValueError
-    
-        print(f'+++ after relaxation:\n {action.pddl()}')
 
         # Calling the action generator
         try:
@@ -256,7 +247,8 @@ class Node:
             "first_10_possible_groundings": self.possible_groundings[:10] if self.possible_groundings is not None else self.possible_groundings
         }
         if include_state:
-            d["current_state"] = repr([x.pddl() for x in self.current_state])[1:-1]
+            raise NotImplementedError
+            # d["current_state"] = repr([x.pddl() for x in self.current_state])[1:-1]
         
         return d
     
