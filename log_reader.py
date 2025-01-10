@@ -3,7 +3,7 @@ import csv
 import os
 import glob
 
-# Predefined columns based on the specification
+# Reordered columns list with new repair string comparison field
 COLUMNS = [
     'log file',
     'instance id',
@@ -13,15 +13,18 @@ COLUMNS = [
     'vanilla repair length',
     'vanilla repair',
     'goal reached',
+    'iteration',
     'num nodes generated',
+    'h_max',
     'sum h cost',
     'sum f cost',
     'sum h cost time',
     'sum grounding time',
     'search time',
-    'search g cost',   
+    'search g cost',
     'search repair set',
-    'repair length comparison',  # New column for comparison
+    'repair length comparison',
+    'repair string comparison',
     'error message'
 ]
 
@@ -43,6 +46,12 @@ def compare_repair_lengths(search_cost, vanilla_length):
         return 'equal'
     except (TypeError, ValueError):
         return None
+
+def compare_repair_strings(search_repair, vanilla_repair):
+    """Compare search repair set with vanilla repair."""
+    if search_repair in (None, '') or vanilla_repair in (None, ''):
+        return None
+    return str(search_repair).strip() == str(vanilla_repair).strip()
 
 def process_yaml_file(file_path):
     """Process a single YAML file and extract relevant data in a single pass."""
@@ -88,6 +97,10 @@ def process_yaml_file(file_path):
                     is_goal = doc_data.get('is_goal', False)
                     data['goal reached'] = is_goal
                     
+                    # Add h_max and iteration
+                    data['h_max'] = doc_data.get('h_max')
+                    data['iteration'] = doc_data.get('iteration')
+                    
                     if is_goal:
                         data.update({
                             'num nodes generated': doc_data.get('num_nodes_generated'),
@@ -104,11 +117,13 @@ def process_yaml_file(file_path):
                                 'search g cost': format_float(current_node.get('g_cost')),
                                 'search repair set': current_node.get('repair_set')
                             })
-        
-        # Add repair length comparison
         data['repair length comparison'] = compare_repair_lengths(
             data['search g cost'], 
             data['vanilla repair length']
+        )
+        data['repair string comparison'] = compare_repair_strings(
+            data['search repair set'],
+            data['vanilla repair']
         )
         
         return data
@@ -117,7 +132,7 @@ def process_yaml_file(file_path):
         print(f"Error processing {file_path}: {str(e)}")
         return data  # Return data with default values if there's an error
 
-def process_yaml_files(directory_path, output_csv):
+def process_yaml_files(directory_path, output_csv, lift_prob=None):
     """Process all YAML files in the directory and save results to CSV."""
     yaml_files = glob.glob(os.path.join(directory_path, '*.yaml'))
     
@@ -136,7 +151,20 @@ def process_yaml_files(directory_path, output_csv):
 
 
 if __name__ == "__main__":
-    log_folder = "01 bfs relax-prec-delete lp1"
-    directory_path = f"/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/{log_folder}"
-    output_csv = f"00 logs_{log_folder}.csv"
-    process_yaml_files(directory_path, output_csv)
+    
+    log_folders = [
+        'astar-unary relax-prec lp066',
+        'astar-unary relax-prec lp1',
+        'astar-unary relax-prec-delete lp1',
+        'bfs relax-all lp066',
+        'bfs relax-all lp1',
+        'bfs relax-prec lp1',
+        'dfs relax-prec lp033',
+        'dfs relax-prec lp066',
+        'dfs relax-prec lp1'
+    ]
+    
+    for log in log_folders:
+        directory_path = f"/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/{log}"
+        output_csv = f"{log}.csv"
+        process_yaml_files(directory_path, output_csv)
