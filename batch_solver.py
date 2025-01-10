@@ -16,8 +16,8 @@ import resource
 
 
 
-DEBUG = True
-# DEBUG = False
+DEBUG = False
+
 
 
 def get_allowed_cpus():
