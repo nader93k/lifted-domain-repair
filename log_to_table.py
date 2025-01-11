@@ -2,11 +2,11 @@ import pandas as pd
 import sys
 
 def analyze_csv(input_file, output_file):
-    # Read the CSV file
-    df = pd.read_csv(input_file)
+    # Read the CSV file - first let's preserve NA values
+    df = pd.read_csv(input_file, na_values=['', 'NA', 'null', 'NULL'])
     
-    # Filter based on error_group criteria
-    df = df[df['error group'].isna() | (df['error group'] == '') | 
+    # Filter based on error_group criteria - modified to properly handle NA
+    df = df[df['error group'].isna() | 
             df['error group'].isin(['time', 'memory'])]
     
     # Calculate metrics
@@ -14,35 +14,38 @@ def analyze_csv(input_file, output_file):
         # Calculate C metric (completion rate)
         total_rows = len(group)
         successful_rows = len(group[group['goal reached'].astype(str).str.upper().str.strip() == 'TRUE'])
-        completion_rate = (successful_rows / total_rows * 100) if total_rows > 0 else 0
+        completion_rate = (successful_rows / total_rows * 100) if total_rows > 0 else None
         
-        # Calculate Q metric
+        # Calculate Q metric - modified to properly handle NA
         valid_rows = group[group['search g cost'] > 0]
-        equal_and_positive = len(valid_rows[
-            (valid_rows['search g cost'] == valid_rows['vanilla repair length']) & 
-            (valid_rows['search g cost'] > 0)
-        ])
-        q_metric = (equal_and_positive / len(valid_rows) * 100) if len(valid_rows) > 0 else None
         
+        if len(valid_rows) > 0:
+            equal_and_positive = len(valid_rows[
+                (valid_rows['search g cost'] == valid_rows['vanilla repair length']) & 
+                (valid_rows['search g cost'] > 0)
+            ])
+            q_metric = (equal_and_positive / len(valid_rows) * 100)
+        else:
+            q_metric = None
+            
         return pd.Series({
-            'C': round(completion_rate, 2),
+            'C': round(completion_rate, 2) if completion_rate else None,
             'Q': round(q_metric, 2) if q_metric else None
         })
     
-    # Group by lift_prob, domain_class, grounding method, and search_algorithm
+    # Rest of the code remains same until pivot tables
     grouped = df.groupby(['lift_prob', 'domain class', 'grounding method', 'search algorithm']).apply(calculate_metrics)
     grouped = grouped.reset_index()
     
-    # Calculate instance counts for each lift_prob and domain_class combination
     instance_counts = df.groupby(['lift_prob', 'domain class'])['instance id'].nunique().reset_index(name='instance_count')
     
-    # Pivot the table
+    # Modified pivot tables to properly handle NA
     pivot_c = pd.pivot_table(
         grouped,
         values='C',
         index=['lift_prob', 'domain class', 'grounding method'],
         columns=['search algorithm'],
-        fill_value='-'
+        fill_value=None  # Changed from '-' to None
     )
     
     pivot_q = pd.pivot_table(
@@ -50,10 +53,9 @@ def analyze_csv(input_file, output_file):
         values='Q',
         index=['lift_prob', 'domain class', 'grounding method'],
         columns=['search algorithm'],
-        fill_value='-'
+        fill_value=None  # Changed from '-' to None
     )
-    
-    # Combine C and Q metrics
+
     algorithms = pivot_c.columns
     result_df = pd.DataFrame(index=pivot_c.index)
     
@@ -77,7 +79,7 @@ def analyze_csv(input_file, output_file):
     result_df = result_df.sort_values(['lift_prob', 'domain class', 'grounding method'])
     
     # Save to CSV
-    result_df.to_csv(output_file, index=False)
+    result_df.to_csv(output_file, index=False, na_rep='-')
     return result_df
 
 if __name__ == "__main__":
