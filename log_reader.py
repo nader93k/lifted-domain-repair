@@ -3,7 +3,7 @@ import csv
 import os
 import glob
 
-# Reordered columns list with new error group field
+# Reordered columns list with new error group field and grounding method
 COLUMNS = [
     'log file',
     'instance id',
@@ -26,8 +26,9 @@ COLUMNS = [
     'repair length comparison',
     'repair string comparison',
     'error message',
-    'error group',  # Added new column
-    'lift_prob'
+    'error group',
+    'lift_prob',
+    'grounding method'
 ]
 
 def format_float(value):
@@ -68,12 +69,13 @@ def categorize_error(error_message):
         return 'time'
     return error_message
 
-def process_yaml_file(file_path, lift_prob=None):
+def process_yaml_file(file_path, lift_prob=None, grounding_method=None):
     """Process a single YAML file and extract relevant data in a single pass."""
     # Initialize all fields as None
     data = {column: None for column in COLUMNS}
     data['goal reached'] = False  # Default value for goal_reached is False
     data['lift_prob'] = lift_prob  # Set lift_prob from parameter
+    data['grounding method'] = grounding_method  # Set grounding_method from parameter
     
     try:
         with open(file_path, 'r') as f:
@@ -151,7 +153,7 @@ def process_yaml_file(file_path, lift_prob=None):
         print(f"Error processing {file_path}: {str(e)}")
         return data  # Return data with default values if there's an error
 
-def process_yaml_files(directory_path, output_csv, lift_prob=None, domain_class_list=None):
+def process_yaml_files(directory_path, output_csv, lift_prob=None, domain_class_list=None, grounding_method=None):
     """Process all YAML files in the directory and save results to CSV."""
     yaml_files = glob.glob(os.path.join(directory_path, '*.yaml'))
     
@@ -165,7 +167,7 @@ def process_yaml_files(directory_path, output_csv, lift_prob=None, domain_class_
         writer.writeheader()
         
         for yaml_file in yaml_files:
-            data = process_yaml_file(yaml_file, lift_prob)
+            data = process_yaml_file(yaml_file, lift_prob, grounding_method)  # Pass grounding_method to process_yaml_file
             
             # Skip if domain class is in exclusion list
             if domain_class_list and data['domain class'] in domain_class_list:
@@ -190,9 +192,12 @@ if __name__ == "__main__":
     # Example domain classes to exclude
     domain_exclusions = []  # Add domain classes to exclude here
     
+    # Example grounding method to use
+    grounding_method = "default"  # You can change this value as needed
+    
     for log in log_folders:
         directory_path = f"/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/{log}"
         output_csv = f"{log}.csv"
         # Extract lift probability from folder name
         lift_prob = next((x[2:] for x in log.split() if x.startswith('lp')), None)
-        process_yaml_files(directory_path, output_csv, lift_prob, domain_exclusions)
+        process_yaml_files(directory_path, output_csv, lift_prob, domain_exclusions, grounding_method)
