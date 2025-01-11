@@ -299,7 +299,8 @@ def integrate_action_sequence(domain, task, action_sequence):
 
     domain._actions = new_actions
     task._goal = fd.pddl.conditions.Conjunction([
-        fd.pddl.conditions.Atom(APPLIED_PRED, [make_num(i)]) for i in range(len(action_sequence))
+        # fd.pddl.conditions.Atom(APPLIED_PRED, [make_num(i)]) for i in range(len(action_sequence))
+        fd.pddl.conditions.Atom(APPLIED_PRED, [make_num(len(action_sequence)-1)])
     ])
 
 def integrate_pre_repair(domain, task, ref_action):
@@ -421,7 +422,7 @@ def atom_sorter(head_pars, pred_sizes):
 
     return f
 
-def binarize_datalog(dl_rules, init):
+def binarize_datalog(dl_rules, init, unary_dict):
     new_rules = []
     pred_sizes = collections.defaultdict(lambda: 0)
 
@@ -465,7 +466,10 @@ def binarize_datalog(dl_rules, init):
                 tmp_pars = list(sorted(set(par for par in itertools.chain(get_pars(temporaries[i]),get_pars(temporaries[j])) if (par in head_pars or par_count[par] > local_par_count[par]))))
                 tmp_atom = fd.pddl.Atom(tmp_pred(len(new_rules)), tmp_pars)
 
-                new_rules.append(DatalogRule(tmp_atom, [temporaries[i], temporaries[j]], 0))
+                new_r = DatalogRule(tmp_atom, [temporaries[i], temporaries[j]], 0)
+                new_rules.append(new_r)
+                if unary_dict:
+                    unary_dict[new_r] = unary_dict[rule]
 
                 temporaries[j] = tmp_atom
 
@@ -516,7 +520,11 @@ def binarize_datalog(dl_rules, init):
                     j = get_unremoved(i+1)
                     add_rule(i, j)
 
-            new_rules.append(DatalogRule(rule.head, [temporaries[get_unremoved()]], rule.cost))
+            new_r = DatalogRule(rule.head, [temporaries[get_unremoved()]], rule.cost)
+            new_rules.append(new_r)
+            if unary_dict:
+                unary_dict[new_r] = unary_dict[rule]
+
             assert len(new_rules) - before_addition == len(rule.body)
 
     return new_rules
@@ -602,7 +610,7 @@ def _pq_tie_breaker(pred, arities, unary_relaxed):
 
     return [repair_level, arity]
 
-def dl_exploration(init, rules, comb_f=max, unary_relaxed=False):
+def dl_exploration(init, rules, comb_f=max, unary_relaxed=False, FF=False, unary_dict=dict()):
     fact_cost = dict()
     priority_queue = []
     pq_tie_breaker = dict()
@@ -659,10 +667,14 @@ def dl_exploration(init, rules, comb_f=max, unary_relaxed=False):
 
     assert goal_pred_symbol is not None
 
+    achiever = dict()
+
     for el in init:
         if type(el) is fd.pddl.Atom:
             priority_queue.append((0, pq_tie_breaker[el.predicate], el))
             fact_cost[el] = 0
+            if FF:
+                achiever[el] = ([], None)
         else:
             assert type(el) is fd.pddl.f_expression.Assign
 
@@ -733,6 +745,8 @@ def dl_exploration(init, rules, comb_f=max, unary_relaxed=False):
 
                     fact_cost[combined_fact] = combined_cost
                     heapq.heappush(priority_queue, (combined_cost, pq_tie_breaker[combined_fact.predicate], combined_fact))
+                    if FF:
+                        achiever[combined_fact] = ([current_fact, other_fact], _rule)
             else:
                 assert len(_rule.body) == 1
                 combined_cost = _rule.cost + current_cost
@@ -745,9 +759,42 @@ def dl_exploration(init, rules, comb_f=max, unary_relaxed=False):
 
                 fact_cost[combined_fact] = combined_cost
                 heapq.heappush(priority_queue, (combined_cost, pq_tie_breaker[combined_fact.predicate], combined_fact))
+                if FF:
+                    achiever[combined_fact] = ([current_fact], _rule)
 
     INFTY = -1
-    return fact_cost[GOAL_FACT] if GOAL_FACT in fact_cost else INFTY
+
+    if GOAL_FACT not in fact_cost:
+        return INFTY
+
+    if not FF:
+        return fact_cost[GOAL_FACT]
+
+    assert GOAL_FACT in achiever
+
+    fact_seen = set()
+    rules_seen = set()
+    q = [GOAL_FACT]
+
+    while len(q):
+        f = q.pop()
+        if f in fact_seen:
+            continue
+
+        fact_seen.add(f)
+
+        achievers, rule = achiever[f]
+
+        rules_seen.add(rule)
+        for f in achievers:
+            q.append(f)
+
+    rules_seen.remove(None)
+
+    if unary_relaxed:
+        rules_seen = set(unary_dict[r] for r in rules_seen)
+
+    return sum(rule.cost for rule in rules_seen)
 
 ACTIVATE_STUB = "activate_"
 USE_STUB = "use_"
@@ -864,17 +911,22 @@ def unary_split_atom(atom):
 def unary_relax(init, rules):
     old_rules = [r for r in rules]
     rules.clear()
+    rule_to_original_id = dict()
 
     for rule in old_rules:
         body = [unary_atom for b in rule.body for unary_atom in unary_split_atom(b)]
         for unary_atom in unary_split_atom(rule.head):
-            rules.append(DatalogRule(unary_atom, body, rule.cost))
+            new_r = DatalogRule(unary_atom, body, rule.cost)
+            rules.append(new_r)
+            rule_to_original_id[new_r] = rule
 
     old_init = [a for a in init if type(a) != fd.pddl.f_expression.Assign]
     init.clear()
     for atom in old_init:
         for unary_atom in unary_split_atom(atom):
             init.append(unary_atom)
+
+    return rule_to_original_id
 
 
 def zeroary_relax(init, rules):
@@ -913,10 +965,11 @@ def backward_filter(rules):
 
 
 class Heurisitc:
-    def __init__(self, h_name, relaxation):
+    def __init__(self, h_name, relaxation, use_ff=False):
         self.h_name = h_name
         self.relaxation = relaxation
         self.no_legacy = True
+        self.use_ff = use_ff
 
     def get_val(self, domain, task):
         if self.no_legacy:
@@ -928,24 +981,28 @@ class Heurisitc:
         add_goal_rule(domain, task)
         add_free_atom(task, domain)
         dl_rules = pddl_to_datalog_rules(domain)
+        cover_head_rule(dl_rules)
+
+        unary_dict = None
+        if self.relaxation == "unary":
+            unary_dict = unary_relax(task.init, dl_rules)
+        elif self.relaxation == "zeroary":
+            zeroary_relax(task.init, dl_rules)
+
         backward_filter(dl_rules)
         assert dl_rules
-        cover_head_rule(dl_rules)
-        binarized_dl_rules = binarize_datalog(dl_rules, task.init)
+        binarized_dl_rules = binarize_datalog(dl_rules, task.init, unary_dict)
 
         if DEBUG:
             verify_join_tree(binarized_dl_rules)
             log_stats(binarized_dl_rules)
 
-        if self.relaxation == "unary":
-            unary_relax(task.init, binarized_dl_rules)
-        elif self.relaxation == "zeroary":
-            zeroary_relax(task.init, binarized_dl_rules)
-
         return dl_exploration(task.init,
                               binarized_dl_rules,
                               max if "HMAX" in self.h_name else lambda x,y: x+y,
-                              self.relaxation == "unary")
+                              self.relaxation == "unary",
+                              self.use_ff,
+                              unary_dict)
 
     def legacy_get_val(self):
         GROUND_CMD = {
@@ -1046,13 +1103,13 @@ class Heurisitc:
         try:
             val = self.get_val(domain, task)
         except Exception as e:
-            # with open('domain.pkl', 'wb') as file:
-            #     pickle.dump(__domain, file)
-            # with open('task.pkl', 'wb') as file:
-            #     pickle.dump(__task, file)
-            # with open('actions.pkl', 'wb') as file:
-            #     pickle.dump(action_sequence, file)
-            # print(f"Saved pickles.")
+            with open('domain.pkl', 'wb') as file:
+                pickle.dump(__domain, file)
+            with open('task.pkl', 'wb') as file:
+                pickle.dump(__task, file)
+            with open('actions.pkl', 'wb') as file:
+                pickle.dump(action_sequence, file)
+            print(f"Saved pickles.")
             raise
 
         ### DEBUG #TODO: remove this
