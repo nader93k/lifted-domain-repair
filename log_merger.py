@@ -47,16 +47,20 @@ excluded_domains = [
 exp_parent = '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/'
 csv_folder = '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_csv/'
 
+df_list = []
 for f, p, g in folders:
     exp_folder = exp_parent + f
     output_csv = csv_folder + f + '.csv'
     if not os.path.exists(output_csv):
         process_yaml_files(exp_folder, output_csv, lift_prob=p, domain_class_list=excluded_domains, grounding_method=g)
+    df = pd.read_csv(output_csv)
+    df_list.append(df)
 
-merged_df = pd.concat(map(pd.read_csv, glob.glob(csv_folder + "/*.csv")))
-
+merged_df = pd.concat(df_list)
 merged_df = merged_df[merged_df['instance id'].notna() & (merged_df['instance id'].str.strip() != '')]
 merged_df = merged_df[~merged_df['domain class'].isin(excluded_domains)]
-
 merged_df.to_csv(csv_folder + "merged.csv", index=False)
 
+duplicate_check = merged_df.duplicated().sum()
+if duplicate_check > 0:
+    print(f"Found {duplicate_check} duplicate rows")
