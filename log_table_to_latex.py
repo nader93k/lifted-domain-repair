@@ -1,24 +1,46 @@
 import pandas as pd
-import argparse
+import numpy as np
 
 def safe_float_convert(value):
     if pd.isna(value) or value == '-':
-        return '-'  # Keep missing values as '-'
+        return '-'
     try:
         float_val = float(value)
-        return float_val if float_val != 0 else '-'  # Convert actual 0s to '-' as well
+        return float_val if float_val != 0 else '-'
+    except (ValueError, TypeError):
+        return '-'
+
+def find_highest_c_values(row):
+    """Find the highest C value among algorithms for a single row."""
+    c_values = {
+        'ucs': safe_float_convert(row['bfs_C']),
+        'dfs': safe_float_convert(row['dfs_C']),
+        'astar': safe_float_convert(row['astar_C'])
+    }
+    
+    # Filter out '-' values
+    valid_values = {k: v for k, v in c_values.items() if v != '-'}
+    
+    if not valid_values:
+        return {}
+        
+    max_value = max(valid_values.values())
+    return {k: (v == max_value) for k, v in valid_values.items()}
+
+def format_value_with_bold(value, is_bold):
+    """Format a value with boldface if needed."""
+    if value == '-':
+        return '-'
+    try:
+        float_val = float(value)
+        formatted = f"{float_val:.1f}"
+        return f"\\textbf{{{formatted}}}" if is_bold else formatted
     except (ValueError, TypeError):
         return '-'
 
 def create_latex_table(csv_path, output_path):
-    # Read the CSV file and preserve NA values
+    # Read the CSV file
     df = pd.read_csv(csv_path, na_values=['-', 'NA', 'null', 'NULL'])
-    
-    numeric_columns = ['lift_prob', 'instance_count', 
-                      'astar_C', 'astar_Q', 'bfs_C', 'bfs_Q', 'dfs_C', 'dfs_Q']
-    
-    for col in numeric_columns:
-        df[col] = df[col].apply(safe_float_convert)
     
     # Create the table header
     latex_content = [
@@ -65,23 +87,30 @@ def create_latex_table(csv_path, output_path):
             for method in ['G1', 'G2']:
                 df_method = df_domain[df_domain['grounding method'] == method]
                 if not df_method.empty:
-                    # Add data for each algorithm in order: ucs, dfs, a*, grd
-                    metrics = [
-                        ('bfs_C', 'bfs_Q'),    # ucs
-                        ('dfs_C', 'dfs_Q'),    # dfs
-                        ('astar_C', 'astar_Q'), # a*
-                        ('-', '-')              # grd
+                    # Find highest C values for this row
+                    highest_c = find_highest_c_values(df_method.iloc[0])
+                    
+                    # Add data for each algorithm
+                    c_q_pairs = [
+                        ('bfs_C', 'bfs_Q', 'ucs'),    # ucs
+                        ('dfs_C', 'dfs_Q', 'dfs'),    # dfs
+                        ('astar_C', 'astar_Q', 'astar'), # a*
+                        ('-', '-', 'grd')              # grd
                     ]
-                    for c_metric, q_metric in metrics:
+                    
+                    for c_metric, q_metric, alg_name in c_q_pairs:
                         if c_metric == '-':
                             row_data.extend(['-', '-'])
                         else:
                             c_val = df_method[c_metric].iloc[0]
                             q_val = df_method[q_metric].iloc[0]
-                            row_data.extend([
-                                f"{c_val:.1f}" if c_val != '-' else '-',
-                                f"{q_val:.1f}" if q_val != '-' else '-'
-                            ])
+                            
+                            # Format C value with bold if it's the highest
+                            is_bold = highest_c.get(alg_name, False)
+                            c_formatted = format_value_with_bold(c_val, is_bold)
+                            q_formatted = format_value_with_bold(q_val, False)
+                            
+                            row_data.extend([c_formatted, q_formatted])
                 else:
                     # Add dashes for missing data
                     row_data.extend(['-'] * 8)
@@ -99,7 +128,7 @@ def create_latex_table(csv_path, output_path):
     latex_content.extend([
         "    \\bottomrule",
         "    \\end{tabular}",
-        "    \\caption{Search Algorithm Performance Comparison. G1: removing absent preconditions, G2: removing negative preconditions and delete-relaxation, G3: all groundings. C and Q mean coverage and quality, respectively.}",
+        "    \\caption{Search Algorithm Performance Comparison. G1: removing absent preconditions, G2: removing negative preconditions and delete-relaxation, G3: all groundings. C and Q mean coverage and quality, respectively. Bold values indicate highest coverage within each grounding method.}",
         "    \\label{tab:search_algorithms}",
         "\\end{table*}"
     ])
@@ -110,10 +139,8 @@ def create_latex_table(csv_path, output_path):
 
 def main():
     folder = '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_csv/'
-
     csv_table = folder + 'main_table.csv'
     output = folder + 'main_table.tex'
-    
     create_latex_table(csv_table, output)
     print(f"LaTeX table has been written to {output}")
 

@@ -11,9 +11,9 @@ import traceback
 import sys
 
 
-DELETE_RELAXATION = False
+DELETE_RELAXATION = True
 PREC_RELAX_CONFIG = ['missing', 'missing-and-negative', 'all']
-PREC_RELAX = PREC_RELAX_CONFIG[0]
+PREC_RELAX = PREC_RELAX_CONFIG[1]
 
 
 
