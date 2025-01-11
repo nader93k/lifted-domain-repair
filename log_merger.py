@@ -38,8 +38,9 @@ excluded_domains = [
     'woodworking-opt11-strips',
     'tidybot-opt11-strips',
     'data-network-opt18-strips',
-    'snake-opt18-strips'
-    'logistics00'
+    'snake-opt18-strips',
+    'logistics00',
+    'ged-opt14-strips'
 ]
 
 
@@ -53,5 +54,9 @@ for f, p, g in folders:
         process_yaml_files(exp_folder, output_csv, lift_prob=p, domain_class_list=excluded_domains, grounding_method=g)
 
 merged_df = pd.concat(map(pd.read_csv, glob.glob(csv_folder + "/*.csv")))
+
+merged_df = merged_df[merged_df['instance id'].notna() & (merged_df['instance id'].str.strip() != '')]
+merged_df = merged_df[~merged_df['domain class'].isin(excluded_domains)]
+
 merged_df.to_csv(csv_folder + "merged.csv", index=False)
 
