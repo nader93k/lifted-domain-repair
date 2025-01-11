@@ -11,9 +11,12 @@ import traceback
 import sys
 
 
-DELETE_RELAXATION = True
+
+# HEURISTIC_ = r"Heurisitc(h_name='L_HADD', relaxation=self.h_relaxation)""
+HEURISTIC_ = r"Heurisitc(h_name='L_HADD', relaxation='unary', use_ff=True)"
+DELETE_RELAXATION = False
 PREC_RELAX_CONFIG = ['missing', 'missing-and-negative', 'all']
-PREC_RELAX = PREC_RELAX_CONFIG[1]
+PREC_RELAX = PREC_RELAX_CONFIG[0]
 
 
 
@@ -140,7 +143,8 @@ class Node:
         current_state = self.calculate_current_state(delete_relaxation=False)
         task.set_init_state(current_state)
         try:
-            h = Heurisitc(h_name="L_HADD", relaxation=self.h_relaxation)
+            #TODO: this is dirty AF
+            h = eval(HEURISTIC_)
             h_cost = h.evaluate(self.original_domain, task, self.lifted_action_sequence)
             return h_cost
         except Exception as e:
