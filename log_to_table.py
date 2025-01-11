@@ -17,16 +17,16 @@ def analyze_csv(input_file, output_file):
         completion_rate = (successful_rows / total_rows * 100) if total_rows > 0 else 0
         
         # Calculate Q metric
-        valid_rows = group[group['search g cost'] >= 0]
+        valid_rows = group[group['search g cost'] > 0]
         equal_and_positive = len(valid_rows[
             (valid_rows['search g cost'] == valid_rows['vanilla repair length']) & 
             (valid_rows['search g cost'] > 0)
         ])
-        q_metric = (equal_and_positive / len(valid_rows) * 100) if len(valid_rows) > 0 else 0
+        q_metric = (equal_and_positive / len(valid_rows) * 100) if len(valid_rows) > 0 else None
         
         return pd.Series({
             'C': round(completion_rate, 2),
-            'Q': round(q_metric, 2)
+            'Q': round(q_metric, 2) if q_metric else None
         })
     
     # Group by lift_prob, domain_class, grounding method, and search_algorithm
