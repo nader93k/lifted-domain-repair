@@ -1,5 +1,5 @@
 import copy
-from heuristic_tools import heuristic
+# from heuristic_tools import heuristic
 import subprocess
 import os
 from pathlib import Path
@@ -90,72 +90,3 @@ def all_action_groundings(white_action_names, domain, task):
             all_groundings[name].append(s)
 
     return all_groundings
-
-
-# def all_smart_groundings(domain_in, task_in, action_sequence) -> Dict[int, List[str]]:
-#     d = {}
-#     for i, action in enumerate(action_sequence):
-#         d[i] = _smart_grounder_single_action(domain_in, task_in, action)
-#     return d
-    
-
-def smart_grounder(domain_in, task_in, lifted_action) -> List[str]:
-    aux_folder = r'heuristic_tools/'
-    domain_path = aux_folder + "pass_to_grounder_domain.pddl"
-    task_path = aux_folder + "pass_to_grounder_task.pddl"
-    sas_path = aux_folder + 'out.sas'
-
-    domain = copy.deepcopy(domain_in) # verbose
-    task = copy.deepcopy(task_in) # verbose
-
-    heuristic.integrate_action_sequence(domain, task, [lifted_action])
-    heuristic.revert_to_fd_structure(domain, task)
-
-    heuristic.print_domain(domain, domain_path)
-    heuristic.print_problem(task, task_path)
-
-    project_path = Path(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-    grounder = os.path.join(project_path, 'fd2', 'src', 'translate', 'translate.py')
-    # TODO: change file transactions to memory transactions for efficiency later. 
-    with open('/dev/null', 'w') as devnull:
-        subprocess.run(
-            [grounder, domain_path, task_path, "--sas-file", sas_path],
-            check=True,
-            stdout=devnull,
-            stderr=devnull
-        )
-    
-    return _sas_parser(Path(sas_path), lifted_action[0])
-
-
-def _sas_parser(file_path: Path, action_name_in: str) -> List[str]:
-    def has_nx_pattern(l):
-        # To see if there are any parameters of type n1..n10..nx which is only ariticially added by the grounder
-        pattern = r'^n\d+$'
-        return any(re.match(pattern, str(item)) for item in l)
-
-
-    with file_path.open('r') as file:
-        lines = file.readlines()
-    lines = [line.strip() for line in lines]
-    filtered_lines = [lines[i+1] for i in range(len(lines)-1) if lines[i] == "begin_operator"]
-
-
-    groundings = []
-    
-    for l in filtered_lines:
-        parts = l.split()
-        action_name, step = parts[0].split('-step-')
-        step = int(step)
-        parameters = parts[1:]
-
-        assert action_name == action_name_in, f"Grounder is passing unspected actionname={action_name}, while we are waiting for action_name_in={action_name_in}"
-
-        ground_action = '(' + action_name + ' ' + ' '.join(map(str, parameters)) + ')'
-
-        if has_nx_pattern(parameters):
-            continue
-        
-        groundings.append(ground_action)
-
-    return groundings

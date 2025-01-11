@@ -91,7 +91,7 @@ class RepairPrec(Repair):
                       action.parameters,
                       action.num_external_parameters,
                       prec, action.effects,
-                      action.cost)
+                      None)
 
     def negate(self):
         return {RepairPrec(self._action_name,

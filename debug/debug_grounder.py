@@ -1,3 +1,7 @@
+# Traces for the fd grounder
+
+
+
 from search_partial_grounding.action_grounding_tools import smart_grounder
 from model.plan import PositivePlan, apply_action_sequence
 from vanilla_runs.run_songtuans_vanilla import ground_repair
