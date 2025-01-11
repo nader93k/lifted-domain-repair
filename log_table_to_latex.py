@@ -2,14 +2,18 @@ import pandas as pd
 import argparse
 
 def safe_float_convert(value):
+    if pd.isna(value) or value == '-':
+        return '-'  # Keep missing values as '-'
     try:
-        return float(value)
+        float_val = float(value)
+        return float_val if float_val != 0 else '-'  # Convert actual 0s to '-' as well
     except (ValueError, TypeError):
-        return 0.0
+        return '-'
 
 def create_latex_table(csv_path, output_path):
-    # Read the CSV file and convert numeric columns to float
-    df = pd.read_csv(csv_path)
+    # Read the CSV file and preserve NA values
+    df = pd.read_csv(csv_path, na_values=['-', 'NA', 'null', 'NULL'])
+    
     numeric_columns = ['lift_prob', 'instance_count', 
                       'astar_C', 'astar_Q', 'bfs_C', 'bfs_Q', 'dfs_C', 'dfs_Q']
     
@@ -62,21 +66,28 @@ def create_latex_table(csv_path, output_path):
                 df_method = df_domain[df_domain['grounding method'] == method]
                 if not df_method.empty:
                     # Add data for each algorithm in order: ucs, dfs, a*, grd
-                    row_data.extend([
-                        f"{safe_float_convert(df_method['bfs_C'].iloc[0]):.1f}",
-                        f"{safe_float_convert(df_method['bfs_Q'].iloc[0]):.1f}",
-                        f"{safe_float_convert(df_method['dfs_C'].iloc[0]):.1f}",
-                        f"{safe_float_convert(df_method['dfs_Q'].iloc[0]):.1f}",
-                        f"{safe_float_convert(df_method['astar_C'].iloc[0]):.1f}",
-                        f"{safe_float_convert(df_method['astar_Q'].iloc[0]):.1f}",
-                        "0.0", "0.0"  # Placeholder for grd values
-                    ])
+                    metrics = [
+                        ('bfs_C', 'bfs_Q'),    # ucs
+                        ('dfs_C', 'dfs_Q'),    # dfs
+                        ('astar_C', 'astar_Q'), # a*
+                        ('-', '-')              # grd
+                    ]
+                    for c_metric, q_metric in metrics:
+                        if c_metric == '-':
+                            row_data.extend(['-', '-'])
+                        else:
+                            c_val = df_method[c_metric].iloc[0]
+                            q_val = df_method[q_metric].iloc[0]
+                            row_data.extend([
+                                f"{c_val:.1f}" if c_val != '-' else '-',
+                                f"{q_val:.1f}" if q_val != '-' else '-'
+                            ])
                 else:
-                    # Add empty values if no data for this method
-                    row_data.extend(["0.0"] * 8)
+                    # Add dashes for missing data
+                    row_data.extend(['-'] * 8)
             
-            # Add empty values for G3 (all 0s as placeholder)
-            row_data.extend(["0.0"] * 8)
+            # Add dashes for G3
+            row_data.extend(['-'] * 8)
             
             # Add the row to latex content
             latex_content.append("    " + " & ".join(row_data) + " \\\\")

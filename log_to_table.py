@@ -79,7 +79,7 @@ def analyze_csv(input_file, output_file):
     result_df = result_df.sort_values(['lift_prob', 'domain class', 'grounding method'])
     
     # Save to CSV
-    result_df.to_csv(output_file, index=False, na_rep='-')
+    result_df.to_csv(output_file, index=False)
     return result_df
 
 if __name__ == "__main__":
