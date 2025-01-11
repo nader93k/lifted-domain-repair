@@ -28,24 +28,28 @@ def analyze_csv(input_file, output_file):
         else:
             q_metric = None
             
+        # Calculate max_h metric
+        max_h = group[pd.to_numeric(group['h_max'], errors='coerce') > float('-inf')]['h_max'].max()
+            
         return pd.Series({
             'C': round(completion_rate, 2) if completion_rate else None,
-            'Q': round(q_metric, 2) if q_metric else None
+            'Q': round(q_metric, 2) if q_metric else None,
+            'max_h': round(max_h, 2) if max_h else None
         })
     
-    # Rest of the code remains same until pivot tables
+    # Group and calculate metrics
     grouped = df.groupby(['lift_prob', 'domain class', 'grounding method', 'search algorithm']).apply(calculate_metrics)
     grouped = grouped.reset_index()
     
     instance_counts = df.groupby(['lift_prob', 'domain class'])['instance id'].nunique().reset_index(name='instance_count')
     
-    # Modified pivot tables to properly handle NA
+    # Create pivot tables for all metrics
     pivot_c = pd.pivot_table(
         grouped,
         values='C',
         index=['lift_prob', 'domain class', 'grounding method'],
         columns=['search algorithm'],
-        fill_value=None  # Changed from '-' to None
+        fill_value=None
     )
     
     pivot_q = pd.pivot_table(
@@ -53,7 +57,15 @@ def analyze_csv(input_file, output_file):
         values='Q',
         index=['lift_prob', 'domain class', 'grounding method'],
         columns=['search algorithm'],
-        fill_value=None  # Changed from '-' to None
+        fill_value=None
+    )
+    
+    pivot_h = pd.pivot_table(
+        grouped,
+        values='max_h',
+        index=['lift_prob', 'domain class', 'grounding method'],
+        columns=['search algorithm'],
+        fill_value=None
     )
 
     algorithms = pivot_c.columns
@@ -62,6 +74,7 @@ def analyze_csv(input_file, output_file):
     for algo in algorithms:
         result_df[f'{algo}_C'] = pivot_c[algo]
         result_df[f'{algo}_Q'] = pivot_q[algo]
+        result_df[f'{algo}_max_h'] = pivot_h[algo] if algo in pivot_h.columns else None
     
     # Reset index to make lift_prob, domain_class, and grounding_method regular columns
     result_df = result_df.reset_index()
