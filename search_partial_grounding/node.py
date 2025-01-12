@@ -16,7 +16,7 @@ import sys
 HEURISTIC_ = r"Heurisitc(h_name='L_HADD', relaxation='unary', use_ff=True)"
 DELETE_RELAXATION = False
 PREC_RELAX_CONFIG = ['missing', 'missing-and-negative', 'all']
-PREC_RELAX = PREC_RELAX_CONFIG[0]
+PREC_RELAX = PREC_RELAX_CONFIG[2]
 
 
 

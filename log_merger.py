@@ -27,7 +27,10 @@ folders = [
 
     ('astar-unary relax-prec-delete lp033', 0.33, 'G2'),
     ('astar-unary relax-prec-delete lp066', 0.66, 'G2'),
-    ('astar-unary relax-prec-delete lp1', 1.0, 'G2')
+    ('astar-unary relax-prec-delete lp1', 1.0, 'G2'),
+
+    ('astar-unary-ff relax-prec lp1', 1.0, 'ff'),
+    ('astar-unary-ff relax-prec lp066', 0.66, 'ff'),
 ]
 
 excluded_domains = [
