@@ -54,7 +54,7 @@ for folder, prob, grounding, rename in experiments:
     print(f'processing folder={exp_folder}')
     output_csv = csv_folder + folder + '.csv'
     if not os.path.exists(output_csv):
-        process_yaml_files(exp_folder, output_csv, lift_prob=prob, domain_class_list=excluded_domains)
+        process_yaml_files(exp_folder, output_csv, lift_prob=prob)
     df = pd.read_csv(output_csv)
     df['search algorithm'] = rename
     df['grounding method'] = grounding
