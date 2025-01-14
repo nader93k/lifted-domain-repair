@@ -153,7 +153,7 @@ def process_yaml_file(file_path, lift_prob=None, grounding_method=None):
         print(f"Error processing {file_path}: {str(e)}")
         return data  # Return data with default values if there's an error
 
-def process_yaml_files(directory_path, output_csv, lift_prob=None, domain_class_list=None, grounding_method=None):
+def process_yaml_files(directory_path, output_csv, lift_prob=None, excluded_domains=None, grounding_method=None):
     """Process all YAML files in the directory and save results to CSV."""
     yaml_files = glob.glob(os.path.join(directory_path, '*.yaml'))
     
@@ -170,7 +170,7 @@ def process_yaml_files(directory_path, output_csv, lift_prob=None, domain_class_
             data = process_yaml_file(yaml_file, lift_prob, grounding_method)  # Pass grounding_method to process_yaml_file
             
             # Skip if domain class is in exclusion list
-            if domain_class_list and data['domain class'] in domain_class_list:
+            if excluded_domains and data['domain class'] in excluded_domains:
                 continue
                 
             writer.writerow(data)
