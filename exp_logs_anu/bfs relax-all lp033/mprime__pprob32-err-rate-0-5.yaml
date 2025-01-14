@@ -1,5 +1,5 @@
 ---
-timestamp: '2025-01-13T00:08:18.051914'
+timestamp: '2025-01-15T00:15:22.020606'
 level: INFO
 issuer: instance_solver
 event_type: metadata
@@ -72,12 +72,70 @@ data:
 
 
 ---
-timestamp: '2025-01-13T00:08:18.056914'
+timestamp: '2025-01-15T00:15:22.025865'
 level: INFO
 issuer: instance_solver
 event_type: ground_repair
 data:
     repair_length: 1
     repair: feast,(craves ?v ?n2),effPos,1
+
+
+---
+timestamp: '2025-01-15T00:23:25.404985'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 3
+        ground_actions:
+        - (feast satiety pepper pork alsace goias)
+        - (feast excitement yogurt sweetroll goias kentucky)
+        - (feast satiety pork pepper alsace goias)
+        repair_set: feast,(craves ?v ?n2),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''overcome'', ''?sciatica'', ''satiety'', ''cucumber'',
+            ''neptune'', ''uranus'']'
+        num_neighbours: 0
+        first_10_possible_groundings: null
+        current_state: not implemented!
+
+
+---
+timestamp: '2025-01-15T00:23:25.408795'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: . Stack trace: Traceback (most recent call\
+    \ last):\n  File \"instance_solver.py\", line 106, in solve_instance\n    searcher.find_path(logger=logger,\
+    \ log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 78, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
+    \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 196, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 136, in ground_pddl\n    applicable_actions = parser.encode_ground_actions_as_pddl(actions,\
+    \ 'str')\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 615, in encode_ground_actions_as_pddl\n    actions_pddl_format = set(['({}\
+    \ '.format(action_name) + ' '.join(obj_names[var] for var in var_assign) + ')'\
+    \ \\\nMemoryError\n"
+
+
+---
+timestamp: '2025-01-15T00:23:29.091359'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '488.23'
+
+
+---
+timestamp: '2025-01-15T00:23:29.144565'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 488.61 seconds'
 
 
