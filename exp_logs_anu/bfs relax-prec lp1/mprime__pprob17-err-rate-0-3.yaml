@@ -1,0 +1,101 @@
+---
+timestamp: '2025-01-03T23:20:45.432195'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs_anu/bfs relax-prec lp1/mprime__pprob17-err-rate-0-3.yaml
+    instance_id: mprime__pprob17-err-rate-0-3
+    search_algorithm: bfs
+    plan_length: 4
+    domain_class: mprime
+    instance_name: pprob17-err-rate-0-3
+    ground_plan:
+    - (feast satisfaction potato yogurt guanabara bosnia)
+    - (overcome abrasion satisfaction yogurt mercury saturn)
+    - (feast satisfaction yogurt wonderbread guanabara bosnia)
+    - (succumb abrasion satisfaction wonderbread mercury saturn)
+    lifted_plan:
+    -   - feast
+        - ?satisfaction
+        - ?potato
+        - ?yogurt
+        - ?guanabara
+        - ?bosnia
+    -   - overcome
+        - ?abrasion
+        - ?satisfaction
+        - ?yogurt
+        - ?mercury
+        - ?saturn
+    -   - feast
+        - ?satisfaction
+        - ?yogurt
+        - ?wonderbread
+        - ?guanabara
+        - ?bosnia
+    -   - succumb
+        - ?abrasion
+        - ?satisfaction
+        - ?wonderbread
+        - ?mercury
+        - ?saturn
+
+
+---
+timestamp: '2025-01-03T23:20:45.435857'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-03T23:21:43.754863'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 894
+    fring_size: 28
+    num_nodes_generated: 922
+    sum_h_cost: 0
+    sum_f_cost: 0
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 51.296916007995605
+    current_node:
+        depth: 4
+        ground_actions:
+        - (feast satisfaction potato yogurt guanabara bosnia)
+        - (overcome abrasion satisfaction yogurt mercury saturn)
+        - (feast satisfaction yogurt wonderbread guanabara bosnia)
+        - (succumb abrasion satisfaction wonderbread mercury saturn)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2025-01-03T23:21:43.756365'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '59.44'
+
+
+---
+timestamp: '2025-01-03T23:21:43.992100'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 59.87 seconds'
+
+

@@ -1,0 +1,160 @@
+---
+timestamp: '2025-01-06T18:00:37.203730'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs_anu/bfs relax-prec lp1/pipesworld-notankage__pp02-net1-b6-g4-err-rate-0-1.yaml
+    instance_id: pipesworld-notankage__pp02-net1-b6-g4-err-rate-0-1
+    search_algorithm: bfs
+    plan_length: 14
+    domain_class: pipesworld-notankage
+    instance_name: pp02-net1-b6-g4-err-rate-0-1
+    ground_plan:
+    - (push-unitarypipe s12 b0 a1 a2 b4 oc1b lco)
+    - (push-unitarypipe s12 b2 a1 a2 b0 gasoleo oc1b)
+    - (pop-unitarypipe s12 b4 a1 a2 b2 lco gasoleo)
+    - (push-unitarypipe s13 b2 a1 a3 b5 gasoleo oca1)
+    - (push-unitarypipe s13 b3 a1 a3 b2 rat-a gasoleo)
+    - (pop-unitarypipe s13 b1 a1 a3 b3 lco rat-a)
+    - (pop-unitarypipe s13 b5 a1 a3 b1 oca1 lco)
+    - (pop-unitarypipe s13 b2 a1 a3 b5 gasoleo oca1)
+    - (push-unitarypipe s12 b5 a1 a2 b4 oca1 lco)
+    - (push-unitarypipe s12 b1 a1 a2 b5 lco oca1)
+    - (push-unitarypipe s13 b3 a1 a3 b2 rat-a gasoleo)
+    - (pop-unitarypipe s12 b4 a1 a2 b1 lco lco)
+    - (pop-unitarypipe s12 b0 a1 a2 b4 oc1b lco)
+    - (push-unitarypipe s12 b1 a1 a2 b0 lco oc1b)
+    lifted_plan:
+    -   - push-unitarypipe
+        - ?s12
+        - ?b0
+        - ?a1
+        - ?a2
+        - ?b4
+        - ?oc1b
+        - ?lco
+    -   - push-unitarypipe
+        - ?s12
+        - ?b2
+        - ?a1
+        - ?a2
+        - ?b0
+        - ?gasoleo
+        - ?oc1b
+    -   - pop-unitarypipe
+        - ?s12
+        - ?b4
+        - ?a1
+        - ?a2
+        - ?b2
+        - ?lco
+        - ?gasoleo
+    -   - push-unitarypipe
+        - ?s13
+        - ?b2
+        - ?a1
+        - ?a3
+        - ?b5
+        - ?gasoleo
+        - ?oca1
+    -   - push-unitarypipe
+        - ?s13
+        - ?b3
+        - ?a1
+        - ?a3
+        - ?b2
+        - ?rat-a
+        - ?gasoleo
+    -   - pop-unitarypipe
+        - ?s13
+        - ?b1
+        - ?a1
+        - ?a3
+        - ?b3
+        - ?lco
+        - ?rat-a
+    -   - pop-unitarypipe
+        - ?s13
+        - ?b5
+        - ?a1
+        - ?a3
+        - ?b1
+        - ?oca1
+        - ?lco
+    -   - pop-unitarypipe
+        - ?s13
+        - ?b2
+        - ?a1
+        - ?a3
+        - ?b5
+        - ?gasoleo
+        - ?oca1
+    -   - push-unitarypipe
+        - ?s12
+        - ?b5
+        - ?a1
+        - ?a2
+        - ?b4
+        - ?oca1
+        - ?lco
+    -   - push-unitarypipe
+        - ?s12
+        - ?b1
+        - ?a1
+        - ?a2
+        - ?b5
+        - ?lco
+        - ?oca1
+    -   - push-unitarypipe
+        - ?s13
+        - ?b3
+        - ?a1
+        - ?a3
+        - ?b2
+        - ?rat-a
+        - ?gasoleo
+    -   - pop-unitarypipe
+        - ?s12
+        - ?b4
+        - ?a1
+        - ?a2
+        - ?b1
+        - ?lco
+        - ?lco
+    -   - pop-unitarypipe
+        - ?s12
+        - ?b0
+        - ?a1
+        - ?a2
+        - ?b4
+        - ?oc1b
+        - ?lco
+    -   - push-unitarypipe
+        - ?s12
+        - ?b1
+        - ?a1
+        - ?a2
+        - ?b0
+        - ?lco
+        - ?oc1b
+
+
+---
+timestamp: '2025-01-06T18:00:37.208935'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-06T18:15:33.747091'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+

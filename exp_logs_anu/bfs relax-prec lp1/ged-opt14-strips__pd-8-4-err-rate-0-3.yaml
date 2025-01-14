@@ -1,0 +1,91 @@
+---
+timestamp: '2025-01-06T18:15:36.723299'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs_anu/bfs relax-prec lp1/ged-opt14-strips__pd-8-4-err-rate-0-3.yaml
+    instance_id: ged-opt14-strips__pd-8-4-err-rate-0-3
+    search_algorithm: bfs
+    plan_length: 15
+    domain_class: ged-opt14-strips
+    instance_name: pd-8-4-err-rate-0-3
+    ground_plan:
+    - (invert-single-gene-a g54)
+    - (invert-single-gene-a sub7)
+    - (begin-cut g54 sub1)
+    - (end-cut-1 sub1 sub5)
+    - (end-cut-2 g54 sub5)
+    - (begin-transpose-splice sub3 g54)
+    - (end-splice-1 sub1 sub3)
+    - (end-splice-2 sub1 g54)
+    - (reset-1 g54)
+    - (begin-cut sub6 sub2)
+    - (end-cut-1 sub2 sub3)
+    - (end-cut-2 sub6 sub3)
+    - (begin-transpose-splice sub4 sub8)
+    - (end-splice-1 sub2 sub4)
+    - (end-splice-2 sub2 sub8)
+    lifted_plan:
+    -   - invert-single-gene-a
+        - ?g54
+    -   - invert-single-gene-a
+        - ?sub7
+    -   - begin-cut
+        - ?g54
+        - ?sub1
+    -   - end-cut-1
+        - ?sub1
+        - ?sub5
+    -   - end-cut-2
+        - ?g54
+        - ?sub5
+    -   - begin-transpose-splice
+        - ?sub3
+        - ?g54
+    -   - end-splice-1
+        - ?sub1
+        - ?sub3
+    -   - end-splice-2
+        - ?sub1
+        - ?g54
+    -   - reset-1
+        - ?g54
+    -   - begin-cut
+        - ?sub6
+        - ?sub2
+    -   - end-cut-1
+        - ?sub2
+        - ?sub3
+    -   - end-cut-2
+        - ?sub6
+        - ?sub3
+    -   - begin-transpose-splice
+        - ?sub4
+        - ?sub8
+    -   - end-splice-1
+        - ?sub2
+        - ?sub4
+    -   - end-splice-2
+        - ?sub2
+        - ?sub8
+
+
+---
+timestamp: '2025-01-06T18:15:36.729202'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: end-cut-2,(idle ),effPos,1
+
+
+---
+timestamp: '2025-01-06T18:30:34.081157'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+

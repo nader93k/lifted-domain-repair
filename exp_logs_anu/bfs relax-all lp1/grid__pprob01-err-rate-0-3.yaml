@@ -1,0 +1,95 @@
+---
+timestamp: '2025-01-08T03:00:23.583530'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs_anu/bfs relax-all lp1-new/grid__pprob01-err-rate-0-3.yaml
+    instance_id: grid__pprob01-err-rate-0-3
+    search_algorithm: bfs
+    plan_length: 14
+    domain_class: grid
+    instance_name: pprob01-err-rate-0-3
+    ground_plan:
+    - (move node2-4 node1-4)
+    - (move node1-4 node1-3)
+    - (move node1-3 node1-2)
+    - (move node1-2 node0-2)
+    - (pickup node0-2 key3)
+    - (move node0-2 node1-2)
+    - (move node1-2 node1-3)
+    - (unlock node1-3 node2-3 key3 square)
+    - (move node1-3 node2-3)
+    - (pickup-and-loose node2-3 key0 key3)
+    - (move node2-3 node1-3)
+    - (move node1-3 node1-2)
+    - (move node1-2 node1-1)
+    - (putdown node1-1 key0)
+    lifted_plan:
+    -   - move
+        - ?node2-4
+        - ?node1-4
+    -   - move
+        - ?node1-4
+        - ?node1-3
+    -   - move
+        - ?node1-3
+        - ?node1-2
+    -   - move
+        - ?node1-2
+        - ?node0-2
+    -   - pickup
+        - ?node0-2
+        - ?key3
+    -   - move
+        - ?node0-2
+        - ?node1-2
+    -   - move
+        - ?node1-2
+        - ?node1-3
+    -   - unlock
+        - ?node1-3
+        - ?node2-3
+        - ?key3
+        - ?square
+    -   - move
+        - ?node1-3
+        - ?node2-3
+    -   - pickup-and-loose
+        - ?node2-3
+        - ?key0
+        - ?key3
+    -   - move
+        - ?node2-3
+        - ?node1-3
+    -   - move
+        - ?node1-3
+        - ?node1-2
+    -   - move
+        - ?node1-2
+        - ?node1-1
+    -   - putdown
+        - ?node1-1
+        - ?key0
+
+
+---
+timestamp: '2025-01-08T03:00:23.588340'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'unlock,(lock-shape ?lockpos ?lockpos),precPos,-1
+
+        move,(key ?nextpos),effPos,1'
+
+
+---
+timestamp: '2025-01-08T03:15:22.395724'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+

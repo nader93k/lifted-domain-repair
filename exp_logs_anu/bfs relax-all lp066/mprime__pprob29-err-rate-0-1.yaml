@@ -1,0 +1,141 @@
+---
+timestamp: '2025-01-09T11:42:59.901365'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs
+        relax-all lp066/mprime__pprob29-err-rate-0-1.yaml
+    instance_id: mprime__pprob29-err-rate-0-1
+    search_algorithm: bfs
+    plan_length: 4
+    domain_class: mprime
+    instance_name: pprob29-err-rate-0-1
+    ground_plan:
+    - (overcome jealousy excitement pork neptune uranus)
+    - (feast excitement pork broccoli manitoba bavaria)
+    - (feast excitement broccoli shrimp pennsylvania alsace)
+    - (succumb jealousy excitement shrimp neptune uranus)
+    lifted_plan:
+    -   - overcome
+        - jealousy
+        - excitement
+        - ?pork
+        - ?neptune
+        - ?uranus
+    -   - feast
+        - ?excitement
+        - pork
+        - ?broccoli
+        - ?manitoba
+        - ?bavaria
+    -   - feast
+        - excitement
+        - ?broccoli
+        - ?shrimp
+        - pennsylvania
+        - ?alsace
+    -   - succumb
+        - ?jealousy
+        - excitement
+        - shrimp
+        - neptune
+        - uranus
+
+
+---
+timestamp: '2025-01-09T11:42:59.907945'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-09T11:43:26.965788'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''overcome'', ''jealousy'', ''excitement'', ''?pork'',
+            ''?neptune'', ''?uranus'']'
+        num_neighbours: 0
+        first_10_possible_groundings: null
+        current_state: '''(eats broccoli pork)'', ''(food shrimp)'', ''(food broccoli)'',
+            ''(eats shrimp melon)'', ''(pain anxiety)'', ''(craves excitement pork)'',
+            ''(orbits earth pluto)'', ''(eats melon shrimp)'', ''(craves achievement
+            scallop)'', ''(locale popover bavaria)'', ''(province oregon)'', ''(attacks
+            kentucky moravia)'', ''(locale scallop oregon)'', ''(pain grief)'', ''(pain
+            boils)'', ''(eats pork scallop)'', ''(craves laceration melon)'', ''(planet
+            neptune)'', ''(province manitoba)'', ''(craves jealousy pork)'', ''(eats
+            popover shrimp)'', ''(locale pork bavaria)'', ''(province arizona)'',
+            ''(orbits neptune uranus)'', ''(pain laceration)'', ''(eats popover papaya)'',
+            ''(craves prostatitis shrimp)'', ''(pleasure achievement)'', ''(orbits
+            pluto neptune)'', ''(craves hangover scallop)'', ''(eats shrimp popover)'',
+            ''(eats scallop pork)'', ''(eats broccoli shrimp)'', ''(planet earth)'',
+            ''(attacks arizona pennsylvania)'', ''(attacks oregon kentucky)'', ''(food
+            pear)'', ''(eats pork broccoli)'', ''(food melon)'', ''(craves sciatica
+            pork)'', ''(craves boils broccoli)'', ''(pain hangover)'', ''(craves angina
+            melon)'', ''(planet uranus)'', ''(attacks manitoba bavaria)'', ''(province
+            bavaria)'', ''(eats papaya popover)'', ''(eats pear papaya)'', ''(eats
+            shrimp broccoli)'', ''(province alsace)'', ''(province kentucky)'', ''(province
+            moravia)'', ''(locale pear arizona)'', ''(locale papaya quebec)'', ''(pain
+            anger)'', ''(pain sciatica)'', ''(locale melon moravia)'', ''(food popover)'',
+            ''(eats pork pear)'', ''(pain prostatitis)'', ''(food scallop)'', ''(craves
+            anger scallop)'', ''(craves grief shrimp)'', ''(locale broccoli alsace)'',
+            ''(province quebec)'', ''(eats melon scallop)'', ''(eats scallop melon)'',
+            ''(harmony excitement uranus)'', ''(harmony achievement uranus)'', ''(craves
+            anxiety melon)'', ''(attacks pennsylvania alsace)'', ''(craves abrasion
+            papaya)'', ''(pain jealousy)'', ''(pain angina)'', ''(planet pluto)'',
+            ''(attacks quebec manitoba)'', ''(food papaya)'', ''(eats papaya pear)'',
+            ''(province pennsylvania)'', ''(locale shrimp kentucky)'', ''(attacks
+            alsace quebec)'', ''(attacks bavaria oregon)'', ''(pleasure excitement)'',
+            ''(food pork)'', ''(pain abrasion)'', ''(eats pear pork)'''
+
+
+---
+timestamp: '2025-01-09T11:43:26.969495'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: . Stack trace: Traceback (most recent call\
+    \ last):\n  File \"instance_solver.py\", line 106, in solve_instance\n    searcher.find_path(logger=logger,\
+    \ log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 80, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
+    \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 192, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 135, in ground_pddl\n    actions = parser.get_applicable_actions()\n  File\
+    \ \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 485, in get_applicable_actions\n    full_var_assigns = self._get_applicable_var_assigns_action(action,\
+    \ [[-1]*len(action_vars)])\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 471, in _get_applicable_var_assigns_action\n    full_var_assigns = tuple(set([tuple([elem\
+    \ for ind, elem in enumerate(var_assign) if ind not in exists_vars]) for var_assign\
+    \ in full_var_assigns]))\nMemoryError\n"
+
+
+---
+timestamp: '2025-01-09T11:43:28.053223'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '29.31'
+
+
+---
+timestamp: '2025-01-09T11:43:28.179345'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 29.76 seconds'
+
+

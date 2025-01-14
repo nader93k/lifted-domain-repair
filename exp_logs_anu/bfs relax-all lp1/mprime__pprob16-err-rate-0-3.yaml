@@ -1,0 +1,175 @@
+---
+timestamp: '2025-01-08T00:31:45.863246'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs_anu/bfs relax-all lp1-new/mprime__pprob16-err-rate-0-3.yaml
+    instance_id: mprime__pprob16-err-rate-0-3
+    search_algorithm: bfs
+    plan_length: 7
+    domain_class: mprime
+    instance_name: pprob16-err-rate-0-3
+    ground_plan:
+    - (feast achievement rice bacon manitoba alsace)
+    - (overcome abrasion learning baguette neptune vulcan)
+    - (overcome sciatica learning baguette mercury neptune)
+    - (drink chocolate baguette goias pennsylvania kentucky manitoba alsace)
+    - (feast learning baguette rice manitoba alsace)
+    - (succumb abrasion learning rice mercury neptune)
+    - (succumb sciatica learning rice neptune vulcan)
+    lifted_plan:
+    -   - feast
+        - ?achievement
+        - ?rice
+        - ?bacon
+        - ?manitoba
+        - ?alsace
+    -   - overcome
+        - ?abrasion
+        - ?learning
+        - ?baguette
+        - ?neptune
+        - ?vulcan
+    -   - overcome
+        - ?sciatica
+        - ?learning
+        - ?baguette
+        - ?mercury
+        - ?neptune
+    -   - drink
+        - ?chocolate
+        - ?baguette
+        - ?goias
+        - ?pennsylvania
+        - ?kentucky
+        - ?manitoba
+        - ?alsace
+    -   - feast
+        - ?learning
+        - ?baguette
+        - ?rice
+        - ?manitoba
+        - ?alsace
+    -   - succumb
+        - ?abrasion
+        - ?learning
+        - ?rice
+        - ?mercury
+        - ?neptune
+    -   - succumb
+        - ?sciatica
+        - ?learning
+        - ?rice
+        - ?neptune
+        - ?vulcan
+
+
+---
+timestamp: '2025-01-08T00:31:45.867012'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-08T00:32:02.790256'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''?achievement'', ''?rice'', ''?bacon'',
+            ''?manitoba'', ''?alsace'']'
+        num_neighbours: 0
+        first_10_possible_groundings: null
+        current_state: '''(harmony stimulation earth)'', ''(pleasure stimulation)'',
+            ''(harmony learning vulcan)'', ''(pain grief)'', ''(attacks alsace bosnia)'',
+            ''(craves jealousy wonderbread)'', ''(locale rice alsace)'', ''(craves
+            rest chicken)'', ''(craves triumph chocolate)'', ''(orbits mercury neptune)'',
+            ''(harmony satiety neptune)'', ''(orbits vulcan earth)'', ''(harmony excitement
+            earth)'', ''(pleasure triumph)'', ''(eats chocolate flounder)'', ''(food
+            rice)'', ''(pleasure learning)'', ''(craves depression bacon)'', ''(pain
+            abrasion)'', ''(eats arugula baguette)'', ''(eats marzipan chocolate)'',
+            ''(pain jealousy)'', ''(pleasure rest)'', ''(attacks manitoba alsace)'',
+            ''(eats wonderbread flounder)'', ''(food baguette)'', ''(locale flounder
+            alsace)'', ''(province alsace)'', ''(eats flounder chocolate)'', ''(pain
+            angina)'', ''(food bacon)'', ''(planet neptune)'', ''(eats pepper guava)'',
+            ''(locale marzipan manitoba)'', ''(pain prostatitis)'', ''(eats pepper
+            chocolate)'', ''(pain boils)'', ''(eats guava baguette)'', ''(locale bacon
+            pennsylvania)'', ''(food pepper)'', ''(planet mercury)'', ''(food flounder)'',
+            ''(food chicken)'', ''(harmony achievement vulcan)'', ''(locale pepper
+            kentucky)'', ''(harmony triumph vulcan)'', ''(eats bacon rice)'', ''(eats
+            baguette guava)'', ''(eats bacon chicken)'', ''(eats flounder wonderbread)'',
+            ''(eats chocolate pepper)'', ''(planet earth)'', ''(pain loneliness)'',
+            ''(pain sciatica)'', ''(orbits neptune vulcan)'', ''(attacks kentucky
+            pennsylvania)'', ''(eats wonderbread arugula)'', ''(pain depression)'',
+            ''(eats baguette rice)'', ''(eats rice bacon)'', ''(craves stimulation
+            pepper)'', ''(craves boils pepper)'', ''(eats chicken marzipan)'', ''(craves
+            excitement arugula)'', ''(locale chocolate goias)'', ''(craves achievement
+            rice)'', ''(pleasure satiety)'', ''(province goias)'', ''(craves prostatitis
+            chicken)'', ''(food marzipan)'', ''(food wonderbread)'', ''(eats rice
+            baguette)'', ''(pleasure achievement)'', ''(eats marzipan chicken)'',
+            ''(eats baguette arugula)'', ''(province manitoba)'', ''(eats chicken
+            bacon)'', ''(province pennsylvania)'', ''(locale baguette manitoba)'',
+            ''(locale guava pennsylvania)'', ''(locale chicken manitoba)'', ''(eats
+            guava pepper)'', ''(craves satiety wonderbread)'', ''(eats arugula wonderbread)'',
+            ''(harmony rest neptune)'', ''(pleasure excitement)'', ''(locale wonderbread
+            bosnia)'', ''(province bosnia)'', ''(craves sciatica baguette)'', ''(province
+            kentucky)'', ''(food arugula)'', ''(eats chocolate marzipan)'', ''(food
+            guava)'', ''(craves grief baguette)'', ''(craves abrasion baguette)'',
+            ''(locale arugula kentucky)'', ''(attacks pennsylvania goias)'', ''(food
+            chocolate)'', ''(craves loneliness bacon)'', ''(craves angina wonderbread)'',
+            ''(attacks bosnia kentucky)'', ''(planet vulcan)'', ''(craves learning
+            baguette)'''
+
+
+---
+timestamp: '2025-01-08T00:32:02.793973'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: . Stack trace: Traceback (most recent call\
+    \ last):\n  File \"instance_solver.py\", line 85, in solve_instance\n    searcher.find_path(logger=logger,\
+    \ log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 80, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
+    \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 171, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 135, in ground_pddl\n    actions = parser.get_applicable_actions()\n  File\
+    \ \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 485, in get_applicable_actions\n    full_var_assigns = self._get_applicable_var_assigns_action(action,\
+    \ [[-1]*len(action_vars)])\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 471, in _get_applicable_var_assigns_action\n    full_var_assigns = tuple(set([tuple([elem\
+    \ for ind, elem in enumerate(var_assign) if ind not in exists_vars]) for var_assign\
+    \ in full_var_assigns]))\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 471, in <listcomp>\n    full_var_assigns = tuple(set([tuple([elem for ind,\
+    \ elem in enumerate(var_assign) if ind not in exists_vars]) for var_assign in\
+    \ full_var_assigns]))\nMemoryError\n"
+
+
+---
+timestamp: '2025-01-08T00:32:04.103647'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '19.60'
+
+
+---
+timestamp: '2025-01-08T00:32:04.134693'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 19.96 seconds'
+
+

@@ -1,0 +1,169 @@
+---
+timestamp: '2025-01-08T00:43:14.608811'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs_anu/bfs relax-all lp1-new/freecell__pprobfreecell-2-4-err-rate-0-3.yaml
+    instance_id: freecell__pprobfreecell-2-4-err-rate-0-3
+    search_algorithm: bfs
+    plan_length: 8
+    domain_class: freecell
+    instance_name: pprobfreecell-2-4-err-rate-0-3
+    ground_plan:
+    - (sendtohome-b ca c n1 c0 n0 n2 n3)
+    - (sendtohome-b ha h n1 h0 n0 n3 n4)
+    - (sendtohome-b sa s n1 s0 n0 n4 n5)
+    - (sendtohome da d2 d n1 d0 n0)
+    - (sendtohome-b c2 c n2 ca n1 n5 n6)
+    - (sendtohome-b d2 d n2 da n1 n6 n7)
+    - (sendtohome h2 s2 h n2 ha n1)
+    - (sendtohome-b s2 s n2 sa n1 n7 n8)
+    lifted_plan:
+    -   - sendtohome-b
+        - ?ca
+        - ?c
+        - ?n1
+        - ?c0
+        - ?n0
+        - ?n2
+        - ?n3
+    -   - sendtohome-b
+        - ?ha
+        - ?h
+        - ?n1
+        - ?h0
+        - ?n0
+        - ?n3
+        - ?n4
+    -   - sendtohome-b
+        - ?sa
+        - ?s
+        - ?n1
+        - ?s0
+        - ?n0
+        - ?n4
+        - ?n5
+    -   - sendtohome
+        - ?da
+        - ?d2
+        - ?d
+        - ?n1
+        - ?d0
+        - ?n0
+    -   - sendtohome-b
+        - ?c2
+        - ?c
+        - ?n2
+        - ?ca
+        - ?n1
+        - ?n5
+        - ?n6
+    -   - sendtohome-b
+        - ?d2
+        - ?d
+        - ?n2
+        - ?da
+        - ?n1
+        - ?n6
+        - ?n7
+    -   - sendtohome
+        - ?h2
+        - ?s2
+        - ?h
+        - ?n2
+        - ?ha
+        - ?n1
+    -   - sendtohome-b
+        - ?s2
+        - ?s
+        - ?n2
+        - ?sa
+        - ?n1
+        - ?n7
+        - ?n8
+
+
+---
+timestamp: '2025-01-08T00:43:14.613375'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-08T00:43:20.819675'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''sendtohome-b'', ''?ca'', ''?c'', ''?n1'', ''?c0'',
+            ''?n0'', ''?n2'', ''?n3'']'
+        num_neighbours: 0
+        first_10_possible_groundings: null
+        current_state: '''(canstack sa d2)'', ''(colspace n2)'', ''(successor n10
+            n9)'', ''(value d0 n0)'', ''(value ca n1)'', ''(successor n13 n12)'',
+            ''(successor n8 n7)'', ''(suit ha h)'', ''(canstack sa h2)'', ''(clear
+            ha)'', ''(value c2 n2)'', ''(value s2 n2)'', ''(canstack da s2)'', ''(canstack
+            ha c2)'', ''(bottomcol s2)'', ''(successor n12 n11)'', ''(value sa n1)'',
+            ''(suit sa s)'', ''(suit s2 s)'', ''(bottomcol ca)'', ''(value c0 n0)'',
+            ''(clear da)'', ''(suit d0 d)'', ''(successor n1 n0)'', ''(successor n4
+            n3)'', ''(successor n6 n5)'', ''(canstack da c2)'', ''(value ha n1)'',
+            ''(clear ca)'', ''(clear h2)'', ''(value h2 n2)'', ''(bottomcol d2)'',
+            ''(suit ca c)'', ''(successor n3 n2)'', ''(successor n11 n10)'', ''(suit
+            h0 h)'', ''(suit h2 h)'', ''(suit s0 s)'', ''(successor n9 n8)'', ''(on
+            da d2)'', ''(value s0 n0)'', ''(value d2 n2)'', ''(on h2 s2)'', ''(bottomcol
+            c2)'', ''(home s0)'', ''(cellspace n4)'', ''(home d0)'', ''(value da n1)'',
+            ''(clear c2)'', ''(suit c0 c)'', ''(suit c2 c)'', ''(successor n5 n4)'',
+            ''(home c0)'', ''(bottomcol sa)'', ''(home h0)'', ''(canstack ca d2)'',
+            ''(successor n2 n1)'', ''(successor n7 n6)'', ''(canstack ca h2)'', ''(value
+            h0 n0)'', ''(suit da d)'', ''(clear sa)'', ''(canstack ha s2)'', ''(bottomcol
+            ha)'', ''(suit d2 d)'''
+
+
+---
+timestamp: '2025-01-08T00:43:20.823916'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: . Stack trace: Traceback (most recent call\
+    \ last):\n  File \"instance_solver.py\", line 85, in solve_instance\n    searcher.find_path(logger=logger,\
+    \ log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 80, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
+    \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 171, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 135, in ground_pddl\n    actions = parser.get_applicable_actions()\n  File\
+    \ \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 485, in get_applicable_actions\n    full_var_assigns = self._get_applicable_var_assigns_action(action,\
+    \ [[-1]*len(action_vars)])\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 433, in _get_applicable_var_assigns_action\n    full_var_assigns.extend(new_var_assigns)\n\
+    MemoryError\n"
+
+
+---
+timestamp: '2025-01-08T00:43:22.522999'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '9.09'
+
+
+---
+timestamp: '2025-01-08T00:43:22.548508'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 9.41 seconds'
+
+

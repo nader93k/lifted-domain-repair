@@ -1,0 +1,171 @@
+---
+timestamp: '2025-01-12T03:28:30.865042'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary-ff
+        relax-prec lp066/pipesworld-notankage__pp07-net1-b12-g5-err-rate-0-5.yaml
+    instance_id: pipesworld-notankage__pp07-net1-b12-g5-err-rate-0-5
+    search_algorithm: astar
+    plan_length: 10
+    domain_class: pipesworld-notankage
+    instance_name: pp07-net1-b12-g5-err-rate-0-5
+    ground_plan:
+    - (pop-unitarypipe s13 b11 a1 a3 b1 gasoleo oc1b)
+    - (pop-unitarypipe s13 b7 a1 a3 b11 rat-a gasoleo)
+    - (pop-unitarypipe s12 b4 a1 a2 b8 lco oc1b)
+    - (pop-unitarypipe s13 b6 a1 a3 b7 lco rat-a)
+    - (pop-unitarypipe s12 b9 a1 a2 b4 lco lco)
+    - (push-unitarypipe s12 b1 a1 a2 b9 oc1b lco)
+    - (push-unitarypipe s12 b0 a1 a2 b1 lco oc1b)
+    - (pop-unitarypipe s12 b9 a1 a2 b0 lco lco)
+    - (pop-unitarypipe s12 b1 a1 a2 b9 oc1b lco)
+    - (push-unitarypipe s12 b0 a1 a2 b1 lco oc1b)
+    lifted_plan:
+    -   - pop-unitarypipe
+        - s13
+        - b11
+        - ?a1
+        - ?a3
+        - ?b1
+        - ?gasoleo
+        - oc1b
+    -   - pop-unitarypipe
+        - ?s13
+        - ?b7
+        - ?a1
+        - a3
+        - ?b11
+        - ?rat-a
+        - gasoleo
+    -   - pop-unitarypipe
+        - ?s12
+        - ?b4
+        - a1
+        - a2
+        - b8
+        - lco
+        - ?oc1b
+    -   - pop-unitarypipe
+        - s13
+        - b6
+        - a1
+        - ?a3
+        - ?b7
+        - ?lco
+        - ?rat-a
+    -   - pop-unitarypipe
+        - s12
+        - b9
+        - ?a1
+        - a2
+        - ?b4
+        - lco
+        - ?lco
+    -   - push-unitarypipe
+        - ?s12
+        - b1
+        - ?a1
+        - a2
+        - b9
+        - ?oc1b
+        - ?lco
+    -   - push-unitarypipe
+        - s12
+        - ?b0
+        - ?a1
+        - a2
+        - ?b1
+        - ?lco
+        - ?oc1b
+    -   - pop-unitarypipe
+        - s12
+        - b9
+        - ?a1
+        - ?a2
+        - ?b0
+        - ?lco
+        - lco
+    -   - pop-unitarypipe
+        - ?s12
+        - ?b1
+        - a1
+        - ?a2
+        - b9
+        - ?oc1b
+        - lco
+    -   - push-unitarypipe
+        - ?s12
+        - ?b0
+        - ?a1
+        - ?a2
+        - ?b1
+        - ?lco
+        - ?oc1b
+
+
+---
+timestamp: '2025-01-12T03:28:30.869924'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: pop-unitarypipe,(follow ?batch-atom-in ?batch-atom-in),precPos,-1
+
+
+---
+timestamp: '2025-01-12T03:28:36.991692'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 34
+    fring_size: 19
+    num_nodes_generated: 53
+    sum_h_cost: 124
+    sum_f_cost: 122
+    sum_h_cost_time: 4.026292324066162
+    sum_grounding_time: 0.9604597091674805
+    h_max: 4
+    current_node:
+        depth: 10
+        ground_actions:
+        - (pop-unitarypipe s13 b11 a1 a3 b1 gasoleo oc1b)
+        - (pop-unitarypipe s13 b7 a1 a3 b11 rat-a gasoleo)
+        - (pop-unitarypipe s12 b4 a1 a2 b8 lco oc1b)
+        - (pop-unitarypipe s13 b6 a1 a3 b7 lco rat-a)
+        - (pop-unitarypipe s12 b9 a1 a2 b4 lco lco)
+        - (push-unitarypipe s12 b1 a1 a2 b9 oc1b lco)
+        - (push-unitarypipe s12 b4 a1 a2 b1 lco oc1b)
+        - (pop-unitarypipe s12 b9 a1 a2 b4 lco lco)
+        - (pop-unitarypipe s12 b2 a1 a2 b9 rat-a lco)
+        - (push-unitarypipe s12 b10 a1 a2 b2 gasoleo rat-a)
+        repair_set: pop-unitarypipe,(follow ?batch-atom-in ?batch-atom-in),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2025-01-12T03:28:36.993385'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '7.37'
+
+
+---
+timestamp: '2025-01-12T03:28:37.039904'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 7.80 seconds'
+
+

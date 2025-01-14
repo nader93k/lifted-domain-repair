@@ -1,0 +1,109 @@
+---
+timestamp: '2025-01-12T16:07:39.953080'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary-ff-delete
+        relax-prec lp066/zenotravel__pp03-err-rate-0-5.yaml
+    instance_id: zenotravel__pp03-err-rate-0-5
+    search_algorithm: astar
+    plan_length: 6
+    domain_class: zenotravel
+    instance_name: pp03-err-rate-0-5
+    ground_plan:
+    - (board person1 plane1 city0)
+    - (fly plane1 city0 city1 fl4 fl3)
+    - (board person3 plane1 city1)
+    - (debark person1 plane1 city1)
+    - (fly plane1 city1 city0 fl3 fl2)
+    - (debark person3 plane1 city0)
+    lifted_plan:
+    -   - board
+        - person1
+        - plane1
+        - ?city0
+    -   - fly
+        - ?plane1
+        - ?city0
+        - ?city1
+        - fl4
+        - ?fl3
+    -   - board
+        - ?person3
+        - ?plane1
+        - city1
+    -   - debark
+        - ?person1
+        - ?plane1
+        - city1
+    -   - fly
+        - ?plane1
+        - ?city1
+        - city0
+        - fl3
+        - fl2
+    -   - debark
+        - person3
+        - ?plane1
+        - city0
+
+
+---
+timestamp: '2025-01-12T16:07:39.956627'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'debark,(next ?c ?a),precPos,-1
+
+        fly,(in ?l2 ?a),precPos,-1'
+
+
+---
+timestamp: '2025-01-12T16:07:40.142599'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 2
+    fring_size: 0
+    num_nodes_generated: 2
+    sum_h_cost: 4
+    sum_f_cost: 2
+    sum_h_cost_time: 0.12209916114807129
+    sum_grounding_time: 0.05708789825439453
+    h_max: 2
+    current_node:
+        depth: 1
+        ground_actions:
+        - (board person1 plane1 city0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 2
+        f_cost: 2
+        next_lifted_action: '[''fly'', ''?plane1'', ''?city0'', ''?city1'', ''fl4'',
+            ''?fl3'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2025-01-12T16:07:40.143734'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.35'
+
+
+---
+timestamp: '2025-01-12T16:07:40.172694'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.70 seconds'
+
+

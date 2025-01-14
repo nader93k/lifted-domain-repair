@@ -1,0 +1,166 @@
+---
+timestamp: '2025-01-09T14:15:41.310387'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs
+        relax-all lp066/nomystery-opt11-strips__pp12-err-rate-0-3.yaml
+    instance_id: nomystery-opt11-strips__pp12-err-rate-0-3
+    search_algorithm: bfs
+    plan_length: 15
+    domain_class: nomystery-opt11-strips
+    instance_name: pp12-err-rate-0-3
+    ground_plan:
+    - (drive t0 l3 l0 level65 level12 level77)
+    - (drive t0 l0 l4 level51 level14 level65)
+    - (load p3 t0 l4)
+    - (load p0 t0 l4)
+    - (drive t0 l4 l0 level37 level14 level51)
+    - (drive t0 l0 l3 level25 level12 level37)
+    - (unload p3 t0 l3)
+    - (load p1 t0 l3)
+    - (drive t0 l3 l2 level14 level11 level25)
+    - (unload p0 t0 l2)
+    - (drive t0 l2 l1 level9 level5 level14)
+    - (load p2 t0 l1)
+    - (unload p1 t0 l1)
+    - (drive t0 l1 l2 level4 level5 level9)
+    - (unload p2 t0 l2)
+    lifted_plan:
+    -   - drive
+        - t0
+        - l3
+        - ?l0
+        - ?level65
+        - ?level12
+        - ?level77
+    -   - drive
+        - t0
+        - ?l0
+        - ?l4
+        - ?level51
+        - level14
+        - ?level65
+    -   - load
+        - ?p3
+        - t0
+        - ?l4
+    -   - load
+        - ?p0
+        - t0
+        - l4
+    -   - drive
+        - t0
+        - l4
+        - ?l0
+        - level37
+        - level14
+        - level51
+    -   - drive
+        - ?t0
+        - ?l0
+        - ?l3
+        - ?level25
+        - level12
+        - level37
+    -   - unload
+        - ?p3
+        - t0
+        - ?l3
+    -   - load
+        - p1
+        - ?t0
+        - ?l3
+    -   - drive
+        - t0
+        - ?l3
+        - l2
+        - level14
+        - ?level11
+        - ?level25
+    -   - unload
+        - p0
+        - ?t0
+        - ?l2
+    -   - drive
+        - t0
+        - ?l2
+        - ?l1
+        - ?level9
+        - level5
+        - level14
+    -   - load
+        - ?p2
+        - ?t0
+        - ?l1
+    -   - unload
+        - ?p1
+        - t0
+        - ?l1
+    -   - drive
+        - ?t0
+        - l1
+        - ?l2
+        - level4
+        - ?level5
+        - level9
+    -   - unload
+        - ?p2
+        - ?t0
+        - ?l2
+
+
+---
+timestamp: '2025-01-09T14:15:41.335312'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-09T14:25:30.221652'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data:
+    error_type: MemoryError
+    error_message: 'Command ''[''/home/projects/u7899572/conda-envs/main/bin/python3'',
+        ''instance_solver.py'', ''bfs'', ''/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1'',
+        ''/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs relax-all
+        lp066/nomystery-opt11-strips__pp12-err-rate-0-3.yaml'', ''1000000'', ''nomystery-opt11-strips__pp12-err-rate-0-3'',
+        ''0.66'', ''none'']'' died with <Signals.SIGABRT: 6>.'
+    stack_trace: "Traceback (most recent call last):\n  File \"batch_solver.py\",\
+        \ line 119, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
+        \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/subprocess.py\"\
+        , line 516, in run\n    raise CalledProcessError(retcode, process.args,\n\
+        subprocess.CalledProcessError: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',\
+        \ 'instance_solver.py', 'bfs', '/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1',\
+        \ '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs\
+        \ relax-all lp066/nomystery-opt11-strips__pp12-err-rate-0-3.yaml', '1000000',\
+        \ 'nomystery-opt11-strips__pp12-err-rate-0-3', '0.66', 'none']' died with\
+        \ <Signals.SIGABRT: 6>.\n"
+    instance_id: nomystery-opt11-strips__pp12-err-rate-0-3
+    process_info:
+        cmd:
+        - /home/projects/u7899572/conda-envs/main/bin/python3
+        - instance_solver.py
+        - bfs
+        - /home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1
+        - /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs relax-all
+            lp066/nomystery-opt11-strips__pp12-err-rate-0-3.yaml
+        - '1000000'
+        - nomystery-opt11-strips__pp12-err-rate-0-3
+        - '0.66'
+        - none
+        duration: '590.37'
+        python_executable: /home/projects/u7899572/conda-envs/main/bin/python3
+    stdout: ''
+    stderr: 'terminate called after throwing an instance of ''Minisat22::OutOfMemoryException''
+
+        '
+
+

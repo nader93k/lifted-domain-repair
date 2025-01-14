@@ -1,0 +1,140 @@
+---
+timestamp: '2025-01-12T23:20:36.581623'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary-ff
+        relax-all lp033/mprime__pprob15-err-rate-0-3.yaml
+    instance_id: mprime__pprob15-err-rate-0-3
+    search_algorithm: astar
+    plan_length: 6
+    domain_class: mprime
+    instance_name: pprob15-err-rate-0-3
+    ground_plan:
+    - (overcome jealousy satisfaction pistachio neptune earth)
+    - (feast satisfaction pistachio broccoli surrey moravia)
+    - (feast satisfaction broccoli lemon surrey moravia)
+    - (feast satisfaction lemon cod bavaria alsace)
+    - (feast satisfaction cod chicken pennsylvania quebec)
+    - (succumb jealousy satisfaction chicken neptune earth)
+    lifted_plan:
+    -   - overcome
+        - jealousy
+        - satisfaction
+        - pistachio
+        - ?neptune
+        - earth
+    -   - feast
+        - satisfaction
+        - pistachio
+        - ?broccoli
+        - surrey
+        - moravia
+    -   - feast
+        - satisfaction
+        - broccoli
+        - ?lemon
+        - surrey
+        - moravia
+    -   - feast
+        - ?satisfaction
+        - lemon
+        - cod
+        - bavaria
+        - alsace
+    -   - feast
+        - ?satisfaction
+        - cod
+        - chicken
+        - pennsylvania
+        - quebec
+    -   - succumb
+        - ?jealousy
+        - satisfaction
+        - chicken
+        - neptune
+        - earth
+
+
+---
+timestamp: '2025-01-12T23:20:36.586653'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-12T23:20:50.971255'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data:
+    error_type: MemoryError
+    error_message: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',
+        'instance_solver.py', 'astar', '/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1',
+        '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary-ff
+        relax-all lp033/mprime__pprob15-err-rate-0-3.yaml', '1000000', 'mprime__pprob15-err-rate-0-3',
+        '0.33', 'unary']' returned non-zero exit status 1.
+    stack_trace: "Traceback (most recent call last):\n  File \"batch_solver.py\",\
+        \ line 126, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
+        \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/subprocess.py\"\
+        , line 516, in run\n    raise CalledProcessError(retcode, process.args,\n\
+        subprocess.CalledProcessError: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',\
+        \ 'instance_solver.py', 'astar', '/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1',\
+        \ '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary-ff\
+        \ relax-all lp033/mprime__pprob15-err-rate-0-3.yaml', '1000000', 'mprime__pprob15-err-rate-0-3',\
+        \ '0.33', 'unary']' returned non-zero exit status 1.\n"
+    instance_id: mprime__pprob15-err-rate-0-3
+    process_info:
+        cmd:
+        - /home/projects/u7899572/conda-envs/main/bin/python3
+        - instance_solver.py
+        - astar
+        - /home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1
+        - /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary-ff
+            relax-all lp033/mprime__pprob15-err-rate-0-3.yaml
+        - '1000000'
+        - mprime__pprob15-err-rate-0-3
+        - '0.33'
+        - unary
+        duration: '15.99'
+        python_executable: /home/projects/u7899572/conda-envs/main/bin/python3
+    stdout: '[Errno 12] Cannot allocate memory: ''/dev/shm/pddl_files/tmp_iselthh''
+
+        '
+    stderr: "Traceback (most recent call last):\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+        , line 135, in ground_pddl\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+        , line 485, in get_applicable_actions\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+        , line 433, in _get_applicable_var_assigns_action\nMemoryError\n\nDuring handling\
+        \ of the above exception, another exception occurred:\n\nTraceback (most recent\
+        \ call last):\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+        , line 202, in get_neighbors\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+        , line 140, in ground_pddl\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/tempfile.py\"\
+        , line 836, in __exit__\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/tempfile.py\"\
+        , line 840, in cleanup\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/tempfile.py\"\
+        , line 822, in _rmtree\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/shutil.py\"\
+        , line 718, in rmtree\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/shutil.py\"\
+        , line 631, in _rmtree_safe_fd\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/shutil.py\"\
+        , line 627, in _rmtree_safe_fd\nOSError: [Errno 12] Cannot allocate memory:\
+        \ '/dev/shm/pddl_files/tmp_iselthh'\n\nDuring handling of the above exception,\
+        \ another exception occurred:\n\nTraceback (most recent call last):\n  File\
+        \ \"instance_solver.py\", line 106, in solve_instance\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+        , line 80, in find_path\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+        , line 208, in get_neighbors\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+        , line 241, in to_dict\nMemoryError\n\nDuring handling of the above exception,\
+        \ another exception occurred:\n\nTraceback (most recent call last):\n  File\
+        \ \"instance_solver.py\", line 138, in <module>\n  File \"instance_solver.py\"\
+        , line 108, in solve_instance\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/traceback.py\"\
+        , line 167, in format_exc\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/traceback.py\"\
+        , line 120, in format_exception\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/traceback.py\"\
+        , line 493, in __init__\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/traceback.py\"\
+        , line 493, in __init__\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/traceback.py\"\
+        , line 508, in __init__\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/traceback.py\"\
+        , line 353, in extract\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/linecache.py\"\
+        , line 174, in lazycache\nMemoryError\n"
+
+

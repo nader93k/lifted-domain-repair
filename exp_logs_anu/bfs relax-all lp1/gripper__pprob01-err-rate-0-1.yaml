@@ -1,0 +1,86 @@
+---
+timestamp: '2025-01-08T01:51:54.177564'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs_anu/bfs relax-all lp1-new/gripper__pprob01-err-rate-0-1.yaml
+    instance_id: gripper__pprob01-err-rate-0-1
+    search_algorithm: bfs
+    plan_length: 11
+    domain_class: gripper
+    instance_name: pprob01-err-rate-0-1
+    ground_plan:
+    - (pick ball1 rooma left)
+    - (pick ball2 rooma right)
+    - (move rooma roomb)
+    - (drop ball1 roomb left)
+    - (drop ball2 roomb right)
+    - (move roomb rooma)
+    - (pick ball3 rooma left)
+    - (pick ball4 rooma right)
+    - (move rooma roomb)
+    - (drop ball3 roomb left)
+    - (drop ball4 roomb right)
+    lifted_plan:
+    -   - pick
+        - ?ball1
+        - ?rooma
+        - ?left
+    -   - pick
+        - ?ball2
+        - ?rooma
+        - ?right
+    -   - move
+        - ?rooma
+        - ?roomb
+    -   - drop
+        - ?ball1
+        - ?roomb
+        - ?left
+    -   - drop
+        - ?ball2
+        - ?roomb
+        - ?right
+    -   - move
+        - ?roomb
+        - ?rooma
+    -   - pick
+        - ?ball3
+        - ?rooma
+        - ?left
+    -   - pick
+        - ?ball4
+        - ?rooma
+        - ?right
+    -   - move
+        - ?rooma
+        - ?roomb
+    -   - drop
+        - ?ball3
+        - ?roomb
+        - ?left
+    -   - drop
+        - ?ball4
+        - ?roomb
+        - ?right
+
+
+---
+timestamp: '2025-01-08T01:51:54.186166'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: move,(at-robby ?to),effPos,1
+
+
+---
+timestamp: '2025-01-08T02:06:53.062238'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+

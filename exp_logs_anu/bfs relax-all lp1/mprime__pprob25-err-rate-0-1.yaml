@@ -1,0 +1,93 @@
+---
+timestamp: '2025-01-07T23:45:04.629574'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs_anu/bfs relax-all lp1-new/mprime__pprob25-err-rate-0-1.yaml
+    instance_id: mprime__pprob25-err-rate-0-1
+    search_algorithm: bfs
+    plan_length: 4
+    domain_class: mprime
+    instance_name: pprob25-err-rate-0-1
+    ground_plan:
+    - (feast expectation tuna wurst kentucky bavaria)
+    - (overcome depression expectation wurst jupiter uranus)
+    - (feast expectation wurst chicken kentucky bavaria)
+    - (succumb depression expectation chicken jupiter uranus)
+    lifted_plan:
+    -   - feast
+        - ?expectation
+        - ?tuna
+        - ?wurst
+        - ?kentucky
+        - ?bavaria
+    -   - overcome
+        - ?depression
+        - ?expectation
+        - ?wurst
+        - ?jupiter
+        - ?uranus
+    -   - feast
+        - ?expectation
+        - ?wurst
+        - ?chicken
+        - ?kentucky
+        - ?bavaria
+    -   - succumb
+        - ?depression
+        - ?expectation
+        - ?chicken
+        - ?jupiter
+        - ?uranus
+
+
+---
+timestamp: '2025-01-07T23:45:04.632436'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-07T23:55:26.001398'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data:
+    error_type: MemoryError
+    error_message: 'Command ''[''/home/projects/u7899572/conda-envs/main/bin/python3'',
+        ''instance_solver.py'', ''bfs'', ''input/benchmarks-G1'', ''exp_logs_anu/bfs
+        relax-all lp1-new/mprime__pprob25-err-rate-0-1.yaml'', ''1000000'', ''mprime__pprob25-err-rate-0-1'',
+        ''1.0'', ''zeroary'']'' died with <Signals.SIGABRT: 6>.'
+    stack_trace: "Traceback (most recent call last):\n  File \"batch_solver.py\",\
+        \ line 119, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
+        \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/subprocess.py\"\
+        , line 516, in run\n    raise CalledProcessError(retcode, process.args,\n\
+        subprocess.CalledProcessError: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',\
+        \ 'instance_solver.py', 'bfs', 'input/benchmarks-G1', 'exp_logs_anu/bfs relax-all\
+        \ lp1-new/mprime__pprob25-err-rate-0-1.yaml', '1000000', 'mprime__pprob25-err-rate-0-1',\
+        \ '1.0', 'zeroary']' died with <Signals.SIGABRT: 6>.\n"
+    instance_id: mprime__pprob25-err-rate-0-1
+    process_info:
+        cmd:
+        - /home/projects/u7899572/conda-envs/main/bin/python3
+        - instance_solver.py
+        - bfs
+        - input/benchmarks-G1
+        - exp_logs_anu/bfs relax-all lp1-new/mprime__pprob25-err-rate-0-1.yaml
+        - '1000000'
+        - mprime__pprob25-err-rate-0-1
+        - '1.0'
+        - zeroary
+        duration: '623.67'
+        python_executable: /home/projects/u7899572/conda-envs/main/bin/python3
+    stdout: ''
+    stderr: 'terminate called after throwing an instance of ''Minisat22::OutOfMemoryException''
+
+        '
+
+

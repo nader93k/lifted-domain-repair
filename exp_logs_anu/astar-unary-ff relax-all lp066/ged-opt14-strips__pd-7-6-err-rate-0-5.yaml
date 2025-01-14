@@ -1,0 +1,86 @@
+---
+timestamp: '2025-01-12T22:18:48.285284'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary-ff
+        relax-all lp066/ged-opt14-strips__pd-7-6-err-rate-0-5.yaml
+    instance_id: ged-opt14-strips__pd-7-6-err-rate-0-5
+    search_algorithm: astar
+    plan_length: 13
+    domain_class: ged-opt14-strips
+    instance_name: pd-7-6-err-rate-0-5
+    ground_plan:
+    - (begin-cut sub4 g56)
+    - (end-cut-1 g56 sub1)
+    - (end-cut-2 sub4 sub1)
+    - (begin-transpose-splice sub2 sub4)
+    - (end-splice-1 g56 sub2)
+    - (end-splice-2 g56 sub4)
+    - (reset-1 sub4)
+    - (begin-cut sub1 sub5)
+    - (end-cut-1 sub5 sub3)
+    - (end-cut-2 sub1 sub3)
+    - (begin-transpose-splice g56 sub4)
+    - (end-splice-1 sub5 g56)
+    - (end-splice-2 sub5 sub4)
+    lifted_plan:
+    -   - begin-cut
+        - sub4
+        - g56
+    -   - end-cut-1
+        - ?g56
+        - ?sub1
+    -   - end-cut-2
+        - ?sub4
+        - ?sub1
+    -   - begin-transpose-splice
+        - sub2
+        - ?sub4
+    -   - end-splice-1
+        - ?g56
+        - ?sub2
+    -   - end-splice-2
+        - g56
+        - ?sub4
+    -   - reset-1
+        - ?sub4
+    -   - begin-cut
+        - sub1
+        - ?sub5
+    -   - end-cut-1
+        - ?sub5
+        - sub3
+    -   - end-cut-2
+        - sub1
+        - sub3
+    -   - begin-transpose-splice
+        - g56
+        - ?sub4
+    -   - end-splice-1
+        - sub5
+        - g56
+    -   - end-splice-2
+        - sub5
+        - ?sub4
+
+
+---
+timestamp: '2025-01-12T22:18:48.291012'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: begin-cut,(idle ),precPos,-1
+
+
+---
+timestamp: '2025-01-12T22:33:47.154121'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+

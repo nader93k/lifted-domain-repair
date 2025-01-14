@@ -1,0 +1,147 @@
+---
+timestamp: '2025-01-07T23:54:30.431945'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs_anu/bfs relax-all lp1-new/mystery__pprob27-err-rate-0-3.yaml
+    instance_id: mystery__pprob27-err-rate-0-3
+    search_algorithm: bfs
+    plan_length: 5
+    domain_class: mystery
+    instance_name: pprob27-err-rate-0-3
+    ground_plan:
+    - (overcome boils satisfaction scallion mars uranus)
+    - (overcome grief satisfaction scallion mercury mars)
+    - (feast satisfaction scallion guava arizona pennsylvania)
+    - (succumb boils satisfaction guava mercury mars)
+    - (succumb grief satisfaction guava mars uranus)
+    lifted_plan:
+    -   - overcome
+        - ?boils
+        - ?satisfaction
+        - ?scallion
+        - ?mars
+        - ?uranus
+    -   - overcome
+        - ?grief
+        - ?satisfaction
+        - ?scallion
+        - ?mercury
+        - ?mars
+    -   - feast
+        - ?satisfaction
+        - ?scallion
+        - ?guava
+        - ?arizona
+        - ?pennsylvania
+    -   - succumb
+        - ?boils
+        - ?satisfaction
+        - ?guava
+        - ?mercury
+        - ?mars
+    -   - succumb
+        - ?grief
+        - ?satisfaction
+        - ?guava
+        - ?mars
+        - ?uranus
+
+
+---
+timestamp: '2025-01-07T23:54:30.435243'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: feast,(attacks ?l2 ?v),precPos,-1
+
+
+---
+timestamp: '2025-01-07T23:54:54.377409'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''overcome'', ''?boils'', ''?satisfaction'', ''?scallion'',
+            ''?mars'', ''?uranus'']'
+        num_neighbours: 0
+        first_10_possible_groundings: null
+        current_state: '''(province bavaria)'', ''(province quebec)'', ''(planet mars)'',
+            ''(province oregon)'', ''(eats onion pork)'', ''(craves love popover)'',
+            ''(attacks arizona pennsylvania)'', ''(eats pork onion)'', ''(locale guava
+            oregon)'', ''(craves abrasion wurst)'', ''(province alsace)'', ''(planet
+            earth)'', ''(attacks bavaria goias)'', ''(harmony love uranus)'', ''(eats
+            onion muffin)'', ''(harmony triumph earth)'', ''(orbits mars uranus)'',
+            ''(attacks moravia surrey)'', ''(attacks kentucky oregon)'', ''(pleasure
+            triumph)'', ''(orbits mercury mars)'', ''(locale pork pennsylvania)'',
+            ''(craves anxiety wurst)'', ''(food scallion)'', ''(province pennsylvania)'',
+            ''(pain abrasion)'', ''(craves triumph onion)'', ''(attacks quebec kentucky)'',
+            ''(province arizona)'', ''(attacks alsace quebec)'', ''(province guanabara)'',
+            ''(province surrey)'', ''(province manitoba)'', ''(province bosnia)'',
+            ''(eats wurst guava)'', ''(eats scallion popover)'', ''(pain anxiety)'',
+            ''(craves satisfaction scallion)'', ''(attacks manitoba arizona)'', ''(pleasure
+            satisfaction)'', ''(eats onion wurst)'', ''(food popover)'', ''(attacks
+            pennsylvania alsace)'', ''(harmony satisfaction uranus)'', ''(attacks
+            guanabara manitoba)'', ''(locale scallion pennsylvania)'', ''(pleasure
+            love)'', ''(planet mercury)'', ''(eats popover scallion)'', ''(eats scallion
+            guava)'', ''(craves grief scallion)'', ''(locale popover oregon)'', ''(eats
+            wurst onion)'', ''(food guava)'', ''(craves loneliness scallion)'', ''(province
+            kentucky)'', ''(eats muffin pork)'', ''(eats popover onion)'', ''(craves
+            dread wurst)'', ''(attacks surrey guanabara)'', ''(food pork)'', ''(locale
+            wurst bavaria)'', ''(eats onion popover)'', ''(pain dread)'', ''(craves
+            boils scallion)'', ''(eats scallion muffin)'', ''(planet uranus)'', ''(province
+            goias)'', ''(orbits uranus earth)'', ''(locale onion bosnia)'', ''(eats
+            guava scallion)'', ''(attacks goias bosnia)'', ''(food muffin)'', ''(food
+            onion)'', ''(pain loneliness)'', ''(pain grief)'', ''(eats pork muffin)'',
+            ''(eats muffin scallion)'', ''(food wurst)'', ''(province moravia)'',
+            ''(attacks oregon bavaria)'', ''(locale muffin guanabara)'', ''(eats guava
+            wurst)'', ''(pain boils)'', ''(eats muffin onion)'''
+
+
+---
+timestamp: '2025-01-07T23:54:54.380366'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: . Stack trace: Traceback (most recent call\
+    \ last):\n  File \"instance_solver.py\", line 85, in solve_instance\n    searcher.find_path(logger=logger,\
+    \ log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 80, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
+    \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 171, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 135, in ground_pddl\n    actions = parser.get_applicable_actions()\n  File\
+    \ \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 485, in get_applicable_actions\n    full_var_assigns = self._get_applicable_var_assigns_action(action,\
+    \ [[-1]*len(action_vars)])\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 471, in _get_applicable_var_assigns_action\n    full_var_assigns = tuple(set([tuple([elem\
+    \ for ind, elem in enumerate(var_assign) if ind not in exists_vars]) for var_assign\
+    \ in full_var_assigns]))\nMemoryError\n"
+
+
+---
+timestamp: '2025-01-07T23:54:55.058732'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '25.81'
+
+
+---
+timestamp: '2025-01-07T23:54:55.084517'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 26.05 seconds'
+
+

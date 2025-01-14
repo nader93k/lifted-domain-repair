@@ -1,0 +1,163 @@
+---
+timestamp: '2025-01-12T16:08:22.712377'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary-ff-delete
+        relax-prec lp066/mprime__pprob09-err-rate-0-1.yaml
+    instance_id: mprime__pprob09-err-rate-0-1
+    search_algorithm: astar
+    plan_length: 11
+    domain_class: mprime
+    instance_name: pprob09-err-rate-0-1
+    ground_plan:
+    - (overcome dread entertainment flounder saturn venus)
+    - (overcome sciatica entertainment flounder uranus saturn)
+    - (feast entertainment flounder hamburger bavaria arizona)
+    - (succumb sciatica entertainment hamburger uranus saturn)
+    - (feast curiosity hotdog wurst bosnia bavaria)
+    - (overcome jealousy excitement guava earth uranus)
+    - (feast excitement guava apple manitoba kentucky)
+    - (feast excitement apple hotdog bavaria arizona)
+    - (drink haroset hotdog arizona bavaria bosnia bosnia bavaria)
+    - (feast excitement hotdog wurst bosnia bavaria)
+    - (succumb jealousy excitement wurst earth uranus)
+    lifted_plan:
+    -   - overcome
+        - dread
+        - entertainment
+        - ?flounder
+        - ?saturn
+        - ?venus
+    -   - overcome
+        - ?sciatica
+        - entertainment
+        - ?flounder
+        - ?uranus
+        - ?saturn
+    -   - feast
+        - entertainment
+        - ?flounder
+        - ?hamburger
+        - bavaria
+        - ?arizona
+    -   - succumb
+        - ?sciatica
+        - entertainment
+        - hamburger
+        - uranus
+        - saturn
+    -   - feast
+        - ?curiosity
+        - hotdog
+        - wurst
+        - bosnia
+        - ?bavaria
+    -   - overcome
+        - ?jealousy
+        - ?excitement
+        - ?guava
+        - earth
+        - uranus
+    -   - feast
+        - ?excitement
+        - guava
+        - ?apple
+        - manitoba
+        - ?kentucky
+    -   - feast
+        - ?excitement
+        - apple
+        - ?hotdog
+        - bavaria
+        - arizona
+    -   - drink
+        - ?haroset
+        - ?hotdog
+        - arizona
+        - ?bavaria
+        - ?bosnia
+        - bosnia
+        - ?bavaria
+    -   - feast
+        - ?excitement
+        - ?hotdog
+        - wurst
+        - bosnia
+        - ?bavaria
+    -   - succumb
+        - ?jealousy
+        - ?excitement
+        - ?wurst
+        - earth
+        - ?uranus
+
+
+---
+timestamp: '2025-01-12T16:08:22.717301'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: drink,(craves ?l12 ?n2),precPos,-1
+
+
+---
+timestamp: '2025-01-12T16:10:06.012246'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 550
+    fring_size: 0
+    num_nodes_generated: 550
+    sum_h_cost: 1098
+    sum_f_cost: 1283
+    sum_h_cost_time: 77.43473839759827
+    sum_grounding_time: 22.16350769996643
+    h_max: 1
+    current_node:
+        depth: 8
+        ground_actions:
+        - (overcome dread entertainment flounder saturn venus)
+        - (overcome dread entertainment flounder uranus saturn)
+        - (feast entertainment flounder hamburger bavaria arizona)
+        - (succumb dread entertainment hamburger uranus saturn)
+        - (feast curiosity hotdog wurst bosnia bavaria)
+        - (overcome anxiety entertainment flounder earth uranus)
+        - (feast excitement guava apple manitoba kentucky)
+        - (feast excitement apple guava bavaria arizona)
+        repair_set: 'feast,(craves ?v ?n1),effPos,1
+
+            overcome,(craves ?c ?n),precPos,-1
+
+            succumb,(not (harmony ?v ?s1)),effNeg,-1'
+        g_cost: 3
+        h_cost: 1
+        f_cost: 4
+        next_lifted_action: '[''drink'', ''?haroset'', ''?hotdog'', ''arizona'', ''?bavaria'',
+            ''?bosnia'', ''bosnia'', ''?bavaria'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2025-01-12T16:10:06.014082'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '104.87'
+
+
+---
+timestamp: '2025-01-12T16:10:06.157003'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 105.33 seconds'
+
+

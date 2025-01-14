@@ -1,0 +1,142 @@
+---
+timestamp: '2025-01-09T11:43:01.423307'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs
+        relax-all lp066/mystery__pprob03-err-rate-0-1.yaml
+    instance_id: mystery__pprob03-err-rate-0-1
+    search_algorithm: bfs
+    plan_length: 4
+    domain_class: mystery
+    instance_name: pprob03-err-rate-0-1
+    ground_plan:
+    - (feast love orange chocolate guanabara bavaria)
+    - (overcome hangover love chocolate venus neptune)
+    - (feast love chocolate ham goias guanabara)
+    - (succumb hangover love ham venus neptune)
+    lifted_plan:
+    -   - feast
+        - love
+        - orange
+        - ?chocolate
+        - ?guanabara
+        - ?bavaria
+    -   - overcome
+        - ?hangover
+        - love
+        - ?chocolate
+        - ?venus
+        - ?neptune
+    -   - feast
+        - love
+        - ?chocolate
+        - ?ham
+        - goias
+        - ?guanabara
+    -   - succumb
+        - ?hangover
+        - love
+        - ham
+        - venus
+        - neptune
+
+
+---
+timestamp: '2025-01-09T11:43:01.426502'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-09T11:52:04.730419'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 1
+        ground_actions:
+        - (feast love orange chocolate guanabara bavaria)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''overcome'', ''?hangover'', ''love'', ''?chocolate'',
+            ''?venus'', ''?neptune'']'
+        num_neighbours: 0
+        first_10_possible_groundings: null
+        current_state: '''(eats marzipan snickers)'', ''(craves entertainment pepper)'',
+            ''(pain angina)'', ''(locale pepper manitoba)'', ''(craves angina orange)'',
+            ''(food mutton)'', ''(eats marzipan popover)'', ''(pain laceration)'',
+            ''(eats pea pepper)'', ''(eats orange chocolate)'', ''(food pepper)'',
+            ''(eats ham chocolate)'', ''(locale melon manitoba)'', ''(locale lemon
+            goias)'', ''(pain boils)'', ''(eats pepper popover)'', ''(eats popover
+            marzipan)'', ''(province bavaria)'', ''(locale mutton guanabara)'', ''(eats
+            lemon popover)'', ''(harmony triumph neptune)'', ''(eats melon pepper)'',
+            ''(locale chocolate guanabara)'', ''(province guanabara)'', ''(locale
+            orange guanabara)'', ''(food marzipan)'', ''(harmony satisfaction neptune)'',
+            ''(eats snickers pea)'', ''(food chocolate)'', ''(eats pepper melon)'',
+            ''(eats pea snickers)'', ''(pain depression)'', ''(craves depression popover)'',
+            ''(eats snickers marzipan)'', ''(food lemon)'', ''(attacks arizona manitoba)'',
+            ''(eats orange mutton)'', ''(locale pea bavaria)'', ''(harmony love neptune)'',
+            ''(planet vulcan)'', ''(pleasure triumph)'', ''(pain grief)'', ''(eats
+            chocolate orange)'', ''(pleasure entertainment)'', ''(food ham)'', ''(province
+            goias)'', ''(food orange)'', ''(craves triumph popover)'', ''(province
+            arizona)'', ''(province manitoba)'', ''(attacks bavaria arizona)'', ''(orbits
+            venus neptune)'', ''(eats pea lemon)'', ''(eats mutton melon)'', ''(eats
+            popover pepper)'', ''(craves boils melon)'', ''(craves satisfaction mutton)'',
+            ''(eats melon ham)'', ''(food melon)'', ''(harmony entertainment venus)'',
+            ''(food snickers)'', ''(locale marzipan bavaria)'', ''(locale snickers
+            bavaria)'', ''(orbits vulcan venus)'', ''(eats melon mutton)'', ''(food
+            popover)'', ''(planet neptune)'', ''(pain anxiety)'', ''(eats mutton orange)'',
+            ''(craves anxiety snickers)'', ''(eats marzipan pea)'', ''(craves hangover
+            chocolate)'', ''(craves laceration pepper)'', ''(attacks goias guanabara)'',
+            ''(craves love chocolate)'', ''(craves jealousy ham)'', ''(pleasure satisfaction)'',
+            ''(eats popover lemon)'', ''(pain hangover)'', ''(planet venus)'', ''(attacks
+            guanabara bavaria)'', ''(locale ham manitoba)'', ''(eats pepper pea)'',
+            ''(food pea)'', ''(eats chocolate ham)'', ''(pain jealousy)'', ''(eats
+            lemon pea)'', ''(locale popover arizona)'', ''(eats pea marzipan)'', ''(craves
+            grief marzipan)'', ''(pleasure love)'', ''(eats ham melon)'''
+
+
+---
+timestamp: '2025-01-09T11:52:04.739925'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: . Stack trace: Traceback (most recent call\
+    \ last):\n  File \"instance_solver.py\", line 106, in solve_instance\n    searcher.find_path(logger=logger,\
+    \ log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 80, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
+    \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 192, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 136, in ground_pddl\n    applicable_actions = parser.encode_ground_actions_as_pddl(actions,\
+    \ 'str')\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 615, in encode_ground_actions_as_pddl\n    actions_pddl_format = set(['({}\
+    \ '.format(action_name) + ' '.join(obj_names[var] for var in var_assign) + ')'\
+    \ \\\nMemoryError\n"
+
+
+---
+timestamp: '2025-01-09T11:52:07.562893'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '547.38'
+
+
+---
+timestamp: '2025-01-09T11:52:14.116370'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 554.19 seconds'
+
+

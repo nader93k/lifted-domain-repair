@@ -1,0 +1,108 @@
+---
+timestamp: '2025-01-10T23:53:38.772124'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs
+        relax-prec-delete lp033/pegsol-08-strips__pp02-err-rate-0-3.yaml
+    instance_id: pegsol-08-strips__pp02-err-rate-0-3
+    search_algorithm: bfs
+    plan_length: 9
+    domain_class: pegsol-08-strips
+    instance_name: pp02-err-rate-0-3
+    ground_plan:
+    - (jump-new-move pos-4-3 pos-4-4 pos-4-5)
+    - (end-move pos-4-5)
+    - (jump-new-move pos-3-2 pos-3-3 pos-3-4)
+    - (end-move pos-3-4)
+    - (jump-new-move pos-2-4 pos-3-4 pos-4-4)
+    - (end-move pos-4-4)
+    - (jump-new-move pos-4-5 pos-4-4 pos-4-3)
+    - (end-move pos-4-3)
+    - (jump-new-move pos-5-3 pos-4-3 pos-3-3)
+    lifted_plan:
+    -   - jump-new-move
+        - pos-4-3
+        - pos-4-4
+        - pos-4-5
+    -   - end-move
+        - ?pos-4-5
+    -   - jump-new-move
+        - pos-3-2
+        - pos-3-3
+        - pos-3-4
+    -   - end-move
+        - ?pos-3-4
+    -   - jump-new-move
+        - pos-2-4
+        - pos-3-4
+        - pos-4-4
+    -   - end-move
+        - pos-4-4
+    -   - jump-new-move
+        - ?pos-4-5
+        - pos-4-4
+        - pos-4-3
+    -   - end-move
+        - ?pos-4-3
+    -   - jump-new-move
+        - pos-5-3
+        - pos-4-3
+        - pos-3-3
+
+
+---
+timestamp: '2025-01-10T23:53:38.775939'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: jump-new-move,(in-line ?from ?over ?from),precPos,-1
+
+
+---
+timestamp: '2025-01-10T23:53:38.847525'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 1
+    fring_size: 0
+    num_nodes_generated: 1
+    sum_h_cost: 0
+    sum_f_cost: 0
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 0.06733179092407227
+    h_max: 0
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''jump-new-move'', ''pos-4-3'', ''pos-4-4'', ''pos-4-5'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2025-01-10T23:53:38.848607'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.20'
+
+
+---
+timestamp: '2025-01-10T23:53:38.881554'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.50 seconds'
+
+

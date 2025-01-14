@@ -1,0 +1,121 @@
+---
+timestamp: '2025-01-12T01:38:04.186592'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary-ff
+        relax-prec lp1/pipesworld-notankage__pp01-net1-b6-g2-err-rate-0-3.yaml
+    instance_id: pipesworld-notankage__pp01-net1-b6-g2-err-rate-0-3
+    search_algorithm: astar
+    plan_length: 5
+    domain_class: pipesworld-notankage
+    instance_name: pp01-net1-b6-g2-err-rate-0-3
+    ground_plan:
+    - (pop-unitarypipe s13 b1 a1 a3 b5 lco oca1)
+    - (push-unitarypipe s12 b5 a1 a2 b4 oca1 lco)
+    - (push-unitarypipe s13 b2 a1 a3 b1 gasoleo lco)
+    - (push-unitarypipe s12 b0 a1 a2 b5 oc1b oca1)
+    - (push-unitarypipe s13 b3 a1 a3 b2 rat-a gasoleo)
+    lifted_plan:
+    -   - pop-unitarypipe
+        - ?s13
+        - ?b1
+        - ?a1
+        - ?a3
+        - ?b5
+        - ?lco
+        - ?oca1
+    -   - push-unitarypipe
+        - ?s12
+        - ?b5
+        - ?a1
+        - ?a2
+        - ?b4
+        - ?oca1
+        - ?lco
+    -   - push-unitarypipe
+        - ?s13
+        - ?b2
+        - ?a1
+        - ?a3
+        - ?b1
+        - ?gasoleo
+        - ?lco
+    -   - push-unitarypipe
+        - ?s12
+        - ?b0
+        - ?a1
+        - ?a2
+        - ?b5
+        - ?oc1b
+        - ?oca1
+    -   - push-unitarypipe
+        - ?s13
+        - ?b3
+        - ?a1
+        - ?a3
+        - ?b2
+        - ?rat-a
+        - ?gasoleo
+
+
+---
+timestamp: '2025-01-12T01:38:04.190307'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-12T01:38:07.128555'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 46
+    fring_size: 20
+    num_nodes_generated: 66
+    sum_h_cost: 0
+    sum_f_cost: 9
+    sum_h_cost_time: 1.099278450012207
+    sum_grounding_time: 1.0890190601348877
+    h_max: 0
+    current_node:
+        depth: 5
+        ground_actions:
+        - (pop-unitarypipe s13 b1 a1 a3 b5 lco oca1)
+        - (push-unitarypipe s12 b5 a1 a2 b4 oca1 lco)
+        - (push-unitarypipe s13 b2 a1 a3 b1 gasoleo lco)
+        - (push-unitarypipe s13 b3 a1 a3 b2 rat-a gasoleo)
+        - (push-unitarypipe s12 b0 a1 a2 b5 oc1b oca1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2025-01-12T01:38:07.129824'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '4.40'
+
+
+---
+timestamp: '2025-01-12T01:38:07.172623'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 4.71 seconds'
+
+

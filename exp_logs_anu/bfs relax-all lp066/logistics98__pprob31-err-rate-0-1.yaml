@@ -1,0 +1,108 @@
+---
+timestamp: '2025-01-09T13:57:11.870159'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs
+        relax-all lp066/logistics98__pprob31-err-rate-0-1.yaml
+    instance_id: logistics98__pprob31-err-rate-0-1
+    search_algorithm: bfs
+    plan_length: 14
+    domain_class: logistics98
+    instance_name: pprob31-err-rate-0-1
+    ground_plan:
+    - (load-truck package1 truck4 city4-1)
+    - (drive-truck truck4 city4-1 city4-2 city4)
+    - (unload-truck package1 truck4 city4-2)
+    - (load-truck package3 truck1 city1-1)
+    - (fly-airplane plane1 city2-2 city3-2)
+    - (drive-truck truck1 city1-1 city1-2 city1)
+    - (unload-truck package3 truck1 city1-2)
+    - (load-truck package2 truck1 city1-2)
+    - (drive-truck truck1 city1-2 city1-1 city1)
+    - (unload-truck package2 truck1 city1-1)
+    - (fly-airplane plane1 city3-2 city4-2)
+    - (load-airplane package1 plane1 city4-2)
+    - (fly-airplane plane1 city4-2 city3-2)
+    - (unload-airplane package1 plane1 city3-2)
+    lifted_plan:
+    -   - load-truck
+        - package1
+        - truck4
+        - ?city4-1
+    -   - drive-truck
+        - ?truck4
+        - ?city4-1
+        - ?city4-2
+        - city4
+    -   - unload-truck
+        - ?package1
+        - ?truck4
+        - ?city4-2
+    -   - load-truck
+        - package3
+        - ?truck1
+        - ?city1-1
+    -   - fly-airplane
+        - plane1
+        - ?city2-2
+        - ?city3-2
+    -   - drive-truck
+        - truck1
+        - city1-1
+        - city1-2
+        - city1
+    -   - unload-truck
+        - ?package3
+        - truck1
+        - city1-2
+    -   - load-truck
+        - package2
+        - ?truck1
+        - ?city1-2
+    -   - drive-truck
+        - ?truck1
+        - ?city1-2
+        - city1-1
+        - city1
+    -   - unload-truck
+        - ?package2
+        - truck1
+        - ?city1-1
+    -   - fly-airplane
+        - plane1
+        - ?city3-2
+        - ?city4-2
+    -   - load-airplane
+        - package1
+        - ?plane1
+        - city4-2
+    -   - fly-airplane
+        - plane1
+        - ?city4-2
+        - ?city3-2
+    -   - unload-airplane
+        - package1
+        - ?plane1
+        - ?city3-2
+
+
+---
+timestamp: '2025-01-09T13:57:11.874180'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-09T14:12:08.802007'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+

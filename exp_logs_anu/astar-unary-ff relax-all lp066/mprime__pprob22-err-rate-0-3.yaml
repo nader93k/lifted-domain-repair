@@ -1,0 +1,178 @@
+---
+timestamp: '2025-01-12T22:21:31.768990'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary-ff
+        relax-all lp066/mprime__pprob22-err-rate-0-3.yaml
+    instance_id: mprime__pprob22-err-rate-0-3
+    search_algorithm: astar
+    plan_length: 13
+    domain_class: mprime
+    instance_name: pprob22-err-rate-0-3
+    ground_plan:
+    - (drink chicken cherry kentucky alsace surrey surrey alsace)
+    - (feast achievement beef shrimp surrey alsace)
+    - (feast aesthetics scallop shrimp alsace kentucky)
+    - (feast triumph popover ham surrey alsace)
+    - (drink shrimp popover moravia goias kentucky surrey alsace)
+    - (overcome hangover understanding ham uranus neptune)
+    - (feast understanding ham popover surrey alsace)
+    - (feast understanding popover chicken surrey alsace)
+    - (feast understanding chicken cherry surrey alsace)
+    - (feast understanding cherry scallop surrey alsace)
+    - (feast understanding scallop shrimp surrey alsace)
+    - (feast understanding shrimp lamb kentucky goias)
+    - (succumb hangover understanding lamb uranus neptune)
+    lifted_plan:
+    -   - drink
+        - chicken
+        - cherry
+        - ?kentucky
+        - ?alsace
+        - ?surrey
+        - ?surrey
+        - alsace
+    -   - feast
+        - ?achievement
+        - ?beef
+        - ?shrimp
+        - surrey
+        - ?alsace
+    -   - feast
+        - ?aesthetics
+        - scallop
+        - ?shrimp
+        - ?alsace
+        - kentucky
+    -   - feast
+        - triumph
+        - popover
+        - ham
+        - ?surrey
+        - alsace
+    -   - drink
+        - shrimp
+        - popover
+        - ?moravia
+        - ?goias
+        - ?kentucky
+        - ?surrey
+        - alsace
+    -   - overcome
+        - hangover
+        - ?understanding
+        - ham
+        - ?uranus
+        - neptune
+    -   - feast
+        - ?understanding
+        - ?ham
+        - popover
+        - ?surrey
+        - alsace
+    -   - feast
+        - understanding
+        - ?popover
+        - ?chicken
+        - surrey
+        - ?alsace
+    -   - feast
+        - ?understanding
+        - chicken
+        - ?cherry
+        - ?surrey
+        - ?alsace
+    -   - feast
+        - understanding
+        - cherry
+        - ?scallop
+        - ?surrey
+        - ?alsace
+    -   - feast
+        - ?understanding
+        - scallop
+        - ?shrimp
+        - ?surrey
+        - alsace
+    -   - feast
+        - ?understanding
+        - shrimp
+        - ?lamb
+        - kentucky
+        - ?goias
+    -   - succumb
+        - ?hangover
+        - ?understanding
+        - ?lamb
+        - ?uranus
+        - ?neptune
+
+
+---
+timestamp: '2025-01-12T22:21:31.775087'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: succumb,(orbits ?c ?n),precPos,-1
+
+
+---
+timestamp: '2025-01-12T22:21:38.549829'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drink'', ''chicken'', ''cherry'', ''?kentucky'', ''?alsace'',
+            ''?surrey'', ''?surrey'', ''alsace'']'
+        num_neighbours: 0
+        first_10_possible_groundings: null
+        current_state: not implemented!
+
+
+---
+timestamp: '2025-01-12T22:21:38.551967'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: . Stack trace: Traceback (most recent call\
+    \ last):\n  File \"instance_solver.py\", line 106, in solve_instance\n    searcher.find_path(logger=logger,\
+    \ log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 80, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
+    \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 202, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 135, in ground_pddl\n    actions = parser.get_applicable_actions()\n  File\
+    \ \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 485, in get_applicable_actions\n    full_var_assigns = self._get_applicable_var_assigns_action(action,\
+    \ [[-1]*len(action_vars)])\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 433, in _get_applicable_var_assigns_action\n    full_var_assigns.extend(new_var_assigns)\n\
+    MemoryError\n"
+
+
+---
+timestamp: '2025-01-12T22:21:40.551472'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '9.94'
+
+
+---
+timestamp: '2025-01-12T22:21:40.585348'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 10.22 seconds'
+
+

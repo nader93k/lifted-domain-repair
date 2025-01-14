@@ -1,0 +1,191 @@
+---
+timestamp: '2025-01-09T13:33:18.031311'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs
+        relax-all lp066/woodworking-opt08-strips__pp23-err-rate-0-1.yaml
+    instance_id: woodworking-opt08-strips__pp23-err-rate-0-1
+    search_algorithm: bfs
+    plan_length: 12
+    domain_class: woodworking-opt08-strips
+    instance_name: pp23-err-rate-0-1
+    ground_plan:
+    - (do-plane p2 planer0 rough black colourfragments)
+    - (do-glaze p2 glazer0 green)
+    - (do-saw-medium b0 p4 saw0 teak rough s3 s2 s1)
+    - (do-saw-small b0 p1 saw0 teak rough s3 s2)
+    - (do-saw-large b1 p3 saw0 mahogany rough s5 s3 s4 s2)
+    - (do-saw-medium b1 p0 saw0 mahogany rough s5 s4 s3)
+    - (do-plane p3 planer0 rough natural untreated)
+    - (do-plane p0 planer0 rough natural untreated)
+    - (do-plane p1 planer0 rough natural untreated)
+    - (do-immersion-varnish p0 immersion-varnisher0 green smooth)
+    - (do-glaze p4 glazer0 green)
+    - (do-immersion-varnish p1 immersion-varnisher0 green smooth)
+    lifted_plan:
+    -   - do-plane
+        - p2
+        - planer0
+        - ?rough
+        - ?black
+        - ?colourfragments
+    -   - do-glaze
+        - ?p2
+        - glazer0
+        - ?green
+    -   - do-saw-medium
+        - ?b0
+        - ?p4
+        - saw0
+        - ?teak
+        - ?rough
+        - s3
+        - ?s2
+        - ?s1
+    -   - do-saw-small
+        - b0
+        - p1
+        - saw0
+        - teak
+        - ?rough
+        - s3
+        - s2
+    -   - do-saw-large
+        - b1
+        - ?p3
+        - ?saw0
+        - ?mahogany
+        - ?rough
+        - s5
+        - s3
+        - ?s4
+        - s2
+    -   - do-saw-medium
+        - ?b1
+        - p0
+        - ?saw0
+        - ?mahogany
+        - rough
+        - ?s5
+        - s4
+        - s3
+    -   - do-plane
+        - ?p3
+        - ?planer0
+        - rough
+        - ?natural
+        - ?untreated
+    -   - do-plane
+        - p0
+        - ?planer0
+        - ?rough
+        - ?natural
+        - untreated
+    -   - do-plane
+        - p1
+        - ?planer0
+        - ?rough
+        - ?natural
+        - ?untreated
+    -   - do-immersion-varnish
+        - p0
+        - ?immersion-varnisher0
+        - ?green
+        - smooth
+    -   - do-glaze
+        - ?p4
+        - glazer0
+        - ?green
+    -   - do-immersion-varnish
+        - p1
+        - ?immersion-varnisher0
+        - ?green
+        - ?smooth
+
+
+---
+timestamp: '2025-01-09T13:33:18.037399'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: do-plane,(grind-treatment-change ?oldtreatment ?oldtreatment),precPos,-1
+
+
+---
+timestamp: '2025-01-09T13:33:18.081465'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''do-plane'', ''p2'', ''planer0'', ''?rough'', ''?black'',
+            ''?colourfragments'']'
+        num_neighbours: 0
+        first_10_possible_groundings: null
+        current_state: '''(boardsize-successor s4 s5)'', ''(boardsize b0 s3)'', ''(has-colour
+            immersion-varnisher0 green)'', ''(available b0)'', ''(surface-condition
+            p2 rough)'', ''(boardsize b1 s5)'', ''(boardsize-successor s2 s3)'', ''(wood
+            b0 teak)'', ''(grind-treatment-change untreated untreated)'', ''(treatment
+            p2 colourfragments)'', ''(boardsize-successor s1 s2)'', ''(goalsize p4
+            medium)'', ''(goalsize p3 large)'', ''(unused p4)'', ''(grind-treatment-change
+            varnished colourfragments)'', ''(colour p2 black)'', ''(unused p1)'',
+            ''(goalsize p1 small)'', ''(grind-treatment-change glazed untreated)'',
+            ''(is-smooth smooth)'', ''(goalsize p2 small)'', ''(grind-treatment-change
+            colourfragments untreated)'', ''(wood b1 mahogany)'', ''(boardsize-successor
+            s0 s1)'', ''(boardsize-successor s3 s4)'', ''(has-colour glazer0 green)'',
+            ''(has-colour spray-varnisher0 green)'', ''(available p2)'', ''(goalsize
+            p0 medium)'', ''(unused p3)'', ''(surface-condition b1 rough)'', ''(empty
+            highspeed-saw0)'', ''(wood p2 mahogany)'', ''(unused p0)'', ''(is-smooth
+            verysmooth)'', ''(available b1)'', ''(surface-condition b0 rough)'''
+
+
+---
+timestamp: '2025-01-09T13:33:18.083599'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: 'smooth' is not in list. Stack trace: Traceback\
+    \ (most recent call last):\n  File \"instance_solver.py\", line 106, in solve_instance\n\
+    \    searcher.find_path(logger=logger, log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 80, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
+    \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 192, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 133, in ground_pddl\n    parser.parse_domain(domain_path)\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 220, in parse_domain\n    effects = tuple([(isinstance(effect, AddEffect),\
+    \ effect.atom.predicate.name, tuple([var_names.index(var.symbol) for var in effect.atom.subterms]))\
+    \ for effect in effects])\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 220, in <listcomp>\n    effects = tuple([(isinstance(effect, AddEffect),\
+    \ effect.atom.predicate.name, tuple([var_names.index(var.symbol) for var in effect.atom.subterms]))\
+    \ for effect in effects])\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 220, in <listcomp>\n    effects = tuple([(isinstance(effect, AddEffect),\
+    \ effect.atom.predicate.name, tuple([var_names.index(var.symbol) for var in effect.atom.subterms]))\
+    \ for effect in effects])\nValueError: 'smooth' is not in list\n"
+
+
+---
+timestamp: '2025-01-09T13:33:18.085082'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.21'
+
+
+---
+timestamp: '2025-01-09T13:33:18.113473'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.58 seconds'
+
+

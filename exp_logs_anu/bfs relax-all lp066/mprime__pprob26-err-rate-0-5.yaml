@@ -1,0 +1,162 @@
+---
+timestamp: '2025-01-09T11:54:45.913894'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs
+        relax-all lp066/mprime__pprob26-err-rate-0-5.yaml
+    instance_id: mprime__pprob26-err-rate-0-5
+    search_algorithm: bfs
+    plan_length: 6
+    domain_class: mprime
+    instance_name: pprob26-err-rate-0-5
+    ground_plan:
+    - (overcome boils entertainment haroset earth neptune)
+    - (feast entertainment haroset marzipan oregon bavaria)
+    - (drink rice marzipan oregon manitoba quebec moravia kentucky)
+    - (feast entertainment marzipan turkey moravia kentucky)
+    - (feast entertainment turkey papaya manitoba oregon)
+    - (succumb boils entertainment papaya earth neptune)
+    lifted_plan:
+    -   - overcome
+        - boils
+        - entertainment
+        - ?haroset
+        - ?earth
+        - ?neptune
+    -   - feast
+        - ?entertainment
+        - haroset
+        - ?marzipan
+        - ?oregon
+        - ?bavaria
+    -   - drink
+        - rice
+        - ?marzipan
+        - ?oregon
+        - manitoba
+        - ?quebec
+        - ?moravia
+        - kentucky
+    -   - feast
+        - entertainment
+        - marzipan
+        - turkey
+        - ?moravia
+        - kentucky
+    -   - feast
+        - entertainment
+        - turkey
+        - ?papaya
+        - ?manitoba
+        - ?oregon
+    -   - succumb
+        - ?boils
+        - entertainment
+        - papaya
+        - ?earth
+        - neptune
+
+
+---
+timestamp: '2025-01-09T11:54:45.917451'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-09T12:01:45.010897'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 1
+        ground_actions:
+        - (overcome boils entertainment haroset earth neptune)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''?entertainment'', ''haroset'', ''?marzipan'',
+            ''?oregon'', ''?bavaria'']'
+        num_neighbours: 0
+        first_10_possible_groundings: null
+        current_state: '''(food snickers)'', ''(attacks kentucky quebec)'', ''(eats
+            pistachio rice)'', ''(craves hangover pistachio)'', ''(food turkey)'',
+            ''(planet venus)'', ''(food haroset)'', ''(craves entertainment haroset)'',
+            ''(craves jealousy snickers)'', ''(food papaya)'', ''(eats hamburger marzipan)'',
+            ''(food hamburger)'', ''(eats snickers pepper)'', ''(locale turkey oregon)'',
+            ''(locale papaya kentucky)'', ''(harmony empathy venus)'', ''(food marzipan)'',
+            ''(food flounder)'', ''(locale snickers kentucky)'', ''(food endive)'',
+            ''(eats endive rice)'', ''(pleasure learning)'', ''(eats snickers hamburger)'',
+            ''(planet saturn)'', ''(pleasure satisfaction)'', ''(eats marzipan haroset)'',
+            ''(eats turkey papaya)'', ''(province quebec)'', ''(locale haroset bavaria)'',
+            ''(food rice)'', ''(eats turkey marzipan)'', ''(pleasure empathy)'', ''(pain
+            hangover)'', ''(fears boils entertainment)'', ''(attacks manitoba oregon)'',
+            ''(eats rice haroset)'', ''(eats marzipan turkey)'', ''(attacks moravia
+            kentucky)'', ''(planet earth)'', ''(attacks oregon bavaria)'', ''(eats
+            hamburger scallop)'', ''(eats scallop rice)'', ''(eats hamburger snickers)'',
+            ''(eats haroset rice)'', ''(eats flounder papaya)'', ''(food scallop)'',
+            ''(locale pistachio kentucky)'', ''(eats rice endive)'', ''(harmony satisfaction
+            saturn)'', ''(food pepper)'', ''(eats hamburger haroset)'', ''(eats pistachio
+            endive)'', ''(orbits venus saturn)'', ''(province bavaria)'', ''(craves
+            depression marzipan)'', ''(locale scallop oregon)'', ''(craves empathy
+            scallop)'', ''(eats turkey pistachio)'', ''(pain depression)'', ''(province
+            kentucky)'', ''(province manitoba)'', ''(locale endive kentucky)'', ''(planet
+            neptune)'', ''(locale hamburger bavaria)'', ''(harmony understanding neptune)'',
+            ''(attacks quebec manitoba)'', ''(eats rice pistachio)'', ''(locale rice
+            oregon)'', ''(craves satisfaction snickers)'', ''(locale pepper moravia)'',
+            ''(eats flounder pepper)'', ''(craves understanding papaya)'', ''(eats
+            rice scallop)'', ''(eats pepper snickers)'', ''(eats haroset hamburger)'',
+            ''(locale flounder quebec)'', ''(eats pistachio turkey)'', ''(eats endive
+            pistachio)'', ''(pain boils)'', ''(pleasure understanding)'', ''(orbits
+            earth neptune)'', ''(province oregon)'', ''(eats endive haroset)'', ''(eats
+            haroset marzipan)'', ''(locale marzipan moravia)'', ''(province moravia)'',
+            ''(eats haroset endive)'', ''(harmony learning neptune)'', ''(craves learning
+            marzipan)'', ''(food pistachio)'', ''(orbits neptune venus)'', ''(eats
+            scallop hamburger)'', ''(harmony entertainment earth)'', ''(eats papaya
+            flounder)'', ''(pleasure entertainment)'', ''(eats pepper flounder)'',
+            ''(eats papaya turkey)'', ''(eats marzipan hamburger)'', ''(pain jealousy)'''
+
+
+---
+timestamp: '2025-01-09T12:01:45.017917'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: . Stack trace: Traceback (most recent call\
+    \ last):\n  File \"instance_solver.py\", line 106, in solve_instance\n    searcher.find_path(logger=logger,\
+    \ log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 80, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
+    \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 192, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 136, in ground_pddl\n    applicable_actions = parser.encode_ground_actions_as_pddl(actions,\
+    \ 'str')\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 615, in encode_ground_actions_as_pddl\n    actions_pddl_format = set(['({}\
+    \ '.format(action_name) + ' '.join(obj_names[var] for var in var_assign) + ')'\
+    \ \\\nMemoryError\n"
+
+
+---
+timestamp: '2025-01-09T12:01:47.477878'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '422.71'
+
+
+---
+timestamp: '2025-01-09T12:01:55.054223'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 430.53 seconds'
+
+

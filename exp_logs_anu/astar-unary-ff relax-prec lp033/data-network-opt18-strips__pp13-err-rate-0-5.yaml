@@ -1,0 +1,167 @@
+---
+timestamp: '2025-01-12T12:58:55.344807'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary-ff
+        relax-prec lp033/data-network-opt18-strips__pp13-err-rate-0-5.yaml
+    instance_id: data-network-opt18-strips__pp13-err-rate-0-5
+    search_algorithm: astar
+    plan_length: 10
+    domain_class: data-network-opt18-strips
+    instance_name: pp13-err-rate-0-5
+    ground_plan:
+    - (load data-0-7 server4 number4 number8 number0 number4)
+    - (send data-0-7 server4 server1 number4 number16 number0 number4)
+    - (load data-0-9 server2 number4 number8 number0 number4)
+    - (send data-0-9 server2 server1 number4 number16 number4 number8)
+    - (process data-0-7 data-0-9 data-1-8 script1 server1 number4 number16 number8
+        number12)
+    - (process data-1-8 data-0-9 data-2-5 script12 server1 number2 number16 number12
+        number14)
+    - (process data-1-8 data-0-7 data-2-2 script7 server1 number2 number16 number14
+        number16)
+    - (send data-2-2 server1 server3 number2 number8 number0 number2)
+    - (save data-2-2 number2 server3)
+    - (save data-2-5 number2 server1)
+    lifted_plan:
+    -   - load
+        - data-0-7
+        - server4
+        - number4
+        - ?number8
+        - number0
+        - number4
+    -   - send
+        - data-0-7
+        - ?server4
+        - server1
+        - number4
+        - number16
+        - number0
+        - ?number4
+    -   - load
+        - data-0-9
+        - server2
+        - ?number4
+        - number8
+        - number0
+        - number4
+    -   - send
+        - data-0-9
+        - ?server2
+        - server1
+        - number4
+        - number16
+        - number4
+        - ?number8
+    -   - process
+        - data-0-7
+        - data-0-9
+        - data-1-8
+        - script1
+        - server1
+        - number4
+        - ?number16
+        - number8
+        - number12
+    -   - process
+        - ?data-1-8
+        - data-0-9
+        - data-2-5
+        - script12
+        - server1
+        - ?number2
+        - number16
+        - number12
+        - ?number14
+    -   - process
+        - ?data-1-8
+        - data-0-7
+        - ?data-2-2
+        - script7
+        - ?server1
+        - number2
+        - number16
+        - number14
+        - ?number16
+    -   - send
+        - ?data-2-2
+        - server1
+        - server3
+        - ?number2
+        - number8
+        - number0
+        - number2
+    -   - save
+        - data-2-2
+        - number2
+        - server3
+    -   - save
+        - data-2-5
+        - number2
+        - server1
+
+
+---
+timestamp: '2025-01-12T12:58:55.350096'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: process,(usage ?s ?before),precPos,-1
+
+
+---
+timestamp: '2025-01-12T12:58:56.618135'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 6
+    fring_size: 0
+    num_nodes_generated: 6
+    sum_h_cost: 8
+    sum_f_cost: 4
+    sum_h_cost_time: 0.8501815795898438
+    sum_grounding_time: 0.3826024532318115
+    h_max: 2
+    current_node:
+        depth: 5
+        ground_actions:
+        - (load data-0-7 server4 number4 number8 number0 number4)
+        - (send data-0-7 server4 server1 number4 number16 number0 number4)
+        - (load data-0-9 server2 number4 number8 number0 number4)
+        - (send data-0-9 server2 server1 number4 number16 number4 number8)
+        - (process data-0-7 data-0-9 data-1-8 script1 server1 number4 number16 number8
+            number12)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 2
+        f_cost: 2
+        next_lifted_action: '[''process'', ''?data-1-8'', ''data-0-9'', ''data-2-5'',
+            ''script12'', ''server1'', ''?number2'', ''number16'', ''number12'', ''?number14'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2025-01-12T12:58:56.619668'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '2.53'
+
+
+---
+timestamp: '2025-01-12T12:58:56.660435'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 2.86 seconds'
+
+

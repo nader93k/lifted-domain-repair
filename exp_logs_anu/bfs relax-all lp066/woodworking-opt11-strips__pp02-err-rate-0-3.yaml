@@ -1,0 +1,187 @@
+---
+timestamp: '2025-01-09T13:20:55.773418'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs
+        relax-all lp066/woodworking-opt11-strips__pp02-err-rate-0-3.yaml
+    instance_id: woodworking-opt11-strips__pp02-err-rate-0-3
+    search_algorithm: bfs
+    plan_length: 11
+    domain_class: woodworking-opt11-strips
+    instance_name: pp02-err-rate-0-3
+    ground_plan:
+    - (do-saw-large b0 p2 saw0 oak rough s10 s8 s9 s7)
+    - (do-saw-medium b1 p0 saw0 pine rough s3 s2 s1)
+    - (do-saw-large b1 p1 saw0 pine rough s3 s1 s2 s0)
+    - (do-saw-medium b1 p3 saw0 pine rough s3 s2 s1)
+    - (do-plane p0 planer0 rough natural untreated)
+    - (do-glaze p0 glazer0 mauve)
+    - (do-plane p1 planer0 rough natural untreated)
+    - (do-glaze p1 glazer0 blue)
+    - (do-plane p2 planer0 rough natural untreated)
+    - (do-glaze p2 glazer0 white)
+    - (do-glaze p3 glazer0 mauve)
+    lifted_plan:
+    -   - do-saw-large
+        - b0
+        - p2
+        - ?saw0
+        - ?oak
+        - ?rough
+        - ?s10
+        - s8
+        - ?s9
+        - ?s7
+    -   - do-saw-medium
+        - ?b1
+        - p0
+        - ?saw0
+        - ?pine
+        - rough
+        - ?s3
+        - ?s2
+        - s1
+    -   - do-saw-large
+        - b1
+        - p1
+        - saw0
+        - ?pine
+        - rough
+        - s3
+        - s1
+        - ?s2
+        - ?s0
+    -   - do-saw-medium
+        - ?b1
+        - ?p3
+        - saw0
+        - pine
+        - ?rough
+        - s3
+        - ?s2
+        - s1
+    -   - do-plane
+        - ?p0
+        - ?planer0
+        - rough
+        - ?natural
+        - untreated
+    -   - do-glaze
+        - p0
+        - ?glazer0
+        - ?mauve
+    -   - do-plane
+        - p1
+        - ?planer0
+        - ?rough
+        - natural
+        - ?untreated
+    -   - do-glaze
+        - ?p1
+        - ?glazer0
+        - blue
+    -   - do-plane
+        - p2
+        - ?planer0
+        - ?rough
+        - ?natural
+        - ?untreated
+    -   - do-glaze
+        - p2
+        - ?glazer0
+        - ?white
+    -   - do-glaze
+        - p3
+        - ?glazer0
+        - mauve
+
+
+---
+timestamp: '2025-01-09T13:20:55.779297'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: do-saw-medium,(boardsize ?b ?size_after),precPos,-1
+
+
+---
+timestamp: '2025-01-09T13:20:55.823720'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''do-saw-large'', ''b0'', ''p2'', ''?saw0'', ''?oak'',
+            ''?rough'', ''?s10'', ''s8'', ''?s9'', ''?s7'']'
+        num_neighbours: 0
+        first_10_possible_groundings: null
+        current_state: '''(goalsize p3 medium)'', ''(boardsize-successor s0 s1)'',
+            ''(grind-treatment-change varnished colourfragments)'', ''(grind-treatment-change
+            colourfragments untreated)'', ''(unused p1)'', ''(surface-condition b1
+            rough)'', ''(boardsize-successor s8 s9)'', ''(boardsize-successor s1 s2)'',
+            ''(unused p0)'', ''(is-smooth smooth)'', ''(boardsize-successor s7 s8)'',
+            ''(available b1)'', ''(goalsize p0 medium)'', ''(boardsize-successor s9
+            s10)'', ''(grind-treatment-change untreated untreated)'', ''(boardsize-successor
+            s3 s4)'', ''(boardsize b0 s10)'', ''(grind-treatment-change glazed untreated)'',
+            ''(has-colour immersion-varnisher0 mauve)'', ''(has-colour spray-varnisher0
+            blue)'', ''(has-colour spray-varnisher0 mauve)'', ''(goalsize p1 large)'',
+            ''(goalsize p2 large)'', ''(boardsize-successor s4 s5)'', ''(has-colour
+            glazer0 white)'', ''(is-smooth verysmooth)'', ''(surface-condition b0
+            rough)'', ''(wood b1 pine)'', ''(available b0)'', ''(unused p3)'', ''(empty
+            highspeed-saw0)'', ''(boardsize-successor s6 s7)'', ''(has-colour glazer0
+            blue)'', ''(wood b0 oak)'', ''(has-colour immersion-varnisher0 blue)'',
+            ''(boardsize-successor s2 s3)'', ''(has-colour glazer0 mauve)'', ''(unused
+            p2)'', ''(boardsize-successor s5 s6)'', ''(boardsize b1 s3)'''
+
+
+---
+timestamp: '2025-01-09T13:20:55.825887'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: 'natural' is not in list. Stack trace:\
+    \ Traceback (most recent call last):\n  File \"instance_solver.py\", line 106,\
+    \ in solve_instance\n    searcher.find_path(logger=logger, log_interval=log_interval)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 80, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
+    \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 192, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 133, in ground_pddl\n    parser.parse_domain(domain_path)\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 220, in parse_domain\n    effects = tuple([(isinstance(effect, AddEffect),\
+    \ effect.atom.predicate.name, tuple([var_names.index(var.symbol) for var in effect.atom.subterms]))\
+    \ for effect in effects])\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 220, in <listcomp>\n    effects = tuple([(isinstance(effect, AddEffect),\
+    \ effect.atom.predicate.name, tuple([var_names.index(var.symbol) for var in effect.atom.subterms]))\
+    \ for effect in effects])\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 220, in <listcomp>\n    effects = tuple([(isinstance(effect, AddEffect),\
+    \ effect.atom.predicate.name, tuple([var_names.index(var.symbol) for var in effect.atom.subterms]))\
+    \ for effect in effects])\nValueError: 'natural' is not in list\n"
+
+
+---
+timestamp: '2025-01-09T13:20:55.827351'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.19'
+
+
+---
+timestamp: '2025-01-09T13:20:55.854668'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.61 seconds'
+
+

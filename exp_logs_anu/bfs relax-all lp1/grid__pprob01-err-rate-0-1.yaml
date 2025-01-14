@@ -1,0 +1,124 @@
+---
+timestamp: '2025-01-08T02:59:13.887610'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs_anu/bfs relax-all lp1-new/grid__pprob01-err-rate-0-1.yaml
+    instance_id: grid__pprob01-err-rate-0-1
+    search_algorithm: bfs
+    plan_length: 14
+    domain_class: grid
+    instance_name: pprob01-err-rate-0-1
+    ground_plan:
+    - (move node2-4 node1-4)
+    - (move node1-4 node1-3)
+    - (move node1-3 node1-2)
+    - (move node1-2 node0-2)
+    - (pickup node0-2 key3)
+    - (move node0-2 node1-2)
+    - (move node1-2 node1-3)
+    - (unlock node1-3 node2-3 key3 square)
+    - (move node1-3 node2-3)
+    - (pickup-and-loose node2-3 key0 key3)
+    - (move node2-3 node1-3)
+    - (move node1-3 node1-2)
+    - (move node1-2 node1-1)
+    - (putdown node1-1 key0)
+    lifted_plan:
+    -   - move
+        - ?node2-4
+        - ?node1-4
+    -   - move
+        - ?node1-4
+        - ?node1-3
+    -   - move
+        - ?node1-3
+        - ?node1-2
+    -   - move
+        - ?node1-2
+        - ?node0-2
+    -   - pickup
+        - ?node0-2
+        - ?key3
+    -   - move
+        - ?node0-2
+        - ?node1-2
+    -   - move
+        - ?node1-2
+        - ?node1-3
+    -   - unlock
+        - ?node1-3
+        - ?node2-3
+        - ?key3
+        - ?square
+    -   - move
+        - ?node1-3
+        - ?node2-3
+    -   - pickup-and-loose
+        - ?node2-3
+        - ?key0
+        - ?key3
+    -   - move
+        - ?node2-3
+        - ?node1-3
+    -   - move
+        - ?node1-3
+        - ?node1-2
+    -   - move
+        - ?node1-2
+        - ?node1-1
+    -   - putdown
+        - ?node1-1
+        - ?key0
+
+
+---
+timestamp: '2025-01-08T02:59:13.891842'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-08T03:13:35.704582'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data:
+    error_type: MemoryError
+    error_message: 'Command ''[''/home/projects/u7899572/conda-envs/main/bin/python3'',
+        ''instance_solver.py'', ''bfs'', ''input/benchmarks-G1'', ''exp_logs_anu/bfs
+        relax-all lp1-new/grid__pprob01-err-rate-0-1.yaml'', ''1000000'', ''grid__pprob01-err-rate-0-1'',
+        ''1.0'', ''zeroary'']'' died with <Signals.SIGABRT: 6>.'
+    stack_trace: "Traceback (most recent call last):\n  File \"batch_solver.py\",\
+        \ line 119, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
+        \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/subprocess.py\"\
+        , line 516, in run\n    raise CalledProcessError(retcode, process.args,\n\
+        subprocess.CalledProcessError: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',\
+        \ 'instance_solver.py', 'bfs', 'input/benchmarks-G1', 'exp_logs_anu/bfs relax-all\
+        \ lp1-new/grid__pprob01-err-rate-0-1.yaml', '1000000', 'grid__pprob01-err-rate-0-1',\
+        \ '1.0', 'zeroary']' died with <Signals.SIGABRT: 6>.\n"
+    instance_id: grid__pprob01-err-rate-0-1
+    process_info:
+        cmd:
+        - /home/projects/u7899572/conda-envs/main/bin/python3
+        - instance_solver.py
+        - bfs
+        - input/benchmarks-G1
+        - exp_logs_anu/bfs relax-all lp1-new/grid__pprob01-err-rate-0-1.yaml
+        - '1000000'
+        - grid__pprob01-err-rate-0-1
+        - '1.0'
+        - zeroary
+        duration: '863.58'
+        python_executable: /home/projects/u7899572/conda-envs/main/bin/python3
+    stdout: ''
+    stderr: 'terminate called after throwing an instance of ''Minisat22::OutOfMemoryException''
+
+        '
+
+

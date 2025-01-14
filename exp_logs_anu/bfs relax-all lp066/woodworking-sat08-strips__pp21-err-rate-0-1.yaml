@@ -1,0 +1,165 @@
+---
+timestamp: '2025-01-09T12:24:16.356885'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs
+        relax-all lp066/woodworking-sat08-strips__pp21-err-rate-0-1.yaml
+    instance_id: woodworking-sat08-strips__pp21-err-rate-0-1
+    search_algorithm: bfs
+    plan_length: 8
+    domain_class: woodworking-sat08-strips
+    instance_name: pp21-err-rate-0-1
+    ground_plan:
+    - (do-saw-small b0 p0 saw0 oak rough s1 s0)
+    - (do-saw-large b1 p2 saw0 pine rough s6 s4 s5 s3)
+    - (do-saw-large b1 p1 saw0 pine rough s6 s4 s5 s3)
+    - (do-plane p1 planer0 rough natural untreated)
+    - (do-immersion-varnish p1 immersion-varnisher0 blue smooth)
+    - (do-plane p2 planer0 rough natural untreated)
+    - (do-plane p0 planer0 rough natural untreated)
+    - (do-immersion-varnish p0 immersion-varnisher0 natural smooth)
+    lifted_plan:
+    -   - do-saw-small
+        - b0
+        - p0
+        - ?saw0
+        - ?oak
+        - ?rough
+        - ?s1
+        - s0
+    -   - do-saw-large
+        - ?b1
+        - ?p2
+        - ?saw0
+        - pine
+        - ?rough
+        - ?s6
+        - s4
+        - ?s5
+        - ?s3
+    -   - do-saw-large
+        - b1
+        - p1
+        - saw0
+        - pine
+        - ?rough
+        - s6
+        - s4
+        - s5
+        - ?s3
+    -   - do-plane
+        - ?p1
+        - ?planer0
+        - ?rough
+        - natural
+        - untreated
+    -   - do-immersion-varnish
+        - ?p1
+        - immersion-varnisher0
+        - ?blue
+        - smooth
+    -   - do-plane
+        - ?p2
+        - ?planer0
+        - rough
+        - ?natural
+        - untreated
+    -   - do-plane
+        - p0
+        - ?planer0
+        - ?rough
+        - natural
+        - ?untreated
+    -   - do-immersion-varnish
+        - ?p0
+        - immersion-varnisher0
+        - ?natural
+        - ?smooth
+
+
+---
+timestamp: '2025-01-09T12:24:16.362283'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-09T12:24:16.408238'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''do-saw-small'', ''b0'', ''p0'', ''?saw0'', ''?oak'',
+            ''?rough'', ''?s1'', ''s0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: null
+        current_state: '''(boardsize-successor s2 s3)'', ''(boardsize-successor s5
+            s6)'', ''(surface-condition b0 rough)'', ''(unused p2)'', ''(surface-condition
+            b1 rough)'', ''(unused p1)'', ''(has-colour spray-varnisher0 blue)'',
+            ''(is-smooth smooth)'', ''(is-smooth verysmooth)'', ''(goalsize p0 small)'',
+            ''(boardsize b1 s6)'', ''(wood b1 pine)'', ''(has-colour immersion-varnisher0
+            blue)'', ''(grind-treatment-change glazed untreated)'', ''(grind-treatment-change
+            colourfragments untreated)'', ''(has-colour spray-varnisher0 natural)'',
+            ''(empty highspeed-saw0)'', ''(boardsize b0 s1)'', ''(goalsize p2 large)'',
+            ''(boardsize-successor s4 s5)'', ''(has-colour immersion-varnisher0 natural)'',
+            ''(available b1)'', ''(grind-treatment-change varnished colourfragments)'',
+            ''(grind-treatment-change untreated untreated)'', ''(boardsize-successor
+            s3 s4)'', ''(available b0)'', ''(boardsize-successor s0 s1)'', ''(wood
+            b0 oak)'', ''(has-colour glazer0 blue)'', ''(boardsize-successor s1 s2)'',
+            ''(goalsize p1 large)'', ''(unused p0)'''
+
+
+---
+timestamp: '2025-01-09T12:24:16.410321'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: 'natural' is not in list. Stack trace:\
+    \ Traceback (most recent call last):\n  File \"instance_solver.py\", line 106,\
+    \ in solve_instance\n    searcher.find_path(logger=logger, log_interval=log_interval)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 80, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
+    \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 192, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 133, in ground_pddl\n    parser.parse_domain(domain_path)\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 220, in parse_domain\n    effects = tuple([(isinstance(effect, AddEffect),\
+    \ effect.atom.predicate.name, tuple([var_names.index(var.symbol) for var in effect.atom.subterms]))\
+    \ for effect in effects])\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 220, in <listcomp>\n    effects = tuple([(isinstance(effect, AddEffect),\
+    \ effect.atom.predicate.name, tuple([var_names.index(var.symbol) for var in effect.atom.subterms]))\
+    \ for effect in effects])\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 220, in <listcomp>\n    effects = tuple([(isinstance(effect, AddEffect),\
+    \ effect.atom.predicate.name, tuple([var_names.index(var.symbol) for var in effect.atom.subterms]))\
+    \ for effect in effects])\nValueError: 'natural' is not in list\n"
+
+
+---
+timestamp: '2025-01-09T12:24:16.411837'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.66'
+
+
+---
+timestamp: '2025-01-09T12:24:16.442856'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.99 seconds'
+
+

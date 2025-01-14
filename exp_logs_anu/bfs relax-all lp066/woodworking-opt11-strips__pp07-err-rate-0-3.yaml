@@ -1,0 +1,208 @@
+---
+timestamp: '2025-01-09T13:45:33.577652'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs
+        relax-all lp066/woodworking-opt11-strips__pp07-err-rate-0-3.yaml
+    instance_id: woodworking-opt11-strips__pp07-err-rate-0-3
+    search_algorithm: bfs
+    plan_length: 13
+    domain_class: woodworking-opt11-strips
+    instance_name: pp07-err-rate-0-3
+    ground_plan:
+    - (do-saw-medium b0 p4 saw0 teak rough s8 s7 s6)
+    - (do-saw-large b0 p0 saw0 teak rough s8 s6 s7 s5)
+    - (do-saw-small b0 p1 saw0 teak rough s8 s7)
+    - (do-saw-small b1 p3 saw0 oak smooth s4 s3)
+    - (do-saw-small b1 p2 saw0 oak smooth s4 s3)
+    - (do-saw-small b1 p5 saw0 oak smooth s4 s3)
+    - (do-glaze p4 glazer0 mauve)
+    - (do-plane p0 planer0 rough natural untreated)
+    - (do-plane p1 planer0 rough natural untreated)
+    - (do-grind p1 grinder0 smooth natural untreated untreated)
+    - (do-grind p2 grinder0 smooth natural untreated untreated)
+    - (do-immersion-varnish p2 immersion-varnisher0 mauve verysmooth)
+    - (do-immersion-varnish p5 immersion-varnisher0 natural smooth)
+    lifted_plan:
+    -   - do-saw-medium
+        - b0
+        - p4
+        - ?saw0
+        - ?teak
+        - ?rough
+        - ?s8
+        - s7
+        - ?s6
+    -   - do-saw-large
+        - ?b0
+        - ?p0
+        - saw0
+        - ?teak
+        - ?rough
+        - s8
+        - ?s6
+        - ?s7
+        - s5
+    -   - do-saw-small
+        - b0
+        - p1
+        - saw0
+        - ?teak
+        - rough
+        - s8
+        - s7
+    -   - do-saw-small
+        - ?b1
+        - ?p3
+        - ?saw0
+        - ?oak
+        - smooth
+        - s4
+        - ?s3
+    -   - do-saw-small
+        - b1
+        - ?p2
+        - saw0
+        - ?oak
+        - ?smooth
+        - s4
+        - ?s3
+    -   - do-saw-small
+        - b1
+        - p5
+        - ?saw0
+        - ?oak
+        - smooth
+        - ?s4
+        - ?s3
+    -   - do-glaze
+        - p4
+        - ?glazer0
+        - ?mauve
+    -   - do-plane
+        - ?p0
+        - planer0
+        - rough
+        - ?natural
+        - ?untreated
+    -   - do-plane
+        - ?p1
+        - ?planer0
+        - rough
+        - ?natural
+        - ?untreated
+    -   - do-grind
+        - p1
+        - ?grinder0
+        - smooth
+        - ?natural
+        - untreated
+        - ?untreated
+    -   - do-grind
+        - ?p2
+        - ?grinder0
+        - ?smooth
+        - ?natural
+        - ?untreated
+        - ?untreated
+    -   - do-immersion-varnish
+        - ?p2
+        - ?immersion-varnisher0
+        - ?mauve
+        - ?verysmooth
+    -   - do-immersion-varnish
+        - ?p5
+        - ?immersion-varnisher0
+        - natural
+        - smooth
+
+
+---
+timestamp: '2025-01-09T13:45:33.584218'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: do-saw-small,(contains-part ?b ?p),precPos,-1
+
+
+---
+timestamp: '2025-01-09T13:45:33.629581'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''do-saw-medium'', ''b0'', ''p4'', ''?saw0'', ''?teak'',
+            ''?rough'', ''?s8'', ''s7'', ''?s6'']'
+        num_neighbours: 0
+        first_10_possible_groundings: null
+        current_state: '''(available b0)'', ''(boardsize-successor s7 s8)'', ''(boardsize-successor
+            s5 s6)'', ''(grind-treatment-change glazed untreated)'', ''(surface-condition
+            b1 smooth)'', ''(grind-treatment-change colourfragments untreated)'',
+            ''(has-colour spray-varnisher0 mauve)'', ''(boardsize-successor s1 s2)'',
+            ''(available b1)'', ''(unused p4)'', ''(goalsize p2 small)'', ''(has-colour
+            spray-varnisher0 natural)'', ''(unused p2)'', ''(empty highspeed-saw0)'',
+            ''(wood b1 oak)'', ''(unused p5)'', ''(boardsize-successor s3 s4)'', ''(goalsize
+            p5 small)'', ''(has-colour glazer0 mauve)'', ''(unused p1)'', ''(has-colour
+            glazer0 natural)'', ''(goalsize p3 small)'', ''(boardsize b0 s8)'', ''(grind-treatment-change
+            varnished colourfragments)'', ''(goalsize p0 large)'', ''(is-smooth smooth)'',
+            ''(unused p0)'', ''(boardsize-successor s4 s5)'', ''(boardsize b1 s4)'',
+            ''(boardsize-successor s0 s1)'', ''(unused p3)'', ''(has-colour immersion-varnisher0
+            mauve)'', ''(has-colour immersion-varnisher0 natural)'', ''(surface-condition
+            b0 rough)'', ''(boardsize-successor s2 s3)'', ''(goalsize p1 small)'',
+            ''(grind-treatment-change untreated untreated)'', ''(boardsize-successor
+            s6 s7)'', ''(is-smooth verysmooth)'', ''(wood b0 teak)'', ''(goalsize
+            p4 medium)'''
+
+
+---
+timestamp: '2025-01-09T13:45:33.631771'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: 'natural' is not in list. Stack trace:\
+    \ Traceback (most recent call last):\n  File \"instance_solver.py\", line 106,\
+    \ in solve_instance\n    searcher.find_path(logger=logger, log_interval=log_interval)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 80, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
+    \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 192, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 133, in ground_pddl\n    parser.parse_domain(domain_path)\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 220, in parse_domain\n    effects = tuple([(isinstance(effect, AddEffect),\
+    \ effect.atom.predicate.name, tuple([var_names.index(var.symbol) for var in effect.atom.subterms]))\
+    \ for effect in effects])\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 220, in <listcomp>\n    effects = tuple([(isinstance(effect, AddEffect),\
+    \ effect.atom.predicate.name, tuple([var_names.index(var.symbol) for var in effect.atom.subterms]))\
+    \ for effect in effects])\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 220, in <listcomp>\n    effects = tuple([(isinstance(effect, AddEffect),\
+    \ effect.atom.predicate.name, tuple([var_names.index(var.symbol) for var in effect.atom.subterms]))\
+    \ for effect in effects])\nValueError: 'natural' is not in list\n"
+
+
+---
+timestamp: '2025-01-09T13:45:33.633242'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.21'
+
+
+---
+timestamp: '2025-01-09T13:45:33.661164'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.51 seconds'
+
+

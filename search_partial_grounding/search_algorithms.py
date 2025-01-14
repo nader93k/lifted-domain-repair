@@ -1,6 +1,7 @@
 import logging
 import heapq
 
+
 class Searcher:
     def __init__(self, initial_node):
         self.initial_node = initial_node
@@ -55,12 +56,11 @@ class AStar(Searcher):
     def calculate_h_cost(self, node):
         h = self.h_cost_multiplier * node.h_cost
         self.sum_h_cost += h
-        self.h_max = max(self.h_max, h)  # Update h_max
+        self.h_max = max(self.h_max, h) 
         return h
 
     def find_path(self, logger, log_interval):
         open_list = []
-        closed_list = []
 
         f_cost = self.calculate_f_cost(self.initial_node)
         h_cost = self.calculate_h_cost(self.initial_node)
@@ -73,9 +73,7 @@ class AStar(Searcher):
 
             if current_node.is_goal():
                 self.log_iteration_info(logger, iteration, open_list, current_node, final=True, is_goal=True)
-                return self.reconstruct_path(current_node), current_node
-
-            closed_list.append(current_node)
+                return None, current_node
 
             neighbours = current_node.get_neighbors()
             self.num_nodes_generated += len(neighbours)
@@ -88,7 +86,6 @@ class AStar(Searcher):
                         f_cost = self.calculate_f_cost(neighbor)
                         h_cost = self.calculate_h_cost(neighbor)
                         heapq.heappush(open_list, (f_cost, h_cost, -neighbor.depth, neighbor))
-                        neighbor.parent = current_node
                 else: 
                     raise Exception("Identical node generation. Debug is needed.")
 
@@ -135,7 +132,7 @@ class DFS(Searcher):
 
             if current_node.is_goal():
                 self.log_iteration_info(logger, iteration, ['not logged'], current_node, final=True, is_goal=True)
-                return self.reconstruct_path(current_node), current_node
+                return None, current_node
 
             neighbors = sorted(current_node.get_neighbors(), key=lambda x: x.g_cost, reverse=True)
             self.num_nodes_generated += len(neighbors)
@@ -143,7 +140,6 @@ class DFS(Searcher):
             self.sum_grounding_time += current_node.grounding_time
             
             for neighbor in neighbors:
-                neighbor.parent = current_node
                 stack.append(neighbor)
 
             if iteration % log_interval == 0:

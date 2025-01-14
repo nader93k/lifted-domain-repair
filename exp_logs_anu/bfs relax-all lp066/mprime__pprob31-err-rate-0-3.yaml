@@ -1,0 +1,158 @@
+---
+timestamp: '2025-01-09T11:43:31.638674'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs
+        relax-all lp066/mprime__pprob31-err-rate-0-3.yaml
+    instance_id: mprime__pprob31-err-rate-0-3
+    search_algorithm: bfs
+    plan_length: 5
+    domain_class: mprime
+    instance_name: pprob31-err-rate-0-3
+    ground_plan:
+    - (feast love ham cantelope quebec kentucky)
+    - (overcome prostatitis learning grapefruit earth saturn)
+    - (feast learning grapefruit ham alsace quebec)
+    - (feast learning ham cantelope alsace quebec)
+    - (succumb prostatitis learning cantelope earth saturn)
+    lifted_plan:
+    -   - feast
+        - love
+        - ham
+        - ?cantelope
+        - ?quebec
+        - ?kentucky
+    -   - overcome
+        - ?prostatitis
+        - learning
+        - ?grapefruit
+        - ?earth
+        - ?saturn
+    -   - feast
+        - learning
+        - ?grapefruit
+        - ?ham
+        - alsace
+        - ?quebec
+    -   - feast
+        - ?learning
+        - ham
+        - cantelope
+        - alsace
+        - quebec
+    -   - succumb
+        - ?prostatitis
+        - learning
+        - cantelope
+        - earth
+        - ?saturn
+
+
+---
+timestamp: '2025-01-09T11:43:31.642503'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-09T11:43:51.847254'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''love'', ''ham'', ''?cantelope'', ''?quebec'',
+            ''?kentucky'']'
+        num_neighbours: 0
+        first_10_possible_groundings: null
+        current_state: '''(craves rest haroset)'', ''(eats ham grapefruit)'', ''(pain
+            angina)'', ''(eats snickers muffin)'', ''(harmony expectation mars)'',
+            ''(food pistachio)'', ''(pleasure rest)'', ''(province alsace)'', ''(pleasure
+            expectation)'', ''(food lemon)'', ''(pain grief)'', ''(craves prostatitis
+            grapefruit)'', ''(craves understanding chicken)'', ''(craves triumph lemon)'',
+            ''(eats bacon chicken)'', ''(planet earth)'', ''(eats pistachio lemon)'',
+            ''(eats bacon lemon)'', ''(harmony aesthetics neptune)'', ''(eats ham
+            cantelope)'', ''(craves hangover chicken)'', ''(food ham)'', ''(eats cantelope
+            chocolate)'', ''(craves intoxication snickers)'', ''(eats chicken bacon)'',
+            ''(pain loneliness)'', ''(food haroset)'', ''(harmony triumph saturn)'',
+            ''(locale bacon alsace)'', ''(pain hangover)'', ''(planet mars)'', ''(craves
+            grief grapefruit)'', ''(locale haroset alsace)'', ''(locale cantelope
+            quebec)'', ''(eats haroset chocolate)'', ''(craves depression cantelope)'',
+            ''(planet saturn)'', ''(attacks quebec kentucky)'', ''(orbits earth saturn)'',
+            ''(locale lemon alsace)'', ''(eats cantelope ham)'', ''(eats bacon cantelope)'',
+            ''(locale pistachio alsace)'', ''(eats pistachio snickers)'', ''(province
+            quebec)'', ''(eats snickers pistachio)'', ''(pleasure aesthetics)'', ''(food
+            snickers)'', ''(food chocolate)'', ''(planet neptune)'', ''(craves expectation
+            muffin)'', ''(pain dread)'', ''(pleasure understanding)'', ''(eats cantelope
+            bacon)'', ''(harmony learning saturn)'', ''(eats chocolate cantelope)'',
+            ''(craves abrasion muffin)'', ''(harmony understanding neptune)'', ''(pain
+            prostatitis)'', ''(craves angina lemon)'', ''(food muffin)'', ''(food
+            chicken)'', ''(eats muffin ham)'', ''(pain anger)'', ''(pleasure triumph)'',
+            ''(locale chicken quebec)'', ''(eats muffin snickers)'', ''(locale snickers
+            kentucky)'', ''(craves anger lemon)'', ''(craves loneliness pistachio)'',
+            ''(locale chocolate quebec)'', ''(craves dread cantelope)'', ''(craves
+            love ham)'', ''(orbits neptune mars)'', ''(craves sciatica ham)'', ''(harmony
+            love saturn)'', ''(harmony intoxication saturn)'', ''(attacks alsace quebec)'',
+            ''(eats lemon bacon)'', ''(pleasure love)'', ''(locale muffin quebec)'',
+            ''(locale ham kentucky)'', ''(food grapefruit)'', ''(eats ham muffin)'',
+            ''(locale grapefruit quebec)'', ''(eats chocolate haroset)'', ''(eats
+            muffin chicken)'', ''(craves learning grapefruit)'', ''(food bacon)'',
+            ''(pain sciatica)'', ''(craves aesthetics bacon)'', ''(pleasure intoxication)'',
+            ''(eats haroset grapefruit)'', ''(pleasure learning)'', ''(eats grapefruit
+            haroset)'', ''(orbits saturn neptune)'', ''(eats grapefruit ham)'', ''(harmony
+            rest mars)'', ''(pain depression)'', ''(pain abrasion)'', ''(food cantelope)'',
+            ''(eats lemon pistachio)'', ''(eats chicken muffin)'', ''(province kentucky)'''
+
+
+---
+timestamp: '2025-01-09T11:43:51.851966'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: . Stack trace: Traceback (most recent call\
+    \ last):\n  File \"instance_solver.py\", line 106, in solve_instance\n    searcher.find_path(logger=logger,\
+    \ log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 80, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
+    \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 192, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 135, in ground_pddl\n    actions = parser.get_applicable_actions()\n  File\
+    \ \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 485, in get_applicable_actions\n    full_var_assigns = self._get_applicable_var_assigns_action(action,\
+    \ [[-1]*len(action_vars)])\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 471, in _get_applicable_var_assigns_action\n    full_var_assigns = tuple(set([tuple([elem\
+    \ for ind, elem in enumerate(var_assign) if ind not in exists_vars]) for var_assign\
+    \ in full_var_assigns]))\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 471, in <listcomp>\n    full_var_assigns = tuple(set([tuple([elem for ind,\
+    \ elem in enumerate(var_assign) if ind not in exists_vars]) for var_assign in\
+    \ full_var_assigns]))\nMemoryError\n"
+
+
+---
+timestamp: '2025-01-09T11:43:53.051519'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '22.58'
+
+
+---
+timestamp: '2025-01-09T11:43:53.088232'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 22.98 seconds'
+
+

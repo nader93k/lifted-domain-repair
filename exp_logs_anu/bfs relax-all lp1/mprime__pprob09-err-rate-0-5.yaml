@@ -1,0 +1,191 @@
+---
+timestamp: '2025-01-08T01:54:31.580221'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs_anu/bfs relax-all lp1-new/mprime__pprob09-err-rate-0-5.yaml
+    instance_id: mprime__pprob09-err-rate-0-5
+    search_algorithm: bfs
+    plan_length: 11
+    domain_class: mprime
+    instance_name: pprob09-err-rate-0-5
+    ground_plan:
+    - (overcome dread entertainment flounder saturn venus)
+    - (overcome sciatica entertainment flounder uranus saturn)
+    - (feast entertainment flounder hamburger bavaria arizona)
+    - (succumb sciatica entertainment hamburger uranus saturn)
+    - (feast curiosity hotdog wurst bosnia bavaria)
+    - (overcome jealousy excitement guava earth uranus)
+    - (feast excitement guava apple manitoba kentucky)
+    - (feast excitement apple hotdog bavaria arizona)
+    - (drink haroset hotdog arizona bavaria bosnia bosnia bavaria)
+    - (feast excitement hotdog wurst bosnia bavaria)
+    - (succumb jealousy excitement wurst earth uranus)
+    lifted_plan:
+    -   - overcome
+        - ?dread
+        - ?entertainment
+        - ?flounder
+        - ?saturn
+        - ?venus
+    -   - overcome
+        - ?sciatica
+        - ?entertainment
+        - ?flounder
+        - ?uranus
+        - ?saturn
+    -   - feast
+        - ?entertainment
+        - ?flounder
+        - ?hamburger
+        - ?bavaria
+        - ?arizona
+    -   - succumb
+        - ?sciatica
+        - ?entertainment
+        - ?hamburger
+        - ?uranus
+        - ?saturn
+    -   - feast
+        - ?curiosity
+        - ?hotdog
+        - ?wurst
+        - ?bosnia
+        - ?bavaria
+    -   - overcome
+        - ?jealousy
+        - ?excitement
+        - ?guava
+        - ?earth
+        - ?uranus
+    -   - feast
+        - ?excitement
+        - ?guava
+        - ?apple
+        - ?manitoba
+        - ?kentucky
+    -   - feast
+        - ?excitement
+        - ?apple
+        - ?hotdog
+        - ?bavaria
+        - ?arizona
+    -   - drink
+        - ?haroset
+        - ?hotdog
+        - ?arizona
+        - ?bavaria
+        - ?bosnia
+        - ?bosnia
+        - ?bavaria
+    -   - feast
+        - ?excitement
+        - ?hotdog
+        - ?wurst
+        - ?bosnia
+        - ?bavaria
+    -   - succumb
+        - ?jealousy
+        - ?excitement
+        - ?wurst
+        - ?earth
+        - ?uranus
+
+
+---
+timestamp: '2025-01-08T01:54:31.584466'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-08T01:54:55.074954'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''overcome'', ''?dread'', ''?entertainment'', ''?flounder'',
+            ''?saturn'', ''?venus'']'
+        num_neighbours: 0
+        first_10_possible_groundings: null
+        current_state: '''(craves jealousy guava)'', ''(pleasure entertainment)'',
+            ''(attacks arizona manitoba)'', ''(pain anxiety)'', ''(craves curiosity
+            hotdog)'', ''(province bosnia)'', ''(pain jealousy)'', ''(eats hamburger
+            flounder)'', ''(pain dread)'', ''(eats haroset hamburger)'', ''(food haroset)'',
+            ''(craves laceration wurst)'', ''(orbits saturn venus)'', ''(planet venus)'',
+            ''(orbits earth uranus)'', ''(pain angina)'', ''(province kentucky)'',
+            ''(pleasure intoxication)'', ''(craves intoxication haroset)'', ''(food
+            flounder)'', ''(attacks bavaria arizona)'', ''(eats wurst hotdog)'', ''(orbits
+            uranus saturn)'', ''(food hotdog)'', ''(craves hangover haroset)'', ''(harmony
+            excitement uranus)'', ''(eats hotdog wurst)'', ''(locale flounder arizona)'',
+            ''(pain prostatitis)'', ''(eats haroset guava)'', ''(craves anger haroset)'',
+            ''(pain loneliness)'', ''(craves dread flounder)'', ''(craves grief guava)'',
+            ''(craves anxiety wurst)'', ''(eats hamburger haroset)'', ''(eats guava
+            apple)'', ''(pain sciatica)'', ''(eats apple guava)'', ''(craves loneliness
+            haroset)'', ''(pain abrasion)'', ''(locale guava kentucky)'', ''(pain
+            anger)'', ''(locale haroset arizona)'', ''(province bavaria)'', ''(pain
+            boils)'', ''(pleasure excitement)'', ''(food hamburger)'', ''(harmony
+            entertainment venus)'', ''(craves boils guava)'', ''(pain hangover)'',
+            ''(harmony intoxication uranus)'', ''(pain laceration)'', ''(eats flounder
+            wurst)'', ''(food wurst)'', ''(province manitoba)'', ''(craves abrasion
+            haroset)'', ''(locale hotdog bavaria)'', ''(craves sciatica flounder)'',
+            ''(planet earth)'', ''(locale wurst bavaria)'', ''(craves prostatitis
+            haroset)'', ''(planet uranus)'', ''(province arizona)'', ''(harmony curiosity
+            uranus)'', ''(eats apple hotdog)'', ''(attacks manitoba kentucky)'', ''(craves
+            entertainment flounder)'', ''(planet saturn)'', ''(eats guava haroset)'',
+            ''(pleasure curiosity)'', ''(food guava)'', ''(attacks bosnia bavaria)'',
+            ''(eats flounder hamburger)'', ''(craves excitement guava)'', ''(pain
+            grief)'', ''(eats wurst flounder)'', ''(craves angina guava)'', ''(food
+            apple)'', ''(locale hamburger bosnia)'', ''(locale apple arizona)'', ''(eats
+            hotdog apple)'''
+
+
+---
+timestamp: '2025-01-08T01:54:55.078357'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: . Stack trace: Traceback (most recent call\
+    \ last):\n  File \"instance_solver.py\", line 85, in solve_instance\n    searcher.find_path(logger=logger,\
+    \ log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 80, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
+    \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 171, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 135, in ground_pddl\n    actions = parser.get_applicable_actions()\n  File\
+    \ \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 485, in get_applicable_actions\n    full_var_assigns = self._get_applicable_var_assigns_action(action,\
+    \ [[-1]*len(action_vars)])\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 471, in _get_applicable_var_assigns_action\n    full_var_assigns = tuple(set([tuple([elem\
+    \ for ind, elem in enumerate(var_assign) if ind not in exists_vars]) for var_assign\
+    \ in full_var_assigns]))\nMemoryError\n"
+
+
+---
+timestamp: '2025-01-08T01:54:55.783297'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '25.32'
+
+
+---
+timestamp: '2025-01-08T01:54:55.813077'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 25.58 seconds'
+
+

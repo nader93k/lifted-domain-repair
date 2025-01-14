@@ -1,0 +1,107 @@
+---
+timestamp: '2025-01-03T23:20:59.376307'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs_anu/bfs relax-prec lp1/mystery__pprob27-err-rate-0-3.yaml
+    instance_id: mystery__pprob27-err-rate-0-3
+    search_algorithm: bfs
+    plan_length: 5
+    domain_class: mystery
+    instance_name: pprob27-err-rate-0-3
+    ground_plan:
+    - (overcome boils satisfaction scallion mars uranus)
+    - (overcome grief satisfaction scallion mercury mars)
+    - (feast satisfaction scallion guava arizona pennsylvania)
+    - (succumb boils satisfaction guava mercury mars)
+    - (succumb grief satisfaction guava mars uranus)
+    lifted_plan:
+    -   - overcome
+        - ?boils
+        - ?satisfaction
+        - ?scallion
+        - ?mars
+        - ?uranus
+    -   - overcome
+        - ?grief
+        - ?satisfaction
+        - ?scallion
+        - ?mercury
+        - ?mars
+    -   - feast
+        - ?satisfaction
+        - ?scallion
+        - ?guava
+        - ?arizona
+        - ?pennsylvania
+    -   - succumb
+        - ?boils
+        - ?satisfaction
+        - ?guava
+        - ?mercury
+        - ?mars
+    -   - succumb
+        - ?grief
+        - ?satisfaction
+        - ?guava
+        - ?mars
+        - ?uranus
+
+
+---
+timestamp: '2025-01-03T23:20:59.379732'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: feast,(attacks ?l2 ?v),precPos,-1
+
+
+---
+timestamp: '2025-01-03T23:20:59.769717'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 10
+    fring_size: 0
+    num_nodes_generated: 10
+    sum_h_cost: 0
+    sum_f_cost: 0
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 0.3562006950378418
+    current_node:
+        depth: 2
+        ground_actions:
+        - (overcome grief satisfaction scallion mars uranus)
+        - (overcome loneliness satisfaction scallion mercury mars)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''?satisfaction'', ''?scallion'', ''?guava'',
+            ''?arizona'', ''?pennsylvania'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2025-01-03T23:20:59.770931'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.55'
+
+
+---
+timestamp: '2025-01-03T23:20:59.844543'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.84 seconds'
+
+

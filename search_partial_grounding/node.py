@@ -85,7 +85,6 @@ class Node:
             self.f_cost = 0
             self.repaired_domain = copy.deepcopy(self.original_domain)
             self.ground_repair_solution = None
-            init_atoms = [item for item in self.original_task.init if isinstance(item, Atom)]
         else:
             self.depth = depth
             self.g_cost, self.ground_repair_solution, self.repaired_domain = self._ground_repair()

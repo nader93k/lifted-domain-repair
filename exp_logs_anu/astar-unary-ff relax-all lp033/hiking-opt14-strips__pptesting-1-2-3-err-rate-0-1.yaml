@@ -1,0 +1,167 @@
+---
+timestamp: '2025-01-12T23:39:34.532777'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary-ff
+        relax-all lp033/hiking-opt14-strips__pptesting-1-2-3-err-rate-0-1.yaml
+    instance_id: hiking-opt14-strips__pptesting-1-2-3-err-rate-0-1
+    search_algorithm: astar
+    plan_length: 13
+    domain_class: hiking-opt14-strips
+    instance_name: pptesting-1-2-3-err-rate-0-1
+    ground_plan:
+    - (put_down girl0 place0 tent0)
+    - (drive_tent girl0 place0 place1 car0 tent0)
+    - (drive guy0 place0 place1 car1)
+    - (drive_tent_passenger girl0 place1 place0 car0 tent0 guy0)
+    - (drive_tent girl0 place0 place1 car0 tent0)
+    - (put_up girl0 place1 tent0)
+    - (drive girl0 place1 place0 car0)
+    - (walk_together tent0 place1 guy0 place0 girl0 couple0)
+    - (put_down girl0 place1 tent0)
+    - (drive_tent girl0 place1 place2 car1 tent0)
+    - (put_up girl0 place2 tent0)
+    - (drive girl0 place2 place1 car1)
+    - (walk_together tent0 place2 guy0 place1 girl0 couple0)
+    lifted_plan:
+    -   - put_down
+        - girl0
+        - place0
+        - tent0
+    -   - drive_tent
+        - ?girl0
+        - place0
+        - place1
+        - car0
+        - ?tent0
+    -   - drive
+        - guy0
+        - place0
+        - place1
+        - car1
+    -   - drive_tent_passenger
+        - ?girl0
+        - place1
+        - place0
+        - ?car0
+        - tent0
+        - guy0
+    -   - drive_tent
+        - girl0
+        - place0
+        - ?place1
+        - car0
+        - tent0
+    -   - put_up
+        - girl0
+        - place1
+        - ?tent0
+    -   - drive
+        - girl0
+        - place1
+        - place0
+        - car0
+    -   - walk_together
+        - tent0
+        - place1
+        - ?guy0
+        - place0
+        - girl0
+        - ?couple0
+    -   - put_down
+        - girl0
+        - place1
+        - tent0
+    -   - drive_tent
+        - girl0
+        - ?place1
+        - place2
+        - car1
+        - ?tent0
+    -   - put_up
+        - ?girl0
+        - place2
+        - ?tent0
+    -   - drive
+        - girl0
+        - ?place2
+        - place1
+        - car1
+    -   - walk_together
+        - tent0
+        - ?place2
+        - ?guy0
+        - place1
+        - girl0
+        - ?couple0
+
+
+---
+timestamp: '2025-01-12T23:39:34.537038'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-12T23:39:35.969343'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 15
+    fring_size: 15
+    num_nodes_generated: 30
+    sum_h_cost: 26
+    sum_f_cost: 32
+    sum_h_cost_time: 0.5547993183135986
+    sum_grounding_time: 0.2108924388885498
+    h_max: 4
+    current_node:
+        depth: 13
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place1 car0 tent0)
+        - (drive guy0 place0 place1 car1)
+        - (drive_tent_passenger girl0 place1 place0 car0 tent0 guy0)
+        - (drive_tent girl0 place0 place1 car0 tent0)
+        - (put_up girl0 place1 tent0)
+        - (drive girl0 place1 place0 car0)
+        - (walk_together tent0 place1 guy0 place0 girl0 couple0)
+        - (put_down girl0 place1 tent0)
+        - (drive_tent girl0 place1 place2 car1 tent0)
+        - (put_up girl0 place2 tent0)
+        - (drive girl0 place2 place1 car1)
+        - (walk_together tent0 place2 guy0 place1 girl0 couple0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2025-01-12T23:39:35.970885'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '2.70'
+
+
+---
+timestamp: '2025-01-12T23:39:36.004960'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 3.19 seconds'
+
+

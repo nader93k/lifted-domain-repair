@@ -1,0 +1,164 @@
+---
+timestamp: '2025-01-08T00:47:48.984980'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs_anu/bfs relax-all lp1-new/mprime__pprob32-err-rate-0-5.yaml
+    instance_id: mprime__pprob32-err-rate-0-5
+    search_algorithm: bfs
+    plan_length: 8
+    domain_class: mprime
+    instance_name: pprob32-err-rate-0-5
+    ground_plan:
+    - (feast satiety pepper pork alsace goias)
+    - (feast excitement yogurt cantelope goias kentucky)
+    - (feast satiety pork cucumber alsace goias)
+    - (overcome sciatica satiety cucumber neptune uranus)
+    - (feast satiety cucumber sweetroll goias kentucky)
+    - (feast satiety sweetroll yogurt alsace goias)
+    - (feast satiety yogurt cantelope alsace goias)
+    - (succumb sciatica satiety cantelope neptune uranus)
+    lifted_plan:
+    -   - feast
+        - ?satiety
+        - ?pepper
+        - ?pork
+        - ?alsace
+        - ?goias
+    -   - feast
+        - ?excitement
+        - ?yogurt
+        - ?cantelope
+        - ?goias
+        - ?kentucky
+    -   - feast
+        - ?satiety
+        - ?pork
+        - ?cucumber
+        - ?alsace
+        - ?goias
+    -   - overcome
+        - ?sciatica
+        - ?satiety
+        - ?cucumber
+        - ?neptune
+        - ?uranus
+    -   - feast
+        - ?satiety
+        - ?cucumber
+        - ?sweetroll
+        - ?goias
+        - ?kentucky
+    -   - feast
+        - ?satiety
+        - ?sweetroll
+        - ?yogurt
+        - ?alsace
+        - ?goias
+    -   - feast
+        - ?satiety
+        - ?yogurt
+        - ?cantelope
+        - ?alsace
+        - ?goias
+    -   - succumb
+        - ?sciatica
+        - ?satiety
+        - ?cantelope
+        - ?neptune
+        - ?uranus
+
+
+---
+timestamp: '2025-01-08T00:47:48.989201'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: feast,(craves ?v ?n2),effPos,1
+
+
+---
+timestamp: '2025-01-08T00:49:16.634126'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''?satiety'', ''?pepper'', ''?pork'', ''?alsace'',
+            ''?goias'']'
+        num_neighbours: 0
+        first_10_possible_groundings: null
+        current_state: '''(eats cucumber sweetroll)'', ''(locale sweetroll goias)'',
+            ''(pain anger)'', ''(planet uranus)'', ''(food pork)'', ''(locale cod
+            kentucky)'', ''(province kentucky)'', ''(craves dread pepper)'', ''(pain
+            depression)'', ''(eats pepper turkey)'', ''(locale pork goias)'', ''(province
+            alsace)'', ''(craves abrasion chicken)'', ''(orbits mars neptune)'', ''(attacks
+            alsace goias)'', ''(eats pork pepper)'', ''(province goias)'', ''(planet
+            mars)'', ''(orbits uranus pluto)'', ''(pain prostatitis)'', ''(pain hangover)'',
+            ''(planet neptune)'', ''(orbits neptune uranus)'', ''(food sweetroll)'',
+            ''(pleasure excitement)'', ''(eats sweetroll yogurt)'', ''(planet pluto)'',
+            ''(eats yogurt cantelope)'', ''(eats cucumber pork)'', ''(pain sciatica)'',
+            ''(craves jealousy cucumber)'', ''(locale cantelope goias)'', ''(craves
+            hangover cantelope)'', ''(eats cantelope pepper)'', ''(craves depression
+            yogurt)'', ''(food chicken)'', ''(eats onion turkey)'', ''(eats sweetroll
+            cucumber)'', ''(harmony excitement pluto)'', ''(locale turkey alsace)'',
+            ''(pain boils)'', ''(craves laceration pork)'', ''(craves anger onion)'',
+            ''(harmony satiety uranus)'', ''(pain grief)'', ''(eats turkey onion)'',
+            ''(food pepper)'', ''(locale cucumber kentucky)'', ''(eats onion cod)'',
+            ''(locale chicken goias)'', ''(pain angina)'', ''(craves boils yogurt)'',
+            ''(eats pork cucumber)'', ''(eats cod chicken)'', ''(pain dread)'', ''(craves
+            sciatica cucumber)'', ''(locale yogurt kentucky)'', ''(pain laceration)'',
+            ''(eats turkey pepper)'', ''(locale onion goias)'', ''(craves angina cantelope)'',
+            ''(eats pepper pork)'', ''(eats cantelope yogurt)'', ''(food onion)'',
+            ''(food cantelope)'', ''(craves satiety pepper)'', ''(pain jealousy)'',
+            ''(eats cod turkey)'', ''(food turkey)'', ''(eats chicken turkey)'', ''(attacks
+            goias kentucky)'', ''(pain loneliness)'', ''(food cod)'', ''(craves loneliness
+            pork)'', ''(craves grief turkey)'', ''(craves prostatitis cod)'', ''(locale
+            pepper goias)'', ''(pain abrasion)'', ''(pleasure satiety)'', ''(eats
+            chicken cod)'', ''(eats yogurt sweetroll)'', ''(craves excitement yogurt)'',
+            ''(eats turkey chicken)'', ''(food cucumber)'', ''(eats pepper cantelope)'',
+            ''(food yogurt)'', ''(eats turkey cod)'', ''(eats cod onion)'''
+
+
+---
+timestamp: '2025-01-08T00:49:16.636961'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: . Stack trace: Traceback (most recent call\
+    \ last):\n  File \"instance_solver.py\", line 85, in solve_instance\n    searcher.find_path(logger=logger,\
+    \ log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 80, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
+    \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 171, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 138, in ground_pddl\n    filtered = filter_actions(lifted_action, applicable_actions)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 89, in filter_actions\n    filtered_actions.add(action)\nMemoryError\n"
+
+
+---
+timestamp: '2025-01-08T00:49:21.928471'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '94.06'
+
+
+---
+timestamp: '2025-01-08T00:49:21.958991'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 94.26 seconds'
+
+

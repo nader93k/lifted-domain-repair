@@ -1,0 +1,109 @@
+---
+timestamp: '2025-01-03T23:21:00.156446'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs_anu/bfs relax-prec lp1/mystery__pprob01-err-rate-0-3.yaml
+    instance_id: mystery__pprob01-err-rate-0-3
+    search_algorithm: bfs
+    plan_length: 5
+    domain_class: mystery
+    instance_name: pprob01-err-rate-0-3
+    ground_plan:
+    - (overcome abrasion rest pork uranus venus)
+    - (feast rest pork lamb alsace quebec)
+    - (feast rest lamb flounder surrey pennsylvania)
+    - (feast rest flounder rice pennsylvania alsace)
+    - (succumb abrasion rest rice uranus venus)
+    lifted_plan:
+    -   - overcome
+        - ?abrasion
+        - ?rest
+        - ?pork
+        - ?uranus
+        - ?venus
+    -   - feast
+        - ?rest
+        - ?pork
+        - ?lamb
+        - ?alsace
+        - ?quebec
+    -   - feast
+        - ?rest
+        - ?lamb
+        - ?flounder
+        - ?surrey
+        - ?pennsylvania
+    -   - feast
+        - ?rest
+        - ?flounder
+        - ?rice
+        - ?pennsylvania
+        - ?alsace
+    -   - succumb
+        - ?abrasion
+        - ?rest
+        - ?rice
+        - ?uranus
+        - ?venus
+
+
+---
+timestamp: '2025-01-03T23:21:00.165484'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: succumb,(craves ?c ?n),effPos,1
+
+
+---
+timestamp: '2025-01-03T23:21:00.627438'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 17
+    fring_size: 1
+    num_nodes_generated: 18
+    sum_h_cost: 0
+    sum_f_cost: 2
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 0.40688109397888184
+    current_node:
+        depth: 5
+        ground_actions:
+        - (overcome abrasion rest pork uranus venus)
+        - (feast rest pork lamb alsace quebec)
+        - (feast rest lamb flounder surrey pennsylvania)
+        - (feast rest flounder rice pennsylvania alsace)
+        - (succumb abrasion rest rice uranus venus)
+        repair_set: succumb,(craves ?c ?n),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2025-01-03T23:21:00.628632'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.61'
+
+
+---
+timestamp: '2025-01-03T23:21:00.678536'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.88 seconds'
+
+

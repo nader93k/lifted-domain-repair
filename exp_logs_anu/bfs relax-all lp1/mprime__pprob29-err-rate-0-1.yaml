@@ -1,0 +1,140 @@
+---
+timestamp: '2025-01-07T23:45:04.907837'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs_anu/bfs relax-all lp1-new/mprime__pprob29-err-rate-0-1.yaml
+    instance_id: mprime__pprob29-err-rate-0-1
+    search_algorithm: bfs
+    plan_length: 4
+    domain_class: mprime
+    instance_name: pprob29-err-rate-0-1
+    ground_plan:
+    - (overcome jealousy excitement pork neptune uranus)
+    - (feast excitement pork broccoli manitoba bavaria)
+    - (feast excitement broccoli shrimp pennsylvania alsace)
+    - (succumb jealousy excitement shrimp neptune uranus)
+    lifted_plan:
+    -   - overcome
+        - ?jealousy
+        - ?excitement
+        - ?pork
+        - ?neptune
+        - ?uranus
+    -   - feast
+        - ?excitement
+        - ?pork
+        - ?broccoli
+        - ?manitoba
+        - ?bavaria
+    -   - feast
+        - ?excitement
+        - ?broccoli
+        - ?shrimp
+        - ?pennsylvania
+        - ?alsace
+    -   - succumb
+        - ?jealousy
+        - ?excitement
+        - ?shrimp
+        - ?neptune
+        - ?uranus
+
+
+---
+timestamp: '2025-01-07T23:45:04.910990'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-07T23:45:32.679803'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''overcome'', ''?jealousy'', ''?excitement'', ''?pork'',
+            ''?neptune'', ''?uranus'']'
+        num_neighbours: 0
+        first_10_possible_groundings: null
+        current_state: '''(province alsace)'', ''(pain angina)'', ''(pain sciatica)'',
+            ''(craves laceration melon)'', ''(craves abrasion papaya)'', ''(food scallop)'',
+            ''(craves excitement pork)'', ''(eats shrimp popover)'', ''(province moravia)'',
+            ''(craves boils broccoli)'', ''(craves angina melon)'', ''(pain laceration)'',
+            ''(eats pork pear)'', ''(locale pork bavaria)'', ''(eats pork broccoli)'',
+            ''(attacks alsace quebec)'', ''(attacks oregon kentucky)'', ''(planet
+            uranus)'', ''(craves hangover scallop)'', ''(province quebec)'', ''(planet
+            pluto)'', ''(craves prostatitis shrimp)'', ''(food pork)'', ''(craves
+            achievement scallop)'', ''(attacks pennsylvania alsace)'', ''(eats broccoli
+            shrimp)'', ''(locale melon moravia)'', ''(pain grief)'', ''(eats pear
+            pork)'', ''(food pear)'', ''(craves anxiety melon)'', ''(eats papaya pear)'',
+            ''(harmony achievement uranus)'', ''(attacks manitoba bavaria)'', ''(craves
+            jealousy pork)'', ''(pain anxiety)'', ''(eats shrimp melon)'', ''(orbits
+            earth pluto)'', ''(province oregon)'', ''(locale pear arizona)'', ''(food
+            popover)'', ''(pain abrasion)'', ''(planet earth)'', ''(orbits pluto neptune)'',
+            ''(pain hangover)'', ''(province pennsylvania)'', ''(pleasure achievement)'',
+            ''(craves anger scallop)'', ''(eats broccoli pork)'', ''(orbits neptune
+            uranus)'', ''(food shrimp)'', ''(locale scallop oregon)'', ''(eats pork
+            scallop)'', ''(locale papaya quebec)'', ''(eats popover papaya)'', ''(attacks
+            arizona pennsylvania)'', ''(eats papaya popover)'', ''(locale broccoli
+            alsace)'', ''(eats shrimp broccoli)'', ''(eats scallop melon)'', ''(province
+            manitoba)'', ''(harmony excitement uranus)'', ''(pain boils)'', ''(attacks
+            kentucky moravia)'', ''(pain jealousy)'', ''(attacks quebec manitoba)'',
+            ''(pain anger)'', ''(province kentucky)'', ''(pleasure excitement)'',
+            ''(eats pear papaya)'', ''(attacks bavaria oregon)'', ''(province bavaria)'',
+            ''(province arizona)'', ''(craves sciatica pork)'', ''(pain prostatitis)'',
+            ''(craves grief shrimp)'', ''(eats melon scallop)'', ''(locale shrimp
+            kentucky)'', ''(food melon)'', ''(eats scallop pork)'', ''(locale popover
+            bavaria)'', ''(eats popover shrimp)'', ''(planet neptune)'', ''(eats melon
+            shrimp)'', ''(food broccoli)'', ''(food papaya)'''
+
+
+---
+timestamp: '2025-01-07T23:45:32.682997'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: . Stack trace: Traceback (most recent call\
+    \ last):\n  File \"instance_solver.py\", line 85, in solve_instance\n    searcher.find_path(logger=logger,\
+    \ log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 80, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
+    \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 171, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 135, in ground_pddl\n    actions = parser.get_applicable_actions()\n  File\
+    \ \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 485, in get_applicable_actions\n    full_var_assigns = self._get_applicable_var_assigns_action(action,\
+    \ [[-1]*len(action_vars)])\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 471, in _get_applicable_var_assigns_action\n    full_var_assigns = tuple(set([tuple([elem\
+    \ for ind, elem in enumerate(var_assign) if ind not in exists_vars]) for var_assign\
+    \ in full_var_assigns]))\nMemoryError\n"
+
+
+---
+timestamp: '2025-01-07T23:45:33.518506'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '30.77'
+
+
+---
+timestamp: '2025-01-07T23:45:33.548185'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 31.05 seconds'
+
+

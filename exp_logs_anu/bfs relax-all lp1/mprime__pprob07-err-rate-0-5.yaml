@@ -1,0 +1,157 @@
+---
+timestamp: '2025-01-07T23:46:17.474871'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs_anu/bfs relax-all lp1-new/mprime__pprob07-err-rate-0-5.yaml
+    instance_id: mprime__pprob07-err-rate-0-5
+    search_algorithm: bfs
+    plan_length: 5
+    domain_class: mprime
+    instance_name: pprob07-err-rate-0-5
+    ground_plan:
+    - (drink shrimp snickers moravia manitoba arizona arizona manitoba)
+    - (feast stimulation snickers popover arizona manitoba)
+    - (overcome jealousy stimulation popover mercury saturn)
+    - (feast stimulation popover muffin arizona manitoba)
+    - (succumb jealousy stimulation muffin mercury saturn)
+    lifted_plan:
+    -   - drink
+        - ?shrimp
+        - ?snickers
+        - ?moravia
+        - ?manitoba
+        - ?arizona
+        - ?arizona
+        - ?manitoba
+    -   - feast
+        - ?stimulation
+        - ?snickers
+        - ?popover
+        - ?arizona
+        - ?manitoba
+    -   - overcome
+        - ?jealousy
+        - ?stimulation
+        - ?popover
+        - ?mercury
+        - ?saturn
+    -   - feast
+        - ?stimulation
+        - ?popover
+        - ?muffin
+        - ?arizona
+        - ?manitoba
+    -   - succumb
+        - ?jealousy
+        - ?stimulation
+        - ?muffin
+        - ?mercury
+        - ?saturn
+
+
+---
+timestamp: '2025-01-07T23:46:17.478550'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: drink,(attacks ?n2 ?n2),precPos,-1
+
+
+---
+timestamp: '2025-01-07T23:46:23.475661'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drink'', ''?shrimp'', ''?snickers'', ''?moravia'',
+            ''?manitoba'', ''?arizona'', ''?arizona'', ''?manitoba'']'
+        num_neighbours: 0
+        first_10_possible_groundings: null
+        current_state: '''(craves angina haroset)'', ''(craves sciatica snickers)'',
+            ''(craves loneliness haroset)'', ''(attacks moravia surrey)'', ''(eats
+            muffin popover)'', ''(pain prostatitis)'', ''(pain loneliness-2)'', ''(pain
+            angina)'', ''(pain sciatica-16)'', ''(craves loneliness-2 pea)'', ''(province
+            arizona)'', ''(eats popover lobster)'', ''(pain anxiety)'', ''(craves
+            dread-3 pea)'', ''(province moravia)'', ''(pain laceration)'', ''(locale
+            pear arizona)'', ''(pain prostatitis-7)'', ''(pain boils-15)'', ''(eats
+            lobster popover)'', ''(craves hangover shrimp)'', ''(attacks manitoba
+            moravia)'', ''(attacks arizona manitoba)'', ''(locale muffin arizona)'',
+            ''(eats muffin mutton)'', ''(craves stimulation snickers)'', ''(eats haroset
+            lobster)'', ''(harmony stimulation saturn)'', ''(eats muffin lobster)'',
+            ''(craves grief mutton)'', ''(eats shrimp snickers)'', ''(craves abrasion-1
+            pea)'', ''(food haroset)'', ''(craves prostatitis snickers)'', ''(eats
+            mutton muffin)'', ''(pain grief-5)'', ''(pain abrasion-1)'', ''(food shrimp)'',
+            ''(eats snickers popover)'', ''(pain grief)'', ''(food popover)'', ''(locale
+            popover manitoba)'', ''(eats lobster haroset)'', ''(locale mutton arizona)'',
+            ''(pain depression)'', ''(eats mutton pea)'', ''(eats pepper pear)'',
+            ''(pain loneliness)'', ''(craves dread snickers)'', ''(craves sciatica-16
+            lobster)'', ''(locale snickers arizona)'', ''(food pear)'', ''(eats pea
+            mutton)'', ''(eats pear pepper)'', ''(food pea)'', ''(craves depression-4
+            pea)'', ''(eats pea snickers)'', ''(food snickers)'', ''(eats pepper shrimp)'',
+            ''(craves laceration pepper)'', ''(locale lobster surrey)'', ''(pain hangover)'',
+            ''(craves prostatitis-7 lobster)'', ''(pain anger)'', ''(pain dread)'',
+            ''(eats lobster pear)'', ''(craves angina-8 muffin)'', ''(locale pepper
+            manitoba)'', ''(eats pear lobster)'', ''(province surrey)'', ''(craves
+            abrasion snickers)'', ''(craves depression mutton)'', ''(pain abrasion)'',
+            ''(food muffin)'', ''(pain boils)'', ''(eats snickers shrimp)'', ''(food
+            lobster)'', ''(eats pepper pea)'', ''(craves learning pea)'', ''(eats
+            shrimp pepper)'', ''(pain jealousy)'', ''(pain depression-4)'', ''(eats
+            snickers pea)'', ''(eats shrimp haroset)'', ''(craves anger-6 lobster)'',
+            ''(pleasure learning)'', ''(locale haroset arizona)'', ''(eats lobster
+            muffin)'', ''(pain angina-8)'', ''(pain dread-3)'', ''(eats popover muffin)'',
+            ''(craves boils-15 pear)'', ''(craves anger mutton)'', ''(province manitoba)'',
+            ''(orbits mercury saturn)'', ''(craves anxiety pepper)'', ''(planet saturn)'',
+            ''(locale shrimp moravia)'', ''(food mutton)'', ''(planet mercury)'',
+            ''(locale pea moravia)'', ''(eats haroset shrimp)'', ''(eats popover snickers)'',
+            ''(pain sciatica)'', ''(pleasure stimulation)'', ''(eats pea pepper)'',
+            ''(craves grief-5 lobster)'', ''(food pepper)'', ''(pain anger-6)'', ''(craves
+            jealousy popover)'', ''(craves boils shrimp)'', ''(harmony learning saturn)'''
+
+
+---
+timestamp: '2025-01-07T23:46:23.479350'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: . Stack trace: Traceback (most recent call\
+    \ last):\n  File \"instance_solver.py\", line 85, in solve_instance\n    searcher.find_path(logger=logger,\
+    \ log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 80, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
+    \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 171, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 135, in ground_pddl\n    actions = parser.get_applicable_actions()\n  File\
+    \ \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 485, in get_applicable_actions\n    full_var_assigns = self._get_applicable_var_assigns_action(action,\
+    \ [[-1]*len(action_vars)])\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 433, in _get_applicable_var_assigns_action\n    full_var_assigns.extend(new_var_assigns)\n\
+    MemoryError\n"
+
+
+---
+timestamp: '2025-01-07T23:46:25.107455'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '8.75'
+
+
+---
+timestamp: '2025-01-07T23:46:25.131884'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 8.94 seconds'
+
+

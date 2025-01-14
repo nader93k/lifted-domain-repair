@@ -1,0 +1,105 @@
+---
+timestamp: '2025-01-12T22:00:17.748815'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary-ff
+        relax-all lp066/nomystery-opt11-strips__pp01-err-rate-0-3.yaml
+    instance_id: nomystery-opt11-strips__pp01-err-rate-0-3
+    search_algorithm: astar
+    plan_length: 11
+    domain_class: nomystery-opt11-strips
+    instance_name: pp01-err-rate-0-3
+    ground_plan:
+    - (drive t0 l2 l0 level34 level2 level36)
+    - (load p0 t0 l0)
+    - (drive t0 l0 l1 level21 level13 level34)
+    - (load p1 t0 l1)
+    - (unload p0 t0 l1)
+    - (drive t0 l1 l3 level10 level11 level21)
+    - (load p2 t0 l3)
+    - (drive t0 l3 l2 level4 level6 level10)
+    - (drive t0 l2 l0 level2 level2 level4)
+    - (unload p2 t0 l0)
+    - (unload p1 t0 l0)
+    lifted_plan:
+    -   - drive
+        - t0
+        - l2
+        - ?l0
+        - ?level34
+        - ?level2
+        - ?level36
+    -   - load
+        - p0
+        - ?t0
+        - ?l0
+    -   - drive
+        - ?t0
+        - l0
+        - ?l1
+        - ?level21
+        - level13
+        - ?level34
+    -   - load
+        - ?p1
+        - t0
+        - l1
+    -   - unload
+        - p0
+        - t0
+        - ?l1
+    -   - drive
+        - t0
+        - l1
+        - l3
+        - ?level10
+        - ?level11
+        - ?level21
+    -   - load
+        - ?p2
+        - t0
+        - l3
+    -   - drive
+        - ?t0
+        - l3
+        - ?l2
+        - level4
+        - ?level6
+        - ?level10
+    -   - drive
+        - t0
+        - ?l2
+        - l0
+        - level2
+        - ?level2
+        - ?level4
+    -   - unload
+        - p2
+        - ?t0
+        - ?l0
+    -   - unload
+        - p1
+        - ?t0
+        - ?l0
+
+
+---
+timestamp: '2025-01-12T22:00:17.757088'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: unload,(in ?p ?t),precPos,-1
+
+
+---
+timestamp: '2025-01-12T22:15:16.422384'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+

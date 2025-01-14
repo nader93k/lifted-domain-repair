@@ -1,0 +1,107 @@
+---
+timestamp: '2025-01-12T18:06:59.344575'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary-ff
+        relax-all lp1/data-network-opt18-strips__pp09-err-rate-0-1.yaml
+    instance_id: data-network-opt18-strips__pp09-err-rate-0-1
+    search_algorithm: astar
+    plan_length: 8
+    domain_class: data-network-opt18-strips
+    instance_name: pp09-err-rate-0-1
+    ground_plan:
+    - (load data-0-3 server3 number2 number8 number0 number2)
+    - (send data-0-3 server3 server1 number2 number16 number0 number2)
+    - (load data-0-5 server3 number4 number8 number2 number6)
+    - (send data-0-5 server3 server1 number4 number16 number2 number6)
+    - (process data-0-3 data-0-5 data-1-4 script6 server1 number5 number16 number6
+        number11)
+    - (process data-1-4 data-0-3 data-2-1 script2 server1 number2 number16 number11
+        number13)
+    - (send data-2-1 server1 server2 number2 number8 number0 number2)
+    - (save data-2-1 number2 server2)
+    lifted_plan:
+    -   - load
+        - ?data-0-3
+        - ?server3
+        - ?number2
+        - ?number8
+        - ?number0
+        - ?number2
+    -   - send
+        - ?data-0-3
+        - ?server3
+        - ?server1
+        - ?number2
+        - ?number16
+        - ?number0
+        - ?number2
+    -   - load
+        - ?data-0-5
+        - ?server3
+        - ?number4
+        - ?number8
+        - ?number2
+        - ?number6
+    -   - send
+        - ?data-0-5
+        - ?server3
+        - ?server1
+        - ?number4
+        - ?number16
+        - ?number2
+        - ?number6
+    -   - process
+        - ?data-0-3
+        - ?data-0-5
+        - ?data-1-4
+        - ?script6
+        - ?server1
+        - ?number5
+        - ?number16
+        - ?number6
+        - ?number11
+    -   - process
+        - ?data-1-4
+        - ?data-0-3
+        - ?data-2-1
+        - ?script2
+        - ?server1
+        - ?number2
+        - ?number16
+        - ?number11
+        - ?number13
+    -   - send
+        - ?data-2-1
+        - ?server1
+        - ?server2
+        - ?number2
+        - ?number8
+        - ?number0
+        - ?number2
+    -   - save
+        - ?data-2-1
+        - ?number2
+        - ?server2
+
+
+---
+timestamp: '2025-01-12T18:06:59.349401'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-12T18:21:58.029858'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+
