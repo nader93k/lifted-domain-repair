@@ -161,11 +161,6 @@ class Node:
             self.logger.log(issuer="node", event_type="error", level=logging.ERROR, message=log_data_error)
             sys.exit(1)
 
-        h = Heurisitc(h_name="L_HADD", relaxation=self.h_relaxation)
-        h_cost = h.evaluate(self.original_domain, task, self.lifted_action_sequence)
-        return h_cost
-
-
     def get_neighbors(self):
         # don't try to expand this node if the cost is infinite (no repairs)
         if self.f_cost == float('inf'):

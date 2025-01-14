@@ -215,6 +215,21 @@ def prepare_data(benchmark_path, domain_class, instance_ids, min_length, max_len
         max_length=max_length,
         order=order
     ))
+
+    excluded_domains = [
+        'pipesworld-notankage',
+        'woodworking-opt08-strips',
+        'woodworking-sat08-strips',
+        'woodworking-sat11-strips',
+        'woodworking-opt11-strips',
+        'tidybot-opt11-strips',
+        'data-network-opt18-strips',
+        'snake-opt18-strips',
+        'logistics00',
+        'ged-opt14-strips'
+    ]
+
+    instances = [inst for inst in instances if inst.domain_class not in excluded_domains]
     
     print(f"Total instances to process: {len(instances)}", flush=True)
     
