@@ -1,0 +1,89 @@
+---
+timestamp: '2025-01-11T03:47:14.240021'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs
+        relax-prec-delete lp1/ged-opt14-strips__pd-8-1-err-rate-0-1.yaml
+    instance_id: ged-opt14-strips__pd-8-1-err-rate-0-1
+    search_algorithm: dfs
+    plan_length: 14
+    domain_class: ged-opt14-strips
+    instance_name: pd-8-1-err-rate-0-1
+    ground_plan:
+    - (invert-single-gene-a g54)
+    - (begin-cut g54 sub1)
+    - (end-cut-1 sub1 sub6)
+    - (end-cut-2 g54 sub6)
+    - (begin-transpose-splice sub4 g54)
+    - (end-splice-1 sub1 sub4)
+    - (end-splice-2 sub1 g54)
+    - (reset-1 g54)
+    - (begin-cut sub2 sub3)
+    - (end-cut-1 sub3 sub4)
+    - (end-cut-2 sub2 sub4)
+    - (begin-transpose-splice sub5 sub2)
+    - (end-splice-1 sub3 sub5)
+    - (end-splice-2 sub3 sub2)
+    lifted_plan:
+    -   - invert-single-gene-a
+        - ?g54
+    -   - begin-cut
+        - ?g54
+        - ?sub1
+    -   - end-cut-1
+        - ?sub1
+        - ?sub6
+    -   - end-cut-2
+        - ?g54
+        - ?sub6
+    -   - begin-transpose-splice
+        - ?sub4
+        - ?g54
+    -   - end-splice-1
+        - ?sub1
+        - ?sub4
+    -   - end-splice-2
+        - ?sub1
+        - ?g54
+    -   - reset-1
+        - ?g54
+    -   - begin-cut
+        - ?sub2
+        - ?sub3
+    -   - end-cut-1
+        - ?sub3
+        - ?sub4
+    -   - end-cut-2
+        - ?sub2
+        - ?sub4
+    -   - begin-transpose-splice
+        - ?sub5
+        - ?sub2
+    -   - end-splice-1
+        - ?sub3
+        - ?sub5
+    -   - end-splice-2
+        - ?sub3
+        - ?sub2
+
+
+---
+timestamp: '2025-01-11T03:47:14.246417'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-11T04:02:12.068234'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+

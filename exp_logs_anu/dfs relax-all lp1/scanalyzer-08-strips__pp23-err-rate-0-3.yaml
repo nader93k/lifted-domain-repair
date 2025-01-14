@@ -1,0 +1,138 @@
+---
+timestamp: '2025-01-13T12:52:30.764881'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs
+        relax-all lp1/scanalyzer-08-strips__pp23-err-rate-0-3.yaml
+    instance_id: scanalyzer-08-strips__pp23-err-rate-0-3
+    search_algorithm: dfs
+    plan_length: 5
+    domain_class: scanalyzer-08-strips
+    instance_name: pp23-err-rate-0-3
+    ground_plan:
+    - (analyze-4 seg-in-1a seg-in-1b seg-out-1a seg-out-1b car-in-1a car-in-1b car-out-1a
+        car-out-1b)
+    - (analyze-4 seg-in-1a seg-in-1b seg-out-1a seg-out-1b car-in-1b car-out-1a car-out-1b
+        car-in-1a)
+    - (analyze-4 seg-in-1a seg-in-1b seg-out-1a seg-out-1b car-out-1a car-out-1b car-in-1a
+        car-in-1b)
+    - (analyze-4 seg-in-1a seg-in-1b seg-out-1a seg-out-1b car-out-1b car-in-1a car-in-1b
+        car-out-1a)
+    - (analyze-4 seg-in-1a seg-in-1b seg-out-1a seg-out-1b car-in-1a car-in-1b car-out-1a
+        car-out-1b)
+    lifted_plan:
+    -   - analyze-4
+        - ?seg-in-1a
+        - ?seg-in-1b
+        - ?seg-out-1a
+        - ?seg-out-1b
+        - ?car-in-1a
+        - ?car-in-1b
+        - ?car-out-1a
+        - ?car-out-1b
+    -   - analyze-4
+        - ?seg-in-1a
+        - ?seg-in-1b
+        - ?seg-out-1a
+        - ?seg-out-1b
+        - ?car-in-1b
+        - ?car-out-1a
+        - ?car-out-1b
+        - ?car-in-1a
+    -   - analyze-4
+        - ?seg-in-1a
+        - ?seg-in-1b
+        - ?seg-out-1a
+        - ?seg-out-1b
+        - ?car-out-1a
+        - ?car-out-1b
+        - ?car-in-1a
+        - ?car-in-1b
+    -   - analyze-4
+        - ?seg-in-1a
+        - ?seg-in-1b
+        - ?seg-out-1a
+        - ?seg-out-1b
+        - ?car-out-1b
+        - ?car-in-1a
+        - ?car-in-1b
+        - ?car-out-1a
+    -   - analyze-4
+        - ?seg-in-1a
+        - ?seg-in-1b
+        - ?seg-out-1a
+        - ?seg-out-1b
+        - ?car-in-1a
+        - ?car-in-1b
+        - ?car-out-1a
+        - ?car-out-1b
+
+
+---
+timestamp: '2025-01-13T12:52:30.768251'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-13T13:04:06.699279'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data:
+    error_type: MemoryError
+    error_message: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',
+        'instance_solver.py', 'dfs', '/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1',
+        '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs relax-all
+        lp1/scanalyzer-08-strips__pp23-err-rate-0-3.yaml', '1000000', 'scanalyzer-08-strips__pp23-err-rate-0-3',
+        '1.0', 'unary']' returned non-zero exit status 1.
+    stack_trace: "Traceback (most recent call last):\n  File \"batch_solver.py\",\
+        \ line 126, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
+        \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/subprocess.py\"\
+        , line 516, in run\n    raise CalledProcessError(retcode, process.args,\n\
+        subprocess.CalledProcessError: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',\
+        \ 'instance_solver.py', 'dfs', '/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1',\
+        \ '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs\
+        \ relax-all lp1/scanalyzer-08-strips__pp23-err-rate-0-3.yaml', '1000000',\
+        \ 'scanalyzer-08-strips__pp23-err-rate-0-3', '1.0', 'unary']' returned non-zero\
+        \ exit status 1.\n"
+    instance_id: scanalyzer-08-strips__pp23-err-rate-0-3
+    process_info:
+        cmd:
+        - /home/projects/u7899572/conda-envs/main/bin/python3
+        - instance_solver.py
+        - dfs
+        - /home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1
+        - /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs relax-all
+            lp1/scanalyzer-08-strips__pp23-err-rate-0-3.yaml
+        - '1000000'
+        - scanalyzer-08-strips__pp23-err-rate-0-3
+        - '1.0'
+        - unary
+        duration: '697.35'
+        python_executable: /home/projects/u7899572/conda-envs/main/bin/python3
+    stdout: ''
+    stderr: "Traceback (most recent call last):\n  File \"instance_solver.py\", line\
+        \ 106, in solve_instance\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+        , line 140, in find_path\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+        , line 215, in get_neighbors\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+        , line 91, in __init__\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+        , line 116, in _ground_repair\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/repairer/__init__.py\"\
+        , line 23, in repair\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/hitter/maxsat/__init__.py\"\
+        , line 18, in top\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/pysat/examples/fm.py\"\
+        , line 278, in compute\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/pysat/examples/fm.py\"\
+        , line 295, in _compute\nMemoryError\n\nDuring handling of the above exception,\
+        \ another exception occurred:\n\nTraceback (most recent call last):\n  File\
+        \ \"instance_solver.py\", line 138, in <module>\n  File \"instance_solver.py\"\
+        , line 109, in solve_instance\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/custom_logger.py\"\
+        , line 44, in log\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/yaml/__init__.py\"\
+        , line 253, in dump\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/yaml/__init__.py\"\
+        , line 246, in dump_all\nMemoryError\n"
+
+

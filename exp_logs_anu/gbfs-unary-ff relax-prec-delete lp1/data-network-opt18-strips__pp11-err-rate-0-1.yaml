@@ -1,0 +1,128 @@
+---
+timestamp: '2025-01-13T09:07:30.118028'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-prec-delete lp1/data-network-opt18-strips__pp11-err-rate-0-1.yaml
+    instance_id: data-network-opt18-strips__pp11-err-rate-0-1
+    search_algorithm: greedy
+    plan_length: 7
+    domain_class: data-network-opt18-strips
+    instance_name: pp11-err-rate-0-1
+    ground_plan:
+    - (load data-0-3 server1 number5 number16 number0 number5)
+    - (load data-0-6 server3 number2 number8 number0 number2)
+    - (send data-0-6 server3 server1 number2 number16 number5 number7)
+    - (process data-0-3 data-0-6 data-1-4 script7 server1 number5 number16 number7
+        number12)
+    - (process data-1-4 data-0-3 data-2-7 script5 server1 number1 number16 number12
+        number13)
+    - (send data-2-7 server1 server2 number1 number8 number0 number1)
+    - (save data-2-7 number1 server2)
+    lifted_plan:
+    -   - load
+        - ?data-0-3
+        - ?server1
+        - ?number5
+        - ?number16
+        - ?number0
+        - ?number5
+    -   - load
+        - ?data-0-6
+        - ?server3
+        - ?number2
+        - ?number8
+        - ?number0
+        - ?number2
+    -   - send
+        - ?data-0-6
+        - ?server3
+        - ?server1
+        - ?number2
+        - ?number16
+        - ?number5
+        - ?number7
+    -   - process
+        - ?data-0-3
+        - ?data-0-6
+        - ?data-1-4
+        - ?script7
+        - ?server1
+        - ?number5
+        - ?number16
+        - ?number7
+        - ?number12
+    -   - process
+        - ?data-1-4
+        - ?data-0-3
+        - ?data-2-7
+        - ?script5
+        - ?server1
+        - ?number1
+        - ?number16
+        - ?number12
+        - ?number13
+    -   - send
+        - ?data-2-7
+        - ?server1
+        - ?server2
+        - ?number1
+        - ?number8
+        - ?number0
+        - ?number1
+    -   - save
+        - ?data-2-7
+        - ?number1
+        - ?server2
+
+
+---
+timestamp: '2025-01-13T09:07:30.122810'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: process,(usage ?s ?before),precPos,-1
+
+
+---
+timestamp: '2025-01-13T09:07:34.824051'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: Action <Action 'send' at 0x7ff0b3516370>\
+    \ not applicable in current state. Unsatisfied atom: NegatedAtom cached(data-0-6,\
+    \ server3). Stack trace: Traceback (most recent call last):\n  File \"instance_solver.py\"\
+    , line 106, in solve_instance\n    searcher.find_path(logger=logger, log_interval=log_interval)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 80, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
+    \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 174, in get_neighbors\n    current_state = self.calculate_current_state(delete_relaxation=DELETE_RELAXATION)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 128, in calculate_current_state\n    state = apply_action_sequence(domain,\
+    \ task, plan, delete_relaxed=delete_relaxation)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/model/plan.py\"\
+    , line 44, in apply_action_sequence\n    raise ValueError(f\"Action {action} not\
+    \ applicable in current state. Unsatisfied atom: {unsat_atom}\")\nValueError:\
+    \ Action <Action 'send' at 0x7ff0b3516370> not applicable in current state. Unsatisfied\
+    \ atom: NegatedAtom cached(data-0-6, server3)\n"
+
+
+---
+timestamp: '2025-01-13T09:07:34.825701'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '6.53'
+
+
+---
+timestamp: '2025-01-13T09:07:34.868702'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 7.00 seconds'
+
+

@@ -1,0 +1,195 @@
+---
+timestamp: '2025-01-13T08:44:19.251981'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-prec-delete lp066/data-network-opt18-strips__pp04-err-rate-0-3.yaml
+    instance_id: data-network-opt18-strips__pp04-err-rate-0-3
+    search_algorithm: greedy
+    plan_length: 12
+    domain_class: data-network-opt18-strips
+    instance_name: pp04-err-rate-0-3
+    ground_plan:
+    - (load data-0-7 server2 number4 number8 number0 number4)
+    - (send data-0-7 server2 server1 number4 number16 number0 number4)
+    - (load data-0-8 server3 number3 number8 number0 number3)
+    - (send data-0-8 server3 server1 number3 number16 number4 number7)
+    - (process data-0-7 data-0-8 data-1-5 script1 server1 number1 number16 number7
+        number8)
+    - (process data-1-5 data-0-7 data-2-2 script11 server1 number4 number16 number8
+        number12)
+    - (send data-2-2 server1 server3 number4 number8 number3 number7)
+    - (save data-2-2 number4 server3)
+    - (process data-1-5 data-0-8 data-2-4 script16 server1 number2 number16 number12
+        number14)
+    - (process data-1-5 data-0-8 data-2-6 script19 server1 number1 number16 number14
+        number15)
+    - (save data-2-4 number2 server1)
+    - (save data-2-6 number1 server1)
+    lifted_plan:
+    -   - load
+        - data-0-7
+        - server2
+        - ?number4
+        - ?number8
+        - ?number0
+        - ?number4
+    -   - send
+        - data-0-7
+        - ?server2
+        - ?server1
+        - ?number4
+        - number16
+        - ?number0
+        - ?number4
+    -   - load
+        - data-0-8
+        - ?server3
+        - ?number3
+        - number8
+        - number0
+        - number3
+    -   - send
+        - data-0-8
+        - ?server3
+        - server1
+        - number3
+        - number16
+        - ?number4
+        - ?number7
+    -   - process
+        - ?data-0-7
+        - ?data-0-8
+        - data-1-5
+        - script1
+        - ?server1
+        - number1
+        - ?number16
+        - number7
+        - ?number8
+    -   - process
+        - ?data-1-5
+        - data-0-7
+        - ?data-2-2
+        - script11
+        - server1
+        - ?number4
+        - ?number16
+        - number8
+        - ?number12
+    -   - send
+        - ?data-2-2
+        - server1
+        - ?server3
+        - ?number4
+        - ?number8
+        - number3
+        - number7
+    -   - save
+        - ?data-2-2
+        - ?number4
+        - ?server3
+    -   - process
+        - ?data-1-5
+        - data-0-8
+        - ?data-2-4
+        - ?script16
+        - server1
+        - ?number2
+        - number16
+        - ?number12
+        - number14
+    -   - process
+        - ?data-1-5
+        - ?data-0-8
+        - ?data-2-6
+        - ?script19
+        - ?server1
+        - ?number1
+        - ?number16
+        - ?number14
+        - ?number15
+    -   - save
+        - ?data-2-4
+        - ?number2
+        - ?server1
+    -   - save
+        - ?data-2-6
+        - number1
+        - server1
+
+
+---
+timestamp: '2025-01-13T08:44:19.257177'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-13T08:58:40.210705'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 8029
+    fring_size: 104
+    num_nodes_generated: 8133
+    sum_h_cost: 2
+    sum_f_cost: 1
+    sum_h_cost_time: 121.23527693748474
+    sum_grounding_time: 618.4900403022766
+    h_max: 1
+    current_node:
+        depth: 12
+        ground_actions:
+        - (load data-0-7 server2 number4 number8 number0 number4)
+        - (send data-0-7 server2 server1 number4 number16 number0 number4)
+        - (load data-0-8 server3 number3 number8 number0 number3)
+        - (send data-0-8 server3 server1 number3 number16 number4 number7)
+        - (process data-0-7 data-0-8 data-1-5 script1 server1 number1 number16 number7
+            number8)
+        - (process data-1-5 data-0-7 data-2-2 script11 server1 number4 number16 number8
+            number12)
+        - (send data-2-2 server1 server3 number4 number8 number3 number7)
+        - (save data-0-8 number3 server1)
+        - (process data-1-5 data-0-8 data-2-4 script16 server1 number2 number16 number12
+            number14)
+        - (process data-1-5 data-0-7 data-2-6 script23 server1 number1 number16 number14
+            number15)
+        - (save data-0-8 number3 server1)
+        - (save data-1-5 number1 server1)
+        repair_set: 'send,(saved ?d ?to),effPos,1
+
+            process,(saved ?out ?s),effPos,1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2025-01-13T08:58:40.212763'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '862.12'
+
+
+---
+timestamp: '2025-01-13T08:58:42.523820'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 864.72 seconds'
+
+

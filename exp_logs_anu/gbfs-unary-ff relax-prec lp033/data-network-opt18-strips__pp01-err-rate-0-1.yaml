@@ -1,0 +1,155 @@
+---
+timestamp: '2025-01-13T22:20:35.088943'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-prec lp033/data-network-opt18-strips__pp01-err-rate-0-1.yaml
+    instance_id: data-network-opt18-strips__pp01-err-rate-0-1
+    search_algorithm: greedy
+    plan_length: 9
+    domain_class: data-network-opt18-strips
+    instance_name: pp01-err-rate-0-1
+    ground_plan:
+    - (load data-0-3 server3 number4 number8 number0 number4)
+    - (send data-0-3 server3 server1 number4 number16 number0 number4)
+    - (load data-0-5 server1 number5 number16 number4 number9)
+    - (send data-0-5 server1 server2 number5 number8 number0 number5)
+    - (process data-0-3 data-0-5 data-1-4 script1 server1 number1 number16 number9
+        number10)
+    - (release data-0-5 server2 number5 number5 number0)
+    - (process data-1-4 data-0-5 data-2-1 script3 server1 number4 number16 number10
+        number14)
+    - (send data-2-1 server1 server2 number4 number8 number0 number4)
+    - (save data-2-1 number4 server2)
+    lifted_plan:
+    -   - load
+        - data-0-3
+        - server3
+        - number4
+        - ?number8
+        - number0
+        - number4
+    -   - send
+        - data-0-3
+        - ?server3
+        - server1
+        - number4
+        - number16
+        - number0
+        - ?number4
+    -   - load
+        - data-0-5
+        - server1
+        - ?number5
+        - number16
+        - number4
+        - number9
+    -   - send
+        - data-0-5
+        - ?server1
+        - server2
+        - number5
+        - number8
+        - number0
+        - ?number5
+    -   - process
+        - data-0-3
+        - data-0-5
+        - data-1-4
+        - script1
+        - server1
+        - number1
+        - ?number16
+        - number9
+        - number10
+    -   - release
+        - ?data-0-5
+        - server2
+        - number5
+        - number5
+        - number0
+    -   - process
+        - ?data-1-4
+        - data-0-5
+        - data-2-1
+        - ?script3
+        - ?server1
+        - number4
+        - ?number16
+        - number10
+        - ?number14
+    -   - send
+        - data-2-1
+        - server1
+        - server2
+        - ?number4
+        - ?number8
+        - number0
+        - number4
+    -   - save
+        - ?data-2-1
+        - number4
+        - server2
+
+
+---
+timestamp: '2025-01-13T22:20:35.093601'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: process,(script-io ?sc ?in1 ?out ?in2),precPos,-1
+
+
+---
+timestamp: '2025-01-13T22:20:36.002586'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 5
+    fring_size: 0
+    num_nodes_generated: 5
+    sum_h_cost: 16
+    sum_f_cost: 8
+    sum_h_cost_time: 0.6354496479034424
+    sum_grounding_time: 0.24904823303222656
+    h_max: 2
+    current_node:
+        depth: 4
+        ground_actions:
+        - (load data-0-3 server3 number4 number8 number0 number4)
+        - (send data-0-3 server3 server1 number4 number16 number0 number4)
+        - (load data-0-5 server1 number5 number16 number4 number9)
+        - (send data-0-5 server1 server2 number5 number8 number0 number5)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 2
+        f_cost: 2
+        next_lifted_action: '[''process'', ''data-0-3'', ''data-0-5'', ''data-1-4'',
+            ''script1'', ''server1'', ''number1'', ''?number16'', ''number9'', ''number10'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2025-01-13T22:20:36.003914'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '2.08'
+
+
+---
+timestamp: '2025-01-13T22:20:36.033718'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 2.39 seconds'
+
+

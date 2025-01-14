@@ -1,0 +1,101 @@
+---
+timestamp: '2025-01-13T22:20:34.828120'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-prec lp033/woodworking-sat08-strips__pp21-err-rate-0-3.yaml
+    instance_id: woodworking-sat08-strips__pp21-err-rate-0-3
+    search_algorithm: greedy
+    plan_length: 8
+    domain_class: woodworking-sat08-strips
+    instance_name: pp21-err-rate-0-3
+    ground_plan:
+    - (do-saw-small b0 p0 saw0 oak rough s1 s0)
+    - (do-saw-large b1 p2 saw0 pine rough s6 s4 s5 s3)
+    - (do-saw-large b1 p1 saw0 pine rough s6 s4 s5 s3)
+    - (do-plane p1 planer0 rough natural untreated)
+    - (do-immersion-varnish p1 immersion-varnisher0 blue smooth)
+    - (do-plane p2 planer0 rough natural untreated)
+    - (do-plane p0 planer0 rough natural untreated)
+    - (do-immersion-varnish p0 immersion-varnisher0 natural smooth)
+    lifted_plan:
+    -   - do-saw-small
+        - b0
+        - p0
+        - saw0
+        - ?oak
+        - rough
+        - s1
+        - s0
+    -   - do-saw-large
+        - ?b1
+        - p2
+        - saw0
+        - pine
+        - rough
+        - ?s6
+        - s4
+        - s5
+        - ?s3
+    -   - do-saw-large
+        - b1
+        - p1
+        - saw0
+        - pine
+        - ?rough
+        - s6
+        - s4
+        - s5
+        - s3
+    -   - do-plane
+        - ?p1
+        - planer0
+        - rough
+        - natural
+        - untreated
+    -   - do-immersion-varnish
+        - p1
+        - immersion-varnisher0
+        - ?blue
+        - smooth
+    -   - do-plane
+        - p2
+        - ?planer0
+        - rough
+        - natural
+        - untreated
+    -   - do-plane
+        - p0
+        - ?planer0
+        - rough
+        - natural
+        - ?untreated
+    -   - do-immersion-varnish
+        - ?p0
+        - immersion-varnisher0
+        - ?natural
+        - smooth
+
+
+---
+timestamp: '2025-01-13T22:20:34.834208'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "Can't perform vanilla repair: Problem is unsolvable\nTraceback (most recent\
+    \ call last):\n  File \"instance_solver.py\", line 61, in solve_instance\n   \
+    \ gr = ground_repair(\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/vanilla_runs/run_songtuans_vanilla.py\"\
+    , line 22, in ground_repair\n    raise Exception(\"Problem is unsolvable\")\n\
+    Exception: Problem is unsolvable\n"
+
+
+---
+timestamp: '2025-01-13T22:20:34.861648'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.46 seconds'
+
+

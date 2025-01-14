@@ -1,0 +1,110 @@
+---
+timestamp: '2025-01-13T08:43:08.553446'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-prec-delete lp066/miconic__ps2-4-err-rate-0-5.yaml
+    instance_id: miconic__ps2-4-err-rate-0-5
+    search_algorithm: greedy
+    plan_length: 9
+    domain_class: miconic
+    instance_name: ps2-4-err-rate-0-5
+    ground_plan:
+    - (up f0 f2)
+    - (board f2 p1)
+    - (down f2 f0)
+    - (depart f0 p1)
+    - (up f0 f2)
+    - (up f2 f3)
+    - (board f3 p0)
+    - (down f3 f2)
+    - (depart f2 p0)
+    lifted_plan:
+    -   - up
+        - f0
+        - f2
+    -   - board
+        - ?f2
+        - ?p1
+    -   - down
+        - ?f2
+        - ?f0
+    -   - depart
+        - f0
+        - ?p1
+    -   - up
+        - ?f0
+        - ?f2
+    -   - up
+        - f2
+        - ?f3
+    -   - board
+        - ?f3
+        - p0
+    -   - down
+        - ?f3
+        - ?f2
+    -   - depart
+        - f2
+        - p0
+
+
+---
+timestamp: '2025-01-13T08:43:08.556578'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'down,(passenger ?f2),precPos,-1
+
+        board,(destin ?f ?p),precPos,-1'
+
+
+---
+timestamp: '2025-01-13T08:43:08.652297'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 2
+    fring_size: 0
+    num_nodes_generated: 2
+    sum_h_cost: 8
+    sum_f_cost: 4
+    sum_h_cost_time: 0.045392513275146484
+    sum_grounding_time: 0.04575848579406738
+    h_max: 4
+    current_node:
+        depth: 1
+        ground_actions:
+        - (up f0 f2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 4
+        f_cost: 4
+        next_lifted_action: '[''board'', ''?f2'', ''?p1'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2025-01-13T08:43:08.653423'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.22'
+
+
+---
+timestamp: '2025-01-13T08:43:08.690814'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.63 seconds'
+
+

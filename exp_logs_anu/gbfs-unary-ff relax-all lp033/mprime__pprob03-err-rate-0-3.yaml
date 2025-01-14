@@ -1,0 +1,129 @@
+---
+timestamp: '2025-01-13T20:56:42.428409'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-all lp033/mprime__pprob03-err-rate-0-3.yaml
+    instance_id: mprime__pprob03-err-rate-0-3
+    search_algorithm: greedy
+    plan_length: 6
+    domain_class: mprime
+    instance_name: pprob03-err-rate-0-3
+    ground_plan:
+    - (feast entertainment pepper melon arizona manitoba)
+    - (feast entertainment melon ham arizona manitoba)
+    - (feast entertainment ham chocolate arizona manitoba)
+    - (overcome hangover entertainment chocolate vulcan venus)
+    - (feast entertainment chocolate ham goias guanabara)
+    - (succumb hangover entertainment ham vulcan venus)
+    lifted_plan:
+    -   - feast
+        - entertainment
+        - pepper
+        - melon
+        - ?arizona
+        - manitoba
+    -   - feast
+        - entertainment
+        - melon
+        - ?ham
+        - arizona
+        - manitoba
+    -   - feast
+        - entertainment
+        - ham
+        - ?chocolate
+        - arizona
+        - manitoba
+    -   - overcome
+        - ?hangover
+        - entertainment
+        - chocolate
+        - vulcan
+        - venus
+    -   - feast
+        - ?entertainment
+        - chocolate
+        - ham
+        - goias
+        - guanabara
+    -   - succumb
+        - ?hangover
+        - entertainment
+        - ham
+        - vulcan
+        - venus
+
+
+---
+timestamp: '2025-01-13T20:56:42.432542'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: succumb,(harmony ?v ?s1),precPos,-1
+
+
+---
+timestamp: '2025-01-13T21:07:43.237322'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 7
+    fring_size: 150
+    num_nodes_generated: 157
+    sum_h_cost: 356
+    sum_f_cost: 178
+    sum_h_cost_time: 0.6985936164855957
+    sum_grounding_time: 640.6269433498383
+    h_max: 2
+    current_node:
+        depth: 6
+        ground_actions:
+        - (feast entertainment pepper melon arizona manitoba)
+        - (feast entertainment melon pepper arizona manitoba)
+        - (feast entertainment ham melon arizona manitoba)
+        - (overcome jealousy entertainment chocolate vulcan venus)
+        - (feast triumph chocolate ham goias guanabara)
+        - (succumb hangover entertainment ham vulcan venus)
+        repair_set: 'succumb,(harmony ?v ?s1),precPos,-1
+
+            overcome,(craves ?c ?n),precPos,-1
+
+            succumb,(fears ?c ?v),precPos,-1
+
+            succumb,(craves ?v ?n),precPos,-1
+
+            overcome,(craves ?v ?n),precPos,-1
+
+            feast,(craves ?v ?n1),precPos,-1'
+        g_cost: 6
+        h_cost: 0
+        f_cost: 6
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2025-01-13T21:07:43.239259'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '662.00'
+
+
+---
+timestamp: '2025-01-13T21:07:43.309089'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 662.44 seconds'
+
+

@@ -1,0 +1,148 @@
+---
+timestamp: '2025-01-03T20:44:18.199414'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs_anu/dfs relax-prec lp066/data-network-opt18-strips__pp15-err-rate-0-5.yaml
+    instance_id: data-network-opt18-strips__pp15-err-rate-0-5
+    search_algorithm: dfs
+    plan_length: 8
+    domain_class: data-network-opt18-strips
+    instance_name: pp15-err-rate-0-5
+    ground_plan:
+    - (load data-0-2 server7 number3 number8 number0 number3)
+    - (load data-0-3 server7 number2 number8 number3 number5)
+    - (send data-0-2 server7 server2 number3 number8 number0 number3)
+    - (process data-0-3 data-0-2 data-1-4 script3 server7 number1 number8 number5
+        number6)
+    - (release data-0-2 server7 number3 number6 number3)
+    - (process data-1-4 data-0-3 data-2-1 script2 server7 number5 number8 number3
+        number8)
+    - (send data-2-1 server7 server2 number5 number8 number3 number8)
+    - (save data-2-1 number5 server2)
+    lifted_plan:
+    -   - load
+        - data-0-2
+        - server7
+        - ?number3
+        - ?number8
+        - ?number0
+        - ?number3
+    -   - load
+        - data-0-3
+        - ?server7
+        - ?number2
+        - ?number8
+        - number3
+        - ?number5
+    -   - send
+        - ?data-0-2
+        - server7
+        - ?server2
+        - ?number3
+        - number8
+        - number0
+        - number3
+    -   - process
+        - data-0-3
+        - ?data-0-2
+        - data-1-4
+        - script3
+        - server7
+        - ?number1
+        - ?number8
+        - ?number5
+        - ?number6
+    -   - release
+        - data-0-2
+        - server7
+        - ?number3
+        - number6
+        - ?number3
+    -   - process
+        - data-1-4
+        - ?data-0-3
+        - ?data-2-1
+        - script2
+        - ?server7
+        - number5
+        - number8
+        - ?number3
+        - ?number8
+    -   - send
+        - data-2-1
+        - ?server7
+        - ?server2
+        - number5
+        - ?number8
+        - ?number3
+        - ?number8
+    -   - save
+        - data-2-1
+        - number5
+        - ?server2
+
+
+---
+timestamp: '2025-01-03T20:44:18.204293'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: send,(saved ?d ?to),effPos,1
+
+
+---
+timestamp: '2025-01-03T20:44:19.336250'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 17
+    fring_size: 1
+    num_nodes_generated: 17
+    sum_h_cost: 0
+    sum_f_cost: 0
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 1.0460200309753418
+    current_node:
+        depth: 7
+        ground_actions:
+        - (load data-0-2 server7 number3 number8 number0 number3)
+        - (load data-0-3 server7 number2 number8 number3 number5)
+        - (send data-0-2 server7 server2 number3 number8 number0 number3)
+        - (process data-0-3 data-0-2 data-1-4 script3 server7 number1 number8 number5
+            number6)
+        - (release data-0-2 server7 number3 number6 number3)
+        - (process data-1-4 data-0-3 data-2-1 script2 server7 number5 number8 number3
+            number8)
+        - (send data-2-1 server7 server6 number5 number8 number0 number5)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''save'', ''data-2-1'', ''number5'', ''?server2'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2025-01-03T20:44:19.337664'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '2.30'
+
+
+---
+timestamp: '2025-01-03T20:44:19.404421'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 2.57 seconds'
+
+

@@ -1,0 +1,133 @@
+---
+timestamp: '2025-01-13T13:02:30.715023'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs
+        relax-all lp1/data-network-opt18-strips__pp11-err-rate-0-5.yaml
+    instance_id: data-network-opt18-strips__pp11-err-rate-0-5
+    search_algorithm: dfs
+    plan_length: 7
+    domain_class: data-network-opt18-strips
+    instance_name: pp11-err-rate-0-5
+    ground_plan:
+    - (load data-0-3 server1 number5 number16 number0 number5)
+    - (load data-0-6 server3 number2 number8 number0 number2)
+    - (send data-0-6 server3 server1 number2 number16 number5 number7)
+    - (process data-0-3 data-0-6 data-1-4 script7 server1 number5 number16 number7
+        number12)
+    - (process data-1-4 data-0-3 data-2-7 script5 server1 number1 number16 number12
+        number13)
+    - (send data-2-7 server1 server2 number1 number8 number0 number1)
+    - (save data-2-7 number1 server2)
+    lifted_plan:
+    -   - load
+        - ?data-0-3
+        - ?server1
+        - ?number5
+        - ?number16
+        - ?number0
+        - ?number5
+    -   - load
+        - ?data-0-6
+        - ?server3
+        - ?number2
+        - ?number8
+        - ?number0
+        - ?number2
+    -   - send
+        - ?data-0-6
+        - ?server3
+        - ?server1
+        - ?number2
+        - ?number16
+        - ?number5
+        - ?number7
+    -   - process
+        - ?data-0-3
+        - ?data-0-6
+        - ?data-1-4
+        - ?script7
+        - ?server1
+        - ?number5
+        - ?number16
+        - ?number7
+        - ?number12
+    -   - process
+        - ?data-1-4
+        - ?data-0-3
+        - ?data-2-7
+        - ?script5
+        - ?server1
+        - ?number1
+        - ?number16
+        - ?number12
+        - ?number13
+    -   - send
+        - ?data-2-7
+        - ?server1
+        - ?server2
+        - ?number1
+        - ?number8
+        - ?number0
+        - ?number1
+    -   - save
+        - ?data-2-7
+        - ?number1
+        - ?server2
+
+
+---
+timestamp: '2025-01-13T13:02:30.719458'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-13T13:14:19.680780'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data:
+    error_type: MemoryError
+    error_message: 'Command ''[''/home/projects/u7899572/conda-envs/main/bin/python3'',
+        ''instance_solver.py'', ''dfs'', ''/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1'',
+        ''/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs relax-all
+        lp1/data-network-opt18-strips__pp11-err-rate-0-5.yaml'', ''1000000'', ''data-network-opt18-strips__pp11-err-rate-0-5'',
+        ''1.0'', ''unary'']'' died with <Signals.SIGABRT: 6>.'
+    stack_trace: "Traceback (most recent call last):\n  File \"batch_solver.py\",\
+        \ line 126, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
+        \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/subprocess.py\"\
+        , line 516, in run\n    raise CalledProcessError(retcode, process.args,\n\
+        subprocess.CalledProcessError: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',\
+        \ 'instance_solver.py', 'dfs', '/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1',\
+        \ '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs\
+        \ relax-all lp1/data-network-opt18-strips__pp11-err-rate-0-5.yaml', '1000000',\
+        \ 'data-network-opt18-strips__pp11-err-rate-0-5', '1.0', 'unary']' died with\
+        \ <Signals.SIGABRT: 6>.\n"
+    instance_id: data-network-opt18-strips__pp11-err-rate-0-5
+    process_info:
+        cmd:
+        - /home/projects/u7899572/conda-envs/main/bin/python3
+        - instance_solver.py
+        - dfs
+        - /home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1
+        - /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs relax-all
+            lp1/data-network-opt18-strips__pp11-err-rate-0-5.yaml
+        - '1000000'
+        - data-network-opt18-strips__pp11-err-rate-0-5
+        - '1.0'
+        - unary
+        duration: '710.75'
+        python_executable: /home/projects/u7899572/conda-envs/main/bin/python3
+    stdout: ''
+    stderr: 'terminate called after throwing an instance of ''Minisat22::OutOfMemoryException''
+
+        '
+
+

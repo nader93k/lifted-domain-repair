@@ -1,0 +1,85 @@
+---
+timestamp: '2025-01-13T03:46:26.015383'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-all lp066/zenotravel__pp02-err-rate-0-1.yaml
+    instance_id: zenotravel__pp02-err-rate-0-1
+    search_algorithm: greedy
+    plan_length: 8
+    domain_class: zenotravel
+    instance_name: pp02-err-rate-0-1
+    ground_plan:
+    - (fly plane1 city0 city1 fl2 fl1)
+    - (fly plane1 city1 city2 fl1 fl0)
+    - (refuel plane1 city2 fl0 fl1)
+    - (board person1 plane1 city2)
+    - (fly plane1 city2 city1 fl1 fl0)
+    - (refuel plane1 city1 fl0 fl1)
+    - (debark person1 plane1 city1)
+    - (fly plane1 city1 city2 fl1 fl0)
+    lifted_plan:
+    -   - fly
+        - plane1
+        - city0
+        - ?city1
+        - ?fl2
+        - ?fl1
+    -   - fly
+        - ?plane1
+        - city1
+        - ?city2
+        - ?fl1
+        - ?fl0
+    -   - refuel
+        - plane1
+        - ?city2
+        - ?fl0
+        - fl1
+    -   - board
+        - ?person1
+        - ?plane1
+        - city2
+    -   - fly
+        - plane1
+        - city2
+        - city1
+        - ?fl1
+        - fl0
+    -   - refuel
+        - plane1
+        - city1
+        - ?fl0
+        - ?fl1
+    -   - debark
+        - ?person1
+        - ?plane1
+        - city1
+    -   - fly
+        - plane1
+        - ?city1
+        - city2
+        - ?fl1
+        - fl0
+
+
+---
+timestamp: '2025-01-13T03:46:26.018803'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: refuel,(at ?c ?l1),precPos,-1
+
+
+---
+timestamp: '2025-01-13T04:01:24.660201'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+

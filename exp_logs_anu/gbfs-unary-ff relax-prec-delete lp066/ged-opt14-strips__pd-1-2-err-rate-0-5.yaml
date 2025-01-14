@@ -1,0 +1,75 @@
+---
+timestamp: '2025-01-13T08:42:39.866022'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-prec-delete lp066/ged-opt14-strips__pd-1-2-err-rate-0-5.yaml
+    instance_id: ged-opt14-strips__pd-1-2-err-rate-0-5
+    search_algorithm: greedy
+    plan_length: 1
+    domain_class: ged-opt14-strips
+    instance_name: pd-1-2-err-rate-0-5
+    ground_plan:
+    - (invert-single-gene-a sub3)
+    lifted_plan:
+    -   - invert-single-gene-a
+        - sub3
+
+
+---
+timestamp: '2025-01-13T08:42:39.870462'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: invert-single-gene-a,(inverted ?x),effPos,1
+
+
+---
+timestamp: '2025-01-13T08:42:39.919723'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 2
+    fring_size: 0
+    num_nodes_generated: 2
+    sum_h_cost: 0
+    sum_f_cost: 0
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 0.03529953956604004
+    h_max: 0
+    current_node:
+        depth: 1
+        ground_actions:
+        - (invert-single-gene-a sub3)
+        repair_set: invert-single-gene-a,(inverted ?x),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2025-01-13T08:42:39.920955'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.95'
+
+
+---
+timestamp: '2025-01-13T08:42:40.012699'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 2.68 seconds'
+
+

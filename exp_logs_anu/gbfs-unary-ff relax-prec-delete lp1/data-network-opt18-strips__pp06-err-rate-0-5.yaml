@@ -1,0 +1,166 @@
+---
+timestamp: '2025-01-13T09:58:31.208593'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-prec-delete lp1/data-network-opt18-strips__pp06-err-rate-0-5.yaml
+    instance_id: data-network-opt18-strips__pp06-err-rate-0-5
+    search_algorithm: greedy
+    plan_length: 11
+    domain_class: data-network-opt18-strips
+    instance_name: pp06-err-rate-0-5
+    ground_plan:
+    - (load data-0-6 server3 number4 number8 number0 number4)
+    - (send data-0-6 server3 server1 number4 number16 number0 number4)
+    - (load data-0-4 server1 number1 number16 number4 number5)
+    - (process data-0-4 data-0-6 data-1-3 script4 server1 number5 number16 number5
+        number10)
+    - (process data-0-4 data-0-6 data-1-10 script7 server1 number1 number16 number10
+        number11)
+    - (process data-1-3 data-0-4 data-2-5 script17 server1 number2 number16 number11
+        number13)
+    - (send data-2-5 server1 server2 number2 number8 number0 number2)
+    - (save data-2-5 number2 server2)
+    - (process data-1-3 data-1-10 data-2-2 script14 server1 number2 number16 number13
+        number15)
+    - (send data-2-2 server1 server2 number2 number8 number2 number4)
+    - (save data-2-2 number2 server2)
+    lifted_plan:
+    -   - load
+        - ?data-0-6
+        - ?server3
+        - ?number4
+        - ?number8
+        - ?number0
+        - ?number4
+    -   - send
+        - ?data-0-6
+        - ?server3
+        - ?server1
+        - ?number4
+        - ?number16
+        - ?number0
+        - ?number4
+    -   - load
+        - ?data-0-4
+        - ?server1
+        - ?number1
+        - ?number16
+        - ?number4
+        - ?number5
+    -   - process
+        - ?data-0-4
+        - ?data-0-6
+        - ?data-1-3
+        - ?script4
+        - ?server1
+        - ?number5
+        - ?number16
+        - ?number5
+        - ?number10
+    -   - process
+        - ?data-0-4
+        - ?data-0-6
+        - ?data-1-10
+        - ?script7
+        - ?server1
+        - ?number1
+        - ?number16
+        - ?number10
+        - ?number11
+    -   - process
+        - ?data-1-3
+        - ?data-0-4
+        - ?data-2-5
+        - ?script17
+        - ?server1
+        - ?number2
+        - ?number16
+        - ?number11
+        - ?number13
+    -   - send
+        - ?data-2-5
+        - ?server1
+        - ?server2
+        - ?number2
+        - ?number8
+        - ?number0
+        - ?number2
+    -   - save
+        - ?data-2-5
+        - ?number2
+        - ?server2
+    -   - process
+        - ?data-1-3
+        - ?data-1-10
+        - ?data-2-2
+        - ?script14
+        - ?server1
+        - ?number2
+        - ?number16
+        - ?number13
+        - ?number15
+    -   - send
+        - ?data-2-2
+        - ?server1
+        - ?server2
+        - ?number2
+        - ?number8
+        - ?number2
+        - ?number4
+    -   - save
+        - ?data-2-2
+        - ?number2
+        - ?server2
+
+
+---
+timestamp: '2025-01-13T09:58:31.214475'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: process,(cached ?out ?s),effPos,1
+
+
+---
+timestamp: '2025-01-13T09:58:37.229419'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: Action <Action 'send' at 0x7f4161871b80>\
+    \ not applicable in current state. Unsatisfied atom: NegatedAtom cached(data-0-9,\
+    \ server1). Stack trace: Traceback (most recent call last):\n  File \"instance_solver.py\"\
+    , line 106, in solve_instance\n    searcher.find_path(logger=logger, log_interval=log_interval)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 80, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
+    \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 174, in get_neighbors\n    current_state = self.calculate_current_state(delete_relaxation=DELETE_RELAXATION)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 128, in calculate_current_state\n    state = apply_action_sequence(domain,\
+    \ task, plan, delete_relaxed=delete_relaxation)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/model/plan.py\"\
+    , line 44, in apply_action_sequence\n    raise ValueError(f\"Action {action} not\
+    \ applicable in current state. Unsatisfied atom: {unsat_atom}\")\nValueError:\
+    \ Action <Action 'send' at 0x7f4161871b80> not applicable in current state. Unsatisfied\
+    \ atom: NegatedAtom cached(data-0-9, server1)\n"
+
+
+---
+timestamp: '2025-01-13T09:58:37.230824'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '7.19'
+
+
+---
+timestamp: '2025-01-13T09:58:37.275087'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 7.59 seconds'
+
+

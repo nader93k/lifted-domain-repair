@@ -1,0 +1,103 @@
+---
+timestamp: '2025-01-13T00:27:07.187866'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs
+        relax-all lp1/blocks__pprobBLOCKS-4-2-err-rate-0-5.yaml
+    instance_id: blocks__pprobBLOCKS-4-2-err-rate-0-5
+    search_algorithm: greedy
+    plan_length: 6
+    domain_class: blocks
+    instance_name: pprobBLOCKS-4-2-err-rate-0-5
+    ground_plan:
+    - (unstack c b)
+    - (stack c d)
+    - (pick-up b)
+    - (stack b c)
+    - (pick-up a)
+    - (stack a b)
+    lifted_plan:
+    -   - unstack
+        - ?c
+        - ?b
+    -   - stack
+        - ?c
+        - ?d
+    -   - pick-up
+        - ?b
+    -   - stack
+        - ?b
+        - ?c
+    -   - pick-up
+        - ?a
+    -   - stack
+        - ?a
+        - ?b
+
+
+---
+timestamp: '2025-01-13T00:27:07.190255'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: unstack,(clear ?y),precPos,-1
+
+
+---
+timestamp: '2025-01-13T00:27:07.625394'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 7
+    fring_size: 52
+    num_nodes_generated: 59
+    sum_h_cost: 6
+    sum_f_cost: 3
+    sum_h_cost_time: 0.020964622497558594
+    sum_grounding_time: 0.07101964950561523
+    h_max: 1
+    current_node:
+        depth: 6
+        ground_actions:
+        - (unstack c a)
+        - (stack c d)
+        - (pick-up b)
+        - (stack b c)
+        - (pick-up d)
+        - (stack a b)
+        repair_set: 'pick-up,(clear ?x),precPos,-1
+
+            stack,(holding ?x),precPos,-1
+
+            unstack,(on ?x ?y),precPos,-1'
+        g_cost: 3
+        h_cost: 0
+        f_cost: 3
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2025-01-13T00:27:07.626740'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.62'
+
+
+---
+timestamp: '2025-01-13T00:27:07.673882'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.98 seconds'
+
+

@@ -1,0 +1,117 @@
+---
+timestamp: '2025-01-13T19:16:19.453306'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-prec lp066/mystery__pprob15-err-rate-0-3.yaml
+    instance_id: mystery__pprob15-err-rate-0-3
+    search_algorithm: greedy
+    plan_length: 6
+    domain_class: mystery
+    instance_name: pprob15-err-rate-0-3
+    ground_plan:
+    - (overcome jealousy satisfaction pistachio neptune earth)
+    - (feast satisfaction pistachio broccoli surrey moravia)
+    - (feast satisfaction broccoli lemon surrey moravia)
+    - (feast satisfaction lemon cod bavaria alsace)
+    - (feast satisfaction cod chicken pennsylvania quebec)
+    - (succumb jealousy satisfaction chicken neptune earth)
+    lifted_plan:
+    -   - overcome
+        - jealousy
+        - satisfaction
+        - ?pistachio
+        - ?neptune
+        - ?earth
+    -   - feast
+        - ?satisfaction
+        - pistachio
+        - ?broccoli
+        - ?surrey
+        - ?moravia
+    -   - feast
+        - satisfaction
+        - ?broccoli
+        - ?lemon
+        - surrey
+        - ?moravia
+    -   - feast
+        - ?satisfaction
+        - lemon
+        - cod
+        - bavaria
+        - alsace
+    -   - feast
+        - ?satisfaction
+        - cod
+        - chicken
+        - pennsylvania
+        - ?quebec
+    -   - succumb
+        - ?jealousy
+        - ?satisfaction
+        - ?chicken
+        - neptune
+        - earth
+
+
+---
+timestamp: '2025-01-13T19:16:19.457600'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: overcome,(harmony ?v ?s1),effPos,1
+
+
+---
+timestamp: '2025-01-13T19:16:22.057529'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 11
+    fring_size: 0
+    num_nodes_generated: 11
+    sum_h_cost: 26
+    sum_f_cost: 13
+    sum_h_cost_time: 1.9367897510528564
+    sum_grounding_time: 0.6014800071716309
+    h_max: 2
+    current_node:
+        depth: 3
+        ground_actions:
+        - (overcome jealousy satisfaction pistachio neptune earth)
+        - (feast satisfaction pistachio okra surrey moravia)
+        - (feast satisfaction okra cucumber surrey moravia)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 2
+        f_cost: 2
+        next_lifted_action: '[''feast'', ''?satisfaction'', ''lemon'', ''cod'', ''bavaria'',
+            ''alsace'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2025-01-13T19:16:22.058786'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '3.75'
+
+
+---
+timestamp: '2025-01-13T19:16:22.105403'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 4.05 seconds'
+
+

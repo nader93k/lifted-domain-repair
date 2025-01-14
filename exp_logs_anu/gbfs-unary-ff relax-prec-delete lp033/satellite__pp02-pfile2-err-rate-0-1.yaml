@@ -1,0 +1,153 @@
+---
+timestamp: '2025-01-13T11:29:23.822004'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-prec-delete lp033/satellite__pp02-pfile2-err-rate-0-1.yaml
+    instance_id: satellite__pp02-pfile2-err-rate-0-1
+    search_algorithm: greedy
+    plan_length: 13
+    domain_class: satellite
+    instance_name: pp02-pfile2-err-rate-0-1
+    ground_plan:
+    - (switch_on instrument1 satellite0)
+    - (turn_to satellite0 groundstation2 planet4)
+    - (calibrate satellite0 instrument1 groundstation2)
+    - (turn_to satellite0 phenomenon5 groundstation2)
+    - (take_image satellite0 phenomenon5 instrument1 image2)
+    - (turn_to satellite0 phenomenon6 phenomenon5)
+    - (take_image satellite0 phenomenon6 instrument1 infrared0)
+    - (turn_to satellite0 planet3 phenomenon6)
+    - (take_image satellite0 planet3 instrument1 infrared0)
+    - (turn_to satellite0 planet4 planet3)
+    - (take_image satellite0 planet4 instrument1 infrared0)
+    - (turn_to satellite0 star7 planet4)
+    - (take_image satellite0 star7 instrument1 infrared0)
+    lifted_plan:
+    -   - switch_on
+        - instrument1
+        - satellite0
+    -   - turn_to
+        - satellite0
+        - ?groundstation2
+        - planet4
+    -   - calibrate
+        - satellite0
+        - instrument1
+        - ?groundstation2
+    -   - turn_to
+        - satellite0
+        - phenomenon5
+        - groundstation2
+    -   - take_image
+        - satellite0
+        - ?phenomenon5
+        - instrument1
+        - image2
+    -   - turn_to
+        - ?satellite0
+        - phenomenon6
+        - phenomenon5
+    -   - take_image
+        - satellite0
+        - phenomenon6
+        - ?instrument1
+        - infrared0
+    -   - turn_to
+        - satellite0
+        - planet3
+        - phenomenon6
+    -   - take_image
+        - ?satellite0
+        - planet3
+        - instrument1
+        - infrared0
+    -   - turn_to
+        - satellite0
+        - planet4
+        - planet3
+    -   - take_image
+        - ?satellite0
+        - planet4
+        - instrument1
+        - ?infrared0
+    -   - turn_to
+        - satellite0
+        - star7
+        - planet4
+    -   - take_image
+        - satellite0
+        - ?star7
+        - instrument1
+        - infrared0
+
+
+---
+timestamp: '2025-01-13T11:29:23.825872'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-13T11:29:25.148553'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 16
+    fring_size: 10
+    num_nodes_generated: 26
+    sum_h_cost: 14
+    sum_f_cost: 7
+    sum_h_cost_time: 0.23307323455810547
+    sum_grounding_time: 0.3227815628051758
+    h_max: 1
+    current_node:
+        depth: 13
+        ground_actions:
+        - (switch_on instrument1 satellite0)
+        - (turn_to satellite0 groundstation2 planet4)
+        - (calibrate satellite0 instrument1 groundstation2)
+        - (turn_to satellite0 phenomenon5 groundstation2)
+        - (take_image satellite0 phenomenon5 instrument1 image2)
+        - (turn_to satellite0 phenomenon6 phenomenon5)
+        - (take_image satellite0 phenomenon6 instrument1 infrared0)
+        - (turn_to satellite0 planet3 phenomenon6)
+        - (take_image satellite0 planet3 instrument1 infrared0)
+        - (turn_to satellite0 planet4 planet3)
+        - (take_image satellite0 planet4 instrument1 infrared0)
+        - (turn_to satellite0 star7 planet4)
+        - (take_image satellite0 star7 instrument1 infrared0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2025-01-13T11:29:25.150876'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '2.51'
+
+
+---
+timestamp: '2025-01-13T11:29:25.189506'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 2.81 seconds'
+
+

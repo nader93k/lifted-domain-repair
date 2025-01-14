@@ -1,0 +1,161 @@
+---
+timestamp: '2025-01-13T13:38:59.177852'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs
+        relax-all lp1/pipesworld-notankage__pp03-net1-b8-g3-err-rate-0-1.yaml
+    instance_id: pipesworld-notankage__pp03-net1-b8-g3-err-rate-0-1
+    search_algorithm: dfs
+    plan_length: 10
+    domain_class: pipesworld-notankage
+    instance_name: pp03-net1-b8-g3-err-rate-0-1
+    ground_plan:
+    - (pop-unitarypipe s13 b1 a1 a3 b2 gasoleo rat-a)
+    - (pop-unitarypipe s13 b6 a1 a3 b1 lco gasoleo)
+    - (push-unitarypipe s13 b0 a1 a3 b6 rat-a lco)
+    - (push-unitarypipe s13 b1 a1 a3 b0 gasoleo rat-a)
+    - (pop-unitarypipe s13 b6 a1 a3 b1 lco gasoleo)
+    - (pop-unitarypipe s13 b0 a1 a3 b6 rat-a lco)
+    - (push-unitarypipe s12 b6 a1 a2 b5 lco gasoleo)
+    - (push-unitarypipe s12 b1 a1 a2 b6 gasoleo lco)
+    - (push-unitarypipe s13 b2 a1 a3 b0 rat-a rat-a)
+    - (pop-unitarypipe s12 b4 a1 a2 b1 gasoleo gasoleo)
+    lifted_plan:
+    -   - pop-unitarypipe
+        - ?s13
+        - ?b1
+        - ?a1
+        - ?a3
+        - ?b2
+        - ?gasoleo
+        - ?rat-a
+    -   - pop-unitarypipe
+        - ?s13
+        - ?b6
+        - ?a1
+        - ?a3
+        - ?b1
+        - ?lco
+        - ?gasoleo
+    -   - push-unitarypipe
+        - ?s13
+        - ?b0
+        - ?a1
+        - ?a3
+        - ?b6
+        - ?rat-a
+        - ?lco
+    -   - push-unitarypipe
+        - ?s13
+        - ?b1
+        - ?a1
+        - ?a3
+        - ?b0
+        - ?gasoleo
+        - ?rat-a
+    -   - pop-unitarypipe
+        - ?s13
+        - ?b6
+        - ?a1
+        - ?a3
+        - ?b1
+        - ?lco
+        - ?gasoleo
+    -   - pop-unitarypipe
+        - ?s13
+        - ?b0
+        - ?a1
+        - ?a3
+        - ?b6
+        - ?rat-a
+        - ?lco
+    -   - push-unitarypipe
+        - ?s12
+        - ?b6
+        - ?a1
+        - ?a2
+        - ?b5
+        - ?lco
+        - ?gasoleo
+    -   - push-unitarypipe
+        - ?s12
+        - ?b1
+        - ?a1
+        - ?a2
+        - ?b6
+        - ?gasoleo
+        - ?lco
+    -   - push-unitarypipe
+        - ?s13
+        - ?b2
+        - ?a1
+        - ?a3
+        - ?b0
+        - ?rat-a
+        - ?rat-a
+    -   - pop-unitarypipe
+        - ?s12
+        - ?b4
+        - ?a1
+        - ?a2
+        - ?b1
+        - ?gasoleo
+        - ?gasoleo
+
+
+---
+timestamp: '2025-01-13T13:38:59.182652'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-13T13:48:03.274218'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data:
+    error_type: MemoryError
+    error_message: 'Command ''[''/home/projects/u7899572/conda-envs/main/bin/python3'',
+        ''instance_solver.py'', ''dfs'', ''/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1'',
+        ''/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs relax-all
+        lp1/pipesworld-notankage__pp03-net1-b8-g3-err-rate-0-1.yaml'', ''1000000'',
+        ''pipesworld-notankage__pp03-net1-b8-g3-err-rate-0-1'', ''1.0'', ''unary'']''
+        died with <Signals.SIGABRT: 6>.'
+    stack_trace: "Traceback (most recent call last):\n  File \"batch_solver.py\",\
+        \ line 126, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
+        \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/subprocess.py\"\
+        , line 516, in run\n    raise CalledProcessError(retcode, process.args,\n\
+        subprocess.CalledProcessError: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',\
+        \ 'instance_solver.py', 'dfs', '/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1',\
+        \ '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs\
+        \ relax-all lp1/pipesworld-notankage__pp03-net1-b8-g3-err-rate-0-1.yaml',\
+        \ '1000000', 'pipesworld-notankage__pp03-net1-b8-g3-err-rate-0-1', '1.0',\
+        \ 'unary']' died with <Signals.SIGABRT: 6>.\n"
+    instance_id: pipesworld-notankage__pp03-net1-b8-g3-err-rate-0-1
+    process_info:
+        cmd:
+        - /home/projects/u7899572/conda-envs/main/bin/python3
+        - instance_solver.py
+        - dfs
+        - /home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1
+        - /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs relax-all
+            lp1/pipesworld-notankage__pp03-net1-b8-g3-err-rate-0-1.yaml
+        - '1000000'
+        - pipesworld-notankage__pp03-net1-b8-g3-err-rate-0-1
+        - '1.0'
+        - unary
+        duration: '546.56'
+        python_executable: /home/projects/u7899572/conda-envs/main/bin/python3
+    stdout: ''
+    stderr: 'terminate called after throwing an instance of ''Minisat22::OutOfMemoryException''
+
+        '
+
+

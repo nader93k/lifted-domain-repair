@@ -1,0 +1,123 @@
+---
+timestamp: '2025-01-13T00:51:46.038563'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs
+        relax-all lp1/ged-opt14-strips__pd-3-2-err-rate-0-5.yaml
+    instance_id: ged-opt14-strips__pd-3-2-err-rate-0-5
+    search_algorithm: greedy
+    plan_length: 8
+    domain_class: ged-opt14-strips
+    instance_name: pd-3-2-err-rate-0-5
+    ground_plan:
+    - (invert-single-gene-a sub3)
+    - (invert-single-gene-a sub4)
+    - (begin-cut sub3 g40)
+    - (end-cut-1 g40 sub4)
+    - (end-cut-2 sub3 sub4)
+    - (begin-transpose-splice sub2 sub3)
+    - (end-splice-1 g40 sub2)
+    - (end-splice-2 g40 sub3)
+    lifted_plan:
+    -   - invert-single-gene-a
+        - ?sub3
+    -   - invert-single-gene-a
+        - ?sub4
+    -   - begin-cut
+        - ?sub3
+        - ?g40
+    -   - end-cut-1
+        - ?g40
+        - ?sub4
+    -   - end-cut-2
+        - ?sub3
+        - ?sub4
+    -   - begin-transpose-splice
+        - ?sub2
+        - ?sub3
+    -   - end-splice-1
+        - ?g40
+        - ?sub2
+    -   - end-splice-2
+        - ?g40
+        - ?sub3
+
+
+---
+timestamp: '2025-01-13T00:51:46.044146'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'begin-cut,(s-first ?y),precPos,-1
+
+        end-splice-1,(swappable ?y ?x),precPos,-1'
+
+
+---
+timestamp: '2025-01-13T00:52:10.201009'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 87
+    fring_size: 126
+    num_nodes_generated: 213
+    sum_h_cost: 600
+    sum_f_cost: 300
+    sum_h_cost_time: 1.0726025104522705
+    sum_grounding_time: 1.6987338066101074
+    h_max: 10
+    current_node:
+        depth: 8
+        ground_actions:
+        - (invert-single-gene-a sub3)
+        - (invert-single-gene-a sub1)
+        - (begin-cut g40 sub4)
+        - (end-cut-1 sub4 sub1)
+        - (end-cut-2 g40 sub1)
+        - (begin-transpose-splice sub3 g40)
+        - (end-splice-1 sub4 sub3)
+        - (end-splice-2 sub2 g40)
+        repair_set: 'begin-transpose-splice,(cw ?y ?x),effPos,1
+
+            end-splice-1,(swappable ?y ?x),precPos,-1
+
+            end-cut-1,(inverted ?x),effPos,1
+
+            end-cut-1,(cw ?x ?y),effPos,1
+
+            end-splice-2,(splice-point-1 ?x),precPos,-1
+
+            begin-cut,(s-first ?y),precPos,-1
+
+            end-cut-1,(normal ?y),effPos,1'
+        g_cost: 7
+        h_cost: 0
+        f_cost: 7
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2025-01-13T00:52:10.202902'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '25.37'
+
+
+---
+timestamp: '2025-01-13T00:52:10.520081'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 26.12 seconds'
+
+

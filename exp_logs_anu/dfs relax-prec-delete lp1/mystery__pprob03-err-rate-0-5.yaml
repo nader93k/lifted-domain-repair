@@ -1,0 +1,102 @@
+---
+timestamp: '2025-01-11T02:25:17.356969'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs
+        relax-prec-delete lp1/mystery__pprob03-err-rate-0-5.yaml
+    instance_id: mystery__pprob03-err-rate-0-5
+    search_algorithm: dfs
+    plan_length: 4
+    domain_class: mystery
+    instance_name: pprob03-err-rate-0-5
+    ground_plan:
+    - (feast love orange chocolate guanabara bavaria)
+    - (overcome hangover love chocolate venus neptune)
+    - (feast love chocolate ham goias guanabara)
+    - (succumb hangover love ham venus neptune)
+    lifted_plan:
+    -   - feast
+        - ?love
+        - ?orange
+        - ?chocolate
+        - ?guanabara
+        - ?bavaria
+    -   - overcome
+        - ?hangover
+        - ?love
+        - ?chocolate
+        - ?venus
+        - ?neptune
+    -   - feast
+        - ?love
+        - ?chocolate
+        - ?ham
+        - ?goias
+        - ?guanabara
+    -   - succumb
+        - ?hangover
+        - ?love
+        - ?ham
+        - ?venus
+        - ?neptune
+
+
+---
+timestamp: '2025-01-11T02:25:17.360783'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'overcome,(attacks ?s2 ?s1),precPos,-1
+
+        feast,(pleasure ?n2),precPos,-1'
+
+
+---
+timestamp: '2025-01-11T02:25:17.426371'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 1
+    fring_size: 1
+    num_nodes_generated: 1
+    sum_h_cost: 0
+    sum_f_cost: 0
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 0.06146359443664551
+    h_max: -.inf
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''?love'', ''?orange'', ''?chocolate'', ''?guanabara'',
+            ''?bavaria'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2025-01-11T02:25:17.427602'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.28'
+
+
+---
+timestamp: '2025-01-11T02:25:17.476080'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.65 seconds'
+
+

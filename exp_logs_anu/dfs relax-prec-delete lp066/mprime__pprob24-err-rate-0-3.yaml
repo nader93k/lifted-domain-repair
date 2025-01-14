@@ -1,0 +1,178 @@
+---
+timestamp: '2025-01-11T04:33:42.031133'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs
+        relax-prec-delete lp066/mprime__pprob24-err-rate-0-3.yaml
+    instance_id: mprime__pprob24-err-rate-0-3
+    search_algorithm: dfs
+    plan_length: 13
+    domain_class: mprime
+    instance_name: pprob24-err-rate-0-3
+    ground_plan:
+    - (feast curiosity muffin apple alsace goias)
+    - (drink chicken cherry alsace arizona surrey surrey arizona)
+    - (drink turkey tofu alsace arizona surrey surrey arizona)
+    - (feast achievement cherry tofu surrey arizona)
+    - (feast achievement tofu muffin surrey arizona)
+    - (feast achievement muffin apple arizona alsace)
+    - (overcome anger-12 achievement apple uranus saturn)
+    - (drink bacon apple bosnia manitoba goias surrey arizona)
+    - (feast achievement apple muffin surrey arizona)
+    - (feast achievement muffin tofu surrey arizona)
+    - (drink potato tofu bavaria guanabara moravia surrey arizona)
+    - (feast achievement tofu cherry surrey arizona)
+    - (succumb anger-12 achievement cherry uranus saturn)
+    lifted_plan:
+    -   - feast
+        - curiosity
+        - muffin
+        - ?apple
+        - ?alsace
+        - ?goias
+    -   - drink
+        - ?chicken
+        - cherry
+        - ?alsace
+        - ?arizona
+        - ?surrey
+        - surrey
+        - ?arizona
+    -   - drink
+        - ?turkey
+        - tofu
+        - ?alsace
+        - ?arizona
+        - surrey
+        - surrey
+        - arizona
+    -   - feast
+        - achievement
+        - ?cherry
+        - tofu
+        - surrey
+        - arizona
+    -   - feast
+        - ?achievement
+        - ?tofu
+        - ?muffin
+        - ?surrey
+        - arizona
+    -   - feast
+        - achievement
+        - ?muffin
+        - apple
+        - ?arizona
+        - alsace
+    -   - overcome
+        - ?anger-12
+        - ?achievement
+        - apple
+        - ?uranus
+        - saturn
+    -   - drink
+        - bacon
+        - ?apple
+        - ?bosnia
+        - manitoba
+        - ?goias
+        - ?surrey
+        - arizona
+    -   - feast
+        - ?achievement
+        - ?apple
+        - ?muffin
+        - surrey
+        - arizona
+    -   - feast
+        - ?achievement
+        - ?muffin
+        - ?tofu
+        - ?surrey
+        - arizona
+    -   - drink
+        - ?potato
+        - ?tofu
+        - bavaria
+        - ?guanabara
+        - moravia
+        - ?surrey
+        - arizona
+    -   - feast
+        - ?achievement
+        - ?tofu
+        - ?cherry
+        - ?surrey
+        - ?arizona
+    -   - succumb
+        - ?anger-12
+        - ?achievement
+        - ?cherry
+        - ?uranus
+        - ?saturn
+
+
+---
+timestamp: '2025-01-11T04:33:42.037460'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: overcome,(eats ?c ?v),precPos,-1
+
+
+---
+timestamp: '2025-01-11T04:35:22.493392'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 1174
+    fring_size: 1
+    num_nodes_generated: 1174
+    sum_h_cost: 0
+    sum_f_cost: 0
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 89.53193354606628
+    h_max: -.inf
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast curiosity muffin apple alsace goias)
+        - (drink muffin cherry goias alsace arizona surrey arizona)
+        - (drink turkey tofu alsace arizona surrey surrey arizona)
+        - (feast achievement cherry tofu surrey arizona)
+        - (feast achievement cherry tofu surrey arizona)
+        repair_set: 'feast,(not (locale ?n1 ?l2)),effNeg,-1
+
+            feast,(not (craves ?v ?n1)),effNeg,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: '[''feast'', ''achievement'', ''?muffin'', ''apple'',
+            ''?arizona'', ''alsace'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2025-01-11T04:35:22.495158'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '101.63'
+
+
+---
+timestamp: '2025-01-11T04:35:22.889454'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 102.29 seconds'
+
+

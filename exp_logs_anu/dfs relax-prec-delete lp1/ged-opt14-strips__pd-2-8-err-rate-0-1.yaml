@@ -1,0 +1,122 @@
+---
+timestamp: '2025-01-11T04:10:26.696351'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs
+        relax-prec-delete lp1/ged-opt14-strips__pd-2-8-err-rate-0-1.yaml
+    instance_id: ged-opt14-strips__pd-2-8-err-rate-0-1
+    search_algorithm: dfs
+    plan_length: 15
+    domain_class: ged-opt14-strips
+    instance_name: pd-2-8-err-rate-0-1
+    ground_plan:
+    - (invert-single-gene-b g54)
+    - (invert-single-gene-a sub8)
+    - (begin-cut sub1 g54)
+    - (end-cut-1 g54 sub6)
+    - (end-cut-2 sub1 sub6)
+    - (begin-transpose-splice sub3 sub1)
+    - (end-splice-1 g54 sub3)
+    - (end-splice-2 g54 sub1)
+    - (reset-1 sub1)
+    - (begin-cut sub4 sub2)
+    - (end-cut-1 sub2 sub5)
+    - (end-cut-2 sub4 sub5)
+    - (begin-transpose-splice sub7 sub3)
+    - (end-splice-1 sub2 sub7)
+    - (end-splice-2 sub2 sub3)
+    lifted_plan:
+    -   - invert-single-gene-b
+        - ?g54
+    -   - invert-single-gene-a
+        - ?sub8
+    -   - begin-cut
+        - ?sub1
+        - ?g54
+    -   - end-cut-1
+        - ?g54
+        - ?sub6
+    -   - end-cut-2
+        - ?sub1
+        - ?sub6
+    -   - begin-transpose-splice
+        - ?sub3
+        - ?sub1
+    -   - end-splice-1
+        - ?g54
+        - ?sub3
+    -   - end-splice-2
+        - ?g54
+        - ?sub1
+    -   - reset-1
+        - ?sub1
+    -   - begin-cut
+        - ?sub4
+        - ?sub2
+    -   - end-cut-1
+        - ?sub2
+        - ?sub5
+    -   - end-cut-2
+        - ?sub4
+        - ?sub5
+    -   - begin-transpose-splice
+        - ?sub7
+        - ?sub3
+    -   - end-splice-1
+        - ?sub2
+        - ?sub7
+    -   - end-splice-2
+        - ?sub2
+        - ?sub3
+
+
+---
+timestamp: '2025-01-11T04:10:26.702721'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-11T04:22:21.278522'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: Action <Action 'begin-transpose-splice'\
+    \ at 0x7fd18a0852e0> not applicable in current state. Unsatisfied atom: NegatedAtom\
+    \ equality-op(sub7, sub7). Stack trace: Traceback (most recent call last):\n \
+    \ File \"instance_solver.py\", line 106, in solve_instance\n    searcher.find_path(logger=logger,\
+    \ log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 140, in find_path\n    neighbors = sorted(current_node.get_neighbors(),\
+    \ key=lambda x: x.g_cost, reverse=True)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 170, in get_neighbors\n    current_state = self.calculate_current_state(delete_relaxation=DELETE_RELAXATION)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 125, in calculate_current_state\n    state = apply_action_sequence(domain,\
+    \ task, plan, delete_relaxed=delete_relaxation)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/model/plan.py\"\
+    , line 44, in apply_action_sequence\n    raise ValueError(f\"Action {action} not\
+    \ applicable in current state. Unsatisfied atom: {unsat_atom}\")\nValueError:\
+    \ Action <Action 'begin-transpose-splice' at 0x7fd18a0852e0> not applicable in\
+    \ current state. Unsatisfied atom: NegatedAtom equality-op(sub7, sub7)\n"
+
+
+---
+timestamp: '2025-01-11T04:22:21.280077'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '716.48'
+
+
+---
+timestamp: '2025-01-11T04:22:31.246428'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 726.91 seconds'
+
+

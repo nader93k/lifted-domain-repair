@@ -1,0 +1,177 @@
+---
+timestamp: '2025-01-13T15:29:33.814524'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs
+        relax-all lp066/data-network-opt18-strips__pp17-err-rate-0-1.yaml
+    instance_id: data-network-opt18-strips__pp17-err-rate-0-1
+    search_algorithm: dfs
+    plan_length: 10
+    domain_class: data-network-opt18-strips
+    instance_name: pp17-err-rate-0-1
+    ground_plan:
+    - (load data-0-1 server2 number5 number8 number0 number5)
+    - (send data-0-1 server2 server1 number5 number16 number0 number5)
+    - (load data-0-5 server1 number2 number16 number5 number7)
+    - (process data-0-5 data-0-1 data-1-4 script1 server1 number2 number16 number7
+        number9)
+    - (process data-1-4 data-0-5 data-2-2 script3 server1 number2 number16 number9
+        number11)
+    - (send data-2-2 server1 server5 number2 number8 number0 number2)
+    - (save data-2-2 number2 server5)
+    - (process data-1-4 data-0-5 data-2-7 script6 server1 number2 number16 number11
+        number13)
+    - (send data-2-7 server1 server7 number2 number8 number0 number2)
+    - (save data-2-7 number2 server7)
+    lifted_plan:
+    -   - load
+        - data-0-1
+        - server2
+        - ?number5
+        - ?number8
+        - ?number0
+        - ?number5
+    -   - send
+        - data-0-1
+        - ?server2
+        - ?server1
+        - ?number5
+        - number16
+        - ?number0
+        - ?number5
+    -   - load
+        - data-0-5
+        - ?server1
+        - ?number2
+        - number16
+        - number5
+        - number7
+    -   - process
+        - data-0-5
+        - ?data-0-1
+        - data-1-4
+        - script1
+        - server1
+        - ?number2
+        - ?number16
+        - ?number7
+        - ?number9
+    -   - process
+        - data-1-4
+        - data-0-5
+        - ?data-2-2
+        - script3
+        - ?server1
+        - number2
+        - ?number16
+        - ?number9
+        - number11
+    -   - send
+        - ?data-2-2
+        - server1
+        - server5
+        - ?number2
+        - ?number8
+        - number0
+        - ?number2
+    -   - save
+        - ?data-2-2
+        - number2
+        - ?server5
+    -   - process
+        - ?data-1-4
+        - ?data-0-5
+        - data-2-7
+        - script6
+        - ?server1
+        - ?number2
+        - ?number16
+        - ?number11
+        - number13
+    -   - send
+        - ?data-2-7
+        - ?server1
+        - server7
+        - ?number2
+        - number8
+        - ?number0
+        - number2
+    -   - save
+        - ?data-2-7
+        - ?number2
+        - ?server7
+
+
+---
+timestamp: '2025-01-13T15:29:33.819632'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: load,(sum ?limit ?after ?limit),precPos,-1
+
+
+---
+timestamp: '2025-01-13T15:34:32.390021'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 1
+        ground_actions:
+        - (load data-0-1 server2 number5 number8 number0 number5)
+        repair_set: load,(sum ?limit ?after ?limit),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''send'', ''data-0-1'', ''?server2'', ''?server1'',
+            ''?number5'', ''number16'', ''?number0'', ''?number5'']'
+        num_neighbours: 0
+        first_10_possible_groundings: null
+        current_state: not implemented!
+
+
+---
+timestamp: '2025-01-13T15:34:32.392106'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: . Stack trace: Traceback (most recent call\
+    \ last):\n  File \"instance_solver.py\", line 106, in solve_instance\n    searcher.find_path(logger=logger,\
+    \ log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 140, in find_path\n    neighbors = sorted(current_node.get_neighbors(),\
+    \ key=lambda x: x.g_cost, reverse=True)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 202, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 135, in ground_pddl\n    actions = parser.get_applicable_actions()\n  File\
+    \ \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 485, in get_applicable_actions\n    full_var_assigns = self._get_applicable_var_assigns_action(action,\
+    \ [[-1]*len(action_vars)])\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 471, in _get_applicable_var_assigns_action\n    full_var_assigns = tuple(set([tuple([elem\
+    \ for ind, elem in enumerate(var_assign) if ind not in exists_vars]) for var_assign\
+    \ in full_var_assigns]))\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 471, in <listcomp>\n    full_var_assigns = tuple(set([tuple([elem for ind,\
+    \ elem in enumerate(var_assign) if ind not in exists_vars]) for var_assign in\
+    \ full_var_assigns]))\nMemoryError\n"
+
+
+---
+timestamp: '2025-01-13T15:34:32.955581'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '300.36'
+
+
+---
+timestamp: '2025-01-13T15:34:49.370578'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 317.07 seconds'
+
+

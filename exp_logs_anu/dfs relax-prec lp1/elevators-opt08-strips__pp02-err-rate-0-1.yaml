@@ -1,0 +1,135 @@
+---
+timestamp: '2025-01-03T21:19:17.223712'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs_anu/dfs relax-prec lp1/elevators-opt08-strips__pp02-err-rate-0-1.yaml
+    instance_id: elevators-opt08-strips__pp02-err-rate-0-1
+    search_algorithm: dfs
+    plan_length: 9
+    domain_class: elevators-opt08-strips
+    instance_name: pp02-err-rate-0-1
+    ground_plan:
+    - (board p1 slow1-0 n4 n0 n1)
+    - (move-up-slow slow1-0 n4 n6)
+    - (leave p1 slow1-0 n6 n1 n0)
+    - (board p2 slow0-0 n2 n0 n1)
+    - (move-down-slow slow0-0 n2 n1)
+    - (leave p2 slow0-0 n1 n1 n0)
+    - (board p0 fast0 n0 n0 n1)
+    - (move-up-fast fast0 n0 n4)
+    - (leave p0 fast0 n4 n1 n0)
+    lifted_plan:
+    -   - board
+        - ?p1
+        - ?slow1-0
+        - ?n4
+        - ?n0
+        - ?n1
+    -   - move-up-slow
+        - ?slow1-0
+        - ?n4
+        - ?n6
+    -   - leave
+        - ?p1
+        - ?slow1-0
+        - ?n6
+        - ?n1
+        - ?n0
+    -   - board
+        - ?p2
+        - ?slow0-0
+        - ?n2
+        - ?n0
+        - ?n1
+    -   - move-down-slow
+        - ?slow0-0
+        - ?n2
+        - ?n1
+    -   - leave
+        - ?p2
+        - ?slow0-0
+        - ?n1
+        - ?n1
+        - ?n0
+    -   - board
+        - ?p0
+        - ?fast0
+        - ?n0
+        - ?n0
+        - ?n1
+    -   - move-up-fast
+        - ?fast0
+        - ?n0
+        - ?n4
+    -   - leave
+        - ?p0
+        - ?fast0
+        - ?n4
+        - ?n1
+        - ?n0
+
+
+---
+timestamp: '2025-01-03T21:19:17.227651'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: board,(lift-at ?lift ?n2),effPos,1
+
+
+---
+timestamp: '2025-01-03T21:19:24.853860'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 197
+    fring_size: 1
+    num_nodes_generated: 209
+    sum_h_cost: 0
+    sum_f_cost: 0
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 6.661156177520752
+    current_node:
+        depth: 9
+        ground_actions:
+        - (board p1 slow1-0 n4 n0 n1)
+        - (move-up-slow slow1-0 n4 n6)
+        - (leave p1 slow1-0 n6 n1 n0)
+        - (board p2 slow0-0 n2 n0 n1)
+        - (move-down-slow slow1-0 n6 n5)
+        - (leave p2 slow0-0 n2 n1 n0)
+        - (board p0 fast0 n0 n0 n1)
+        - (move-up-fast fast0 n0 n4)
+        - (leave p0 fast0 n4 n1 n0)
+        repair_set: leave,(passenger-at ?p ?n1),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2025-01-03T21:19:24.855413'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '8.77'
+
+
+---
+timestamp: '2025-01-03T21:19:24.940137'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 9.04 seconds'
+
+

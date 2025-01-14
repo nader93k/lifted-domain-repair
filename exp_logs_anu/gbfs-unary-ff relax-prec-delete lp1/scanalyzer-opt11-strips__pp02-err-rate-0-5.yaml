@@ -1,0 +1,177 @@
+---
+timestamp: '2025-01-13T10:55:09.124156'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-prec-delete lp1/scanalyzer-opt11-strips__pp02-err-rate-0-5.yaml
+    instance_id: scanalyzer-opt11-strips__pp02-err-rate-0-5
+    search_algorithm: greedy
+    plan_length: 14
+    domain_class: scanalyzer-opt11-strips
+    instance_name: pp02-err-rate-0-5
+    ground_plan:
+    - (analyze-2 seg-in-1 seg-out-1 car-in-1 car-out-1)
+    - (analyze-2 seg-in-1 seg-out-1 car-out-1 car-in-1)
+    - (analyze-2 seg-in-2 seg-out-1 car-in-2 car-out-1)
+    - (analyze-2 seg-in-2 seg-out-1 car-out-1 car-in-2)
+    - (analyze-2 seg-in-3 seg-out-1 car-in-3 car-out-1)
+    - (analyze-2 seg-in-3 seg-out-1 car-out-1 car-in-3)
+    - (rotate-2 seg-in-1 seg-out-2 car-in-1 car-out-2)
+    - (analyze-2 seg-in-1 seg-out-1 car-out-2 car-out-1)
+    - (analyze-2 seg-in-1 seg-out-1 car-out-1 car-out-2)
+    - (rotate-2 seg-in-1 seg-out-2 car-out-2 car-in-1)
+    - (rotate-2 seg-in-1 seg-out-3 car-in-1 car-out-3)
+    - (analyze-2 seg-in-1 seg-out-1 car-out-3 car-out-1)
+    - (analyze-2 seg-in-1 seg-out-1 car-out-1 car-out-3)
+    - (rotate-2 seg-in-1 seg-out-3 car-out-3 car-in-1)
+    lifted_plan:
+    -   - analyze-2
+        - ?seg-in-1
+        - ?seg-out-1
+        - ?car-in-1
+        - ?car-out-1
+    -   - analyze-2
+        - ?seg-in-1
+        - ?seg-out-1
+        - ?car-out-1
+        - ?car-in-1
+    -   - analyze-2
+        - ?seg-in-2
+        - ?seg-out-1
+        - ?car-in-2
+        - ?car-out-1
+    -   - analyze-2
+        - ?seg-in-2
+        - ?seg-out-1
+        - ?car-out-1
+        - ?car-in-2
+    -   - analyze-2
+        - ?seg-in-3
+        - ?seg-out-1
+        - ?car-in-3
+        - ?car-out-1
+    -   - analyze-2
+        - ?seg-in-3
+        - ?seg-out-1
+        - ?car-out-1
+        - ?car-in-3
+    -   - rotate-2
+        - ?seg-in-1
+        - ?seg-out-2
+        - ?car-in-1
+        - ?car-out-2
+    -   - analyze-2
+        - ?seg-in-1
+        - ?seg-out-1
+        - ?car-out-2
+        - ?car-out-1
+    -   - analyze-2
+        - ?seg-in-1
+        - ?seg-out-1
+        - ?car-out-1
+        - ?car-out-2
+    -   - rotate-2
+        - ?seg-in-1
+        - ?seg-out-2
+        - ?car-out-2
+        - ?car-in-1
+    -   - rotate-2
+        - ?seg-in-1
+        - ?seg-out-3
+        - ?car-in-1
+        - ?car-out-3
+    -   - analyze-2
+        - ?seg-in-1
+        - ?seg-out-1
+        - ?car-out-3
+        - ?car-out-1
+    -   - analyze-2
+        - ?seg-in-1
+        - ?seg-out-1
+        - ?car-out-1
+        - ?car-out-3
+    -   - rotate-2
+        - ?seg-in-1
+        - ?seg-out-3
+        - ?car-out-3
+        - ?car-in-1
+
+
+---
+timestamp: '2025-01-13T10:55:09.128559'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: analyze-2,(on ?c2 ?s1),effPos,1
+
+
+---
+timestamp: '2025-01-13T10:55:20.932075'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 15
+    fring_size: 436
+    num_nodes_generated: 451
+    sum_h_cost: 58
+    sum_f_cost: 29
+    sum_h_cost_time: 0.5239863395690918
+    sum_grounding_time: 0.27143359184265137
+    h_max: 2
+    current_node:
+        depth: 14
+        ground_actions:
+        - (analyze-2 seg-in-3 seg-out-1 car-in-3 car-out-1)
+        - (analyze-2 seg-in-1 seg-out-1 car-in-1 car-in-3)
+        - (analyze-2 seg-in-1 seg-out-1 car-in-1 car-in-1)
+        - (analyze-2 seg-in-1 seg-out-1 car-in-1 car-in-1)
+        - (analyze-2 seg-in-1 seg-out-1 car-in-1 car-in-1)
+        - (analyze-2 seg-in-1 seg-out-1 car-in-1 car-in-1)
+        - (rotate-2 seg-in-2 seg-out-1 car-in-2 car-in-1)
+        - (analyze-2 seg-in-2 seg-out-1 car-in-2 car-in-2)
+        - (analyze-2 seg-in-1 seg-out-1 car-out-3 car-in-2)
+        - (rotate-2 seg-in-2 seg-out-2 car-in-1 car-out-2)
+        - (rotate-2 seg-in-2 seg-out-3 car-out-2 car-out-3)
+        - (analyze-2 seg-in-1 seg-out-1 car-out-3 car-out-3)
+        - (analyze-2 seg-in-1 seg-out-1 car-out-3 car-out-3)
+        - (rotate-2 seg-in-2 seg-out-1 car-out-3 car-out-1)
+        repair_set: 'analyze-2,(on ?c2 ?s2),effPos,1
+
+            rotate-2,(on ?c2 ?s2),effPos,1
+
+            rotate-2,(analyzed ?c2),effPos,1
+
+            analyze-2,(on ?c1 ?s1),precPos,-1
+
+            analyze-2,(on ?c1 ?s1),effPos,1'
+        g_cost: 5
+        h_cost: 0
+        f_cost: 5
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2025-01-13T10:55:20.934076'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '12.98'
+
+
+---
+timestamp: '2025-01-13T10:55:21.003605'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 13.50 seconds'
+
+

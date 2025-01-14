@@ -1,0 +1,217 @@
+---
+timestamp: '2025-01-07T02:33:36.200937'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: exp_logs_anu/dfs relax-prec lp1/woodworking-opt08-strips__pp04-err-rate-0-1.yaml
+    instance_id: woodworking-opt08-strips__pp04-err-rate-0-1
+    search_algorithm: dfs
+    plan_length: 15
+    domain_class: woodworking-opt08-strips
+    instance_name: pp04-err-rate-0-1
+    ground_plan:
+    - (do-saw-medium b0 p2 saw0 beech smooth s8 s7 s6)
+    - (do-saw-medium b0 p5 saw0 beech smooth s8 s7 s6)
+    - (do-saw-medium b1 p0 saw0 beech rough s4 s3 s2)
+    - (do-saw-medium b1 p1 saw0 beech rough s4 s3 s2)
+    - (do-saw-small b2 p4 saw0 teak rough s2 s1)
+    - (do-immersion-varnish p5 immersion-varnisher0 blue smooth)
+    - (do-glaze p0 glazer0 white)
+    - (do-grind p2 grinder0 smooth natural untreated untreated)
+    - (do-glaze p2 glazer0 blue)
+    - (do-plane p4 planer0 rough natural untreated)
+    - (do-glaze p1 glazer0 blue)
+    - (do-glaze p4 glazer0 blue)
+    - (do-plane p3 planer0 verysmooth blue varnished)
+    - (do-grind p3 grinder0 smooth natural untreated untreated)
+    - (do-immersion-varnish p3 immersion-varnisher0 red verysmooth)
+    lifted_plan:
+    -   - do-saw-medium
+        - ?b0
+        - ?p2
+        - ?saw0
+        - ?beech
+        - ?smooth
+        - ?s8
+        - ?s7
+        - ?s6
+    -   - do-saw-medium
+        - ?b0
+        - ?p5
+        - ?saw0
+        - ?beech
+        - ?smooth
+        - ?s8
+        - ?s7
+        - ?s6
+    -   - do-saw-medium
+        - ?b1
+        - ?p0
+        - ?saw0
+        - ?beech
+        - ?rough
+        - ?s4
+        - ?s3
+        - ?s2
+    -   - do-saw-medium
+        - ?b1
+        - ?p1
+        - ?saw0
+        - ?beech
+        - ?rough
+        - ?s4
+        - ?s3
+        - ?s2
+    -   - do-saw-small
+        - ?b2
+        - ?p4
+        - ?saw0
+        - ?teak
+        - ?rough
+        - ?s2
+        - ?s1
+    -   - do-immersion-varnish
+        - ?p5
+        - ?immersion-varnisher0
+        - ?blue
+        - ?smooth
+    -   - do-glaze
+        - ?p0
+        - ?glazer0
+        - ?white
+    -   - do-grind
+        - ?p2
+        - ?grinder0
+        - ?smooth
+        - ?natural
+        - ?untreated
+        - ?untreated
+    -   - do-glaze
+        - ?p2
+        - ?glazer0
+        - ?blue
+    -   - do-plane
+        - ?p4
+        - ?planer0
+        - ?rough
+        - ?natural
+        - ?untreated
+    -   - do-glaze
+        - ?p1
+        - ?glazer0
+        - ?blue
+    -   - do-glaze
+        - ?p4
+        - ?glazer0
+        - ?blue
+    -   - do-plane
+        - ?p3
+        - ?planer0
+        - ?verysmooth
+        - ?blue
+        - ?varnished
+    -   - do-grind
+        - ?p3
+        - ?grinder0
+        - ?smooth
+        - ?natural
+        - ?untreated
+        - ?untreated
+    -   - do-immersion-varnish
+        - ?p3
+        - ?immersion-varnisher0
+        - ?red
+        - ?verysmooth
+
+
+---
+timestamp: '2025-01-07T02:33:36.207889'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: do-immersion-varnish,(colour ?x ?newcolour),effPos,1
+
+
+---
+timestamp: '2025-01-07T02:33:36.254954'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''do-saw-medium'', ''?b0'', ''?p2'', ''?saw0'', ''?beech'',
+            ''?smooth'', ''?s8'', ''?s7'', ''?s6'']'
+        num_neighbours: 0
+        first_10_possible_groundings: null
+        current_state: '''(wood b2 teak)'', ''(surface-condition b2 rough)'', ''(wood
+            b1 beech)'', ''(boardsize-successor s6 s7)'', ''(goalsize p3 large)'',
+            ''(is-smooth smooth)'', ''(available b2)'', ''(boardsize-successor s4
+            s5)'', ''(grind-treatment-change glazed untreated)'', ''(available b1)'',
+            ''(has-colour immersion-varnisher0 white)'', ''(unused p1)'', ''(goalsize
+            p4 small)'', ''(has-colour glazer0 white)'', ''(has-colour immersion-varnisher0
+            red)'', ''(unused p4)'', ''(boardsize b2 s2)'', ''(has-colour immersion-varnisher0
+            blue)'', ''(has-colour glazer0 blue)'', ''(boardsize-successor s5 s6)'',
+            ''(colour p3 blue)'', ''(has-colour spray-varnisher0 white)'', ''(treatment
+            p3 varnished)'', ''(boardsize-successor s3 s4)'', ''(boardsize-successor
+            s0 s1)'', ''(has-colour spray-varnisher0 red)'', ''(surface-condition
+            b0 smooth)'', ''(available b0)'', ''(boardsize b1 s4)'', ''(goalsize p1
+            medium)'', ''(surface-condition p3 verysmooth)'', ''(wood b0 beech)'',
+            ''(has-colour spray-varnisher0 blue)'', ''(goalsize p5 medium)'', ''(boardsize-successor
+            s7 s8)'', ''(goalsize p2 medium)'', ''(boardsize b0 s8)'', ''(unused p5)'',
+            ''(boardsize-successor s1 s2)'', ''(grind-treatment-change untreated untreated)'',
+            ''(surface-condition b1 rough)'', ''(empty highspeed-saw0)'', ''(goalsize
+            p0 medium)'', ''(available p3)'', ''(boardsize-successor s2 s3)'', ''(grind-treatment-change
+            colourfragments untreated)'', ''(wood p3 teak)'', ''(grind-treatment-change
+            varnished colourfragments)'', ''(unused p2)'', ''(is-smooth verysmooth)'',
+            ''(unused p0)'''
+
+
+---
+timestamp: '2025-01-07T02:33:36.257364'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: 'medium' is not in list. Stack trace: Traceback\
+    \ (most recent call last):\n  File \"instance_solver.py\", line 85, in solve_instance\n\
+    \    searcher.find_path(logger=logger, log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 140, in find_path\n    neighbors = sorted(current_node.get_neighbors(),\
+    \ key=lambda x: x.g_cost, reverse=True)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 162, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 133, in ground_pddl\n    parser.parse_domain(domain_path)\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 213, in parse_domain\n    preconds_tuple = tuple([(preffix, precond.predicate.name,\
+    \ tuple([var_names.index(var.symbol) for var in precond.subterms])) for preffix,\
+    \ precond in preconds_list])\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 213, in <listcomp>\n    preconds_tuple = tuple([(preffix, precond.predicate.name,\
+    \ tuple([var_names.index(var.symbol) for var in precond.subterms])) for preffix,\
+    \ precond in preconds_list])\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 213, in <listcomp>\n    preconds_tuple = tuple([(preffix, precond.predicate.name,\
+    \ tuple([var_names.index(var.symbol) for var in precond.subterms])) for preffix,\
+    \ precond in preconds_list])\nValueError: 'medium' is not in list\n"
+
+
+---
+timestamp: '2025-01-07T02:33:36.258910'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.52'
+
+
+---
+timestamp: '2025-01-07T02:33:36.285790'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.79 seconds'
+
+

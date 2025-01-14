@@ -1,0 +1,77 @@
+---
+timestamp: '2025-01-13T00:53:43.480097'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs
+        relax-all lp1/logistics00__pprobLOGISTICS-5-2-err-rate-0-5.yaml
+    instance_id: logistics00__pprobLOGISTICS-5-2-err-rate-0-5
+    search_algorithm: greedy
+    plan_length: 8
+    domain_class: logistics00
+    instance_name: pprobLOGISTICS-5-2-err-rate-0-5
+    ground_plan:
+    - (load-truck obj23 tru2 pos2)
+    - (load-truck obj21 tru2 pos2)
+    - (drive-truck tru2 pos2 apt2 cit2)
+    - (unload-truck obj23 tru2 apt2)
+    - (unload-truck obj21 tru2 apt2)
+    - (load-truck obj12 tru1 pos1)
+    - (drive-truck tru1 pos1 apt1 cit1)
+    - (unload-truck obj12 tru1 apt1)
+    lifted_plan:
+    -   - load-truck
+        - ?obj23
+        - ?tru2
+        - ?pos2
+    -   - load-truck
+        - ?obj21
+        - ?tru2
+        - ?pos2
+    -   - drive-truck
+        - ?tru2
+        - ?pos2
+        - ?apt2
+        - ?cit2
+    -   - unload-truck
+        - ?obj23
+        - ?tru2
+        - ?apt2
+    -   - unload-truck
+        - ?obj21
+        - ?tru2
+        - ?apt2
+    -   - load-truck
+        - ?obj12
+        - ?tru1
+        - ?pos1
+    -   - drive-truck
+        - ?tru1
+        - ?pos1
+        - ?apt1
+        - ?cit1
+    -   - unload-truck
+        - ?obj12
+        - ?tru1
+        - ?apt1
+
+
+---
+timestamp: '2025-01-13T00:53:43.483376'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: drive-truck,(location ?city),precPos,-1
+
+
+---
+timestamp: '2025-01-13T01:08:42.134264'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+

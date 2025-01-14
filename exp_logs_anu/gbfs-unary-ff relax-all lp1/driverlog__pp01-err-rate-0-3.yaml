@@ -1,0 +1,120 @@
+---
+timestamp: '2025-01-13T00:42:27.244053'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs
+        relax-all lp1/driverlog__pp01-err-rate-0-3.yaml
+    instance_id: driverlog__pp01-err-rate-0-3
+    search_algorithm: greedy
+    plan_length: 7
+    domain_class: driverlog
+    instance_name: pp01-err-rate-0-3
+    ground_plan:
+    - (walk driver1 s2 p1-2)
+    - (walk driver1 p1-2 s1)
+    - (walk driver1 s1 p1-0)
+    - (walk driver1 p1-0 s0)
+    - (board-truck driver1 truck1 s0)
+    - (drive-truck truck1 s0 s1 driver1)
+    - (disembark-truck driver1 truck1 s1)
+    lifted_plan:
+    -   - walk
+        - ?driver1
+        - ?s2
+        - ?p1-2
+    -   - walk
+        - ?driver1
+        - ?p1-2
+        - ?s1
+    -   - walk
+        - ?driver1
+        - ?s1
+        - ?p1-0
+    -   - walk
+        - ?driver1
+        - ?p1-0
+        - ?s0
+    -   - board-truck
+        - ?driver1
+        - ?truck1
+        - ?s0
+    -   - drive-truck
+        - ?truck1
+        - ?s0
+        - ?s1
+        - ?driver1
+    -   - disembark-truck
+        - ?driver1
+        - ?truck1
+        - ?s1
+
+
+---
+timestamp: '2025-01-13T00:42:27.259854'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-13T00:53:34.997841'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 8
+    fring_size: 21295
+    num_nodes_generated: 21303
+    sum_h_cost: 4250
+    sum_f_cost: 2125
+    sum_h_cost_time: 0.10066509246826172
+    sum_grounding_time: 0.2318558692932129
+    h_max: 2
+    current_node:
+        depth: 7
+        ground_actions:
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s2)
+        - (walk driver1 s2 p1-2)
+        - (walk driver1 p1-2 s2)
+        - (board-truck driver2 truck2 s0)
+        - (drive-truck truck2 s0 s1 driver2)
+        - (disembark-truck driver1 truck1 s1)
+        repair_set: 'disembark-truck,(at ?truck ?loc),precPos,-1
+
+            disembark-truck,(driving ?driver ?truck),precPos,-1
+
+            disembark-truck,(at ?truck ?loc),effPos,1
+
+            board-truck,(at ?driver ?loc),precPos,-1'
+        g_cost: 4
+        h_cost: 0
+        f_cost: 4
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2025-01-13T00:53:35.005306'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '669.12'
+
+
+---
+timestamp: '2025-01-13T00:53:41.994867'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 676.67 seconds'
+
+

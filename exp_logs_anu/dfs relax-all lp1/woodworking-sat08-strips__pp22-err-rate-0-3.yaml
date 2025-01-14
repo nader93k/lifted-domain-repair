@@ -1,0 +1,196 @@
+---
+timestamp: '2025-01-13T14:50:06.616718'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs
+        relax-all lp1/woodworking-sat08-strips__pp22-err-rate-0-3.yaml
+    instance_id: woodworking-sat08-strips__pp22-err-rate-0-3
+    search_algorithm: dfs
+    plan_length: 15
+    domain_class: woodworking-sat08-strips
+    instance_name: pp22-err-rate-0-3
+    ground_plan:
+    - (do-grind p3 grinder0 verysmooth blue glazed untreated)
+    - (do-plane p3 planer0 verysmooth natural untreated)
+    - (do-immersion-varnish p3 immersion-varnisher0 mauve smooth)
+    - (do-saw-medium b0 p4 saw0 teak rough s3 s2 s1)
+    - (do-saw-large b1 p2 saw0 walnut rough s4 s2 s3 s1)
+    - (do-saw-small b1 p1 saw0 walnut rough s4 s3)
+    - (do-saw-small b1 p5 saw0 walnut rough s4 s3)
+    - (do-glaze p4 glazer0 blue)
+    - (do-plane p5 planer0 rough natural untreated)
+    - (do-glaze p1 glazer0 green)
+    - (do-glaze p5 glazer0 blue)
+    - (do-grind p0 grinder0 smooth green colourfragments untreated)
+    - (do-plane p0 planer0 verysmooth natural untreated)
+    - (do-immersion-varnish p0 immersion-varnisher0 black smooth)
+    - (do-glaze p2 glazer0 natural)
+    lifted_plan:
+    -   - do-grind
+        - ?p3
+        - ?grinder0
+        - ?verysmooth
+        - ?blue
+        - ?glazed
+        - ?untreated
+    -   - do-plane
+        - ?p3
+        - ?planer0
+        - ?verysmooth
+        - ?natural
+        - ?untreated
+    -   - do-immersion-varnish
+        - ?p3
+        - ?immersion-varnisher0
+        - ?mauve
+        - ?smooth
+    -   - do-saw-medium
+        - ?b0
+        - ?p4
+        - ?saw0
+        - ?teak
+        - ?rough
+        - ?s3
+        - ?s2
+        - ?s1
+    -   - do-saw-large
+        - ?b1
+        - ?p2
+        - ?saw0
+        - ?walnut
+        - ?rough
+        - ?s4
+        - ?s2
+        - ?s3
+        - ?s1
+    -   - do-saw-small
+        - ?b1
+        - ?p1
+        - ?saw0
+        - ?walnut
+        - ?rough
+        - ?s4
+        - ?s3
+    -   - do-saw-small
+        - ?b1
+        - ?p5
+        - ?saw0
+        - ?walnut
+        - ?rough
+        - ?s4
+        - ?s3
+    -   - do-glaze
+        - ?p4
+        - ?glazer0
+        - ?blue
+    -   - do-plane
+        - ?p5
+        - ?planer0
+        - ?rough
+        - ?natural
+        - ?untreated
+    -   - do-glaze
+        - ?p1
+        - ?glazer0
+        - ?green
+    -   - do-glaze
+        - ?p5
+        - ?glazer0
+        - ?blue
+    -   - do-grind
+        - ?p0
+        - ?grinder0
+        - ?smooth
+        - ?green
+        - ?colourfragments
+        - ?untreated
+    -   - do-plane
+        - ?p0
+        - ?planer0
+        - ?verysmooth
+        - ?natural
+        - ?untreated
+    -   - do-immersion-varnish
+        - ?p0
+        - ?immersion-varnisher0
+        - ?black
+        - ?smooth
+    -   - do-glaze
+        - ?p2
+        - ?glazer0
+        - ?natural
+
+
+---
+timestamp: '2025-01-13T14:50:06.623578'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: do-saw-medium,(boardsize-successor ?size_before ?size_after),precPos,-1
+
+
+---
+timestamp: '2025-01-13T14:50:06.673202'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''do-grind'', ''?p3'', ''?grinder0'', ''?verysmooth'',
+            ''?blue'', ''?glazed'', ''?untreated'']'
+        num_neighbours: 0
+        first_10_possible_groundings: null
+        current_state: not implemented!
+
+
+---
+timestamp: '2025-01-13T14:50:06.674685'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: 'verysmooth' is not in list. Stack trace:\
+    \ Traceback (most recent call last):\n  File \"instance_solver.py\", line 106,\
+    \ in solve_instance\n    searcher.find_path(logger=logger, log_interval=log_interval)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 140, in find_path\n    neighbors = sorted(current_node.get_neighbors(),\
+    \ key=lambda x: x.g_cost, reverse=True)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 202, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 133, in ground_pddl\n    parser.parse_domain(domain_path)\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 220, in parse_domain\n    effects = tuple([(isinstance(effect, AddEffect),\
+    \ effect.atom.predicate.name, tuple([var_names.index(var.symbol) for var in effect.atom.subterms]))\
+    \ for effect in effects])\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 220, in <listcomp>\n    effects = tuple([(isinstance(effect, AddEffect),\
+    \ effect.atom.predicate.name, tuple([var_names.index(var.symbol) for var in effect.atom.subterms]))\
+    \ for effect in effects])\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 220, in <listcomp>\n    effects = tuple([(isinstance(effect, AddEffect),\
+    \ effect.atom.predicate.name, tuple([var_names.index(var.symbol) for var in effect.atom.subterms]))\
+    \ for effect in effects])\nValueError: 'verysmooth' is not in list\n"
+
+
+---
+timestamp: '2025-01-13T14:50:06.676268'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.26'
+
+
+---
+timestamp: '2025-01-13T14:50:06.708564'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.63 seconds'
+
+

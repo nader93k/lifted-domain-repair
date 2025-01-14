@@ -1,0 +1,154 @@
+---
+timestamp: '2025-01-11T09:04:32.432123'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs
+        relax-prec-delete lp033/freecell__pprobfreecell-2-1-err-rate-0-3.yaml
+    instance_id: freecell__pprobfreecell-2-1-err-rate-0-3
+    search_algorithm: dfs
+    plan_length: 9
+    domain_class: freecell
+    instance_name: pprobfreecell-2-1-err-rate-0-3
+    ground_plan:
+    - (sendtohome-b da d n1 d0 n0 n2 n3)
+    - (sendtohome-b ha h n1 h0 n0 n3 n4)
+    - (sendtohome-b d2 d n2 da n1 n4 n5)
+    - (sendtohome-b h2 h n2 ha n1 n5 n6)
+    - (sendtofree c2 ca n4 n3)
+    - (sendtohome ca sa c n1 c0 n0)
+    - (sendtohome-b sa s n1 s0 n0 n6 n7)
+    - (sendtohome-b s2 s n2 sa n1 n7 n8)
+    - (homefromfreecell c2 c n2 ca n1 n3 n4)
+    lifted_plan:
+    -   - sendtohome-b
+        - da
+        - d
+        - n1
+        - ?d0
+        - n0
+        - n2
+        - n3
+    -   - sendtohome-b
+        - ?ha
+        - h
+        - n1
+        - h0
+        - n0
+        - ?n3
+        - n4
+    -   - sendtohome-b
+        - d2
+        - ?d
+        - n2
+        - da
+        - n1
+        - n4
+        - ?n5
+    -   - sendtohome-b
+        - h2
+        - h
+        - n2
+        - ha
+        - ?n1
+        - n5
+        - n6
+    -   - sendtofree
+        - c2
+        - ca
+        - n4
+        - n3
+    -   - sendtohome
+        - ?ca
+        - sa
+        - c
+        - ?n1
+        - c0
+        - n0
+    -   - sendtohome-b
+        - sa
+        - s
+        - ?n1
+        - s0
+        - n0
+        - ?n6
+        - ?n7
+    -   - sendtohome-b
+        - s2
+        - ?s
+        - n2
+        - ?sa
+        - n1
+        - n7
+        - n8
+    -   - homefromfreecell
+        - ?c2
+        - ?c
+        - n2
+        - ca
+        - ?n1
+        - n3
+        - n4
+
+
+---
+timestamp: '2025-01-11T09:04:32.437757'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: sendtohome,(clear ?card),precPos,-1
+
+
+---
+timestamp: '2025-01-11T09:04:32.681003'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 6
+    fring_size: 1
+    num_nodes_generated: 6
+    sum_h_cost: 0
+    sum_f_cost: 0
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 0.20055699348449707
+    h_max: -.inf
+    current_node:
+        depth: 5
+        ground_actions:
+        - (sendtohome-b da d n1 d0 n0 n2 n3)
+        - (sendtohome-b ha h n1 h0 n0 n3 n4)
+        - (sendtohome-b d2 d n2 da n1 n4 n5)
+        - (sendtohome-b h2 h n2 ha n1 n5 n6)
+        - (sendtofree c2 ca n4 n3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''sendtohome'', ''?ca'', ''sa'', ''c'', ''?n1'', ''c0'',
+            ''n0'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2025-01-11T09:04:32.682256'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.51'
+
+
+---
+timestamp: '2025-01-11T09:04:32.716344'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.80 seconds'
+
+

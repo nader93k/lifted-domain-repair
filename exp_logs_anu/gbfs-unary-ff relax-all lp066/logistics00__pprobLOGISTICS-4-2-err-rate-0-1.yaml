@@ -1,0 +1,113 @@
+---
+timestamp: '2025-01-13T05:16:43.128427'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-all lp066/logistics00__pprobLOGISTICS-4-2-err-rate-0-1.yaml
+    instance_id: logistics00__pprobLOGISTICS-4-2-err-rate-0-1
+    search_algorithm: greedy
+    plan_length: 15
+    domain_class: logistics00
+    instance_name: pprobLOGISTICS-4-2-err-rate-0-1
+    ground_plan:
+    - (load-truck obj21 tru2 pos2)
+    - (load-truck obj11 tru1 pos1)
+    - (drive-truck tru1 pos1 apt1 cit1)
+    - (unload-truck obj11 tru1 apt1)
+    - (load-airplane obj11 apn1 apt1)
+    - (drive-truck tru2 pos2 apt2 cit2)
+    - (unload-truck obj21 tru2 apt2)
+    - (fly-airplane apn1 apt1 apt2)
+    - (load-airplane obj21 apn1 apt2)
+    - (unload-airplane obj11 apn1 apt2)
+    - (load-truck obj11 tru2 apt2)
+    - (drive-truck tru2 apt2 pos2 cit2)
+    - (unload-truck obj11 tru2 pos2)
+    - (fly-airplane apn1 apt2 apt1)
+    - (unload-airplane obj21 apn1 apt1)
+    lifted_plan:
+    -   - load-truck
+        - obj21
+        - tru2
+        - ?pos2
+    -   - load-truck
+        - ?obj11
+        - ?tru1
+        - ?pos1
+    -   - drive-truck
+        - tru1
+        - ?pos1
+        - ?apt1
+        - ?cit1
+    -   - unload-truck
+        - obj11
+        - ?tru1
+        - ?apt1
+    -   - load-airplane
+        - obj11
+        - ?apn1
+        - ?apt1
+    -   - drive-truck
+        - tru2
+        - pos2
+        - apt2
+        - cit2
+    -   - unload-truck
+        - ?obj21
+        - tru2
+        - apt2
+    -   - fly-airplane
+        - apn1
+        - ?apt1
+        - ?apt2
+    -   - load-airplane
+        - ?obj21
+        - ?apn1
+        - apt2
+    -   - unload-airplane
+        - obj11
+        - ?apn1
+        - apt2
+    -   - load-truck
+        - ?obj11
+        - tru2
+        - ?apt2
+    -   - drive-truck
+        - ?tru2
+        - apt2
+        - ?pos2
+        - cit2
+    -   - unload-truck
+        - obj11
+        - ?tru2
+        - ?pos2
+    -   - fly-airplane
+        - apn1
+        - ?apt2
+        - ?apt1
+    -   - unload-airplane
+        - obj21
+        - ?apn1
+        - ?apt1
+
+
+---
+timestamp: '2025-01-13T05:16:43.132368'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-13T05:31:41.637498'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+

@@ -1,0 +1,124 @@
+---
+timestamp: '2025-01-10T18:44:17.057303'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs
+        relax-prec-delete lp1/data-network-opt18-strips__pp13-err-rate-0-5.yaml
+    instance_id: data-network-opt18-strips__pp13-err-rate-0-5
+    search_algorithm: bfs
+    plan_length: 10
+    domain_class: data-network-opt18-strips
+    instance_name: pp13-err-rate-0-5
+    ground_plan:
+    - (load data-0-7 server4 number4 number8 number0 number4)
+    - (send data-0-7 server4 server1 number4 number16 number0 number4)
+    - (load data-0-9 server2 number4 number8 number0 number4)
+    - (send data-0-9 server2 server1 number4 number16 number4 number8)
+    - (process data-0-7 data-0-9 data-1-8 script1 server1 number4 number16 number8
+        number12)
+    - (process data-1-8 data-0-9 data-2-5 script12 server1 number2 number16 number12
+        number14)
+    - (process data-1-8 data-0-7 data-2-2 script7 server1 number2 number16 number14
+        number16)
+    - (send data-2-2 server1 server3 number2 number8 number0 number2)
+    - (save data-2-2 number2 server3)
+    - (save data-2-5 number2 server1)
+    lifted_plan:
+    -   - load
+        - ?data-0-7
+        - ?server4
+        - ?number4
+        - ?number8
+        - ?number0
+        - ?number4
+    -   - send
+        - ?data-0-7
+        - ?server4
+        - ?server1
+        - ?number4
+        - ?number16
+        - ?number0
+        - ?number4
+    -   - load
+        - ?data-0-9
+        - ?server2
+        - ?number4
+        - ?number8
+        - ?number0
+        - ?number4
+    -   - send
+        - ?data-0-9
+        - ?server2
+        - ?server1
+        - ?number4
+        - ?number16
+        - ?number4
+        - ?number8
+    -   - process
+        - ?data-0-7
+        - ?data-0-9
+        - ?data-1-8
+        - ?script1
+        - ?server1
+        - ?number4
+        - ?number16
+        - ?number8
+        - ?number12
+    -   - process
+        - ?data-1-8
+        - ?data-0-9
+        - ?data-2-5
+        - ?script12
+        - ?server1
+        - ?number2
+        - ?number16
+        - ?number12
+        - ?number14
+    -   - process
+        - ?data-1-8
+        - ?data-0-7
+        - ?data-2-2
+        - ?script7
+        - ?server1
+        - ?number2
+        - ?number16
+        - ?number14
+        - ?number16
+    -   - send
+        - ?data-2-2
+        - ?server1
+        - ?server3
+        - ?number2
+        - ?number8
+        - ?number0
+        - ?number2
+    -   - save
+        - ?data-2-2
+        - ?number2
+        - ?server3
+    -   - save
+        - ?data-2-5
+        - ?number2
+        - ?server1
+
+
+---
+timestamp: '2025-01-10T18:44:17.063480'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: process,(usage ?s ?before),precPos,-1
+
+
+---
+timestamp: '2025-01-10T18:59:15.644236'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+

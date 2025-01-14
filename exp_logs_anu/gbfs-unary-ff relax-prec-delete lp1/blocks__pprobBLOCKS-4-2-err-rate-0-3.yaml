@@ -1,0 +1,97 @@
+---
+timestamp: '2025-01-13T09:05:54.027745'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-prec-delete lp1/blocks__pprobBLOCKS-4-2-err-rate-0-3.yaml
+    instance_id: blocks__pprobBLOCKS-4-2-err-rate-0-3
+    search_algorithm: greedy
+    plan_length: 6
+    domain_class: blocks
+    instance_name: pprobBLOCKS-4-2-err-rate-0-3
+    ground_plan:
+    - (unstack c b)
+    - (stack c d)
+    - (pick-up b)
+    - (stack b c)
+    - (pick-up a)
+    - (stack a b)
+    lifted_plan:
+    -   - unstack
+        - ?c
+        - ?b
+    -   - stack
+        - ?c
+        - ?d
+    -   - pick-up
+        - ?b
+    -   - stack
+        - ?b
+        - ?c
+    -   - pick-up
+        - ?a
+    -   - stack
+        - ?a
+        - ?b
+
+
+---
+timestamp: '2025-01-13T09:05:54.030580'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'stack,(equality-op ?y ?y),precPos,-1
+
+        pick-up,(on ?x ?x),precPos,-1'
+
+
+---
+timestamp: '2025-01-13T09:05:54.237473'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 6
+    fring_size: 0
+    num_nodes_generated: 6
+    sum_h_cost: 34
+    sum_f_cost: 17
+    sum_h_cost_time: 0.10471582412719727
+    sum_grounding_time: 0.08773469924926758
+    h_max: 4
+    current_node:
+        depth: 2
+        ground_actions:
+        - (unstack c b)
+        - (stack c b)
+        repair_set: stack,(equality-op ?y ?y),precPos,-1
+        g_cost: 1
+        h_cost: 4
+        f_cost: 5
+        next_lifted_action: '[''pick-up'', ''?b'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2025-01-13T09:05:54.238638'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.51'
+
+
+---
+timestamp: '2025-01-13T09:05:54.290812'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.87 seconds'
+
+

@@ -1,0 +1,111 @@
+---
+timestamp: '2025-01-11T02:25:54.153132'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs
+        relax-prec-delete lp1/zenotravel__pp03-err-rate-0-1.yaml
+    instance_id: zenotravel__pp03-err-rate-0-1
+    search_algorithm: dfs
+    plan_length: 6
+    domain_class: zenotravel
+    instance_name: pp03-err-rate-0-1
+    ground_plan:
+    - (board person1 plane1 city0)
+    - (fly plane1 city0 city1 fl4 fl3)
+    - (board person3 plane1 city1)
+    - (debark person1 plane1 city1)
+    - (fly plane1 city1 city0 fl3 fl2)
+    - (debark person3 plane1 city0)
+    lifted_plan:
+    -   - board
+        - ?person1
+        - ?plane1
+        - ?city0
+    -   - fly
+        - ?plane1
+        - ?city0
+        - ?city1
+        - ?fl4
+        - ?fl3
+    -   - board
+        - ?person3
+        - ?plane1
+        - ?city1
+    -   - debark
+        - ?person1
+        - ?plane1
+        - ?city1
+    -   - fly
+        - ?plane1
+        - ?city1
+        - ?city0
+        - ?fl3
+        - ?fl2
+    -   - debark
+        - ?person3
+        - ?plane1
+        - ?city0
+
+
+---
+timestamp: '2025-01-11T02:25:54.156426'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-11T02:26:24.564834'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 947
+    fring_size: 1
+    num_nodes_generated: 969
+    sum_h_cost: 0
+    sum_f_cost: 0
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 20.49156880378723
+    h_max: -.inf
+    current_node:
+        depth: 6
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane1 city0 city1 fl4 fl3)
+        - (board person3 plane1 city1)
+        - (debark person1 plane1 city1)
+        - (fly plane2 city2 city1 fl5 fl4)
+        - (debark person3 plane1 city0)
+        repair_set: fly,(at ?a ?c1),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2025-01-11T02:26:24.566656'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '31.63'
+
+
+---
+timestamp: '2025-01-11T02:26:24.981713'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 32.33 seconds'
+
+

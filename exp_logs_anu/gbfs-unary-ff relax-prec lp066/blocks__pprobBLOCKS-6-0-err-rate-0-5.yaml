@@ -1,0 +1,121 @@
+---
+timestamp: '2025-01-13T19:17:02.576569'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-prec lp066/blocks__pprobBLOCKS-6-0-err-rate-0-5.yaml
+    instance_id: blocks__pprobBLOCKS-6-0-err-rate-0-5
+    search_algorithm: greedy
+    plan_length: 12
+    domain_class: blocks
+    instance_name: pprobBLOCKS-6-0-err-rate-0-5
+    ground_plan:
+    - (unstack d a)
+    - (put-down d)
+    - (unstack f e)
+    - (stack f d)
+    - (unstack e b)
+    - (stack e f)
+    - (unstack a c)
+    - (stack a e)
+    - (pick-up b)
+    - (stack b a)
+    - (pick-up c)
+    - (stack c b)
+    lifted_plan:
+    -   - unstack
+        - d
+        - a
+    -   - put-down
+        - ?d
+    -   - unstack
+        - ?f
+        - ?e
+    -   - stack
+        - ?f
+        - d
+    -   - unstack
+        - ?e
+        - ?b
+    -   - stack
+        - ?e
+        - f
+    -   - unstack
+        - ?a
+        - ?c
+    -   - stack
+        - a
+        - ?e
+    -   - pick-up
+        - ?b
+    -   - stack
+        - b
+        - a
+    -   - pick-up
+        - c
+    -   - stack
+        - c
+        - ?b
+
+
+---
+timestamp: '2025-01-13T19:17:02.580080'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'unstack,(holding ?y),effPos,1
+
+        unstack,(clear ?y),effPos,1'
+
+
+---
+timestamp: '2025-01-13T19:17:03.590208'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 32
+    fring_size: 0
+    num_nodes_generated: 32
+    sum_h_cost: 156
+    sum_f_cost: 78
+    sum_h_cost_time: 0.6069259643554688
+    sum_grounding_time: 0.3235805034637451
+    h_max: 3
+    current_node:
+        depth: 3
+        ground_actions:
+        - (unstack d a)
+        - (put-down b)
+        - (unstack f e)
+        repair_set: put-down,(holding ?x),precPos,-1
+        g_cost: 1
+        h_cost: 3
+        f_cost: 4
+        next_lifted_action: '[''stack'', ''?f'', ''d'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2025-01-13T19:17:03.591407'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '2.43'
+
+
+---
+timestamp: '2025-01-13T19:17:03.625718'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 2.72 seconds'
+
+

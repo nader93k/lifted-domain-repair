@@ -1,0 +1,92 @@
+---
+timestamp: '2025-01-13T02:48:41.934295'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs
+        relax-all lp1/ged-opt14-strips__pd-2-8-err-rate-0-3.yaml
+    instance_id: ged-opt14-strips__pd-2-8-err-rate-0-3
+    search_algorithm: greedy
+    plan_length: 15
+    domain_class: ged-opt14-strips
+    instance_name: pd-2-8-err-rate-0-3
+    ground_plan:
+    - (invert-single-gene-b g54)
+    - (invert-single-gene-a sub8)
+    - (begin-cut sub1 g54)
+    - (end-cut-1 g54 sub6)
+    - (end-cut-2 sub1 sub6)
+    - (begin-transpose-splice sub3 sub1)
+    - (end-splice-1 g54 sub3)
+    - (end-splice-2 g54 sub1)
+    - (reset-1 sub1)
+    - (begin-cut sub4 sub2)
+    - (end-cut-1 sub2 sub5)
+    - (end-cut-2 sub4 sub5)
+    - (begin-transpose-splice sub7 sub3)
+    - (end-splice-1 sub2 sub7)
+    - (end-splice-2 sub2 sub3)
+    lifted_plan:
+    -   - invert-single-gene-b
+        - ?g54
+    -   - invert-single-gene-a
+        - ?sub8
+    -   - begin-cut
+        - ?sub1
+        - ?g54
+    -   - end-cut-1
+        - ?g54
+        - ?sub6
+    -   - end-cut-2
+        - ?sub1
+        - ?sub6
+    -   - begin-transpose-splice
+        - ?sub3
+        - ?sub1
+    -   - end-splice-1
+        - ?g54
+        - ?sub3
+    -   - end-splice-2
+        - ?g54
+        - ?sub1
+    -   - reset-1
+        - ?sub1
+    -   - begin-cut
+        - ?sub4
+        - ?sub2
+    -   - end-cut-1
+        - ?sub2
+        - ?sub5
+    -   - end-cut-2
+        - ?sub4
+        - ?sub5
+    -   - begin-transpose-splice
+        - ?sub7
+        - ?sub3
+    -   - end-splice-1
+        - ?sub2
+        - ?sub7
+    -   - end-splice-2
+        - ?sub2
+        - ?sub3
+
+
+---
+timestamp: '2025-01-13T02:48:41.940388'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: invert-single-gene-a,(inverted ?x),effPos,1
+
+
+---
+timestamp: '2025-01-13T03:03:39.718897'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+

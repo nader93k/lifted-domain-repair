@@ -1,0 +1,152 @@
+---
+timestamp: '2025-01-13T04:25:55.084580'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-all lp066/satellite__pp03-pfile3-err-rate-0-3.yaml
+    instance_id: satellite__pp03-pfile3-err-rate-0-3
+    search_algorithm: greedy
+    plan_length: 11
+    domain_class: satellite
+    instance_name: pp03-pfile3-err-rate-0-3
+    ground_plan:
+    - (switch_on instrument3 satellite1)
+    - (calibrate satellite1 instrument3 star0)
+    - (turn_to satellite1 phenomenon5 star0)
+    - (take_image satellite1 phenomenon5 instrument3 spectrograph2)
+    - (turn_to satellite1 phenomenon7 phenomenon5)
+    - (take_image satellite1 phenomenon7 instrument3 spectrograph2)
+    - (turn_to satellite1 star3 phenomenon7)
+    - (take_image satellite1 star3 instrument3 infrared0)
+    - (turn_to satellite1 star4 star3)
+    - (take_image satellite1 star4 instrument3 spectrograph2)
+    - (turn_to satellite0 phenomenon5 star4)
+    lifted_plan:
+    -   - switch_on
+        - instrument3
+        - satellite1
+    -   - calibrate
+        - ?satellite1
+        - ?instrument3
+        - ?star0
+    -   - turn_to
+        - ?satellite1
+        - phenomenon5
+        - ?star0
+    -   - take_image
+        - ?satellite1
+        - ?phenomenon5
+        - instrument3
+        - ?spectrograph2
+    -   - turn_to
+        - ?satellite1
+        - phenomenon7
+        - ?phenomenon5
+    -   - take_image
+        - ?satellite1
+        - phenomenon7
+        - instrument3
+        - spectrograph2
+    -   - turn_to
+        - satellite1
+        - ?star3
+        - phenomenon7
+    -   - take_image
+        - satellite1
+        - star3
+        - ?instrument3
+        - ?infrared0
+    -   - turn_to
+        - ?satellite1
+        - ?star4
+        - star3
+    -   - take_image
+        - satellite1
+        - ?star4
+        - instrument3
+        - ?spectrograph2
+    -   - turn_to
+        - satellite0
+        - ?phenomenon5
+        - ?star4
+
+
+---
+timestamp: '2025-01-13T04:25:55.088799'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'take_image,(have_image ?d ?m),effPos,1
+
+        switch_on,(power_on ?i),effPos,1'
+
+
+---
+timestamp: '2025-01-13T04:39:10.614346'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 27
+    fring_size: 11282
+    num_nodes_generated: 11309
+    sum_h_cost: 28936
+    sum_f_cost: 14468
+    sum_h_cost_time: 0.5005648136138916
+    sum_grounding_time: 1.5734398365020752
+    h_max: 5
+    current_node:
+        depth: 11
+        ground_actions:
+        - (switch_on instrument3 satellite1)
+        - (calibrate satellite1 instrument3 star0)
+        - (turn_to satellite0 phenomenon5 star4)
+        - (take_image satellite1 star0 instrument3 image1)
+        - (turn_to satellite1 phenomenon7 star0)
+        - (take_image satellite1 phenomenon7 instrument3 spectrograph2)
+        - (turn_to satellite1 star3 phenomenon7)
+        - (take_image satellite1 star3 instrument3 infrared0)
+        - (turn_to satellite1 phenomenon6 star3)
+        - (take_image satellite1 star4 instrument3 spectrograph2)
+        - (turn_to satellite0 phenomenon5 spectrograph2)
+        repair_set: 'take_image,(pointing ?s ?d),precPos,-1
+
+            turn_to,(pointing ?s ?d_prev),precPos,-1
+
+            take_image,(have_image ?d ?m),effPos,1
+
+            switch_on,(power_on ?i),effPos,1
+
+            take_image,(direction ?m),effPos,1
+
+            turn_to,(have_image ?d_new ?d_prev),effPos,1'
+        g_cost: 6
+        h_cost: 0
+        f_cost: 6
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2025-01-13T04:39:10.618063'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '796.71'
+
+
+---
+timestamp: '2025-01-13T04:39:13.155183'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 799.70 seconds'
+
+

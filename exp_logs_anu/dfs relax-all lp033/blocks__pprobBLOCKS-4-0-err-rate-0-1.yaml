@@ -1,0 +1,102 @@
+---
+timestamp: '2025-01-13T16:23:28.797911'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs
+        relax-all lp033/blocks__pprobBLOCKS-4-0-err-rate-0-1.yaml
+    instance_id: blocks__pprobBLOCKS-4-0-err-rate-0-1
+    search_algorithm: dfs
+    plan_length: 6
+    domain_class: blocks
+    instance_name: pprobBLOCKS-4-0-err-rate-0-1
+    ground_plan:
+    - (pick-up b)
+    - (stack b a)
+    - (pick-up c)
+    - (stack c b)
+    - (pick-up d)
+    - (stack d c)
+    lifted_plan:
+    -   - pick-up
+        - b
+    -   - stack
+        - b
+        - a
+    -   - pick-up
+        - ?c
+    -   - stack
+        - c
+        - b
+    -   - pick-up
+        - d
+    -   - stack
+        - ?d
+        - c
+
+
+---
+timestamp: '2025-01-13T16:23:28.800039'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-13T16:23:28.890728'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 7
+    fring_size: 1
+    num_nodes_generated: 10
+    sum_h_cost: 0
+    sum_f_cost: 0
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 0.06885576248168945
+    h_max: -.inf
+    current_node:
+        depth: 6
+        ground_actions:
+        - (pick-up b)
+        - (stack b a)
+        - (pick-up d)
+        - (stack c b)
+        - (pick-up d)
+        - (stack d c)
+        repair_set: 'pick-up,(not (ontable ?x)),effNeg,-1
+
+            stack,(holding ?x),precPos,-1
+
+            pick-up,(clear ?x),precPos,-1'
+        g_cost: 3
+        h_cost: 0
+        f_cost: 3
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2025-01-13T16:23:28.892039'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.34'
+
+
+---
+timestamp: '2025-01-13T16:23:28.927037'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.66 seconds'
+
+

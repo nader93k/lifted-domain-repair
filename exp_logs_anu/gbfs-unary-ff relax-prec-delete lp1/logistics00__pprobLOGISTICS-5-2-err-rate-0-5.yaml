@@ -1,0 +1,115 @@
+---
+timestamp: '2025-01-13T09:21:39.878495'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-prec-delete lp1/logistics00__pprobLOGISTICS-5-2-err-rate-0-5.yaml
+    instance_id: logistics00__pprobLOGISTICS-5-2-err-rate-0-5
+    search_algorithm: greedy
+    plan_length: 8
+    domain_class: logistics00
+    instance_name: pprobLOGISTICS-5-2-err-rate-0-5
+    ground_plan:
+    - (load-truck obj23 tru2 pos2)
+    - (load-truck obj21 tru2 pos2)
+    - (drive-truck tru2 pos2 apt2 cit2)
+    - (unload-truck obj23 tru2 apt2)
+    - (unload-truck obj21 tru2 apt2)
+    - (load-truck obj12 tru1 pos1)
+    - (drive-truck tru1 pos1 apt1 cit1)
+    - (unload-truck obj12 tru1 apt1)
+    lifted_plan:
+    -   - load-truck
+        - ?obj23
+        - ?tru2
+        - ?pos2
+    -   - load-truck
+        - ?obj21
+        - ?tru2
+        - ?pos2
+    -   - drive-truck
+        - ?tru2
+        - ?pos2
+        - ?apt2
+        - ?cit2
+    -   - unload-truck
+        - ?obj23
+        - ?tru2
+        - ?apt2
+    -   - unload-truck
+        - ?obj21
+        - ?tru2
+        - ?apt2
+    -   - load-truck
+        - ?obj12
+        - ?tru1
+        - ?pos1
+    -   - drive-truck
+        - ?tru1
+        - ?pos1
+        - ?apt1
+        - ?cit1
+    -   - unload-truck
+        - ?obj12
+        - ?tru1
+        - ?apt1
+
+
+---
+timestamp: '2025-01-13T09:21:39.881843'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: drive-truck,(location ?city),precPos,-1
+
+
+---
+timestamp: '2025-01-13T09:21:44.205344'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 43
+    fring_size: 0
+    num_nodes_generated: 43
+    sum_h_cost: 84
+    sum_f_cost: 42
+    sum_h_cost_time: 3.389655351638794
+    sum_grounding_time: 0.7903704643249512
+    h_max: 1
+    current_node:
+        depth: 2
+        ground_actions:
+        - (load-truck obj21 tru2 pos2)
+        - (load-truck obj21 tru2 pos2)
+        repair_set: load-truck,(not (at ?obj ?loc)),effNeg,-1
+        g_cost: 1
+        h_cost: 1
+        f_cost: 2
+        next_lifted_action: '[''drive-truck'', ''?tru2'', ''?pos2'', ''?apt2'', ''?cit2'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2025-01-13T09:21:44.206782'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '5.62'
+
+
+---
+timestamp: '2025-01-13T09:21:44.239317'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 5.92 seconds'
+
+

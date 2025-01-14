@@ -1,0 +1,169 @@
+---
+timestamp: '2025-01-13T15:53:41.912688'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs
+        relax-all lp066/driverlog__pp03-err-rate-0-5.yaml
+    instance_id: driverlog__pp03-err-rate-0-5
+    search_algorithm: dfs
+    plan_length: 13
+    domain_class: driverlog
+    instance_name: pp03-err-rate-0-5
+    ground_plan:
+    - (board-truck driver1 truck1 s1)
+    - (load-truck package3 truck1 s1)
+    - (walk driver2 s0 p2-0)
+    - (walk driver2 p2-0 s2)
+    - (drive-truck truck1 s1 s0 driver1)
+    - (load-truck package2 truck1 s0)
+    - (load-truck package1 truck1 s0)
+    - (drive-truck truck1 s0 s1 driver1)
+    - (unload-truck package2 truck1 s1)
+    - (unload-truck package1 truck1 s1)
+    - (drive-truck truck1 s1 s2 driver1)
+    - (unload-truck package3 truck1 s2)
+    - (drive-truck truck1 s2 s1 driver1)
+    lifted_plan:
+    -   - board-truck
+        - driver1
+        - truck1
+        - ?s1
+    -   - load-truck
+        - ?package3
+        - ?truck1
+        - ?s1
+    -   - walk
+        - driver2
+        - ?s0
+        - ?p2-0
+    -   - walk
+        - ?driver2
+        - p2-0
+        - ?s2
+    -   - drive-truck
+        - ?truck1
+        - s1
+        - ?s0
+        - ?driver1
+    -   - load-truck
+        - package2
+        - truck1
+        - s0
+    -   - load-truck
+        - package1
+        - ?truck1
+        - s0
+    -   - drive-truck
+        - truck1
+        - s0
+        - ?s1
+        - ?driver1
+    -   - unload-truck
+        - ?package2
+        - ?truck1
+        - s1
+    -   - unload-truck
+        - package1
+        - ?truck1
+        - s1
+    -   - drive-truck
+        - ?truck1
+        - s1
+        - ?s2
+        - ?driver1
+    -   - unload-truck
+        - package3
+        - ?truck1
+        - s2
+    -   - drive-truck
+        - truck1
+        - ?s2
+        - ?s1
+        - driver1
+
+
+---
+timestamp: '2025-01-13T15:53:41.916675'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: board-truck,(path ?truck ?truck),precPos,-1
+
+
+---
+timestamp: '2025-01-13T15:54:29.508855'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 25
+    fring_size: 1
+    num_nodes_generated: 9076
+    sum_h_cost: 0
+    sum_f_cost: 0
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 1.8697690963745117
+    h_max: -.inf
+    current_node:
+        depth: 13
+        ground_actions:
+        - (board-truck driver1 truck1 s1)
+        - (load-truck package4 truck1 s1)
+        - (walk driver2 s0 p2-0)
+        - (walk driver2 p2-0 s0)
+        - (drive-truck truck1 s1 s0 driver1)
+        - (load-truck package2 truck1 s0)
+        - (load-truck package1 truck1 s0)
+        - (drive-truck truck1 s0 s2 driver1)
+        - (unload-truck package4 truck1 s1)
+        - (unload-truck package1 truck1 s1)
+        - (drive-truck truck1 s1 s0 driver1)
+        - (unload-truck package3 driver2 s2)
+        - (drive-truck truck1 package2 s1 driver1)
+        repair_set: 'board-truck,(path ?truck ?truck),precPos,-1
+
+            drive-truck,(at ?loc-from ?loc-to),effPos,1
+
+            drive-truck,(link ?loc-from ?loc-to),precPos,-1
+
+            load-truck,(at ?truck ?obj),effPos,1
+
+            unload-truck,(at ?truck ?loc),precPos,-1
+
+            unload-truck,(at ?truck ?loc),effPos,1
+
+            unload-truck,(truck ?truck),precPos,-1
+
+            drive-truck,(location ?loc-from),precPos,-1
+
+            unload-truck,(in ?obj ?truck),precPos,-1'
+        g_cost: 9
+        h_cost: 0
+        f_cost: 9
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2025-01-13T15:54:29.511132'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '49.47'
+
+
+---
+timestamp: '2025-01-13T15:54:31.977978'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 52.39 seconds'
+
+

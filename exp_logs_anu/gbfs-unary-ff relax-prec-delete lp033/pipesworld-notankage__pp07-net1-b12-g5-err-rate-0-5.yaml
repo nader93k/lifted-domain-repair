@@ -1,0 +1,171 @@
+---
+timestamp: '2025-01-13T11:29:02.945145'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-prec-delete lp033/pipesworld-notankage__pp07-net1-b12-g5-err-rate-0-5.yaml
+    instance_id: pipesworld-notankage__pp07-net1-b12-g5-err-rate-0-5
+    search_algorithm: greedy
+    plan_length: 10
+    domain_class: pipesworld-notankage
+    instance_name: pp07-net1-b12-g5-err-rate-0-5
+    ground_plan:
+    - (pop-unitarypipe s13 b11 a1 a3 b1 gasoleo oc1b)
+    - (pop-unitarypipe s13 b7 a1 a3 b11 rat-a gasoleo)
+    - (pop-unitarypipe s12 b4 a1 a2 b8 lco oc1b)
+    - (pop-unitarypipe s13 b6 a1 a3 b7 lco rat-a)
+    - (pop-unitarypipe s12 b9 a1 a2 b4 lco lco)
+    - (push-unitarypipe s12 b1 a1 a2 b9 oc1b lco)
+    - (push-unitarypipe s12 b0 a1 a2 b1 lco oc1b)
+    - (pop-unitarypipe s12 b9 a1 a2 b0 lco lco)
+    - (pop-unitarypipe s12 b1 a1 a2 b9 oc1b lco)
+    - (push-unitarypipe s12 b0 a1 a2 b1 lco oc1b)
+    lifted_plan:
+    -   - pop-unitarypipe
+        - s13
+        - b11
+        - a1
+        - ?a3
+        - b1
+        - gasoleo
+        - oc1b
+    -   - pop-unitarypipe
+        - ?s13
+        - b7
+        - a1
+        - a3
+        - b11
+        - ?rat-a
+        - gasoleo
+    -   - pop-unitarypipe
+        - s12
+        - ?b4
+        - a1
+        - a2
+        - b8
+        - lco
+        - ?oc1b
+    -   - pop-unitarypipe
+        - s13
+        - b6
+        - a1
+        - a3
+        - ?b7
+        - lco
+        - rat-a
+    -   - pop-unitarypipe
+        - s12
+        - b9
+        - a1
+        - a2
+        - ?b4
+        - lco
+        - lco
+    -   - push-unitarypipe
+        - ?s12
+        - b1
+        - a1
+        - a2
+        - b9
+        - ?oc1b
+        - lco
+    -   - push-unitarypipe
+        - s12
+        - ?b0
+        - ?a1
+        - a2
+        - ?b1
+        - lco
+        - ?oc1b
+    -   - pop-unitarypipe
+        - s12
+        - b9
+        - a1
+        - ?a2
+        - ?b0
+        - lco
+        - lco
+    -   - pop-unitarypipe
+        - ?s12
+        - b1
+        - a1
+        - a2
+        - b9
+        - oc1b
+        - lco
+    -   - push-unitarypipe
+        - s12
+        - b0
+        - a1
+        - a2
+        - b1
+        - lco
+        - ?oc1b
+
+
+---
+timestamp: '2025-01-13T11:29:02.950099'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: pop-unitarypipe,(follow ?batch-atom-in ?batch-atom-in),precPos,-1
+
+
+---
+timestamp: '2025-01-13T11:29:05.309578'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 11
+    fring_size: 9
+    num_nodes_generated: 20
+    sum_h_cost: 92
+    sum_f_cost: 46
+    sum_h_cost_time: 1.1856083869934082
+    sum_grounding_time: 0.3294098377227783
+    h_max: 4
+    current_node:
+        depth: 10
+        ground_actions:
+        - (pop-unitarypipe s13 b11 a1 a3 b1 gasoleo oc1b)
+        - (pop-unitarypipe s13 b7 a1 a3 b11 rat-a gasoleo)
+        - (pop-unitarypipe s12 b4 a1 a2 b8 lco oc1b)
+        - (pop-unitarypipe s13 b6 a1 a3 b7 lco rat-a)
+        - (pop-unitarypipe s12 b9 a1 a2 b4 lco lco)
+        - (push-unitarypipe s12 b1 a1 a2 b9 oc1b lco)
+        - (push-unitarypipe s12 b4 a1 a2 b1 lco oc1b)
+        - (pop-unitarypipe s12 b9 a1 a2 b4 lco lco)
+        - (pop-unitarypipe s12 b1 a1 a2 b9 oc1b lco)
+        - (push-unitarypipe s12 b0 a1 a2 b1 lco oc1b)
+        repair_set: pop-unitarypipe,(follow ?batch-atom-in ?batch-atom-in),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2025-01-13T11:29:05.311087'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '3.54'
+
+
+---
+timestamp: '2025-01-13T11:29:05.350219'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 3.87 seconds'
+
+

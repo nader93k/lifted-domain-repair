@@ -1,0 +1,120 @@
+---
+timestamp: '2025-01-13T12:46:48.471470'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs
+        relax-all lp1/mprime__pprob07-err-rate-0-5.yaml
+    instance_id: mprime__pprob07-err-rate-0-5
+    search_algorithm: dfs
+    plan_length: 5
+    domain_class: mprime
+    instance_name: pprob07-err-rate-0-5
+    ground_plan:
+    - (drink shrimp snickers moravia manitoba arizona arizona manitoba)
+    - (feast stimulation snickers popover arizona manitoba)
+    - (overcome jealousy stimulation popover mercury saturn)
+    - (feast stimulation popover muffin arizona manitoba)
+    - (succumb jealousy stimulation muffin mercury saturn)
+    lifted_plan:
+    -   - drink
+        - ?shrimp
+        - ?snickers
+        - ?moravia
+        - ?manitoba
+        - ?arizona
+        - ?arizona
+        - ?manitoba
+    -   - feast
+        - ?stimulation
+        - ?snickers
+        - ?popover
+        - ?arizona
+        - ?manitoba
+    -   - overcome
+        - ?jealousy
+        - ?stimulation
+        - ?popover
+        - ?mercury
+        - ?saturn
+    -   - feast
+        - ?stimulation
+        - ?popover
+        - ?muffin
+        - ?arizona
+        - ?manitoba
+    -   - succumb
+        - ?jealousy
+        - ?stimulation
+        - ?muffin
+        - ?mercury
+        - ?saturn
+
+
+---
+timestamp: '2025-01-13T12:46:48.475851'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: drink,(attacks ?n2 ?n2),precPos,-1
+
+
+---
+timestamp: '2025-01-13T12:46:55.589890'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drink'', ''?shrimp'', ''?snickers'', ''?moravia'',
+            ''?manitoba'', ''?arizona'', ''?arizona'', ''?manitoba'']'
+        num_neighbours: 0
+        first_10_possible_groundings: null
+        current_state: not implemented!
+
+
+---
+timestamp: '2025-01-13T12:46:55.592205'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: . Stack trace: Traceback (most recent call\
+    \ last):\n  File \"instance_solver.py\", line 106, in solve_instance\n    searcher.find_path(logger=logger,\
+    \ log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 140, in find_path\n    neighbors = sorted(current_node.get_neighbors(),\
+    \ key=lambda x: x.g_cost, reverse=True)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 202, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 135, in ground_pddl\n    actions = parser.get_applicable_actions()\n  File\
+    \ \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 485, in get_applicable_actions\n    full_var_assigns = self._get_applicable_var_assigns_action(action,\
+    \ [[-1]*len(action_vars)])\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 433, in _get_applicable_var_assigns_action\n    full_var_assigns.extend(new_var_assigns)\n\
+    MemoryError\n"
+
+
+---
+timestamp: '2025-01-13T12:46:59.907107'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '12.71'
+
+
+---
+timestamp: '2025-01-13T12:47:00.057381'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 13.20 seconds'
+
+

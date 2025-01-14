@@ -1,0 +1,133 @@
+---
+timestamp: '2025-01-13T08:43:13.402160'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-prec-delete lp066/transport-opt08-strips__pp11-err-rate-0-1.yaml
+    instance_id: transport-opt08-strips__pp11-err-rate-0-1
+    search_algorithm: greedy
+    plan_length: 9
+    domain_class: transport-opt08-strips
+    instance_name: pp11-err-rate-0-1
+    ground_plan:
+    - (drive truck-2 city-2-loc-2 city-1-loc-2)
+    - (drive truck-2 city-1-loc-2 city-1-loc-1)
+    - (pick-up truck-2 city-1-loc-1 package-1 capacity-2 capacity-3)
+    - (pick-up truck-2 city-1-loc-1 package-2 capacity-1 capacity-2)
+    - (drive truck-2 city-1-loc-1 city-1-loc-2)
+    - (drive truck-2 city-1-loc-2 city-2-loc-2)
+    - (drop truck-2 city-2-loc-2 package-2 capacity-1 capacity-2)
+    - (drive truck-2 city-2-loc-2 city-2-loc-1)
+    - (drop truck-2 city-2-loc-1 package-1 capacity-2 capacity-3)
+    lifted_plan:
+    -   - drive
+        - truck-2
+        - city-2-loc-2
+        - ?city-1-loc-2
+    -   - drive
+        - ?truck-2
+        - ?city-1-loc-2
+        - ?city-1-loc-1
+    -   - pick-up
+        - truck-2
+        - ?city-1-loc-1
+        - ?package-1
+        - ?capacity-2
+        - capacity-3
+    -   - pick-up
+        - ?truck-2
+        - ?city-1-loc-1
+        - package-2
+        - ?capacity-1
+        - ?capacity-2
+    -   - drive
+        - truck-2
+        - city-1-loc-1
+        - city-1-loc-2
+    -   - drive
+        - truck-2
+        - ?city-1-loc-2
+        - city-2-loc-2
+    -   - drop
+        - truck-2
+        - city-2-loc-2
+        - ?package-2
+        - ?capacity-1
+        - ?capacity-2
+    -   - drive
+        - ?truck-2
+        - city-2-loc-2
+        - city-2-loc-1
+    -   - drop
+        - ?truck-2
+        - city-2-loc-1
+        - ?package-1
+        - capacity-2
+        - ?capacity-3
+
+
+---
+timestamp: '2025-01-13T08:43:13.405237'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-13T08:43:14.253204'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 14
+    fring_size: 12
+    num_nodes_generated: 26
+    sum_h_cost: 6
+    sum_f_cost: 3
+    sum_h_cost_time: 0.2714366912841797
+    sum_grounding_time: 0.23022961616516113
+    h_max: 1
+    current_node:
+        depth: 9
+        ground_actions:
+        - (drive truck-2 city-2-loc-2 city-1-loc-2)
+        - (drive truck-2 city-1-loc-2 city-1-loc-1)
+        - (pick-up truck-2 city-1-loc-1 package-1 capacity-2 capacity-3)
+        - (pick-up truck-2 city-1-loc-1 package-2 capacity-1 capacity-2)
+        - (drive truck-2 city-1-loc-1 city-1-loc-2)
+        - (drive truck-2 city-1-loc-2 city-2-loc-2)
+        - (drop truck-2 city-2-loc-2 package-2 capacity-1 capacity-2)
+        - (drive truck-2 city-2-loc-2 city-2-loc-1)
+        - (drop truck-2 city-2-loc-1 package-1 capacity-2 capacity-3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2025-01-13T08:43:14.254624'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.98'
+
+
+---
+timestamp: '2025-01-13T08:43:14.295053'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 2.36 seconds'
+
+

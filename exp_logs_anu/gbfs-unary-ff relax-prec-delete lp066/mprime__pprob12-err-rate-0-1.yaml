@@ -1,0 +1,160 @@
+---
+timestamp: '2025-01-13T08:43:32.272449'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-prec-delete lp066/mprime__pprob12-err-rate-0-1.yaml
+    instance_id: mprime__pprob12-err-rate-0-1
+    search_algorithm: greedy
+    plan_length: 11
+    domain_class: mprime
+    instance_name: pprob12-err-rate-0-1
+    ground_plan:
+    - (feast intoxication lettuce arugula arizona surrey)
+    - (feast love hotdog kale kentucky pennsylvania)
+    - (feast love kale pork kentucky pennsylvania)
+    - (feast love pork kale kentucky pennsylvania)
+    - (overcome anger rest arugula pluto jupiter)
+    - (drink broccoli arugula quebec pennsylvania kentucky kentucky pennsylvania)
+    - (feast rest arugula lettuce kentucky pennsylvania)
+    - (feast rest lettuce hotdog quebec arizona)
+    - (drink lettuce hotdog quebec pennsylvania kentucky kentucky pennsylvania)
+    - (feast rest hotdog kale kentucky pennsylvania)
+    - (succumb anger rest kale pluto jupiter)
+    lifted_plan:
+    -   - feast
+        - intoxication
+        - lettuce
+        - ?arugula
+        - ?arizona
+        - ?surrey
+    -   - feast
+        - ?love
+        - hotdog
+        - ?kale
+        - ?kentucky
+        - ?pennsylvania
+    -   - feast
+        - love
+        - ?kale
+        - ?pork
+        - kentucky
+        - ?pennsylvania
+    -   - feast
+        - ?love
+        - pork
+        - kale
+        - kentucky
+        - pennsylvania
+    -   - overcome
+        - ?anger
+        - rest
+        - arugula
+        - pluto
+        - ?jupiter
+    -   - drink
+        - ?broccoli
+        - ?arugula
+        - ?quebec
+        - pennsylvania
+        - kentucky
+        - ?kentucky
+        - pennsylvania
+    -   - feast
+        - ?rest
+        - arugula
+        - ?lettuce
+        - ?kentucky
+        - pennsylvania
+    -   - feast
+        - ?rest
+        - lettuce
+        - hotdog
+        - ?quebec
+        - ?arizona
+    -   - drink
+        - lettuce
+        - ?hotdog
+        - ?quebec
+        - pennsylvania
+        - ?kentucky
+        - ?kentucky
+        - ?pennsylvania
+    -   - feast
+        - rest
+        - hotdog
+        - ?kale
+        - ?kentucky
+        - ?pennsylvania
+    -   - succumb
+        - ?anger
+        - rest
+        - ?kale
+        - ?pluto
+        - jupiter
+
+
+---
+timestamp: '2025-01-13T08:43:32.277056'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: feast,(locale ?l1 ?l1),effPos,1
+
+
+---
+timestamp: '2025-01-13T08:45:47.340689'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 280
+    fring_size: 0
+    num_nodes_generated: 280
+    sum_h_cost: 846
+    sum_f_cost: 423
+    sum_h_cost_time: 122.28955554962158
+    sum_grounding_time: 11.247087717056274
+    h_max: 2
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast intoxication lettuce hotdog arizona surrey)
+        - (feast love hotdog turkey kentucky pennsylvania)
+        - (feast love hotdog turkey kentucky pennsylvania)
+        - (feast love pork kale kentucky pennsylvania)
+        - (overcome anger rest arugula pluto jupiter)
+        repair_set: 'feast,(craves ?v ?n1),precPos,-1
+
+            feast,(locale ?n1 ?l2),precPos,-1'
+        g_cost: 2
+        h_cost: 2
+        f_cost: 4
+        next_lifted_action: '[''drink'', ''?broccoli'', ''?arugula'', ''?quebec'',
+            ''pennsylvania'', ''kentucky'', ''?kentucky'', ''pennsylvania'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2025-01-13T08:45:47.342482'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '136.26'
+
+
+---
+timestamp: '2025-01-13T08:45:47.443824'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 136.67 seconds'
+
+

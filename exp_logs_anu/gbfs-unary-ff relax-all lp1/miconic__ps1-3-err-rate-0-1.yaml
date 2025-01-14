@@ -1,0 +1,93 @@
+---
+timestamp: '2025-01-13T00:11:58.500931'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs
+        relax-all lp1/miconic__ps1-3-err-rate-0-1.yaml
+    instance_id: miconic__ps1-3-err-rate-0-1
+    search_algorithm: greedy
+    plan_length: 4
+    domain_class: miconic
+    instance_name: ps1-3-err-rate-0-1
+    ground_plan:
+    - (up f0 f1)
+    - (board f1 p0)
+    - (down f1 f0)
+    - (depart f0 p0)
+    lifted_plan:
+    -   - up
+        - ?f0
+        - ?f1
+    -   - board
+        - ?f1
+        - ?p0
+    -   - down
+        - ?f1
+        - ?f0
+    -   - depart
+        - ?f0
+        - ?p0
+
+
+---
+timestamp: '2025-01-13T00:11:58.503148'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: up,(lift-at ?f1),effPos,1
+
+
+---
+timestamp: '2025-01-13T00:11:58.775324'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 5
+    fring_size: 32
+    num_nodes_generated: 37
+    sum_h_cost: 44
+    sum_f_cost: 22
+    sum_h_cost_time: 0.011582374572753906
+    sum_grounding_time: 0.058733224868774414
+    h_max: 2
+    current_node:
+        depth: 4
+        ground_actions:
+        - (up f1 f1)
+        - (board f1 p0)
+        - (down f1 f0)
+        - (depart f0 p0)
+        repair_set: 'up,(lift-at ?f1),precPos,-1
+
+            up,(above ?f1 ?f2),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2025-01-13T00:11:58.776775'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.41'
+
+
+---
+timestamp: '2025-01-13T00:11:58.838181'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 2.01 seconds'
+
+

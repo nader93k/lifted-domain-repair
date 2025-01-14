@@ -1,0 +1,105 @@
+---
+timestamp: '2025-01-13T08:42:52.202661'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-prec-delete lp066/ged-opt14-strips__pd-2-4-err-rate-0-3.yaml
+    instance_id: ged-opt14-strips__pd-2-4-err-rate-0-3
+    search_algorithm: greedy
+    plan_length: 7
+    domain_class: ged-opt14-strips
+    instance_name: pd-2-4-err-rate-0-3
+    ground_plan:
+    - (invert-single-gene-a sub3)
+    - (begin-cut sub3 sub4)
+    - (end-cut-1 sub4 sub1)
+    - (end-cut-2 sub3 sub1)
+    - (begin-transpose-splice sub2 sub3)
+    - (end-splice-1 sub4 sub2)
+    - (end-splice-2 sub4 sub3)
+    lifted_plan:
+    -   - invert-single-gene-a
+        - sub3
+    -   - begin-cut
+        - sub3
+        - ?sub4
+    -   - end-cut-1
+        - ?sub4
+        - ?sub1
+    -   - end-cut-2
+        - ?sub3
+        - sub1
+    -   - begin-transpose-splice
+        - ?sub2
+        - ?sub3
+    -   - end-splice-1
+        - ?sub4
+        - sub2
+    -   - end-splice-2
+        - ?sub4
+        - ?sub3
+
+
+---
+timestamp: '2025-01-13T08:42:52.208121'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: end-cut-2,(cw ?x ?y),effPos,1
+
+
+---
+timestamp: '2025-01-13T08:42:52.552603'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 8
+    fring_size: 4
+    num_nodes_generated: 12
+    sum_h_cost: 12
+    sum_f_cost: 6
+    sum_h_cost_time: 0.07303309440612793
+    sum_grounding_time: 0.14112544059753418
+    h_max: 2
+    current_node:
+        depth: 7
+        ground_actions:
+        - (invert-single-gene-a sub3)
+        - (begin-cut sub3 sub4)
+        - (end-cut-1 sub4 sub1)
+        - (end-cut-2 sub3 sub1)
+        - (begin-transpose-splice sub2 sub3)
+        - (end-splice-1 sub4 sub2)
+        - (end-splice-2 sub4 sub3)
+        repair_set: end-cut-2,(cw ?x ?y),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2025-01-13T08:42:52.553875'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.61'
+
+
+---
+timestamp: '2025-01-13T08:42:52.589969'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.92 seconds'
+
+

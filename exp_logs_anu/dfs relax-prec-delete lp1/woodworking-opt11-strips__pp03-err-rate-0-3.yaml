@@ -1,0 +1,129 @@
+---
+timestamp: '2025-01-11T03:28:47.633681'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs
+        relax-prec-delete lp1/woodworking-opt11-strips__pp03-err-rate-0-3.yaml
+    instance_id: woodworking-opt11-strips__pp03-err-rate-0-3
+    search_algorithm: dfs
+    plan_length: 12
+    domain_class: woodworking-opt11-strips
+    instance_name: pp03-err-rate-0-3
+    ground_plan:
+    - (do-saw-large b0 p4 saw0 teak rough s6 s4 s5 s3)
+    - (do-saw-medium b1 p0 saw0 mahogany smooth s6 s5 s4)
+    - (do-saw-medium b1 p1 saw0 mahogany smooth s6 s5 s4)
+    - (do-saw-medium b1 p3 saw0 mahogany smooth s6 s5 s4)
+    - (do-saw-small b1 p2 saw0 mahogany smooth s6 s5)
+    - (do-plane p4 planer0 rough natural untreated)
+    - (do-immersion-varnish p4 immersion-varnisher0 green smooth)
+    - (do-glaze p0 glazer0 mauve)
+    - (do-grind p1 grinder0 smooth natural untreated untreated)
+    - (do-immersion-varnish p1 immersion-varnisher0 green verysmooth)
+    - (do-glaze p3 glazer0 white)
+    - (do-glaze p2 glazer0 mauve)
+    lifted_plan:
+    -   - do-saw-large
+        - ?b0
+        - ?p4
+        - ?saw0
+        - ?teak
+        - ?rough
+        - ?s6
+        - ?s4
+        - ?s5
+        - ?s3
+    -   - do-saw-medium
+        - ?b1
+        - ?p0
+        - ?saw0
+        - ?mahogany
+        - ?smooth
+        - ?s6
+        - ?s5
+        - ?s4
+    -   - do-saw-medium
+        - ?b1
+        - ?p1
+        - ?saw0
+        - ?mahogany
+        - ?smooth
+        - ?s6
+        - ?s5
+        - ?s4
+    -   - do-saw-medium
+        - ?b1
+        - ?p3
+        - ?saw0
+        - ?mahogany
+        - ?smooth
+        - ?s6
+        - ?s5
+        - ?s4
+    -   - do-saw-small
+        - ?b1
+        - ?p2
+        - ?saw0
+        - ?mahogany
+        - ?smooth
+        - ?s6
+        - ?s5
+    -   - do-plane
+        - ?p4
+        - ?planer0
+        - ?rough
+        - ?natural
+        - ?untreated
+    -   - do-immersion-varnish
+        - ?p4
+        - ?immersion-varnisher0
+        - ?green
+        - ?smooth
+    -   - do-glaze
+        - ?p0
+        - ?glazer0
+        - ?mauve
+    -   - do-grind
+        - ?p1
+        - ?grinder0
+        - ?smooth
+        - ?natural
+        - ?untreated
+        - ?untreated
+    -   - do-immersion-varnish
+        - ?p1
+        - ?immersion-varnisher0
+        - ?green
+        - ?verysmooth
+    -   - do-glaze
+        - ?p3
+        - ?glazer0
+        - ?white
+    -   - do-glaze
+        - ?p2
+        - ?glazer0
+        - ?mauve
+
+
+---
+timestamp: '2025-01-11T03:28:47.641500'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "Can't perform vanilla repair: Problem is unsolvable\nTraceback (most recent\
+    \ call last):\n  File \"instance_solver.py\", line 61, in solve_instance\n   \
+    \ gr = ground_repair(\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/vanilla_runs/run_songtuans_vanilla.py\"\
+    , line 22, in ground_repair\n    raise Exception(\"Problem is unsolvable\")\n\
+    Exception: Problem is unsolvable\n"
+
+
+---
+timestamp: '2025-01-11T03:28:47.685618'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.61 seconds'
+
+

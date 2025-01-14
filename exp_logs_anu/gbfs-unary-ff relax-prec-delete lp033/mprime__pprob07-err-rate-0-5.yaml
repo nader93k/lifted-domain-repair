@@ -1,0 +1,109 @@
+---
+timestamp: '2025-01-13T11:28:37.605986'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-prec-delete lp033/mprime__pprob07-err-rate-0-5.yaml
+    instance_id: mprime__pprob07-err-rate-0-5
+    search_algorithm: greedy
+    plan_length: 5
+    domain_class: mprime
+    instance_name: pprob07-err-rate-0-5
+    ground_plan:
+    - (drink shrimp snickers moravia manitoba arizona arizona manitoba)
+    - (feast stimulation snickers popover arizona manitoba)
+    - (overcome jealousy stimulation popover mercury saturn)
+    - (feast stimulation popover muffin arizona manitoba)
+    - (succumb jealousy stimulation muffin mercury saturn)
+    lifted_plan:
+    -   - drink
+        - shrimp
+        - snickers
+        - moravia
+        - ?manitoba
+        - arizona
+        - arizona
+        - manitoba
+    -   - feast
+        - ?stimulation
+        - snickers
+        - popover
+        - arizona
+        - manitoba
+    -   - overcome
+        - ?jealousy
+        - stimulation
+        - popover
+        - ?mercury
+        - saturn
+    -   - feast
+        - stimulation
+        - popover
+        - muffin
+        - ?arizona
+        - manitoba
+    -   - succumb
+        - jealousy
+        - stimulation
+        - muffin
+        - ?mercury
+        - saturn
+
+
+---
+timestamp: '2025-01-13T11:28:37.609899'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: drink,(attacks ?n2 ?n2),precPos,-1
+
+
+---
+timestamp: '2025-01-13T11:28:37.682167'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 1
+    fring_size: 0
+    num_nodes_generated: 1
+    sum_h_cost: 0
+    sum_f_cost: 0
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 0.06748723983764648
+    h_max: 0
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drink'', ''shrimp'', ''snickers'', ''moravia'', ''?manitoba'',
+            ''arizona'', ''arizona'', ''manitoba'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2025-01-13T11:28:37.683370'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.21'
+
+
+---
+timestamp: '2025-01-13T11:28:37.728016'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.54 seconds'
+
+

@@ -1,0 +1,148 @@
+---
+timestamp: '2025-01-13T10:45:44.489144'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-prec-delete lp1/logistics00__pprobLOGISTICS-6-1-err-rate-0-1.yaml
+    instance_id: logistics00__pprobLOGISTICS-6-1-err-rate-0-1
+    search_algorithm: greedy
+    plan_length: 14
+    domain_class: logistics00
+    instance_name: pprobLOGISTICS-6-1-err-rate-0-1
+    ground_plan:
+    - (load-truck obj22 tru2 pos2)
+    - (load-truck obj13 tru1 pos1)
+    - (load-truck obj12 tru1 pos1)
+    - (drive-truck tru1 pos1 apt1 cit1)
+    - (unload-truck obj13 tru1 apt1)
+    - (unload-truck obj12 tru1 apt1)
+    - (load-airplane obj13 apn1 apt1)
+    - (fly-airplane apn1 apt1 apt2)
+    - (unload-airplane obj13 apn1 apt2)
+    - (drive-truck tru2 pos2 apt2 cit2)
+    - (unload-truck obj22 tru2 apt2)
+    - (load-truck obj13 tru2 apt2)
+    - (drive-truck tru2 apt2 pos2 cit2)
+    - (unload-truck obj13 tru2 pos2)
+    lifted_plan:
+    -   - load-truck
+        - ?obj22
+        - ?tru2
+        - ?pos2
+    -   - load-truck
+        - ?obj13
+        - ?tru1
+        - ?pos1
+    -   - load-truck
+        - ?obj12
+        - ?tru1
+        - ?pos1
+    -   - drive-truck
+        - ?tru1
+        - ?pos1
+        - ?apt1
+        - ?cit1
+    -   - unload-truck
+        - ?obj13
+        - ?tru1
+        - ?apt1
+    -   - unload-truck
+        - ?obj12
+        - ?tru1
+        - ?apt1
+    -   - load-airplane
+        - ?obj13
+        - ?apn1
+        - ?apt1
+    -   - fly-airplane
+        - ?apn1
+        - ?apt1
+        - ?apt2
+    -   - unload-airplane
+        - ?obj13
+        - ?apn1
+        - ?apt2
+    -   - drive-truck
+        - ?tru2
+        - ?pos2
+        - ?apt2
+        - ?cit2
+    -   - unload-truck
+        - ?obj22
+        - ?tru2
+        - ?apt2
+    -   - load-truck
+        - ?obj13
+        - ?tru2
+        - ?apt2
+    -   - drive-truck
+        - ?tru2
+        - ?apt2
+        - ?pos2
+        - ?cit2
+    -   - unload-truck
+        - ?obj13
+        - ?tru2
+        - ?pos2
+
+
+---
+timestamp: '2025-01-13T10:45:44.493391'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: drive-truck,(in-city ?loc-to ?loc-to),effPos,1
+
+
+---
+timestamp: '2025-01-13T10:51:38.899938'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 1303
+    fring_size: 0
+    num_nodes_generated: 1303
+    sum_h_cost: 5208
+    sum_f_cost: 2604
+    sum_h_cost_time: 322.60909056663513
+    sum_grounding_time: 26.766549348831177
+    h_max: 2
+    current_node:
+        depth: 4
+        ground_actions:
+        - (load-truck obj11 tru1 pos1)
+        - (load-truck obj11 tru1 pos1)
+        - (load-truck obj11 tru2 pos2)
+        - (drive-truck tru2 pos2 pos2 cit2)
+        repair_set: load-truck,(at ?obj ?loc),precPos,-1
+        g_cost: 1
+        h_cost: 2
+        f_cost: 3
+        next_lifted_action: '[''unload-truck'', ''?obj13'', ''?tru1'', ''?apt1'']'
+        num_neighbours: 0
+        first_10_possible_groundings: []
+
+
+---
+timestamp: '2025-01-13T10:51:38.901617'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '357.24'
+
+
+---
+timestamp: '2025-01-13T10:51:39.259559'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 358.07 seconds'
+
+

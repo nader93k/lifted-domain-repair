@@ -1,0 +1,141 @@
+---
+timestamp: '2025-01-13T18:38:04.250493'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-prec lp1/ged-opt14-strips__pd-7-5-err-rate-0-1.yaml
+    instance_id: ged-opt14-strips__pd-7-5-err-rate-0-1
+    search_algorithm: greedy
+    plan_length: 14
+    domain_class: ged-opt14-strips
+    instance_name: pd-7-5-err-rate-0-1
+    ground_plan:
+    - (invert-single-gene-a g90)
+    - (begin-cut sub3 g90)
+    - (end-cut-1 g90 sub4)
+    - (end-cut-2 sub3 sub4)
+    - (begin-transpose-splice sub1 sub3)
+    - (end-splice-1 g90 sub1)
+    - (end-splice-2 g90 sub3)
+    - (reset-1 sub3)
+    - (begin-cut sub6 sub5)
+    - (end-cut-1 sub5 sub1)
+    - (end-cut-2 sub6 sub1)
+    - (begin-transpose-splice sub4 sub2)
+    - (end-splice-1 sub5 sub4)
+    - (end-splice-2 sub5 sub2)
+    lifted_plan:
+    -   - invert-single-gene-a
+        - ?g90
+    -   - begin-cut
+        - ?sub3
+        - ?g90
+    -   - end-cut-1
+        - ?g90
+        - ?sub4
+    -   - end-cut-2
+        - ?sub3
+        - ?sub4
+    -   - begin-transpose-splice
+        - ?sub1
+        - ?sub3
+    -   - end-splice-1
+        - ?g90
+        - ?sub1
+    -   - end-splice-2
+        - ?g90
+        - ?sub3
+    -   - reset-1
+        - ?sub3
+    -   - begin-cut
+        - ?sub6
+        - ?sub5
+    -   - end-cut-1
+        - ?sub5
+        - ?sub1
+    -   - end-cut-2
+        - ?sub6
+        - ?sub1
+    -   - begin-transpose-splice
+        - ?sub4
+        - ?sub2
+    -   - end-splice-1
+        - ?sub5
+        - ?sub4
+    -   - end-splice-2
+        - ?sub5
+        - ?sub2
+
+
+---
+timestamp: '2025-01-13T18:38:04.256368'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-13T18:38:51.992650'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 896
+    fring_size: 17
+    num_nodes_generated: 913
+    sum_h_cost: 0
+    sum_f_cost: 0
+    sum_h_cost_time: 12.481426000595093
+    sum_grounding_time: 20.656021118164062
+    h_max: 0
+    current_node:
+        depth: 14
+        ground_actions:
+        - (invert-single-gene-a sub5)
+        - (begin-cut sub1 sub3)
+        - (end-cut-1 sub3 g90)
+        - (end-cut-2 sub1 g90)
+        - (begin-transpose-splice g90 sub4)
+        - (end-splice-1 sub3 g90)
+        - (end-splice-2 sub3 sub4)
+        - (reset-1 sub1)
+        - (begin-cut sub6 sub5)
+        - (end-cut-1 sub5 sub1)
+        - (end-cut-2 sub6 sub1)
+        - (begin-transpose-splice sub4 sub2)
+        - (end-splice-1 sub5 sub4)
+        - (end-splice-2 sub5 sub2)
+        repair_set: 'end-cut-2,(inverted ?y),effPos,1
+
+            end-splice-1,(normal ?x),effPos,1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: null
+        num_neighbours: 0
+        first_10_possible_groundings: null
+
+
+---
+timestamp: '2025-01-13T18:38:51.994575'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '48.98'
+
+
+---
+timestamp: '2025-01-13T18:38:52.936554'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 50.32 seconds'
+
+

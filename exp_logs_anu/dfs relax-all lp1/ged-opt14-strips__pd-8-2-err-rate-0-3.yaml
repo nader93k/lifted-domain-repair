@@ -1,0 +1,92 @@
+---
+timestamp: '2025-01-13T14:43:22.035545'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs
+        relax-all lp1/ged-opt14-strips__pd-8-2-err-rate-0-3.yaml
+    instance_id: ged-opt14-strips__pd-8-2-err-rate-0-3
+    search_algorithm: dfs
+    plan_length: 15
+    domain_class: ged-opt14-strips
+    instance_name: pd-8-2-err-rate-0-3
+    ground_plan:
+    - (invert-single-gene-a g54)
+    - (invert-single-gene-a sub8)
+    - (begin-cut g54 sub1)
+    - (end-cut-1 sub1 sub6)
+    - (end-cut-2 g54 sub6)
+    - (begin-transpose-splice sub3 g54)
+    - (end-splice-1 sub1 sub3)
+    - (end-splice-2 sub1 g54)
+    - (reset-1 g54)
+    - (begin-cut sub7 sub2)
+    - (end-cut-1 sub2 sub3)
+    - (end-cut-2 sub7 sub3)
+    - (begin-transpose-splice sub4 sub5)
+    - (end-splice-1 sub2 sub4)
+    - (end-splice-2 sub2 sub5)
+    lifted_plan:
+    -   - invert-single-gene-a
+        - ?g54
+    -   - invert-single-gene-a
+        - ?sub8
+    -   - begin-cut
+        - ?g54
+        - ?sub1
+    -   - end-cut-1
+        - ?sub1
+        - ?sub6
+    -   - end-cut-2
+        - ?g54
+        - ?sub6
+    -   - begin-transpose-splice
+        - ?sub3
+        - ?g54
+    -   - end-splice-1
+        - ?sub1
+        - ?sub3
+    -   - end-splice-2
+        - ?sub1
+        - ?g54
+    -   - reset-1
+        - ?g54
+    -   - begin-cut
+        - ?sub7
+        - ?sub2
+    -   - end-cut-1
+        - ?sub2
+        - ?sub3
+    -   - end-cut-2
+        - ?sub7
+        - ?sub3
+    -   - begin-transpose-splice
+        - ?sub4
+        - ?sub5
+    -   - end-splice-1
+        - ?sub2
+        - ?sub4
+    -   - end-splice-2
+        - ?sub2
+        - ?sub5
+
+
+---
+timestamp: '2025-01-13T14:43:22.041608'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: end-cut-2,(have-cut ),effPos,1
+
+
+---
+timestamp: '2025-01-13T14:58:20.711173'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+
