@@ -6,7 +6,18 @@ import copy
 import time
 from fd.pddl.conditions import Conjunction, Atom
 from fd.pddl.predicates import Predicate
-# from heuristic_tools.heuristic import Heurisitc
+from heuristic_tools.heuristic import Heurisitc
+import traceback
+import sys
+
+
+
+# HEURISTIC_ = r"Heurisitc(h_name='L_HADD', relaxation=self.h_relaxation)""
+HEURISTIC_ = r"Heurisitc(h_name='L_HADD', relaxation='unary', use_ff=True)"
+DELETE_RELAXATION = False
+PREC_RELAX_CONFIG = ['missing', 'missing-and-negative', 'all']
+PREC_RELAX = PREC_RELAX_CONFIG[2]
+
 
 
 class Node:
@@ -75,15 +86,9 @@ class Node:
             self.repaired_domain = copy.deepcopy(self.original_domain)
             self.ground_repair_solution = None
             init_atoms = [item for item in self.original_task.init if isinstance(item, Atom)]
-            self.current_state = copy.deepcopy(init_atoms)
         else:
             self.depth = depth
             self.g_cost, self.ground_repair_solution, self.repaired_domain = self._ground_repair()
-            if self.g_cost != float('inf'):
-                self.current_state = self.calculate_current_state()
-            else:
-                self.current_state = None
-            
             if self.h_cost_needed:
                 start_time = time.time()
                 self.h_cost = self.compute_h_cost()
@@ -114,47 +119,77 @@ class Node:
             return float('inf'), None, None
         
     
-    def calculate_current_state(self):
+    def calculate_current_state(self, delete_relaxation=False):
+        domain = copy.deepcopy(self.repaired_domain)
         task = copy.deepcopy(self.original_task)
         plan = PositivePlan(self.ground_action_sequence)
         plan.compute_subs(self.repaired_domain, task)
-        state = apply_action_sequence(self.repaired_domain, task, plan, delete_relaxed=False)
-        return state
+        try:
+            state = apply_action_sequence(domain, task, plan, delete_relaxed=delete_relaxation)
+            return state
+        except Exception as e:
+            # Handle the exception
+            print(f"domain: {domain.to_pddl()}")
+            print(f"task: {task.to_pddl()}")
+            print(f"plan: {plan._steps}")
+            raise
 
 
     def compute_h_cost(self):
-        raise NotImplementedError
-        # # TODO: debug & check
-        # task = copy.deepcopy(self.original_task)
-        # task.set_init_state(self.current_state)
-        # h = Heurisitc(h_name="L_HMAX", relaxation=self.h_relaxation)
-        # h_cost = h.evaluate(self.original_domain, task, self.lifted_action_sequence)
-        # return h_cost
-
+        if len(self.lifted_action_sequence)==0:
+            return 0
+        
+        task = copy.deepcopy(self.original_task)
+        current_state = self.calculate_current_state(delete_relaxation=False)
+        task.set_init_state(current_state)
+        try:
+            #TODO: this is dirty AF
+            h = eval(HEURISTIC_)
+            h_cost = h.evaluate(self.original_domain, task, self.lifted_action_sequence)
+            return h_cost
+        except Exception as e:
+            # with open('lifted_actions.pkl', 'wb') as f:
+            #     pickle.dump(self.lifted_action_sequence, f)
+            print(f"Error in heuristic computation: {str(e)}")
+            print("Stack trace:")
+            print()
+            traceback.print_exc()
+            print(e)
+            log_data_error = {
+                'current_node': self.to_dict(include_state=True)
+            }
+            self.logger.log(issuer="node", event_type="error", level=logging.ERROR, message=log_data_error)
+            sys.exit(1)
 
     def get_neighbors(self):
         # don't try to expand this node if the cost is infinite (no repairs)
         if self.f_cost == float('inf'):
             raise ValueError("Can't expand this node.")
         
+        current_state = self.calculate_current_state(delete_relaxation=DELETE_RELAXATION)
         task = copy.deepcopy(self.original_task)
-        task.set_init_state(self.current_state)
+        task.set_init_state(current_state)
         domain = copy.deepcopy(self.repaired_domain)
 
-        ## All preconditions relaxed
-        # action.precondition = Conjunction([])
-        # Precondition relaxing
-        # If a precondition is not satisfied then don't check it
+        # Precondition relaxation
         next_action_name = self.lifted_action_sequence[0][0]
         action = domain.get_action(next_action_name)
-        curr_state_names = [p.predicate for p in self.current_state if isinstance(p, Atom)]
-        relaxed_pre = [part for part in action.precondition.parts if part.predicate in curr_state_names]
 
-        if relaxed_pre:
-            action.precondition = Conjunction(relaxed_pre)
-        else:
+        if PREC_RELAX == 'all':
             action.precondition = Predicate('dummy-true', [])
+        elif PREC_RELAX in ('missing', 'missing-and-negative'):
+            curr_state_names = [p.predicate for p in current_state if isinstance(p, Atom)]
+            relaxed_pre = [literal for literal in action.precondition.parts if literal.predicate in curr_state_names]
+            if relaxed_pre and PREC_RELAX == 'missing-and-negative':
+                relaxed_pre = [literal for literal in relaxed_pre if not literal.negated]
+            if relaxed_pre:
+                action.precondition = Conjunction(relaxed_pre)
+            else:
+                action.precondition = Predicate('dummy-true', [])   
+        else:
+            raise ValueError
 
+        # Calling the action generator
         try:
             next_action_pddl = f"({' '.join(self.lifted_action_sequence[0])})"
 
@@ -211,7 +246,8 @@ class Node:
             "first_10_possible_groundings": self.possible_groundings[:10] if self.possible_groundings is not None else self.possible_groundings
         }
         if include_state:
-            d["current_state"] = repr([x.pddl() for x in self.current_state])[1:-1]
+            # d["current_state"] = repr([x.pddl() for x in self.current_state])[1:-1]
+            d["current_state"] = 'not implemented!'
         
         return d
     

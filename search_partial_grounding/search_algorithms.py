@@ -1,8 +1,6 @@
 import logging
 import heapq
 
-
-
 class Searcher:
     def __init__(self, initial_node):
         self.initial_node = initial_node
@@ -11,6 +9,7 @@ class Searcher:
         self.sum_f_cost = 0
         self.sum_h_cost_time = 0
         self.sum_grounding_time = 0
+        self.h_max = float('-inf')
 
     def find_path(self, logger, log_interval):
         raise NotImplementedError("Subclasses must implement find_path method")
@@ -33,6 +32,7 @@ class Searcher:
             "sum_f_cost": self.sum_f_cost,
             "sum_h_cost_time": self.sum_h_cost_time,
             "sum_grounding_time": self.sum_grounding_time,
+            "h_max": self.h_max,
             "current_node": current_node.to_dict(include_state=False)
         }
         event_type = "final" if final else "general"
@@ -40,24 +40,13 @@ class Searcher:
 
 
 class AStar(Searcher):
-    """
-    A class that implements the A* tree search algorithm.
-
-    Note:
-        This implementation assumes that the Node class used has the following attributes:
-        - This implementation assumes no node will be generated twice, and hence won't check
-        if a new node is already in the closed_list.
-        - We also used list for closed_list instead of having a closed_set for the same reason.
-    """
-
-
+    """AStar tree search with tie breakers of: 1. h_cost 2. depth"""
     def __init__(self, initial_node, g_cost_multiplier=1, h_cost_multiplier=1, prune_func=None):
         super().__init__(initial_node)
         self.g_cost_multiplier = g_cost_multiplier
         self.h_cost_multiplier = h_cost_multiplier 
-        self.prune_func = prune_func or (lambda _: False)  # Default to never prune if no function provided
+        self.prune_func = prune_func or (lambda _: False)
     
-
     def calculate_f_cost(self, node):
         f = (self.g_cost_multiplier * node.g_cost) + self.calculate_h_cost(node)
         self.sum_f_cost += f
@@ -66,20 +55,21 @@ class AStar(Searcher):
     def calculate_h_cost(self, node):
         h = self.h_cost_multiplier * node.h_cost
         self.sum_h_cost += h
+        self.h_max = max(self.h_max, h)  # Update h_max
         return h
-
 
     def find_path(self, logger, log_interval):
         open_list = []
         closed_list = []
 
         f_cost = self.calculate_f_cost(self.initial_node)
-        heapq.heappush(open_list, (f_cost, -self.initial_node.depth, self.initial_node))
+        h_cost = self.calculate_h_cost(self.initial_node)
+        heapq.heappush(open_list, (f_cost, h_cost, -self.initial_node.depth, self.initial_node))
 
         iteration = 0
         while open_list:
             iteration += 1
-            current_node = heapq.heappop(open_list)[2]
+            current_node = heapq.heappop(open_list)[-1]
 
             if current_node.is_goal():
                 self.log_iteration_info(logger, iteration, open_list, current_node, final=True, is_goal=True)
@@ -93,20 +83,20 @@ class AStar(Searcher):
             self.sum_grounding_time += current_node.grounding_time
 
             for neighbor in neighbours:
-                if not any(node[2]==neighbor for node in open_list):
+                if not any(node[-1]==neighbor for node in open_list):
                     if not self.prune_func(neighbor):
                         f_cost = self.calculate_f_cost(neighbor)
-                        heapq.heappush(open_list, (f_cost, -neighbor.depth, neighbor))
+                        h_cost = self.calculate_h_cost(neighbor)
+                        heapq.heappush(open_list, (f_cost, h_cost, -neighbor.depth, neighbor))
                         neighbor.parent = current_node
-                else: raise Exception("Identical node generation. Debug is needed.")
-
-                
+                else: 
+                    raise Exception("Identical node generation. Debug is needed.")
 
             if iteration % log_interval == 0:
                 self.log_iteration_info(logger, iteration, open_list, current_node, final=True, is_goal=False)
 
         self.log_iteration_info(logger, iteration, open_list, current_node, final=True, is_goal=False)
-        return None, None  # No path found
+        return None, None
 
 
 class BranchBound(Searcher):
@@ -114,16 +104,6 @@ class BranchBound(Searcher):
         super().__init__(initial_node)
 
     def prune_strategy(self, node, current_best_cost):
-        """
-        Default pruning strategy that decides whether to prune a node based on its cost.
-        
-        Args:
-            node: The node to evaluate for pruning
-            current_best_cost: The cost of the current best solution
-            
-        Returns:
-            bool: True if the node should be pruned, False otherwise
-        """
         return node.h_cost + node.g_cost >= current_best_cost
     
     def find_path(self, logger, log_interval):
@@ -141,10 +121,7 @@ class BranchBound(Searcher):
 
 
 class DFS(Searcher):
-    """
-    A class that implements the Depth-First Search algorithm with f-cost prioritization.
-    This implementation assumes that distinct nodes cannot have equal children.
-    """
+    """DFS tree search"""
     def __init__(self, initial_node):
         super().__init__(initial_node)
 

@@ -1,16 +1,63 @@
-###### MAIN
+# ##### debug
+# search_algorithm: bfs
+# heuristic_relaxation: unary
+# lift_prob: 1.0
+# instance_ids: null
+# min_length: 1
+# max_length: 15
+# timeout_seconds: 900  # 15 * 60
+# order: increasing
+# benchmark_path: /home/remote/u7899572/lifted-white-plan-domain-repair/input/test
+# log_folder: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_debug
+# log_interval: 1000000
+# domain_class: null
+
+##### Astar
 search_algorithm: bfs
-heuristic_relaxation: zeroary
-lift_prob: 1.0
-instance_ids: null
+heuristic_relaxation: unary
+lift_prob: 0.33
+instance_ids: depot__pp01-err-rate-0-5
 min_length: 1
-max_length: 10
+max_length: 15
 timeout_seconds: 900  # 15 * 60
 order: increasing
-benchmark_path: ./input/benchmarks-G1
-log_folder: ./exp_logs_anu/bfs relax-prec lp1
+benchmark_path: /home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1
+log_folder: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_debug
 log_interval: 1000000
 domain_class: null
+
+
+##### Songtuan's
+# search_algorithm: bfs
+# heuristic_relaxation: zeroary
+# lift_prob: 0.0
+# instance_ids: null
+# min_length: 1
+# max_length: 15000
+# timeout_seconds: 900  # 15 * 60
+# order: increasing
+# benchmark_path: /home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1
+# log_folder: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/prob0
+# log_interval: 1000000
+# domain_class: null
+
+
+###### MAIN
+# search_algorithm: astar
+# heuristic_relaxation: none
+# lift_prob: 1.0
+# # instance_ids: null
+# instance_ids: depot__pp01-err-rate-0-5
+# # instance_ids: miconic__ps1-3-err-rate-0-1
+# min_length: 1
+# max_length: 15
+# timeout_seconds: 900  # 15 * 60
+# order: increasing
+# benchmark_path: /home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1
+# # log_folder: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs relax-all lp066
+# log_folder: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_debug
+# log_interval: 1000000
+# domain_class: null
 
 
 

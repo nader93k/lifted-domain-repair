@@ -3,7 +3,7 @@ import csv
 import os
 import glob
 
-# Predefined columns based on the specification
+# Reordered columns list with new error group field and grounding method
 COLUMNS = [
     'log file',
     'instance id',
@@ -13,16 +13,22 @@ COLUMNS = [
     'vanilla repair length',
     'vanilla repair',
     'goal reached',
+    'iteration',
     'num nodes generated',
+    'h_max',
     'sum h cost',
     'sum f cost',
     'sum h cost time',
     'sum grounding time',
     'search time',
-    'search g cost',   
+    'search g cost',
     'search repair set',
-    'repair length comparison',  # New column for comparison
-    'error message'
+    'repair length comparison',
+    'repair string comparison',
+    'error message',
+    'error group',
+    'lift_prob',
+    'grounding method'
 ]
 
 def format_float(value):
@@ -44,11 +50,32 @@ def compare_repair_lengths(search_cost, vanilla_length):
     except (TypeError, ValueError):
         return None
 
-def process_yaml_file(file_path):
+def compare_repair_strings(search_repair, vanilla_repair):
+    """Compare search repair set with vanilla repair."""
+    if search_repair in (None, '') or vanilla_repair in (None, ''):
+        return None
+    return str(search_repair).strip() == str(vanilla_repair).strip()
+
+def categorize_error(error_message):
+    """Categorize error messages into groups."""
+    if error_message is None:
+        return None
+        
+    error_message = str(error_message).lower()
+    
+    if 'memoryerror' in error_message:
+        return 'memory'
+    elif 'timed out' in error_message:
+        return 'time'
+    return error_message
+
+def process_yaml_file(file_path, lift_prob=None, grounding_method=None):
     """Process a single YAML file and extract relevant data in a single pass."""
     # Initialize all fields as None
     data = {column: None for column in COLUMNS}
     data['goal reached'] = False  # Default value for goal_reached is False
+    data['lift_prob'] = lift_prob  # Set lift_prob from parameter
+    data['grounding method'] = grounding_method  # Set grounding_method from parameter
     
     try:
         with open(file_path, 'r') as f:
@@ -56,7 +83,9 @@ def process_yaml_file(file_path):
                 # Check for error level documents
                 level = str(doc.get('level', '')).lower()
                 if level == 'error':
-                    data['error message'] = doc.get('data')
+                    error_msg = doc.get('data')
+                    data['error message'] = error_msg
+                    data['error group'] = categorize_error(error_msg)
                     continue
                 
                 issuer = doc.get('issuer')
@@ -88,6 +117,10 @@ def process_yaml_file(file_path):
                     is_goal = doc_data.get('is_goal', False)
                     data['goal reached'] = is_goal
                     
+                    # Add h_max and iteration
+                    data['h_max'] = doc_data.get('h_max')
+                    data['iteration'] = doc_data.get('iteration')
+                    
                     if is_goal:
                         data.update({
                             'num nodes generated': doc_data.get('num_nodes_generated'),
@@ -105,10 +138,13 @@ def process_yaml_file(file_path):
                                 'search repair set': current_node.get('repair_set')
                             })
         
-        # Add repair length comparison
         data['repair length comparison'] = compare_repair_lengths(
             data['search g cost'], 
             data['vanilla repair length']
+        )
+        data['repair string comparison'] = compare_repair_strings(
+            data['search repair set'],
+            data['vanilla repair']
         )
         
         return data
@@ -117,7 +153,7 @@ def process_yaml_file(file_path):
         print(f"Error processing {file_path}: {str(e)}")
         return data  # Return data with default values if there's an error
 
-def process_yaml_files(directory_path, output_csv):
+def process_yaml_files(directory_path, output_csv, lift_prob=None, excluded_domains=None, grounding_method=None):
     """Process all YAML files in the directory and save results to CSV."""
     yaml_files = glob.glob(os.path.join(directory_path, '*.yaml'))
     
@@ -131,12 +167,37 @@ def process_yaml_files(directory_path, output_csv):
         writer.writeheader()
         
         for yaml_file in yaml_files:
-            data = process_yaml_file(yaml_file)
+            data = process_yaml_file(yaml_file, lift_prob, grounding_method)  # Pass grounding_method to process_yaml_file
+            
+            # Skip if domain class is in exclusion list
+            if excluded_domains and data['domain class'] in excluded_domains:
+                continue
+                
             writer.writerow(data)
 
 
-if __name__ == "__main__":
-    log_folder = "01 bfs relax-prec-delete lp1"
-    directory_path = f"/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/{log_folder}"
-    output_csv = f"00 logs_{log_folder}.csv"
-    process_yaml_files(directory_path, output_csv)
+# if __name__ == "__main__":
+#     log_folders = [
+#         'astar-unary relax-prec lp066',
+#         'astar-unary relax-prec lp1',
+#         'astar-unary relax-prec-delete lp1',
+#         'bfs relax-all lp066',
+#         'bfs relax-all lp1',
+#         'bfs relax-prec lp1',
+#         'dfs relax-prec lp033',
+#         'dfs relax-prec lp066',
+#         'dfs relax-prec lp1'
+#     ]
+    
+#     # Example domain classes to exclude
+#     domain_exclusions = []  # Add domain classes to exclude here
+    
+#     # Example grounding method to use
+#     grounding_method = "default"  # You can change this value as needed
+    
+#     for log in log_folders:
+#         directory_path = f"/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/{log}"
+#         output_csv = f"{log}.csv"
+#         # Extract lift probability from folder name
+#         lift_prob = next((x[2:] for x in log.split() if x.startswith('lp')), None)
+#         process_yaml_files(directory_path, output_csv, lift_prob, domain_exclusions, grounding_method)

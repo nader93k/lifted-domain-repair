@@ -13,11 +13,32 @@ import time
 import sys
 import traceback
 import resource
+import os
+import shutil
 
+
+pid = os.getpid()
+workspace_path = f'/home/remote/u7899572/lifted-white-plan-domain-repair/heuristic_tools/aux_files/{pid}'
+
+def setup_process_workspace():
+    if os.path.exists(workspace_path):
+        shutil.rmtree(workspace_path)
+    os.makedirs(workspace_path)
+    os.chdir(workspace_path)
+    return workspace_path
+
+def cleanup_workspace():
+    # Change back to parent directory before deletion
+    os.chdir(os.path.dirname(workspace_path))
+    # Remove the process-specific directory
+    if os.path.exists(workspace_path):
+        shutil.rmtree(workspace_path)
 
 
 def solve_instance(search_algorithm, benchmark_path, log_file, log_interval, instance_id, lift_prob, heuristic_relaxation):
     start_time = time.time()
+
+    # setup_process_workspace()
     
     log_interval = int(log_interval)
     instance = list_instances(benchmark_path, instance_ids=[instance_id], lift_prob=lift_prob)[0]
