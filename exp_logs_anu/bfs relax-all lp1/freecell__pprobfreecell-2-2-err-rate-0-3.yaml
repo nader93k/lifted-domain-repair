@@ -1,10 +1,11 @@
 ---
-timestamp: '2025-01-08T00:43:14.806386'
+timestamp: '2025-01-14T20:44:34.637164'
 level: INFO
 issuer: instance_solver
 event_type: metadata
 data:
-    log_file: exp_logs_anu/bfs relax-all lp1-new/freecell__pprobfreecell-2-2-err-rate-0-3.yaml
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs
+        relax-all lp1/freecell__pprobfreecell-2-2-err-rate-0-3.yaml
     instance_id: freecell__pprobfreecell-2-2-err-rate-0-3
     search_algorithm: bfs
     plan_length: 8
@@ -85,7 +86,7 @@ data:
 
 
 ---
-timestamp: '2025-01-08T00:43:14.810982'
+timestamp: '2025-01-14T20:44:34.641925'
 level: INFO
 issuer: instance_solver
 event_type: ground_repair
@@ -95,7 +96,7 @@ data:
 
 
 ---
-timestamp: '2025-01-08T00:43:21.038684'
+timestamp: '2025-01-14T20:44:40.817638'
 level: ERROR
 issuer: node
 event_type: error
@@ -111,37 +112,20 @@ data:
             ''?n0'', ''?n2'', ''?n3'']'
         num_neighbours: 0
         first_10_possible_groundings: null
-        current_state: '''(suit s0 s)'', ''(bottomcol c2)'', ''(suit s2 s)'', ''(successor
-            n8 n7)'', ''(home h0)'', ''(clear h2)'', ''(canstack ca d2)'', ''(cellspace
-            n4)'', ''(successor n1 n0)'', ''(value ha n1)'', ''(canstack sa d2)'',
-            ''(successor n7 n6)'', ''(value h2 n2)'', ''(home c0)'', ''(suit da d)'',
-            ''(on sa ha)'', ''(successor n10 n9)'', ''(suit ha h)'', ''(suit c2 c)'',
-            ''(successor n6 n5)'', ''(successor n4 n3)'', ''(successor n9 n8)'', ''(clear
-            ca)'', ''(bottomcol s2)'', ''(suit h2 h)'', ''(value ca n1)'', ''(bottomcol
-            da)'', ''(successor n12 n11)'', ''(clear c2)'', ''(canstack ha c2)'',
-            ''(successor n11 n10)'', ''(bottomcol d2)'', ''(successor n2 n1)'', ''(value
-            s2 n2)'', ''(suit d0 d)'', ''(value s0 n0)'', ''(suit c0 c)'', ''(suit
-            d2 d)'', ''(canstack ca h2)'', ''(home s0)'', ''(value d2 n2)'', ''(value
-            da n1)'', ''(successor n5 n4)'', ''(successor n3 n2)'', ''(value d0 n0)'',
-            ''(value c2 n2)'', ''(canstack sa h2)'', ''(value sa n1)'', ''(home d0)'',
-            ''(clear s2)'', ''(clear sa)'', ''(bottomcol h2)'', ''(value c0 n0)'',
-            ''(canstack ha s2)'', ''(on ca d2)'', ''(value h0 n0)'', ''(clear da)'',
-            ''(bottomcol ha)'', ''(suit h0 h)'', ''(successor n13 n12)'', ''(suit
-            ca c)'', ''(suit sa s)'', ''(colspace n2)'', ''(canstack da c2)'', ''(canstack
-            da s2)'''
+        current_state: not implemented!
 
 
 ---
-timestamp: '2025-01-08T00:43:21.041436'
+timestamp: '2025-01-14T20:44:40.819685'
 level: ERROR
 issuer: instance_solver
 event_type: error
 data: "An error occurred during A* search: . Stack trace: Traceback (most recent call\
-    \ last):\n  File \"instance_solver.py\", line 85, in solve_instance\n    searcher.find_path(logger=logger,\
+    \ last):\n  File \"instance_solver.py\", line 106, in solve_instance\n    searcher.find_path(logger=logger,\
     \ log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
-    , line 80, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
+    , line 78, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
     \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
-    , line 171, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    , line 196, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
     \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
     , line 135, in ground_pddl\n    actions = parser.get_applicable_actions()\n  File\
     \ \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
@@ -152,18 +136,18 @@ data: "An error occurred during A* search: . Stack trace: Traceback (most recent
 
 
 ---
-timestamp: '2025-01-08T00:43:22.749791'
+timestamp: '2025-01-14T20:44:42.526593'
 level: INFO
 issuer: instance_solver
 event_type: timer_seconds
-data: '9.07'
+data: '9.56'
 
 
 ---
-timestamp: '2025-01-08T00:43:22.776332'
+timestamp: '2025-01-14T20:44:42.563785'
 level: INFO
 issuer: batch_solver
 event_type: general
-data: 'Subprocess finished successfully. Duration: 9.32 seconds'
+data: 'Subprocess finished successfully. Duration: 10.04 seconds'
 
 

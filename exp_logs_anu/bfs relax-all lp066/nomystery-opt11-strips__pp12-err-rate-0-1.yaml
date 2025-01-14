@@ -1,5 +1,5 @@
 ---
-timestamp: '2025-01-09T14:15:10.313670'
+timestamp: '2025-01-14T23:07:24.422237'
 level: INFO
 issuer: instance_solver
 event_type: metadata
@@ -112,7 +112,7 @@ data:
 
 
 ---
-timestamp: '2025-01-09T14:15:10.338539'
+timestamp: '2025-01-14T23:07:24.449094'
 level: INFO
 issuer: instance_solver
 event_type: ground_repair
@@ -122,45 +122,10 @@ data:
 
 
 ---
-timestamp: '2025-01-09T14:25:11.689602'
+timestamp: '2025-01-14T23:22:23.214903'
 level: ERROR
 issuer: batch_solver
 event_type: error
-data:
-    error_type: MemoryError
-    error_message: 'Command ''[''/home/projects/u7899572/conda-envs/main/bin/python3'',
-        ''instance_solver.py'', ''bfs'', ''/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1'',
-        ''/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs relax-all
-        lp066/nomystery-opt11-strips__pp12-err-rate-0-1.yaml'', ''1000000'', ''nomystery-opt11-strips__pp12-err-rate-0-1'',
-        ''0.66'', ''none'']'' died with <Signals.SIGABRT: 6>.'
-    stack_trace: "Traceback (most recent call last):\n  File \"batch_solver.py\",\
-        \ line 119, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
-        \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/subprocess.py\"\
-        , line 516, in run\n    raise CalledProcessError(retcode, process.args,\n\
-        subprocess.CalledProcessError: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',\
-        \ 'instance_solver.py', 'bfs', '/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1',\
-        \ '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs\
-        \ relax-all lp066/nomystery-opt11-strips__pp12-err-rate-0-1.yaml', '1000000',\
-        \ 'nomystery-opt11-strips__pp12-err-rate-0-1', '0.66', 'none']' died with\
-        \ <Signals.SIGABRT: 6>.\n"
-    instance_id: nomystery-opt11-strips__pp12-err-rate-0-1
-    process_info:
-        cmd:
-        - /home/projects/u7899572/conda-envs/main/bin/python3
-        - instance_solver.py
-        - bfs
-        - /home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1
-        - /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs relax-all
-            lp066/nomystery-opt11-strips__pp12-err-rate-0-1.yaml
-        - '1000000'
-        - nomystery-opt11-strips__pp12-err-rate-0-1
-        - '0.66'
-        - none
-        duration: '604.77'
-        python_executable: /home/projects/u7899572/conda-envs/main/bin/python3
-    stdout: ''
-    stderr: 'terminate called after throwing an instance of ''Minisat22::OutOfMemoryException''
-
-        '
+data: Subprocess timed out after 900 seconds.
 
 

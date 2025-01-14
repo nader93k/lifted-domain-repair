@@ -1,5 +1,5 @@
 ---
-timestamp: '2025-01-09T11:54:35.663412'
+timestamp: '2025-01-14T22:20:01.600329'
 level: INFO
 issuer: instance_solver
 event_type: metadata
@@ -58,7 +58,7 @@ data:
 
 
 ---
-timestamp: '2025-01-09T11:54:35.667592'
+timestamp: '2025-01-14T22:20:01.604948'
 level: INFO
 issuer: instance_solver
 event_type: ground_repair
@@ -68,7 +68,7 @@ data:
 
 
 ---
-timestamp: '2025-01-09T11:54:44.523316'
+timestamp: '2025-01-14T22:20:10.323654'
 level: ERROR
 issuer: batch_solver
 event_type: error
@@ -78,16 +78,16 @@ data:
         'instance_solver.py', 'bfs', '/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1',
         '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs relax-all
         lp066/mprime__pprob15-err-rate-0-1.yaml', '1000000', 'mprime__pprob15-err-rate-0-1',
-        '0.66', 'none']' returned non-zero exit status 1.
+        '0.66', 'unary']' returned non-zero exit status 1.
     stack_trace: "Traceback (most recent call last):\n  File \"batch_solver.py\",\
-        \ line 119, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
+        \ line 126, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
         \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/subprocess.py\"\
         , line 516, in run\n    raise CalledProcessError(retcode, process.args,\n\
         subprocess.CalledProcessError: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',\
         \ 'instance_solver.py', 'bfs', '/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1',\
         \ '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs\
         \ relax-all lp066/mprime__pprob15-err-rate-0-1.yaml', '1000000', 'mprime__pprob15-err-rate-0-1',\
-        \ '0.66', 'none']' returned non-zero exit status 1.\n"
+        \ '0.66', 'unary']' returned non-zero exit status 1.\n"
     instance_id: mprime__pprob15-err-rate-0-1
     process_info:
         cmd:
@@ -100,10 +100,10 @@ data:
         - '1000000'
         - mprime__pprob15-err-rate-0-1
         - '0.66'
-        - none
-        duration: '10.26'
+        - unary
+        duration: '11.92'
         python_executable: /home/projects/u7899572/conda-envs/main/bin/python3
-    stdout: '[Errno 12] Cannot allocate memory: ''/dev/shm/pddl_files/tmp8rp57i1d''
+    stdout: '[Errno 12] Cannot allocate memory: ''/dev/shm/pddl_files/tmpjg8c46oo''
 
         '
     stderr: "Traceback (most recent call last):\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
@@ -112,7 +112,7 @@ data:
         , line 433, in _get_applicable_var_assigns_action\nMemoryError\n\nDuring handling\
         \ of the above exception, another exception occurred:\n\nTraceback (most recent\
         \ call last):\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
-        , line 192, in get_neighbors\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+        , line 196, in get_neighbors\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
         , line 140, in ground_pddl\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/tempfile.py\"\
         , line 836, in __exit__\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/tempfile.py\"\
         , line 840, in cleanup\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/tempfile.py\"\
@@ -120,12 +120,12 @@ data:
         , line 718, in rmtree\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/shutil.py\"\
         , line 631, in _rmtree_safe_fd\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/shutil.py\"\
         , line 627, in _rmtree_safe_fd\nOSError: [Errno 12] Cannot allocate memory:\
-        \ '/dev/shm/pddl_files/tmp8rp57i1d'\n\nDuring handling of the above exception,\
+        \ '/dev/shm/pddl_files/tmpjg8c46oo'\n\nDuring handling of the above exception,\
         \ another exception occurred:\n\nTraceback (most recent call last):\n  File\
         \ \"instance_solver.py\", line 106, in solve_instance\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
-        , line 80, in find_path\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
-        , line 198, in get_neighbors\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
-        , line 231, in to_dict\nMemoryError\n\nDuring handling of the above exception,\
+        , line 78, in find_path\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+        , line 202, in get_neighbors\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+        , line 235, in to_dict\nMemoryError\n\nDuring handling of the above exception,\
         \ another exception occurred:\n\nTraceback (most recent call last):\n  File\
         \ \"instance_solver.py\", line 138, in <module>\n  File \"instance_solver.py\"\
         , line 108, in solve_instance\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/traceback.py\"\

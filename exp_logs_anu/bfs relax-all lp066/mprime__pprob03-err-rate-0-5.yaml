@@ -1,5 +1,5 @@
 ---
-timestamp: '2025-01-09T11:55:49.173887'
+timestamp: '2025-01-14T22:21:21.226058'
 level: INFO
 issuer: instance_solver
 event_type: metadata
@@ -58,7 +58,7 @@ data:
 
 
 ---
-timestamp: '2025-01-09T11:55:49.178019'
+timestamp: '2025-01-14T22:21:21.231680'
 level: INFO
 issuer: instance_solver
 event_type: ground_repair
@@ -68,89 +68,10 @@ data:
 
 
 ---
-timestamp: '2025-01-09T12:04:59.432735'
+timestamp: '2025-01-14T22:36:20.547029'
 level: ERROR
-issuer: node
-event_type: error
-data:
-    current_node:
-        depth: 1
-        ground_actions:
-        - (feast entertainment pepper melon arizona manitoba)
-        repair_set: ''
-        g_cost: 0
-        h_cost: 0
-        f_cost: 0
-        next_lifted_action: '[''feast'', ''?entertainment'', ''melon'', ''?ham'',
-            ''?arizona'', ''?manitoba'']'
-        num_neighbours: 0
-        first_10_possible_groundings: null
-        current_state: '''(food orange)'', ''(eats pepper pea)'', ''(eats mutton orange)'',
-            ''(food ham)'', ''(eats pea snickers)'', ''(craves laceration pepper)'',
-            ''(pain jealousy)'', ''(eats ham melon)'', ''(province arizona)'', ''(eats
-            lemon popover)'', ''(food melon)'', ''(harmony love neptune)'', ''(pain
-            hangover)'', ''(food pea)'', ''(pain depression)'', ''(harmony entertainment
-            venus)'', ''(locale marzipan bavaria)'', ''(locale mutton guanabara)'',
-            ''(food pepper)'', ''(pain anxiety)'', ''(eats popover lemon)'', ''(craves
-            triumph popover)'', ''(eats chocolate orange)'', ''(pleasure satisfaction)'',
-            ''(eats chocolate ham)'', ''(eats pepper popover)'', ''(eats ham chocolate)'',
-            ''(craves entertainment melon)'', ''(eats pea pepper)'', ''(eats melon
-            pepper)'', ''(pain laceration)'', ''(attacks guanabara bavaria)'', ''(craves
-            satisfaction mutton)'', ''(eats pepper melon)'', ''(attacks arizona manitoba)'',
-            ''(craves jealousy ham)'', ''(locale chocolate guanabara)'', ''(craves
-            depression popover)'', ''(craves hangover chocolate)'', ''(province guanabara)'',
-            ''(food mutton)'', ''(eats marzipan popover)'', ''(eats snickers pea)'',
-            ''(eats marzipan snickers)'', ''(planet vulcan)'', ''(craves grief marzipan)'',
-            ''(food popover)'', ''(pain grief)'', ''(craves boils melon)'', ''(pain
-            boils)'', ''(locale lemon goias)'', ''(locale pepper arizona)'', ''(eats
-            mutton melon)'', ''(locale orange bavaria)'', ''(eats orange mutton)'',
-            ''(eats lemon pea)'', ''(pleasure entertainment)'', ''(locale pea bavaria)'',
-            ''(craves love orange)'', ''(harmony satisfaction neptune)'', ''(eats
-            melon ham)'', ''(harmony triumph neptune)'', ''(planet venus)'', ''(food
-            marzipan)'', ''(eats melon mutton)'', ''(province manitoba)'', ''(pleasure
-            triumph)'', ''(planet neptune)'', ''(eats snickers marzipan)'', ''(craves
-            angina orange)'', ''(eats popover marzipan)'', ''(attacks bavaria arizona)'',
-            ''(food lemon)'', ''(attacks goias guanabara)'', ''(locale popover arizona)'',
-            ''(eats popover pepper)'', ''(orbits vulcan venus)'', ''(eats marzipan
-            pea)'', ''(orbits venus neptune)'', ''(locale ham manitoba)'', ''(province
-            bavaria)'', ''(pleasure love)'', ''(eats pea marzipan)'', ''(eats orange
-            chocolate)'', ''(pain angina)'', ''(food snickers)'', ''(locale melon
-            manitoba)'', ''(locale snickers bavaria)'', ''(eats pea lemon)'', ''(food
-            chocolate)'', ''(province goias)'', ''(craves anxiety snickers)'''
-
-
----
-timestamp: '2025-01-09T12:04:59.436297'
-level: ERROR
-issuer: instance_solver
-event_type: error
-data: "An error occurred during A* search: . Stack trace: Traceback (most recent call\
-    \ last):\n  File \"instance_solver.py\", line 106, in solve_instance\n    searcher.find_path(logger=logger,\
-    \ log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
-    , line 80, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
-    \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
-    , line 192, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
-    \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
-    , line 136, in ground_pddl\n    applicable_actions = parser.encode_ground_actions_as_pddl(actions,\
-    \ 'str')\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
-    , line 615, in encode_ground_actions_as_pddl\n    actions_pddl_format = set(['({}\
-    \ '.format(action_name) + ' '.join(obj_names[var] for var in var_assign) + ')'\
-    \ \\\nMemoryError\n"
-
-
----
-timestamp: '2025-01-09T12:05:02.043974'
-level: INFO
-issuer: instance_solver
-event_type: timer_seconds
-data: '554.04'
-
-
----
-timestamp: '2025-01-09T12:05:09.268294'
-level: INFO
 issuer: batch_solver
-event_type: general
-data: 'Subprocess finished successfully. Duration: 561.59 seconds'
+event_type: error
+data: Subprocess timed out after 900 seconds.
 
 

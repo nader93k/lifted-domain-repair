@@ -1,10 +1,11 @@
 ---
-timestamp: '2025-01-08T02:32:36.022882'
+timestamp: '2025-01-14T21:34:59.270060'
 level: INFO
 issuer: instance_solver
 event_type: metadata
 data:
-    log_file: exp_logs_anu/bfs relax-all lp1-new/freecell__pprobfreecell-3-3-err-rate-0-5.yaml
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs
+        relax-all lp1/freecell__pprobfreecell-3-3-err-rate-0-5.yaml
     instance_id: freecell__pprobfreecell-3-3-err-rate-0-5
     search_algorithm: bfs
     plan_length: 13
@@ -125,7 +126,7 @@ data:
 
 
 ---
-timestamp: '2025-01-08T02:32:36.031148'
+timestamp: '2025-01-14T21:34:59.276055'
 level: INFO
 issuer: instance_solver
 event_type: ground_repair
@@ -135,7 +136,7 @@ data:
 
 
 ---
-timestamp: '2025-01-08T02:32:42.496098'
+timestamp: '2025-01-14T21:35:05.218905'
 level: ERROR
 issuer: node
 event_type: error
@@ -151,42 +152,20 @@ data:
             ''?n0'']'
         num_neighbours: 0
         first_10_possible_groundings: null
-        current_state: '''(value c2 n2)'', ''(canstack c2 d3)'', ''(clear ha)'', ''(bottomcol
-            da)'', ''(suit da d)'', ''(value c0 n0)'', ''(canstack s2 h3)'', ''(value
-            ha n1)'', ''(suit s0 s)'', ''(suit d2 d)'', ''(home c0)'', ''(canstack
-            s2 d3)'', ''(canstack da c2)'', ''(home d0)'', ''(value d3 n3)'', ''(suit
-            c0 c)'', ''(on s3 da)'', ''(value ca n1)'', ''(canstack d2 c3)'', ''(canstack
-            ha c2)'', ''(value s3 n3)'', ''(suit sa s)'', ''(value h2 n2)'', ''(value
-            h0 n0)'', ''(canstack ca h2)'', ''(bottomcol c3)'', ''(suit s2 s)'', ''(on
-            ha ca)'', ''(successor n9 n8)'', ''(suit h2 h)'', ''(bottomcol d2)'',
-            ''(bottomcol ca)'', ''(bottomcol h2)'', ''(successor n11 n10)'', ''(suit
-            ca c)'', ''(clear c3)'', ''(bottomcol s2)'', ''(canstack d2 s3)'', ''(successor
-            n3 n2)'', ''(clear h2)'', ''(successor n6 n5)'', ''(value sa n1)'', ''(suit
-            d3 d)'', ''(value s2 n2)'', ''(bottomcol d3)'', ''(successor n4 n3)'',
-            ''(successor n7 n6)'', ''(canstack sa d2)'', ''(on h3 s2)'', ''(clear
-            c2)'', ''(canstack sa h2)'', ''(clear s3)'', ''(successor n13 n12)'',
-            ''(value d0 n0)'', ''(successor n12 n11)'', ''(suit ha h)'', ''(value
-            s0 n0)'', ''(successor n1 n0)'', ''(value c3 n3)'', ''(suit h0 h)'', ''(value
-            d2 n2)'', ''(suit s3 s)'', ''(home h0)'', ''(on c2 sa)'', ''(canstack
-            h2 s3)'', ''(value da n1)'', ''(home s0)'', ''(canstack ha s2)'', ''(suit
-            h3 h)'', ''(on sa d2)'', ''(canstack h2 c3)'', ''(canstack ca d2)'', ''(colspace
-            n1)'', ''(successor n2 n1)'', ''(canstack da s2)'', ''(clear h3)'', ''(successor
-            n10 n9)'', ''(successor n8 n7)'', ''(cellspace n4)'', ''(clear d3)'',
-            ''(value h3 n3)'', ''(suit c3 c)'', ''(successor n5 n4)'', ''(canstack
-            c2 h3)'', ''(suit c2 c)'', ''(suit d0 d)'''
+        current_state: not implemented!
 
 
 ---
-timestamp: '2025-01-08T02:32:42.500649'
+timestamp: '2025-01-14T21:35:05.222267'
 level: ERROR
 issuer: instance_solver
 event_type: error
 data: "An error occurred during A* search: . Stack trace: Traceback (most recent call\
-    \ last):\n  File \"instance_solver.py\", line 85, in solve_instance\n    searcher.find_path(logger=logger,\
+    \ last):\n  File \"instance_solver.py\", line 106, in solve_instance\n    searcher.find_path(logger=logger,\
     \ log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
-    , line 80, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
+    , line 78, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
     \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
-    , line 171, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    , line 196, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
     \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
     , line 135, in ground_pddl\n    actions = parser.get_applicable_actions()\n  File\
     \ \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
@@ -197,18 +176,18 @@ data: "An error occurred during A* search: . Stack trace: Traceback (most recent
 
 
 ---
-timestamp: '2025-01-08T02:32:43.954123'
+timestamp: '2025-01-14T21:35:06.810097'
 level: INFO
 issuer: instance_solver
 event_type: timer_seconds
-data: '9.54'
+data: '8.68'
 
 
 ---
-timestamp: '2025-01-08T02:32:43.980368'
+timestamp: '2025-01-14T21:35:06.848773'
 level: INFO
 issuer: batch_solver
 event_type: general
-data: 'Subprocess finished successfully. Duration: 9.87 seconds'
+data: 'Subprocess finished successfully. Duration: 9.05 seconds'
 
 

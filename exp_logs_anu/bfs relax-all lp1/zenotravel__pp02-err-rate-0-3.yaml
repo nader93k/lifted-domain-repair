@@ -1,10 +1,11 @@
 ---
-timestamp: '2025-01-08T00:50:03.174246'
+timestamp: '2025-01-14T20:47:39.739854'
 level: INFO
 issuer: instance_solver
 event_type: metadata
 data:
-    log_file: exp_logs_anu/bfs relax-all lp1-new/zenotravel__pp02-err-rate-0-3.yaml
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs
+        relax-all lp1/zenotravel__pp02-err-rate-0-3.yaml
     instance_id: zenotravel__pp02-err-rate-0-3
     search_algorithm: bfs
     plan_length: 8
@@ -65,7 +66,7 @@ data:
 
 
 ---
-timestamp: '2025-01-08T00:50:03.177319'
+timestamp: '2025-01-14T20:47:39.742897'
 level: INFO
 issuer: instance_solver
 event_type: ground_repair
@@ -75,41 +76,57 @@ data:
 
 
 ---
-timestamp: '2025-01-08T01:01:10.744644'
+timestamp: '2025-01-14T21:00:47.962318'
 level: ERROR
 issuer: batch_solver
 event_type: error
 data:
     error_type: MemoryError
-    error_message: 'Command ''[''/home/projects/u7899572/conda-envs/main/bin/python3'',
-        ''instance_solver.py'', ''bfs'', ''input/benchmarks-G1'', ''exp_logs_anu/bfs
-        relax-all lp1-new/zenotravel__pp02-err-rate-0-3.yaml'', ''1000000'', ''zenotravel__pp02-err-rate-0-3'',
-        ''1.0'', ''zeroary'']'' died with <Signals.SIGABRT: 6>.'
+    error_message: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',
+        'instance_solver.py', 'bfs', '/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1',
+        '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs relax-all
+        lp1/zenotravel__pp02-err-rate-0-3.yaml', '1000000', 'zenotravel__pp02-err-rate-0-3',
+        '1.0', 'unary']' returned non-zero exit status 1.
     stack_trace: "Traceback (most recent call last):\n  File \"batch_solver.py\",\
-        \ line 119, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
+        \ line 126, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
         \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/subprocess.py\"\
         , line 516, in run\n    raise CalledProcessError(retcode, process.args,\n\
         subprocess.CalledProcessError: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',\
-        \ 'instance_solver.py', 'bfs', 'input/benchmarks-G1', 'exp_logs_anu/bfs relax-all\
-        \ lp1-new/zenotravel__pp02-err-rate-0-3.yaml', '1000000', 'zenotravel__pp02-err-rate-0-3',\
-        \ '1.0', 'zeroary']' died with <Signals.SIGABRT: 6>.\n"
+        \ 'instance_solver.py', 'bfs', '/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1',\
+        \ '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs\
+        \ relax-all lp1/zenotravel__pp02-err-rate-0-3.yaml', '1000000', 'zenotravel__pp02-err-rate-0-3',\
+        \ '1.0', 'unary']' returned non-zero exit status 1.\n"
     instance_id: zenotravel__pp02-err-rate-0-3
     process_info:
         cmd:
         - /home/projects/u7899572/conda-envs/main/bin/python3
         - instance_solver.py
         - bfs
-        - input/benchmarks-G1
-        - exp_logs_anu/bfs relax-all lp1-new/zenotravel__pp02-err-rate-0-3.yaml
+        - /home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1
+        - /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs relax-all
+            lp1/zenotravel__pp02-err-rate-0-3.yaml
         - '1000000'
         - zenotravel__pp02-err-rate-0-3
         - '1.0'
-        - zeroary
-        duration: '669.12'
+        - unary
+        duration: '789.75'
         python_executable: /home/projects/u7899572/conda-envs/main/bin/python3
     stdout: ''
-    stderr: 'terminate called after throwing an instance of ''Minisat22::OutOfMemoryException''
-
-        '
+    stderr: "Traceback (most recent call last):\n  File \"instance_solver.py\", line\
+        \ 106, in solve_instance\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+        , line 78, in find_path\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+        , line 209, in get_neighbors\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+        , line 90, in __init__\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+        , line 115, in _ground_repair\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/repairer/__init__.py\"\
+        , line 23, in repair\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/hitter/maxsat/__init__.py\"\
+        , line 18, in top\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/pysat/examples/fm.py\"\
+        , line 278, in compute\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/pysat/examples/fm.py\"\
+        , line 295, in _compute\nMemoryError\n\nDuring handling of the above exception,\
+        \ another exception occurred:\n\nTraceback (most recent call last):\n  File\
+        \ \"instance_solver.py\", line 138, in <module>\n  File \"instance_solver.py\"\
+        , line 108, in solve_instance\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/traceback.py\"\
+        , line 167, in format_exc\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/traceback.py\"\
+        , line 120, in format_exception\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/traceback.py\"\
+        , line 508, in __init__\nMemoryError\n"
 
 

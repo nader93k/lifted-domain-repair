@@ -1,10 +1,11 @@
 ---
-timestamp: '2025-01-07T23:46:16.821966'
+timestamp: '2025-01-14T20:08:44.795958'
 level: INFO
 issuer: instance_solver
 event_type: metadata
 data:
-    log_file: exp_logs_anu/bfs relax-all lp1-new/mprime__pprob07-err-rate-0-1.yaml
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs
+        relax-all lp1/mprime__pprob07-err-rate-0-1.yaml
     instance_id: mprime__pprob07-err-rate-0-1
     search_algorithm: bfs
     plan_length: 5
@@ -52,7 +53,7 @@ data:
 
 
 ---
-timestamp: '2025-01-07T23:46:16.825435'
+timestamp: '2025-01-14T20:08:44.799776'
 level: INFO
 issuer: instance_solver
 event_type: ground_repair
@@ -62,7 +63,7 @@ data:
 
 
 ---
-timestamp: '2025-01-07T23:46:22.920392'
+timestamp: '2025-01-14T20:08:51.279341'
 level: ERROR
 issuer: node
 event_type: error
@@ -78,59 +79,20 @@ data:
             ''?manitoba'', ''?arizona'', ''?arizona'', ''?manitoba'']'
         num_neighbours: 0
         first_10_possible_groundings: null
-        current_state: '''(eats mutton muffin)'', ''(locale muffin arizona)'', ''(pain
-            jealousy)'', ''(food haroset)'', ''(pain anxiety)'', ''(locale pear arizona)'',
-            ''(craves grief mutton)'', ''(food popover)'', ''(pain depression-4)'',
-            ''(craves angina-8 muffin)'', ''(pain sciatica-16)'', ''(food muffin)'',
-            ''(craves depression mutton)'', ''(eats lobster popover)'', ''(pain anger)'',
-            ''(locale pepper manitoba)'', ''(craves depression-4 pea)'', ''(province
-            arizona)'', ''(eats popover lobster)'', ''(craves abrasion snickers)'',
-            ''(craves boils shrimp)'', ''(pleasure stimulation)'', ''(province manitoba)'',
-            ''(eats shrimp haroset)'', ''(eats pear lobster)'', ''(pain boils-15)'',
-            ''(locale popover manitoba)'', ''(pain dread)'', ''(attacks moravia surrey)'',
-            ''(locale shrimp moravia)'', ''(province surrey)'', ''(food shrimp)'',
-            ''(harmony stimulation saturn)'', ''(pain loneliness-2)'', ''(craves sciatica
-            snickers)'', ''(craves hangover shrimp)'', ''(attacks arizona manitoba)'',
-            ''(food pea)'', ''(craves boils-15 pear)'', ''(eats popover snickers)'',
-            ''(eats muffin popover)'', ''(craves dread-3 pea)'', ''(eats snickers
-            shrimp)'', ''(pain grief)'', ''(planet mercury)'', ''(eats lobster muffin)'',
-            ''(pain depression)'', ''(eats pepper shrimp)'', ''(pain hangover)'',
-            ''(eats lobster pear)'', ''(pain angina-8)'', ''(eats snickers pea)'',
-            ''(craves prostatitis-7 lobster)'', ''(craves laceration pepper)'', ''(craves
-            anxiety pepper)'', ''(pain abrasion)'', ''(craves anger-6 lobster)'',
-            ''(harmony learning saturn)'', ''(craves abrasion-1 pea)'', ''(locale
-            mutton arizona)'', ''(province moravia)'', ''(locale haroset arizona)'',
-            ''(eats pear pepper)'', ''(craves prostatitis snickers)'', ''(craves learning
-            pea)'', ''(eats pea mutton)'', ''(craves sciatica-16 lobster)'', ''(pain
-            boils)'', ''(eats popover muffin)'', ''(pain loneliness)'', ''(pain angina)'',
-            ''(craves loneliness haroset)'', ''(eats shrimp pepper)'', ''(eats haroset
-            shrimp)'', ''(eats mutton pea)'', ''(pain anger-6)'', ''(craves dread
-            snickers)'', ''(pain prostatitis)'', ''(planet saturn)'', ''(eats pepper
-            pea)'', ''(eats pea pepper)'', ''(eats shrimp snickers)'', ''(pleasure
-            learning)'', ''(eats haroset lobster)'', ''(eats snickers popover)'',
-            ''(eats muffin mutton)'', ''(food pepper)'', ''(eats muffin lobster)'',
-            ''(eats pepper pear)'', ''(attacks manitoba moravia)'', ''(locale pea
-            moravia)'', ''(eats pea snickers)'', ''(pain prostatitis-7)'', ''(pain
-            abrasion-1)'', ''(food snickers)'', ''(pain dread-3)'', ''(pain sciatica)'',
-            ''(pain grief-5)'', ''(craves stimulation snickers)'', ''(craves angina
-            haroset)'', ''(orbits mercury saturn)'', ''(eats lobster haroset)'', ''(craves
-            grief-5 lobster)'', ''(food pear)'', ''(locale snickers arizona)'', ''(locale
-            lobster surrey)'', ''(food mutton)'', ''(pain laceration)'', ''(craves
-            anger mutton)'', ''(food lobster)'', ''(craves jealousy popover)'', ''(craves
-            loneliness-2 pea)'''
+        current_state: not implemented!
 
 
 ---
-timestamp: '2025-01-07T23:46:22.924013'
+timestamp: '2025-01-14T20:08:51.281278'
 level: ERROR
 issuer: instance_solver
 event_type: error
 data: "An error occurred during A* search: . Stack trace: Traceback (most recent call\
-    \ last):\n  File \"instance_solver.py\", line 85, in solve_instance\n    searcher.find_path(logger=logger,\
+    \ last):\n  File \"instance_solver.py\", line 106, in solve_instance\n    searcher.find_path(logger=logger,\
     \ log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
-    , line 80, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
+    , line 78, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
     \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
-    , line 171, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    , line 196, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
     \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
     , line 135, in ground_pddl\n    actions = parser.get_applicable_actions()\n  File\
     \ \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
@@ -141,18 +103,18 @@ data: "An error occurred during A* search: . Stack trace: Traceback (most recent
 
 
 ---
-timestamp: '2025-01-07T23:46:24.535175'
+timestamp: '2025-01-14T20:08:52.953029'
 level: INFO
 issuer: instance_solver
 event_type: timer_seconds
-data: '8.83'
+data: '9.93'
 
 
 ---
-timestamp: '2025-01-07T23:46:24.563858'
+timestamp: '2025-01-14T20:08:52.989174'
 level: INFO
 issuer: batch_solver
 event_type: general
-data: 'Subprocess finished successfully. Duration: 9.11 seconds'
+data: 'Subprocess finished successfully. Duration: 10.29 seconds'
 
 

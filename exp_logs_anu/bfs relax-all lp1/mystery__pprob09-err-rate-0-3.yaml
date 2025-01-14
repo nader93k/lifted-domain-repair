@@ -1,10 +1,11 @@
 ---
-timestamp: '2025-01-08T01:04:22.744431'
+timestamp: '2025-01-14T21:00:49.305654'
 level: INFO
 issuer: instance_solver
 event_type: metadata
 data:
-    log_file: exp_logs_anu/bfs relax-all lp1-new/mystery__pprob09-err-rate-0-3.yaml
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs
+        relax-all lp1/mystery__pprob09-err-rate-0-3.yaml
     instance_id: mystery__pprob09-err-rate-0-3
     search_algorithm: bfs
     plan_length: 9
@@ -78,7 +79,7 @@ data:
 
 
 ---
-timestamp: '2025-01-08T01:04:22.748580'
+timestamp: '2025-01-14T21:00:49.309995'
 level: INFO
 issuer: instance_solver
 event_type: ground_repair
@@ -88,7 +89,7 @@ data:
 
 
 ---
-timestamp: '2025-01-08T01:04:46.201791'
+timestamp: '2025-01-14T21:01:13.154752'
 level: ERROR
 issuer: node
 event_type: error
@@ -104,48 +105,20 @@ data:
             ''?saturn'', ''?venus'']'
         num_neighbours: 0
         first_10_possible_groundings: null
-        current_state: '''(orbits earth uranus)'', ''(food apple)'', ''(craves intoxication
-            haroset)'', ''(pain hangover)'', ''(locale flounder arizona)'', ''(craves
-            grief guava)'', ''(attacks bavaria arizona)'', ''(craves jealousy guava)'',
-            ''(craves entertainment flounder)'', ''(craves laceration wurst)'', ''(craves
-            dread flounder)'', ''(craves boils guava)'', ''(orbits uranus saturn)'',
-            ''(food hamburger)'', ''(pleasure curiosity)'', ''(locale wurst bavaria)'',
-            ''(eats hotdog apple)'', ''(planet venus)'', ''(province arizona)'', ''(craves
-            angina guava)'', ''(pain grief)'', ''(craves curiosity hotdog)'', ''(pain
-            boils)'', ''(craves hangover haroset)'', ''(locale apple arizona)'', ''(pleasure
-            entertainment)'', ''(eats flounder hamburger)'', ''(eats guava apple)'',
-            ''(food guava)'', ''(craves anxiety wurst)'', ''(craves excitement guava)'',
-            ''(eats haroset hamburger)'', ''(eats hamburger haroset)'', ''(eats guava
-            haroset)'', ''(pleasure excitement)'', ''(harmony entertainment venus)'',
-            ''(pain sciatica)'', ''(harmony excitement uranus)'', ''(province kentucky)'',
-            ''(attacks manitoba kentucky)'', ''(orbits saturn venus)'', ''(harmony
-            intoxication uranus)'', ''(eats hamburger flounder)'', ''(attacks arizona
-            manitoba)'', ''(province manitoba)'', ''(craves loneliness haroset)'',
-            ''(eats apple hotdog)'', ''(eats wurst hotdog)'', ''(locale haroset arizona)'',
-            ''(eats flounder wurst)'', ''(locale hotdog bavaria)'', ''(craves sciatica
-            flounder)'', ''(eats haroset guava)'', ''(food wurst)'', ''(pleasure intoxication)'',
-            ''(food haroset)'', ''(harmony curiosity uranus)'', ''(planet earth)'',
-            ''(pain anxiety)'', ''(locale hamburger bosnia)'', ''(pain dread)'', ''(food
-            flounder)'', ''(attacks bosnia bavaria)'', ''(pain laceration)'', ''(craves
-            abrasion haroset)'', ''(planet saturn)'', ''(eats hotdog wurst)'', ''(food
-            hotdog)'', ''(locale guava kentucky)'', ''(eats wurst flounder)'', ''(pain
-            angina)'', ''(pain abrasion)'', ''(planet uranus)'', ''(pain loneliness)'',
-            ''(craves anger haroset)'', ''(province bosnia)'', ''(pain prostatitis)'',
-            ''(eats apple guava)'', ''(pain anger)'', ''(craves prostatitis haroset)'',
-            ''(province bavaria)'', ''(pain jealousy)'''
+        current_state: not implemented!
 
 
 ---
-timestamp: '2025-01-08T01:04:46.205059'
+timestamp: '2025-01-14T21:01:13.158542'
 level: ERROR
 issuer: instance_solver
 event_type: error
 data: "An error occurred during A* search: . Stack trace: Traceback (most recent call\
-    \ last):\n  File \"instance_solver.py\", line 85, in solve_instance\n    searcher.find_path(logger=logger,\
+    \ last):\n  File \"instance_solver.py\", line 106, in solve_instance\n    searcher.find_path(logger=logger,\
     \ log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
-    , line 80, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
+    , line 78, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
     \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
-    , line 171, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    , line 196, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
     \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
     , line 135, in ground_pddl\n    actions = parser.get_applicable_actions()\n  File\
     \ \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
@@ -157,18 +130,18 @@ data: "An error occurred during A* search: . Stack trace: Traceback (most recent
 
 
 ---
-timestamp: '2025-01-08T01:04:46.879466'
+timestamp: '2025-01-14T21:01:13.923600'
 level: INFO
 issuer: instance_solver
 event_type: timer_seconds
-data: '25.28'
+data: '25.74'
 
 
 ---
-timestamp: '2025-01-08T01:04:46.906472'
+timestamp: '2025-01-14T21:01:13.961123'
 level: INFO
 issuer: batch_solver
 event_type: general
-data: 'Subprocess finished successfully. Duration: 25.53 seconds'
+data: 'Subprocess finished successfully. Duration: 26.07 seconds'
 
 

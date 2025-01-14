@@ -1,10 +1,11 @@
 ---
-timestamp: '2025-01-08T02:30:53.386277'
+timestamp: '2025-01-14T21:34:08.496113'
 level: INFO
 issuer: instance_solver
 event_type: metadata
 data:
-    log_file: exp_logs_anu/bfs relax-all lp1-new/zenotravel__pp06-err-rate-0-5.yaml
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs
+        relax-all lp1/zenotravel__pp06-err-rate-0-5.yaml
     instance_id: zenotravel__pp06-err-rate-0-5
     search_algorithm: bfs
     plan_length: 12
@@ -83,49 +84,52 @@ data:
 
 
 ---
-timestamp: '2025-01-08T02:30:53.390154'
+timestamp: '2025-01-14T21:34:08.500195'
 level: INFO
 issuer: instance_solver
 event_type: ground_repair
 data:
     repair_length: 2
-    repair: 'debark,(in ?p ?c),precPos,-1
+    repair: 'fly,(fuel-level ?c1 ?c1),precPos,-1
 
-        fly,(fuel-level ?c1 ?c1),precPos,-1'
+        debark,(in ?p ?c),precPos,-1'
 
 
 ---
-timestamp: '2025-01-08T02:43:20.592945'
+timestamp: '2025-01-14T21:47:06.716439'
 level: ERROR
 issuer: batch_solver
 event_type: error
 data:
     error_type: MemoryError
     error_message: 'Command ''[''/home/projects/u7899572/conda-envs/main/bin/python3'',
-        ''instance_solver.py'', ''bfs'', ''input/benchmarks-G1'', ''exp_logs_anu/bfs
-        relax-all lp1-new/zenotravel__pp06-err-rate-0-5.yaml'', ''1000000'', ''zenotravel__pp06-err-rate-0-5'',
-        ''1.0'', ''zeroary'']'' died with <Signals.SIGABRT: 6>.'
+        ''instance_solver.py'', ''bfs'', ''/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1'',
+        ''/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs relax-all
+        lp1/zenotravel__pp06-err-rate-0-5.yaml'', ''1000000'', ''zenotravel__pp06-err-rate-0-5'',
+        ''1.0'', ''unary'']'' died with <Signals.SIGABRT: 6>.'
     stack_trace: "Traceback (most recent call last):\n  File \"batch_solver.py\",\
-        \ line 119, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
+        \ line 126, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
         \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/subprocess.py\"\
         , line 516, in run\n    raise CalledProcessError(retcode, process.args,\n\
         subprocess.CalledProcessError: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',\
-        \ 'instance_solver.py', 'bfs', 'input/benchmarks-G1', 'exp_logs_anu/bfs relax-all\
-        \ lp1-new/zenotravel__pp06-err-rate-0-5.yaml', '1000000', 'zenotravel__pp06-err-rate-0-5',\
-        \ '1.0', 'zeroary']' died with <Signals.SIGABRT: 6>.\n"
+        \ 'instance_solver.py', 'bfs', '/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1',\
+        \ '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs\
+        \ relax-all lp1/zenotravel__pp06-err-rate-0-5.yaml', '1000000', 'zenotravel__pp06-err-rate-0-5',\
+        \ '1.0', 'unary']' died with <Signals.SIGABRT: 6>.\n"
     instance_id: zenotravel__pp06-err-rate-0-5
     process_info:
         cmd:
         - /home/projects/u7899572/conda-envs/main/bin/python3
         - instance_solver.py
         - bfs
-        - input/benchmarks-G1
-        - exp_logs_anu/bfs relax-all lp1-new/zenotravel__pp06-err-rate-0-5.yaml
+        - /home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1
+        - /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs relax-all
+            lp1/zenotravel__pp06-err-rate-0-5.yaml
         - '1000000'
         - zenotravel__pp06-err-rate-0-5
         - '1.0'
-        - zeroary
-        duration: '750.48'
+        - unary
+        duration: '781.44'
         python_executable: /home/projects/u7899572/conda-envs/main/bin/python3
     stdout: ''
     stderr: 'terminate called after throwing an instance of ''Minisat22::OutOfMemoryException''

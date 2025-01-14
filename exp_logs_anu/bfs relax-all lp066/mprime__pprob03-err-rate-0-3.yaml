@@ -1,5 +1,5 @@
 ---
-timestamp: '2025-01-09T11:54:35.192203'
+timestamp: '2025-01-14T22:07:27.874441'
 level: INFO
 issuer: instance_solver
 event_type: metadata
@@ -58,99 +58,54 @@ data:
 
 
 ---
-timestamp: '2025-01-09T11:54:35.196094'
+timestamp: '2025-01-14T22:07:27.878294'
 level: INFO
 issuer: instance_solver
 event_type: ground_repair
 data:
     repair_length: 1
-    repair: overcome,(harmony ?v ?s1),effPos,1
+    repair: succumb,(harmony ?v ?s1),precPos,-1
 
 
 ---
-timestamp: '2025-01-09T12:03:43.730651'
+timestamp: '2025-01-14T22:22:03.071808'
 level: ERROR
-issuer: node
+issuer: batch_solver
 event_type: error
 data:
-    current_node:
-        depth: 1
-        ground_actions:
-        - (feast entertainment pepper melon arizona manitoba)
-        repair_set: ''
-        g_cost: 0
-        h_cost: 0
-        f_cost: 0
-        next_lifted_action: '[''feast'', ''?entertainment'', ''melon'', ''?ham'',
-            ''?arizona'', ''?manitoba'']'
-        num_neighbours: 0
-        first_10_possible_groundings: null
-        current_state: '''(pain boils)'', ''(planet venus)'', ''(attacks guanabara
-            bavaria)'', ''(craves triumph popover)'', ''(harmony love neptune)'',
-            ''(food ham)'', ''(craves grief marzipan)'', ''(attacks bavaria arizona)'',
-            ''(province guanabara)'', ''(craves hangover chocolate)'', ''(eats marzipan
-            popover)'', ''(planet neptune)'', ''(eats mutton melon)'', ''(locale popover
-            arizona)'', ''(harmony entertainment venus)'', ''(craves jealousy ham)'',
-            ''(province arizona)'', ''(province manitoba)'', ''(eats snickers pea)'',
-            ''(eats popover pepper)'', ''(eats pea snickers)'', ''(eats lemon pea)'',
-            ''(pain angina)'', ''(food pepper)'', ''(locale snickers bavaria)'', ''(pleasure
-            triumph)'', ''(eats pea marzipan)'', ''(craves angina orange)'', ''(eats
-            popover marzipan)'', ''(attacks arizona manitoba)'', ''(locale melon manitoba)'',
-            ''(locale pepper arizona)'', ''(craves entertainment melon)'', ''(eats
-            orange mutton)'', ''(eats melon pepper)'', ''(food melon)'', ''(eats pepper
-            pea)'', ''(pleasure entertainment)'', ''(eats orange chocolate)'', ''(attacks
-            goias guanabara)'', ''(locale ham manitoba)'', ''(food mutton)'', ''(locale
-            lemon goias)'', ''(food chocolate)'', ''(food lemon)'', ''(eats melon
-            mutton)'', ''(pain laceration)'', ''(eats pepper melon)'', ''(eats chocolate
-            orange)'', ''(craves boils melon)'', ''(locale chocolate guanabara)'',
-            ''(craves anxiety snickers)'', ''(eats ham melon)'', ''(food orange)'',
-            ''(eats marzipan pea)'', ''(pleasure satisfaction)'', ''(orbits vulcan
-            venus)'', ''(harmony satisfaction neptune)'', ''(harmony triumph neptune)'',
-            ''(locale marzipan bavaria)'', ''(eats ham chocolate)'', ''(eats melon
-            ham)'', ''(craves depression popover)'', ''(orbits venus neptune)'', ''(eats
-            marzipan snickers)'', ''(eats mutton orange)'', ''(pain anxiety)'', ''(locale
-            orange bavaria)'', ''(locale pea bavaria)'', ''(food popover)'', ''(eats
-            pea pepper)'', ''(craves love orange)'', ''(food pea)'', ''(eats lemon
-            popover)'', ''(province bavaria)'', ''(food snickers)'', ''(craves laceration
-            pepper)'', ''(pain depression)'', ''(food marzipan)'', ''(pain hangover)'',
-            ''(planet vulcan)'', ''(locale mutton guanabara)'', ''(pain jealousy)'',
-            ''(eats snickers marzipan)'', ''(eats pepper popover)'', ''(craves satisfaction
-            mutton)'', ''(pain grief)'', ''(eats chocolate ham)'', ''(eats pea lemon)'',
-            ''(province goias)'', ''(pleasure love)'', ''(eats popover lemon)'''
+    error_type: MemoryError
+    error_message: 'Command ''[''/home/projects/u7899572/conda-envs/main/bin/python3'',
+        ''instance_solver.py'', ''bfs'', ''/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1'',
+        ''/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs relax-all
+        lp066/mprime__pprob03-err-rate-0-3.yaml'', ''1000000'', ''mprime__pprob03-err-rate-0-3'',
+        ''0.66'', ''unary'']'' died with <Signals.SIGABRT: 6>.'
+    stack_trace: "Traceback (most recent call last):\n  File \"batch_solver.py\",\
+        \ line 126, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
+        \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/subprocess.py\"\
+        , line 516, in run\n    raise CalledProcessError(retcode, process.args,\n\
+        subprocess.CalledProcessError: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',\
+        \ 'instance_solver.py', 'bfs', '/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1',\
+        \ '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs\
+        \ relax-all lp066/mprime__pprob03-err-rate-0-3.yaml', '1000000', 'mprime__pprob03-err-rate-0-3',\
+        \ '0.66', 'unary']' died with <Signals.SIGABRT: 6>.\n"
+    instance_id: mprime__pprob03-err-rate-0-3
+    process_info:
+        cmd:
+        - /home/projects/u7899572/conda-envs/main/bin/python3
+        - instance_solver.py
+        - bfs
+        - /home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1
+        - /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs relax-all
+            lp066/mprime__pprob03-err-rate-0-3.yaml
+        - '1000000'
+        - mprime__pprob03-err-rate-0-3
+        - '0.66'
+        - unary
+        duration: '876.64'
+        python_executable: /home/projects/u7899572/conda-envs/main/bin/python3
+    stdout: ''
+    stderr: 'terminate called after throwing an instance of ''Minisat22::OutOfMemoryException''
 
-
----
-timestamp: '2025-01-09T12:03:43.734088'
-level: ERROR
-issuer: instance_solver
-event_type: error
-data: "An error occurred during A* search: . Stack trace: Traceback (most recent call\
-    \ last):\n  File \"instance_solver.py\", line 106, in solve_instance\n    searcher.find_path(logger=logger,\
-    \ log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
-    , line 80, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
-    \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
-    , line 192, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
-    \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
-    , line 136, in ground_pddl\n    applicable_actions = parser.encode_ground_actions_as_pddl(actions,\
-    \ 'str')\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
-    , line 615, in encode_ground_actions_as_pddl\n    actions_pddl_format = set(['({}\
-    \ '.format(action_name) + ' '.join(obj_names[var] for var in var_assign) + ')'\
-    \ \\\nMemoryError\n"
-
-
----
-timestamp: '2025-01-09T12:03:46.489049'
-level: INFO
-issuer: instance_solver
-event_type: timer_seconds
-data: '552.45'
-
-
----
-timestamp: '2025-01-09T12:03:53.437834'
-level: INFO
-issuer: batch_solver
-event_type: general
-data: 'Subprocess finished successfully. Duration: 559.67 seconds'
+        '
 
 

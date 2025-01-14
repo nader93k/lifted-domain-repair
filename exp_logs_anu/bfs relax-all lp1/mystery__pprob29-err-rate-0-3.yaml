@@ -1,10 +1,11 @@
 ---
-timestamp: '2025-01-07T23:45:43.774737'
+timestamp: '2025-01-14T20:07:01.764311'
 level: INFO
 issuer: instance_solver
 event_type: metadata
 data:
-    log_file: exp_logs_anu/bfs relax-all lp1-new/mystery__pprob29-err-rate-0-3.yaml
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs
+        relax-all lp1/mystery__pprob29-err-rate-0-3.yaml
     instance_id: mystery__pprob29-err-rate-0-3
     search_algorithm: bfs
     plan_length: 4
@@ -43,7 +44,7 @@ data:
 
 
 ---
-timestamp: '2025-01-07T23:45:43.777851'
+timestamp: '2025-01-14T20:07:01.767653'
 level: INFO
 issuer: instance_solver
 event_type: ground_repair
@@ -53,7 +54,7 @@ data:
 
 
 ---
-timestamp: '2025-01-07T23:46:09.241463'
+timestamp: '2025-01-14T20:07:26.814313'
 level: ERROR
 issuer: node
 event_type: error
@@ -69,49 +70,20 @@ data:
             ''?neptune'', ''?uranus'']'
         num_neighbours: 0
         first_10_possible_groundings: null
-        current_state: '''(planet earth)'', ''(craves angina melon)'', ''(province
-            arizona)'', ''(eats pear pork)'', ''(eats scallop melon)'', ''(eats shrimp
-            broccoli)'', ''(eats pork pear)'', ''(province kentucky)'', ''(craves
-            sciatica pork)'', ''(pleasure excitement)'', ''(eats popover papaya)'',
-            ''(locale papaya quebec)'', ''(eats melon scallop)'', ''(eats broccoli
-            pork)'', ''(province quebec)'', ''(pain anger)'', ''(pleasure achievement)'',
-            ''(attacks manitoba bavaria)'', ''(pain abrasion)'', ''(eats shrimp melon)'',
-            ''(craves jealousy pork)'', ''(pain sciatica)'', ''(eats pear papaya)'',
-            ''(craves abrasion papaya)'', ''(pain anxiety)'', ''(eats pork scallop)'',
-            ''(province moravia)'', ''(province bavaria)'', ''(eats shrimp popover)'',
-            ''(locale scallop oregon)'', ''(food broccoli)'', ''(attacks quebec manitoba)'',
-            ''(planet pluto)'', ''(attacks kentucky moravia)'', ''(craves achievement
-            scallop)'', ''(eats papaya pear)'', ''(eats popover shrimp)'', ''(harmony
-            excitement uranus)'', ''(pain grief)'', ''(eats papaya popover)'', ''(planet
-            uranus)'', ''(craves excitement pork)'', ''(province pennsylvania)'',
-            ''(pain angina)'', ''(craves anxiety melon)'', ''(province manitoba)'',
-            ''(craves prostatitis shrimp)'', ''(attacks alsace quebec)'', ''(orbits
-            earth pluto)'', ''(orbits neptune uranus)'', ''(locale pear arizona)'',
-            ''(food shrimp)'', ''(eats broccoli shrimp)'', ''(pain laceration)'',
-            ''(orbits pluto neptune)'', ''(attacks pennsylvania alsace)'', ''(eats
-            melon shrimp)'', ''(food pear)'', ''(eats scallop pork)'', ''(craves hangover
-            scallop)'', ''(food scallop)'', ''(eats pork broccoli)'', ''(food pork)'',
-            ''(food popover)'', ''(attacks bavaria oregon)'', ''(locale broccoli alsace)'',
-            ''(craves anger scallop)'', ''(craves grief shrimp)'', ''(attacks oregon
-            kentucky)'', ''(province alsace)'', ''(locale popover bavaria)'', ''(pain
-            hangover)'', ''(province oregon)'', ''(pain boils)'', ''(food melon)'',
-            ''(craves boils broccoli)'', ''(pain jealousy)'', ''(planet neptune)'',
-            ''(attacks arizona pennsylvania)'', ''(locale shrimp kentucky)'', ''(craves
-            laceration melon)'', ''(pain prostatitis)'', ''(food papaya)'', ''(locale
-            melon moravia)'', ''(harmony achievement uranus)'', ''(locale pork bavaria)'''
+        current_state: not implemented!
 
 
 ---
-timestamp: '2025-01-07T23:46:09.246812'
+timestamp: '2025-01-14T20:07:26.816280'
 level: ERROR
 issuer: instance_solver
 event_type: error
 data: "An error occurred during A* search: . Stack trace: Traceback (most recent call\
-    \ last):\n  File \"instance_solver.py\", line 85, in solve_instance\n    searcher.find_path(logger=logger,\
+    \ last):\n  File \"instance_solver.py\", line 106, in solve_instance\n    searcher.find_path(logger=logger,\
     \ log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
-    , line 80, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
+    , line 78, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
     \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
-    , line 171, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
+    , line 196, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
     \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
     , line 135, in ground_pddl\n    actions = parser.get_applicable_actions()\n  File\
     \ \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
@@ -123,18 +95,18 @@ data: "An error occurred during A* search: . Stack trace: Traceback (most recent
 
 
 ---
-timestamp: '2025-01-07T23:46:10.060447'
+timestamp: '2025-01-14T20:07:27.640544'
 level: INFO
 issuer: instance_solver
 event_type: timer_seconds
-data: '27.40'
+data: '27.02'
 
 
 ---
-timestamp: '2025-01-07T23:46:10.086992'
+timestamp: '2025-01-14T20:07:27.672060'
 level: INFO
 issuer: batch_solver
 event_type: general
-data: 'Subprocess finished successfully. Duration: 27.63 seconds'
+data: 'Subprocess finished successfully. Duration: 27.48 seconds'
 
 

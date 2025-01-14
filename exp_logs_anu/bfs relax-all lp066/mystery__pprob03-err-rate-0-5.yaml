@@ -1,5 +1,5 @@
 ---
-timestamp: '2025-01-09T11:43:11.105433'
+timestamp: '2025-01-14T22:05:12.939237'
 level: INFO
 issuer: instance_solver
 event_type: metadata
@@ -44,102 +44,22 @@ data:
 
 
 ---
-timestamp: '2025-01-09T11:43:11.108989'
+timestamp: '2025-01-14T22:05:12.942661'
 level: INFO
 issuer: instance_solver
 event_type: ground_repair
 data:
     repair_length: 2
-    repair: 'feast,(pleasure ?n2),precPos,-1
+    repair: 'overcome,(attacks ?s2 ?s1),precPos,-1
 
-        overcome,(attacks ?s2 ?s1),precPos,-1'
+        feast,(pleasure ?n2),precPos,-1'
 
 
 ---
-timestamp: '2025-01-09T11:52:32.943482'
+timestamp: '2025-01-14T22:20:12.056078'
 level: ERROR
-issuer: node
-event_type: error
-data:
-    current_node:
-        depth: 1
-        ground_actions:
-        - (feast love orange chocolate guanabara bavaria)
-        repair_set: feast,(pleasure ?n2),precPos,-1
-        g_cost: 1
-        h_cost: 0
-        f_cost: 1
-        next_lifted_action: '[''overcome'', ''?hangover'', ''love'', ''?chocolate'',
-            ''?venus'', ''?neptune'']'
-        num_neighbours: 0
-        first_10_possible_groundings: null
-        current_state: '''(eats chocolate ham)'', ''(eats popover pepper)'', ''(food
-            lemon)'', ''(locale melon manitoba)'', ''(eats pea pepper)'', ''(eats
-            orange mutton)'', ''(pain angina)'', ''(orbits venus neptune)'', ''(pleasure
-            entertainment)'', ''(eats snickers marzipan)'', ''(craves angina orange)'',
-            ''(pain anxiety)'', ''(eats pepper popover)'', ''(eats lemon popover)'',
-            ''(craves love chocolate)'', ''(province guanabara)'', ''(planet venus)'',
-            ''(eats marzipan pea)'', ''(attacks guanabara bavaria)'', ''(food melon)'',
-            ''(eats ham melon)'', ''(harmony love neptune)'', ''(planet neptune)'',
-            ''(craves triumph popover)'', ''(food chocolate)'', ''(craves anxiety
-            snickers)'', ''(locale lemon goias)'', ''(pain hangover)'', ''(eats pepper
-            melon)'', ''(food popover)'', ''(craves grief marzipan)'', ''(locale chocolate
-            guanabara)'', ''(food snickers)'', ''(craves boils melon)'', ''(food ham)'',
-            ''(craves depression popover)'', ''(food mutton)'', ''(craves jealousy
-            ham)'', ''(locale pea bavaria)'', ''(pain laceration)'', ''(pain boils)'',
-            ''(eats mutton melon)'', ''(pain jealousy)'', ''(attacks bavaria arizona)'',
-            ''(eats melon ham)'', ''(craves laceration pepper)'', ''(pleasure triumph)'',
-            ''(harmony satisfaction neptune)'', ''(eats melon mutton)'', ''(craves
-            satisfaction mutton)'', ''(eats pea snickers)'', ''(food orange)'', ''(locale
-            marzipan bavaria)'', ''(eats popover marzipan)'', ''(province arizona)'',
-            ''(pleasure satisfaction)'', ''(eats pea marzipan)'', ''(eats pepper pea)'',
-            ''(eats marzipan snickers)'', ''(craves hangover chocolate)'', ''(locale
-            popover arizona)'', ''(eats lemon pea)'', ''(province bavaria)'', ''(locale
-            ham manitoba)'', ''(locale orange guanabara)'', ''(harmony entertainment
-            venus)'', ''(orbits vulcan venus)'', ''(craves entertainment pepper)'',
-            ''(eats marzipan popover)'', ''(eats chocolate orange)'', ''(attacks arizona
-            manitoba)'', ''(locale pepper manitoba)'', ''(eats mutton orange)'', ''(food
-            pepper)'', ''(eats popover lemon)'', ''(eats pea lemon)'', ''(eats orange
-            chocolate)'', ''(pleasure love)'', ''(food pea)'', ''(harmony triumph
-            neptune)'', ''(eats ham chocolate)'', ''(eats melon pepper)'', ''(attacks
-            goias guanabara)'', ''(locale mutton guanabara)'', ''(planet vulcan)'',
-            ''(pain grief)'', ''(province manitoba)'', ''(pain depression)'', ''(food
-            marzipan)'', ''(locale snickers bavaria)'', ''(eats snickers pea)'', ''(province
-            goias)'''
-
-
----
-timestamp: '2025-01-09T11:52:32.946910'
-level: ERROR
-issuer: instance_solver
-event_type: error
-data: "An error occurred during A* search: . Stack trace: Traceback (most recent call\
-    \ last):\n  File \"instance_solver.py\", line 106, in solve_instance\n    searcher.find_path(logger=logger,\
-    \ log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
-    , line 80, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
-    \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
-    , line 192, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
-    \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
-    , line 136, in ground_pddl\n    applicable_actions = parser.encode_ground_actions_as_pddl(actions,\
-    \ 'str')\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
-    , line 615, in encode_ground_actions_as_pddl\n    actions_pddl_format = set(['({}\
-    \ '.format(action_name) + ' '.join(obj_names[var] for var in var_assign) + ')'\
-    \ \\\nMemoryError\n"
-
-
----
-timestamp: '2025-01-09T11:52:35.886215'
-level: INFO
-issuer: instance_solver
-event_type: timer_seconds
-data: '566.50'
-
-
----
-timestamp: '2025-01-09T11:52:42.466387'
-level: INFO
 issuer: batch_solver
-event_type: general
-data: 'Subprocess finished successfully. Duration: 573.45 seconds'
+event_type: error
+data: Subprocess timed out after 900 seconds.
 
 

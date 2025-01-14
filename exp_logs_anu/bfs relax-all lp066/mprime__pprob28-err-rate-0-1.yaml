@@ -1,5 +1,5 @@
 ---
-timestamp: '2025-01-09T12:35:00.028690'
+timestamp: '2025-01-14T22:46:33.347022'
 level: INFO
 issuer: instance_solver
 event_type: metadata
@@ -79,7 +79,7 @@ data:
 
 
 ---
-timestamp: '2025-01-09T12:35:00.032740'
+timestamp: '2025-01-14T22:46:33.351345'
 level: INFO
 issuer: instance_solver
 event_type: ground_repair
@@ -89,7 +89,7 @@ data:
 
 
 ---
-timestamp: '2025-01-09T12:45:48.294407'
+timestamp: '2025-01-14T22:58:19.472788'
 level: ERROR
 issuer: batch_solver
 event_type: error
@@ -99,16 +99,16 @@ data:
         ''instance_solver.py'', ''bfs'', ''/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1'',
         ''/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs relax-all
         lp066/mprime__pprob28-err-rate-0-1.yaml'', ''1000000'', ''mprime__pprob28-err-rate-0-1'',
-        ''0.66'', ''none'']'' died with <Signals.SIGABRT: 6>.'
+        ''0.66'', ''unary'']'' died with <Signals.SIGABRT: 6>.'
     stack_trace: "Traceback (most recent call last):\n  File \"batch_solver.py\",\
-        \ line 119, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
+        \ line 126, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
         \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/subprocess.py\"\
         , line 516, in run\n    raise CalledProcessError(retcode, process.args,\n\
         subprocess.CalledProcessError: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',\
         \ 'instance_solver.py', 'bfs', '/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1',\
         \ '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs\
         \ relax-all lp066/mprime__pprob28-err-rate-0-1.yaml', '1000000', 'mprime__pprob28-err-rate-0-1',\
-        \ '0.66', 'none']' died with <Signals.SIGABRT: 6>.\n"
+        \ '0.66', 'unary']' died with <Signals.SIGABRT: 6>.\n"
     instance_id: mprime__pprob28-err-rate-0-1
     process_info:
         cmd:
@@ -121,8 +121,8 @@ data:
         - '1000000'
         - mprime__pprob28-err-rate-0-1
         - '0.66'
-        - none
-        duration: '649.70'
+        - unary
+        duration: '709.34'
         python_executable: /home/projects/u7899572/conda-envs/main/bin/python3
     stdout: ''
     stderr: 'terminate called after throwing an instance of ''Minisat22::OutOfMemoryException''

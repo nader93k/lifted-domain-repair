@@ -1,5 +1,5 @@
 ---
-timestamp: '2025-01-09T11:58:11.833021'
+timestamp: '2025-01-14T22:22:15.196781'
 level: INFO
 issuer: instance_solver
 event_type: metadata
@@ -58,7 +58,7 @@ data:
 
 
 ---
-timestamp: '2025-01-09T11:58:11.836591'
+timestamp: '2025-01-14T22:22:15.200377'
 level: INFO
 issuer: instance_solver
 event_type: ground_repair
@@ -68,93 +68,10 @@ data:
 
 
 ---
-timestamp: '2025-01-09T12:07:13.076887'
+timestamp: '2025-01-14T22:37:14.456406'
 level: ERROR
-issuer: node
-event_type: error
-data:
-    current_node:
-        depth: 1
-        ground_actions:
-        - (overcome boils entertainment haroset earth neptune)
-        repair_set: overcome,(locale ?s2 ?v),precPos,-1
-        g_cost: 1
-        h_cost: 0
-        f_cost: 1
-        next_lifted_action: '[''feast'', ''?entertainment'', ''haroset'', ''?rice'',
-            ''?oregon'', ''?bavaria'']'
-        num_neighbours: 0
-        first_10_possible_groundings: null
-        current_state: '''(eats endive rice)'', ''(harmony empathy venus)'', ''(craves
-            hangover pistachio)'', ''(planet venus)'', ''(attacks quebec manitoba)'',
-            ''(locale rice oregon)'', ''(craves empathy scallop)'', ''(harmony entertainment
-            earth)'', ''(province moravia)'', ''(eats flounder papaya)'', ''(eats
-            haroset rice)'', ''(harmony understanding neptune)'', ''(province kentucky)'',
-            ''(pleasure entertainment)'', ''(locale endive kentucky)'', ''(pleasure
-            learning)'', ''(pain jealousy)'', ''(eats haroset hamburger)'', ''(pain
-            hangover)'', ''(planet earth)'', ''(eats haroset marzipan)'', ''(food
-            snickers)'', ''(eats haroset endive)'', ''(pleasure understanding)'',
-            ''(food hamburger)'', ''(eats marzipan turkey)'', ''(food pepper)'', ''(locale
-            marzipan moravia)'', ''(eats turkey papaya)'', ''(craves depression marzipan)'',
-            ''(food flounder)'', ''(eats pepper snickers)'', ''(pleasure empathy)'',
-            ''(province quebec)'', ''(locale pepper moravia)'', ''(attacks kentucky
-            quebec)'', ''(harmony learning neptune)'', ''(craves understanding papaya)'',
-            ''(planet saturn)'', ''(locale papaya kentucky)'', ''(fears boils entertainment)'',
-            ''(craves entertainment haroset)'', ''(eats snickers hamburger)'', ''(locale
-            snickers kentucky)'', ''(locale scallop oregon)'', ''(locale turkey oregon)'',
-            ''(food turkey)'', ''(eats pistachio turkey)'', ''(attacks oregon bavaria)'',
-            ''(pain boils)'', ''(food pistachio)'', ''(orbits venus saturn)'', ''(eats
-            flounder pepper)'', ''(eats turkey pistachio)'', ''(harmony satisfaction
-            saturn)'', ''(orbits earth neptune)'', ''(eats snickers pepper)'', ''(eats
-            hamburger snickers)'', ''(eats hamburger scallop)'', ''(pleasure satisfaction)'',
-            ''(eats rice pistachio)'', ''(eats papaya turkey)'', ''(eats hamburger
-            haroset)'', ''(eats rice scallop)'', ''(craves jealousy snickers)'', ''(eats
-            rice haroset)'', ''(food rice)'', ''(eats pistachio rice)'', ''(pain depression)'',
-            ''(eats scallop rice)'', ''(attacks moravia kentucky)'', ''(food papaya)'',
-            ''(food scallop)'', ''(food haroset)'', ''(orbits neptune venus)'', ''(eats
-            papaya flounder)'', ''(eats marzipan haroset)'', ''(eats marzipan hamburger)'',
-            ''(eats scallop hamburger)'', ''(locale pistachio kentucky)'', ''(province
-            oregon)'', ''(eats pistachio endive)'', ''(food endive)'', ''(eats hamburger
-            marzipan)'', ''(province manitoba)'', ''(craves satisfaction snickers)'',
-            ''(locale flounder quebec)'', ''(province bavaria)'', ''(eats rice endive)'',
-            ''(craves learning marzipan)'', ''(eats endive pistachio)'', ''(attacks
-            manitoba oregon)'', ''(planet neptune)'', ''(eats endive haroset)'', ''(locale
-            hamburger bavaria)'', ''(food marzipan)'', ''(eats pepper flounder)'',
-            ''(locale haroset bavaria)'', ''(eats turkey marzipan)'''
-
-
----
-timestamp: '2025-01-09T12:07:13.080498'
-level: ERROR
-issuer: instance_solver
-event_type: error
-data: "An error occurred during A* search: . Stack trace: Traceback (most recent call\
-    \ last):\n  File \"instance_solver.py\", line 106, in solve_instance\n    searcher.find_path(logger=logger,\
-    \ log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
-    , line 80, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
-    \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
-    , line 192, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
-    \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
-    , line 136, in ground_pddl\n    applicable_actions = parser.encode_ground_actions_as_pddl(actions,\
-    \ 'str')\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
-    , line 615, in encode_ground_actions_as_pddl\n    actions_pddl_format = set(['({}\
-    \ '.format(action_name) + ' '.join(obj_names[var] for var in var_assign) + ')'\
-    \ \\\nMemoryError\n"
-
-
----
-timestamp: '2025-01-09T12:07:15.643654'
-level: INFO
-issuer: instance_solver
-event_type: timer_seconds
-data: '545.08'
-
-
----
-timestamp: '2025-01-09T12:07:22.635518'
-level: INFO
 issuer: batch_solver
-event_type: general
-data: 'Subprocess finished successfully. Duration: 552.53 seconds'
+event_type: error
+data: Subprocess timed out after 900 seconds.
 
 
