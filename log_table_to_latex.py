@@ -1,11 +1,8 @@
 import pandas as pd
 import numpy as np
 
-def process_csv_to_latex(input_file, output_file):
-    # Read the CSV file
-    df = pd.read_csv(input_file)
-    
-    # Start the LaTeX table
+
+def process_csv_to_latex(main_df, summary_df, output_file):
     latex_content = [
         "\\begin{table*}",
         "    \\centering",
@@ -26,12 +23,12 @@ def process_csv_to_latex(input_file, output_file):
     ]
 
     # Get unique lift probabilities and domains (sorted in descending order)
-    lift_probs = sorted(df['lift_prob'].unique(), reverse=True)
+    lift_probs = sorted(main_df['lift_prob'].unique(), reverse=True)
     
     # Process each lift probability
     for i, prob in enumerate(lift_probs):
-        prob_df = df[df['lift_prob'] == prob]
-        domains = sorted(prob_df['domain class'].unique())
+        prob_df = main_df[main_df['lift_prob'] == prob]
+        domains = sorted(main_df['domain class'].unique())
         
         # Process each domain
         for j, domain in enumerate(domains):
@@ -94,6 +91,10 @@ def process_csv_to_latex(input_file, output_file):
 # Example usage
 if __name__ == "__main__":
     folder = '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_csv/'
-    csv_table = folder + 'main_table.csv'
+    main_table = folder + 'main_table.csv'
+    main_df = pd.read_csv(main_table)
+    summary_table = folder + 'main_table.csv'
+    summary_df = pd.read_csv(summary_table)
+
     output = folder + 'main_table.tex'
-    process_csv_to_latex(csv_table, output)
+    process_csv_to_latex(main_df, summary_df, output)
