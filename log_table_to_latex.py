@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-def process_csv_to_latex(main_df, summary_df, alg_order_list, output_file):
+def process_csv_to_latex(main_df, summary_df, alg_order_list, output_file, caption="Search Algorithm Performance Comparison"):
     # Get unique values from dataframes
     grounding_methods = sorted(main_df['grounding method'].unique())
     search_algorithms = alg_order_list
@@ -76,6 +76,12 @@ def process_csv_to_latex(main_df, summary_df, alg_order_list, output_file):
             
             row_str = f"    {prob:.2f} & {domain_with_count}" if j == 0 else f"    \\multicolumn{{1}}{{c}}{{}} & {domain_with_count}"
             
+            # Collect all valid C and Q values for this row
+            c_values = []
+            q_values = []
+            row_data = []
+            
+            # First pass: collect all values
             for g in grounding_methods:
                 for alg_base in search_algorithms:
                     data = domain_df[
@@ -86,13 +92,45 @@ def process_csv_to_latex(main_df, summary_df, alg_order_list, output_file):
                     if len(data) > 0:
                         c_val = data['C_abs'].iloc[0]
                         q_val = data['Q'].iloc[0]
-                        c_str = f"{int(c_val)}" if pd.notna(c_val) else "-"
-                        q_str = str(int(q_val)) if pd.notna(q_val) and q_val.is_integer() else f"{q_val:.2f}".lstrip('0') if pd.notna(q_val) else "-"
+                        if pd.notna(c_val):
+                            c_values.append(c_val)
+                        if pd.notna(q_val):
+                            q_values.append(q_val)
+                    row_data.append((data, g, alg_base))
+            
+            # Find maximum values
+            max_c = max(c_values) if c_values else None
+            max_q = max(q_values) if q_values else None
+            
+            # Second pass: format values
+            for data, g, alg_base in row_data:
+                if len(data) > 0:
+                    c_val = data['C_abs'].iloc[0]
+                    q_val = data['Q'].iloc[0]
+                    
+                    # Format C value
+                    if pd.notna(c_val):
+                        c_str = str(int(c_val))
+                        if max_c is not None and c_val == max_c:
+                            c_str = f"\\textbf{{{c_str}}}"
                     else:
                         c_str = "-"
-                        q_str = "-"
                     
-                    row_str += f" & {c_str} & {q_str}"
+                    # Format Q value
+                    if pd.notna(q_val):
+                        if q_val.is_integer():
+                            q_str = str(int(q_val))
+                        else:
+                            q_str = f"{q_val:.2f}".lstrip('0')
+                        if max_q is not None and abs(q_val - max_q) < 1e-10:  # Using small epsilon for float comparison
+                            q_str = f"\\textbf{{{q_str}}}"
+                    else:
+                        q_str = "-"
+                else:
+                    c_str = "-"
+                    q_str = "-"
+                
+                row_str += f" & {c_str} & {q_str}"
             
             row_str += " \\\\"
             latex_content.append(row_str)
@@ -100,7 +138,7 @@ def process_csv_to_latex(main_df, summary_df, alg_order_list, output_file):
         # Add midrule before summary row
         latex_content.append(f"    \\cmidrule(l){{2-{total_data_cols+2}}}")
         
-        # Add summary row
+        # Add summary row (keeping existing summary row logic)
         summary_row = summary_df[summary_df['lift_prob'] == prob]
         row_str = "    \\multicolumn{1}{c}{} & \\textbf{Total}"
         
@@ -135,28 +173,17 @@ def process_csv_to_latex(main_df, summary_df, alg_order_list, output_file):
         if i < len(lift_probs) - 1:
             latex_content.append("    \\midrule")
     
-    # Add table footer
+    # Add table footer with caption parameter
     latex_content.extend([
         "    \\bottomrule",
         "    \\end{tabular}",
-        "    \\caption{Search Algorithm Performance Comparison. " + 
-        ", ".join([f"{g}: {g_desc}" for g, g_desc in get_grounding_descriptions(grounding_methods).items()]) +
-        ". C and Q mean coverage and quality, respectively.}",
+        f"    \\caption{{{caption}. C and Q mean coverage and quality, respectively.}}",
         "    \\label{tab:search_algorithms}",
         "\\end{table*}"
     ])
     
     with open(output_file, 'w') as f:
         f.write('\n'.join(latex_content))
-
-def get_grounding_descriptions(grounding_methods):
-    """Returns descriptions for grounding methods"""
-    descriptions = {
-        'G1': 'removing absent preconditions',
-        'G2': 'removing negative preconditions and delete-relaxation',
-        'G3': 'all groundings'
-    }
-    return {g: descriptions.get(g, g) for g in grounding_methods}
 
 # Example usage
 if __name__ == "__main__":
