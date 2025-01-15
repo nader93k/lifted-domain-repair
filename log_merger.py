@@ -20,8 +20,8 @@ groundings = dict([
 rename = dict([
     ('bfs', 'UCS'),
     ('dfs', 'DFS'),
-    ('astar-unary-ff', 'A*_HADD_UNARY_FF'),
-    ('gbfs-unary-ff', 'GBFS_HADD_UNARY_FF'),
+    ('astar-unary-ff', 'A*_FF'),
+    ('gbfs-unary-ff', 'GBFS_FF'),
 ])
 
 # folder, prob, grounding, rename

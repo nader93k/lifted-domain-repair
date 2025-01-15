@@ -29,10 +29,12 @@ domain_shortcuts = {
 }
 
 
-def main_table(input_file):
+def main_table(input_file, order_list):
+    
     # Read the CSV file - first let's preserve NA values
     df = pd.read_csv(input_file, na_values=['', 'NA', 'null', 'NULL'])
-
+    
+    # Apply both renamings at the start
     df['domain class'] = df['domain class'].map(domain_shortcuts)
     
     # Filter based on error_group criteria - modified to properly handle NA
@@ -42,7 +44,6 @@ def main_table(input_file):
     # Calculate metrics
     def calculate_metrics(group):
         # Calculate C metric (completion rate)
-        # total_rows = len(group[group['vanilla repair length'] >= 0])
         total_rows = len(group)
         successful_rows = len(group[group['goal reached'].astype(str).str.upper().str.strip() == 'TRUE'])
         completion_rate = (successful_rows / total_rows) if total_rows > 0 else None
@@ -85,7 +86,12 @@ def main_table(input_file):
     cols = [*grouping_cols, 'instance_count', 'C_rate', 'C_abs', 'Q', 'max_h']
     result_df = result_df[cols]
     
-    # Sort the dataframe
+    result_df['search algorithm'] = pd.Categorical(
+        result_df['search algorithm'],
+        categories=order_list,
+        ordered=True
+    )
+
     result_df = result_df.sort_values(grouping_cols)
     return result_df
 
@@ -112,7 +118,9 @@ if __name__ == "__main__":
     output_main = folder + 'main_table.csv'
     output_summary = folder + 'summary_table.csv'
 
-    main_df = main_table(input_file)
+    order_list = ['UCS', 'A*_FF', 'GBFS_FF', 'DFS']
+
+    main_df = main_table(input_file, order_list)
     main_df.to_csv(output_main, index=False)
     print("\nFirst few rows of the main_df:")
     print(main_df.head())

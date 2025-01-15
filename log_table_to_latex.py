@@ -1,43 +1,83 @@
 import pandas as pd
 import numpy as np
 
-
-def process_csv_to_latex(main_df, summary_df, output_file):
+def process_csv_to_latex(main_df, summary_df, alg_order_list, output_file):
+    # Get unique values from dataframes
+    grounding_methods = sorted(main_df['grounding method'].unique())
+    search_algorithms = alg_order_list
+    
+    # Calculate number of columns needed
+    num_metric_cols = 2  # C and Q
+    num_alg_cols = len(search_algorithms)
+    num_g_cols = len(grounding_methods)
+    total_data_cols = num_metric_cols * num_alg_cols * num_g_cols
+    
+    # Create column specification
+    col_spec = "cc" + "c" * total_data_cols
+    
     latex_content = [
         "\\begin{table*}",
         "    \\centering",
-        "    \\begin{tabular}{cccccccccccccccccccccccccc}",
+        f"    \\begin{{tabular}}{{{col_spec}}}",
         "    \\toprule",
         "    \\multirow{4}{*}{\\rotatebox[origin=c]{90}{L. Prob.}} & ",
-        "    \\multirow{4}{*}{\\rotatebox[origin=c]{90}{Domain}} & ",
-        "    \\multicolumn{8}{c}{G1} & \\multicolumn{8}{c}{G2} & \\multicolumn{8}{c}{G3} \\\\",
-        "    \\cmidrule(lr){3-10} \\cmidrule(lr){11-18} \\cmidrule(lr){19-26}",
-        "    & & \\multicolumn{2}{c}{UCS} & \\multicolumn{2}{c}{DFS} & \\multicolumn{2}{c}{A*} & \\multicolumn{2}{c}{GBFS} & ",
-        "    \\multicolumn{2}{c}{UCS} & \\multicolumn{2}{c}{DFS} & \\multicolumn{2}{c}{A*} & \\multicolumn{2}{c}{GBFS} & ",
-        "    \\multicolumn{2}{c}{UCS} & \\multicolumn{2}{c}{DFS} & \\multicolumn{2}{c}{A*} & \\multicolumn{2}{c}{GBFS} \\\\",
-        "    \\cmidrule(lr){3-4} \\cmidrule(lr){5-6} \\cmidrule(lr){7-8} \\cmidrule(lr){9-10}",
-        "    \\cmidrule(lr){11-12} \\cmidrule(lr){13-14} \\cmidrule(lr){15-16} \\cmidrule(lr){17-18}",
-        "    \\cmidrule(lr){19-20} \\cmidrule(lr){21-22} \\cmidrule(lr){23-24} \\cmidrule(lr){25-26}",
-        "    & & C & Q & C & Q & C & Q & C & Q & C & Q & C & Q & C & Q & C & Q & C & Q & C & Q & C & Q & C & Q \\\\",
-        "    \\midrule"
+        "    \\multirow{4}{*}{\\rotatebox[origin=c]{90}{Domain}} & "
     ]
-
+    
+    # Add grounding method headers
+    g_method_header = []
+    for g in grounding_methods:
+        cols = num_metric_cols * num_alg_cols
+        g_method_header.append(f"\\multicolumn{{{cols}}}{{c}}{{{g}}}")
+    latex_content.append("    " + " & ".join(g_method_header) + " \\\\")
+    
+    # Add cmidrule separators for grounding methods
+    cmidrules = []
+    start_col = 3  # First two columns are L. Prob and Domain
+    for _ in grounding_methods:
+        end_col = start_col + (num_metric_cols * num_alg_cols) - 1
+        cmidrules.append(f"\\cmidrule(lr){{{start_col}-{end_col}}}")
+        start_col = end_col + 1
+    latex_content.append("    " + " ".join(cmidrules))
+    
+    # Add algorithm headers
+    alg_header = []
+    for g in grounding_methods:
+        for alg in search_algorithms:
+            # Strip any suffixes for display (e.g., "_HADD_UNARY_FF")
+            display_name = alg.split('_')[0]
+            alg_header.append(f"\\multicolumn{{2}}{{c}}{{{display_name}}}")
+    latex_content.append("    & & " + " & ".join(alg_header) + " \\\\")
+    
+    # Add cmidrules for algorithms
+    cmidrules = []
+    col = 3
+    for _ in range(len(grounding_methods) * len(search_algorithms)):
+        cmidrules.append(f"\\cmidrule(lr){{{col}-{col+1}}}")
+        col += 2
+    latex_content.append("    " + " ".join(cmidrules))
+    
+    # Add C/Q headers
+    metrics_header = ["C & Q"] * (len(grounding_methods) * len(search_algorithms))
+    latex_content.append("    & & " + " & ".join(metrics_header) + " \\\\")
+    latex_content.append("    \\midrule")
+    
+    # Process data rows
     lift_probs = sorted(main_df['lift_prob'].unique(), reverse=True)
+    domains = sorted(main_df['domain class'].unique())
     
     for i, prob in enumerate(lift_probs):
         prob_df = main_df[main_df['lift_prob'] == prob]
-        domains = sorted(main_df['domain class'].unique())
         
-        # Process domains as before
         for j, domain in enumerate(domains):
             domain_df = prob_df[prob_df['domain class'] == domain]
-            instance_count = domain_df['instance_count'].iloc[0]
+            instance_count = domain_df['instance_count'].iloc[0] if len(domain_df) > 0 else 0
             domain_with_count = f"{domain} ({int(instance_count)})"
             
             row_str = f"    {prob:.2f} & {domain_with_count}" if j == 0 else f"    \\multicolumn{{1}}{{c}}{{}} & {domain_with_count}"
             
-            for g in ['G1', 'G2', 'G3']:
-                for alg_base in ['UCS', 'DFS', 'A*_HADD_UNARY_FF', 'GBFS_HADD_UNARY_FF']:
+            for g in grounding_methods:
+                for alg_base in search_algorithms:
                     data = domain_df[
                         (domain_df['grounding method'] == g) & 
                         (domain_df['search algorithm'] == alg_base)
@@ -57,12 +97,15 @@ def process_csv_to_latex(main_df, summary_df, output_file):
             row_str += " \\\\"
             latex_content.append(row_str)
         
-        # Add summary row after all domains for this lift probability
+        # Add midrule before summary row
+        latex_content.append(f"    \\cmidrule(l){{2-{total_data_cols+2}}}")
+        
+        # Add summary row
         summary_row = summary_df[summary_df['lift_prob'] == prob]
         row_str = "    \\multicolumn{1}{c}{} & \\textbf{Total}"
         
-        for g in ['G1', 'G2', 'G3']:
-            for alg_base in ['UCS', 'DFS', 'A*_HADD_UNARY_FF', 'GBFS_HADD_UNARY_FF']:
+        for g in grounding_methods:
+            for alg_base in search_algorithms:
                 data = summary_row[
                     (summary_row['grounding method'] == g) & 
                     (summary_row['search algorithm'] == alg_base)
@@ -83,17 +126,29 @@ def process_csv_to_latex(main_df, summary_df, output_file):
         
         if i < len(lift_probs) - 1:
             latex_content.append("    \\midrule")
-
+    
+    # Add table footer
     latex_content.extend([
         "    \\bottomrule",
         "    \\end{tabular}",
-        "    \\caption{Search Algorithm Performance Comparison. G1: removing absent preconditions, G2: removing negative preconditions and delete-relaxation, G3: all groundings. C and Q mean coverage and quality, respectively.}",
+        "    \\caption{Search Algorithm Performance Comparison. " + 
+        ", ".join([f"{g}: {g_desc}" for g, g_desc in get_grounding_descriptions(grounding_methods).items()]) +
+        ". C and Q mean coverage and quality, respectively.}",
         "    \\label{tab:search_algorithms}",
         "\\end{table*}"
     ])
-
+    
     with open(output_file, 'w') as f:
         f.write('\n'.join(latex_content))
+
+def get_grounding_descriptions(grounding_methods):
+    """Returns descriptions for grounding methods"""
+    descriptions = {
+        'G1': 'removing absent preconditions',
+        'G2': 'removing negative preconditions and delete-relaxation',
+        'G3': 'all groundings'
+    }
+    return {g: descriptions.get(g, g) for g in grounding_methods}
 
 # Example usage
 if __name__ == "__main__":
@@ -104,4 +159,5 @@ if __name__ == "__main__":
     summary_df = pd.read_csv(summary_table)
 
     output = folder + 'main_table.tex'
-    process_csv_to_latex(main_df, summary_df, output)
+    alg_order_list = ['UCS', 'A*_FF', 'GBFS_FF', 'DFS']
+    process_csv_to_latex(main_df, summary_df, alg_order_list, output)
