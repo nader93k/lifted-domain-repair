@@ -57,7 +57,7 @@ def main_table(input_file, order_list):
                 (valid_rows['search g cost'] <= valid_rows['vanilla repair length']) & 
                 (valid_rows['search g cost'] >= 0)
             ])
-            q_metric = (equal_and_positive / len(valid_rows) * 100)
+            q_metric = (equal_and_positive / len(valid_rows))
         else:
             q_metric = None
             

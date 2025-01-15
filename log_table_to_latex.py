@@ -87,7 +87,7 @@ def process_csv_to_latex(main_df, summary_df, alg_order_list, output_file):
                         c_val = data['C_abs'].iloc[0]
                         q_val = data['Q'].iloc[0]
                         c_str = f"{int(c_val)}" if pd.notna(c_val) else "-"
-                        q_str = f"{q_val:.1f}" if pd.notna(q_val) else "-"
+                        q_str = str(int(q_val)) if pd.notna(q_val) and q_val.is_integer() else f"{q_val:.2f}".lstrip('0') if pd.notna(q_val) else "-"
                     else:
                         c_str = "-"
                         q_str = "-"
@@ -114,7 +114,15 @@ def process_csv_to_latex(main_df, summary_df, alg_order_list, output_file):
                     c_val = data['C_abs'].iloc[0]
                     q_val = data['Q'].iloc[0]
                     c_str = f"\\textbf{{{int(c_val)}}}" if pd.notna(c_val) else "-"
-                    q_str = f"\\textbf{{{q_val:.1f}}}" if pd.notna(q_val) else "-"
+                    if pd.notna(q_val):
+                        if q_val.is_integer():
+                            formatted_num = str(int(q_val))
+                        else:
+                            formatted_num = f"{q_val:.2f}".lstrip('0')
+                        
+                        q_str = f"\\textbf{{{formatted_num}}}"
+                    else:
+                        q_str = "\\textbf{-}"
                 else:
                     c_str = "-"
                     q_str = "-"

@@ -13,9 +13,9 @@ algorithms = ['bfs', 'dfs', 'astar-unary-ff', 'gbfs-unary-ff']
 relaxations = ['relax-prec', 'relax-prec-delete', 'relax-all']
 lp_pairs = [('033', 0.33), ('066', 0.66), ('1', 1.0)]
 groundings = dict([
-    ('relax-prec', 'G1'),
-    ('relax-prec-delete', 'G2'),
-    ('relax-all', 'G3'),
+    ('relax-prec', 'SG1'),
+    ('relax-prec-delete', 'SG2'),
+    ('relax-all', 'SG3'),
 ])
 rename = dict([
     ('bfs', 'UCS'),
