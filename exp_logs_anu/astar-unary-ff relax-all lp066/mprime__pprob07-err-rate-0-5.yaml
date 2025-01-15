@@ -1,5 +1,5 @@
 ---
-timestamp: '2025-01-14T19:51:44.220888'
+timestamp: '2025-01-15T16:33:17.046750'
 level: INFO
 issuer: instance_solver
 event_type: metadata
@@ -53,7 +53,7 @@ data:
 
 
 ---
-timestamp: '2025-01-14T19:51:44.224843'
+timestamp: '2025-01-15T16:33:17.524177'
 level: INFO
 issuer: instance_solver
 event_type: ground_repair
@@ -63,58 +63,42 @@ data:
 
 
 ---
-timestamp: '2025-01-14T19:51:50.654730'
+timestamp: '2025-01-15T16:34:46.826222'
 level: ERROR
-issuer: node
+issuer: batch_solver
 event_type: error
 data:
-    current_node:
-        depth: 0
-        ground_actions: []
-        repair_set: null
-        g_cost: 0
-        h_cost: 0
-        f_cost: 0
-        next_lifted_action: '[''drink'', ''shrimp'', ''snickers'', ''?moravia'', ''?manitoba'',
-            ''?arizona'', ''?arizona'', ''manitoba'']'
-        num_neighbours: 0
-        first_10_possible_groundings: null
-        current_state: not implemented!
-
-
----
-timestamp: '2025-01-14T19:51:50.656828'
-level: ERROR
-issuer: instance_solver
-event_type: error
-data: "An error occurred during A* search: . Stack trace: Traceback (most recent call\
-    \ last):\n  File \"instance_solver.py\", line 106, in solve_instance\n    searcher.find_path(logger=logger,\
-    \ log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
-    , line 78, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
-    \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
-    , line 196, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
-    \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
-    , line 135, in ground_pddl\n    actions = parser.get_applicable_actions()\n  File\
-    \ \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
-    , line 485, in get_applicable_actions\n    full_var_assigns = self._get_applicable_var_assigns_action(action,\
-    \ [[-1]*len(action_vars)])\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
-    , line 433, in _get_applicable_var_assigns_action\n    full_var_assigns.extend(new_var_assigns)\n\
-    MemoryError\n"
-
-
----
-timestamp: '2025-01-14T19:51:52.668514'
-level: INFO
-issuer: instance_solver
-event_type: timer_seconds
-data: '9.62'
-
-
----
-timestamp: '2025-01-14T19:51:52.746033'
-level: INFO
-issuer: batch_solver
-event_type: general
-data: 'Subprocess finished successfully. Duration: 10.09 seconds'
+    error_type: MemoryError
+    error_message: 'Command ''[''/home/projects/u7899572/conda-envs/main/bin/python3'',
+        ''instance_solver.py'', ''astar'', ''/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1'',
+        ''/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary-ff
+        relax-all lp066/mprime__pprob07-err-rate-0-5.yaml'', ''1000000'', ''mprime__pprob07-err-rate-0-5'',
+        ''0.66'', ''unary'']'' died with <Signals.SIGKILL: 9>.'
+    stack_trace: "Traceback (most recent call last):\n  File \"batch_solver.py\",\
+        \ line 126, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
+        \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/subprocess.py\"\
+        , line 516, in run\n    raise CalledProcessError(retcode, process.args,\n\
+        subprocess.CalledProcessError: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',\
+        \ 'instance_solver.py', 'astar', '/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1',\
+        \ '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary-ff\
+        \ relax-all lp066/mprime__pprob07-err-rate-0-5.yaml', '1000000', 'mprime__pprob07-err-rate-0-5',\
+        \ '0.66', 'unary']' died with <Signals.SIGKILL: 9>.\n"
+    instance_id: mprime__pprob07-err-rate-0-5
+    process_info:
+        cmd:
+        - /home/projects/u7899572/conda-envs/main/bin/python3
+        - instance_solver.py
+        - astar
+        - /home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1
+        - /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary-ff
+            relax-all lp066/mprime__pprob07-err-rate-0-5.yaml
+        - '1000000'
+        - mprime__pprob07-err-rate-0-5
+        - '0.66'
+        - unary
+        duration: '226.65'
+        python_executable: /home/projects/u7899572/conda-envs/main/bin/python3
+    stdout: ''
+    stderr: ''
 
 

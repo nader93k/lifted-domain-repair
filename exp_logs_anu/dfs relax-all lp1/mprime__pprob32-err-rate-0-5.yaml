@@ -1,5 +1,5 @@
 ---
-timestamp: '2025-01-13T13:15:42.000696'
+timestamp: '2025-01-15T20:28:00.461252'
 level: INFO
 issuer: instance_solver
 event_type: metadata
@@ -72,7 +72,7 @@ data:
 
 
 ---
-timestamp: '2025-01-13T13:15:42.004963'
+timestamp: '2025-01-15T20:28:02.323193'
 level: INFO
 issuer: instance_solver
 event_type: ground_repair
@@ -82,55 +82,42 @@ data:
 
 
 ---
-timestamp: '2025-01-13T13:17:14.241354'
+timestamp: '2025-01-15T20:34:52.119694'
 level: ERROR
-issuer: node
+issuer: batch_solver
 event_type: error
 data:
-    current_node:
-        depth: 0
-        ground_actions: []
-        repair_set: null
-        g_cost: 0
-        h_cost: 0
-        f_cost: 0
-        next_lifted_action: '[''feast'', ''?satiety'', ''?pepper'', ''?pork'', ''?alsace'',
-            ''?goias'']'
-        num_neighbours: 0
-        first_10_possible_groundings: null
-        current_state: not implemented!
-
-
----
-timestamp: '2025-01-13T13:17:14.243187'
-level: ERROR
-issuer: instance_solver
-event_type: error
-data: "An error occurred during A* search: . Stack trace: Traceback (most recent call\
-    \ last):\n  File \"instance_solver.py\", line 106, in solve_instance\n    searcher.find_path(logger=logger,\
-    \ log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
-    , line 140, in find_path\n    neighbors = sorted(current_node.get_neighbors(),\
-    \ key=lambda x: x.g_cost, reverse=True)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
-    , line 202, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
-    \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
-    , line 138, in ground_pddl\n    filtered = filter_actions(lifted_action, applicable_actions)\n\
-    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
-    , line 89, in filter_actions\n    filtered_actions.add(action)\nMemoryError\n"
-
-
----
-timestamp: '2025-01-13T13:17:19.752685'
-level: INFO
-issuer: instance_solver
-event_type: timer_seconds
-data: '99.84'
-
-
----
-timestamp: '2025-01-13T13:17:19.794421'
-level: INFO
-issuer: batch_solver
-event_type: general
-data: 'Subprocess finished successfully. Duration: 100.17 seconds'
+    error_type: MemoryError
+    error_message: 'Command ''[''/home/projects/u7899572/conda-envs/main/bin/python3'',
+        ''instance_solver.py'', ''dfs'', ''/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1'',
+        ''/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs relax-all
+        lp1/mprime__pprob32-err-rate-0-5.yaml'', ''1000000'', ''mprime__pprob32-err-rate-0-5'',
+        ''1.0'', ''unary'']'' died with <Signals.SIGKILL: 9>.'
+    stack_trace: "Traceback (most recent call last):\n  File \"batch_solver.py\",\
+        \ line 126, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
+        \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/subprocess.py\"\
+        , line 516, in run\n    raise CalledProcessError(retcode, process.args,\n\
+        subprocess.CalledProcessError: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',\
+        \ 'instance_solver.py', 'dfs', '/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1',\
+        \ '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs\
+        \ relax-all lp1/mprime__pprob32-err-rate-0-5.yaml', '1000000', 'mprime__pprob32-err-rate-0-5',\
+        \ '1.0', 'unary']' died with <Signals.SIGKILL: 9>.\n"
+    instance_id: mprime__pprob32-err-rate-0-5
+    process_info:
+        cmd:
+        - /home/projects/u7899572/conda-envs/main/bin/python3
+        - instance_solver.py
+        - dfs
+        - /home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1
+        - /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs relax-all
+            lp1/mprime__pprob32-err-rate-0-5.yaml
+        - '1000000'
+        - mprime__pprob32-err-rate-0-5
+        - '1.0'
+        - unary
+        duration: '656.60'
+        python_executable: /home/projects/u7899572/conda-envs/main/bin/python3
+    stdout: ''
+    stderr: ''
 
 

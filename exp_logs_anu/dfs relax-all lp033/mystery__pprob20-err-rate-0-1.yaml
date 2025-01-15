@@ -1,5 +1,5 @@
 ---
-timestamp: '2025-01-13T16:27:38.169600'
+timestamp: '2025-01-15T22:11:58.905584'
 level: INFO
 issuer: instance_solver
 event_type: metadata
@@ -72,7 +72,7 @@ data:
 
 
 ---
-timestamp: '2025-01-13T16:27:38.174419'
+timestamp: '2025-01-15T22:11:59.588713'
 level: INFO
 issuer: instance_solver
 event_type: ground_repair
@@ -82,17 +82,17 @@ data:
 
 
 ---
-timestamp: '2025-01-13T16:27:50.769697'
+timestamp: '2025-01-15T22:18:10.086274'
 level: ERROR
 issuer: batch_solver
 event_type: error
 data:
     error_type: MemoryError
-    error_message: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',
-        'instance_solver.py', 'dfs', '/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1',
-        '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs relax-all
-        lp033/mystery__pprob20-err-rate-0-1.yaml', '1000000', 'mystery__pprob20-err-rate-0-1',
-        '0.33', 'unary']' returned non-zero exit status 1.
+    error_message: 'Command ''[''/home/projects/u7899572/conda-envs/main/bin/python3'',
+        ''instance_solver.py'', ''dfs'', ''/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1'',
+        ''/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs relax-all
+        lp033/mystery__pprob20-err-rate-0-1.yaml'', ''1000000'', ''mystery__pprob20-err-rate-0-1'',
+        ''0.33'', ''unary'']'' died with <Signals.SIGKILL: 9>.'
     stack_trace: "Traceback (most recent call last):\n  File \"batch_solver.py\",\
         \ line 126, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
         \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/subprocess.py\"\
@@ -101,7 +101,7 @@ data:
         \ 'instance_solver.py', 'dfs', '/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1',\
         \ '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs\
         \ relax-all lp033/mystery__pprob20-err-rate-0-1.yaml', '1000000', 'mystery__pprob20-err-rate-0-1',\
-        \ '0.33', 'unary']' returned non-zero exit status 1.\n"
+        \ '0.33', 'unary']' died with <Signals.SIGKILL: 9>.\n"
     instance_id: mystery__pprob20-err-rate-0-1
     process_info:
         cmd:
@@ -115,39 +115,9 @@ data:
         - mystery__pprob20-err-rate-0-1
         - '0.33'
         - unary
-        duration: '14.18'
+        duration: '650.29'
         python_executable: /home/projects/u7899572/conda-envs/main/bin/python3
-    stdout: '[Errno 12] Cannot allocate memory: ''/dev/shm/pddl_files/tmpdg_epuqo''
-
-        '
-    stderr: "Traceback (most recent call last):\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
-        , line 135, in ground_pddl\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
-        , line 485, in get_applicable_actions\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
-        , line 433, in _get_applicable_var_assigns_action\nMemoryError\n\nDuring handling\
-        \ of the above exception, another exception occurred:\n\nTraceback (most recent\
-        \ call last):\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
-        , line 202, in get_neighbors\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
-        , line 140, in ground_pddl\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/tempfile.py\"\
-        , line 836, in __exit__\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/tempfile.py\"\
-        , line 840, in cleanup\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/tempfile.py\"\
-        , line 822, in _rmtree\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/shutil.py\"\
-        , line 718, in rmtree\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/shutil.py\"\
-        , line 631, in _rmtree_safe_fd\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/shutil.py\"\
-        , line 627, in _rmtree_safe_fd\nOSError: [Errno 12] Cannot allocate memory:\
-        \ '/dev/shm/pddl_files/tmpdg_epuqo'\n\nDuring handling of the above exception,\
-        \ another exception occurred:\n\nTraceback (most recent call last):\n  File\
-        \ \"instance_solver.py\", line 106, in solve_instance\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
-        , line 140, in find_path\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
-        , line 208, in get_neighbors\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
-        , line 241, in to_dict\nMemoryError\n\nDuring handling of the above exception,\
-        \ another exception occurred:\n\nTraceback (most recent call last):\n  File\
-        \ \"instance_solver.py\", line 138, in <module>\n  File \"instance_solver.py\"\
-        , line 108, in solve_instance\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/traceback.py\"\
-        , line 167, in format_exc\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/traceback.py\"\
-        , line 120, in format_exception\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/traceback.py\"\
-        , line 493, in __init__\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/traceback.py\"\
-        , line 493, in __init__\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/traceback.py\"\
-        , line 508, in __init__\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/traceback.py\"\
-        , line 336, in extract\nMemoryError\n"
+    stdout: ''
+    stderr: ''
 
 

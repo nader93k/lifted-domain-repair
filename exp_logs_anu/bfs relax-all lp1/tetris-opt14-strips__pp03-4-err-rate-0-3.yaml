@@ -1,5 +1,5 @@
 ---
-timestamp: '2025-01-14T21:14:29.349979'
+timestamp: '2025-01-15T17:22:51.023746'
 level: INFO
 issuer: instance_solver
 event_type: metadata
@@ -69,7 +69,7 @@ data:
 
 
 ---
-timestamp: '2025-01-14T21:14:29.354601'
+timestamp: '2025-01-15T17:22:51.191700'
 level: INFO
 issuer: instance_solver
 event_type: ground_repair
@@ -79,45 +79,10 @@ data:
 
 
 ---
-timestamp: '2025-01-14T21:24:29.424009'
+timestamp: '2025-01-15T17:35:01.373419'
 level: ERROR
 issuer: batch_solver
 event_type: error
-data:
-    error_type: MemoryError
-    error_message: 'Command ''[''/home/projects/u7899572/conda-envs/main/bin/python3'',
-        ''instance_solver.py'', ''bfs'', ''/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1'',
-        ''/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs relax-all
-        lp1/tetris-opt14-strips__pp03-4-err-rate-0-3.yaml'', ''1000000'', ''tetris-opt14-strips__pp03-4-err-rate-0-3'',
-        ''1.0'', ''unary'']'' died with <Signals.SIGABRT: 6>.'
-    stack_trace: "Traceback (most recent call last):\n  File \"batch_solver.py\",\
-        \ line 126, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
-        \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/subprocess.py\"\
-        , line 516, in run\n    raise CalledProcessError(retcode, process.args,\n\
-        subprocess.CalledProcessError: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',\
-        \ 'instance_solver.py', 'bfs', '/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1',\
-        \ '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs\
-        \ relax-all lp1/tetris-opt14-strips__pp03-4-err-rate-0-3.yaml', '1000000',\
-        \ 'tetris-opt14-strips__pp03-4-err-rate-0-3', '1.0', 'unary']' died with <Signals.SIGABRT:\
-        \ 6>.\n"
-    instance_id: tetris-opt14-strips__pp03-4-err-rate-0-3
-    process_info:
-        cmd:
-        - /home/projects/u7899572/conda-envs/main/bin/python3
-        - instance_solver.py
-        - bfs
-        - /home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1
-        - /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs relax-all
-            lp1/tetris-opt14-strips__pp03-4-err-rate-0-3.yaml
-        - '1000000'
-        - tetris-opt14-strips__pp03-4-err-rate-0-3
-        - '1.0'
-        - unary
-        duration: '602.33'
-        python_executable: /home/projects/u7899572/conda-envs/main/bin/python3
-    stdout: ''
-    stderr: 'terminate called after throwing an instance of ''Minisat22::OutOfMemoryException''
-
-        '
+data: Subprocess timed out after 900 seconds.
 
 

@@ -1,5 +1,5 @@
 ---
-timestamp: '2025-01-13T16:36:36.736670'
+timestamp: '2025-01-15T22:25:46.708526'
 level: INFO
 issuer: instance_solver
 event_type: metadata
@@ -133,70 +133,55 @@ data:
 
 
 ---
-timestamp: '2025-01-13T16:36:36.745727'
+timestamp: '2025-01-15T22:25:48.197065'
 level: INFO
 issuer: instance_solver
 event_type: ground_repair
 data:
     repair_length: 2
-    repair: 'homefromfreecell,(cellspace ?cells),precPos,-1
+    repair: 'sendtohome-b,(home ?card),effPos,1
 
-        sendtohome-b,(home ?card),effPos,1'
+        sendtofree,(cellspace ?ncells),effPos,1'
 
 
 ---
-timestamp: '2025-01-13T16:36:43.397526'
+timestamp: '2025-01-15T22:29:58.182006'
 level: ERROR
-issuer: node
+issuer: batch_solver
 event_type: error
 data:
-    current_node:
-        depth: 0
-        ground_actions: []
-        repair_set: null
-        g_cost: 0
-        h_cost: 0
-        f_cost: 0
-        next_lifted_action: '[''sendtohome'', ''ca'', ''d3'', ''c'', ''?n1'', ''c0'',
-            ''n0'']'
-        num_neighbours: 0
-        first_10_possible_groundings: null
-        current_state: not implemented!
-
-
----
-timestamp: '2025-01-13T16:36:43.400505'
-level: ERROR
-issuer: instance_solver
-event_type: error
-data: "An error occurred during A* search: . Stack trace: Traceback (most recent call\
-    \ last):\n  File \"instance_solver.py\", line 106, in solve_instance\n    searcher.find_path(logger=logger,\
-    \ log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
-    , line 140, in find_path\n    neighbors = sorted(current_node.get_neighbors(),\
-    \ key=lambda x: x.g_cost, reverse=True)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
-    , line 202, in get_neighbors\n    self.possible_groundings = Node.grounder(domain,\
-    \ task, next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
-    , line 135, in ground_pddl\n    actions = parser.get_applicable_actions()\n  File\
-    \ \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
-    , line 485, in get_applicable_actions\n    full_var_assigns = self._get_applicable_var_assigns_action(action,\
-    \ [[-1]*len(action_vars)])\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
-    , line 433, in _get_applicable_var_assigns_action\n    full_var_assigns.extend(new_var_assigns)\n\
-    MemoryError\n"
-
-
----
-timestamp: '2025-01-13T16:36:45.918625'
-level: INFO
-issuer: instance_solver
-event_type: timer_seconds
-data: '10.44'
-
-
----
-timestamp: '2025-01-13T16:36:45.958651'
-level: INFO
-issuer: batch_solver
-event_type: general
-data: 'Subprocess finished successfully. Duration: 10.75 seconds'
+    error_type: MemoryError
+    error_message: 'Command ''[''/home/projects/u7899572/conda-envs/main/bin/python3'',
+        ''instance_solver.py'', ''dfs'', ''/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1'',
+        ''/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs relax-all
+        lp033/freecell__pprobfreecell-3-5-err-rate-0-5.yaml'', ''1000000'', ''freecell__pprobfreecell-3-5-err-rate-0-5'',
+        ''0.33'', ''unary'']'' died with <Signals.SIGKILL: 9>.'
+    stack_trace: "Traceback (most recent call last):\n  File \"batch_solver.py\",\
+        \ line 126, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
+        \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/subprocess.py\"\
+        , line 516, in run\n    raise CalledProcessError(retcode, process.args,\n\
+        subprocess.CalledProcessError: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',\
+        \ 'instance_solver.py', 'dfs', '/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1',\
+        \ '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs\
+        \ relax-all lp033/freecell__pprobfreecell-3-5-err-rate-0-5.yaml', '1000000',\
+        \ 'freecell__pprobfreecell-3-5-err-rate-0-5', '0.33', 'unary']' died with\
+        \ <Signals.SIGKILL: 9>.\n"
+    instance_id: freecell__pprobfreecell-3-5-err-rate-0-5
+    process_info:
+        cmd:
+        - /home/projects/u7899572/conda-envs/main/bin/python3
+        - instance_solver.py
+        - dfs
+        - /home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1
+        - /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs relax-all
+            lp033/freecell__pprobfreecell-3-5-err-rate-0-5.yaml
+        - '1000000'
+        - freecell__pprobfreecell-3-5-err-rate-0-5
+        - '0.33'
+        - unary
+        duration: '557.97'
+        python_executable: /home/projects/u7899572/conda-envs/main/bin/python3
+    stdout: ''
+    stderr: ''
 
 

@@ -350,7 +350,7 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval,
                 f.flush()
                 os.fsync(f.fileno())  # Ensure the file is written to disk
             
-            print(f"Updated checkpoint file with {len(completed)} completed instances", flush=True)
+            print(f"Updated checkpoint file with {len(completed)} completed instances and added ({instance_id})", flush=True)
             
         else:
             # Update error checkpoint file

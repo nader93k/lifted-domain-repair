@@ -1,5 +1,5 @@
 ---
-timestamp: '2025-01-14T22:04:59.355979'
+timestamp: '2025-01-15T17:48:55.601527'
 level: INFO
 issuer: instance_solver
 event_type: metadata
@@ -44,7 +44,7 @@ data:
 
 
 ---
-timestamp: '2025-01-14T22:04:59.359634'
+timestamp: '2025-01-15T17:48:56.151873'
 level: INFO
 issuer: instance_solver
 event_type: ground_repair
@@ -54,17 +54,17 @@ data:
 
 
 ---
-timestamp: '2025-01-14T22:05:11.480118'
+timestamp: '2025-01-15T17:49:51.772399'
 level: ERROR
 issuer: batch_solver
 event_type: error
 data:
     error_type: MemoryError
-    error_message: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',
-        'instance_solver.py', 'bfs', '/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1',
-        '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs relax-all
-        lp066/mprime__pprob34-err-rate-0-3.yaml', '1000000', 'mprime__pprob34-err-rate-0-3',
-        '0.66', 'unary']' returned non-zero exit status 1.
+    error_message: 'Command ''[''/home/projects/u7899572/conda-envs/main/bin/python3'',
+        ''instance_solver.py'', ''bfs'', ''/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1'',
+        ''/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs relax-all
+        lp066/mprime__pprob34-err-rate-0-3.yaml'', ''1000000'', ''mprime__pprob34-err-rate-0-3'',
+        ''0.66'', ''unary'']'' died with <Signals.SIGKILL: 9>.'
     stack_trace: "Traceback (most recent call last):\n  File \"batch_solver.py\",\
         \ line 126, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
         \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/subprocess.py\"\
@@ -73,7 +73,7 @@ data:
         \ 'instance_solver.py', 'bfs', '/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1',\
         \ '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs\
         \ relax-all lp066/mprime__pprob34-err-rate-0-3.yaml', '1000000', 'mprime__pprob34-err-rate-0-3',\
-        \ '0.66', 'unary']' returned non-zero exit status 1.\n"
+        \ '0.66', 'unary']' died with <Signals.SIGKILL: 9>.\n"
     instance_id: mprime__pprob34-err-rate-0-3
     process_info:
         cmd:
@@ -87,44 +87,9 @@ data:
         - mprime__pprob34-err-rate-0-3
         - '0.66'
         - unary
-        duration: '13.63'
+        duration: '189.83'
         python_executable: /home/projects/u7899572/conda-envs/main/bin/python3
-    stdout: '[Errno 12] Cannot allocate memory: ''/dev/shm/pddl_files/tmpk8sn6spg''
-
-        '
-    stderr: "Traceback (most recent call last):\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
-        , line 135, in ground_pddl\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
-        , line 485, in get_applicable_actions\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
-        , line 433, in _get_applicable_var_assigns_action\nMemoryError\n\nDuring handling\
-        \ of the above exception, another exception occurred:\n\nTraceback (most recent\
-        \ call last):\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
-        , line 196, in get_neighbors\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
-        , line 140, in ground_pddl\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/tempfile.py\"\
-        , line 836, in __exit__\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/tempfile.py\"\
-        , line 840, in cleanup\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/tempfile.py\"\
-        , line 822, in _rmtree\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/shutil.py\"\
-        , line 718, in rmtree\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/shutil.py\"\
-        , line 631, in _rmtree_safe_fd\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/shutil.py\"\
-        , line 627, in _rmtree_safe_fd\nOSError: [Errno 12] Cannot allocate memory:\
-        \ '/dev/shm/pddl_files/tmpk8sn6spg'\n\nDuring handling of the above exception,\
-        \ another exception occurred:\n\nTraceback (most recent call last):\n  File\
-        \ \"instance_solver.py\", line 106, in solve_instance\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
-        , line 78, in find_path\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
-        , line 204, in get_neighbors\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/custom_logger.py\"\
-        , line 44, in log\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/yaml/__init__.py\"\
-        , line 253, in dump\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/yaml/__init__.py\"\
-        , line 241, in dump_all\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/yaml/representer.py\"\
-        , line 27, in represent\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/yaml/representer.py\"\
-        , line 34, in represent_data\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/yaml/representer.py\"\
-        , line 141, in ignore_aliases\nMemoryError\n\nDuring handling of the above\
-        \ exception, another exception occurred:\n\nTraceback (most recent call last):\n\
-        \  File \"instance_solver.py\", line 138, in <module>\n  File \"instance_solver.py\"\
-        , line 108, in solve_instance\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/traceback.py\"\
-        , line 167, in format_exc\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/traceback.py\"\
-        , line 120, in format_exception\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/traceback.py\"\
-        , line 493, in __init__\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/traceback.py\"\
-        , line 493, in __init__\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/traceback.py\"\
-        , line 508, in __init__\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/traceback.py\"\
-        , line 336, in extract\nMemoryError\n"
+    stdout: ''
+    stderr: ''
 
 

@@ -25,9 +25,9 @@ def remove_matching_instances(json_file, csv_file):
     
 if __name__ == "__main__":
     base = '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/'
-    folder = 'gbfs-unary-ff relax-all lp066/'
+    folder = 'dfs relax-all lp1/'
     json_name = '00_checkpoint.json'
-    csv_name = 'greedy 66.csv'
+    csv_name = 'dfs_1.csv'
     json_file = base + folder + json_name
     csv_file = base + folder + csv_name
     

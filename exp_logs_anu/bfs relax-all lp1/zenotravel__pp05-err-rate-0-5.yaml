@@ -1,5 +1,5 @@
 ---
-timestamp: '2025-01-14T21:24:31.068022'
+timestamp: '2025-01-15T17:26:40.427744'
 level: INFO
 issuer: instance_solver
 event_type: metadata
@@ -84,7 +84,7 @@ data:
 
 
 ---
-timestamp: '2025-01-14T21:24:31.071620'
+timestamp: '2025-01-15T17:26:46.378579'
 level: INFO
 issuer: instance_solver
 event_type: ground_repair
@@ -94,44 +94,10 @@ data:
 
 
 ---
-timestamp: '2025-01-14T21:36:23.921041'
+timestamp: '2025-01-15T17:38:33.658995'
 level: ERROR
 issuer: batch_solver
 event_type: error
-data:
-    error_type: MemoryError
-    error_message: 'Command ''[''/home/projects/u7899572/conda-envs/main/bin/python3'',
-        ''instance_solver.py'', ''bfs'', ''/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1'',
-        ''/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs relax-all
-        lp1/zenotravel__pp05-err-rate-0-5.yaml'', ''1000000'', ''zenotravel__pp05-err-rate-0-5'',
-        ''1.0'', ''unary'']'' died with <Signals.SIGABRT: 6>.'
-    stack_trace: "Traceback (most recent call last):\n  File \"batch_solver.py\",\
-        \ line 126, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
-        \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/subprocess.py\"\
-        , line 516, in run\n    raise CalledProcessError(retcode, process.args,\n\
-        subprocess.CalledProcessError: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',\
-        \ 'instance_solver.py', 'bfs', '/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1',\
-        \ '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs\
-        \ relax-all lp1/zenotravel__pp05-err-rate-0-5.yaml', '1000000', 'zenotravel__pp05-err-rate-0-5',\
-        \ '1.0', 'unary']' died with <Signals.SIGABRT: 6>.\n"
-    instance_id: zenotravel__pp05-err-rate-0-5
-    process_info:
-        cmd:
-        - /home/projects/u7899572/conda-envs/main/bin/python3
-        - instance_solver.py
-        - bfs
-        - /home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1
-        - /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs relax-all
-            lp1/zenotravel__pp05-err-rate-0-5.yaml
-        - '1000000'
-        - zenotravel__pp05-err-rate-0-5
-        - '1.0'
-        - unary
-        duration: '714.49'
-        python_executable: /home/projects/u7899572/conda-envs/main/bin/python3
-    stdout: ''
-    stderr: 'terminate called after throwing an instance of ''Minisat22::OutOfMemoryException''
-
-        '
+data: Subprocess timed out after 900 seconds.
 
 
