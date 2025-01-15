@@ -1,8 +1,39 @@
 import pandas as pd
 
+
+
+domain_shortcuts = {
+    'domain-trimmed': 'shorten',
+    'zenotravel': 'zeno',
+    'visitall': 'visit',
+    'transport': 'trans',
+    'tpp': 'tpp',
+    'tetris': 'tetris',
+    'scanalyzer': 'scan',
+    'satellite': 'sat',
+    'rovers': 'rovs',
+    'pegsol': 'pegs',
+    'nomystery': 'nomys',
+    'mystery': 'myst',
+    'mprime': 'mprim',
+    'miconic': 'mic',
+    'logistics98': 'log98',
+    'hiking': 'hike',
+    'gripper': 'grip',
+    'grid': 'grid',
+    'freecell': 'fCell',
+    'elevators': 'elevs',
+    'driverlog': 'drivL',
+    'depot': 'depot',
+    'blocks': 'blks'
+}
+
+
 def analyze_csv(input_file, output_file):
     # Read the CSV file - first let's preserve NA values
     df = pd.read_csv(input_file, na_values=['', 'NA', 'null', 'NULL'])
+
+    df['domain class'] = df['domain class'].map(domain_shortcuts)
     
     # Filter based on error_group criteria - modified to properly handle NA
     df = df[df['error group'].isna() | 
@@ -14,14 +45,15 @@ def analyze_csv(input_file, output_file):
         # total_rows = len(group[group['vanilla repair length'] >= 0])
         total_rows = len(group)
         successful_rows = len(group[group['goal reached'].astype(str).str.upper().str.strip() == 'TRUE'])
-        completion_rate = (successful_rows / total_rows * 100) if total_rows > 0 else None
+        completion_rate = (successful_rows / total_rows) if total_rows > 0 else None
+        completion_abs = successful_rows if total_rows > 0 else None
         
         # Calculate Q metric - modified to properly handle NA
         valid_rows = group[group['search g cost'] >= 0]
         
         if len(valid_rows) > 0:
             equal_and_positive = len(valid_rows[
-                (valid_rows['search g cost'] == valid_rows['vanilla repair length']) & 
+                (valid_rows['search g cost'] <= valid_rows['vanilla repair length']) & 
                 (valid_rows['search g cost'] >= 0)
             ])
             q_metric = (equal_and_positive / len(valid_rows) * 100)
@@ -32,7 +64,8 @@ def analyze_csv(input_file, output_file):
         max_h = group[pd.to_numeric(group['h_max'], errors='coerce') > float('-inf')]['h_max'].max()
 
         result = pd.Series({
-            'C': round(completion_rate, 2) if completion_rate is not None else None,
+            'C_rate': round(completion_rate, 2) if completion_rate is not None else None,
+            'C_abs': completion_abs,
             'Q': round(q_metric, 2) if q_metric is not None else None,
             'max_h': round(max_h, 2) if max_h is not None else None
         })
@@ -49,7 +82,7 @@ def analyze_csv(input_file, output_file):
     result_df = result_df.merge(instance_counts, on=grouping_cols)
     
     # Reorder columns
-    cols = [*grouping_cols, 'instance_count', 'C', 'Q', 'max_h']
+    cols = [*grouping_cols, 'instance_count', 'C_rate', 'C_abs', 'Q', 'max_h']
     result_df = result_df[cols]
     
     # Sort the dataframe

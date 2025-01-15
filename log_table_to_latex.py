@@ -9,20 +9,19 @@ def process_csv_to_latex(input_file, output_file):
     latex_content = [
         "\\begin{table*}",
         "    \\centering",
-        "    \\begin{tabular}{ccccccccccccccccccccccccccc}",
+        "    \\begin{tabular}{cccccccccccccccccccccccccc}",  # Removed one c for the eliminated column
         "    \\toprule",
         "    \\multirow{4}{*}{\\rotatebox[origin=c]{90}{L. Prob.}} & ",
         "    \\multirow{4}{*}{\\rotatebox[origin=c]{90}{Domain}} & ",
-        "    \\multirow{4}{*}{\\rotatebox[origin=c]{90}{Problems}} & ",
         "    \\multicolumn{8}{c}{G1} & \\multicolumn{8}{c}{G2} & \\multicolumn{8}{c}{G3} \\\\",
-        "    \\cmidrule(lr){4-11} \\cmidrule(lr){12-19} \\cmidrule(lr){20-27}",
-        "    & & & \\multicolumn{2}{c}{UCS} & \\multicolumn{2}{c}{DFS} & \\multicolumn{2}{c}{A*} & \\multicolumn{2}{c}{GBFS} & ",
+        "    \\cmidrule(lr){3-10} \\cmidrule(lr){11-18} \\cmidrule(lr){19-26}",  # Adjusted column ranges
+        "    & & \\multicolumn{2}{c}{UCS} & \\multicolumn{2}{c}{DFS} & \\multicolumn{2}{c}{A*} & \\multicolumn{2}{c}{GBFS} & ",
         "    \\multicolumn{2}{c}{UCS} & \\multicolumn{2}{c}{DFS} & \\multicolumn{2}{c}{A*} & \\multicolumn{2}{c}{GBFS} & ",
         "    \\multicolumn{2}{c}{UCS} & \\multicolumn{2}{c}{DFS} & \\multicolumn{2}{c}{A*} & \\multicolumn{2}{c}{GBFS} \\\\",
-        "    \\cmidrule(lr){4-5} \\cmidrule(lr){6-7} \\cmidrule(lr){8-9} \\cmidrule(lr){10-11}",
-        "    \\cmidrule(lr){12-13} \\cmidrule(lr){14-15} \\cmidrule(lr){16-17} \\cmidrule(lr){18-19}",
-        "    \\cmidrule(lr){20-21} \\cmidrule(lr){22-23} \\cmidrule(lr){24-25} \\cmidrule(lr){26-27}",
-        "    & & & C & Q & C & Q & C & Q & C & Q & C & Q & C & Q & C & Q & C & Q & C & Q & C & Q & C & Q & C & Q \\\\",
+        "    \\cmidrule(lr){3-4} \\cmidrule(lr){5-6} \\cmidrule(lr){7-8} \\cmidrule(lr){9-10}",  # Adjusted column ranges
+        "    \\cmidrule(lr){11-12} \\cmidrule(lr){13-14} \\cmidrule(lr){15-16} \\cmidrule(lr){17-18}",
+        "    \\cmidrule(lr){19-20} \\cmidrule(lr){21-22} \\cmidrule(lr){23-24} \\cmidrule(lr){25-26}",
+        "    & & C & Q & C & Q & C & Q & C & Q & C & Q & C & Q & C & Q & C & Q & C & Q & C & Q & C & Q & C & Q \\\\",
         "    \\midrule"
     ]
 
@@ -39,13 +38,16 @@ def process_csv_to_latex(input_file, output_file):
             domain_df = prob_df[prob_df['domain class'] == domain]
             instance_count = domain_df['instance_count'].iloc[0]  # Get instance count for this domain
             
+            # Format domain name with problem count
+            domain_with_count = f"{domain} ({int(instance_count)})"
+            
             # Start each row
             if j == 0:
                 # First row of a group - include lift probability
-                row_str = f"    {prob:.2f} & {domain} & {int(instance_count)}"
+                row_str = f"    {prob:.2f} & {domain_with_count}"
             else:
                 # Subsequent rows - use multicolumn to skip lift probability
-                row_str = f"    \\multicolumn{{1}}{{c}}{{}} & {domain} & {int(instance_count)}"
+                row_str = f"    \\multicolumn{{1}}{{c}}{{}} & {domain_with_count}"
             
             # Process each grounding method
             for g in ['G1', 'G2', 'G3']:
@@ -58,10 +60,10 @@ def process_csv_to_latex(input_file, output_file):
                     ]
                     
                     if len(data) > 0:
-                        c_val = data['C'].iloc[0]
+                        c_val = data['C_abs'].iloc[0]
                         q_val = data['Q'].iloc[0]
                         
-                        c_str = f"{c_val:.1f}" if pd.notna(c_val) else "-"
+                        c_str = f"{int(c_val)}" if pd.notna(c_val) else "-"
                         q_str = f"{q_val:.1f}" if pd.notna(q_val) else "-"
                     else:
                         c_str = "-"
