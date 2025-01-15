@@ -135,13 +135,14 @@ def process_csv_to_latex(main_df, summary_df, alg_order_list, output_file, capti
             row_str += " \\\\"
             latex_content.append(row_str)
         
-        # Add midrule before summary row
+        # Add midrule before summary rows
         latex_content.append(f"    \\cmidrule(l){{2-{total_data_cols+2}}}")
         
-        # Add summary row (keeping existing summary row logic)
+        # Add two summary rows - one for SUM(C) and one for AVG(Q)
         summary_row = summary_df[summary_df['lift_prob'] == prob]
-        row_str = "    \\multicolumn{1}{c}{} & \\textbf{Total}"
         
+        # First row: SUM(C)
+        row_str = "    \\multicolumn{1}{c}{} & \\textbf{SUM(C)}"
         for g in grounding_methods:
             for alg_base in search_algorithms:
                 data = summary_row[
@@ -150,22 +151,39 @@ def process_csv_to_latex(main_df, summary_df, alg_order_list, output_file, capti
                 ]
                 if len(data) > 0:
                     c_val = data['C_abs'].iloc[0]
-                    q_val = data['Q'].iloc[0]
                     c_str = f"\\textbf{{{int(c_val)}}}" if pd.notna(c_val) else "-"
+                else:
+                    c_str = "-"
+                
+                # Only add C value and a blank space for Q
+                row_str += f" & {c_str} & "
+        
+        row_str += " \\\\"
+        latex_content.append(row_str)
+        
+        # Second row: AVG(Q)
+        row_str = "    \\multicolumn{1}{c}{} & \\textbf{AVG(Q)}"
+        for g in grounding_methods:
+            for alg_base in search_algorithms:
+                data = summary_row[
+                    (summary_row['grounding method'] == g) & 
+                    (summary_row['search algorithm'] == alg_base)
+                ]
+                if len(data) > 0:
+                    q_val = data['Q'].iloc[0]
                     if pd.notna(q_val):
                         if q_val.is_integer():
                             formatted_num = str(int(q_val))
                         else:
                             formatted_num = f"{q_val:.2f}".lstrip('0')
-                        
                         q_str = f"\\textbf{{{formatted_num}}}"
                     else:
                         q_str = "\\textbf{-}"
                 else:
-                    c_str = "-"
                     q_str = "-"
                 
-                row_str += f" & {c_str} & {q_str}"
+                # Add blank space for C and then Q value
+                row_str += f" &  & {q_str}"
         
         row_str += " \\\\"
         latex_content.append(row_str)
