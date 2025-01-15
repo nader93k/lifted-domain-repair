@@ -29,7 +29,7 @@ domain_shortcuts = {
 }
 
 
-def analyze_csv(input_file, output_file):
+def main_table(input_file):
     # Read the CSV file - first let's preserve NA values
     df = pd.read_csv(input_file, na_values=['', 'NA', 'null', 'NULL'])
 
@@ -87,21 +87,37 @@ def analyze_csv(input_file, output_file):
     
     # Sort the dataframe
     result_df = result_df.sort_values(grouping_cols)
-    
-    # Save to CSV
-    result_df.to_csv(output_file, index=False)
     return result_df
+
+
+def summary_table(main_table):
+    grouping_cols = ['grounding method', 'lift_prob', 'search algorithm']
+    agg_dict = {
+        'instance_count': 'sum',
+        'C_rate': 'mean',
+        'C_abs': 'sum',
+        'Q': 'mean',
+        'max_h': 'max'
+    }
+    summary_df = main_table.groupby(grouping_cols).agg(agg_dict).reset_index()
+    float_cols = ['C_rate', 'Q', 'max_h']
+    summary_df[float_cols] = summary_df[float_cols].round(2)
+    summary_df = summary_df.sort_values(grouping_cols) 
+    return summary_df
+
 
 if __name__ == "__main__":
     folder = '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_csv/'
     input_file = folder + 'merged.csv'
-    output_file = folder + 'main_table.csv'
-    
-    try:
-        result_df = analyze_csv(input_file, output_file)
-        print(f"Analysis complete. Results saved to {output_file}")
-        print("\nFirst few rows of the result:")
-        print(result_df.head())
-    except Exception as e:
-        print(f"Error: {str(e)}")
-        raise
+    output_main = folder + 'main_table.csv'
+    output_summary = folder + 'summary_table.csv'
+
+    main_df = main_table(input_file)
+    main_df.to_csv(output_main, index=False)
+    print("\nFirst few rows of the main_df:")
+    print(main_df.head())
+
+    summary_df = summary_table(main_df)
+    summary_df.to_csv(output_summary, index=False)
+    print("\nFirst few rows of the summary_df:")
+    print(summary_df.head())
