@@ -7,12 +7,13 @@ import time
 from fd.pddl.conditions import Conjunction, Atom
 from fd.pddl.predicates import Predicate
 from heuristic_tools.heuristic import Heurisitc
+from search_partial_grounding.lifted_pddl_grounder import ground_pddl
 import traceback
 import sys
 
 
 
-# HEURISTIC_ = r"Heurisitc(h_name='L_HADD', relaxation=self.h_relaxation)""
+# HEURISTIC_ = r"Heurisitc(h_name='L_HADD', relaxation='unary', use_ff=False)"
 HEURISTIC_ = r"Heurisitc(h_name='L_HADD', relaxation='unary', use_ff=True)"
 DELETE_RELAXATION = False
 PREC_RELAX_CONFIG = ['missing', 'missing-and-negative', 'all']
@@ -23,13 +24,7 @@ PREC_RELAX = PREC_RELAX_CONFIG[2]
 class Node:
     original_domain = None
     original_task = None
-    grounder = None
     logger = None
-
-
-    @classmethod
-    def set_grounder(cls, value):
-        cls.grounder = value
     
 
     @classmethod
@@ -56,8 +51,6 @@ class Node:
                  h_cost_needed=False,
                  heuristic_relaxation=None
                  ):
-        if self.grounder is None:
-            raise ValueError("Action grounder must be set before creating instances.")
         if self.original_domain is None:
             raise ValueError("Original domain must be set before creating instances.")
         if self.original_task is None:
@@ -70,8 +63,6 @@ class Node:
         self.lifted_action_sequence = lifted_action_sequence
         self.h_cost_needed = h_cost_needed
         self.parent = parent
-        self.neighbours = []
-        self.possible_groundings = None
         self.grounding_time = None
         self.h_relaxation = heuristic_relaxation
 
@@ -188,12 +179,11 @@ class Node:
         else:
             raise ValueError
 
-        # Calling the action generator
         try:
             next_action_pddl = f"({' '.join(self.lifted_action_sequence[0])})"
 
             start_time = time.time()
-            self.possible_groundings = Node.grounder(domain, task, next_action_pddl)
+            possible_groundings = ground_pddl(domain, task, next_action_pddl)
             end_time = time.time()
             self.grounding_time = end_time - start_time
         except Exception as e:
@@ -204,8 +194,8 @@ class Node:
             self.logger.log(issuer="node", event_type="error", level=logging.ERROR, message=log_data_error)
             raise
 
-        self.neighbours = []
-        for grounding in self.possible_groundings:
+        neighbours = []
+        for grounding in possible_groundings:
             next_node = Node(
                 ground_action_sequence=self.ground_action_sequence + [grounding],
                 lifted_action_sequence=self.lifted_action_sequence[1:],
@@ -216,9 +206,9 @@ class Node:
             )
             if next_node.f_cost == float('inf'):
                 continue
-            self.neighbours.append(next_node)
+            neighbours.append(next_node)
 
-        return self.neighbours
+        return neighbours
 
 
     def is_goal(self):
@@ -242,7 +232,7 @@ class Node:
             "f_cost": self.f_cost,
             "next_lifted_action": next_lifted,
             "num_neighbours": len(self.neighbours),
-            "first_10_possible_groundings": self.possible_groundings[:10] if self.possible_groundings is not None else self.possible_groundings
+            # "first_10_possible_groundings": self.possible_groundings[:10] if self.possible_groundings is not None else self.possible_groundings
         }
         if include_state:
             # d["current_state"] = repr([x.pddl() for x in self.current_state])[1:-1]

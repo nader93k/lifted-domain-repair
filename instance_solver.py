@@ -2,7 +2,6 @@ import cProfile
 import pstats
 from pstats import SortKey
 from search_partial_grounding import AStar, Node, DFS, BranchBound
-from search_partial_grounding.lifted_pddl_grounder import ground_pddl
 #TODO: Fina a better place for ground_repair
 from vanilla_runs.run_songtuans_vanilla import ground_repair
 from custom_logger import StructuredLogger
@@ -76,7 +75,6 @@ def solve_instance(search_algorithm, benchmark_path, log_file, log_interval, ins
     }
     logger.log(issuer="instance_solver", event_type="ground_repair", level=logging.INFO, message=log_data_gr)
 
-    Node.set_grounder(ground_pddl)
     Node.set_domain(instance.planning_domain)
     Node.set_task(instance.planning_task)
     Node.set_logger(logger)
