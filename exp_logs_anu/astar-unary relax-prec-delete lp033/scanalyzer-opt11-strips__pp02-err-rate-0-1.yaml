@@ -1,0 +1,144 @@
+---
+timestamp: '2025-01-16T21:34:23.059700'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary
+        relax-prec-delete lp033/scanalyzer-opt11-strips__pp02-err-rate-0-1.yaml
+    instance_id: scanalyzer-opt11-strips__pp02-err-rate-0-1
+    search_algorithm: astar
+    plan_length: 14
+    domain_class: scanalyzer-opt11-strips
+    instance_name: pp02-err-rate-0-1
+    ground_plan:
+    - (analyze-2 seg-in-1 seg-out-1 car-in-1 car-out-1)
+    - (analyze-2 seg-in-1 seg-out-1 car-out-1 car-in-1)
+    - (analyze-2 seg-in-2 seg-out-1 car-in-2 car-out-1)
+    - (analyze-2 seg-in-2 seg-out-1 car-out-1 car-in-2)
+    - (analyze-2 seg-in-3 seg-out-1 car-in-3 car-out-1)
+    - (analyze-2 seg-in-3 seg-out-1 car-out-1 car-in-3)
+    - (rotate-2 seg-in-1 seg-out-2 car-in-1 car-out-2)
+    - (analyze-2 seg-in-1 seg-out-1 car-out-2 car-out-1)
+    - (analyze-2 seg-in-1 seg-out-1 car-out-1 car-out-2)
+    - (rotate-2 seg-in-1 seg-out-2 car-out-2 car-in-1)
+    - (rotate-2 seg-in-1 seg-out-3 car-in-1 car-out-3)
+    - (analyze-2 seg-in-1 seg-out-1 car-out-3 car-out-1)
+    - (analyze-2 seg-in-1 seg-out-1 car-out-1 car-out-3)
+    - (rotate-2 seg-in-1 seg-out-3 car-out-3 car-in-1)
+    lifted_plan:
+    -   - analyze-2
+        - seg-in-1
+        - seg-out-1
+        - car-in-1
+        - ?car-out-1
+    -   - analyze-2
+        - seg-in-1
+        - seg-out-1
+        - car-out-1
+        - ?car-in-1
+    -   - analyze-2
+        - seg-in-2
+        - seg-out-1
+        - car-in-2
+        - car-out-1
+    -   - analyze-2
+        - ?seg-in-2
+        - seg-out-1
+        - car-out-1
+        - ?car-in-2
+    -   - analyze-2
+        - seg-in-3
+        - seg-out-1
+        - car-in-3
+        - car-out-1
+    -   - analyze-2
+        - ?seg-in-3
+        - seg-out-1
+        - car-out-1
+        - car-in-3
+    -   - rotate-2
+        - seg-in-1
+        - ?seg-out-2
+        - car-in-1
+        - car-out-2
+    -   - analyze-2
+        - seg-in-1
+        - seg-out-1
+        - car-out-2
+        - car-out-1
+    -   - analyze-2
+        - ?seg-in-1
+        - seg-out-1
+        - car-out-1
+        - ?car-out-2
+    -   - rotate-2
+        - seg-in-1
+        - seg-out-2
+        - car-out-2
+        - car-in-1
+    -   - rotate-2
+        - ?seg-in-1
+        - seg-out-3
+        - car-in-1
+        - ?car-out-3
+    -   - analyze-2
+        - ?seg-in-1
+        - seg-out-1
+        - ?car-out-3
+        - car-out-1
+    -   - analyze-2
+        - ?seg-in-1
+        - seg-out-1
+        - car-out-1
+        - car-out-3
+    -   - rotate-2
+        - ?seg-in-1
+        - ?seg-out-3
+        - car-out-3
+        - car-in-1
+
+
+---
+timestamp: '2025-01-16T21:34:23.711021'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: analyze-2,(cycle-2-with-analysis ?s2 ?s2),precPos,-1
+
+
+---
+timestamp: '2025-01-16T21:34:27.745816'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: 'Node' object has no attribute 'neighbours'.\
+    \ Stack trace: Traceback (most recent call last):\n  File \"instance_solver.py\"\
+    , line 104, in solve_instance\n    searcher.find_path(logger=logger, log_interval=log_interval)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 95, in find_path\n    self.log_iteration_info(logger, iteration, open_list,\
+    \ current_node, final=True, is_goal=False)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 37, in log_iteration_info\n    \"current_node\": current_node.to_dict(include_state=False)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 234, in to_dict\n    \"num_neighbours\": len(self.neighbours),\nAttributeError:\
+    \ 'Node' object has no attribute 'neighbours'\n"
+
+
+---
+timestamp: '2025-01-16T21:34:28.009291'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '114.04'
+
+
+---
+timestamp: '2025-01-16T21:36:04.096540'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 250.05 seconds'
+
+

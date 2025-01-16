@@ -1,0 +1,128 @@
+---
+timestamp: '2025-01-16T13:50:32.235221'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary
+        relax-prec lp066/zenotravel__pp05-err-rate-0-5.yaml
+    instance_id: zenotravel__pp05-err-rate-0-5
+    search_algorithm: astar
+    plan_length: 12
+    domain_class: zenotravel
+    instance_name: pp05-err-rate-0-5
+    ground_plan:
+    - (board person4 plane1 city1)
+    - (fly plane1 city1 city0 fl6 fl5)
+    - (board person3 plane1 city0)
+    - (board person2 plane1 city0)
+    - (fly plane1 city0 city2 fl5 fl4)
+    - (fly plane1 city2 city3 fl4 fl3)
+    - (debark person4 plane1 city3)
+    - (debark person3 plane1 city3)
+    - (debark person2 plane1 city3)
+    - (board person1 plane1 city3)
+    - (fly plane1 city3 city2 fl3 fl2)
+    - (debark person1 plane1 city2)
+    lifted_plan:
+    -   - board
+        - person4
+        - plane1
+        - ?city1
+    -   - fly
+        - ?plane1
+        - ?city1
+        - ?city0
+        - fl6
+        - ?fl5
+    -   - board
+        - ?person3
+        - ?plane1
+        - city0
+    -   - board
+        - ?person2
+        - ?plane1
+        - city0
+    -   - fly
+        - ?plane1
+        - ?city0
+        - city2
+        - fl5
+        - fl4
+    -   - fly
+        - plane1
+        - ?city2
+        - city3
+        - fl4
+        - fl3
+    -   - debark
+        - ?person4
+        - ?plane1
+        - ?city3
+    -   - debark
+        - ?person3
+        - plane1
+        - city3
+    -   - debark
+        - ?person2
+        - plane1
+        - ?city3
+    -   - board
+        - person1
+        - ?plane1
+        - ?city3
+    -   - fly
+        - plane1
+        - ?city3
+        - city2
+        - fl3
+        - ?fl2
+    -   - debark
+        - ?person1
+        - plane1
+        - ?city2
+
+
+---
+timestamp: '2025-01-16T13:50:32.616749'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-16T13:52:28.419548'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: 'Node' object has no attribute 'neighbours'.\
+    \ Stack trace: Traceback (most recent call last):\n  File \"instance_solver.py\"\
+    , line 104, in solve_instance\n    searcher.find_path(logger=logger, log_interval=log_interval)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 75, in find_path\n    self.log_iteration_info(logger, iteration, open_list,\
+    \ current_node, final=True, is_goal=True)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 37, in log_iteration_info\n    \"current_node\": current_node.to_dict(include_state=False)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 234, in to_dict\n    \"num_neighbours\": len(self.neighbours),\nAttributeError:\
+    \ 'Node' object has no attribute 'neighbours'\n"
+
+
+---
+timestamp: '2025-01-16T13:52:28.729289'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '219.21'
+
+
+---
+timestamp: '2025-01-16T13:53:56.023167'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 347.55 seconds'
+
+

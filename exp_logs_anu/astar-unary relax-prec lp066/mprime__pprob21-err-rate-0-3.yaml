@@ -1,0 +1,111 @@
+---
+timestamp: '2025-01-16T13:14:36.823565'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary
+        relax-prec lp066/mprime__pprob21-err-rate-0-3.yaml
+    instance_id: mprime__pprob21-err-rate-0-3
+    search_algorithm: astar
+    plan_length: 7
+    domain_class: mprime
+    instance_name: pprob21-err-rate-0-3
+    ground_plan:
+    - (feast love flounder wurst alsace kentucky)
+    - (feast learning lemon apple alsace kentucky)
+    - (overcome sciatica love wurst uranus neptune)
+    - (drink snickers wurst goias kentucky alsace alsace kentucky)
+    - (feast love wurst snickers alsace kentucky)
+    - (feast love snickers apple alsace kentucky)
+    - (succumb sciatica love apple uranus neptune)
+    lifted_plan:
+    -   - feast
+        - love
+        - flounder
+        - ?wurst
+        - ?alsace
+        - ?kentucky
+    -   - feast
+        - ?learning
+        - lemon
+        - ?apple
+        - ?alsace
+        - ?kentucky
+    -   - overcome
+        - sciatica
+        - ?love
+        - ?wurst
+        - uranus
+        - ?neptune
+    -   - drink
+        - ?snickers
+        - wurst
+        - goias
+        - kentucky
+        - alsace
+        - ?alsace
+        - kentucky
+    -   - feast
+        - love
+        - wurst
+        - ?snickers
+        - ?alsace
+        - ?kentucky
+    -   - feast
+        - ?love
+        - snickers
+        - apple
+        - ?alsace
+        - kentucky
+    -   - succumb
+        - ?sciatica
+        - love
+        - ?apple
+        - ?uranus
+        - neptune
+
+
+---
+timestamp: '2025-01-16T13:14:37.351887'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-16T13:20:08.921751'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: 'Node' object has no attribute 'neighbours'.\
+    \ Stack trace: Traceback (most recent call last):\n  File \"instance_solver.py\"\
+    , line 104, in solve_instance\n    searcher.find_path(logger=logger, log_interval=log_interval)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 75, in find_path\n    self.log_iteration_info(logger, iteration, open_list,\
+    \ current_node, final=True, is_goal=True)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 37, in log_iteration_info\n    \"current_node\": current_node.to_dict(include_state=False)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 234, in to_dict\n    \"num_neighbours\": len(self.neighbours),\nAttributeError:\
+    \ 'Node' object has no attribute 'neighbours'\n"
+
+
+---
+timestamp: '2025-01-16T13:20:09.324202'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '439.26'
+
+
+---
+timestamp: '2025-01-16T13:21:48.413065'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 575.29 seconds'
+
+

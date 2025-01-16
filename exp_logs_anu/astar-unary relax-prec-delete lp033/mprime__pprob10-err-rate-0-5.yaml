@@ -1,0 +1,116 @@
+---
+timestamp: '2025-01-16T20:57:03.224356'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary
+        relax-prec-delete lp033/mprime__pprob10-err-rate-0-5.yaml
+    instance_id: mprime__pprob10-err-rate-0-5
+    search_algorithm: astar
+    plan_length: 8
+    domain_class: mprime
+    instance_name: pprob10-err-rate-0-5
+    ground_plan:
+    - (feast aesthetics flounder kale surrey moravia)
+    - (overcome jealousy-16 aesthetics kale mars neptune)
+    - (feast aesthetics kale arugula moravia quebec)
+    - (feast aesthetics arugula beef surrey moravia)
+    - (feast aesthetics beef snickers surrey moravia)
+    - (feast aesthetics snickers lamb oregon alsace)
+    - (feast aesthetics lamb tofu surrey moravia)
+    - (succumb jealousy-16 aesthetics tofu mars neptune)
+    lifted_plan:
+    -   - feast
+        - aesthetics
+        - flounder
+        - kale
+        - ?surrey
+        - moravia
+    -   - overcome
+        - jealousy-16
+        - aesthetics
+        - ?kale
+        - mars
+        - neptune
+    -   - feast
+        - aesthetics
+        - kale
+        - ?arugula
+        - moravia
+        - quebec
+    -   - feast
+        - ?aesthetics
+        - arugula
+        - beef
+        - surrey
+        - moravia
+    -   - feast
+        - ?aesthetics
+        - beef
+        - snickers
+        - surrey
+        - moravia
+    -   - feast
+        - ?aesthetics
+        - snickers
+        - lamb
+        - oregon
+        - alsace
+    -   - feast
+        - aesthetics
+        - lamb
+        - ?tofu
+        - surrey
+        - moravia
+    -   - succumb
+        - ?jealousy-16
+        - aesthetics
+        - tofu
+        - mars
+        - neptune
+
+
+---
+timestamp: '2025-01-16T20:57:03.889420'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-16T20:59:31.885770'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: 'Node' object has no attribute 'neighbours'.\
+    \ Stack trace: Traceback (most recent call last):\n  File \"instance_solver.py\"\
+    , line 104, in solve_instance\n    searcher.find_path(logger=logger, log_interval=log_interval)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 75, in find_path\n    self.log_iteration_info(logger, iteration, open_list,\
+    \ current_node, final=True, is_goal=True)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 37, in log_iteration_info\n    \"current_node\": current_node.to_dict(include_state=False)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 234, in to_dict\n    \"num_neighbours\": len(self.neighbours),\nAttributeError:\
+    \ 'Node' object has no attribute 'neighbours'\n"
+
+
+---
+timestamp: '2025-01-16T20:59:32.343143'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '254.98'
+
+
+---
+timestamp: '2025-01-16T21:01:14.939365'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 391.72 seconds'
+
+

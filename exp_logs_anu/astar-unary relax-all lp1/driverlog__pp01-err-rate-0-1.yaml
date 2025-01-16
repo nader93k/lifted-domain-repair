@@ -1,0 +1,71 @@
+---
+timestamp: '2025-01-16T02:15:20.213464'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary
+        relax-all lp1/driverlog__pp01-err-rate-0-1.yaml
+    instance_id: driverlog__pp01-err-rate-0-1
+    search_algorithm: astar
+    plan_length: 7
+    domain_class: driverlog
+    instance_name: pp01-err-rate-0-1
+    ground_plan:
+    - (walk driver1 s2 p1-2)
+    - (walk driver1 p1-2 s1)
+    - (walk driver1 s1 p1-0)
+    - (walk driver1 p1-0 s0)
+    - (board-truck driver1 truck1 s0)
+    - (drive-truck truck1 s0 s1 driver1)
+    - (disembark-truck driver1 truck1 s1)
+    lifted_plan:
+    -   - walk
+        - ?driver1
+        - ?s2
+        - ?p1-2
+    -   - walk
+        - ?driver1
+        - ?p1-2
+        - ?s1
+    -   - walk
+        - ?driver1
+        - ?s1
+        - ?p1-0
+    -   - walk
+        - ?driver1
+        - ?p1-0
+        - ?s0
+    -   - board-truck
+        - ?driver1
+        - ?truck1
+        - ?s0
+    -   - drive-truck
+        - ?truck1
+        - ?s0
+        - ?s1
+        - ?driver1
+    -   - disembark-truck
+        - ?driver1
+        - ?truck1
+        - ?s1
+
+
+---
+timestamp: '2025-01-16T02:15:21.053401'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: drive-truck,(in ?loc-to ?loc-to),precPos,-1
+
+
+---
+timestamp: '2025-01-16T02:27:34.345689'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+

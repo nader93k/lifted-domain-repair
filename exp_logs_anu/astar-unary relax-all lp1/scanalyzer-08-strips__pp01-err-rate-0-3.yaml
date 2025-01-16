@@ -1,0 +1,95 @@
+---
+timestamp: '2025-01-16T02:58:53.349070'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary
+        relax-all lp1/scanalyzer-08-strips__pp01-err-rate-0-3.yaml
+    instance_id: scanalyzer-08-strips__pp01-err-rate-0-3
+    search_algorithm: astar
+    plan_length: 10
+    domain_class: scanalyzer-08-strips
+    instance_name: pp01-err-rate-0-3
+    ground_plan:
+    - (analyze-2 seg-in-1 seg-out-1 car-in-1 car-out-1)
+    - (analyze-2 seg-in-1 seg-out-1 car-out-1 car-in-1)
+    - (analyze-2 seg-in-2 seg-out-1 car-in-2 car-out-1)
+    - (analyze-2 seg-in-1 seg-out-2 car-in-1 car-out-2)
+    - (analyze-2 seg-in-1 seg-out-2 car-out-2 car-in-1)
+    - (analyze-2 seg-in-2 seg-out-1 car-out-1 car-in-2)
+    - (analyze-2 seg-in-1 seg-out-3 car-in-1 car-out-3)
+    - (analyze-2 seg-in-1 seg-out-3 car-out-3 car-in-1)
+    - (analyze-2 seg-in-3 seg-out-1 car-in-3 car-out-1)
+    - (analyze-2 seg-in-3 seg-out-1 car-out-1 car-in-3)
+    lifted_plan:
+    -   - analyze-2
+        - ?seg-in-1
+        - ?seg-out-1
+        - ?car-in-1
+        - ?car-out-1
+    -   - analyze-2
+        - ?seg-in-1
+        - ?seg-out-1
+        - ?car-out-1
+        - ?car-in-1
+    -   - analyze-2
+        - ?seg-in-2
+        - ?seg-out-1
+        - ?car-in-2
+        - ?car-out-1
+    -   - analyze-2
+        - ?seg-in-1
+        - ?seg-out-2
+        - ?car-in-1
+        - ?car-out-2
+    -   - analyze-2
+        - ?seg-in-1
+        - ?seg-out-2
+        - ?car-out-2
+        - ?car-in-1
+    -   - analyze-2
+        - ?seg-in-2
+        - ?seg-out-1
+        - ?car-out-1
+        - ?car-in-2
+    -   - analyze-2
+        - ?seg-in-1
+        - ?seg-out-3
+        - ?car-in-1
+        - ?car-out-3
+    -   - analyze-2
+        - ?seg-in-1
+        - ?seg-out-3
+        - ?car-out-3
+        - ?car-in-1
+    -   - analyze-2
+        - ?seg-in-3
+        - ?seg-out-1
+        - ?car-in-3
+        - ?car-out-1
+    -   - analyze-2
+        - ?seg-in-3
+        - ?seg-out-1
+        - ?car-out-1
+        - ?car-in-3
+
+
+---
+timestamp: '2025-01-16T02:58:53.891840'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: analyze-2,(on ?c1 ?s2),effPos,1
+
+
+---
+timestamp: '2025-01-16T03:10:06.084319'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+

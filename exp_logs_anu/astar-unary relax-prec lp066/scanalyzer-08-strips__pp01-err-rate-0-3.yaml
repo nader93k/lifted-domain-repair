@@ -1,0 +1,120 @@
+---
+timestamp: '2025-01-16T13:34:25.271421'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary
+        relax-prec lp066/scanalyzer-08-strips__pp01-err-rate-0-3.yaml
+    instance_id: scanalyzer-08-strips__pp01-err-rate-0-3
+    search_algorithm: astar
+    plan_length: 10
+    domain_class: scanalyzer-08-strips
+    instance_name: pp01-err-rate-0-3
+    ground_plan:
+    - (analyze-2 seg-in-1 seg-out-1 car-in-1 car-out-1)
+    - (analyze-2 seg-in-1 seg-out-1 car-out-1 car-in-1)
+    - (analyze-2 seg-in-2 seg-out-1 car-in-2 car-out-1)
+    - (analyze-2 seg-in-1 seg-out-2 car-in-1 car-out-2)
+    - (analyze-2 seg-in-1 seg-out-2 car-out-2 car-in-1)
+    - (analyze-2 seg-in-2 seg-out-1 car-out-1 car-in-2)
+    - (analyze-2 seg-in-1 seg-out-3 car-in-1 car-out-3)
+    - (analyze-2 seg-in-1 seg-out-3 car-out-3 car-in-1)
+    - (analyze-2 seg-in-3 seg-out-1 car-in-3 car-out-1)
+    - (analyze-2 seg-in-3 seg-out-1 car-out-1 car-in-3)
+    lifted_plan:
+    -   - analyze-2
+        - seg-in-1
+        - seg-out-1
+        - ?car-in-1
+        - ?car-out-1
+    -   - analyze-2
+        - ?seg-in-1
+        - ?seg-out-1
+        - car-out-1
+        - ?car-in-1
+    -   - analyze-2
+        - ?seg-in-2
+        - ?seg-out-1
+        - car-in-2
+        - ?car-out-1
+    -   - analyze-2
+        - ?seg-in-1
+        - seg-out-2
+        - ?car-in-1
+        - ?car-out-2
+    -   - analyze-2
+        - seg-in-1
+        - seg-out-2
+        - car-out-2
+        - car-in-1
+    -   - analyze-2
+        - ?seg-in-2
+        - seg-out-1
+        - car-out-1
+        - car-in-2
+    -   - analyze-2
+        - ?seg-in-1
+        - ?seg-out-3
+        - ?car-in-1
+        - ?car-out-3
+    -   - analyze-2
+        - seg-in-1
+        - seg-out-3
+        - ?car-out-3
+        - car-in-1
+    -   - analyze-2
+        - ?seg-in-3
+        - seg-out-1
+        - ?car-in-3
+        - ?car-out-1
+    -   - analyze-2
+        - seg-in-3
+        - ?seg-out-1
+        - car-out-1
+        - car-in-3
+
+
+---
+timestamp: '2025-01-16T13:34:25.932006'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: analyze-2,(on ?c1 ?s2),effPos,1
+
+
+---
+timestamp: '2025-01-16T13:35:11.366789'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: 'Node' object has no attribute 'neighbours'.\
+    \ Stack trace: Traceback (most recent call last):\n  File \"instance_solver.py\"\
+    , line 104, in solve_instance\n    searcher.find_path(logger=logger, log_interval=log_interval)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 95, in find_path\n    self.log_iteration_info(logger, iteration, open_list,\
+    \ current_node, final=True, is_goal=False)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 37, in log_iteration_info\n    \"current_node\": current_node.to_dict(include_state=False)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 234, in to_dict\n    \"num_neighbours\": len(self.neighbours),\nAttributeError:\
+    \ 'Node' object has no attribute 'neighbours'\n"
+
+
+---
+timestamp: '2025-01-16T13:35:11.561643'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '153.54'
+
+
+---
+timestamp: '2025-01-16T13:36:54.877401'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 302.23 seconds'
+
+

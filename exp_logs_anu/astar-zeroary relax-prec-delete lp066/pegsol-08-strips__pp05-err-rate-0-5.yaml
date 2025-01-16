@@ -1,0 +1,120 @@
+---
+timestamp: '2025-01-17T02:07:46.493132'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-zeroary
+        relax-prec-delete lp066/pegsol-08-strips__pp05-err-rate-0-5.yaml
+    instance_id: pegsol-08-strips__pp05-err-rate-0-5
+    search_algorithm: astar
+    plan_length: 14
+    domain_class: pegsol-08-strips
+    instance_name: pp05-err-rate-0-5
+    ground_plan:
+    - (jump-new-move pos-2-5 pos-2-4 pos-2-3)
+    - (end-move pos-2-3)
+    - (jump-new-move pos-4-1 pos-4-2 pos-4-3)
+    - (end-move pos-4-3)
+    - (jump-new-move pos-2-3 pos-2-2 pos-2-1)
+    - (end-move pos-2-1)
+    - (jump-new-move pos-2-1 pos-3-1 pos-4-1)
+    - (end-move pos-4-1)
+    - (jump-new-move pos-4-4 pos-4-3 pos-4-2)
+    - (end-move pos-4-2)
+    - (jump-new-move pos-4-1 pos-4-2 pos-4-3)
+    - (jump-continue-move pos-4-3 pos-3-3 pos-2-3)
+    - (end-move pos-2-3)
+    - (jump-new-move pos-1-3 pos-2-3 pos-3-3)
+    lifted_plan:
+    -   - jump-new-move
+        - pos-2-5
+        - pos-2-4
+        - ?pos-2-3
+    -   - end-move
+        - ?pos-2-3
+    -   - jump-new-move
+        - ?pos-4-1
+        - ?pos-4-2
+        - pos-4-3
+    -   - end-move
+        - ?pos-4-3
+    -   - jump-new-move
+        - ?pos-2-3
+        - ?pos-2-2
+        - pos-2-1
+    -   - end-move
+        - ?pos-2-1
+    -   - jump-new-move
+        - ?pos-2-1
+        - pos-3-1
+        - ?pos-4-1
+    -   - end-move
+        - ?pos-4-1
+    -   - jump-new-move
+        - pos-4-4
+        - pos-4-3
+        - pos-4-2
+    -   - end-move
+        - pos-4-2
+    -   - jump-new-move
+        - ?pos-4-1
+        - pos-4-2
+        - pos-4-3
+    -   - jump-continue-move
+        - pos-4-3
+        - ?pos-3-3
+        - ?pos-2-3
+    -   - end-move
+        - ?pos-2-3
+    -   - jump-new-move
+        - ?pos-1-3
+        - pos-2-3
+        - pos-3-3
+
+
+---
+timestamp: '2025-01-17T02:07:47.194951'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'jump-new-move,(in-line ?over ?over ?to),precPos,-1
+
+        jump-new-move,(in-line ?to ?to ?to),effPos,1'
+
+
+---
+timestamp: '2025-01-17T02:07:49.621741'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: 'Node' object has no attribute 'neighbours'.\
+    \ Stack trace: Traceback (most recent call last):\n  File \"instance_solver.py\"\
+    , line 104, in solve_instance\n    searcher.find_path(logger=logger, log_interval=log_interval)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 95, in find_path\n    self.log_iteration_info(logger, iteration, open_list,\
+    \ current_node, final=True, is_goal=False)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 37, in log_iteration_info\n    \"current_node\": current_node.to_dict(include_state=False)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 233, in to_dict\n    \"num_neighbours\": len(self.neighbours),\nAttributeError:\
+    \ 'Node' object has no attribute 'neighbours'\n"
+
+
+---
+timestamp: '2025-01-17T02:07:49.729713'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '112.52'
+
+
+---
+timestamp: '2025-01-17T02:09:29.931209'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 248.80 seconds'
+
+

@@ -1,0 +1,105 @@
+---
+timestamp: '2025-01-16T04:39:29.308456'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary
+        relax-all lp066/freecell__pprobfreecell-2-2-err-rate-0-1.yaml
+    instance_id: freecell__pprobfreecell-2-2-err-rate-0-1
+    search_algorithm: astar
+    plan_length: 8
+    domain_class: freecell
+    instance_name: pprobfreecell-2-2-err-rate-0-1
+    ground_plan:
+    - (sendtohome-b da d n1 d0 n0 n2 n3)
+    - (sendtohome ca d2 c n1 c0 n0)
+    - (sendtohome sa ha s n1 s0 n0)
+    - (sendtohome-b ha h n1 h0 n0 n3 n4)
+    - (sendtohome-b c2 c n2 ca n1 n4 n5)
+    - (sendtohome-b d2 d n2 da n1 n5 n6)
+    - (sendtohome-b h2 h n2 ha n1 n6 n7)
+    - (sendtohome-b s2 s n2 sa n1 n7 n8)
+    lifted_plan:
+    -   - sendtohome-b
+        - da
+        - d
+        - ?n1
+        - ?d0
+        - ?n0
+        - ?n2
+        - n3
+    -   - sendtohome
+        - ?ca
+        - ?d2
+        - ?c
+        - n1
+        - ?c0
+        - ?n0
+    -   - sendtohome
+        - sa
+        - ?ha
+        - ?s
+        - n1
+        - s0
+        - n0
+    -   - sendtohome-b
+        - ha
+        - ?h
+        - n1
+        - h0
+        - n0
+        - ?n3
+        - ?n4
+    -   - sendtohome-b
+        - ?c2
+        - ?c
+        - n2
+        - ca
+        - ?n1
+        - n4
+        - ?n5
+    -   - sendtohome-b
+        - d2
+        - ?d
+        - ?n2
+        - da
+        - ?n1
+        - n5
+        - n6
+    -   - sendtohome-b
+        - ?h2
+        - ?h
+        - n2
+        - ?ha
+        - ?n1
+        - n6
+        - ?n7
+    -   - sendtohome-b
+        - ?s2
+        - ?s
+        - n2
+        - sa
+        - ?n1
+        - ?n7
+        - ?n8
+
+
+---
+timestamp: '2025-01-16T04:39:29.916768'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: sendtohome,(on ?homecard ?vcard),precPos,-1
+
+
+---
+timestamp: '2025-01-16T04:48:42.255224'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+

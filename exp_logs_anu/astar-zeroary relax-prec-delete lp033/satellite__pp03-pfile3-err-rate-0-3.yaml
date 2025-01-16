@@ -1,0 +1,120 @@
+---
+timestamp: '2025-01-17T02:54:42.462516'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-zeroary
+        relax-prec-delete lp033/satellite__pp03-pfile3-err-rate-0-3.yaml
+    instance_id: satellite__pp03-pfile3-err-rate-0-3
+    search_algorithm: astar
+    plan_length: 11
+    domain_class: satellite
+    instance_name: pp03-pfile3-err-rate-0-3
+    ground_plan:
+    - (switch_on instrument3 satellite1)
+    - (calibrate satellite1 instrument3 star0)
+    - (turn_to satellite1 phenomenon5 star0)
+    - (take_image satellite1 phenomenon5 instrument3 spectrograph2)
+    - (turn_to satellite1 phenomenon7 phenomenon5)
+    - (take_image satellite1 phenomenon7 instrument3 spectrograph2)
+    - (turn_to satellite1 star3 phenomenon7)
+    - (take_image satellite1 star3 instrument3 infrared0)
+    - (turn_to satellite1 star4 star3)
+    - (take_image satellite1 star4 instrument3 spectrograph2)
+    - (turn_to satellite0 phenomenon5 star4)
+    lifted_plan:
+    -   - switch_on
+        - instrument3
+        - satellite1
+    -   - calibrate
+        - satellite1
+        - ?instrument3
+        - star0
+    -   - turn_to
+        - satellite1
+        - phenomenon5
+        - ?star0
+    -   - take_image
+        - satellite1
+        - phenomenon5
+        - instrument3
+        - spectrograph2
+    -   - turn_to
+        - ?satellite1
+        - phenomenon7
+        - phenomenon5
+    -   - take_image
+        - ?satellite1
+        - phenomenon7
+        - instrument3
+        - spectrograph2
+    -   - turn_to
+        - satellite1
+        - ?star3
+        - phenomenon7
+    -   - take_image
+        - satellite1
+        - star3
+        - instrument3
+        - ?infrared0
+    -   - turn_to
+        - satellite1
+        - star4
+        - star3
+    -   - take_image
+        - satellite1
+        - star4
+        - instrument3
+        - ?spectrograph2
+    -   - turn_to
+        - satellite0
+        - phenomenon5
+        - ?star4
+
+
+---
+timestamp: '2025-01-17T02:54:43.156225'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'take_image,(have_image ?d ?m),effPos,1
+
+        switch_on,(power_on ?i),effPos,1'
+
+
+---
+timestamp: '2025-01-17T02:56:07.892274'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: 'Node' object has no attribute 'neighbours'.\
+    \ Stack trace: Traceback (most recent call last):\n  File \"instance_solver.py\"\
+    , line 104, in solve_instance\n    searcher.find_path(logger=logger, log_interval=log_interval)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 75, in find_path\n    self.log_iteration_info(logger, iteration, open_list,\
+    \ current_node, final=True, is_goal=True)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 37, in log_iteration_info\n    \"current_node\": current_node.to_dict(include_state=False)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 233, in to_dict\n    \"num_neighbours\": len(self.neighbours),\nAttributeError:\
+    \ 'Node' object has no attribute 'neighbours'\n"
+
+
+---
+timestamp: '2025-01-17T02:56:08.103841'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '191.62'
+
+
+---
+timestamp: '2025-01-17T02:57:58.110668'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 338.96 seconds'
+
+

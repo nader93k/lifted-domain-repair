@@ -1,0 +1,114 @@
+---
+timestamp: '2025-01-16T15:10:56.470476'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary
+        relax-prec lp033/miconic__ps3-0-err-rate-0-3.yaml
+    instance_id: miconic__ps3-0-err-rate-0-3
+    search_algorithm: astar
+    plan_length: 13
+    domain_class: miconic
+    instance_name: ps3-0-err-rate-0-3
+    ground_plan:
+    - (up f0 f1)
+    - (board f1 p0)
+    - (up f1 f3)
+    - (board f3 p1)
+    - (down f3 f1)
+    - (depart f1 p1)
+    - (up f1 f4)
+    - (depart f4 p0)
+    - (down f4 f1)
+    - (up f1 f5)
+    - (board f5 p2)
+    - (down f5 f1)
+    - (depart f1 p2)
+    lifted_plan:
+    -   - up
+        - f0
+        - f1
+    -   - board
+        - f1
+        - ?p0
+    -   - up
+        - f1
+        - f3
+    -   - board
+        - f3
+        - ?p1
+    -   - down
+        - f3
+        - f1
+    -   - depart
+        - f1
+        - p1
+    -   - up
+        - ?f1
+        - f4
+    -   - depart
+        - f4
+        - ?p0
+    -   - down
+        - f4
+        - f1
+    -   - up
+        - f1
+        - f5
+    -   - board
+        - ?f5
+        - p2
+    -   - down
+        - f5
+        - f1
+    -   - depart
+        - f1
+        - ?p2
+
+
+---
+timestamp: '2025-01-16T15:10:57.217205'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'up,(passenger ?f2),effPos,1
+
+        up,(destin ?f2 ?f1),precPos,-1'
+
+
+---
+timestamp: '2025-01-16T15:10:59.778026'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: 'Node' object has no attribute 'neighbours'.\
+    \ Stack trace: Traceback (most recent call last):\n  File \"instance_solver.py\"\
+    , line 104, in solve_instance\n    searcher.find_path(logger=logger, log_interval=log_interval)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 95, in find_path\n    self.log_iteration_info(logger, iteration, open_list,\
+    \ current_node, final=True, is_goal=False)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 37, in log_iteration_info\n    \"current_node\": current_node.to_dict(include_state=False)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 234, in to_dict\n    \"num_neighbours\": len(self.neighbours),\nAttributeError:\
+    \ 'Node' object has no attribute 'neighbours'\n"
+
+
+---
+timestamp: '2025-01-16T15:10:59.969844'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '115.58'
+
+
+---
+timestamp: '2025-01-16T15:12:34.412982'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 250.94 seconds'
+
+

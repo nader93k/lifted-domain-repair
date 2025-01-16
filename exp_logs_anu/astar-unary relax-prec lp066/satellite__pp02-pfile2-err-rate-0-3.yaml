@@ -1,0 +1,106 @@
+---
+timestamp: '2025-01-16T13:56:00.984113'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary
+        relax-prec lp066/satellite__pp02-pfile2-err-rate-0-3.yaml
+    instance_id: satellite__pp02-pfile2-err-rate-0-3
+    search_algorithm: astar
+    plan_length: 13
+    domain_class: satellite
+    instance_name: pp02-pfile2-err-rate-0-3
+    ground_plan:
+    - (switch_on instrument1 satellite0)
+    - (turn_to satellite0 groundstation2 planet4)
+    - (calibrate satellite0 instrument1 groundstation2)
+    - (turn_to satellite0 phenomenon5 groundstation2)
+    - (take_image satellite0 phenomenon5 instrument1 image2)
+    - (turn_to satellite0 phenomenon6 phenomenon5)
+    - (take_image satellite0 phenomenon6 instrument1 infrared0)
+    - (turn_to satellite0 planet3 phenomenon6)
+    - (take_image satellite0 planet3 instrument1 infrared0)
+    - (turn_to satellite0 planet4 planet3)
+    - (take_image satellite0 planet4 instrument1 infrared0)
+    - (turn_to satellite0 star7 planet4)
+    - (take_image satellite0 star7 instrument1 infrared0)
+    lifted_plan:
+    -   - switch_on
+        - instrument1
+        - satellite0
+    -   - turn_to
+        - ?satellite0
+        - ?groundstation2
+        - ?planet4
+    -   - calibrate
+        - ?satellite0
+        - instrument1
+        - ?groundstation2
+    -   - turn_to
+        - ?satellite0
+        - ?phenomenon5
+        - groundstation2
+    -   - take_image
+        - ?satellite0
+        - ?phenomenon5
+        - instrument1
+        - ?image2
+    -   - turn_to
+        - ?satellite0
+        - phenomenon6
+        - phenomenon5
+    -   - take_image
+        - satellite0
+        - phenomenon6
+        - ?instrument1
+        - infrared0
+    -   - turn_to
+        - satellite0
+        - planet3
+        - ?phenomenon6
+    -   - take_image
+        - ?satellite0
+        - ?planet3
+        - ?instrument1
+        - infrared0
+    -   - turn_to
+        - satellite0
+        - ?planet4
+        - planet3
+    -   - take_image
+        - ?satellite0
+        - planet4
+        - ?instrument1
+        - ?infrared0
+    -   - turn_to
+        - satellite0
+        - ?star7
+        - planet4
+    -   - take_image
+        - satellite0
+        - ?star7
+        - ?instrument1
+        - infrared0
+
+
+---
+timestamp: '2025-01-16T13:56:01.692056'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'switch_on,(power_on ?i),effPos,1
+
+        turn_to,(pointing ?s ?d_new),effPos,1'
+
+
+---
+timestamp: '2025-01-16T14:08:34.067045'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+

@@ -1,0 +1,115 @@
+---
+timestamp: '2025-01-16T21:04:07.106701'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary
+        relax-prec-delete lp033/zenotravel__pp04-err-rate-0-3.yaml
+    instance_id: zenotravel__pp04-err-rate-0-3
+    search_algorithm: astar
+    plan_length: 9
+    domain_class: zenotravel
+    instance_name: pp04-err-rate-0-3
+    ground_plan:
+    - (fly plane1 city2 city0 fl5 fl4)
+    - (board person4 plane1 city0)
+    - (fly plane1 city0 city1 fl4 fl3)
+    - (debark person4 plane1 city1)
+    - (board person2 plane1 city1)
+    - (fly plane1 city1 city0 fl3 fl2)
+    - (fly plane1 city0 city2 fl2 fl1)
+    - (debark person2 plane1 city2)
+    - (fly plane1 city2 city0 fl1 fl0)
+    lifted_plan:
+    -   - fly
+        - plane1
+        - city2
+        - city0
+        - ?fl5
+        - fl4
+    -   - board
+        - person4
+        - plane1
+        - ?city0
+    -   - fly
+        - plane1
+        - city0
+        - city1
+        - fl4
+        - ?fl3
+    -   - debark
+        - person4
+        - plane1
+        - ?city1
+    -   - board
+        - person2
+        - plane1
+        - city1
+    -   - fly
+        - plane1
+        - ?city1
+        - city0
+        - fl3
+        - fl2
+    -   - fly
+        - plane1
+        - ?city0
+        - city2
+        - fl2
+        - fl1
+    -   - debark
+        - person2
+        - plane1
+        - city2
+    -   - fly
+        - ?plane1
+        - city2
+        - city0
+        - ?fl1
+        - fl0
+
+
+---
+timestamp: '2025-01-16T21:04:07.465517'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-16T21:05:18.415722'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: 'Node' object has no attribute 'neighbours'.\
+    \ Stack trace: Traceback (most recent call last):\n  File \"instance_solver.py\"\
+    , line 104, in solve_instance\n    searcher.find_path(logger=logger, log_interval=log_interval)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 75, in find_path\n    self.log_iteration_info(logger, iteration, open_list,\
+    \ current_node, final=True, is_goal=True)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 37, in log_iteration_info\n    \"current_node\": current_node.to_dict(include_state=False)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 234, in to_dict\n    \"num_neighbours\": len(self.neighbours),\nAttributeError:\
+    \ 'Node' object has no attribute 'neighbours'\n"
+
+
+---
+timestamp: '2025-01-16T21:05:18.622076'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '161.00'
+
+
+---
+timestamp: '2025-01-16T21:06:22.250795'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 261.89 seconds'
+
+

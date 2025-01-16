@@ -1,0 +1,150 @@
+---
+timestamp: '2025-01-16T20:25:17.352197'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary
+        relax-prec-delete lp066/nomystery-opt11-strips__pp13-err-rate-0-3.yaml
+    instance_id: nomystery-opt11-strips__pp13-err-rate-0-3
+    search_algorithm: astar
+    plan_length: 15
+    domain_class: nomystery-opt11-strips
+    instance_name: pp13-err-rate-0-3
+    ground_plan:
+    - (load p1 t0 l2)
+    - (load p0 t0 l2)
+    - (drive t0 l2 l1 level41 level3 level44)
+    - (load p2 t0 l1)
+    - (drive t0 l1 l4 level29 level12 level41)
+    - (unload p1 t0 l4)
+    - (drive t0 l4 l3 level24 level5 level29)
+    - (load p4 t0 l3)
+    - (load p3 t0 l3)
+    - (unload p2 t0 l3)
+    - (unload p0 t0 l3)
+    - (drive t0 l3 l4 level19 level5 level24)
+    - (drive t0 l4 l2 level3 level16 level19)
+    - (unload p4 t0 l2)
+    - (unload p3 t0 l2)
+    lifted_plan:
+    -   - load
+        - p1
+        - t0
+        - ?l2
+    -   - load
+        - ?p0
+        - ?t0
+        - ?l2
+    -   - drive
+        - t0
+        - ?l2
+        - ?l1
+        - ?level41
+        - level3
+        - ?level44
+    -   - load
+        - ?p2
+        - t0
+        - ?l1
+    -   - drive
+        - ?t0
+        - l1
+        - l4
+        - level29
+        - level12
+        - ?level41
+    -   - unload
+        - p1
+        - t0
+        - l4
+    -   - drive
+        - ?t0
+        - ?l4
+        - ?l3
+        - ?level24
+        - level5
+        - level29
+    -   - load
+        - ?p4
+        - t0
+        - ?l3
+    -   - load
+        - p3
+        - ?t0
+        - ?l3
+    -   - unload
+        - p2
+        - ?t0
+        - l3
+    -   - unload
+        - p0
+        - ?t0
+        - ?l3
+    -   - drive
+        - t0
+        - ?l3
+        - ?l4
+        - level19
+        - ?level5
+        - ?level24
+    -   - drive
+        - ?t0
+        - l4
+        - l2
+        - ?level3
+        - ?level16
+        - ?level19
+    -   - unload
+        - ?p4
+        - t0
+        - ?l2
+    -   - unload
+        - ?p3
+        - t0
+        - ?l2
+
+
+---
+timestamp: '2025-01-16T20:25:18.173460'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-16T20:33:30.153927'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: 'Node' object has no attribute 'neighbours'.\
+    \ Stack trace: Traceback (most recent call last):\n  File \"instance_solver.py\"\
+    , line 104, in solve_instance\n    searcher.find_path(logger=logger, log_interval=log_interval)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 75, in find_path\n    self.log_iteration_info(logger, iteration, open_list,\
+    \ current_node, final=True, is_goal=True)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 37, in log_iteration_info\n    \"current_node\": current_node.to_dict(include_state=False)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 234, in to_dict\n    \"num_neighbours\": len(self.neighbours),\nAttributeError:\
+    \ 'Node' object has no attribute 'neighbours'\n"
+
+
+---
+timestamp: '2025-01-16T20:33:30.164165'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '600.13'
+
+
+---
+timestamp: '2025-01-16T20:33:30.380486'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 635.80 seconds'
+
+

@@ -1,0 +1,143 @@
+---
+timestamp: '2025-01-16T20:06:47.140278'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary
+        relax-prec-delete lp066/hiking-opt14-strips__pptesting-1-2-3-err-rate-0-5.yaml
+    instance_id: hiking-opt14-strips__pptesting-1-2-3-err-rate-0-5
+    search_algorithm: astar
+    plan_length: 13
+    domain_class: hiking-opt14-strips
+    instance_name: pptesting-1-2-3-err-rate-0-5
+    ground_plan:
+    - (put_down girl0 place0 tent0)
+    - (drive_tent girl0 place0 place1 car0 tent0)
+    - (drive guy0 place0 place1 car1)
+    - (drive_tent_passenger girl0 place1 place0 car0 tent0 guy0)
+    - (drive_tent girl0 place0 place1 car0 tent0)
+    - (put_up girl0 place1 tent0)
+    - (drive girl0 place1 place0 car0)
+    - (walk_together tent0 place1 guy0 place0 girl0 couple0)
+    - (put_down girl0 place1 tent0)
+    - (drive_tent girl0 place1 place2 car1 tent0)
+    - (put_up girl0 place2 tent0)
+    - (drive girl0 place2 place1 car1)
+    - (walk_together tent0 place2 guy0 place1 girl0 couple0)
+    lifted_plan:
+    -   - put_down
+        - girl0
+        - place0
+        - ?tent0
+    -   - drive_tent
+        - ?girl0
+        - ?place0
+        - ?place1
+        - car0
+        - ?tent0
+    -   - drive
+        - ?guy0
+        - ?place0
+        - place1
+        - ?car1
+    -   - drive_tent_passenger
+        - ?girl0
+        - place1
+        - ?place0
+        - ?car0
+        - tent0
+        - guy0
+    -   - drive_tent
+        - girl0
+        - place0
+        - ?place1
+        - car0
+        - tent0
+    -   - put_up
+        - girl0
+        - ?place1
+        - ?tent0
+    -   - drive
+        - ?girl0
+        - ?place1
+        - place0
+        - car0
+    -   - walk_together
+        - ?tent0
+        - place1
+        - ?guy0
+        - place0
+        - ?girl0
+        - ?couple0
+    -   - put_down
+        - girl0
+        - ?place1
+        - tent0
+    -   - drive_tent
+        - girl0
+        - ?place1
+        - ?place2
+        - car1
+        - ?tent0
+    -   - put_up
+        - ?girl0
+        - place2
+        - ?tent0
+    -   - drive
+        - ?girl0
+        - ?place2
+        - place1
+        - car1
+    -   - walk_together
+        - ?tent0
+        - ?place2
+        - ?guy0
+        - ?place1
+        - girl0
+        - ?couple0
+
+
+---
+timestamp: '2025-01-16T20:06:47.879857'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: put_down,(next ?x2 ?x2),precPos,-1
+
+
+---
+timestamp: '2025-01-16T20:06:50.761633'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: 'Node' object has no attribute 'neighbours'.\
+    \ Stack trace: Traceback (most recent call last):\n  File \"instance_solver.py\"\
+    , line 104, in solve_instance\n    searcher.find_path(logger=logger, log_interval=log_interval)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 95, in find_path\n    self.log_iteration_info(logger, iteration, open_list,\
+    \ current_node, final=True, is_goal=False)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 37, in log_iteration_info\n    \"current_node\": current_node.to_dict(include_state=False)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 234, in to_dict\n    \"num_neighbours\": len(self.neighbours),\nAttributeError:\
+    \ 'Node' object has no attribute 'neighbours'\n"
+
+
+---
+timestamp: '2025-01-16T20:06:50.950379'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '109.11'
+
+
+---
+timestamp: '2025-01-16T20:08:13.516231'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 227.95 seconds'
+
+

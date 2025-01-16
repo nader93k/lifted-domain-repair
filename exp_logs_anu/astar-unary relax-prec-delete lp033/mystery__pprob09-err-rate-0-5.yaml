@@ -1,0 +1,125 @@
+---
+timestamp: '2025-01-16T21:03:20.041839'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary
+        relax-prec-delete lp033/mystery__pprob09-err-rate-0-5.yaml
+    instance_id: mystery__pprob09-err-rate-0-5
+    search_algorithm: astar
+    plan_length: 9
+    domain_class: mystery
+    instance_name: pprob09-err-rate-0-5
+    ground_plan:
+    - (overcome dread entertainment flounder saturn venus)
+    - (overcome sciatica entertainment flounder uranus saturn)
+    - (feast entertainment flounder hamburger bavaria arizona)
+    - (succumb sciatica entertainment hamburger uranus saturn)
+    - (overcome jealousy excitement guava earth uranus)
+    - (feast excitement guava apple manitoba kentucky)
+    - (feast excitement apple hotdog bavaria arizona)
+    - (feast excitement hotdog wurst bosnia bavaria)
+    - (succumb jealousy excitement wurst earth uranus)
+    lifted_plan:
+    -   - overcome
+        - dread
+        - entertainment
+        - flounder
+        - ?saturn
+        - venus
+    -   - overcome
+        - sciatica
+        - entertainment
+        - ?flounder
+        - uranus
+        - saturn
+    -   - feast
+        - entertainment
+        - flounder
+        - ?hamburger
+        - bavaria
+        - arizona
+    -   - succumb
+        - ?sciatica
+        - entertainment
+        - hamburger
+        - uranus
+        - saturn
+    -   - overcome
+        - ?jealousy
+        - excitement
+        - guava
+        - earth
+        - uranus
+    -   - feast
+        - ?excitement
+        - guava
+        - apple
+        - manitoba
+        - kentucky
+    -   - feast
+        - excitement
+        - apple
+        - ?hotdog
+        - bavaria
+        - arizona
+    -   - feast
+        - ?excitement
+        - hotdog
+        - wurst
+        - bosnia
+        - bavaria
+    -   - succumb
+        - ?jealousy
+        - excitement
+        - wurst
+        - ?earth
+        - ?uranus
+
+
+---
+timestamp: '2025-01-16T21:03:20.799084'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'succumb,(craves ?c ?n),effPos,1
+
+        feast,(craves ?v ?n2),effPos,1'
+
+
+---
+timestamp: '2025-01-16T21:04:56.402732'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: 'Node' object has no attribute 'neighbours'.\
+    \ Stack trace: Traceback (most recent call last):\n  File \"instance_solver.py\"\
+    , line 104, in solve_instance\n    searcher.find_path(logger=logger, log_interval=log_interval)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 95, in find_path\n    self.log_iteration_info(logger, iteration, open_list,\
+    \ current_node, final=True, is_goal=False)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 37, in log_iteration_info\n    \"current_node\": current_node.to_dict(include_state=False)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 234, in to_dict\n    \"num_neighbours\": len(self.neighbours),\nAttributeError:\
+    \ 'Node' object has no attribute 'neighbours'\n"
+
+
+---
+timestamp: '2025-01-16T21:04:56.601010'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '205.60'
+
+
+---
+timestamp: '2025-01-16T21:06:46.561028'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 354.04 seconds'
+
+

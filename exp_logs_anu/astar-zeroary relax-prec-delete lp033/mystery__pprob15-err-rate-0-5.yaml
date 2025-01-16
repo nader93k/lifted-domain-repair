@@ -1,0 +1,102 @@
+---
+timestamp: '2025-01-17T02:34:51.685478'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-zeroary
+        relax-prec-delete lp033/mystery__pprob15-err-rate-0-5.yaml
+    instance_id: mystery__pprob15-err-rate-0-5
+    search_algorithm: astar
+    plan_length: 6
+    domain_class: mystery
+    instance_name: pprob15-err-rate-0-5
+    ground_plan:
+    - (overcome jealousy satisfaction pistachio neptune earth)
+    - (feast satisfaction pistachio broccoli surrey moravia)
+    - (feast satisfaction broccoli lemon surrey moravia)
+    - (feast satisfaction lemon cod bavaria alsace)
+    - (feast satisfaction cod chicken pennsylvania quebec)
+    - (succumb jealousy satisfaction chicken neptune earth)
+    lifted_plan:
+    -   - overcome
+        - jealousy
+        - satisfaction
+        - pistachio
+        - ?neptune
+        - earth
+    -   - feast
+        - satisfaction
+        - pistachio
+        - ?broccoli
+        - surrey
+        - moravia
+    -   - feast
+        - satisfaction
+        - broccoli
+        - ?lemon
+        - surrey
+        - moravia
+    -   - feast
+        - ?satisfaction
+        - lemon
+        - cod
+        - bavaria
+        - alsace
+    -   - feast
+        - ?satisfaction
+        - cod
+        - chicken
+        - pennsylvania
+        - quebec
+    -   - succumb
+        - ?jealousy
+        - satisfaction
+        - chicken
+        - neptune
+        - earth
+
+
+---
+timestamp: '2025-01-17T02:34:52.092822'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-17T02:35:40.573475'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: 'Node' object has no attribute 'neighbours'.\
+    \ Stack trace: Traceback (most recent call last):\n  File \"instance_solver.py\"\
+    , line 104, in solve_instance\n    searcher.find_path(logger=logger, log_interval=log_interval)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 75, in find_path\n    self.log_iteration_info(logger, iteration, open_list,\
+    \ current_node, final=True, is_goal=True)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 37, in log_iteration_info\n    \"current_node\": current_node.to_dict(include_state=False)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 233, in to_dict\n    \"num_neighbours\": len(self.neighbours),\nAttributeError:\
+    \ 'Node' object has no attribute 'neighbours'\n"
+
+
+---
+timestamp: '2025-01-17T02:35:40.939539'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '155.82'
+
+
+---
+timestamp: '2025-01-17T02:37:32.196765'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 312.10 seconds'
+
+
