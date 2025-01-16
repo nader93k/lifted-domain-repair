@@ -126,7 +126,8 @@ def process_csv_to_latex(main_df, summary_df, alg_order_list, output_file, capti
                         else:
                             q_str = f"{q_val:.2f}".lstrip('0')
                         if max_q is not None and abs(q_val - max_q) < 1e-10:  # Using small epsilon for float comparison
-                            q_str = f"\\textbf{{{q_str}}}"
+                            # q_str = f"\\textbf{{{q_str}}}" # uncomment if you want boldface
+                            q_str = q_str
                     else:
                         q_str = "-"
                 else:
@@ -144,8 +145,11 @@ def process_csv_to_latex(main_df, summary_df, alg_order_list, output_file, capti
         # Add two summary rows - one for SUM(C) and one for AVG(Q)
         summary_row = summary_df[summary_df['lift_prob'] == prob]
         
-        # First row: SUM(C)
-        row_str = "    \\multicolumn{1}{c}{} & \\textbf{SUM(C)}"
+        # Collect summary C and Q values
+        summary_c_values = []
+        summary_q_values = []
+        summary_data = []
+        
         for g in grounding_methods:
             for alg_base in search_algorithms:
                 data = summary_row[
@@ -154,39 +158,51 @@ def process_csv_to_latex(main_df, summary_df, alg_order_list, output_file, capti
                 ]
                 if len(data) > 0:
                     c_val = data['C_abs'].iloc[0]
-                    c_str = f"\\textbf{{{int(c_val)}}}" if pd.notna(c_val) else "-"
+                    q_val = data['Q'].iloc[0]
+                    if pd.notna(c_val):
+                        summary_c_values.append(c_val)
+                    if pd.notna(q_val):
+                        summary_q_values.append(q_val)
+                summary_data.append((data, g, alg_base))
+        
+        max_summary_c = max(summary_c_values) if summary_c_values else None
+        max_summary_q = max(summary_q_values) if summary_q_values else None
+        
+        # First row: SUM(C)
+        row_str = "    \\multicolumn{1}{c}{} & SUM(C)"
+        for data, g, alg_base in summary_data:
+            if len(data) > 0:
+                c_val = data['C_abs'].iloc[0]
+                if pd.notna(c_val):
+                    c_str = str(int(c_val))
+                    if max_summary_c is not None and c_val == max_summary_c:
+                        c_str = f"\\textbf{{{c_str}}}"
                 else:
                     c_str = "-"
-                
-                # Only add C value and a blank space for Q
-                row_str += f" & {c_str} & "
+            else:
+                c_str = "-"
+            row_str += f" & {c_str} & "
         
         row_str += " \\\\"
         latex_content.append(row_str)
         
         # Second row: AVG(Q)
-        row_str = "    \\multicolumn{1}{c}{} & \\textbf{AVG(Q)}"
-        for g in grounding_methods:
-            for alg_base in search_algorithms:
-                data = summary_row[
-                    (summary_row['grounding method'] == g) & 
-                    (summary_row['search algorithm'] == alg_base)
-                ]
-                if len(data) > 0:
-                    q_val = data['Q'].iloc[0]
-                    if pd.notna(q_val):
-                        if q_val.is_integer():
-                            formatted_num = str(int(q_val))
-                        else:
-                            formatted_num = f"{q_val:.2f}".lstrip('0')
-                        q_str = f"\\textbf{{{formatted_num}}}"
+        row_str = "    \\multicolumn{1}{c}{} & AVG(Q)"
+        for data, g, alg_base in summary_data:
+            if len(data) > 0:
+                q_val = data['Q'].iloc[0]
+                if pd.notna(q_val):
+                    if q_val.is_integer():
+                        q_str = str(int(q_val))
                     else:
-                        q_str = "\\textbf{-}"
+                        q_str = f"{q_val:.2f}".lstrip('0')
+                    if max_summary_q is not None and abs(q_val - max_summary_q) < 1e-10:
+                        q_str = f"\\textbf{{{q_str}}}"
                 else:
                     q_str = "-"
-                
-                # Add blank space for C and then Q value
-                row_str += f" &  & {q_str}"
+            else:
+                q_str = "-"
+            row_str += f" &  & {q_str}"
         
         row_str += " \\\\"
         latex_content.append(row_str)
