@@ -13,10 +13,10 @@ import sys
 
 
 
-HEURISTIC_ = r"Heurisitc(h_name='L_HADD', relaxation='zeroary', use_ff=False)"
-DELETE_RELAXATION = True
+HEURISTIC_ = r"Heurisitc(h_name='L_HADD', relaxation='unary', use_ff=False)"
+DELETE_RELAXATION = False
 PREC_RELAX_CONFIG = ['missing', 'missing-and-negative', 'all']
-PREC_RELAX = PREC_RELAX_CONFIG[1]
+PREC_RELAX = PREC_RELAX_CONFIG[0]
 
 
 
@@ -64,6 +64,7 @@ class Node:
         self.parent = parent
         self.grounding_time = None
         self.h_relaxation = heuristic_relaxation
+        self.num_neighbours = 0
 
         if is_initial_node:
             assert len(ground_action_sequence) == 0
@@ -206,6 +207,8 @@ class Node:
             if next_node.f_cost == float('inf'):
                 continue
             neighbours.append(next_node)
+        
+        self.num_neighbours = len(neighbours)
 
         return neighbours
 
@@ -230,7 +233,7 @@ class Node:
             "h_cost": self.h_cost,
             "f_cost": self.f_cost,
             "next_lifted_action": next_lifted,
-            "num_neighbours": len(self.neighbours),
+            "num_neighbours": self.num_neighbours
             # "first_10_possible_groundings": self.possible_groundings[:10] if self.possible_groundings is not None else self.possible_groundings
         }
         if include_state:

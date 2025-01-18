@@ -231,5 +231,6 @@ if __name__ == "__main__":
     summary_df = pd.read_csv(summary_table)
 
     output = folder + 'main_table.tex'
-    alg_order_list = ['UCS', 'A*_FF', 'GBFS_FF', 'DFS']
+    # alg_order_list = ['UCS', 'A*_FF', 'GBFS_FF', 'DFS']
+    alg_order_list = ['UCS', 'A*(FF)', 'A*(UARY)', 'A*(ZARY)', 'GBFS(FF)', 'DFS']
     process_csv_to_latex(main_df, summary_df, alg_order_list, output)

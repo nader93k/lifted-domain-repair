@@ -9,7 +9,7 @@ from log_reader import process_yaml_files
 
 
 # Define base components
-algorithms = ['bfs', 'dfs', 'astar-unary-ff', 'gbfs-unary-ff']
+algorithms = ['bfs', 'dfs', 'astar-unary-ff', 'gbfs-unary-ff', 'astar-unary', 'astar-zeroary']
 relaxations = ['relax-prec', 'relax-prec-delete', 'relax-all']
 lp_pairs = [('033', 0.33), ('066', 0.66), ('1', 1.0)]
 groundings = dict([
@@ -20,8 +20,10 @@ groundings = dict([
 rename = dict([
     ('bfs', 'UCS'),
     ('dfs', 'DFS'),
-    ('astar-unary-ff', 'A*_FF'),
-    ('gbfs-unary-ff', 'GBFS_FF'),
+    ('astar-unary-ff', 'A*(FF)'),
+    ('gbfs-unary-ff', 'GBFS(FF)'),
+    ('astar-unary', 'A*(UARY)'),
+    ('astar-zeroary', 'A*(ZARY)'),
 ])
 
 # folder, prob, grounding, rename
@@ -53,12 +55,13 @@ for folder, prob, grounding, rename in experiments:
     exp_folder = exp_parent + folder
     print(f'processing folder={exp_folder}')
     output_csv = csv_folder + folder + '.csv'
-    if not os.path.exists(output_csv):
-        process_yaml_files(exp_folder, output_csv, lift_prob=prob)
-    df = pd.read_csv(output_csv)
-    df['search algorithm'] = rename
-    df['grounding method'] = grounding
-    df_list.append(df)
+    if os.path.exists(exp_folder):
+        if not os.path.exists(output_csv):
+            process_yaml_files(exp_folder, output_csv, lift_prob=prob)
+        df = pd.read_csv(output_csv)
+        df['search algorithm'] = rename
+        df['grounding method'] = grounding
+        df_list.append(df)
 
 
 merged_df = pd.concat(df_list)
