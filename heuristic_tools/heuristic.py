@@ -82,6 +82,8 @@ DATALOG_THEORY = BASE_FOLDER + "datalog.theory"
 DATALOG_MODEL = BASE_FOLDER + "datalog.model"
 GROUNDED_OUTPUT_SAS = BASE_FOLDER + "out.sas"
 
+INFTY = 10**42
+
 transform_to_fd = {
     "G_HMAX": "hmax",
     "G_HADD": "add",
@@ -259,9 +261,20 @@ def remap_vars(action, var_remap):
     remap_vars_condition(action.precondition, var_remap)
     remap_vars_effect(action.effects, var_remap)
 
+ariticial_goal_action = "ARTIFICIAL_GOAL_ACTION"
+def goal_action(task):
+    goal_copy = copy.deepcopy(task._goal)
+    parameters = []
+    effects = []
+    cost = 0
+    return fd.pddl.actions.Action(ariticial_goal_action, parameters, len(parameters), goal_copy, effects, cost)
+
 def integrate_action_sequence(domain, task, action_sequence):
+    action_sequence = action_sequence + [[ariticial_goal_action]]
+
     old_actions = domain._actions
     name_to_action = dict((action.name, action) for action in old_actions)
+    name_to_action[ariticial_goal_action] = goal_action(task)
 
     domain._constants += [fd.pddl.pddl_types.TypedObject(make_num(i), 'object') for i in range(len(action_sequence)+1)]
     domain._predicates += [fd.pddl.predicates.Predicate(COUNTER_PRED, [fd.pddl.pddl_types.TypedObject(NUM_PAR, 'object')]),
@@ -762,8 +775,6 @@ def dl_exploration(init, rules, comb_f=max, unary_relaxed=False, FF=False, unary
                 if FF:
                     achiever[combined_fact] = ([current_fact], _rule)
 
-    INFTY = -1
-
     if GOAL_FACT not in fact_cost:
         return INFTY
 
@@ -1112,19 +1123,4 @@ class Heurisitc:
             print(f"Saved pickles.")
             raise
 
-        ### DEBUG #TODO: remove this
-        # print(f">>  Calculating H fro node with grounding:\n{self.ground_action_sequence}")
-        # actions = [(l,) for l in self.lifted_action_sequence]
-        # with open('domain.pkl', 'wb') as file:
-        #     pickle.dump(self.original_domain, file)
-        # with open('task.pkl', 'wb') as file:
-        #     pickle.dump(task, file)
-        # with open('actions.pkl', 'wb') as file:
-        #     pickle.dump(actions, file)
-        ### DEBUG Ends ####
-
-        if val != -1:
-            return val #TODO: (0, val) would be better
-        else: # returned infinity == add repair is not sufficient
-            # print("No single action was applicable, rerunning to precondition repair.")
-            return self.re_run(__domain, __task, action_sequence) #TODO: (self.re_run(__domain, __task, action_sequence), 0)
+        return val
