@@ -13,10 +13,17 @@ import sys
 
 
 
-HEURISTIC_ = r"Heurisitc(h_name='L_HADD', relaxation='unary', use_ff=False)"
-DELETE_RELAXATION = False
+FF = 'True'
+RELAXATION = 1
+
+HEURISTIC_ = rf"Heurisitc(h_name='L_HADD', relaxation='unary', use_ff={FF})"
+
+if RELAXATION in (1, 2):
+    DELETE_RELAXATION = True
+else:
+    DELETE_RELAXATION = False
 PREC_RELAX_CONFIG = ['missing', 'missing-and-negative', 'all']
-PREC_RELAX = PREC_RELAX_CONFIG[0]
+PREC_RELAX = PREC_RELAX_CONFIG[RELAXATION]
 
 
 
