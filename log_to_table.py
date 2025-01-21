@@ -118,7 +118,7 @@ if __name__ == "__main__":
     output_main = folder + 'main_table.csv'
     output_summary = folder + 'summary_table.csv'
 
-    order_list = ['UCS', 'A*(FF)', 'A*(UARY)', 'A*(ZARY)', 'GBFS(FF)', 'DFS']
+    order_list = ['UCS', 'A*(FF)', 'A*(UNR)', 'GBFS(FF)', 'GBFS(UNR)', 'DFS']
     
 
     main_df = main_table(input_file, order_list)

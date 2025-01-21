@@ -9,7 +9,7 @@ from log_reader import process_yaml_files
 
 
 # Define base components
-algorithms = ['bfs', 'dfs', 'astar-unary-ff', 'gbfs-unary-ff', 'astar-unary', 'astar-zeroary']
+algorithms = ['bfs', 'dfs', 'astar-unary-ff', 'astar-unary', 'gbfs-unary-ff', 'gbfs-unary']
 relaxations = ['relax-prec', 'relax-prec-delete', 'relax-all']
 lp_pairs = [('033', 0.33), ('066', 0.66), ('1', 1.0)]
 groundings = dict([
@@ -20,10 +20,12 @@ groundings = dict([
 rename = dict([
     ('bfs', 'UCS'),
     ('dfs', 'DFS'),
+
     ('astar-unary-ff', 'A*(FF)'),
+    ('astar-unary', 'A*(UNR)'),
+
     ('gbfs-unary-ff', 'GBFS(FF)'),
-    ('astar-unary', 'A*(UARY)'),
-    ('astar-zeroary', 'A*(ZARY)'),
+    ('gbfs-unary', 'GBFS(UNR)'),
 ])
 
 # folder, prob, grounding, rename

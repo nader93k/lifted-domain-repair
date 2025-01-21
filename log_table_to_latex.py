@@ -74,8 +74,10 @@ def process_csv_to_latex(main_df, summary_df, alg_order_list, output_file, capti
             instance_count = domain_df['instance_count'].iloc[0] if len(domain_df) > 0 else 0
             domain_with_count = f"{domain} ({int(instance_count)})"
             
-            if prob.is_integer(): formatted_prob = str(int(prob))
-            else: formatted_prob = f"{prob:.2f}".lstrip('0')
+            if prob.is_integer(): 
+                formatted_prob = str(int(prob))
+            else: 
+                formatted_prob = f"{prob:.2f}".lstrip('0')
 
             row_str = f"    {formatted_prob} & {domain_with_count}" if j == 0 else f"    \\multicolumn{{1}}{{c}}{{}} & {domain_with_count}"
             
@@ -124,7 +126,7 @@ def process_csv_to_latex(main_df, summary_df, alg_order_list, output_file, capti
                         if q_val.is_integer():
                             q_str = str(int(q_val))
                         else:
-                            q_str = f"{q_val:.2f}".lstrip('0')
+                            q_str = f"{q_val:.1f}".lstrip('0')
                         if max_q is not None and abs(q_val - max_q) < 1e-10:  # Using small epsilon for float comparison
                             # q_str = f"\\textbf{{{q_str}}}" # uncomment if you want boldface
                             q_str = q_str
@@ -145,67 +147,76 @@ def process_csv_to_latex(main_df, summary_df, alg_order_list, output_file, capti
         # Add two summary rows - one for SUM(C) and one for AVG(Q)
         summary_row = summary_df[summary_df['lift_prob'] == prob]
         
-        # Collect summary C and Q values
-        summary_c_values = []
-        summary_q_values = []
+        # Initialize summary data collection
         summary_data = []
         
+        # Process each grounding method separately
         for g in grounding_methods:
+            g_summary_data = []
+            c_values = []
+            q_values = []
+            
+            # Collect data for this grounding method
             for alg_base in search_algorithms:
                 data = summary_row[
                     (summary_row['grounding method'] == g) & 
                     (summary_row['search algorithm'] == alg_base)
                 ]
+                
                 if len(data) > 0:
                     c_val = data['C_abs'].iloc[0]
                     q_val = data['Q'].iloc[0]
                     if pd.notna(c_val):
-                        summary_c_values.append(c_val)
+                        c_values.append(c_val)
                     if pd.notna(q_val):
-                        summary_q_values.append(q_val)
-                summary_data.append((data, g, alg_base))
-        
-        max_summary_c = max(summary_c_values) if summary_c_values else None
-        max_summary_q = max(summary_q_values) if summary_q_values else None
-        
-        # First row: SUM(C)
-        row_str = "    \\multicolumn{1}{c}{} & SUM(C)"
-        for data, g, alg_base in summary_data:
-            if len(data) > 0:
-                c_val = data['C_abs'].iloc[0]
-                if pd.notna(c_val):
+                        q_values.append(q_val)
+                    g_summary_data.append((c_val, q_val))
+                else:
+                    g_summary_data.append((None, None))
+            
+            # Find max values for this grounding method
+            g_max_c = max(c_values) if c_values else None
+            g_max_q = max(q_values) if q_values else None
+            
+            # Format values for this grounding method
+            formatted_data = []
+            for c_val, q_val in g_summary_data:
+                # Format C value
+                if c_val is not None:
                     c_str = str(int(c_val))
-                    if max_summary_c is not None and c_val == max_summary_c:
+                    if g_max_c is not None and c_val == g_max_c:
                         c_str = f"\\textbf{{{c_str}}}"
                 else:
                     c_str = "-"
-            else:
-                c_str = "-"
-            row_str += f" & {c_str} & "
+                
+                # Format Q value
+                if q_val is not None:
+                    if q_val.is_integer():
+                        q_str = str(int(q_val))
+                    else:
+                        q_str = f"{q_val:.1f}".lstrip('0')
+                    if g_max_q is not None and abs(q_val - g_max_q) < 1e-10:
+                        q_str = f"\\textbf{{{q_str}}}"
+                else:
+                    q_str = "-"
+                
+                formatted_data.append((c_str, q_str))
+            
+            summary_data.extend(formatted_data)
         
+        # First row: SUM(C)
+        row_str = "    \\multicolumn{1}{c}{} & SUM(C)"
+        for c_str, _ in summary_data:
+            row_str += f" & {c_str} & "
+        row_str = row_str.rstrip()  # Remove trailing space
         row_str += " \\\\"
         latex_content.append(row_str)
         
         # Second row: AVG(Q)
         row_str = "    \\multicolumn{1}{c}{} & AVG(Q)"
-        for data, g, alg_base in summary_data:
-            if len(data) > 0:
-                q_val = data['Q'].iloc[0]
-                if pd.notna(q_val):
-                    if q_val.is_integer():
-                        q_str = str(int(q_val))
-                    else:
-                        q_str = f"{q_val:.2f}".lstrip('0')
-                    if max_summary_q is not None and abs(q_val - max_summary_q) < 1e-10:
-                        q_str = f"\\textbf{{{q_str}}}"
-                else:
-                    q_str = "-"
-            else:
-                q_str = "-"
+        for _, q_str in summary_data:
             row_str += f" &  & {q_str}"
-        
-        row_str += " \\\\"
-        latex_content.append(row_str)
+        latex_content.append(row_str + " \\\\")
         
         if i < len(lift_probs) - 1:
             latex_content.append("    \\midrule")
@@ -231,6 +242,5 @@ if __name__ == "__main__":
     summary_df = pd.read_csv(summary_table)
 
     output = folder + 'main_table.tex'
-    # alg_order_list = ['UCS', 'A*_FF', 'GBFS_FF', 'DFS']
-    alg_order_list = ['UCS', 'A*(FF)', 'A*(UARY)', 'A*(ZARY)', 'GBFS(FF)', 'DFS']
+    alg_order_list = ['UCS', 'A*(FF)', 'A*(UNR)', 'GBFS(FF)', 'GBFS(UNR)', 'DFS']
     process_csv_to_latex(main_df, summary_df, alg_order_list, output)

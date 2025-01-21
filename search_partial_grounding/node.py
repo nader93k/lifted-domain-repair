@@ -13,7 +13,7 @@ import sys
 
 
 
-FF = 'True'
+FF = 'False'
 RELAXATION = 1
 
 HEURISTIC_ = rf"Heurisitc(h_name='L_HADD', relaxation='unary', use_ff={FF})"
