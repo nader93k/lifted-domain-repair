@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-def process_csv_to_latex(main_df, summary_df, alg_order_list, output_file, caption="Search Algorithm Performance Comparison"):
+def process_csv_to_latex(main_df, summary_df, alg_order_list, output_file, caption="Search Algorithm Performance Comparison", include_liftprob=False):
     # Get unique values from dataframes
     grounding_methods = sorted(main_df['grounding method'].unique())
     search_algorithms = alg_order_list
@@ -12,17 +12,26 @@ def process_csv_to_latex(main_df, summary_df, alg_order_list, output_file, capti
     num_g_cols = len(grounding_methods)
     total_data_cols = num_metric_cols * num_alg_cols * num_g_cols
     
-    # Create column specification
-    col_spec = "cc" + "c" * total_data_cols
+    # Create column specification based on whether lift_prob is included
+    col_spec = "c" * (2 if not include_liftprob else 3) + "c" * total_data_cols
     
     latex_content = [
         "\\begin{table*}",
         "    \\centering",
         f"    \\begin{{tabular}}{{{col_spec}}}",
-        "    \\toprule",
-        "    \\multirow{4}{*}{\\rotatebox[origin=c]{90}{L. Prob.}} & ",
-        "    \\multirow{4}{*}{\\rotatebox[origin=c]{90}{Domain}} & "
+        "    \\toprule"
     ]
+    
+    # Add initial column headers conditionally
+    if include_liftprob:
+        latex_content.extend([
+            "    \\multirow{4}{*}{\\rotatebox[origin=c]{90}{L. Prob.}} & ",
+            "    \\multirow{4}{*}{\\rotatebox[origin=c]{90}{Domain}} & "
+        ])
+    else:
+        latex_content.append(
+            "    \\multirow{4}{*}{\\rotatebox[origin=c]{90}{Domain}} & "
+        )
     
     # Add grounding method headers
     g_method_header = []
@@ -33,7 +42,7 @@ def process_csv_to_latex(main_df, summary_df, alg_order_list, output_file, capti
     
     # Add cmidrule separators for grounding methods
     cmidrules = []
-    start_col = 3  # First two columns are L. Prob and Domain
+    start_col = 2 if not include_liftprob else 3  # Adjust starting column based on include_liftprob
     for _ in grounding_methods:
         end_col = start_col + (num_metric_cols * num_alg_cols) - 1
         cmidrules.append(f"\\cmidrule(lr){{{start_col}-{end_col}}}")
@@ -44,14 +53,13 @@ def process_csv_to_latex(main_df, summary_df, alg_order_list, output_file, capti
     alg_header = []
     for g in grounding_methods:
         for alg in search_algorithms:
-            # Strip any suffixes for display (e.g., "_HADD_UNARY_FF")
             display_name = alg.split('_')[0]
             alg_header.append(f"\\multicolumn{{2}}{{c}}{{{display_name}}}")
-    latex_content.append("    & & " + " & ".join(alg_header) + " \\\\")
+    latex_content.append("    " + ("& " if not include_liftprob else "& & ") + " & ".join(alg_header) + " \\\\")
     
     # Add cmidrules for algorithms
     cmidrules = []
-    col = 3
+    col = 2 if not include_liftprob else 3
     for _ in range(len(grounding_methods) * len(search_algorithms)):
         cmidrules.append(f"\\cmidrule(lr){{{col}-{col+1}}}")
         col += 2
@@ -59,7 +67,7 @@ def process_csv_to_latex(main_df, summary_df, alg_order_list, output_file, capti
     
     # Add C/Q headers
     metrics_header = ["C & Q"] * (len(grounding_methods) * len(search_algorithms))
-    latex_content.append("    & & " + " & ".join(metrics_header) + " \\\\")
+    latex_content.append("    " + ("& " if not include_liftprob else "& & ") + " & ".join(metrics_header) + " \\\\")
     latex_content.append("    \\midrule")
     
     # Process data rows
@@ -74,19 +82,18 @@ def process_csv_to_latex(main_df, summary_df, alg_order_list, output_file, capti
             instance_count = domain_df['instance_count'].iloc[0] if len(domain_df) > 0 else 0
             domain_with_count = f"{domain} ({int(instance_count)})"
             
-            if prob.is_integer(): 
-                formatted_prob = str(int(prob))
-            else: 
-                formatted_prob = f"{prob:.1f}".lstrip('0')
-
-            row_str = f"    {formatted_prob} & {domain_with_count}" if j == 0 else f"    \\multicolumn{{1}}{{c}}{{}} & {domain_with_count}"
+            # Format row start based on include_liftprob
+            if include_liftprob:
+                formatted_prob = str(int(prob)) if prob.is_integer() else f"{prob:.1f}".lstrip('0')
+                row_str = f"    {formatted_prob} & {domain_with_count}" if j == 0 else f"    \\multicolumn{{1}}{{c}}{{}} & {domain_with_count}"
+            else:
+                row_str = f"    {domain_with_count}"
             
-            # Collect all valid C and Q values for this row
+            # Rest of the row processing remains the same
             c_values = []
             q_values = []
             row_data = []
             
-            # First pass: collect all values
             for g in grounding_methods:
                 for alg_base in search_algorithms:
                     data = domain_df[
@@ -103,17 +110,14 @@ def process_csv_to_latex(main_df, summary_df, alg_order_list, output_file, capti
                             q_values.append(q_val)
                     row_data.append((data, g, alg_base))
             
-            # Find maximum values
             max_c = max(c_values) if c_values else None
             max_q = max(q_values) if q_values else None
             
-            # Second pass: format values
             for data, g, alg_base in row_data:
                 if len(data) > 0:
                     c_val = data['C_abs'].iloc[0]
                     q_val = data['Q'].iloc[0]
                     
-                    # Format C value
                     if pd.notna(c_val):
                         c_str = str(int(c_val))
                         if max_c is not None and c_val == max_c:
@@ -121,14 +125,12 @@ def process_csv_to_latex(main_df, summary_df, alg_order_list, output_file, capti
                     else:
                         c_str = "-"
                     
-                    # Format Q value
                     if pd.notna(q_val):
                         if q_val.is_integer():
                             q_str = str(int(q_val))
                         else:
                             q_str = f"{q_val:.1f}".lstrip('0')
-                        if max_q is not None and abs(q_val - max_q) < 1e-10:  # Using small epsilon for float comparison
-                            # q_str = f"\\textbf{{{q_str}}}" # uncomment if you want boldface
+                        if max_q is not None and abs(q_val - max_q) < 1e-10:
                             q_str = q_str
                     else:
                         q_str = "-"
@@ -142,21 +144,17 @@ def process_csv_to_latex(main_df, summary_df, alg_order_list, output_file, capti
             latex_content.append(row_str)
         
         # Add midrule before summary rows
-        latex_content.append(f"    \\cmidrule(l){{2-{total_data_cols+2}}}")
+        latex_content.append(f"    \\cmidrule(l){{2-{total_data_cols + (2 if include_liftprob else 1)}}}")
         
-        # Add two summary rows - one for SUM(C) and one for AVG(Q)
+        # Process summary rows
         summary_row = summary_df[summary_df['lift_prob'] == prob]
-        
-        # Initialize summary data collection
         summary_data = []
         
-        # Process each grounding method separately
         for g in grounding_methods:
             g_summary_data = []
             c_values = []
             q_values = []
             
-            # Collect data for this grounding method
             for alg_base in search_algorithms:
                 data = summary_row[
                     (summary_row['grounding method'] == g) & 
@@ -174,14 +172,11 @@ def process_csv_to_latex(main_df, summary_df, alg_order_list, output_file, capti
                 else:
                     g_summary_data.append((None, None))
             
-            # Find max values for this grounding method
             g_max_c = max(c_values) if c_values else None
             g_max_q = max(q_values) if q_values else None
             
-            # Format values for this grounding method
             formatted_data = []
             for c_val, q_val in g_summary_data:
-                # Format C value
                 if c_val is not None:
                     c_str = str(int(c_val))
                     if g_max_c is not None and c_val == g_max_c:
@@ -189,7 +184,6 @@ def process_csv_to_latex(main_df, summary_df, alg_order_list, output_file, capti
                 else:
                     c_str = "-"
                 
-                # Format Q value
                 if q_val is not None:
                     if q_val.is_integer():
                         q_str = str(int(q_val))
@@ -204,16 +198,19 @@ def process_csv_to_latex(main_df, summary_df, alg_order_list, output_file, capti
             
             summary_data.extend(formatted_data)
         
-        # First row: SUM(C)
-        row_str = "    \\multicolumn{1}{c}{} & SUM(C)"
+        # Add summary rows with conditional formatting for lift_prob column
+        multicolumn_start = "    \\multicolumn{1}{c}{} & " if include_liftprob else "    "
+        
+        # SUM(C) row
+        row_str = f"{multicolumn_start}SUM(C)"
         for c_str, _ in summary_data:
             row_str += f" & {c_str} & "
-        row_str = row_str.rstrip()  # Remove trailing space
+        row_str = row_str.rstrip()
         row_str += " \\\\"
         latex_content.append(row_str)
         
-        # Second row: AVG(Q)
-        row_str = "    \\multicolumn{1}{c}{} & AVG(Q)"
+        # AVG(Q) row
+        row_str = f"{multicolumn_start}AVG(Q)"
         for _, q_str in summary_data:
             row_str += f" &  & {q_str}"
         latex_content.append(row_str + " \\\\")
@@ -221,7 +218,7 @@ def process_csv_to_latex(main_df, summary_df, alg_order_list, output_file, capti
         if i < len(lift_probs) - 1:
             latex_content.append("    \\midrule")
     
-    # Add table footer with caption parameter
+    # Add table footer
     latex_content.extend([
         "    \\bottomrule",
         "    \\end{tabular}",
@@ -243,4 +240,6 @@ if __name__ == "__main__":
 
     output = folder + 'main_table.tex'
     alg_order_list = ['UCS', 'A*(FF)', 'A*(UNR)', 'GBFS(FF)', 'GBFS(UNR)', 'DFS']
-    process_csv_to_latex(main_df, summary_df, alg_order_list, output)
+    
+    # Set include_liftprob to False to exclude the lift probability column
+    process_csv_to_latex(main_df, summary_df, alg_order_list, output, include_liftprob=False)
