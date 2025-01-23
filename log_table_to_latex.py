@@ -77,7 +77,7 @@ def process_csv_to_latex(main_df, summary_df, alg_order_list, output_file, capti
             if prob.is_integer(): 
                 formatted_prob = str(int(prob))
             else: 
-                formatted_prob = f"{prob:.2f}".lstrip('0')
+                formatted_prob = f"{prob:.1f}".lstrip('0')
 
             row_str = f"    {formatted_prob} & {domain_with_count}" if j == 0 else f"    \\multicolumn{{1}}{{c}}{{}} & {domain_with_count}"
             
