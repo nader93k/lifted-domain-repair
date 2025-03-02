@@ -1,6 +1,7 @@
 from pathlib import Path
 import os
 import tempfile
+from itertools import product
 from lifted_pddl import Parser
 
 
@@ -106,20 +107,15 @@ def ground_pddl(domain, task, lifted_action):
         subprocess.CalledProcessError: If the grounder fails.
         Exception: If there is an error running the grounder.
     """
+
     process_id = os.getpid()
-
-    base_dir = Path("/dev/shm/pddl_files")
-    base_dir.mkdir(parents=True, exist_ok=True)
-
-    # debug path:
-    # debug_dir = '/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding'
-    # with tempfile.TemporaryDirectory(dir=debug_dir) as temp_dir:
-    with tempfile.TemporaryDirectory(dir="/dev/shm/pddl_files/") as temp_dir:
+    pddl_files_dir = "/dev/shm/pddl_files/"
+    os.makedirs(pddl_files_dir, exist_ok=True)
+    with tempfile.TemporaryDirectory(dir=pddl_files_dir) as temp_dir:
         base_folder = Path(temp_dir)
 
-        input_action_name, _ = extract_name_and_params(lifted_action)
-
         domain_path = base_folder / f"domain_{process_id}.pddl"
+        input_action_name, _ = extract_name_and_params(lifted_action)
         with open(domain_path, "w") as f:
             content = domain.to_pddl(input_action_name)
             f.write(content)
@@ -137,4 +133,54 @@ def ground_pddl(domain, task, lifted_action):
         
         filtered = filter_actions(lifted_action, applicable_actions)
 
+        # debug
+        # with open('/home/remote/u7899572/lifted-white-plan-domain-repair/ground_pddl.txt', 'a') as debug:
+        #     debug.write(str(filtered))
+
         return list(filtered)
+
+
+def exhaustive_groundings(domain, task, action_str):
+    process_id = os.getpid()
+    pddl_files_dir = "/dev/shm/pddl_files/"
+    os.makedirs(pddl_files_dir, exist_ok=True)
+    with tempfile.TemporaryDirectory(dir=pddl_files_dir) as temp_dir:
+        base_folder = Path(temp_dir)
+
+        domain_path = base_folder / f"domain_{process_id}.pddl"
+        input_action_name, _ = extract_name_and_params(action_str)
+        with open(domain_path, "w") as f:
+            content = domain.to_pddl(input_action_name)
+            f.write(content)
+
+        task_path = base_folder / f"task_{process_id}.pddl"
+        with open(task_path, "w") as f:
+            content = task.to_pddl()
+            f.write(content)
+ 
+        parser = Parser()
+        parser.parse_domain(domain_path)
+        parser.parse_problem(task_path)
+
+        t_h = parser.type_hierarchy
+
+        action = domain.get_action(input_action_name)
+        objects = list(parser.constant_names) + parser.object_names
+        object_types = list(parser.constant_types) + parser.object_types
+        action_objcet_list = []
+        for param in action.parameters:
+            object_list = []
+            for i, obj in enumerate(objects):
+                if object_types[i] in t_h[param.type]:
+                    object_list.append(obj)
+            action_objcet_list.append(object_list)
+        ground_params = list(product(*action_objcet_list))
+
+        ground_actions = [f'({input_action_name} {" ".join(map(str, p))})' for p in ground_params]
+
+        ## DEBUG
+        # with open('/home/remote/u7899572/lifted-white-plan-domain-repair/exhaustive_groundings.txt', 'a') as debug:
+        #     debug.write(str(ground_actions))
+
+
+        return ground_actions

@@ -7,14 +7,14 @@ import time
 from fd.pddl.conditions import Conjunction, Atom
 from fd.pddl.predicates import Predicate
 from heuristic_tools.heuristic import Heurisitc
-from search_partial_grounding.lifted_pddl_grounder import ground_pddl
+from search_partial_grounding.lifted_pddl_grounder import ground_pddl, exhaustive_groundings
 import traceback
 import sys
 
 
 
 FF = 'True'
-RELAXATION = 2
+RELAXATION = 3
 
 HEURISTIC_ = rf"Heurisitc(h_name='L_HADD', relaxation='unary', use_ff={FF})"
 
@@ -22,7 +22,7 @@ if RELAXATION in (1, 2):
     DELETE_RELAXATION = True
 else:
     DELETE_RELAXATION = False
-PREC_RELAX_CONFIG = ['missing', 'missing-and-negative', 'all']
+PREC_RELAX_CONFIG = ['missing', 'missing-and-negative', 'all', 'exhaust']
 PREC_RELAX = PREC_RELAX_CONFIG[RELAXATION]
 
 
@@ -172,7 +172,10 @@ class Node:
         next_action_name = self.lifted_action_sequence[0][0]
         action = domain.get_action(next_action_name)
 
-        if PREC_RELAX == 'all':
+        grounder = ground_pddl
+        if PREC_RELAX == 'exhaust':
+            grounder = exhaustive_groundings
+        elif PREC_RELAX == 'all':
             action.precondition = Predicate('dummy-true', [])
         elif PREC_RELAX in ('missing', 'missing-and-negative'):
             curr_state_names = [p.predicate for p in current_state if isinstance(p, Atom)]
@@ -183,14 +186,13 @@ class Node:
                 action.precondition = Conjunction(relaxed_pre)
             else:
                 action.precondition = Predicate('dummy-true', [])   
-        else:
-            raise ValueError
+        else: raise ValueError
 
         try:
             next_action_pddl = f"({' '.join(self.lifted_action_sequence[0])})"
 
             start_time = time.time()
-            possible_groundings = ground_pddl(domain, task, next_action_pddl)
+            possible_groundings = grounder(domain, task, next_action_pddl)
             end_time = time.time()
             self.grounding_time = end_time - start_time
         except Exception as e:
@@ -202,6 +204,11 @@ class Node:
             raise
 
         neighbours = []
+
+        # with open('/home/remote/u7899572/lifted-white-plan-domain-repair/groundings.txt', 'a') as debug:
+        #     debug.write(str(possible_groundings))
+        #     debug.write('\n')
+
         for grounding in possible_groundings:
             next_node = Node(
                 ground_action_sequence=self.ground_action_sequence + [grounding],
