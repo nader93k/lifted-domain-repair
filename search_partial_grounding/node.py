@@ -14,7 +14,7 @@ import sys
 
 
 FF = 'True'
-RELAXATION = 3
+RELAXATION = 2
 
 HEURISTIC_ = rf"Heurisitc(h_name='L_HADD', relaxation='unary', use_ff={FF})"
 
@@ -204,10 +204,6 @@ class Node:
             raise
 
         neighbours = []
-
-        # with open('/home/remote/u7899572/lifted-white-plan-domain-repair/groundings.txt', 'a') as debug:
-        #     debug.write(str(possible_groundings))
-        #     debug.write('\n')
 
         for grounding in possible_groundings:
             next_node = Node(

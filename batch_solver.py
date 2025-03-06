@@ -85,7 +85,7 @@ def is_memory_related_error(error, stderr=None):
     # Finally check the error string itself
     return check_string_for_memory_error(str(error))
 
-def worker(worker_id, task_queue, result_queue, params):
+def worker(config_file, worker_id, task_queue, result_queue, params):
     """Worker process function that processes instances from the queue"""
     while True:
         try:
@@ -96,9 +96,9 @@ def worker(worker_id, task_queue, result_queue, params):
                 
             start_time = datetime.datetime.now()
             print(f"[{start_time}] Worker {worker_id} starting instance {instance.identifier}", flush=True)
-            
+
             log_file = os.path.join(params['log_folder'], f"{instance.identifier}.yaml")
-            
+
             if os.path.isfile(log_file):
                 os.remove(log_file)
             
@@ -107,16 +107,9 @@ def worker(worker_id, task_queue, result_queue, params):
             cmd = [
                 sys.executable,
                 "instance_solver.py",
-                params['search_algorithm'],
-                str(params['benchmark_path']),
-                log_file,
-                str(params['log_interval']),
+                str(config_file),
                 instance.identifier,
-                str(params['lift_prob'])
             ]
-            
-            if params['heuristic_relaxation']:
-                cmd.append(params['heuristic_relaxation'])
             
             try:
                 print(f"[{datetime.datetime.now()}] Worker {worker_id} executing subprocess for {instance.identifier}", flush=True)
@@ -200,8 +193,7 @@ def worker(worker_id, task_queue, result_queue, params):
             continue
 
 def prepare_data(benchmark_path, domain_class, instance_ids, min_length, max_length, 
-               order, log_folder, search_algorithm, log_interval, timeout_seconds, 
-               heuristic_relaxation, lift_prob):
+               order, log_folder, timeout_seconds):
     """Prepare data and parameters for processing"""
     
     # Create log folder
@@ -235,13 +227,8 @@ def prepare_data(benchmark_path, domain_class, instance_ids, min_length, max_len
     
     # Prepare parameters
     params = {
-        'search_algorithm': search_algorithm,
-        'benchmark_path': benchmark_path,
         'log_folder': log_folder,
-        'log_interval': log_interval,
-        'timeout_seconds': timeout_seconds,
-        'heuristic_relaxation': heuristic_relaxation,
-        'lift_prob': lift_prob
+        'timeout_seconds': timeout_seconds
     }
     
     # Setup checkpoint files
@@ -275,10 +262,8 @@ def prepare_data(benchmark_path, domain_class, instance_ids, min_length, max_len
     return remaining_instances, params, checkpoint_file, checkpoint_errors
 
 
-def run_process(search_algorithm, benchmark_path, log_folder, log_interval,
-                timeout_seconds, order, min_length, max_length, heuristic_relaxation,
-                domain_class=None, instance_ids=[], lift_prob=0.0):
-    
+def run_process(config_file, benchmark_path, log_folder, timeout_seconds,
+                order, min_length, max_length, domain_class=None, instance_ids=[]):
     start_time = datetime.datetime.now()
     print(f"[{start_time}] Batch solver started", flush=True)
     
@@ -296,8 +281,7 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval,
     # Prepare data and parameters (now includes both checkpoint files)
     remaining_instances, params, checkpoint_file, checkpoint_errors = prepare_data(
         benchmark_path, domain_class, instance_ids, min_length, max_length,
-        order, log_folder, search_algorithm, log_interval, timeout_seconds,
-        heuristic_relaxation, lift_prob
+        order, log_folder, timeout_seconds
     )
     
     # Initialize queues
@@ -315,7 +299,7 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval,
     # Start worker processes
     processes = []
     for cpu_id in allowed_cpus:
-        p = Process(target=worker, args=(cpu_id, task_queue, result_queue, params))
+        p = Process(target=worker, args=(config_file, cpu_id, task_queue, result_queue, params))
         processes.append(p)
         p.start()
     
@@ -401,7 +385,6 @@ def run_process(search_algorithm, benchmark_path, log_folder, log_interval,
     print(f"  Total instances processed: {final_completed + final_errors}", flush=True)
 
 
-# Load instance IDs function remains the same
 def load_instance_ids(file_path):
     """Load instance IDs from a JSON file"""
     with open(file_path, 'r') as file:
@@ -413,21 +396,19 @@ def load_instance_ids(file_path):
 if __name__ == "__main__":
     print(f"[{datetime.datetime.now()}] Starting batch solver", flush=True)
     
-    config_file = '00 config.yaml'
-    with open(config_file, 'r') as config_file:
-        config = yaml.safe_load(config_file)
+    # config_file = '00 config.yaml'
+    config_file = sys.argv[1]
+
+    with open(config_file, 'r') as f:
+        config = yaml.safe_load(f)
     
     benchmark_path = Path(config['benchmark_path'])
-    search_algorithm = config['search_algorithm']
     log_folder = Path(config['log_folder'])
-    log_interval = config['log_interval']
     timeout_seconds = config['timeout_seconds']
     order = config['order']
     min_length = config['min_length']
     max_length = config['max_length']
     domain_class = config['domain_class'] 
-    heuristic_relaxation = config['heuristic_relaxation']
-    lift_prob = config['lift_prob']
 
     # run on fixed instance_ids
     instance_ids = config['instance_ids']
@@ -442,16 +423,13 @@ if __name__ == "__main__":
         print(f"  {key}: {value}", flush=True)
     
     run_process(
-        search_algorithm=search_algorithm,
+        config_file=config_file,
         benchmark_path=benchmark_path,
         log_folder=log_folder,
-        log_interval=log_interval,
         timeout_seconds=timeout_seconds,
         order=order,
         min_length=min_length,
         max_length=max_length,
         domain_class=domain_class,
-        instance_ids=instance_ids,
-        heuristic_relaxation=heuristic_relaxation,
-        lift_prob=lift_prob
+        instance_ids=instance_ids
     )

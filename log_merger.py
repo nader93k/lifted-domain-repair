@@ -10,12 +10,13 @@ from log_reader import process_yaml_files
 
 # Define base components
 algorithms = ['bfs', 'dfs', 'astar-unary-ff', 'astar-unary', 'gbfs-unary-ff', 'gbfs-unary']
-relaxations = ['relax-prec', 'relax-prec-delete', 'relax-all']
+relaxations = ['relax-prec', 'relax-prec-delete', 'relax-all', 'exhaust']
 lp_pairs = [('033', 0.33), ('066', 0.66), ('1', 1.0)]
 groundings = dict([
     ('relax-prec', 'SG1'),
     ('relax-prec-delete', 'SG2'),
     ('relax-all', 'SG3'),
+    ('exhaust', 'SG4')
 ])
 rename = dict([
     ('bfs', 'UCS'),

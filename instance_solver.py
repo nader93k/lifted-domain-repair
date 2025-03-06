@@ -14,6 +14,7 @@ import traceback
 import resource
 import os
 import shutil
+import yaml
 
 
 pid = os.getpid()
@@ -34,8 +35,19 @@ def cleanup_workspace():
         shutil.rmtree(workspace_path)
 
 
-def solve_instance(search_algorithm, benchmark_path, log_file, log_interval, instance_id, lift_prob, heuristic_relaxation):
+def solve_instance(config_file, instance_id):
     start_time = time.time()
+
+    with open(config_file, 'r') as config_file:
+        config = yaml.safe_load(config_file)
+
+    search_algorithm = config['search_algorithm']
+    benchmark_path = Path(config['benchmark_path'])
+    lift_prob = config['lift_prob']
+    heuristic_relaxation = config['heuristic_relaxation']
+    log_interval = config['log_interval']
+    log_folder = Path(config['log_folder'])
+    log_file = os.path.join(log_folder, f"{instance_id}.yaml")
 
     # setup_process_workspace()
     
@@ -89,6 +101,8 @@ def solve_instance(search_algorithm, benchmark_path, log_file, log_interval, ins
 
     if search_algorithm == 'astar':
         searcher = AStar(initial_node, g_cost_multiplier=1, h_cost_multiplier=1)
+    elif search_algorithm == 'g_astar':
+        searcher = AStar(initial_node, g_cost_multiplier=1, h_cost_multiplier=2)
     elif search_algorithm == 'bfs':
         searcher = AStar(initial_node, g_cost_multiplier=1, h_cost_multiplier=0)
     elif search_algorithm == 'greedy':
@@ -119,26 +133,11 @@ if __name__ == "__main__":
     resource.setrlimit(resource.RLIMIT_AS, (size, size))
 
     logging.basicConfig(level=logging.INFO, format='%(message)s')
-
-    if len(sys.argv) not in (7, 8):
-        print("Usage: python instance_solver.py <search_algorithm> <benchmark_path> <log_folder> <log_interval> <instance_id> <heuristic_relaxation>")
-        sys.exit(1)
     
-    search_algorithm = sys.argv[1]
-    benchmark_path = sys.argv[2]
-    benchmark_path = Path(benchmark_path)
-    log_file = Path(sys.argv[3])
-    log_interval = int(sys.argv[4])
-    instance_id = sys.argv[5]
-    lift_prob = float(sys.argv[6])
-    heuristic_relaxation = sys.argv[7] if(len(sys.argv)==8) else None
+    config_file = sys.argv[1]
+    instance_id = sys.argv[2]
 
     solve_instance(
-        search_algorithm=search_algorithm,
-        benchmark_path=benchmark_path,
-        log_file=log_file,
-        log_interval=log_interval,
-        instance_id=instance_id,
-        heuristic_relaxation=heuristic_relaxation,
-        lift_prob=lift_prob
+        config_file=config_file,
+        instance_id=instance_id
     )
