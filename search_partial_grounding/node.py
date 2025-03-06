@@ -13,39 +13,39 @@ import sys
 
 
 
-FF = 'True'
-RELAXATION = 2
-
-HEURISTIC_ = rf"Heurisitc(h_name='L_HADD', relaxation='unary', use_ff={FF})"
-
-if RELAXATION in (1, 2):
-    DELETE_RELAXATION = True
-else:
-    DELETE_RELAXATION = False
-PREC_RELAX_CONFIG = ['missing', 'missing-and-negative', 'all', 'exhaust']
-PREC_RELAX = PREC_RELAX_CONFIG[RELAXATION]
-
-
-
 class Node:
     original_domain = None
     original_task = None
     logger = None
+    successor_generator = None
+    use_ff = None
+    heuristic_relaxation = None
     
-
     @classmethod
     def set_domain(cls, value):
         cls.original_domain = value
-
 
     @classmethod
     def set_task(cls, value):
         cls.original_task = value
 
-
     @classmethod
     def set_logger(cls, logger):
         cls.logger = logger
+
+    @classmethod
+    def set_successor_generator(cls, successor_generator):
+        assert successor_generator in ['missing', 'missing-and-negative', 'all', 'exhaust'], "Value error."
+        cls.successor_generator = successor_generator
+
+    @classmethod
+    def set_use_ff(cls, use_ff):
+        cls.use_ff = use_ff
+
+    @classmethod
+    def set_heuristic_relaxation(cls, heuristic_relaxation):
+        assert heuristic_relaxation in ['unary', 'zeroary'], "Value error."
+        cls.heuristic_relaxation = heuristic_relaxation
 
 
     def __init__(self,
@@ -55,10 +55,10 @@ class Node:
                  is_initial_node: bool = False,
                  depth=0,
                  h_cost_needed=False,
-                 heuristic_relaxation=None
+                 heuristic_relaxation=None,
                  ):
-        if self.original_domain is None:
-            raise ValueError("Original domain must be set before creating instances.")
+        if None in (self.original_domain, self.original_task, self.logger, self.successor_generator, self.heuristic_relaxation):
+            raise ValueError("Class variables must be set before creating instances.")
         if self.original_task is None:
             raise ValueError("Original task must be set before creating instances.")
         if self.logger is None:
@@ -140,8 +140,7 @@ class Node:
         current_state = self.calculate_current_state(delete_relaxation=False)
         task.set_init_state(current_state)
         try:
-            #TODO: this is dirty AF
-            h = eval(HEURISTIC_)
+            h = Heurisitc(h_name='L_HADD', relaxation=self.heuristic_relaxation, use_ff=self.use_ff)
             h_cost = h.evaluate(self.original_domain, task, self.lifted_action_sequence)
             return h_cost
         except Exception as e:
@@ -163,7 +162,8 @@ class Node:
         if self.f_cost == float('inf'):
             raise ValueError("Can't expand this node.")
         
-        current_state = self.calculate_current_state(delete_relaxation=DELETE_RELAXATION)
+        delete_relaxation = True if self.successor_generator in ('missing-and-negative', 'all') else False
+        current_state = self.calculate_current_state(delete_relaxation=delete_relaxation)
         task = copy.deepcopy(self.original_task)
         task.set_init_state(current_state)
         domain = copy.deepcopy(self.repaired_domain)
@@ -173,14 +173,14 @@ class Node:
         action = domain.get_action(next_action_name)
 
         grounder = ground_pddl
-        if PREC_RELAX == 'exhaust':
+        if self.successor_generator == 'exhaust':
             grounder = exhaustive_groundings
-        elif PREC_RELAX == 'all':
+        elif self.successor_generator == 'all':
             action.precondition = Predicate('dummy-true', [])
-        elif PREC_RELAX in ('missing', 'missing-and-negative'):
+        elif self.successor_generator in ('missing', 'missing-and-negative'):
             curr_state_names = [p.predicate for p in current_state if isinstance(p, Atom)]
             relaxed_pre = [literal for literal in action.precondition.parts if literal.predicate in curr_state_names]
-            if relaxed_pre and PREC_RELAX == 'missing-and-negative':
+            if relaxed_pre and self.successor_generator == 'missing-and-negative':
                 relaxed_pre = [literal for literal in relaxed_pre if not literal.negated]
             if relaxed_pre:
                 action.precondition = Conjunction(relaxed_pre)

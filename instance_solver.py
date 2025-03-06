@@ -45,9 +45,13 @@ def solve_instance(config_file, instance_id):
     benchmark_path = Path(config['benchmark_path'])
     lift_prob = config['lift_prob']
     heuristic_relaxation = config['heuristic_relaxation']
+    use_ff = config['use_ff']
+    successor_generator = config['successor_generator']
+
     log_interval = config['log_interval']
     log_folder = Path(config['log_folder'])
     log_file = os.path.join(log_folder, f"{instance_id}.yaml")
+    
 
     # setup_process_workspace()
     
@@ -90,6 +94,9 @@ def solve_instance(config_file, instance_id):
     Node.set_domain(instance.planning_domain)
     Node.set_task(instance.planning_task)
     Node.set_logger(logger)
+    Node.set_successor_generator(successor_generator)
+    Node.set_heuristic_relaxation(heuristic_relaxation)
+    Node.set_use_ff(use_ff)
     initial_node = Node(
         lifted_action_sequence=instance.lifted_plan,
         ground_action_sequence=[],
