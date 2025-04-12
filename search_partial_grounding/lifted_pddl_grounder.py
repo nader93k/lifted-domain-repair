@@ -178,9 +178,6 @@ def exhaustive_groundings(domain, task, action_str):
 
         ground_actions = [f'({input_action_name} {" ".join(map(str, p))})' for p in ground_params]
 
-        ## DEBUG
-        # with open('/home/remote/u7899572/lifted-white-plan-domain-repair/exhaustive_groundings.txt', 'a') as debug:
-        #     debug.write(str(ground_actions))
+        filtered = filter_actions(action_str, ground_actions)
 
-
-        return ground_actions
+        return filtered

@@ -90,7 +90,7 @@ class AStar(Searcher):
                     raise Exception("Identical node generation. Debug is needed.")
 
             if iteration % log_interval == 0:
-                self.log_iteration_info(logger, iteration, open_list, current_node, final=True, is_goal=False)
+                self.log_iteration_info(logger, iteration, open_list, current_node, final=False, is_goal=False)
 
         self.log_iteration_info(logger, iteration, open_list, current_node, final=True, is_goal=False)
         return None, None
