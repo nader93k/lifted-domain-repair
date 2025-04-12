@@ -1,0 +1,114 @@
+---
+timestamp: '2025-03-06T17:37:56.227409'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary-ff
+        relax-prec-delete lp1/mprime__pprob27-err-rate-0-5.yaml
+    instance_id: mprime__pprob27-err-rate-0-5
+    search_algorithm: g_astar
+    plan_length: 5
+    domain_class: mprime
+    instance_name: pprob27-err-rate-0-5
+    ground_plan:
+    - (overcome boils satisfaction scallion mars uranus)
+    - (overcome grief satisfaction scallion mercury mars)
+    - (feast satisfaction scallion guava arizona pennsylvania)
+    - (succumb boils satisfaction guava mercury mars)
+    - (succumb grief satisfaction guava mars uranus)
+    lifted_plan:
+    -   - overcome
+        - ?boils
+        - ?satisfaction
+        - ?scallion
+        - ?mars
+        - ?uranus
+    -   - overcome
+        - ?grief
+        - ?satisfaction
+        - ?scallion
+        - ?mercury
+        - ?mars
+    -   - feast
+        - ?satisfaction
+        - ?scallion
+        - ?guava
+        - ?arizona
+        - ?pennsylvania
+    -   - succumb
+        - ?boils
+        - ?satisfaction
+        - ?guava
+        - ?mercury
+        - ?mars
+    -   - succumb
+        - ?grief
+        - ?satisfaction
+        - ?guava
+        - ?mars
+        - ?uranus
+
+
+---
+timestamp: '2025-03-06T17:37:56.231047'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: succumb,(craves ?v ?n),precPos,-1
+
+
+---
+timestamp: '2025-03-06T17:40:57.376324'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 859
+    fring_size: 0
+    num_nodes_generated: 859
+    sum_h_cost: 3972
+    sum_f_cost: 3036
+    sum_h_cost_time: 121.01794409751892
+    sum_grounding_time: 32.40964078903198
+    h_max: 4
+    current_node:
+        depth: 4
+        ground_actions:
+        - (overcome boils satisfaction scallion mars uranus)
+        - (overcome boils satisfaction scallion mercury mars)
+        - (feast satisfaction scallion guava arizona pennsylvania)
+        - (succumb boils satisfaction scallion uranus earth)
+        repair_set: 'succumb,(craves ?v ?n),precPos,-1
+
+            overcome,(craves ?c ?n),precPos,-1
+
+            succumb,(harmony ?v ?s1),precPos,-1'
+        g_cost: 3
+        h_cost: 2
+        f_cost: 5
+        next_lifted_action: '[''succumb'', ''?grief'', ''?satisfaction'', ''?guava'',
+            ''?mars'', ''?uranus'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-06T17:40:57.378283'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '182.32'
+
+
+---
+timestamp: '2025-03-06T17:40:57.415454'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 182.64 seconds'
+
+

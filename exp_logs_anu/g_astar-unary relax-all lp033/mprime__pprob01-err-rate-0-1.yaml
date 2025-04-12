@@ -1,0 +1,110 @@
+---
+timestamp: '2025-03-12T18:48:10.262742'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary
+        relax-all lp033/mprime__pprob01-err-rate-0-1.yaml
+    instance_id: mprime__pprob01-err-rate-0-1
+    search_algorithm: g_astar
+    plan_length: 5
+    domain_class: mprime
+    instance_name: pprob01-err-rate-0-1
+    ground_plan:
+    - (overcome abrasion rest pork uranus venus)
+    - (feast rest pork lamb alsace quebec)
+    - (feast rest lamb flounder surrey pennsylvania)
+    - (feast rest flounder rice pennsylvania alsace)
+    - (succumb abrasion rest rice uranus venus)
+    lifted_plan:
+    -   - overcome
+        - abrasion
+        - rest
+        - pork
+        - ?uranus
+        - venus
+    -   - feast
+        - rest
+        - pork
+        - ?lamb
+        - alsace
+        - quebec
+    -   - feast
+        - rest
+        - lamb
+        - ?flounder
+        - surrey
+        - pennsylvania
+    -   - feast
+        - ?rest
+        - flounder
+        - rice
+        - pennsylvania
+        - alsace
+    -   - succumb
+        - ?abrasion
+        - rest
+        - rice
+        - uranus
+        - venus
+
+
+---
+timestamp: '2025-03-12T18:48:10.266146'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-03-12T18:49:31.790104'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 6
+    fring_size: 80
+    num_nodes_generated: 86
+    sum_h_cost: 320
+    sum_f_cost: 304
+    sum_h_cost_time: 0.10602903366088867
+    sum_grounding_time: 77.38247585296631
+    h_max: 4
+    current_node:
+        depth: 5
+        ground_actions:
+        - (overcome abrasion rest pork uranus venus)
+        - (feast rest pork lamb alsace quebec)
+        - (feast rest lamb flounder surrey pennsylvania)
+        - (feast rest flounder rice pennsylvania alsace)
+        - (succumb abrasion rest rice uranus venus)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-12T18:49:31.798021'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '82.73'
+
+
+---
+timestamp: '2025-03-12T18:49:31.835670'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 83.15 seconds'
+
+

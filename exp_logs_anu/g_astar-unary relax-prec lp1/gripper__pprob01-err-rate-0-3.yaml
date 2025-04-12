@@ -1,0 +1,87 @@
+---
+timestamp: '2025-03-12T15:30:24.915660'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary
+        relax-prec lp1/gripper__pprob01-err-rate-0-3.yaml
+    instance_id: gripper__pprob01-err-rate-0-3
+    search_algorithm: g_astar
+    plan_length: 11
+    domain_class: gripper
+    instance_name: pprob01-err-rate-0-3
+    ground_plan:
+    - (pick ball1 rooma left)
+    - (pick ball2 rooma right)
+    - (move rooma roomb)
+    - (drop ball1 roomb left)
+    - (drop ball2 roomb right)
+    - (move roomb rooma)
+    - (pick ball3 rooma left)
+    - (pick ball4 rooma right)
+    - (move rooma roomb)
+    - (drop ball3 roomb left)
+    - (drop ball4 roomb right)
+    lifted_plan:
+    -   - pick
+        - ?ball1
+        - ?rooma
+        - ?left
+    -   - pick
+        - ?ball2
+        - ?rooma
+        - ?right
+    -   - move
+        - ?rooma
+        - ?roomb
+    -   - drop
+        - ?ball1
+        - ?roomb
+        - ?left
+    -   - drop
+        - ?ball2
+        - ?roomb
+        - ?right
+    -   - move
+        - ?roomb
+        - ?rooma
+    -   - pick
+        - ?ball3
+        - ?rooma
+        - ?left
+    -   - pick
+        - ?ball4
+        - ?rooma
+        - ?right
+    -   - move
+        - ?rooma
+        - ?roomb
+    -   - drop
+        - ?ball3
+        - ?roomb
+        - ?left
+    -   - drop
+        - ?ball4
+        - ?roomb
+        - ?right
+
+
+---
+timestamp: '2025-03-12T15:30:24.918815'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: pick,(carry ?obj ?gripper),effPos,1
+
+
+---
+timestamp: '2025-03-12T15:45:22.139244'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+

@@ -1,0 +1,86 @@
+---
+timestamp: '2025-01-22T00:19:03.552011'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs
+        relax-all lp1/rovers__pp02-err-rate-0-5.yaml
+    instance_id: rovers__pp02-err-rate-0-5
+    search_algorithm: dfs
+    plan_length: 8
+    domain_class: rovers
+    instance_name: pp02-err-rate-0-5
+    ground_plan:
+    - (calibrate rover0 camera0 objective0 waypoint0)
+    - (take_image rover0 waypoint0 objective1 camera0 low_res)
+    - (communicate_image_data rover0 general objective1 low_res waypoint0 waypoint1)
+    - (sample_rock rover0 rover0store waypoint0)
+    - (communicate_rock_data rover0 general waypoint0 waypoint0 waypoint1)
+    - (drop rover0 rover0store)
+    - (sample_soil rover0 rover0store waypoint0)
+    - (communicate_soil_data rover0 general waypoint0 waypoint0 waypoint1)
+    lifted_plan:
+    -   - calibrate
+        - ?rover0
+        - ?camera0
+        - ?objective0
+        - ?waypoint0
+    -   - take_image
+        - ?rover0
+        - ?waypoint0
+        - ?objective1
+        - ?camera0
+        - ?low_res
+    -   - communicate_image_data
+        - ?rover0
+        - ?general
+        - ?objective1
+        - ?low_res
+        - ?waypoint0
+        - ?waypoint1
+    -   - sample_rock
+        - ?rover0
+        - ?rover0store
+        - ?waypoint0
+    -   - communicate_rock_data
+        - ?rover0
+        - ?general
+        - ?waypoint0
+        - ?waypoint0
+        - ?waypoint1
+    -   - drop
+        - ?rover0
+        - ?rover0store
+    -   - sample_soil
+        - ?rover0
+        - ?rover0store
+        - ?waypoint0
+    -   - communicate_soil_data
+        - ?rover0
+        - ?general
+        - ?waypoint0
+        - ?waypoint0
+        - ?waypoint1
+
+
+---
+timestamp: '2025-01-22T00:19:03.557653'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'communicate_image_data,(at_lander ?l ?y),effPos,1
+
+        sample_rock,(equipped_for_soil_analysis ?x),effPos,1'
+
+
+---
+timestamp: '2025-01-22T00:34:02.132466'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+

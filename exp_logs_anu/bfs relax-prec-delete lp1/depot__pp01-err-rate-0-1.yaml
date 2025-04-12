@@ -1,0 +1,146 @@
+---
+timestamp: '2025-01-20T07:54:03.467440'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs
+        relax-prec-delete lp1/depot__pp01-err-rate-0-1.yaml
+    instance_id: depot__pp01-err-rate-0-1
+    search_algorithm: bfs
+    plan_length: 10
+    domain_class: depot
+    instance_name: pp01-err-rate-0-1
+    ground_plan:
+    - (lift hoist0 crate1 pallet0 depot0)
+    - (load hoist0 crate1 truck1 depot0)
+    - (drive truck1 depot0 distributor0)
+    - (lift hoist1 crate0 pallet1 distributor0)
+    - (load hoist1 crate0 truck1 distributor0)
+    - (unload hoist1 crate1 truck1 distributor0)
+    - (drive truck1 distributor0 distributor1)
+    - (unload hoist2 crate0 truck1 distributor1)
+    - (drop hoist1 crate1 pallet1 distributor0)
+    - (drop hoist2 crate0 pallet2 distributor1)
+    lifted_plan:
+    -   - lift
+        - ?hoist0
+        - ?crate1
+        - ?pallet0
+        - ?depot0
+    -   - load
+        - ?hoist0
+        - ?crate1
+        - ?truck1
+        - ?depot0
+    -   - drive
+        - ?truck1
+        - ?depot0
+        - ?distributor0
+    -   - lift
+        - ?hoist1
+        - ?crate0
+        - ?pallet1
+        - ?distributor0
+    -   - load
+        - ?hoist1
+        - ?crate0
+        - ?truck1
+        - ?distributor0
+    -   - unload
+        - ?hoist1
+        - ?crate1
+        - ?truck1
+        - ?distributor0
+    -   - drive
+        - ?truck1
+        - ?distributor0
+        - ?distributor1
+    -   - unload
+        - ?hoist2
+        - ?crate0
+        - ?truck1
+        - ?distributor1
+    -   - drop
+        - ?hoist1
+        - ?crate1
+        - ?pallet1
+        - ?distributor0
+    -   - drop
+        - ?hoist2
+        - ?crate0
+        - ?pallet2
+        - ?distributor1
+
+
+---
+timestamp: '2025-01-20T07:54:03.472017'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: drop,(in ?p ?z),precPos,-1
+
+
+---
+timestamp: '2025-01-20T07:54:36.987990'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 1056
+    fring_size: 0
+    num_nodes_generated: 1056
+    sum_h_cost: 0
+    sum_f_cost: 3025
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 26.799635648727417
+    h_max: 0
+    current_node:
+        depth: 8
+        ground_actions:
+        - (lift hoist0 crate1 pallet0 depot0)
+        - (load hoist0 crate1 truck1 depot0)
+        - (drive truck1 depot0 depot0)
+        - (lift hoist0 crate1 pallet0 depot0)
+        - (load hoist0 crate1 truck1 depot0)
+        - (unload hoist0 crate1 truck1 depot0)
+        - (drive truck1 depot0 distributor1)
+        - (unload hoist0 crate1 truck1 depot0)
+        repair_set: 'unload,(available ?x),effPos,1
+
+            unload,(not (in ?y ?z)),effNeg,-1
+
+            lift,(not (at ?y ?p)),effNeg,-1
+
+            unload,(at ?z ?p),precPos,-1
+
+            lift,(not (on ?y ?z)),effNeg,-1
+
+            load,(clear ?y),effPos,1'
+        g_cost: 6
+        h_cost: 0
+        f_cost: 6
+        next_lifted_action: '[''drop'', ''?hoist1'', ''?crate1'', ''?pallet1'', ''?distributor0'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-20T07:54:36.990529'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '34.69'
+
+
+---
+timestamp: '2025-01-20T07:54:37.034191'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 35.04 seconds'
+
+

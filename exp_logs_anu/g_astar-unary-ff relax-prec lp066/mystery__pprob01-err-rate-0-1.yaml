@@ -1,0 +1,108 @@
+---
+timestamp: '2025-03-06T15:24:24.277628'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary-ff
+        relax-prec lp066/mystery__pprob01-err-rate-0-1.yaml
+    instance_id: mystery__pprob01-err-rate-0-1
+    search_algorithm: g_astar
+    plan_length: 5
+    domain_class: mystery
+    instance_name: pprob01-err-rate-0-1
+    ground_plan:
+    - (overcome abrasion rest pork uranus venus)
+    - (feast rest pork lamb alsace quebec)
+    - (feast rest lamb flounder surrey pennsylvania)
+    - (feast rest flounder rice pennsylvania alsace)
+    - (succumb abrasion rest rice uranus venus)
+    lifted_plan:
+    -   - overcome
+        - abrasion
+        - rest
+        - ?pork
+        - ?uranus
+        - ?venus
+    -   - feast
+        - ?rest
+        - pork
+        - ?lamb
+        - ?alsace
+        - ?quebec
+    -   - feast
+        - rest
+        - ?lamb
+        - ?flounder
+        - surrey
+        - ?pennsylvania
+    -   - feast
+        - ?rest
+        - flounder
+        - rice
+        - pennsylvania
+        - alsace
+    -   - succumb
+        - ?abrasion
+        - rest
+        - rice
+        - uranus
+        - ?venus
+
+
+---
+timestamp: '2025-03-06T15:24:24.280891'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: feast,(harmony ?v ?n2),effPos,1
+
+
+---
+timestamp: '2025-03-06T15:24:24.915359'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 7
+    fring_size: 0
+    num_nodes_generated: 7
+    sum_h_cost: 48
+    sum_f_cost: 24
+    sum_h_cost_time: 0.40665245056152344
+    sum_grounding_time: 0.20366811752319336
+    h_max: 4
+    current_node:
+        depth: 2
+        ground_actions:
+        - (overcome abrasion rest pork uranus venus)
+        - (feast rest pork okra alsace quebec)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 2
+        f_cost: 2
+        next_lifted_action: '[''feast'', ''rest'', ''?lamb'', ''?flounder'', ''surrey'',
+            ''?pennsylvania'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-06T15:24:24.916525'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.77'
+
+
+---
+timestamp: '2025-03-06T15:24:24.943722'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 2.06 seconds'
+
+

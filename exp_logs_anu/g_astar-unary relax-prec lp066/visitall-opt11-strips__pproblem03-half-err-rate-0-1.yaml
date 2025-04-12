@@ -1,0 +1,105 @@
+---
+timestamp: '2025-03-12T14:43:57.801625'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary
+        relax-prec lp066/visitall-opt11-strips__pproblem03-half-err-rate-0-1.yaml
+    instance_id: visitall-opt11-strips__pproblem03-half-err-rate-0-1
+    search_algorithm: g_astar
+    plan_length: 7
+    domain_class: visitall-opt11-strips
+    instance_name: pproblem03-half-err-rate-0-1
+    ground_plan:
+    - (move loc-x1-y1 loc-x0-y1)
+    - (move loc-x0-y1 loc-x0-y2)
+    - (move loc-x0-y2 loc-x0-y1)
+    - (move loc-x0-y1 loc-x0-y0)
+    - (move loc-x0-y0 loc-x1-y0)
+    - (move loc-x1-y0 loc-x2-y0)
+    - (move loc-x2-y0 loc-x2-y1)
+    lifted_plan:
+    -   - move
+        - loc-x1-y1
+        - loc-x0-y1
+    -   - move
+        - ?loc-x0-y1
+        - ?loc-x0-y2
+    -   - move
+        - ?loc-x0-y2
+        - ?loc-x0-y1
+    -   - move
+        - loc-x0-y1
+        - ?loc-x0-y0
+    -   - move
+        - ?loc-x0-y0
+        - ?loc-x1-y0
+    -   - move
+        - loc-x1-y0
+        - ?loc-x2-y0
+    -   - move
+        - ?loc-x2-y0
+        - loc-x2-y1
+
+
+---
+timestamp: '2025-03-12T14:43:57.803808'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-03-12T14:43:58.473960'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 15
+    fring_size: 20
+    num_nodes_generated: 35
+    sum_h_cost: 180
+    sum_f_cost: 90
+    sum_h_cost_time: 0.18323707580566406
+    sum_grounding_time: 0.2210397720336914
+    h_max: 10
+    current_node:
+        depth: 7
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x0-y1 loc-x0-y2)
+        - (move loc-x0-y2 loc-x0-y1)
+        - (move loc-x0-y1 loc-x0-y0)
+        - (move loc-x0-y0 loc-x1-y0)
+        - (move loc-x1-y0 loc-x2-y0)
+        - (move loc-x2-y0 loc-x2-y1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-12T14:43:58.475358'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.89'
+
+
+---
+timestamp: '2025-03-12T14:43:58.503331'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 2.16 seconds'
+
+

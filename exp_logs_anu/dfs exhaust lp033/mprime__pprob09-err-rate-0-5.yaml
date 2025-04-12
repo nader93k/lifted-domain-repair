@@ -1,0 +1,148 @@
+---
+timestamp: '2025-03-03T17:09:06.300197'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs
+        exhaust lp033/mprime__pprob09-err-rate-0-5.yaml
+    instance_id: mprime__pprob09-err-rate-0-5
+    search_algorithm: dfs
+    plan_length: 11
+    domain_class: mprime
+    instance_name: pprob09-err-rate-0-5
+    ground_plan:
+    - (overcome dread entertainment flounder saturn venus)
+    - (overcome sciatica entertainment flounder uranus saturn)
+    - (feast entertainment flounder hamburger bavaria arizona)
+    - (succumb sciatica entertainment hamburger uranus saturn)
+    - (feast curiosity hotdog wurst bosnia bavaria)
+    - (overcome jealousy excitement guava earth uranus)
+    - (feast excitement guava apple manitoba kentucky)
+    - (feast excitement apple hotdog bavaria arizona)
+    - (drink haroset hotdog arizona bavaria bosnia bosnia bavaria)
+    - (feast excitement hotdog wurst bosnia bavaria)
+    - (succumb jealousy excitement wurst earth uranus)
+    lifted_plan:
+    -   - overcome
+        - dread
+        - entertainment
+        - flounder
+        - ?saturn
+        - venus
+    -   - overcome
+        - sciatica
+        - entertainment
+        - ?flounder
+        - uranus
+        - saturn
+    -   - feast
+        - entertainment
+        - flounder
+        - ?hamburger
+        - bavaria
+        - arizona
+    -   - succumb
+        - ?sciatica
+        - entertainment
+        - hamburger
+        - uranus
+        - saturn
+    -   - feast
+        - ?curiosity
+        - hotdog
+        - wurst
+        - bosnia
+        - bavaria
+    -   - overcome
+        - ?jealousy
+        - excitement
+        - guava
+        - earth
+        - uranus
+    -   - feast
+        - excitement
+        - guava
+        - ?apple
+        - manitoba
+        - kentucky
+    -   - feast
+        - ?excitement
+        - apple
+        - hotdog
+        - bavaria
+        - arizona
+    -   - drink
+        - ?haroset
+        - hotdog
+        - arizona
+        - ?bavaria
+        - ?bosnia
+        - bosnia
+        - ?bavaria
+    -   - feast
+        - excitement
+        - ?hotdog
+        - wurst
+        - bosnia
+        - bavaria
+    -   - succumb
+        - ?jealousy
+        - ?excitement
+        - wurst
+        - earth
+        - ?uranus
+
+
+---
+timestamp: '2025-03-03T17:09:06.304752'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-03-03T17:17:01.971364'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data:
+    error_type: MemoryError
+    error_message: 'Command ''[''/home/projects/u7899572/conda-envs/main/bin/python3'',
+        ''instance_solver.py'', ''dfs'', ''/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1'',
+        ''/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs exhaust
+        lp033/mprime__pprob09-err-rate-0-5.yaml'', ''1000000'', ''mprime__pprob09-err-rate-0-5'',
+        ''0.33'', ''unary'']'' died with <Signals.SIGABRT: 6>.'
+    stack_trace: "Traceback (most recent call last):\n  File \"batch_solver.py\",\
+        \ line 126, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
+        \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/subprocess.py\"\
+        , line 516, in run\n    raise CalledProcessError(retcode, process.args,\n\
+        subprocess.CalledProcessError: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',\
+        \ 'instance_solver.py', 'dfs', '/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1',\
+        \ '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs\
+        \ exhaust lp033/mprime__pprob09-err-rate-0-5.yaml', '1000000', 'mprime__pprob09-err-rate-0-5',\
+        \ '0.33', 'unary']' died with <Signals.SIGABRT: 6>.\n"
+    instance_id: mprime__pprob09-err-rate-0-5
+    process_info:
+        cmd:
+        - /home/projects/u7899572/conda-envs/main/bin/python3
+        - instance_solver.py
+        - dfs
+        - /home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1
+        - /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs exhaust
+            lp033/mprime__pprob09-err-rate-0-5.yaml
+        - '1000000'
+        - mprime__pprob09-err-rate-0-5
+        - '0.33'
+        - unary
+        duration: '477.27'
+        python_executable: /home/projects/u7899572/conda-envs/main/bin/python3
+    stdout: ''
+    stderr: 'terminate called after throwing an instance of ''Minisat22::OutOfMemoryException''
+
+        '
+
+

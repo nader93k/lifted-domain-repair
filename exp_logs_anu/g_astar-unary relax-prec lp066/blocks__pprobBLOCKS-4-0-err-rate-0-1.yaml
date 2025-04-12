@@ -1,0 +1,97 @@
+---
+timestamp: '2025-03-12T14:43:52.142218'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary
+        relax-prec lp066/blocks__pprobBLOCKS-4-0-err-rate-0-1.yaml
+    instance_id: blocks__pprobBLOCKS-4-0-err-rate-0-1
+    search_algorithm: g_astar
+    plan_length: 6
+    domain_class: blocks
+    instance_name: pprobBLOCKS-4-0-err-rate-0-1
+    ground_plan:
+    - (pick-up b)
+    - (stack b a)
+    - (pick-up c)
+    - (stack c b)
+    - (pick-up d)
+    - (stack d c)
+    lifted_plan:
+    -   - pick-up
+        - b
+    -   - stack
+        - b
+        - ?a
+    -   - pick-up
+        - ?c
+    -   - stack
+        - ?c
+        - ?b
+    -   - pick-up
+        - d
+    -   - stack
+        - ?d
+        - ?c
+
+
+---
+timestamp: '2025-03-12T14:43:52.144452'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-03-12T14:43:52.336380'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 7
+    fring_size: 4
+    num_nodes_generated: 11
+    sum_h_cost: 40
+    sum_f_cost: 20
+    sum_h_cost_time: 0.02948141098022461
+    sum_grounding_time: 0.10956096649169922
+    h_max: 10
+    current_node:
+        depth: 6
+        ground_actions:
+        - (pick-up b)
+        - (stack b a)
+        - (pick-up c)
+        - (stack c b)
+        - (pick-up d)
+        - (stack d c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-12T14:43:52.337633'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.36'
+
+
+---
+timestamp: '2025-03-12T14:43:52.376396'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.68 seconds'
+
+

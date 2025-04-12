@@ -1,0 +1,116 @@
+---
+timestamp: '2025-03-13T23:50:25.273803'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary
+        relax-all lp1/blocks__pprobBLOCKS-6-1-err-rate-0-1.yaml
+    instance_id: blocks__pprobBLOCKS-6-1-err-rate-0-1
+    search_algorithm: g_astar
+    plan_length: 10
+    domain_class: blocks
+    instance_name: pprobBLOCKS-6-1-err-rate-0-1
+    ground_plan:
+    - (unstack a f)
+    - (stack a d)
+    - (pick-up b)
+    - (stack b a)
+    - (pick-up c)
+    - (stack c b)
+    - (pick-up f)
+    - (stack f c)
+    - (pick-up e)
+    - (stack e f)
+    lifted_plan:
+    -   - unstack
+        - ?a
+        - ?f
+    -   - stack
+        - ?a
+        - ?d
+    -   - pick-up
+        - ?b
+    -   - stack
+        - ?b
+        - ?a
+    -   - pick-up
+        - ?c
+    -   - stack
+        - ?c
+        - ?b
+    -   - pick-up
+        - ?f
+    -   - stack
+        - ?f
+        - ?c
+    -   - pick-up
+        - ?e
+    -   - stack
+        - ?e
+        - ?f
+
+
+---
+timestamp: '2025-03-13T23:50:25.276366'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-03-13T23:50:29.742081'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 22
+    fring_size: 353
+    num_nodes_generated: 375
+    sum_h_cost: 688
+    sum_f_cost: 828
+    sum_h_cost_time: 0.16566109657287598
+    sum_grounding_time: 0.2588372230529785
+    h_max: 10
+    current_node:
+        depth: 10
+        ground_actions:
+        - (unstack a f)
+        - (stack a d)
+        - (pick-up b)
+        - (stack b a)
+        - (pick-up c)
+        - (stack c b)
+        - (pick-up f)
+        - (stack f c)
+        - (pick-up e)
+        - (stack e f)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-13T23:50:29.750721'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '6.04'
+
+
+---
+timestamp: '2025-03-13T23:50:29.781186'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 6.33 seconds'
+
+

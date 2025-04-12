@@ -1,0 +1,139 @@
+---
+timestamp: '2025-01-19T20:00:35.995101'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary-ff
+        relax-prec lp033/mystery__pprob09-err-rate-0-5.yaml
+    instance_id: mystery__pprob09-err-rate-0-5
+    search_algorithm: astar
+    plan_length: 9
+    domain_class: mystery
+    instance_name: pprob09-err-rate-0-5
+    ground_plan:
+    - (overcome dread entertainment flounder saturn venus)
+    - (overcome sciatica entertainment flounder uranus saturn)
+    - (feast entertainment flounder hamburger bavaria arizona)
+    - (succumb sciatica entertainment hamburger uranus saturn)
+    - (overcome jealousy excitement guava earth uranus)
+    - (feast excitement guava apple manitoba kentucky)
+    - (feast excitement apple hotdog bavaria arizona)
+    - (feast excitement hotdog wurst bosnia bavaria)
+    - (succumb jealousy excitement wurst earth uranus)
+    lifted_plan:
+    -   - overcome
+        - dread
+        - entertainment
+        - flounder
+        - ?saturn
+        - venus
+    -   - overcome
+        - sciatica
+        - entertainment
+        - ?flounder
+        - uranus
+        - saturn
+    -   - feast
+        - entertainment
+        - flounder
+        - ?hamburger
+        - bavaria
+        - arizona
+    -   - succumb
+        - ?sciatica
+        - entertainment
+        - hamburger
+        - uranus
+        - saturn
+    -   - overcome
+        - ?jealousy
+        - excitement
+        - guava
+        - earth
+        - uranus
+    -   - feast
+        - ?excitement
+        - guava
+        - apple
+        - manitoba
+        - kentucky
+    -   - feast
+        - excitement
+        - apple
+        - ?hotdog
+        - bavaria
+        - arizona
+    -   - feast
+        - ?excitement
+        - hotdog
+        - wurst
+        - bosnia
+        - bavaria
+    -   - succumb
+        - ?jealousy
+        - excitement
+        - wurst
+        - ?earth
+        - ?uranus
+
+
+---
+timestamp: '2025-01-19T20:00:35.999945'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'succumb,(craves ?c ?n),effPos,1
+
+        feast,(craves ?v ?n2),effPos,1'
+
+
+---
+timestamp: '2025-01-19T20:00:37.208871'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 5
+    fring_size: 0
+    num_nodes_generated: 5
+    sum_h_cost: 12
+    sum_f_cost: 6
+    sum_h_cost_time: 0.993506669998169
+    sum_grounding_time: 0.1959400177001953
+    h_max: 2
+    current_node:
+        depth: 3
+        ground_actions:
+        - (overcome dread entertainment flounder saturn venus)
+        - (overcome sciatica entertainment flounder uranus saturn)
+        - (feast entertainment flounder hamburger bavaria arizona)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 2
+        f_cost: 2
+        next_lifted_action: '[''succumb'', ''?sciatica'', ''entertainment'', ''hamburger'',
+            ''uranus'', ''saturn'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-19T20:00:37.210138'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '2.37'
+
+
+---
+timestamp: '2025-01-19T20:00:37.246909'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 2.65 seconds'
+
+

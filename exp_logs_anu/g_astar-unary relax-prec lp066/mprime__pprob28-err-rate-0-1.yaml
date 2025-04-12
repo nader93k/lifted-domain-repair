@@ -1,0 +1,135 @@
+---
+timestamp: '2025-03-12T14:44:07.682533'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary
+        relax-prec lp066/mprime__pprob28-err-rate-0-1.yaml
+    instance_id: mprime__pprob28-err-rate-0-1
+    search_algorithm: g_astar
+    plan_length: 9
+    domain_class: mprime
+    instance_name: pprob28-err-rate-0-1
+    ground_plan:
+    - (feast intoxication wurst lamb goias bosnia)
+    - (feast intoxication lamb broccoli alsace kentucky)
+    - (overcome boils intoxication broccoli vulcan earth)
+    - (feast intoxication broccoli muffin alsace kentucky)
+    - (overcome anger intoxication muffin neptune vulcan)
+    - (feast intoxication muffin broccoli bosnia pennsylvania)
+    - (feast intoxication broccoli lamb oregon alsace)
+    - (succumb anger intoxication lamb neptune vulcan)
+    - (succumb boils intoxication lamb vulcan earth)
+    lifted_plan:
+    -   - feast
+        - intoxication
+        - wurst
+        - ?lamb
+        - ?goias
+        - ?bosnia
+    -   - feast
+        - ?intoxication
+        - lamb
+        - ?broccoli
+        - ?alsace
+        - ?kentucky
+    -   - overcome
+        - boils
+        - ?intoxication
+        - ?broccoli
+        - vulcan
+        - ?earth
+    -   - feast
+        - ?intoxication
+        - broccoli
+        - muffin
+        - alsace
+        - kentucky
+    -   - overcome
+        - ?anger
+        - intoxication
+        - muffin
+        - neptune
+        - ?vulcan
+    -   - feast
+        - ?intoxication
+        - ?muffin
+        - ?broccoli
+        - bosnia
+        - pennsylvania
+    -   - feast
+        - ?intoxication
+        - broccoli
+        - ?lamb
+        - oregon
+        - ?alsace
+    -   - succumb
+        - ?anger
+        - intoxication
+        - ?lamb
+        - neptune
+        - vulcan
+    -   - succumb
+        - ?boils
+        - ?intoxication
+        - lamb
+        - ?vulcan
+        - ?earth
+
+
+---
+timestamp: '2025-03-12T14:44:07.686508'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: overcome,(craves ?s2 ?c),precPos,-1
+
+
+---
+timestamp: '2025-03-12T14:44:10.480548'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 7
+    fring_size: 0
+    num_nodes_generated: 7
+    sum_h_cost: 240
+    sum_f_cost: 120
+    sum_h_cost_time: 2.558154344558716
+    sum_grounding_time: 0.20803165435791016
+    h_max: 20
+    current_node:
+        depth: 1
+        ground_actions:
+        - (feast intoxication wurst shrimp goias bosnia)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 10
+        f_cost: 10
+        next_lifted_action: '[''feast'', ''?intoxication'', ''lamb'', ''?broccoli'',
+            ''?alsace'', ''?kentucky'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-12T14:44:10.481729'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '3.94'
+
+
+---
+timestamp: '2025-03-12T14:44:10.518933'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 4.30 seconds'
+
+

@@ -1,0 +1,100 @@
+---
+timestamp: '2025-01-20T13:32:53.873657'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs
+        relax-prec lp1/mprime__pprob34-err-rate-0-3.yaml
+    instance_id: mprime__pprob34-err-rate-0-3
+    search_algorithm: dfs
+    plan_length: 4
+    domain_class: mprime
+    instance_name: pprob34-err-rate-0-3
+    ground_plan:
+    - (overcome angina intoxication hamburger earth mars)
+    - (feast intoxication hamburger lemon alsace surrey)
+    - (feast intoxication lemon lobster surrey quebec)
+    - (succumb angina intoxication lobster earth mars)
+    lifted_plan:
+    -   - overcome
+        - ?angina
+        - ?intoxication
+        - ?hamburger
+        - ?earth
+        - ?mars
+    -   - feast
+        - ?intoxication
+        - ?hamburger
+        - ?lemon
+        - ?alsace
+        - ?surrey
+    -   - feast
+        - ?intoxication
+        - ?lemon
+        - ?lobster
+        - ?surrey
+        - ?quebec
+    -   - succumb
+        - ?angina
+        - ?intoxication
+        - ?lobster
+        - ?earth
+        - ?mars
+
+
+---
+timestamp: '2025-01-20T13:32:53.877644'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: feast,(orbits ?v ?n1),precPos,-1
+
+
+---
+timestamp: '2025-01-20T13:32:54.542910'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 14
+    fring_size: 1
+    num_nodes_generated: 14
+    sum_h_cost: 0
+    sum_f_cost: 0
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 0.5962669849395752
+    h_max: -.inf
+    current_node:
+        depth: 1
+        ground_actions:
+        - (overcome sciatica-5 learning wurst mars saturn)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''?intoxication'', ''?hamburger'', ''?lemon'',
+            ''?alsace'', ''?surrey'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-20T13:32:54.544103'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.79'
+
+
+---
+timestamp: '2025-01-20T13:32:54.582193'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 2.11 seconds'
+
+

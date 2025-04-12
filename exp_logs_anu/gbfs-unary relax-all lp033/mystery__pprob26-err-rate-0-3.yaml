@@ -1,0 +1,126 @@
+---
+timestamp: '2025-01-22T12:49:44.217367'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary
+        relax-all lp033/mystery__pprob26-err-rate-0-3.yaml
+    instance_id: mystery__pprob26-err-rate-0-3
+    search_algorithm: greedy
+    plan_length: 6
+    domain_class: mystery
+    instance_name: pprob26-err-rate-0-3
+    ground_plan:
+    - (overcome boils entertainment haroset earth neptune)
+    - (feast entertainment haroset rice oregon bavaria)
+    - (feast entertainment rice pistachio manitoba oregon)
+    - (feast entertainment pistachio turkey moravia kentucky)
+    - (feast entertainment turkey papaya manitoba oregon)
+    - (succumb boils entertainment papaya earth neptune)
+    lifted_plan:
+    -   - overcome
+        - boils
+        - entertainment
+        - haroset
+        - ?earth
+        - neptune
+    -   - feast
+        - entertainment
+        - haroset
+        - ?rice
+        - oregon
+        - bavaria
+    -   - feast
+        - entertainment
+        - rice
+        - ?pistachio
+        - manitoba
+        - oregon
+    -   - feast
+        - ?entertainment
+        - pistachio
+        - turkey
+        - moravia
+        - kentucky
+    -   - feast
+        - ?entertainment
+        - turkey
+        - papaya
+        - manitoba
+        - oregon
+    -   - succumb
+        - ?boils
+        - entertainment
+        - papaya
+        - earth
+        - neptune
+
+
+---
+timestamp: '2025-01-22T12:49:44.221671'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: feast,(orbits ?l2 ?l2),precPos,-1
+
+
+---
+timestamp: '2025-01-22T12:59:49.594524'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 7
+    fring_size: 150
+    num_nodes_generated: 157
+    sum_h_cost: 1850
+    sum_f_cost: 925
+    sum_h_cost_time: 0.48490381240844727
+    sum_grounding_time: 592.8305768966675
+    h_max: 12
+    current_node:
+        depth: 6
+        ground_actions:
+        - (overcome boils entertainment haroset earth neptune)
+        - (feast entertainment haroset rice oregon bavaria)
+        - (feast entertainment rice turkey manitoba oregon)
+        - (feast boils pistachio turkey moravia kentucky)
+        - (feast learning turkey papaya manitoba oregon)
+        - (succumb boils entertainment papaya earth neptune)
+        repair_set: 'succumb,(craves ?v ?n),precPos,-1
+
+            feast,(craves ?v ?n1),precPos,-1
+
+            feast,(pleasure ?v),precPos,-1
+
+            feast,(eats ?n1 ?n2),precPos,-1
+
+            feast,(orbits ?l2 ?l2),precPos,-1'
+        g_cost: 5
+        h_cost: 0
+        f_cost: 5
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-22T12:59:49.605107'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '606.66'
+
+
+---
+timestamp: '2025-01-22T12:59:49.644098'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 606.97 seconds'
+
+

@@ -1,0 +1,125 @@
+---
+timestamp: '2025-03-03T20:48:23.919499'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs
+        exhaust lp033/blocks__pprobBLOCKS-5-0-err-rate-0-1.yaml
+    instance_id: blocks__pprobBLOCKS-5-0-err-rate-0-1
+    search_algorithm: bfs
+    plan_length: 12
+    domain_class: blocks
+    instance_name: pprobBLOCKS-5-0-err-rate-0-1
+    ground_plan:
+    - (unstack c e)
+    - (put-down c)
+    - (pick-up d)
+    - (stack d c)
+    - (unstack e b)
+    - (put-down e)
+    - (unstack b a)
+    - (stack b d)
+    - (pick-up e)
+    - (stack e b)
+    - (pick-up a)
+    - (stack a e)
+    lifted_plan:
+    -   - unstack
+        - c
+        - e
+    -   - put-down
+        - c
+    -   - pick-up
+        - ?d
+    -   - stack
+        - d
+        - c
+    -   - unstack
+        - e
+        - ?b
+    -   - put-down
+        - e
+    -   - unstack
+        - b
+        - a
+    -   - stack
+        - b
+        - ?d
+    -   - pick-up
+        - e
+    -   - stack
+        - e
+        - ?b
+    -   - pick-up
+        - a
+    -   - stack
+        - a
+        - e
+
+
+---
+timestamp: '2025-03-03T20:48:23.922301'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: unstack,(ontable ?x),precPos,-1
+
+
+---
+timestamp: '2025-03-03T20:48:28.232792'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 123
+    fring_size: 1255
+    num_nodes_generated: 1378
+    sum_h_cost: 0
+    sum_f_cost: 3145
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 1.508802890777588
+    h_max: 0
+    current_node:
+        depth: 12
+        ground_actions:
+        - (unstack c e)
+        - (put-down c)
+        - (pick-up d)
+        - (stack d c)
+        - (unstack e b)
+        - (put-down e)
+        - (unstack b a)
+        - (stack b d)
+        - (pick-up e)
+        - (stack e b)
+        - (pick-up a)
+        - (stack a e)
+        repair_set: unstack,(ontable ?x),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-03T20:48:28.262061'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '5.51'
+
+
+---
+timestamp: '2025-03-03T20:48:28.295964'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 5.85 seconds'
+
+

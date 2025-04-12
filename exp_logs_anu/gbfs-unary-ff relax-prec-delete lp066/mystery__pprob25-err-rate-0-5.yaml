@@ -1,0 +1,106 @@
+---
+timestamp: '2025-01-20T04:12:57.576177'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-prec-delete lp066/mystery__pprob25-err-rate-0-5.yaml
+    instance_id: mystery__pprob25-err-rate-0-5
+    search_algorithm: greedy
+    plan_length: 4
+    domain_class: mystery
+    instance_name: pprob25-err-rate-0-5
+    ground_plan:
+    - (feast expectation tuna wurst kentucky bavaria)
+    - (overcome depression expectation wurst jupiter uranus)
+    - (feast expectation wurst chicken kentucky bavaria)
+    - (succumb depression expectation chicken jupiter uranus)
+    lifted_plan:
+    -   - feast
+        - expectation
+        - tuna
+        - ?wurst
+        - ?kentucky
+        - ?bavaria
+    -   - overcome
+        - ?depression
+        - expectation
+        - ?wurst
+        - ?jupiter
+        - ?uranus
+    -   - feast
+        - expectation
+        - ?wurst
+        - ?chicken
+        - kentucky
+        - ?bavaria
+    -   - succumb
+        - ?depression
+        - expectation
+        - chicken
+        - jupiter
+        - uranus
+
+
+---
+timestamp: '2025-01-20T04:12:57.579286'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'feast,(equality-op ?l2 ?v),precPos,-1
+
+        overcome,(equality-op ?c ?s1),precPos,-1'
+
+
+---
+timestamp: '2025-01-20T04:12:58.095405'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 5
+    fring_size: 5
+    num_nodes_generated: 10
+    sum_h_cost: 16
+    sum_f_cost: 8
+    sum_h_cost_time: 0.19648027420043945
+    sum_grounding_time: 0.1160271167755127
+    h_max: 3
+    current_node:
+        depth: 4
+        ground_actions:
+        - (feast expectation tuna wurst kentucky bavaria)
+        - (overcome depression expectation wurst jupiter uranus)
+        - (feast expectation wurst chicken kentucky bavaria)
+        - (succumb depression expectation chicken jupiter uranus)
+        repair_set: 'feast,(equality-op ?l2 ?v),precPos,-1
+
+            overcome,(equality-op ?c ?s1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-20T04:12:58.096896'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.66'
+
+
+---
+timestamp: '2025-01-20T04:12:58.131050'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.99 seconds'
+
+

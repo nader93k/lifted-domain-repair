@@ -1,0 +1,108 @@
+---
+timestamp: '2025-01-21T11:32:14.613632'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary
+        relax-prec-delete lp033/mprime__pprob27-err-rate-0-1.yaml
+    instance_id: mprime__pprob27-err-rate-0-1
+    search_algorithm: astar
+    plan_length: 5
+    domain_class: mprime
+    instance_name: pprob27-err-rate-0-1
+    ground_plan:
+    - (overcome boils satisfaction scallion mars uranus)
+    - (overcome grief satisfaction scallion mercury mars)
+    - (feast satisfaction scallion guava arizona pennsylvania)
+    - (succumb boils satisfaction guava mercury mars)
+    - (succumb grief satisfaction guava mars uranus)
+    lifted_plan:
+    -   - overcome
+        - boils
+        - satisfaction
+        - scallion
+        - ?mars
+        - uranus
+    -   - overcome
+        - grief
+        - satisfaction
+        - ?scallion
+        - mercury
+        - mars
+    -   - feast
+        - satisfaction
+        - scallion
+        - ?guava
+        - arizona
+        - pennsylvania
+    -   - succumb
+        - ?boils
+        - satisfaction
+        - guava
+        - mercury
+        - mars
+    -   - succumb
+        - ?grief
+        - satisfaction
+        - guava
+        - mars
+        - uranus
+
+
+---
+timestamp: '2025-01-21T11:32:14.617317'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: feast,(locale ?n2 ?n1),precPos,-1
+
+
+---
+timestamp: '2025-01-21T11:32:15.101560'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 3
+    fring_size: 0
+    num_nodes_generated: 3
+    sum_h_cost: 28
+    sum_f_cost: 14
+    sum_h_cost_time: 0.34331274032592773
+    sum_grounding_time: 0.1271226406097412
+    h_max: 8
+    current_node:
+        depth: 2
+        ground_actions:
+        - (overcome boils satisfaction scallion mars uranus)
+        - (overcome grief satisfaction scallion mercury mars)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 8
+        f_cost: 8
+        next_lifted_action: '[''feast'', ''satisfaction'', ''scallion'', ''?guava'',
+            ''arizona'', ''pennsylvania'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-21T11:32:15.102833'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.61'
+
+
+---
+timestamp: '2025-01-21T11:32:15.141652'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.91 seconds'
+
+

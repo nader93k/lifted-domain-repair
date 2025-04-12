@@ -1,0 +1,127 @@
+---
+timestamp: '2025-03-14T23:34:23.700429'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary-ff
+        exhaust lp066/blocks__pprobBLOCKS-6-0-err-rate-0-1.yaml
+    instance_id: blocks__pprobBLOCKS-6-0-err-rate-0-1
+    search_algorithm: astar
+    plan_length: 12
+    domain_class: blocks
+    instance_name: pprobBLOCKS-6-0-err-rate-0-1
+    ground_plan:
+    - (unstack d a)
+    - (put-down d)
+    - (unstack f e)
+    - (stack f d)
+    - (unstack e b)
+    - (stack e f)
+    - (unstack a c)
+    - (stack a e)
+    - (pick-up b)
+    - (stack b a)
+    - (pick-up c)
+    - (stack c b)
+    lifted_plan:
+    -   - unstack
+        - d
+        - a
+    -   - put-down
+        - ?d
+    -   - unstack
+        - ?f
+        - ?e
+    -   - stack
+        - ?f
+        - d
+    -   - unstack
+        - ?e
+        - ?b
+    -   - stack
+        - ?e
+        - f
+    -   - unstack
+        - ?a
+        - ?c
+    -   - stack
+        - a
+        - ?e
+    -   - pick-up
+        - ?b
+    -   - stack
+        - b
+        - a
+    -   - pick-up
+        - c
+    -   - stack
+        - c
+        - ?b
+
+
+---
+timestamp: '2025-03-14T23:34:23.703207'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-03-14T23:34:53.374404'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 46
+    fring_size: 1421
+    num_nodes_generated: 1467
+    sum_h_cost: 4808
+    sum_f_cost: 4440
+    sum_h_cost_time: 0.6077449321746826
+    sum_grounding_time: 0.7041473388671875
+    h_max: 5
+    current_node:
+        depth: 12
+        ground_actions:
+        - (unstack d a)
+        - (put-down d)
+        - (unstack f e)
+        - (stack f d)
+        - (unstack e b)
+        - (stack e f)
+        - (unstack a c)
+        - (stack a e)
+        - (pick-up b)
+        - (stack b a)
+        - (pick-up c)
+        - (stack c b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-14T23:34:53.435662'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '30.90'
+
+
+---
+timestamp: '2025-03-14T23:34:53.480063'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 31.23 seconds'
+
+

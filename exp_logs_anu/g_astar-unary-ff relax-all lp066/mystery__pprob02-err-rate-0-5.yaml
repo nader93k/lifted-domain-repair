@@ -1,0 +1,192 @@
+---
+timestamp: '2025-03-09T19:59:02.285858'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary-ff
+        relax-all lp066/mystery__pprob02-err-rate-0-5.yaml
+    instance_id: mystery__pprob02-err-rate-0-5
+    search_algorithm: g_astar
+    plan_length: 14
+    domain_class: mystery
+    instance_name: pprob02-err-rate-0-5
+    ground_plan:
+    - (feast stimulation flounder tuna arizona kentucky)
+    - (feast stimulation tuna beef arizona kentucky)
+    - (feast satiety onion muffin kentucky bosnia)
+    - (overcome depression-1 satiety muffin mercury vulcan)
+    - (feast satiety muffin tuna arizona kentucky)
+    - (feast stimulation beef tuna bosnia surrey)
+    - (feast satiety tuna beef alsace arizona)
+    - (overcome boils-4 entertainment ham pluto jupiter)
+    - (overcome grief-7 entertainment ham vulcan pluto)
+    - (feast entertainment ham muffin bosnia surrey)
+    - (feast entertainment muffin onion alsace arizona)
+    - (feast entertainment onion beef arizona kentucky)
+    - (succumb grief-7 entertainment beef vulcan pluto)
+    - (succumb depression-1 satiety beef mercury vulcan)
+    lifted_plan:
+    -   - feast
+        - stimulation
+        - flounder
+        - ?tuna
+        - ?arizona
+        - ?kentucky
+    -   - feast
+        - ?stimulation
+        - tuna
+        - ?beef
+        - ?arizona
+        - ?kentucky
+    -   - feast
+        - satiety
+        - ?onion
+        - ?muffin
+        - kentucky
+        - ?bosnia
+    -   - overcome
+        - ?depression-1
+        - satiety
+        - muffin
+        - mercury
+        - vulcan
+    -   - feast
+        - ?satiety
+        - muffin
+        - tuna
+        - arizona
+        - ?kentucky
+    -   - feast
+        - ?stimulation
+        - ?beef
+        - ?tuna
+        - bosnia
+        - surrey
+    -   - feast
+        - ?satiety
+        - tuna
+        - ?beef
+        - alsace
+        - ?arizona
+    -   - overcome
+        - ?boils-4
+        - entertainment
+        - ?ham
+        - pluto
+        - jupiter
+    -   - overcome
+        - ?grief-7
+        - ?entertainment
+        - ham
+        - ?vulcan
+        - ?pluto
+    -   - feast
+        - entertainment
+        - ?ham
+        - ?muffin
+        - ?bosnia
+        - surrey
+    -   - feast
+        - entertainment
+        - ?muffin
+        - ?onion
+        - ?alsace
+        - ?arizona
+    -   - feast
+        - entertainment
+        - ?onion
+        - ?beef
+        - arizona
+        - ?kentucky
+    -   - succumb
+        - grief-7
+        - ?entertainment
+        - beef
+        - ?vulcan
+        - ?pluto
+    -   - succumb
+        - ?depression-1
+        - ?satiety
+        - ?beef
+        - ?mercury
+        - ?vulcan
+
+
+---
+timestamp: '2025-03-09T19:59:02.293621'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'overcome,(harmony ?v ?s1),effPos,1
+
+        succumb,(craves ?c ?n),effPos,1'
+
+
+---
+timestamp: '2025-03-09T19:59:11.641348'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data:
+    error_type: MemoryError
+    error_message: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',
+        'instance_solver.py', 'g_astar-unary-ff-sg3-lp066.yaml', 'mystery__pprob02-err-rate-0-5']'
+        returned non-zero exit status 1.
+    stack_trace: "Traceback (most recent call last):\n  File \"batch_solver.py\",\
+        \ line 119, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
+        \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/subprocess.py\"\
+        , line 516, in run\n    raise CalledProcessError(retcode, process.args,\n\
+        subprocess.CalledProcessError: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',\
+        \ 'instance_solver.py', 'g_astar-unary-ff-sg3-lp066.yaml', 'mystery__pprob02-err-rate-0-5']'\
+        \ returned non-zero exit status 1.\n"
+    instance_id: mystery__pprob02-err-rate-0-5
+    process_info:
+        cmd:
+        - /home/projects/u7899572/conda-envs/main/bin/python3
+        - instance_solver.py
+        - g_astar-unary-ff-sg3-lp066.yaml
+        - mystery__pprob02-err-rate-0-5
+        duration: '10.90'
+        python_executable: /home/projects/u7899572/conda-envs/main/bin/python3
+    stdout: '[Errno 12] Cannot allocate memory: ''/dev/shm/pddl_files/tmpgtw2k1m4''
+
+        '
+    stderr: "Traceback (most recent call last):\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+        , line 131, in ground_pddl\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+        , line 485, in get_applicable_actions\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+        , line 433, in _get_applicable_var_assigns_action\nMemoryError\n\nDuring handling\
+        \ of the above exception, another exception occurred:\n\nTraceback (most recent\
+        \ call last):\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+        , line 195, in get_neighbors\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+        , line 140, in ground_pddl\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/tempfile.py\"\
+        , line 836, in __exit__\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/tempfile.py\"\
+        , line 840, in cleanup\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/tempfile.py\"\
+        , line 822, in _rmtree\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/shutil.py\"\
+        , line 718, in rmtree\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/shutil.py\"\
+        , line 631, in _rmtree_safe_fd\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/shutil.py\"\
+        , line 627, in _rmtree_safe_fd\nOSError: [Errno 12] Cannot allocate memory:\
+        \ '/dev/shm/pddl_files/tmpgtw2k1m4'\n\nDuring handling of the above exception,\
+        \ another exception occurred:\n\nTraceback (most recent call last):\n  File\
+        \ \"instance_solver.py\", line 125, in solve_instance\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+        , line 78, in find_path\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+        , line 203, in get_neighbors\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/custom_logger.py\"\
+        , line 44, in log\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/yaml/__init__.py\"\
+        , line 253, in dump\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/yaml/__init__.py\"\
+        , line 241, in dump_all\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/yaml/representer.py\"\
+        , line 27, in represent\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/yaml/representer.py\"\
+        , line 34, in represent_data\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/yaml/representer.py\"\
+        , line 141, in ignore_aliases\nMemoryError\n\nDuring handling of the above\
+        \ exception, another exception occurred:\n\nTraceback (most recent call last):\n\
+        \  File \"instance_solver.py\", line 147, in <module>\n  File \"instance_solver.py\"\
+        , line 127, in solve_instance\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/traceback.py\"\
+        , line 167, in format_exc\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/traceback.py\"\
+        , line 120, in format_exception\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/traceback.py\"\
+        , line 493, in __init__\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/traceback.py\"\
+        , line 493, in __init__\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/traceback.py\"\
+        , line 508, in __init__\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/traceback.py\"\
+        , line 336, in extract\nMemoryError\n"
+
+

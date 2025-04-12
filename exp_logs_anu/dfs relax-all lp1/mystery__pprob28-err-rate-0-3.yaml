@@ -1,0 +1,132 @@
+---
+timestamp: '2025-01-22T00:25:33.954503'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs
+        relax-all lp1/mystery__pprob28-err-rate-0-3.yaml
+    instance_id: mystery__pprob28-err-rate-0-3
+    search_algorithm: dfs
+    plan_length: 9
+    domain_class: mystery
+    instance_name: pprob28-err-rate-0-3
+    ground_plan:
+    - (feast intoxication wurst lamb goias bosnia)
+    - (feast intoxication lamb broccoli alsace kentucky)
+    - (overcome boils intoxication broccoli vulcan earth)
+    - (feast intoxication broccoli muffin alsace kentucky)
+    - (overcome anger intoxication muffin neptune vulcan)
+    - (feast intoxication muffin broccoli bosnia pennsylvania)
+    - (feast intoxication broccoli lamb oregon alsace)
+    - (succumb anger intoxication lamb neptune vulcan)
+    - (succumb boils intoxication lamb vulcan earth)
+    lifted_plan:
+    -   - feast
+        - ?intoxication
+        - ?wurst
+        - ?lamb
+        - ?goias
+        - ?bosnia
+    -   - feast
+        - ?intoxication
+        - ?lamb
+        - ?broccoli
+        - ?alsace
+        - ?kentucky
+    -   - overcome
+        - ?boils
+        - ?intoxication
+        - ?broccoli
+        - ?vulcan
+        - ?earth
+    -   - feast
+        - ?intoxication
+        - ?broccoli
+        - ?muffin
+        - ?alsace
+        - ?kentucky
+    -   - overcome
+        - ?anger
+        - ?intoxication
+        - ?muffin
+        - ?neptune
+        - ?vulcan
+    -   - feast
+        - ?intoxication
+        - ?muffin
+        - ?broccoli
+        - ?bosnia
+        - ?pennsylvania
+    -   - feast
+        - ?intoxication
+        - ?broccoli
+        - ?lamb
+        - ?oregon
+        - ?alsace
+    -   - succumb
+        - ?anger
+        - ?intoxication
+        - ?lamb
+        - ?neptune
+        - ?vulcan
+    -   - succumb
+        - ?boils
+        - ?intoxication
+        - ?lamb
+        - ?vulcan
+        - ?earth
+
+
+---
+timestamp: '2025-01-22T00:25:33.958541'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: succumb,(fears ?c ?v),precPos,-1
+
+
+---
+timestamp: '2025-01-22T00:38:01.573338'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data:
+    error_type: MemoryError
+    error_message: 'Command ''[''/home/projects/u7899572/conda-envs/main/bin/python3'',
+        ''instance_solver.py'', ''dfs'', ''/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1'',
+        ''/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs relax-all
+        lp1/mystery__pprob28-err-rate-0-3.yaml'', ''1000000'', ''mystery__pprob28-err-rate-0-3'',
+        ''1.0'', ''unary'']'' died with <Signals.SIGABRT: 6>.'
+    stack_trace: "Traceback (most recent call last):\n  File \"batch_solver.py\",\
+        \ line 126, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
+        \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/subprocess.py\"\
+        , line 516, in run\n    raise CalledProcessError(retcode, process.args,\n\
+        subprocess.CalledProcessError: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',\
+        \ 'instance_solver.py', 'dfs', '/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1',\
+        \ '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs\
+        \ relax-all lp1/mystery__pprob28-err-rate-0-3.yaml', '1000000', 'mystery__pprob28-err-rate-0-3',\
+        \ '1.0', 'unary']' died with <Signals.SIGABRT: 6>.\n"
+    instance_id: mystery__pprob28-err-rate-0-3
+    process_info:
+        cmd:
+        - /home/projects/u7899572/conda-envs/main/bin/python3
+        - instance_solver.py
+        - dfs
+        - /home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1
+        - /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs relax-all
+            lp1/mystery__pprob28-err-rate-0-3.yaml
+        - '1000000'
+        - mystery__pprob28-err-rate-0-3
+        - '1.0'
+        - unary
+        duration: '749.10'
+        python_executable: /home/projects/u7899572/conda-envs/main/bin/python3
+    stdout: ''
+    stderr: 'terminate called after throwing an instance of ''Minisat22::OutOfMemoryException''
+
+        '
+
+

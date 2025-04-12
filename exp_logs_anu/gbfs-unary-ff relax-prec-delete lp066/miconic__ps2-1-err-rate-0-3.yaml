@@ -1,0 +1,106 @@
+---
+timestamp: '2025-01-20T04:13:10.820143'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-prec-delete lp066/miconic__ps2-1-err-rate-0-3.yaml
+    instance_id: miconic__ps2-1-err-rate-0-3
+    search_algorithm: greedy
+    plan_length: 8
+    domain_class: miconic
+    instance_name: ps2-1-err-rate-0-3
+    ground_plan:
+    - (board f0 p0)
+    - (up f0 f1)
+    - (depart f1 p0)
+    - (down f1 f0)
+    - (up f0 f3)
+    - (board f3 p1)
+    - (down f3 f0)
+    - (depart f0 p1)
+    lifted_plan:
+    -   - board
+        - f0
+        - p0
+    -   - up
+        - ?f0
+        - ?f1
+    -   - depart
+        - ?f1
+        - ?p0
+    -   - down
+        - f1
+        - ?f0
+    -   - up
+        - ?f0
+        - ?f3
+    -   - board
+        - f3
+        - ?p1
+    -   - down
+        - ?f3
+        - f0
+    -   - depart
+        - ?f0
+        - ?p1
+
+
+---
+timestamp: '2025-01-20T04:13:10.822957'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'depart,(origin ?p ?f),precPos,-1
+
+        board,(served ?f),effPos,1'
+
+
+---
+timestamp: '2025-01-20T04:13:11.076806'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 5
+    fring_size: 0
+    num_nodes_generated: 5
+    sum_h_cost: 20
+    sum_f_cost: 10
+    sum_h_cost_time: 0.15991425514221191
+    sum_grounding_time: 0.08230805397033691
+    h_max: 3
+    current_node:
+        depth: 2
+        ground_actions:
+        - (board f0 p0)
+        - (up f0 f3)
+        repair_set: board,(served ?f),effPos,1
+        g_cost: 1
+        h_cost: 3
+        f_cost: 4
+        next_lifted_action: '[''depart'', ''?f1'', ''?p0'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-20T04:13:11.077936'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.39'
+
+
+---
+timestamp: '2025-01-20T04:13:11.116031'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.75 seconds'
+
+

@@ -1,0 +1,110 @@
+---
+timestamp: '2025-03-06T17:39:15.426233'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary-ff
+        relax-prec-delete lp1/zenotravel__pp03-err-rate-0-1.yaml
+    instance_id: zenotravel__pp03-err-rate-0-1
+    search_algorithm: g_astar
+    plan_length: 6
+    domain_class: zenotravel
+    instance_name: pp03-err-rate-0-1
+    ground_plan:
+    - (board person1 plane1 city0)
+    - (fly plane1 city0 city1 fl4 fl3)
+    - (board person3 plane1 city1)
+    - (debark person1 plane1 city1)
+    - (fly plane1 city1 city0 fl3 fl2)
+    - (debark person3 plane1 city0)
+    lifted_plan:
+    -   - board
+        - ?person1
+        - ?plane1
+        - ?city0
+    -   - fly
+        - ?plane1
+        - ?city0
+        - ?city1
+        - ?fl4
+        - ?fl3
+    -   - board
+        - ?person3
+        - ?plane1
+        - ?city1
+    -   - debark
+        - ?person1
+        - ?plane1
+        - ?city1
+    -   - fly
+        - ?plane1
+        - ?city1
+        - ?city0
+        - ?fl3
+        - ?fl2
+    -   - debark
+        - ?person3
+        - ?plane1
+        - ?city0
+
+
+---
+timestamp: '2025-03-06T17:39:15.429108'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-03-06T17:39:20.465555'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 74
+    fring_size: 191
+    num_nodes_generated: 265
+    sum_h_cost: 464
+    sum_f_cost: 404
+    sum_h_cost_time: 0.9224250316619873
+    sum_grounding_time: 1.4599478244781494
+    h_max: 2
+    current_node:
+        depth: 6
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly plane1 city0 city1 fl4 fl3)
+        - (board person3 plane1 city1)
+        - (debark person1 plane1 city1)
+        - (fly plane1 city1 city0 fl3 fl2)
+        - (debark person3 plane1 city0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-06T17:39:20.472628'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '6.23'
+
+
+---
+timestamp: '2025-03-06T17:39:20.503804'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 6.55 seconds'
+
+

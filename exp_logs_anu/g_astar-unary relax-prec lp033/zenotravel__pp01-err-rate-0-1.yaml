@@ -1,0 +1,78 @@
+---
+timestamp: '2025-03-12T14:27:54.529564'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary
+        relax-prec lp033/zenotravel__pp01-err-rate-0-1.yaml
+    instance_id: zenotravel__pp01-err-rate-0-1
+    search_algorithm: g_astar
+    plan_length: 1
+    domain_class: zenotravel
+    instance_name: pp01-err-rate-0-1
+    ground_plan:
+    - (fly plane1 city0 city1 fl1 fl0)
+    lifted_plan:
+    -   - fly
+        - plane1
+        - city0
+        - city1
+        - ?fl1
+        - fl0
+
+
+---
+timestamp: '2025-03-12T14:27:54.531850'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-03-12T14:27:54.573673'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 2
+    fring_size: 0
+    num_nodes_generated: 2
+    sum_h_cost: 0
+    sum_f_cost: 0
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 0.03741025924682617
+    h_max: 0
+    current_node:
+        depth: 1
+        ground_actions:
+        - (fly plane1 city0 city1 fl1 fl0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-12T14:27:54.574760'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.19'
+
+
+---
+timestamp: '2025-03-12T14:27:54.616180'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.60 seconds'
+
+

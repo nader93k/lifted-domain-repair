@@ -1,0 +1,133 @@
+---
+timestamp: '2025-01-21T11:56:15.030027'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary
+        relax-prec-delete lp066/mystery__pprob20-err-rate-0-1.yaml
+    instance_id: mystery__pprob20-err-rate-0-1
+    search_algorithm: astar
+    plan_length: 8
+    domain_class: mystery
+    instance_name: pprob20-err-rate-0-1
+    ground_plan:
+    - (feast triumph yogurt wonderbread goias arizona)
+    - (overcome abrasion triumph wonderbread neptune venus)
+    - (feast triumph wonderbread yogurt moravia bosnia)
+    - (feast triumph yogurt tuna bosnia goias)
+    - (feast triumph tuna turkey goias arizona)
+    - (feast triumph turkey guava quebec alsace)
+    - (feast triumph guava pepper bosnia goias)
+    - (succumb abrasion triumph pepper neptune venus)
+    lifted_plan:
+    -   - feast
+        - triumph
+        - yogurt
+        - ?wonderbread
+        - ?goias
+        - ?arizona
+    -   - overcome
+        - ?abrasion
+        - triumph
+        - ?wonderbread
+        - ?neptune
+        - ?venus
+    -   - feast
+        - triumph
+        - ?wonderbread
+        - ?yogurt
+        - moravia
+        - ?bosnia
+    -   - feast
+        - ?triumph
+        - yogurt
+        - tuna
+        - bosnia
+        - goias
+    -   - feast
+        - ?triumph
+        - tuna
+        - turkey
+        - goias
+        - ?arizona
+    -   - feast
+        - ?triumph
+        - ?turkey
+        - ?guava
+        - quebec
+        - alsace
+    -   - feast
+        - ?triumph
+        - guava
+        - ?pepper
+        - bosnia
+        - ?goias
+    -   - succumb
+        - ?abrasion
+        - triumph
+        - ?pepper
+        - neptune
+        - venus
+
+
+---
+timestamp: '2025-01-21T11:56:15.034600'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: succumb,(orbits ?s1 ?n),precPos,-1
+
+
+---
+timestamp: '2025-01-21T11:56:28.874348'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 48
+    fring_size: 0
+    num_nodes_generated: 48
+    sum_h_cost: 200
+    sum_f_cost: 132
+    sum_h_cost_time: 10.940512895584106
+    sum_grounding_time: 2.5628368854522705
+    h_max: 4
+    current_node:
+        depth: 6
+        ground_actions:
+        - (feast triumph yogurt wonderbread goias arizona)
+        - (overcome abrasion triumph wonderbread neptune venus)
+        - (feast triumph wonderbread mutton moravia bosnia)
+        - (feast triumph yogurt tuna bosnia goias)
+        - (feast triumph tuna turkey goias arizona)
+        - (feast triumph turkey rice quebec alsace)
+        repair_set: feast,(not (craves ?v ?n1)),effNeg,-1
+        g_cost: 1
+        h_cost: 4
+        f_cost: 5
+        next_lifted_action: '[''feast'', ''?triumph'', ''guava'', ''?pepper'', ''bosnia'',
+            ''?goias'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-21T11:56:28.876035'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '15.02'
+
+
+---
+timestamp: '2025-01-21T11:56:28.909640'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 15.34 seconds'
+
+

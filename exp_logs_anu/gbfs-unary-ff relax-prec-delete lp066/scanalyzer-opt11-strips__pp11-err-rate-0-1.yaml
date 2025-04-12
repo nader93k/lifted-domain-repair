@@ -1,0 +1,210 @@
+---
+timestamp: '2025-01-20T04:13:32.304130'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-prec-delete lp066/scanalyzer-opt11-strips__pp11-err-rate-0-1.yaml
+    instance_id: scanalyzer-opt11-strips__pp11-err-rate-0-1
+    search_algorithm: greedy
+    plan_length: 10
+    domain_class: scanalyzer-opt11-strips
+    instance_name: pp11-err-rate-0-1
+    ground_plan:
+    - (analyze-4 seg-in-1a seg-in-1b seg-out-1a seg-out-1b car-in-1a car-in-1b car-out-1a
+        car-out-1b)
+    - (analyze-4 seg-in-2a seg-in-2b seg-out-2a seg-out-2b car-in-2a car-in-2b car-out-2a
+        car-out-2b)
+    - (analyze-4 seg-in-1a seg-in-1b seg-out-1a seg-out-1b car-in-1b car-out-1a car-out-1b
+        car-in-1a)
+    - (analyze-4 seg-in-1a seg-in-1b seg-out-1a seg-out-1b car-out-1a car-out-1b car-in-1a
+        car-in-1b)
+    - (analyze-4 seg-in-1a seg-in-1b seg-out-1a seg-out-1b car-out-1b car-in-1a car-in-1b
+        car-out-1a)
+    - (analyze-4 seg-in-1a seg-in-1b seg-out-1a seg-out-1b car-in-1a car-in-1b car-out-1a
+        car-out-1b)
+    - (analyze-4 seg-in-2a seg-in-2b seg-out-2a seg-out-2b car-in-2b car-out-2a car-out-2b
+        car-in-2a)
+    - (analyze-4 seg-in-2a seg-in-2b seg-out-2a seg-out-2b car-out-2a car-out-2b car-in-2a
+        car-in-2b)
+    - (analyze-4 seg-in-2a seg-in-2b seg-out-2a seg-out-2b car-out-2b car-in-2a car-in-2b
+        car-out-2a)
+    - (analyze-4 seg-in-2a seg-in-2b seg-out-2a seg-out-2b car-in-2a car-in-2b car-out-2a
+        car-out-2b)
+    lifted_plan:
+    -   - analyze-4
+        - seg-in-1a
+        - seg-in-1b
+        - ?seg-out-1a
+        - ?seg-out-1b
+        - ?car-in-1a
+        - ?car-in-1b
+        - car-out-1a
+        - ?car-out-1b
+    -   - analyze-4
+        - ?seg-in-2a
+        - ?seg-in-2b
+        - seg-out-2a
+        - ?seg-out-2b
+        - ?car-in-2a
+        - car-in-2b
+        - ?car-out-2a
+        - ?car-out-2b
+    -   - analyze-4
+        - seg-in-1a
+        - seg-in-1b
+        - seg-out-1a
+        - seg-out-1b
+        - ?car-in-1b
+        - car-out-1a
+        - car-out-1b
+        - car-in-1a
+    -   - analyze-4
+        - ?seg-in-1a
+        - ?seg-in-1b
+        - ?seg-out-1a
+        - ?seg-out-1b
+        - car-out-1a
+        - car-out-1b
+        - ?car-in-1a
+        - car-in-1b
+    -   - analyze-4
+        - ?seg-in-1a
+        - seg-in-1b
+        - ?seg-out-1a
+        - ?seg-out-1b
+        - car-out-1b
+        - ?car-in-1a
+        - car-in-1b
+        - car-out-1a
+    -   - analyze-4
+        - ?seg-in-1a
+        - ?seg-in-1b
+        - seg-out-1a
+        - ?seg-out-1b
+        - ?car-in-1a
+        - car-in-1b
+        - ?car-out-1a
+        - ?car-out-1b
+    -   - analyze-4
+        - ?seg-in-2a
+        - seg-in-2b
+        - seg-out-2a
+        - ?seg-out-2b
+        - ?car-in-2b
+        - ?car-out-2a
+        - ?car-out-2b
+        - car-in-2a
+    -   - analyze-4
+        - ?seg-in-2a
+        - ?seg-in-2b
+        - seg-out-2a
+        - ?seg-out-2b
+        - car-out-2a
+        - ?car-out-2b
+        - car-in-2a
+        - ?car-in-2b
+    -   - analyze-4
+        - ?seg-in-2a
+        - ?seg-in-2b
+        - ?seg-out-2a
+        - ?seg-out-2b
+        - ?car-out-2b
+        - ?car-in-2a
+        - ?car-in-2b
+        - ?car-out-2a
+    -   - analyze-4
+        - ?seg-in-2a
+        - ?seg-in-2b
+        - ?seg-out-2a
+        - ?seg-out-2b
+        - car-in-2a
+        - car-in-2b
+        - car-out-2a
+        - car-out-2b
+
+
+---
+timestamp: '2025-01-20T04:13:32.309817'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: analyze-4,(analyzed ?c3),effPos,1
+
+
+---
+timestamp: '2025-01-20T04:15:00.290662'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 11
+    fring_size: 1107
+    num_nodes_generated: 1118
+    sum_h_cost: 2232
+    sum_f_cost: 1116
+    sum_h_cost_time: 1.6916756629943848
+    sum_grounding_time: 0.3391895294189453
+    h_max: 1
+    current_node:
+        depth: 10
+        ground_actions:
+        - (analyze-4 seg-in-1a seg-in-1b seg-out-1a seg-out-1b car-in-1a car-in-1b
+            car-out-1a car-out-1b)
+        - (analyze-4 seg-in-2a seg-in-2b seg-out-2a seg-out-2b car-in-2a car-in-2b
+            car-out-2a car-out-2b)
+        - (analyze-4 seg-in-1a seg-in-1b seg-out-1a seg-out-1b car-in-1b car-out-1a
+            car-out-1b car-in-1a)
+        - (analyze-4 seg-in-1a seg-in-1b seg-out-1a seg-out-1b car-out-1a car-out-1b
+            car-in-1a car-in-1b)
+        - (analyze-4 seg-in-1a seg-in-1b seg-out-1a seg-out-1b car-out-1b car-in-1a
+            car-in-1b car-out-1a)
+        - (analyze-4 seg-in-1a seg-in-1b seg-out-1a seg-out-1b car-in-1a car-in-1b
+            car-out-1a car-out-1b)
+        - (analyze-4 seg-in-2a seg-in-2b seg-out-2a seg-out-2b car-in-2b car-out-2a
+            car-out-2b car-in-2a)
+        - (analyze-4 seg-in-2a seg-in-2b seg-out-2a seg-out-2b car-out-2a car-out-2b
+            car-in-2a car-in-2b)
+        - (analyze-4 seg-in-1a seg-in-1b seg-out-1a seg-out-1b car-in-1b car-out-1a
+            car-out-1b car-in-1a)
+        - (analyze-4 seg-in-2a seg-in-2b seg-out-2a seg-out-2b car-in-2a car-in-2b
+            car-out-2a car-out-2b)
+        repair_set: 'analyze-4,(analyzed ?c1),effPos,1
+
+            analyze-4,(not (on ?c2 ?s2)),effNeg,-1
+
+            analyze-4,(not (on ?c1 ?s1)),effNeg,-1
+
+            analyze-4,(not (on ?c3 ?s3)),effNeg,-1
+
+            analyze-4,(analyzed ?c3),effPos,1
+
+            analyze-4,(on ?c4 ?s4),effPos,1'
+        g_cost: 6
+        h_cost: 0
+        f_cost: 6
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-20T04:15:00.337002'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '89.70'
+
+
+---
+timestamp: '2025-01-20T04:15:00.379650'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 90.19 seconds'
+
+

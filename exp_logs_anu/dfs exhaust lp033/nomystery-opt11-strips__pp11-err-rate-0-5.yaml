@@ -1,0 +1,113 @@
+---
+timestamp: '2025-03-03T17:11:02.473550'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs
+        exhaust lp033/nomystery-opt11-strips__pp11-err-rate-0-5.yaml
+    instance_id: nomystery-opt11-strips__pp11-err-rate-0-5
+    search_algorithm: dfs
+    plan_length: 12
+    domain_class: nomystery-opt11-strips
+    instance_name: pp11-err-rate-0-5
+    ground_plan:
+    - (drive t0 l2 l0 level24 level2 level26)
+    - (load p0 t0 l0)
+    - (drive t0 l0 l2 level22 level2 level24)
+    - (drive t0 l2 l1 level19 level3 level22)
+    - (load p1 t0 l1)
+    - (unload p0 t0 l1)
+    - (drive t0 l1 l3 level8 level11 level19)
+    - (load p2 t0 l3)
+    - (drive t0 l3 l2 level2 level6 level8)
+    - (drive t0 l2 l0 level0 level2 level2)
+    - (unload p2 t0 l0)
+    - (unload p1 t0 l0)
+    lifted_plan:
+    -   - drive
+        - t0
+        - l2
+        - l0
+        - ?level24
+        - level2
+        - level26
+    -   - load
+        - p0
+        - ?t0
+        - l0
+    -   - drive
+        - t0
+        - l0
+        - l2
+        - ?level22
+        - level2
+        - level24
+    -   - drive
+        - ?t0
+        - l2
+        - l1
+        - level19
+        - level3
+        - ?level22
+    -   - load
+        - p1
+        - t0
+        - l1
+    -   - unload
+        - p0
+        - ?t0
+        - l1
+    -   - drive
+        - t0
+        - l1
+        - l3
+        - level8
+        - level11
+        - ?level19
+    -   - load
+        - p2
+        - t0
+        - ?l3
+    -   - drive
+        - t0
+        - l3
+        - l2
+        - level2
+        - ?level6
+        - level8
+    -   - drive
+        - t0
+        - ?l2
+        - ?l0
+        - level0
+        - ?level2
+        - level2
+    -   - unload
+        - ?p2
+        - t0
+        - l0
+    -   - unload
+        - p1
+        - ?t0
+        - ?l0
+
+
+---
+timestamp: '2025-03-03T17:11:02.479404'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-03-03T17:26:01.623350'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+

@@ -1,0 +1,141 @@
+---
+timestamp: '2025-01-21T11:32:48.937836'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary
+        relax-prec-delete lp033/driverlog__pp03-err-rate-0-1.yaml
+    instance_id: driverlog__pp03-err-rate-0-1
+    search_algorithm: astar
+    plan_length: 13
+    domain_class: driverlog
+    instance_name: pp03-err-rate-0-1
+    ground_plan:
+    - (board-truck driver1 truck1 s1)
+    - (load-truck package3 truck1 s1)
+    - (walk driver2 s0 p2-0)
+    - (walk driver2 p2-0 s2)
+    - (drive-truck truck1 s1 s0 driver1)
+    - (load-truck package2 truck1 s0)
+    - (load-truck package1 truck1 s0)
+    - (drive-truck truck1 s0 s1 driver1)
+    - (unload-truck package2 truck1 s1)
+    - (unload-truck package1 truck1 s1)
+    - (drive-truck truck1 s1 s2 driver1)
+    - (unload-truck package3 truck1 s2)
+    - (drive-truck truck1 s2 s1 driver1)
+    lifted_plan:
+    -   - board-truck
+        - driver1
+        - truck1
+        - s1
+    -   - load-truck
+        - ?package3
+        - truck1
+        - s1
+    -   - walk
+        - driver2
+        - ?s0
+        - p2-0
+    -   - walk
+        - driver2
+        - p2-0
+        - s2
+    -   - drive-truck
+        - ?truck1
+        - s1
+        - s0
+        - ?driver1
+    -   - load-truck
+        - package2
+        - truck1
+        - s0
+    -   - load-truck
+        - package1
+        - ?truck1
+        - s0
+    -   - drive-truck
+        - truck1
+        - s0
+        - s1
+        - ?driver1
+    -   - unload-truck
+        - package2
+        - truck1
+        - s1
+    -   - unload-truck
+        - package1
+        - truck1
+        - s1
+    -   - drive-truck
+        - ?truck1
+        - s1
+        - s2
+        - ?driver1
+    -   - unload-truck
+        - package3
+        - truck1
+        - s2
+    -   - drive-truck
+        - truck1
+        - ?s2
+        - s1
+        - driver1
+
+
+---
+timestamp: '2025-01-21T11:32:48.941810'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: walk,(driver ?loc-to),precPos,-1
+
+
+---
+timestamp: '2025-01-21T11:32:49.380626'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 4
+    fring_size: 0
+    num_nodes_generated: 4
+    sum_h_cost: 30
+    sum_f_cost: 15
+    sum_h_cost_time: 0.319871187210083
+    sum_grounding_time: 0.10404372215270996
+    h_max: 6
+    current_node:
+        depth: 2
+        ground_actions:
+        - (board-truck driver1 truck1 s1)
+        - (load-truck package3 truck1 s1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 6
+        f_cost: 6
+        next_lifted_action: '[''walk'', ''driver2'', ''?s0'', ''p2-0'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-21T11:32:49.381747'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.56'
+
+
+---
+timestamp: '2025-01-21T11:32:49.417871'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.88 seconds'
+
+

@@ -1,0 +1,141 @@
+---
+timestamp: '2025-01-21T14:25:10.593037'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary
+        relax-prec-delete lp1/tpp__pp02-err-rate-0-1.yaml
+    instance_id: tpp__pp02-err-rate-0-1
+    search_algorithm: greedy
+    plan_length: 8
+    domain_class: tpp
+    instance_name: pp02-err-rate-0-1
+    ground_plan:
+    - (drive truck1 depot1 market1)
+    - (buy truck1 goods2 market1 level0 level1 level0 level1)
+    - (load goods2 truck1 market1 level0 level1 level0 level1)
+    - (buy truck1 goods1 market1 level0 level1 level0 level1)
+    - (load goods1 truck1 market1 level0 level1 level0 level1)
+    - (drive truck1 market1 depot1)
+    - (unload goods2 truck1 depot1 level0 level1 level0 level1)
+    - (unload goods1 truck1 depot1 level0 level1 level0 level1)
+    lifted_plan:
+    -   - drive
+        - ?truck1
+        - ?depot1
+        - ?market1
+    -   - buy
+        - ?truck1
+        - ?goods2
+        - ?market1
+        - ?level0
+        - ?level1
+        - ?level0
+        - ?level1
+    -   - load
+        - ?goods2
+        - ?truck1
+        - ?market1
+        - ?level0
+        - ?level1
+        - ?level0
+        - ?level1
+    -   - buy
+        - ?truck1
+        - ?goods1
+        - ?market1
+        - ?level0
+        - ?level1
+        - ?level0
+        - ?level1
+    -   - load
+        - ?goods1
+        - ?truck1
+        - ?market1
+        - ?level0
+        - ?level1
+        - ?level0
+        - ?level1
+    -   - drive
+        - ?truck1
+        - ?market1
+        - ?depot1
+    -   - unload
+        - ?goods2
+        - ?truck1
+        - ?depot1
+        - ?level0
+        - ?level1
+        - ?level0
+        - ?level1
+    -   - unload
+        - ?goods1
+        - ?truck1
+        - ?depot1
+        - ?level0
+        - ?level1
+        - ?level0
+        - ?level1
+
+
+---
+timestamp: '2025-01-21T14:25:10.596735'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: buy,(loaded ?g ?t ?l2),effPos,1
+
+
+---
+timestamp: '2025-01-21T14:25:12.000448'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 28
+    fring_size: 0
+    num_nodes_generated: 28
+    sum_h_cost: 288
+    sum_f_cost: 144
+    sum_h_cost_time: 0.8407690525054932
+    sum_grounding_time: 0.4681582450866699
+    h_max: 10
+    current_node:
+        depth: 6
+        ground_actions:
+        - (drive truck1 depot1 market1)
+        - (buy truck1 goods2 market1 level0 level1 level0 level1)
+        - (load goods2 truck1 market1 level0 level1 level0 level1)
+        - (buy truck1 goods1 market1 level0 level1 level0 level1)
+        - (load goods1 truck1 market1 level0 level1 level0 level1)
+        - (drive truck1 depot1 market1)
+        repair_set: drive,(at ?t ?from),precPos,-1
+        g_cost: 1
+        h_cost: 10
+        f_cost: 11
+        next_lifted_action: '[''unload'', ''?goods2'', ''?truck1'', ''?depot1'', ''?level0'',
+            ''?level1'', ''?level0'', ''?level1'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-21T14:25:12.002032'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '2.59'
+
+
+---
+timestamp: '2025-01-21T14:25:12.032183'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 2.92 seconds'
+
+

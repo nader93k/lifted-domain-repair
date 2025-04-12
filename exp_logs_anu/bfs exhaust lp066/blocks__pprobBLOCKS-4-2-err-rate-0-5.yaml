@@ -1,0 +1,98 @@
+---
+timestamp: '2025-03-02T17:19:44.585858'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_debug/bfs
+        exhast lp066/blocks__pprobBLOCKS-4-2-err-rate-0-5.yaml
+    instance_id: blocks__pprobBLOCKS-4-2-err-rate-0-5
+    search_algorithm: bfs
+    plan_length: 6
+    domain_class: blocks
+    instance_name: pprobBLOCKS-4-2-err-rate-0-5
+    ground_plan:
+    - (unstack c b)
+    - (stack c d)
+    - (pick-up b)
+    - (stack b c)
+    - (pick-up a)
+    - (stack a b)
+    lifted_plan:
+    -   - unstack
+        - c
+        - b
+    -   - stack
+        - ?c
+        - ?d
+    -   - pick-up
+        - ?b
+    -   - stack
+        - ?b
+        - c
+    -   - pick-up
+        - ?a
+    -   - stack
+        - ?a
+        - ?b
+
+
+---
+timestamp: '2025-03-02T17:19:44.588676'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: unstack,(clear ?y),precPos,-1
+
+
+---
+timestamp: '2025-03-02T17:19:46.084648'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 66
+    fring_size: 479
+    num_nodes_generated: 545
+    sum_h_cost: 0
+    sum_f_cost: 1220
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 0.6467351913452148
+    h_max: 0
+    current_node:
+        depth: 6
+        ground_actions:
+        - (unstack c b)
+        - (stack c d)
+        - (pick-up b)
+        - (stack b c)
+        - (pick-up a)
+        - (stack a b)
+        repair_set: unstack,(clear ?y),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-02T17:19:46.096054'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '2.69'
+
+
+---
+timestamp: '2025-03-02T17:19:46.128961'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 3.00 seconds'
+
+

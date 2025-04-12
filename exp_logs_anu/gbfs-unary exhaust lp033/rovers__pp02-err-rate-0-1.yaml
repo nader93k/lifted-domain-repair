@@ -1,0 +1,109 @@
+---
+timestamp: '2025-03-17T10:33:47.811138'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary
+        exhaust lp033/rovers__pp02-err-rate-0-1.yaml
+    instance_id: rovers__pp02-err-rate-0-1
+    search_algorithm: gbfs
+    plan_length: 8
+    domain_class: rovers
+    instance_name: pp02-err-rate-0-1
+    ground_plan:
+    - (calibrate rover0 camera0 objective0 waypoint0)
+    - (take_image rover0 waypoint0 objective1 camera0 low_res)
+    - (communicate_image_data rover0 general objective1 low_res waypoint0 waypoint1)
+    - (sample_rock rover0 rover0store waypoint0)
+    - (communicate_rock_data rover0 general waypoint0 waypoint0 waypoint1)
+    - (drop rover0 rover0store)
+    - (sample_soil rover0 rover0store waypoint0)
+    - (communicate_soil_data rover0 general waypoint0 waypoint0 waypoint1)
+    lifted_plan:
+    -   - calibrate
+        - rover0
+        - camera0
+        - objective0
+        - ?waypoint0
+    -   - take_image
+        - rover0
+        - waypoint0
+        - objective1
+        - ?camera0
+        - low_res
+    -   - communicate_image_data
+        - rover0
+        - general
+        - objective1
+        - ?low_res
+        - waypoint0
+        - waypoint1
+    -   - sample_rock
+        - ?rover0
+        - rover0store
+        - waypoint0
+    -   - communicate_rock_data
+        - rover0
+        - general
+        - ?waypoint0
+        - waypoint0
+        - waypoint1
+    -   - drop
+        - rover0
+        - rover0store
+    -   - sample_soil
+        - ?rover0
+        - rover0store
+        - waypoint0
+    -   - communicate_soil_data
+        - rover0
+        - general
+        - waypoint0
+        - waypoint0
+        - ?waypoint1
+
+
+---
+timestamp: '2025-03-17T10:33:47.815175'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-03-17T10:33:47.847102'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data:
+    error_type: CalledProcessError
+    error_message: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',
+        'instance_solver.py', 'configs_exhaustive/gbfs-unary_exhaust_lp033.yaml',
+        'rovers__pp02-err-rate-0-1']' returned non-zero exit status 1.
+    stack_trace: "Traceback (most recent call last):\n  File \"batch_solver.py\",\
+        \ line 119, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
+        \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/subprocess.py\"\
+        , line 516, in run\n    raise CalledProcessError(retcode, process.args,\n\
+        subprocess.CalledProcessError: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',\
+        \ 'instance_solver.py', 'configs_exhaustive/gbfs-unary_exhaust_lp033.yaml',\
+        \ 'rovers__pp02-err-rate-0-1']' returned non-zero exit status 1.\n"
+    instance_id: rovers__pp02-err-rate-0-1
+    process_info:
+        cmd:
+        - /home/projects/u7899572/conda-envs/main/bin/python3
+        - instance_solver.py
+        - configs_exhaustive/gbfs-unary_exhaust_lp033.yaml
+        - rovers__pp02-err-rate-0-1
+        duration: '1.50'
+        python_executable: /home/projects/u7899572/conda-envs/main/bin/python3
+    stdout: ''
+    stderr: "Traceback (most recent call last):\n  File \"instance_solver.py\", line\
+        \ 147, in <module>\n    solve_instance(\n  File \"instance_solver.py\", line\
+        \ 122, in solve_instance\n    raise NotImplementedError(\"Search algorithm\
+        \ not supported.\")\nNotImplementedError: Search algorithm not supported.\n"
+
+

@@ -1,0 +1,155 @@
+---
+timestamp: '2025-03-15T11:13:23.594941'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary
+        exhaust lp1/mprime__pprob14-err-rate-0-5.yaml
+    instance_id: mprime__pprob14-err-rate-0-5
+    search_algorithm: astar
+    plan_length: 11
+    domain_class: mprime
+    instance_name: pprob14-err-rate-0-5
+    ground_plan:
+    - (feast rest scallop lettuce quebec bavaria)
+    - (feast rest lettuce pistachio arizona pennsylvania)
+    - (overcome anxiety-25 rest pistachio vulcan jupiter)
+    - (overcome prostatitis-23 rest pistachio mars vulcan)
+    - (feast rest pistachio lettuce alsace arizona)
+    - (feast rest lettuce scallop alsace arizona)
+    - (feast rest scallop scallion surrey quebec)
+    - (feast rest scallion shrimp pennsylvania surrey)
+    - (feast rest shrimp potato pennsylvania surrey)
+    - (succumb anxiety-25 rest potato mars vulcan)
+    - (succumb prostatitis-23 rest potato vulcan jupiter)
+    lifted_plan:
+    -   - feast
+        - ?rest
+        - ?scallop
+        - ?lettuce
+        - ?quebec
+        - ?bavaria
+    -   - feast
+        - ?rest
+        - ?lettuce
+        - ?pistachio
+        - ?arizona
+        - ?pennsylvania
+    -   - overcome
+        - ?anxiety-25
+        - ?rest
+        - ?pistachio
+        - ?vulcan
+        - ?jupiter
+    -   - overcome
+        - ?prostatitis-23
+        - ?rest
+        - ?pistachio
+        - ?mars
+        - ?vulcan
+    -   - feast
+        - ?rest
+        - ?pistachio
+        - ?lettuce
+        - ?alsace
+        - ?arizona
+    -   - feast
+        - ?rest
+        - ?lettuce
+        - ?scallop
+        - ?alsace
+        - ?arizona
+    -   - feast
+        - ?rest
+        - ?scallop
+        - ?scallion
+        - ?surrey
+        - ?quebec
+    -   - feast
+        - ?rest
+        - ?scallion
+        - ?shrimp
+        - ?pennsylvania
+        - ?surrey
+    -   - feast
+        - ?rest
+        - ?shrimp
+        - ?potato
+        - ?pennsylvania
+        - ?surrey
+    -   - succumb
+        - ?anxiety-25
+        - ?rest
+        - ?potato
+        - ?mars
+        - ?vulcan
+    -   - succumb
+        - ?prostatitis-23
+        - ?rest
+        - ?potato
+        - ?vulcan
+        - ?jupiter
+
+
+---
+timestamp: '2025-03-15T11:13:23.601001'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-03-15T11:13:32.118606'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''?rest'', ''?scallop'', ''?lettuce'', ''?quebec'',
+            ''?bavaria'']'
+        num_neighbours: 0
+        current_state: not implemented!
+
+
+---
+timestamp: '2025-03-15T11:13:32.121551'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: . Stack trace: Traceback (most recent call\
+    \ last):\n  File \"instance_solver.py\", line 125, in solve_instance\n    searcher.find_path(logger=logger,\
+    \ log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 78, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
+    \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 195, in get_neighbors\n    possible_groundings = grounder(domain, task,\
+    \ next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 177, in exhaustive_groundings\n    ground_params = list(product(*action_objcet_list))\n\
+    MemoryError\n"
+
+
+---
+timestamp: '2025-03-15T11:13:32.122590'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '9.75'
+
+
+---
+timestamp: '2025-03-15T11:13:32.153416'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 10.18 seconds'
+
+

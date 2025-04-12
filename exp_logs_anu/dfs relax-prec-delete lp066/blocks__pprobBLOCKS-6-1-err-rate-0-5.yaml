@@ -1,0 +1,71 @@
+---
+timestamp: '2025-01-20T10:57:49.381321'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs
+        relax-prec-delete lp066/blocks__pprobBLOCKS-6-1-err-rate-0-5.yaml
+    instance_id: blocks__pprobBLOCKS-6-1-err-rate-0-5
+    search_algorithm: dfs
+    plan_length: 10
+    domain_class: blocks
+    instance_name: pprobBLOCKS-6-1-err-rate-0-5
+    ground_plan:
+    - (unstack a f)
+    - (stack a d)
+    - (pick-up b)
+    - (stack b a)
+    - (pick-up c)
+    - (stack c b)
+    - (pick-up f)
+    - (stack f c)
+    - (pick-up e)
+    - (stack e f)
+    lifted_plan:
+    -   - unstack
+        - a
+        - f
+    -   - stack
+        - ?a
+        - ?d
+    -   - pick-up
+        - ?b
+    -   - stack
+        - ?b
+        - a
+    -   - pick-up
+        - ?c
+    -   - stack
+        - ?c
+        - ?b
+    -   - pick-up
+        - f
+    -   - stack
+        - ?f
+        - ?c
+    -   - pick-up
+        - e
+    -   - stack
+        - ?e
+        - ?f
+
+
+---
+timestamp: '2025-01-20T10:57:49.392428'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-20T11:12:48.031349'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+

@@ -1,0 +1,128 @@
+---
+timestamp: '2025-03-06T15:40:57.775912'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary-ff
+        relax-prec lp1/scanalyzer-08-strips__pp24-err-rate-0-5.yaml
+    instance_id: scanalyzer-08-strips__pp24-err-rate-0-5
+    search_algorithm: g_astar
+    plan_length: 5
+    domain_class: scanalyzer-08-strips
+    instance_name: pp24-err-rate-0-5
+    ground_plan:
+    - (analyze-4 seg-in-1a seg-in-1b seg-out-1a seg-out-1b car-in-1a car-in-1b car-out-1a
+        car-out-1b)
+    - (analyze-4 seg-in-1a seg-in-1b seg-out-1a seg-out-1b car-in-1b car-out-1a car-out-1b
+        car-in-1a)
+    - (analyze-4 seg-in-1a seg-in-1b seg-out-1a seg-out-1b car-out-1a car-out-1b car-in-1a
+        car-in-1b)
+    - (analyze-4 seg-in-1a seg-in-1b seg-out-1a seg-out-1b car-out-1b car-in-1a car-in-1b
+        car-out-1a)
+    - (analyze-4 seg-in-1a seg-in-1b seg-out-1a seg-out-1b car-in-1a car-in-1b car-out-1a
+        car-out-1b)
+    lifted_plan:
+    -   - analyze-4
+        - ?seg-in-1a
+        - ?seg-in-1b
+        - ?seg-out-1a
+        - ?seg-out-1b
+        - ?car-in-1a
+        - ?car-in-1b
+        - ?car-out-1a
+        - ?car-out-1b
+    -   - analyze-4
+        - ?seg-in-1a
+        - ?seg-in-1b
+        - ?seg-out-1a
+        - ?seg-out-1b
+        - ?car-in-1b
+        - ?car-out-1a
+        - ?car-out-1b
+        - ?car-in-1a
+    -   - analyze-4
+        - ?seg-in-1a
+        - ?seg-in-1b
+        - ?seg-out-1a
+        - ?seg-out-1b
+        - ?car-out-1a
+        - ?car-out-1b
+        - ?car-in-1a
+        - ?car-in-1b
+    -   - analyze-4
+        - ?seg-in-1a
+        - ?seg-in-1b
+        - ?seg-out-1a
+        - ?seg-out-1b
+        - ?car-out-1b
+        - ?car-in-1a
+        - ?car-in-1b
+        - ?car-out-1a
+    -   - analyze-4
+        - ?seg-in-1a
+        - ?seg-in-1b
+        - ?seg-out-1a
+        - ?seg-out-1b
+        - ?car-in-1a
+        - ?car-in-1b
+        - ?car-out-1a
+        - ?car-out-1b
+
+
+---
+timestamp: '2025-03-06T15:40:57.779469'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: analyze-4,(on ?c2 ?s1),effPos,1
+
+
+---
+timestamp: '2025-03-06T15:40:57.935510'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 2
+    fring_size: 0
+    num_nodes_generated: 2
+    sum_h_cost: 12
+    sum_f_cost: 6
+    sum_h_cost_time: 0.09499192237854004
+    sum_grounding_time: 0.05459761619567871
+    h_max: 6
+    current_node:
+        depth: 1
+        ground_actions:
+        - (analyze-4 seg-in-1a seg-in-1b seg-out-1a seg-out-1b car-in-1a car-in-1b
+            car-out-1a car-out-1b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 3
+        f_cost: 3
+        next_lifted_action: '[''analyze-4'', ''?seg-in-1a'', ''?seg-in-1b'', ''?seg-out-1a'',
+            ''?seg-out-1b'', ''?car-in-1b'', ''?car-out-1a'', ''?car-out-1b'', ''?car-in-1a'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-06T15:40:57.936691'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.35'
+
+
+---
+timestamp: '2025-03-06T15:40:57.969734'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.65 seconds'
+
+

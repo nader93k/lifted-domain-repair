@@ -1,0 +1,143 @@
+---
+timestamp: '2025-03-12T19:01:52.991117'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary
+        relax-all lp033/gripper__pprob01-err-rate-0-1.yaml
+    instance_id: gripper__pprob01-err-rate-0-1
+    search_algorithm: g_astar
+    plan_length: 11
+    domain_class: gripper
+    instance_name: pprob01-err-rate-0-1
+    ground_plan:
+    - (pick ball1 rooma left)
+    - (pick ball2 rooma right)
+    - (move rooma roomb)
+    - (drop ball1 roomb left)
+    - (drop ball2 roomb right)
+    - (move roomb rooma)
+    - (pick ball3 rooma left)
+    - (pick ball4 rooma right)
+    - (move rooma roomb)
+    - (drop ball3 roomb left)
+    - (drop ball4 roomb right)
+    lifted_plan:
+    -   - pick
+        - ball1
+        - rooma
+        - left
+    -   - pick
+        - ?ball2
+        - rooma
+        - right
+    -   - move
+        - rooma
+        - ?roomb
+    -   - drop
+        - ball1
+        - roomb
+        - left
+    -   - drop
+        - ball2
+        - ?roomb
+        - right
+    -   - move
+        - roomb
+        - ?rooma
+    -   - pick
+        - ball3
+        - rooma
+        - left
+    -   - pick
+        - ball4
+        - ?rooma
+        - right
+    -   - move
+        - rooma
+        - roomb
+    -   - drop
+        - ball3
+        - ?roomb
+        - left
+    -   - drop
+        - ball4
+        - roomb
+        - right
+
+
+---
+timestamp: '2025-03-12T19:01:52.994530'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: move,(at-robby ?to),effPos,1
+
+
+---
+timestamp: '2025-03-12T19:02:02.928630'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 122
+    fring_size: 224
+    num_nodes_generated: 346
+    sum_h_cost: 5824
+    sum_f_cost: 4568
+    sum_h_cost_time: 1.6072523593902588
+    sum_grounding_time: 1.8514888286590576
+    h_max: 38
+    current_node:
+        depth: 11
+        ground_actions:
+        - (pick ball1 rooma left)
+        - (pick ball1 rooma right)
+        - (move rooma roomb)
+        - (drop ball1 roomb left)
+        - (drop ball2 rooma right)
+        - (move roomb ball2)
+        - (pick ball3 rooma left)
+        - (pick ball4 ball2 right)
+        - (move rooma roomb)
+        - (drop ball3 roomb left)
+        - (drop ball4 roomb right)
+        repair_set: 'drop,(room ?obj),effPos,1
+
+            drop,(carry ?obj ?gripper),precPos,-1
+
+            move,(at ?to ?from),effPos,1
+
+            move,(at-robby ?to),effPos,1
+
+            pick,(at ?obj ?room),precPos,-1
+
+            move,(at-robby ?from),effPos,1'
+        g_cost: 6
+        h_cost: 0
+        f_cost: 6
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-12T19:02:02.942062'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '11.15'
+
+
+---
+timestamp: '2025-03-12T19:02:02.987443'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 11.57 seconds'
+
+

@@ -1,0 +1,126 @@
+---
+timestamp: '2025-01-22T18:49:35.163419'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs
+        relax-all lp033/blocks__pprobBLOCKS-5-1-err-rate-0-3.yaml
+    instance_id: blocks__pprobBLOCKS-5-1-err-rate-0-3
+    search_algorithm: dfs
+    plan_length: 10
+    domain_class: blocks
+    instance_name: pprobBLOCKS-5-1-err-rate-0-3
+    ground_plan:
+    - (unstack b a)
+    - (put-down b)
+    - (unstack a d)
+    - (stack a e)
+    - (pick-up b)
+    - (stack b a)
+    - (pick-up c)
+    - (stack c b)
+    - (pick-up d)
+    - (stack d c)
+    lifted_plan:
+    -   - unstack
+        - b
+        - a
+    -   - put-down
+        - b
+    -   - unstack
+        - ?a
+        - d
+    -   - stack
+        - a
+        - e
+    -   - pick-up
+        - ?b
+    -   - stack
+        - b
+        - a
+    -   - pick-up
+        - c
+    -   - stack
+        - c
+        - ?b
+    -   - pick-up
+        - d
+    -   - stack
+        - d
+        - ?c
+
+
+---
+timestamp: '2025-01-22T18:49:35.166815'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'stack,(on ?x ?y),effPos,1
+
+        unstack,(holding ?x),effPos,1'
+
+
+---
+timestamp: '2025-01-22T18:49:35.336967'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 11
+    fring_size: 1
+    num_nodes_generated: 23
+    sum_h_cost: 0
+    sum_f_cost: 0
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 0.11406850814819336
+    h_max: -.inf
+    current_node:
+        depth: 10
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a e)
+        - (pick-up d)
+        - (stack b a)
+        - (pick-up c)
+        - (stack c b)
+        - (pick-up d)
+        - (stack d c)
+        repair_set: 'pick-up,(ontable ?x),effPos,1
+
+            stack,(on ?x ?y),effPos,1
+
+            put-down,(holding ?x),effPos,1
+
+            pick-up,(clear ?x),precPos,-1
+
+            unstack,(holding ?x),effPos,1'
+        g_cost: 5
+        h_cost: 0
+        f_cost: 5
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-22T18:49:35.338590'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.39'
+
+
+---
+timestamp: '2025-01-22T18:49:35.370491'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.75 seconds'
+
+

@@ -1,0 +1,108 @@
+---
+timestamp: '2025-03-14T22:04:34.121038'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary-ff
+        exhaust lp066/blocks__pprobBLOCKS-4-2-err-rate-0-3.yaml
+    instance_id: blocks__pprobBLOCKS-4-2-err-rate-0-3
+    search_algorithm: astar
+    plan_length: 6
+    domain_class: blocks
+    instance_name: pprobBLOCKS-4-2-err-rate-0-3
+    ground_plan:
+    - (unstack c b)
+    - (stack c d)
+    - (pick-up b)
+    - (stack b c)
+    - (pick-up a)
+    - (stack a b)
+    lifted_plan:
+    -   - unstack
+        - c
+        - b
+    -   - stack
+        - ?c
+        - ?d
+    -   - pick-up
+        - ?b
+    -   - stack
+        - ?b
+        - c
+    -   - pick-up
+        - ?a
+    -   - stack
+        - ?a
+        - ?b
+
+
+---
+timestamp: '2025-03-14T22:04:34.123984'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'pick-up,(on ?x ?x),precPos,-1
+
+        stack,(equality-op ?y ?y),precPos,-1'
+
+
+---
+timestamp: '2025-03-14T22:04:39.451894'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 43
+    fring_size: 196
+    num_nodes_generated: 239
+    sum_h_cost: 1516
+    sum_f_cost: 1580
+    sum_h_cost_time: 0.8881683349609375
+    sum_grounding_time: 0.4691150188446045
+    h_max: 5
+    current_node:
+        depth: 6
+        ground_actions:
+        - (unstack c b)
+        - (stack c d)
+        - (pick-up b)
+        - (stack d c)
+        - (pick-up d)
+        - (stack b a)
+        repair_set: 'stack,(on ?y ?x),effPos,1
+
+            stack,(equality-op ?y ?y),precPos,-1
+
+            unstack,(on ?y ?x),effPos,1
+
+            stack,(holding ?x),precPos,-1
+
+            pick-up,(on ?x ?x),precPos,-1'
+        g_cost: 5
+        h_cost: 0
+        f_cost: 5
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-14T22:04:39.459995'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '6.50'
+
+
+---
+timestamp: '2025-03-14T22:04:39.497972'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 6.87 seconds'
+
+

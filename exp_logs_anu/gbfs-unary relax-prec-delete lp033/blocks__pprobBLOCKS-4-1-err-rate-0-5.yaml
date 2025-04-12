@@ -1,0 +1,110 @@
+---
+timestamp: '2025-01-21T16:56:19.087210'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary
+        relax-prec-delete lp033/blocks__pprobBLOCKS-4-1-err-rate-0-5.yaml
+    instance_id: blocks__pprobBLOCKS-4-1-err-rate-0-5
+    search_algorithm: greedy
+    plan_length: 10
+    domain_class: blocks
+    instance_name: pprobBLOCKS-4-1-err-rate-0-5
+    ground_plan:
+    - (unstack b c)
+    - (put-down b)
+    - (unstack c a)
+    - (put-down c)
+    - (unstack a d)
+    - (stack a b)
+    - (pick-up c)
+    - (stack c a)
+    - (pick-up d)
+    - (stack d c)
+    lifted_plan:
+    -   - unstack
+        - b
+        - c
+    -   - put-down
+        - b
+    -   - unstack
+        - ?c
+        - a
+    -   - put-down
+        - c
+    -   - unstack
+        - a
+        - ?d
+    -   - stack
+        - a
+        - b
+    -   - pick-up
+        - c
+    -   - stack
+        - c
+        - ?a
+    -   - pick-up
+        - d
+    -   - stack
+        - d
+        - ?c
+
+
+---
+timestamp: '2025-01-21T16:56:19.090219'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'pick-up,(holding ?x),effPos,1
+
+        unstack,(clear ?y),effPos,1'
+
+
+---
+timestamp: '2025-01-21T16:56:19.171898'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 3
+    fring_size: 0
+    num_nodes_generated: 3
+    sum_h_cost: 44
+    sum_f_cost: 22
+    sum_h_cost_time: 0.031965017318725586
+    sum_grounding_time: 0.0435185432434082
+    h_max: 11
+    current_node:
+        depth: 2
+        ground_actions:
+        - (unstack b c)
+        - (put-down b)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 11
+        f_cost: 11
+        next_lifted_action: '[''unstack'', ''?c'', ''a'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-21T16:56:19.172999'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.22'
+
+
+---
+timestamp: '2025-01-21T16:56:19.216750'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.54 seconds'
+
+

@@ -1,0 +1,118 @@
+---
+timestamp: '2025-03-06T17:21:14.251453'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary-ff
+        relax-prec-delete lp066/blocks__pprobBLOCKS-6-0-err-rate-0-3.yaml
+    instance_id: blocks__pprobBLOCKS-6-0-err-rate-0-3
+    search_algorithm: g_astar
+    plan_length: 12
+    domain_class: blocks
+    instance_name: pprobBLOCKS-6-0-err-rate-0-3
+    ground_plan:
+    - (unstack d a)
+    - (put-down d)
+    - (unstack f e)
+    - (stack f d)
+    - (unstack e b)
+    - (stack e f)
+    - (unstack a c)
+    - (stack a e)
+    - (pick-up b)
+    - (stack b a)
+    - (pick-up c)
+    - (stack c b)
+    lifted_plan:
+    -   - unstack
+        - d
+        - a
+    -   - put-down
+        - ?d
+    -   - unstack
+        - ?f
+        - ?e
+    -   - stack
+        - ?f
+        - d
+    -   - unstack
+        - ?e
+        - ?b
+    -   - stack
+        - ?e
+        - f
+    -   - unstack
+        - ?a
+        - ?c
+    -   - stack
+        - a
+        - ?e
+    -   - pick-up
+        - ?b
+    -   - stack
+        - b
+        - a
+    -   - pick-up
+        - c
+    -   - stack
+        - c
+        - ?b
+
+
+---
+timestamp: '2025-03-06T17:21:14.255213'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'unstack,(on ?x ?x),effPos,1
+
+        pick-up,(on ?x ?x),effPos,1'
+
+
+---
+timestamp: '2025-03-06T17:21:14.357239'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 2
+    fring_size: 0
+    num_nodes_generated: 2
+    sum_h_cost: 20
+    sum_f_cost: 10
+    sum_h_cost_time: 0.05807638168334961
+    sum_grounding_time: 0.03881335258483887
+    h_max: 10
+    current_node:
+        depth: 1
+        ground_actions:
+        - (unstack d a)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 5
+        f_cost: 5
+        next_lifted_action: '[''put-down'', ''?d'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-06T17:21:14.358330'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.31'
+
+
+---
+timestamp: '2025-03-06T17:21:14.388514'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.68 seconds'
+
+

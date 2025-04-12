@@ -1,0 +1,110 @@
+---
+timestamp: '2025-03-06T15:40:55.856126'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary-ff
+        relax-prec lp1/mprime__pprob31-err-rate-0-5.yaml
+    instance_id: mprime__pprob31-err-rate-0-5
+    search_algorithm: g_astar
+    plan_length: 5
+    domain_class: mprime
+    instance_name: pprob31-err-rate-0-5
+    ground_plan:
+    - (feast love ham cantelope quebec kentucky)
+    - (overcome prostatitis learning grapefruit earth saturn)
+    - (feast learning grapefruit ham alsace quebec)
+    - (feast learning ham cantelope alsace quebec)
+    - (succumb prostatitis learning cantelope earth saturn)
+    lifted_plan:
+    -   - feast
+        - ?love
+        - ?ham
+        - ?cantelope
+        - ?quebec
+        - ?kentucky
+    -   - overcome
+        - ?prostatitis
+        - ?learning
+        - ?grapefruit
+        - ?earth
+        - ?saturn
+    -   - feast
+        - ?learning
+        - ?grapefruit
+        - ?ham
+        - ?alsace
+        - ?quebec
+    -   - feast
+        - ?learning
+        - ?ham
+        - ?cantelope
+        - ?alsace
+        - ?quebec
+    -   - succumb
+        - ?prostatitis
+        - ?learning
+        - ?cantelope
+        - ?earth
+        - ?saturn
+
+
+---
+timestamp: '2025-03-06T15:40:55.860049'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: overcome,(fears ?c ?v),effPos,1
+
+
+---
+timestamp: '2025-03-06T15:41:04.579643'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 10
+    fring_size: 36
+    num_nodes_generated: 46
+    sum_h_cost: 176
+    sum_f_cost: 89
+    sum_h_cost_time: 1.1246662139892578
+    sum_grounding_time: 0.3553459644317627
+    h_max: 2
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast learning grapefruit ham alsace quebec)
+        - (overcome sciatica learning ham earth saturn)
+        - (feast learning ham muffin quebec kentucky)
+        - (feast love ham cantelope alsace quebec)
+        - (succumb prostatitis love cantelope saturn neptune)
+        repair_set: succumb,(fears ?c ?v),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-06T15:41:04.582175'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '10.22'
+
+
+---
+timestamp: '2025-03-06T15:41:04.616515'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 10.61 seconds'
+
+

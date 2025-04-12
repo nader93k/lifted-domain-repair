@@ -1,0 +1,99 @@
+---
+timestamp: '2025-01-21T23:55:55.326227'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs
+        relax-all lp1/mystery__pprob03-err-rate-0-5.yaml
+    instance_id: mystery__pprob03-err-rate-0-5
+    search_algorithm: dfs
+    plan_length: 4
+    domain_class: mystery
+    instance_name: pprob03-err-rate-0-5
+    ground_plan:
+    - (feast love orange chocolate guanabara bavaria)
+    - (overcome hangover love chocolate venus neptune)
+    - (feast love chocolate ham goias guanabara)
+    - (succumb hangover love ham venus neptune)
+    lifted_plan:
+    -   - feast
+        - ?love
+        - ?orange
+        - ?chocolate
+        - ?guanabara
+        - ?bavaria
+    -   - overcome
+        - ?hangover
+        - ?love
+        - ?chocolate
+        - ?venus
+        - ?neptune
+    -   - feast
+        - ?love
+        - ?chocolate
+        - ?ham
+        - ?goias
+        - ?guanabara
+    -   - succumb
+        - ?hangover
+        - ?love
+        - ?ham
+        - ?venus
+        - ?neptune
+
+
+---
+timestamp: '2025-01-21T23:55:55.329999'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'overcome,(attacks ?s2 ?s1),precPos,-1
+
+        feast,(pleasure ?n2),precPos,-1'
+
+
+---
+timestamp: '2025-01-22T00:07:19.724409'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data:
+    error_type: MemoryError
+    error_message: 'Command ''[''/home/projects/u7899572/conda-envs/main/bin/python3'',
+        ''instance_solver.py'', ''dfs'', ''/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1'',
+        ''/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs relax-all
+        lp1/mystery__pprob03-err-rate-0-5.yaml'', ''1000000'', ''mystery__pprob03-err-rate-0-5'',
+        ''1.0'', ''unary'']'' died with <Signals.SIGABRT: 6>.'
+    stack_trace: "Traceback (most recent call last):\n  File \"batch_solver.py\",\
+        \ line 126, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
+        \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/subprocess.py\"\
+        , line 516, in run\n    raise CalledProcessError(retcode, process.args,\n\
+        subprocess.CalledProcessError: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',\
+        \ 'instance_solver.py', 'dfs', '/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1',\
+        \ '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs\
+        \ relax-all lp1/mystery__pprob03-err-rate-0-5.yaml', '1000000', 'mystery__pprob03-err-rate-0-5',\
+        \ '1.0', 'unary']' died with <Signals.SIGABRT: 6>.\n"
+    instance_id: mystery__pprob03-err-rate-0-5
+    process_info:
+        cmd:
+        - /home/projects/u7899572/conda-envs/main/bin/python3
+        - instance_solver.py
+        - dfs
+        - /home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1
+        - /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs relax-all
+            lp1/mystery__pprob03-err-rate-0-5.yaml
+        - '1000000'
+        - mystery__pprob03-err-rate-0-5
+        - '1.0'
+        - unary
+        duration: '685.81'
+        python_executable: /home/projects/u7899572/conda-envs/main/bin/python3
+    stdout: ''
+    stderr: 'terminate called after throwing an instance of ''Minisat22::OutOfMemoryException''
+
+        '
+
+

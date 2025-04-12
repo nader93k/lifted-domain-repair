@@ -1,0 +1,103 @@
+---
+timestamp: '2025-03-12T17:11:31.164507'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary
+        relax-prec-delete lp1/miconic__ps2-0-err-rate-0-1.yaml
+    instance_id: miconic__ps2-0-err-rate-0-1
+    search_algorithm: g_astar
+    plan_length: 8
+    domain_class: miconic
+    instance_name: ps2-0-err-rate-0-1
+    ground_plan:
+    - (up f0 f1)
+    - (board f1 p1)
+    - (up f1 f2)
+    - (up f2 f3)
+    - (board f3 p0)
+    - (depart f3 p1)
+    - (down f3 f2)
+    - (depart f2 p0)
+    lifted_plan:
+    -   - up
+        - ?f0
+        - ?f1
+    -   - board
+        - ?f1
+        - ?p1
+    -   - up
+        - ?f1
+        - ?f2
+    -   - up
+        - ?f2
+        - ?f3
+    -   - board
+        - ?f3
+        - ?p0
+    -   - depart
+        - ?f3
+        - ?p1
+    -   - down
+        - ?f3
+        - ?f2
+    -   - depart
+        - ?f2
+        - ?p0
+
+
+---
+timestamp: '2025-03-12T17:11:31.167125'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: up,(passenger ?f2),effPos,1
+
+
+---
+timestamp: '2025-03-12T17:11:31.427143'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 4
+    fring_size: 0
+    num_nodes_generated: 4
+    sum_h_cost: 96
+    sum_f_cost: 48
+    sum_h_cost_time: 0.13233113288879395
+    sum_grounding_time: 0.11893606185913086
+    h_max: 16
+    current_node:
+        depth: 1
+        ground_actions:
+        - (up f0 f1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 8
+        f_cost: 8
+        next_lifted_action: '[''board'', ''?f1'', ''?p1'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-12T17:11:31.428248'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.43'
+
+
+---
+timestamp: '2025-03-12T17:11:31.462418'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 2.80 seconds'
+
+

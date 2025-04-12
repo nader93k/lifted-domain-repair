@@ -1,0 +1,118 @@
+---
+timestamp: '2025-03-06T15:09:05.137273'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary-ff
+        relax-prec lp033/visitall-opt11-strips__pproblem03-full-err-rate-0-3.yaml
+    instance_id: visitall-opt11-strips__pproblem03-full-err-rate-0-3
+    search_algorithm: g_astar
+    plan_length: 12
+    domain_class: visitall-opt11-strips
+    instance_name: pproblem03-full-err-rate-0-3
+    ground_plan:
+    - (move loc-x1-y1 loc-x0-y1)
+    - (move loc-x0-y1 loc-x0-y0)
+    - (move loc-x0-y0 loc-x1-y0)
+    - (move loc-x1-y0 loc-x1-y1)
+    - (move loc-x1-y1 loc-x1-y2)
+    - (move loc-x1-y2 loc-x0-y2)
+    - (move loc-x0-y2 loc-x1-y2)
+    - (move loc-x1-y2 loc-x1-y1)
+    - (move loc-x1-y1 loc-x2-y1)
+    - (move loc-x2-y1 loc-x2-y2)
+    - (move loc-x2-y2 loc-x2-y1)
+    - (move loc-x2-y1 loc-x2-y0)
+    lifted_plan:
+    -   - move
+        - loc-x1-y1
+        - loc-x0-y1
+    -   - move
+        - loc-x0-y1
+        - ?loc-x0-y0
+    -   - move
+        - loc-x0-y0
+        - loc-x1-y0
+    -   - move
+        - loc-x1-y0
+        - ?loc-x1-y1
+    -   - move
+        - loc-x1-y1
+        - loc-x1-y2
+    -   - move
+        - loc-x1-y2
+        - loc-x0-y2
+    -   - move
+        - ?loc-x0-y2
+        - loc-x1-y2
+    -   - move
+        - loc-x1-y2
+        - ?loc-x1-y1
+    -   - move
+        - loc-x1-y1
+        - loc-x2-y1
+    -   - move
+        - loc-x2-y1
+        - loc-x2-y2
+    -   - move
+        - ?loc-x2-y2
+        - loc-x2-y1
+    -   - move
+        - loc-x2-y1
+        - loc-x2-y0
+
+
+---
+timestamp: '2025-03-06T15:09:05.140300'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: move,(visited ?nextpos),precPos,-1
+
+
+---
+timestamp: '2025-03-06T15:09:05.176381'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 1
+    fring_size: 0
+    num_nodes_generated: 1
+    sum_h_cost: 0
+    sum_f_cost: 0
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 0.03451251983642578
+    h_max: 0
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''move'', ''loc-x1-y1'', ''loc-x0-y1'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-06T15:09:05.177413'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.34'
+
+
+---
+timestamp: '2025-03-06T15:09:05.208746'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.69 seconds'
+
+

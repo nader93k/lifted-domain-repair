@@ -1,0 +1,154 @@
+---
+timestamp: '2025-03-10T00:16:31.189131'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary-ff
+        exhaust lp033/transport-opt08-strips__pp02-err-rate-0-3.yaml
+    instance_id: transport-opt08-strips__pp02-err-rate-0-3
+    search_algorithm: g_astar
+    plan_length: 12
+    domain_class: transport-opt08-strips
+    instance_name: pp02-err-rate-0-3
+    ground_plan:
+    - (drive truck-2 city-loc-4 city-loc-5)
+    - (pick-up truck-2 city-loc-5 package-1 capacity-2 capacity-3)
+    - (drive truck-2 city-loc-5 city-loc-4)
+    - (drop truck-2 city-loc-4 package-1 capacity-2 capacity-3)
+    - (pick-up truck-2 city-loc-4 package-2 capacity-2 capacity-3)
+    - (pick-up truck-2 city-loc-4 package-3 capacity-1 capacity-2)
+    - (drive truck-2 city-loc-4 city-loc-1)
+    - (drive truck-2 city-loc-1 city-loc-3)
+    - (drive truck-2 city-loc-3 city-loc-6)
+    - (drop truck-2 city-loc-6 package-3 capacity-1 capacity-2)
+    - (drive truck-2 city-loc-6 city-loc-2)
+    - (drop truck-2 city-loc-2 package-2 capacity-2 capacity-3)
+    lifted_plan:
+    -   - drive
+        - truck-2
+        - city-loc-4
+        - city-loc-5
+    -   - pick-up
+        - ?truck-2
+        - city-loc-5
+        - package-1
+        - capacity-2
+        - ?capacity-3
+    -   - drive
+        - truck-2
+        - city-loc-5
+        - city-loc-4
+    -   - drop
+        - truck-2
+        - ?city-loc-4
+        - package-1
+        - capacity-2
+        - ?capacity-3
+    -   - pick-up
+        - truck-2
+        - city-loc-4
+        - package-2
+        - capacity-2
+        - ?capacity-3
+    -   - pick-up
+        - truck-2
+        - city-loc-4
+        - package-3
+        - capacity-1
+        - ?capacity-2
+    -   - drive
+        - truck-2
+        - city-loc-4
+        - city-loc-1
+    -   - drive
+        - truck-2
+        - city-loc-1
+        - city-loc-3
+    -   - drive
+        - ?truck-2
+        - city-loc-3
+        - city-loc-6
+    -   - drop
+        - ?truck-2
+        - city-loc-6
+        - package-3
+        - capacity-1
+        - capacity-2
+    -   - drive
+        - ?truck-2
+        - city-loc-6
+        - city-loc-2
+    -   - drop
+        - ?truck-2
+        - ?city-loc-2
+        - package-2
+        - ?capacity-2
+        - capacity-3
+
+
+---
+timestamp: '2025-03-10T00:16:31.193076'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-03-10T00:29:16.641407'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 21
+    fring_size: 11334
+    num_nodes_generated: 11355
+    sum_h_cost: 61392
+    sum_f_cost: 67061
+    sum_h_cost_time: 0.694511890411377
+    sum_grounding_time: 0.3864736557006836
+    h_max: 6
+    current_node:
+        depth: 12
+        ground_actions:
+        - (drive truck-2 city-loc-4 city-loc-5)
+        - (pick-up truck-2 city-loc-5 package-1 capacity-2 capacity-3)
+        - (drive truck-2 city-loc-5 city-loc-4)
+        - (drop truck-2 city-loc-4 package-1 capacity-2 capacity-3)
+        - (pick-up truck-2 city-loc-4 package-2 capacity-2 capacity-3)
+        - (pick-up truck-2 city-loc-4 package-3 capacity-1 capacity-2)
+        - (drive truck-2 city-loc-4 city-loc-1)
+        - (drive truck-2 city-loc-1 city-loc-3)
+        - (drive truck-2 city-loc-3 city-loc-6)
+        - (drop truck-2 city-loc-6 package-3 capacity-1 capacity-2)
+        - (drive truck-2 city-loc-6 city-loc-2)
+        - (drop truck-2 city-loc-2 package-2 capacity-2 capacity-3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-10T00:29:16.967692'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '767.01'
+
+
+---
+timestamp: '2025-03-10T00:29:17.026545'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 767.40 seconds'
+
+

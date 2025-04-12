@@ -1,0 +1,109 @@
+---
+timestamp: '2025-01-21T03:55:35.772752'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary-ff
+        relax-all lp066/visitall-opt11-strips__pproblem03-half-err-rate-0-3.yaml
+    instance_id: visitall-opt11-strips__pproblem03-half-err-rate-0-3
+    search_algorithm: astar
+    plan_length: 7
+    domain_class: visitall-opt11-strips
+    instance_name: pproblem03-half-err-rate-0-3
+    ground_plan:
+    - (move loc-x1-y1 loc-x0-y1)
+    - (move loc-x0-y1 loc-x0-y2)
+    - (move loc-x0-y2 loc-x0-y1)
+    - (move loc-x0-y1 loc-x0-y0)
+    - (move loc-x0-y0 loc-x1-y0)
+    - (move loc-x1-y0 loc-x2-y0)
+    - (move loc-x2-y0 loc-x2-y1)
+    lifted_plan:
+    -   - move
+        - loc-x1-y1
+        - loc-x0-y1
+    -   - move
+        - ?loc-x0-y1
+        - ?loc-x0-y2
+    -   - move
+        - ?loc-x0-y2
+        - ?loc-x0-y1
+    -   - move
+        - loc-x0-y1
+        - ?loc-x0-y0
+    -   - move
+        - ?loc-x0-y0
+        - ?loc-x1-y0
+    -   - move
+        - loc-x1-y0
+        - ?loc-x2-y0
+    -   - move
+        - ?loc-x2-y0
+        - loc-x2-y1
+
+
+---
+timestamp: '2025-01-21T03:55:35.775277'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: move,(visited ?nextpos),precPos,-1
+
+
+---
+timestamp: '2025-01-21T03:55:44.276006'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 44
+    fring_size: 318
+    num_nodes_generated: 362
+    sum_h_cost: 864
+    sum_f_cost: 1414
+    sum_h_cost_time: 0.5669090747833252
+    sum_grounding_time: 0.7082352638244629
+    h_max: 2
+    current_node:
+        depth: 7
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x0-y0 loc-x1-y0)
+        - (move loc-x1-y2 loc-x1-y1)
+        - (move loc-x0-y1 loc-x0-y0)
+        - (move loc-x0-y2 loc-x0-y1)
+        - (move loc-x1-y0 loc-x2-y0)
+        - (move loc-x2-y0 loc-x2-y1)
+        repair_set: 'move,(at-robot ?curpos),precPos,-1
+
+            move,(visited ?curpos),effPos,1
+
+            move,(visited ?nextpos),precPos,-1'
+        g_cost: 3
+        h_cost: 0
+        f_cost: 3
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-21T03:55:44.281279'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '9.68'
+
+
+---
+timestamp: '2025-01-21T03:55:44.320525'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 10.02 seconds'
+
+

@@ -1,0 +1,135 @@
+---
+timestamp: '2025-01-19T22:47:59.792696'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary-ff
+        relax-prec lp1/blocks__pprobBLOCKS-5-0-err-rate-0-3.yaml
+    instance_id: blocks__pprobBLOCKS-5-0-err-rate-0-3
+    search_algorithm: astar
+    plan_length: 12
+    domain_class: blocks
+    instance_name: pprobBLOCKS-5-0-err-rate-0-3
+    ground_plan:
+    - (unstack c e)
+    - (put-down c)
+    - (pick-up d)
+    - (stack d c)
+    - (unstack e b)
+    - (put-down e)
+    - (unstack b a)
+    - (stack b d)
+    - (pick-up e)
+    - (stack e b)
+    - (pick-up a)
+    - (stack a e)
+    lifted_plan:
+    -   - unstack
+        - ?c
+        - ?e
+    -   - put-down
+        - ?c
+    -   - pick-up
+        - ?d
+    -   - stack
+        - ?d
+        - ?c
+    -   - unstack
+        - ?e
+        - ?b
+    -   - put-down
+        - ?e
+    -   - unstack
+        - ?b
+        - ?a
+    -   - stack
+        - ?b
+        - ?d
+    -   - pick-up
+        - ?e
+    -   - stack
+        - ?e
+        - ?b
+    -   - pick-up
+        - ?a
+    -   - stack
+        - ?a
+        - ?e
+
+
+---
+timestamp: '2025-01-19T22:47:59.796634'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'unstack,(clear ?x),effPos,1
+
+        pick-up,(clear ?x),effPos,1'
+
+
+---
+timestamp: '2025-01-19T22:51:48.224869'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 3560
+    fring_size: 10541
+    num_nodes_generated: 14101
+    sum_h_cost: 52570
+    sum_f_cost: 65604
+    sum_h_cost_time: 41.57919716835022
+    sum_grounding_time: 34.37805962562561
+    h_max: 3
+    current_node:
+        depth: 12
+        ground_actions:
+        - (unstack c e)
+        - (put-down b)
+        - (pick-up d)
+        - (stack d e)
+        - (unstack b a)
+        - (put-down d)
+        - (unstack e b)
+        - (stack e a)
+        - (pick-up b)
+        - (stack b d)
+        - (pick-up a)
+        - (stack c d)
+        repair_set: 'stack,(not (clear ?y)),effNeg,-1
+
+            put-down,(clear ?x),effPos,1
+
+            put-down,(holding ?x),precPos,-1
+
+            stack,(on ?y ?x),effPos,1
+
+            unstack,(on ?x ?y),effPos,1'
+        g_cost: 5
+        h_cost: 0
+        f_cost: 5
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-19T22:51:48.583355'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '230.02'
+
+
+---
+timestamp: '2025-01-19T22:51:48.651190'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 230.42 seconds'
+
+

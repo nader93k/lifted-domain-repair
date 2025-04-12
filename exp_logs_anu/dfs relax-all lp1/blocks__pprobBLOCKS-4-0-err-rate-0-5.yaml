@@ -1,0 +1,103 @@
+---
+timestamp: '2025-01-22T00:06:58.969571'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs
+        relax-all lp1/blocks__pprobBLOCKS-4-0-err-rate-0-5.yaml
+    instance_id: blocks__pprobBLOCKS-4-0-err-rate-0-5
+    search_algorithm: dfs
+    plan_length: 6
+    domain_class: blocks
+    instance_name: pprobBLOCKS-4-0-err-rate-0-5
+    ground_plan:
+    - (pick-up b)
+    - (stack b a)
+    - (pick-up c)
+    - (stack c b)
+    - (pick-up d)
+    - (stack d c)
+    lifted_plan:
+    -   - pick-up
+        - ?b
+    -   - stack
+        - ?b
+        - ?a
+    -   - pick-up
+        - ?c
+    -   - stack
+        - ?c
+        - ?b
+    -   - pick-up
+        - ?d
+    -   - stack
+        - ?d
+        - ?c
+
+
+---
+timestamp: '2025-01-22T00:06:58.971760'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-22T00:07:20.808125'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 657
+    fring_size: 1
+    num_nodes_generated: 695
+    sum_h_cost: 0
+    sum_f_cost: 0
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 6.553329229354858
+    h_max: -.inf
+    current_node:
+        depth: 6
+        ground_actions:
+        - (pick-up a)
+        - (stack a b)
+        - (pick-up d)
+        - (stack d c)
+        - (pick-up a)
+        - (stack c b)
+        repair_set: 'stack,(holding ?x),precPos,-1
+
+            stack,(on ?y ?x),effPos,1
+
+            stack,(ontable ?x),effPos,1
+
+            stack,(clear ?y),precPos,-1'
+        g_cost: 4
+        h_cost: 0
+        f_cost: 4
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-22T00:07:20.810011'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '23.03'
+
+
+---
+timestamp: '2025-01-22T00:07:20.840822'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 23.33 seconds'
+
+

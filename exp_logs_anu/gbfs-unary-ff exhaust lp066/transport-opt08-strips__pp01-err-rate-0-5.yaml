@@ -1,0 +1,97 @@
+---
+timestamp: '2025-03-17T10:32:10.337235'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        exhaust lp066/transport-opt08-strips__pp01-err-rate-0-5.yaml
+    instance_id: transport-opt08-strips__pp01-err-rate-0-5
+    search_algorithm: gbfs
+    plan_length: 5
+    domain_class: transport-opt08-strips
+    instance_name: pp01-err-rate-0-5
+    ground_plan:
+    - (pick-up truck-1 city-loc-3 package-1 capacity-3 capacity-4)
+    - (pick-up truck-1 city-loc-3 package-2 capacity-2 capacity-3)
+    - (drive truck-1 city-loc-3 city-loc-2)
+    - (drop truck-1 city-loc-2 package-1 capacity-2 capacity-3)
+    - (drop truck-1 city-loc-2 package-2 capacity-3 capacity-4)
+    lifted_plan:
+    -   - pick-up
+        - truck-1
+        - city-loc-3
+        - ?package-1
+        - ?capacity-3
+        - ?capacity-4
+    -   - pick-up
+        - ?truck-1
+        - city-loc-3
+        - ?package-2
+        - ?capacity-2
+        - ?capacity-3
+    -   - drive
+        - truck-1
+        - ?city-loc-3
+        - ?city-loc-2
+    -   - drop
+        - truck-1
+        - ?city-loc-2
+        - ?package-1
+        - capacity-2
+        - capacity-3
+    -   - drop
+        - truck-1
+        - city-loc-2
+        - ?package-2
+        - capacity-3
+        - capacity-4
+
+
+---
+timestamp: '2025-03-17T10:32:10.340292'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'pick-up,(capacity ?v ?s2),effPos,1
+
+        pick-up,(capacity-predecessor ?s1 ?s1),precPos,-1'
+
+
+---
+timestamp: '2025-03-17T10:32:10.377071'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data:
+    error_type: CalledProcessError
+    error_message: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',
+        'instance_solver.py', 'configs_exhaustive/gbfs-unary-ff_exhaust_lp066.yaml',
+        'transport-opt08-strips__pp01-err-rate-0-5']' returned non-zero exit status
+        1.
+    stack_trace: "Traceback (most recent call last):\n  File \"batch_solver.py\",\
+        \ line 119, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
+        \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/subprocess.py\"\
+        , line 516, in run\n    raise CalledProcessError(retcode, process.args,\n\
+        subprocess.CalledProcessError: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',\
+        \ 'instance_solver.py', 'configs_exhaustive/gbfs-unary-ff_exhaust_lp066.yaml',\
+        \ 'transport-opt08-strips__pp01-err-rate-0-5']' returned non-zero exit status\
+        \ 1.\n"
+    instance_id: transport-opt08-strips__pp01-err-rate-0-5
+    process_info:
+        cmd:
+        - /home/projects/u7899572/conda-envs/main/bin/python3
+        - instance_solver.py
+        - configs_exhaustive/gbfs-unary-ff_exhaust_lp066.yaml
+        - transport-opt08-strips__pp01-err-rate-0-5
+        duration: '1.47'
+        python_executable: /home/projects/u7899572/conda-envs/main/bin/python3
+    stdout: ''
+    stderr: "Traceback (most recent call last):\n  File \"instance_solver.py\", line\
+        \ 147, in <module>\n    solve_instance(\n  File \"instance_solver.py\", line\
+        \ 122, in solve_instance\n    raise NotImplementedError(\"Search algorithm\
+        \ not supported.\")\nNotImplementedError: Search algorithm not supported.\n"
+
+

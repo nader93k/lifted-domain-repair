@@ -1,0 +1,125 @@
+---
+timestamp: '2025-01-21T05:05:02.736376'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary-ff
+        relax-all lp066/nomystery-opt11-strips__pp13-err-rate-0-5.yaml
+    instance_id: nomystery-opt11-strips__pp13-err-rate-0-5
+    search_algorithm: astar
+    plan_length: 15
+    domain_class: nomystery-opt11-strips
+    instance_name: pp13-err-rate-0-5
+    ground_plan:
+    - (load p1 t0 l2)
+    - (load p0 t0 l2)
+    - (drive t0 l2 l1 level41 level3 level44)
+    - (load p2 t0 l1)
+    - (drive t0 l1 l4 level29 level12 level41)
+    - (unload p1 t0 l4)
+    - (drive t0 l4 l3 level24 level5 level29)
+    - (load p4 t0 l3)
+    - (load p3 t0 l3)
+    - (unload p2 t0 l3)
+    - (unload p0 t0 l3)
+    - (drive t0 l3 l4 level19 level5 level24)
+    - (drive t0 l4 l2 level3 level16 level19)
+    - (unload p4 t0 l2)
+    - (unload p3 t0 l2)
+    lifted_plan:
+    -   - load
+        - p1
+        - t0
+        - ?l2
+    -   - load
+        - ?p0
+        - ?t0
+        - ?l2
+    -   - drive
+        - t0
+        - ?l2
+        - ?l1
+        - ?level41
+        - level3
+        - ?level44
+    -   - load
+        - ?p2
+        - t0
+        - ?l1
+    -   - drive
+        - ?t0
+        - l1
+        - l4
+        - level29
+        - level12
+        - ?level41
+    -   - unload
+        - p1
+        - t0
+        - l4
+    -   - drive
+        - ?t0
+        - ?l4
+        - ?l3
+        - ?level24
+        - level5
+        - level29
+    -   - load
+        - ?p4
+        - t0
+        - ?l3
+    -   - load
+        - p3
+        - ?t0
+        - ?l3
+    -   - unload
+        - p2
+        - ?t0
+        - l3
+    -   - unload
+        - p0
+        - ?t0
+        - ?l3
+    -   - drive
+        - t0
+        - ?l3
+        - ?l4
+        - level19
+        - ?level5
+        - ?level24
+    -   - drive
+        - ?t0
+        - l4
+        - l2
+        - ?level3
+        - ?level16
+        - ?level19
+    -   - unload
+        - ?p4
+        - t0
+        - ?l2
+    -   - unload
+        - ?p3
+        - t0
+        - ?l2
+
+
+---
+timestamp: '2025-01-21T05:05:02.756245'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: drive,(fuelcost ?fuelpre ?l2 ?l2),precPos,-1
+
+
+---
+timestamp: '2025-01-21T05:20:00.600725'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+

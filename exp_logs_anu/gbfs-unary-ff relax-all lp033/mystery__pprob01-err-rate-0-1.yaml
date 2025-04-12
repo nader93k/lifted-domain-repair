@@ -1,0 +1,116 @@
+---
+timestamp: '2025-01-22T18:01:18.778864'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-all lp033/mystery__pprob01-err-rate-0-1.yaml
+    instance_id: mystery__pprob01-err-rate-0-1
+    search_algorithm: greedy
+    plan_length: 5
+    domain_class: mystery
+    instance_name: pprob01-err-rate-0-1
+    ground_plan:
+    - (overcome abrasion rest pork uranus venus)
+    - (feast rest pork lamb alsace quebec)
+    - (feast rest lamb flounder surrey pennsylvania)
+    - (feast rest flounder rice pennsylvania alsace)
+    - (succumb abrasion rest rice uranus venus)
+    lifted_plan:
+    -   - overcome
+        - abrasion
+        - rest
+        - pork
+        - ?uranus
+        - venus
+    -   - feast
+        - rest
+        - pork
+        - ?lamb
+        - alsace
+        - quebec
+    -   - feast
+        - rest
+        - lamb
+        - ?flounder
+        - surrey
+        - pennsylvania
+    -   - feast
+        - ?rest
+        - flounder
+        - rice
+        - pennsylvania
+        - alsace
+    -   - succumb
+        - ?abrasion
+        - rest
+        - rice
+        - uranus
+        - venus
+
+
+---
+timestamp: '2025-01-22T18:01:18.782831'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: succumb,(harmony ?v ?n),precPos,-1
+
+
+---
+timestamp: '2025-01-22T18:02:33.061948'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 6
+    fring_size: 100
+    num_nodes_generated: 106
+    sum_h_cost: 334
+    sum_f_cost: 167
+    sum_h_cost_time: 0.20056366920471191
+    sum_grounding_time: 69.34350395202637
+    h_max: 2
+    current_node:
+        depth: 5
+        ground_actions:
+        - (overcome abrasion rest pork uranus venus)
+        - (feast rest pork okra alsace quebec)
+        - (feast rest lamb flounder surrey pennsylvania)
+        - (feast abrasion flounder rice pennsylvania alsace)
+        - (succumb abrasion rest rice uranus venus)
+        repair_set: 'succumb,(harmony ?v ?n),precPos,-1
+
+            succumb,(craves ?v ?n),precPos,-1
+
+            feast,(craves ?v ?n1),precPos,-1
+
+            feast,(pleasure ?v),precPos,-1'
+        g_cost: 4
+        h_cost: 0
+        f_cost: 4
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-22T18:02:33.074959'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '75.54'
+
+
+---
+timestamp: '2025-01-22T18:02:33.145764'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 75.92 seconds'
+
+

@@ -1,0 +1,102 @@
+---
+timestamp: '2025-01-21T21:56:42.507501'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs
+        relax-all lp033/mprime__pprob25-err-rate-0-1.yaml
+    instance_id: mprime__pprob25-err-rate-0-1
+    search_algorithm: bfs
+    plan_length: 4
+    domain_class: mprime
+    instance_name: pprob25-err-rate-0-1
+    ground_plan:
+    - (feast expectation tuna wurst kentucky bavaria)
+    - (overcome depression expectation wurst jupiter uranus)
+    - (feast expectation wurst chicken kentucky bavaria)
+    - (succumb depression expectation chicken jupiter uranus)
+    lifted_plan:
+    -   - feast
+        - expectation
+        - tuna
+        - wurst
+        - ?kentucky
+        - bavaria
+    -   - overcome
+        - depression
+        - expectation
+        - ?wurst
+        - jupiter
+        - uranus
+    -   - feast
+        - expectation
+        - wurst
+        - ?chicken
+        - kentucky
+        - bavaria
+    -   - succumb
+        - ?depression
+        - expectation
+        - chicken
+        - jupiter
+        - uranus
+
+
+---
+timestamp: '2025-01-21T21:56:42.510551'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-21T21:57:22.183629'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 6
+    fring_size: 51
+    num_nodes_generated: 57
+    sum_h_cost: 0
+    sum_f_cost: 95
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 39.486366748809814
+    h_max: 0
+    current_node:
+        depth: 4
+        ground_actions:
+        - (feast expectation tuna wurst kentucky bavaria)
+        - (overcome depression expectation wurst jupiter uranus)
+        - (feast expectation wurst chicken kentucky bavaria)
+        - (succumb depression expectation chicken jupiter uranus)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-21T21:57:22.192593'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '40.81'
+
+
+---
+timestamp: '2025-01-21T21:57:22.356587'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 41.29 seconds'
+
+

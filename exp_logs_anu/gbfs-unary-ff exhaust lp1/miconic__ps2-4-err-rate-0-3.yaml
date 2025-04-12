@@ -1,0 +1,96 @@
+---
+timestamp: '2025-03-17T10:33:08.641331'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        exhaust lp1/miconic__ps2-4-err-rate-0-3.yaml
+    instance_id: miconic__ps2-4-err-rate-0-3
+    search_algorithm: gbfs
+    plan_length: 9
+    domain_class: miconic
+    instance_name: ps2-4-err-rate-0-3
+    ground_plan:
+    - (up f0 f2)
+    - (board f2 p1)
+    - (down f2 f0)
+    - (depart f0 p1)
+    - (up f0 f2)
+    - (up f2 f3)
+    - (board f3 p0)
+    - (down f3 f2)
+    - (depart f2 p0)
+    lifted_plan:
+    -   - up
+        - ?f0
+        - ?f2
+    -   - board
+        - ?f2
+        - ?p1
+    -   - down
+        - ?f2
+        - ?f0
+    -   - depart
+        - ?f0
+        - ?p1
+    -   - up
+        - ?f0
+        - ?f2
+    -   - up
+        - ?f2
+        - ?f3
+    -   - board
+        - ?f3
+        - ?p0
+    -   - down
+        - ?f3
+        - ?f2
+    -   - depart
+        - ?f2
+        - ?p0
+
+
+---
+timestamp: '2025-03-17T10:33:08.643950'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: up,(destin ?f1 ?f2),precPos,-1
+
+
+---
+timestamp: '2025-03-17T10:33:08.672725'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data:
+    error_type: CalledProcessError
+    error_message: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',
+        'instance_solver.py', 'configs_exhaustive/gbfs-unary-ff_exhaust_lp1.yaml',
+        'miconic__ps2-4-err-rate-0-3']' returned non-zero exit status 1.
+    stack_trace: "Traceback (most recent call last):\n  File \"batch_solver.py\",\
+        \ line 119, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
+        \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/subprocess.py\"\
+        , line 516, in run\n    raise CalledProcessError(retcode, process.args,\n\
+        subprocess.CalledProcessError: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',\
+        \ 'instance_solver.py', 'configs_exhaustive/gbfs-unary-ff_exhaust_lp1.yaml',\
+        \ 'miconic__ps2-4-err-rate-0-3']' returned non-zero exit status 1.\n"
+    instance_id: miconic__ps2-4-err-rate-0-3
+    process_info:
+        cmd:
+        - /home/projects/u7899572/conda-envs/main/bin/python3
+        - instance_solver.py
+        - configs_exhaustive/gbfs-unary-ff_exhaust_lp1.yaml
+        - miconic__ps2-4-err-rate-0-3
+        duration: '1.63'
+        python_executable: /home/projects/u7899572/conda-envs/main/bin/python3
+    stdout: ''
+    stderr: "Traceback (most recent call last):\n  File \"instance_solver.py\", line\
+        \ 147, in <module>\n    solve_instance(\n  File \"instance_solver.py\", line\
+        \ 122, in solve_instance\n    raise NotImplementedError(\"Search algorithm\
+        \ not supported.\")\nNotImplementedError: Search algorithm not supported.\n"
+
+

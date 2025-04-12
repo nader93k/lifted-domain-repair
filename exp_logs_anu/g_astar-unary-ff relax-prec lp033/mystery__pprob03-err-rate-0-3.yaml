@@ -1,0 +1,102 @@
+---
+timestamp: '2025-03-06T15:08:33.096429'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary-ff
+        relax-prec lp033/mystery__pprob03-err-rate-0-3.yaml
+    instance_id: mystery__pprob03-err-rate-0-3
+    search_algorithm: g_astar
+    plan_length: 4
+    domain_class: mystery
+    instance_name: pprob03-err-rate-0-3
+    ground_plan:
+    - (feast love orange chocolate guanabara bavaria)
+    - (overcome hangover love chocolate venus neptune)
+    - (feast love chocolate ham goias guanabara)
+    - (succumb hangover love ham venus neptune)
+    lifted_plan:
+    -   - feast
+        - love
+        - orange
+        - chocolate
+        - ?guanabara
+        - bavaria
+    -   - overcome
+        - hangover
+        - love
+        - ?chocolate
+        - venus
+        - neptune
+    -   - feast
+        - love
+        - chocolate
+        - ?ham
+        - goias
+        - guanabara
+    -   - succumb
+        - ?hangover
+        - love
+        - ham
+        - venus
+        - neptune
+
+
+---
+timestamp: '2025-03-06T15:08:33.099766'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: succumb,(craves ?c ?n),effPos,1
+
+
+---
+timestamp: '2025-03-06T15:08:33.375392'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 5
+    fring_size: 1
+    num_nodes_generated: 6
+    sum_h_cost: 12
+    sum_f_cost: 7
+    sum_h_cost_time: 0.0839226245880127
+    sum_grounding_time: 0.15564322471618652
+    h_max: 2
+    current_node:
+        depth: 4
+        ground_actions:
+        - (feast love orange chocolate guanabara bavaria)
+        - (overcome hangover love chocolate venus neptune)
+        - (feast love chocolate ham goias guanabara)
+        - (succumb hangover love ham venus neptune)
+        repair_set: succumb,(craves ?c ?n),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-06T15:08:33.376676'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.40'
+
+
+---
+timestamp: '2025-03-06T15:08:33.408928'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.70 seconds'
+
+

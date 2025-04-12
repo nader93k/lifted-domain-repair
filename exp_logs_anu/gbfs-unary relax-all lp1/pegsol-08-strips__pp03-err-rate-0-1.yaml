@@ -1,0 +1,77 @@
+---
+timestamp: '2025-01-22T09:02:56.547818'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary
+        relax-all lp1/pegsol-08-strips__pp03-err-rate-0-1.yaml
+    instance_id: pegsol-08-strips__pp03-err-rate-0-1
+    search_algorithm: greedy
+    plan_length: 10
+    domain_class: pegsol-08-strips
+    instance_name: pp03-err-rate-0-1
+    ground_plan:
+    - (jump-new-move pos-2-4 pos-3-4 pos-4-4)
+    - (end-move pos-4-4)
+    - (jump-new-move pos-3-3 pos-2-3 pos-1-3)
+    - (end-move pos-1-3)
+    - (jump-new-move pos-4-4 pos-4-3 pos-4-2)
+    - (jump-continue-move pos-4-2 pos-3-2 pos-2-2)
+    - (end-move pos-2-2)
+    - (jump-new-move pos-2-1 pos-2-2 pos-2-3)
+    - (end-move pos-2-3)
+    - (jump-new-move pos-1-3 pos-2-3 pos-3-3)
+    lifted_plan:
+    -   - jump-new-move
+        - ?pos-2-4
+        - ?pos-3-4
+        - ?pos-4-4
+    -   - end-move
+        - ?pos-4-4
+    -   - jump-new-move
+        - ?pos-3-3
+        - ?pos-2-3
+        - ?pos-1-3
+    -   - end-move
+        - ?pos-1-3
+    -   - jump-new-move
+        - ?pos-4-4
+        - ?pos-4-3
+        - ?pos-4-2
+    -   - jump-continue-move
+        - ?pos-4-2
+        - ?pos-3-2
+        - ?pos-2-2
+    -   - end-move
+        - ?pos-2-2
+    -   - jump-new-move
+        - ?pos-2-1
+        - ?pos-2-2
+        - ?pos-2-3
+    -   - end-move
+        - ?pos-2-3
+    -   - jump-new-move
+        - ?pos-1-3
+        - ?pos-2-3
+        - ?pos-3-3
+
+
+---
+timestamp: '2025-01-22T09:02:56.555383'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-22T09:17:55.138177'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+

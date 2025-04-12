@@ -1,0 +1,122 @@
+---
+timestamp: '2025-01-21T14:25:17.083231'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary
+        relax-prec-delete lp1/zenotravel__pp02-err-rate-0-1.yaml
+    instance_id: zenotravel__pp02-err-rate-0-1
+    search_algorithm: greedy
+    plan_length: 8
+    domain_class: zenotravel
+    instance_name: pp02-err-rate-0-1
+    ground_plan:
+    - (fly plane1 city0 city1 fl2 fl1)
+    - (fly plane1 city1 city2 fl1 fl0)
+    - (refuel plane1 city2 fl0 fl1)
+    - (board person1 plane1 city2)
+    - (fly plane1 city2 city1 fl1 fl0)
+    - (refuel plane1 city1 fl0 fl1)
+    - (debark person1 plane1 city1)
+    - (fly plane1 city1 city2 fl1 fl0)
+    lifted_plan:
+    -   - fly
+        - ?plane1
+        - ?city0
+        - ?city1
+        - ?fl2
+        - ?fl1
+    -   - fly
+        - ?plane1
+        - ?city1
+        - ?city2
+        - ?fl1
+        - ?fl0
+    -   - refuel
+        - ?plane1
+        - ?city2
+        - ?fl0
+        - ?fl1
+    -   - board
+        - ?person1
+        - ?plane1
+        - ?city2
+    -   - fly
+        - ?plane1
+        - ?city2
+        - ?city1
+        - ?fl1
+        - ?fl0
+    -   - refuel
+        - ?plane1
+        - ?city1
+        - ?fl0
+        - ?fl1
+    -   - debark
+        - ?person1
+        - ?plane1
+        - ?city1
+    -   - fly
+        - ?plane1
+        - ?city1
+        - ?city2
+        - ?fl1
+        - ?fl0
+
+
+---
+timestamp: '2025-01-21T14:25:17.086796'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: fly,(at ?c2 ?l1),effPos,1
+
+
+---
+timestamp: '2025-01-21T14:25:22.742078'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 34
+    fring_size: 0
+    num_nodes_generated: 34
+    sum_h_cost: 456
+    sum_f_cost: 228
+    sum_h_cost_time: 4.893719434738159
+    sum_grounding_time: 0.633263111114502
+    h_max: 8
+    current_node:
+        depth: 2
+        ground_actions:
+        - (fly plane1 city0 city2 fl2 fl1)
+        - (fly plane1 city0 city1 fl1 fl0)
+        repair_set: fly,(at ?a ?c1),effPos,1
+        g_cost: 1
+        h_cost: 8
+        f_cost: 9
+        next_lifted_action: '[''refuel'', ''?plane1'', ''?city2'', ''?fl0'', ''?fl1'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-21T14:25:22.743678'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '6.83'
+
+
+---
+timestamp: '2025-01-21T14:25:22.777243'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 7.15 seconds'
+
+

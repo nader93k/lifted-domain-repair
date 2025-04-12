@@ -1,0 +1,102 @@
+---
+timestamp: '2025-01-21T14:09:25.347508'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary
+        relax-prec-delete lp1/mprime__pprob17-err-rate-0-5.yaml
+    instance_id: mprime__pprob17-err-rate-0-5
+    search_algorithm: greedy
+    plan_length: 4
+    domain_class: mprime
+    instance_name: pprob17-err-rate-0-5
+    ground_plan:
+    - (feast satisfaction potato yogurt guanabara bosnia)
+    - (overcome abrasion satisfaction yogurt mercury saturn)
+    - (feast satisfaction yogurt wonderbread guanabara bosnia)
+    - (succumb abrasion satisfaction wonderbread mercury saturn)
+    lifted_plan:
+    -   - feast
+        - ?satisfaction
+        - ?potato
+        - ?yogurt
+        - ?guanabara
+        - ?bosnia
+    -   - overcome
+        - ?abrasion
+        - ?satisfaction
+        - ?yogurt
+        - ?mercury
+        - ?saturn
+    -   - feast
+        - ?satisfaction
+        - ?yogurt
+        - ?wonderbread
+        - ?guanabara
+        - ?bosnia
+    -   - succumb
+        - ?abrasion
+        - ?satisfaction
+        - ?wonderbread
+        - ?mercury
+        - ?saturn
+
+
+---
+timestamp: '2025-01-21T14:09:25.351367'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-21T14:18:46.726388'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 6265
+    fring_size: 36
+    num_nodes_generated: 6301
+    sum_h_cost: 0
+    sum_f_cost: 0
+    sum_h_cost_time: 134.44270491600037
+    sum_grounding_time: 354.72193717956543
+    h_max: 0
+    current_node:
+        depth: 4
+        ground_actions:
+        - (feast satisfaction potato yogurt guanabara bosnia)
+        - (overcome abrasion satisfaction yogurt mercury saturn)
+        - (feast satisfaction yogurt wonderbread guanabara bosnia)
+        - (succumb abrasion satisfaction wonderbread mercury saturn)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-21T14:18:46.729006'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '562.51'
+
+
+---
+timestamp: '2025-01-21T14:18:46.765959'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 562.86 seconds'
+
+

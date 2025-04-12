@@ -1,0 +1,139 @@
+---
+timestamp: '2025-01-20T01:02:20.192425'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-prec lp066/satellite__pp03-pfile3-err-rate-0-1.yaml
+    instance_id: satellite__pp03-pfile3-err-rate-0-1
+    search_algorithm: greedy
+    plan_length: 11
+    domain_class: satellite
+    instance_name: pp03-pfile3-err-rate-0-1
+    ground_plan:
+    - (switch_on instrument3 satellite1)
+    - (calibrate satellite1 instrument3 star0)
+    - (turn_to satellite1 phenomenon5 star0)
+    - (take_image satellite1 phenomenon5 instrument3 spectrograph2)
+    - (turn_to satellite1 phenomenon7 phenomenon5)
+    - (take_image satellite1 phenomenon7 instrument3 spectrograph2)
+    - (turn_to satellite1 star3 phenomenon7)
+    - (take_image satellite1 star3 instrument3 infrared0)
+    - (turn_to satellite1 star4 star3)
+    - (take_image satellite1 star4 instrument3 spectrograph2)
+    - (turn_to satellite0 phenomenon5 star4)
+    lifted_plan:
+    -   - switch_on
+        - instrument3
+        - satellite1
+    -   - calibrate
+        - ?satellite1
+        - ?instrument3
+        - ?star0
+    -   - turn_to
+        - ?satellite1
+        - phenomenon5
+        - ?star0
+    -   - take_image
+        - ?satellite1
+        - ?phenomenon5
+        - instrument3
+        - ?spectrograph2
+    -   - turn_to
+        - ?satellite1
+        - phenomenon7
+        - ?phenomenon5
+    -   - take_image
+        - ?satellite1
+        - phenomenon7
+        - instrument3
+        - spectrograph2
+    -   - turn_to
+        - satellite1
+        - ?star3
+        - phenomenon7
+    -   - take_image
+        - satellite1
+        - star3
+        - ?instrument3
+        - ?infrared0
+    -   - turn_to
+        - ?satellite1
+        - ?star4
+        - star3
+    -   - take_image
+        - satellite1
+        - ?star4
+        - instrument3
+        - ?spectrograph2
+    -   - turn_to
+        - satellite0
+        - ?phenomenon5
+        - ?star4
+
+
+---
+timestamp: '2025-01-20T01:02:20.196053'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-20T01:02:26.377315'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 70
+    fring_size: 121
+    num_nodes_generated: 191
+    sum_h_cost: 258
+    sum_f_cost: 129
+    sum_h_cost_time: 1.2252023220062256
+    sum_grounding_time: 1.630033016204834
+    h_max: 2
+    current_node:
+        depth: 11
+        ground_actions:
+        - (switch_on instrument3 satellite1)
+        - (calibrate satellite1 instrument3 star0)
+        - (turn_to satellite1 phenomenon5 star0)
+        - (take_image satellite1 phenomenon5 instrument3 spectrograph2)
+        - (turn_to satellite1 phenomenon7 phenomenon5)
+        - (take_image satellite1 phenomenon7 instrument3 spectrograph2)
+        - (turn_to satellite1 star3 phenomenon7)
+        - (take_image satellite1 star3 instrument3 infrared0)
+        - (turn_to satellite1 star4 star3)
+        - (take_image satellite1 star4 instrument3 spectrograph2)
+        - (turn_to satellite0 phenomenon5 star4)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-20T01:02:26.383460'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '7.40'
+
+
+---
+timestamp: '2025-01-20T01:02:26.422722'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 7.73 seconds'
+
+

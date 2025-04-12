@@ -1,0 +1,114 @@
+---
+timestamp: '2025-01-22T13:29:45.335116'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary
+        relax-all lp033/miconic__ps2-2-err-rate-0-3.yaml
+    instance_id: miconic__ps2-2-err-rate-0-3
+    search_algorithm: astar
+    plan_length: 8
+    domain_class: miconic
+    instance_name: ps2-2-err-rate-0-3
+    ground_plan:
+    - (board f0 p1)
+    - (up f0 f2)
+    - (depart f2 p1)
+    - (down f2 f0)
+    - (up f0 f3)
+    - (board f3 p0)
+    - (down f3 f0)
+    - (depart f0 p0)
+    lifted_plan:
+    -   - board
+        - f0
+        - p1
+    -   - up
+        - f0
+        - ?f2
+    -   - depart
+        - f2
+        - p1
+    -   - down
+        - f2
+        - ?f0
+    -   - up
+        - f0
+        - f3
+    -   - board
+        - f3
+        - p0
+    -   - down
+        - ?f3
+        - f0
+    -   - depart
+        - f0
+        - ?p0
+
+
+---
+timestamp: '2025-01-22T13:29:45.337734'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'depart,(destin ?f ?p),precPos,-1
+
+        board,(destin ?p ?f),precPos,-1'
+
+
+---
+timestamp: '2025-01-22T13:29:45.909714'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 9
+    fring_size: 20
+    num_nodes_generated: 29
+    sum_h_cost: 306
+    sum_f_cost: 242
+    sum_h_cost_time: 0.14678335189819336
+    sum_grounding_time: 0.11450552940368652
+    h_max: 13
+    current_node:
+        depth: 8
+        ground_actions:
+        - (board f0 p1)
+        - (up f0 f2)
+        - (depart f2 p1)
+        - (down f2 f0)
+        - (up f0 f3)
+        - (board f3 p0)
+        - (down f3 f0)
+        - (depart f0 p0)
+        repair_set: 'depart,(destin ?f ?p),precPos,-1
+
+            board,(destin ?p ?f),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-22T13:29:45.911300'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.71'
+
+
+---
+timestamp: '2025-01-22T13:29:45.942920'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 2.11 seconds'
+
+

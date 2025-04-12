@@ -1,0 +1,116 @@
+---
+timestamp: '2025-03-17T10:35:04.006992'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary
+        exhaust lp1/mystery__pprob10-err-rate-0-1.yaml
+    instance_id: mystery__pprob10-err-rate-0-1
+    search_algorithm: gbfs
+    plan_length: 8
+    domain_class: mystery
+    instance_name: pprob10-err-rate-0-1
+    ground_plan:
+    - (feast aesthetics flounder kale surrey moravia)
+    - (overcome jealousy-16 aesthetics kale mars neptune)
+    - (feast aesthetics kale arugula moravia quebec)
+    - (feast aesthetics arugula beef surrey moravia)
+    - (feast aesthetics beef snickers surrey moravia)
+    - (feast aesthetics snickers lamb oregon alsace)
+    - (feast aesthetics lamb tofu surrey moravia)
+    - (succumb jealousy-16 aesthetics tofu mars neptune)
+    lifted_plan:
+    -   - feast
+        - ?aesthetics
+        - ?flounder
+        - ?kale
+        - ?surrey
+        - ?moravia
+    -   - overcome
+        - ?jealousy-16
+        - ?aesthetics
+        - ?kale
+        - ?mars
+        - ?neptune
+    -   - feast
+        - ?aesthetics
+        - ?kale
+        - ?arugula
+        - ?moravia
+        - ?quebec
+    -   - feast
+        - ?aesthetics
+        - ?arugula
+        - ?beef
+        - ?surrey
+        - ?moravia
+    -   - feast
+        - ?aesthetics
+        - ?beef
+        - ?snickers
+        - ?surrey
+        - ?moravia
+    -   - feast
+        - ?aesthetics
+        - ?snickers
+        - ?lamb
+        - ?oregon
+        - ?alsace
+    -   - feast
+        - ?aesthetics
+        - ?lamb
+        - ?tofu
+        - ?surrey
+        - ?moravia
+    -   - succumb
+        - ?jealousy-16
+        - ?aesthetics
+        - ?tofu
+        - ?mars
+        - ?neptune
+
+
+---
+timestamp: '2025-03-17T10:35:04.011820'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-03-17T10:35:04.043582'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data:
+    error_type: CalledProcessError
+    error_message: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',
+        'instance_solver.py', 'configs_exhaustive/gbfs-unary_exhaust_lp1.yaml', 'mystery__pprob10-err-rate-0-1']'
+        returned non-zero exit status 1.
+    stack_trace: "Traceback (most recent call last):\n  File \"batch_solver.py\",\
+        \ line 119, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
+        \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/subprocess.py\"\
+        , line 516, in run\n    raise CalledProcessError(retcode, process.args,\n\
+        subprocess.CalledProcessError: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',\
+        \ 'instance_solver.py', 'configs_exhaustive/gbfs-unary_exhaust_lp1.yaml',\
+        \ 'mystery__pprob10-err-rate-0-1']' returned non-zero exit status 1.\n"
+    instance_id: mystery__pprob10-err-rate-0-1
+    process_info:
+        cmd:
+        - /home/projects/u7899572/conda-envs/main/bin/python3
+        - instance_solver.py
+        - configs_exhaustive/gbfs-unary_exhaust_lp1.yaml
+        - mystery__pprob10-err-rate-0-1
+        duration: '1.44'
+        python_executable: /home/projects/u7899572/conda-envs/main/bin/python3
+    stdout: ''
+    stderr: "Traceback (most recent call last):\n  File \"instance_solver.py\", line\
+        \ 147, in <module>\n    solve_instance(\n  File \"instance_solver.py\", line\
+        \ 122, in solve_instance\n    raise NotImplementedError(\"Search algorithm\
+        \ not supported.\")\nNotImplementedError: Search algorithm not supported.\n"
+
+

@@ -1,0 +1,143 @@
+---
+timestamp: '2025-01-20T00:31:16.779586'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-prec lp1/grid__pprob01-err-rate-0-1.yaml
+    instance_id: grid__pprob01-err-rate-0-1
+    search_algorithm: greedy
+    plan_length: 14
+    domain_class: grid
+    instance_name: pprob01-err-rate-0-1
+    ground_plan:
+    - (move node2-4 node1-4)
+    - (move node1-4 node1-3)
+    - (move node1-3 node1-2)
+    - (move node1-2 node0-2)
+    - (pickup node0-2 key3)
+    - (move node0-2 node1-2)
+    - (move node1-2 node1-3)
+    - (unlock node1-3 node2-3 key3 square)
+    - (move node1-3 node2-3)
+    - (pickup-and-loose node2-3 key0 key3)
+    - (move node2-3 node1-3)
+    - (move node1-3 node1-2)
+    - (move node1-2 node1-1)
+    - (putdown node1-1 key0)
+    lifted_plan:
+    -   - move
+        - ?node2-4
+        - ?node1-4
+    -   - move
+        - ?node1-4
+        - ?node1-3
+    -   - move
+        - ?node1-3
+        - ?node1-2
+    -   - move
+        - ?node1-2
+        - ?node0-2
+    -   - pickup
+        - ?node0-2
+        - ?key3
+    -   - move
+        - ?node0-2
+        - ?node1-2
+    -   - move
+        - ?node1-2
+        - ?node1-3
+    -   - unlock
+        - ?node1-3
+        - ?node2-3
+        - ?key3
+        - ?square
+    -   - move
+        - ?node1-3
+        - ?node2-3
+    -   - pickup-and-loose
+        - ?node2-3
+        - ?key0
+        - ?key3
+    -   - move
+        - ?node2-3
+        - ?node1-3
+    -   - move
+        - ?node1-3
+        - ?node1-2
+    -   - move
+        - ?node1-2
+        - ?node1-1
+    -   - putdown
+        - ?node1-1
+        - ?key0
+
+
+---
+timestamp: '2025-01-20T00:31:16.784266'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-20T00:31:35.975124'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 60
+    fring_size: 21
+    num_nodes_generated: 81
+    sum_h_cost: 26
+    sum_f_cost: 13
+    sum_h_cost_time: 5.005476474761963
+    sum_grounding_time: 12.109281301498413
+    h_max: 1
+    current_node:
+        depth: 14
+        ground_actions:
+        - (move node2-4 node1-4)
+        - (move node1-4 node1-3)
+        - (move node1-3 node1-2)
+        - (move node1-2 node0-2)
+        - (pickup node0-2 key3)
+        - (move node0-2 node1-2)
+        - (move node1-2 node1-3)
+        - (unlock node1-3 node2-3 key3 square)
+        - (move node1-3 node2-3)
+        - (pickup-and-loose node2-3 key0 key3)
+        - (move node2-3 node1-3)
+        - (move node1-3 node1-2)
+        - (move node1-2 node1-1)
+        - (putdown node1-1 key0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-20T00:31:35.977374'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '21.71'
+
+
+---
+timestamp: '2025-01-20T00:31:36.011978'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 22.24 seconds'
+
+

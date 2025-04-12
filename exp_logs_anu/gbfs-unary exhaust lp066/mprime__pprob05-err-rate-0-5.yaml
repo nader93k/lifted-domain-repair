@@ -1,0 +1,164 @@
+---
+timestamp: '2025-03-17T10:34:41.869791'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary
+        exhaust lp066/mprime__pprob05-err-rate-0-5.yaml
+    instance_id: mprime__pprob05-err-rate-0-5
+    search_algorithm: gbfs
+    plan_length: 14
+    domain_class: mprime
+    instance_name: pprob05-err-rate-0-5
+    ground_plan:
+    - (overcome grief satisfaction broccoli mercury earth)
+    - (feast satisfaction broccoli chocolate goias arizona)
+    - (feast satisfaction chocolate shrimp kentucky goias)
+    - (succumb grief satisfaction shrimp mercury earth)
+    - (feast satisfaction shrimp cherry alsace kentucky)
+    - (feast satisfaction cherry scallop alsace kentucky)
+    - (drink tuna sweetroll arizona goias kentucky alsace kentucky)
+    - (feast lubricity sweetroll shrimp alsace kentucky)
+    - (overcome loneliness satisfaction scallop mercury earth)
+    - (drink tuna scallop goias kentucky alsace alsace kentucky)
+    - (feast satisfaction scallop sweetroll alsace kentucky)
+    - (drink broccoli sweetroll goias kentucky alsace alsace kentucky)
+    - (feast satisfaction sweetroll shrimp alsace kentucky)
+    - (succumb loneliness satisfaction shrimp mercury earth)
+    lifted_plan:
+    -   - overcome
+        - grief
+        - satisfaction
+        - ?broccoli
+        - ?mercury
+        - ?earth
+    -   - feast
+        - ?satisfaction
+        - broccoli
+        - ?chocolate
+        - ?goias
+        - ?arizona
+    -   - feast
+        - satisfaction
+        - ?chocolate
+        - ?shrimp
+        - kentucky
+        - ?goias
+    -   - succumb
+        - ?grief
+        - satisfaction
+        - shrimp
+        - mercury
+        - earth
+    -   - feast
+        - ?satisfaction
+        - shrimp
+        - cherry
+        - alsace
+        - ?kentucky
+    -   - feast
+        - ?satisfaction
+        - ?cherry
+        - ?scallop
+        - alsace
+        - kentucky
+    -   - drink
+        - ?tuna
+        - sweetroll
+        - ?arizona
+        - goias
+        - ?kentucky
+        - ?alsace
+        - kentucky
+    -   - feast
+        - ?lubricity
+        - sweetroll
+        - shrimp
+        - ?alsace
+        - ?kentucky
+    -   - overcome
+        - loneliness
+        - ?satisfaction
+        - ?scallop
+        - mercury
+        - ?earth
+    -   - drink
+        - ?tuna
+        - ?scallop
+        - goias
+        - kentucky
+        - ?alsace
+        - ?alsace
+        - ?kentucky
+    -   - feast
+        - ?satisfaction
+        - scallop
+        - ?sweetroll
+        - ?alsace
+        - kentucky
+    -   - drink
+        - ?broccoli
+        - sweetroll
+        - ?goias
+        - kentucky
+        - ?alsace
+        - ?alsace
+        - ?kentucky
+    -   - feast
+        - ?satisfaction
+        - ?sweetroll
+        - ?shrimp
+        - ?alsace
+        - ?kentucky
+    -   - succumb
+        - ?loneliness
+        - ?satisfaction
+        - ?shrimp
+        - ?mercury
+        - ?earth
+
+
+---
+timestamp: '2025-03-17T10:34:41.875341'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: succumb,(craves ?c ?n),effPos,1
+
+
+---
+timestamp: '2025-03-17T10:34:41.905784'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data:
+    error_type: CalledProcessError
+    error_message: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',
+        'instance_solver.py', 'configs_exhaustive/gbfs-unary_exhaust_lp066.yaml',
+        'mprime__pprob05-err-rate-0-5']' returned non-zero exit status 1.
+    stack_trace: "Traceback (most recent call last):\n  File \"batch_solver.py\",\
+        \ line 119, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
+        \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/subprocess.py\"\
+        , line 516, in run\n    raise CalledProcessError(retcode, process.args,\n\
+        subprocess.CalledProcessError: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',\
+        \ 'instance_solver.py', 'configs_exhaustive/gbfs-unary_exhaust_lp066.yaml',\
+        \ 'mprime__pprob05-err-rate-0-5']' returned non-zero exit status 1.\n"
+    instance_id: mprime__pprob05-err-rate-0-5
+    process_info:
+        cmd:
+        - /home/projects/u7899572/conda-envs/main/bin/python3
+        - instance_solver.py
+        - configs_exhaustive/gbfs-unary_exhaust_lp066.yaml
+        - mprime__pprob05-err-rate-0-5
+        duration: '1.45'
+        python_executable: /home/projects/u7899572/conda-envs/main/bin/python3
+    stdout: ''
+    stderr: "Traceback (most recent call last):\n  File \"instance_solver.py\", line\
+        \ 147, in <module>\n    solve_instance(\n  File \"instance_solver.py\", line\
+        \ 122, in solve_instance\n    raise NotImplementedError(\"Search algorithm\
+        \ not supported.\")\nNotImplementedError: Search algorithm not supported.\n"
+
+

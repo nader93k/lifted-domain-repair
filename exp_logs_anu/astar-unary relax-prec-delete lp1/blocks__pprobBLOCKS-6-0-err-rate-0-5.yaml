@@ -1,0 +1,82 @@
+---
+timestamp: '2025-01-21T13:01:56.008832'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary
+        relax-prec-delete lp1/blocks__pprobBLOCKS-6-0-err-rate-0-5.yaml
+    instance_id: blocks__pprobBLOCKS-6-0-err-rate-0-5
+    search_algorithm: astar
+    plan_length: 12
+    domain_class: blocks
+    instance_name: pprobBLOCKS-6-0-err-rate-0-5
+    ground_plan:
+    - (unstack d a)
+    - (put-down d)
+    - (unstack f e)
+    - (stack f d)
+    - (unstack e b)
+    - (stack e f)
+    - (unstack a c)
+    - (stack a e)
+    - (pick-up b)
+    - (stack b a)
+    - (pick-up c)
+    - (stack c b)
+    lifted_plan:
+    -   - unstack
+        - ?d
+        - ?a
+    -   - put-down
+        - ?d
+    -   - unstack
+        - ?f
+        - ?e
+    -   - stack
+        - ?f
+        - ?d
+    -   - unstack
+        - ?e
+        - ?b
+    -   - stack
+        - ?e
+        - ?f
+    -   - unstack
+        - ?a
+        - ?c
+    -   - stack
+        - ?a
+        - ?e
+    -   - pick-up
+        - ?b
+    -   - stack
+        - ?b
+        - ?a
+    -   - pick-up
+        - ?c
+    -   - stack
+        - ?c
+        - ?b
+
+
+---
+timestamp: '2025-01-21T13:01:56.012462'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'unstack,(clear ?y),effPos,1
+
+        stack,(holding ?x),precPos,-1'
+
+
+---
+timestamp: '2025-01-21T13:16:54.311369'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+

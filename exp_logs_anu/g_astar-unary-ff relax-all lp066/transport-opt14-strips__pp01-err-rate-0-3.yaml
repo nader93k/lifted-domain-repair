@@ -1,0 +1,164 @@
+---
+timestamp: '2025-03-09T19:55:42.766438'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary-ff
+        relax-all lp066/transport-opt14-strips__pp01-err-rate-0-3.yaml
+    instance_id: transport-opt14-strips__pp01-err-rate-0-3
+    search_algorithm: g_astar
+    plan_length: 13
+    domain_class: transport-opt14-strips
+    instance_name: pp01-err-rate-0-3
+    ground_plan:
+    - (pick-up truck-2 city-loc-1 package-1 capacity-1 capacity-2)
+    - (pick-up truck-1 city-loc-2 package-4 capacity-2 capacity-3)
+    - (drive truck-1 city-loc-2 city-loc-5)
+    - (drop truck-1 city-loc-5 package-4 capacity-2 capacity-3)
+    - (drive truck-2 city-loc-1 city-loc-3)
+    - (pick-up truck-2 city-loc-3 package-3 capacity-0 capacity-1)
+    - (drive truck-2 city-loc-3 city-loc-1)
+    - (drop truck-2 city-loc-1 package-3 capacity-0 capacity-1)
+    - (pick-up truck-2 city-loc-1 package-2 capacity-0 capacity-1)
+    - (drive truck-2 city-loc-1 city-loc-3)
+    - (drive truck-2 city-loc-3 city-loc-2)
+    - (drop truck-2 city-loc-2 package-1 capacity-0 capacity-1)
+    - (drop truck-2 city-loc-2 package-2 capacity-1 capacity-2)
+    lifted_plan:
+    -   - pick-up
+        - truck-2
+        - city-loc-1
+        - ?package-1
+        - ?capacity-1
+        - ?capacity-2
+    -   - pick-up
+        - ?truck-1
+        - city-loc-2
+        - ?package-4
+        - ?capacity-2
+        - ?capacity-3
+    -   - drive
+        - truck-1
+        - ?city-loc-2
+        - ?city-loc-5
+    -   - drop
+        - truck-1
+        - ?city-loc-5
+        - ?package-4
+        - capacity-2
+        - capacity-3
+    -   - drive
+        - truck-2
+        - city-loc-1
+        - ?city-loc-3
+    -   - pick-up
+        - truck-2
+        - city-loc-3
+        - package-3
+        - ?capacity-0
+        - ?capacity-1
+    -   - drive
+        - ?truck-2
+        - ?city-loc-3
+        - city-loc-1
+    -   - drop
+        - truck-2
+        - ?city-loc-1
+        - package-3
+        - ?capacity-0
+        - capacity-1
+    -   - pick-up
+        - ?truck-2
+        - ?city-loc-1
+        - package-2
+        - ?capacity-0
+        - capacity-1
+    -   - drive
+        - truck-2
+        - ?city-loc-1
+        - ?city-loc-3
+    -   - drive
+        - truck-2
+        - ?city-loc-3
+        - ?city-loc-2
+    -   - drop
+        - truck-2
+        - ?city-loc-2
+        - ?package-1
+        - ?capacity-0
+        - capacity-1
+    -   - drop
+        - truck-2
+        - ?city-loc-2
+        - ?package-2
+        - ?capacity-1
+        - ?capacity-2
+
+
+---
+timestamp: '2025-03-09T19:55:42.770247'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-03-09T19:56:19.064289'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 15
+    fring_size: 646
+    num_nodes_generated: 661
+    sum_h_cost: 2080
+    sum_f_cost: 2622
+    sum_h_cost_time: 0.5345494747161865
+    sum_grounding_time: 0.324099063873291
+    h_max: 6
+    current_node:
+        depth: 13
+        ground_actions:
+        - (pick-up truck-2 city-loc-1 package-1 capacity-1 capacity-2)
+        - (pick-up truck-1 city-loc-2 package-4 capacity-2 capacity-3)
+        - (drive truck-1 city-loc-2 city-loc-5)
+        - (drop truck-1 city-loc-5 package-4 capacity-2 capacity-3)
+        - (drive truck-2 city-loc-1 city-loc-3)
+        - (pick-up truck-2 city-loc-3 package-3 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-3 city-loc-1)
+        - (drop truck-2 city-loc-1 package-3 capacity-0 capacity-1)
+        - (pick-up truck-2 city-loc-1 package-2 capacity-0 capacity-1)
+        - (drive truck-2 city-loc-1 city-loc-3)
+        - (drive truck-2 city-loc-3 city-loc-2)
+        - (drop truck-2 city-loc-2 package-1 capacity-0 capacity-1)
+        - (drop truck-2 city-loc-2 package-2 capacity-1 capacity-2)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-09T19:56:19.082777'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '37.52'
+
+
+---
+timestamp: '2025-03-09T19:56:19.118224'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 37.84 seconds'
+
+

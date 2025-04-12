@@ -1,0 +1,172 @@
+---
+timestamp: '2025-01-20T22:34:51.327577'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary
+        relax-prec lp066/tpp__pp03-err-rate-0-1.yaml
+    instance_id: tpp__pp03-err-rate-0-1
+    search_algorithm: astar
+    plan_length: 11
+    domain_class: tpp
+    instance_name: pp03-err-rate-0-1
+    ground_plan:
+    - (drive truck1 depot1 market1)
+    - (buy truck1 goods3 market1 level0 level1 level0 level1)
+    - (load goods3 truck1 market1 level0 level1 level0 level1)
+    - (buy truck1 goods2 market1 level0 level1 level0 level1)
+    - (load goods2 truck1 market1 level0 level1 level0 level1)
+    - (buy truck1 goods1 market1 level0 level1 level0 level1)
+    - (load goods1 truck1 market1 level0 level1 level0 level1)
+    - (drive truck1 market1 depot1)
+    - (unload goods3 truck1 depot1 level0 level1 level0 level1)
+    - (unload goods2 truck1 depot1 level0 level1 level0 level1)
+    - (unload goods1 truck1 depot1 level0 level1 level0 level1)
+    lifted_plan:
+    -   - drive
+        - truck1
+        - depot1
+        - ?market1
+    -   - buy
+        - ?truck1
+        - ?goods3
+        - ?market1
+        - level0
+        - ?level1
+        - ?level0
+        - ?level1
+    -   - load
+        - goods3
+        - ?truck1
+        - ?market1
+        - level0
+        - ?level1
+        - ?level0
+        - level1
+    -   - buy
+        - truck1
+        - goods2
+        - market1
+        - ?level0
+        - level1
+        - level0
+        - level1
+    -   - load
+        - ?goods2
+        - ?truck1
+        - ?market1
+        - ?level0
+        - level1
+        - level0
+        - ?level1
+    -   - buy
+        - truck1
+        - ?goods1
+        - market1
+        - ?level0
+        - ?level1
+        - level0
+        - ?level1
+    -   - load
+        - goods1
+        - truck1
+        - ?market1
+        - ?level0
+        - level1
+        - ?level0
+        - ?level1
+    -   - drive
+        - truck1
+        - ?market1
+        - ?depot1
+    -   - unload
+        - ?goods3
+        - truck1
+        - depot1
+        - ?level0
+        - ?level1
+        - ?level0
+        - ?level1
+    -   - unload
+        - goods2
+        - ?truck1
+        - ?depot1
+        - level0
+        - ?level1
+        - level0
+        - ?level1
+    -   - unload
+        - goods1
+        - ?truck1
+        - ?depot1
+        - ?level0
+        - ?level1
+        - ?level0
+        - ?level1
+
+
+---
+timestamp: '2025-01-20T22:34:51.332065'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: load,(loaded ?g ?t ?l2),effPos,1
+
+
+---
+timestamp: '2025-01-20T22:34:52.362788'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 15
+    fring_size: 1
+    num_nodes_generated: 16
+    sum_h_cost: 148
+    sum_f_cost: 79
+    sum_h_cost_time: 0.7149274349212646
+    sum_grounding_time: 0.2498176097869873
+    h_max: 12
+    current_node:
+        depth: 11
+        ground_actions:
+        - (drive truck1 depot1 market1)
+        - (buy truck1 goods3 market1 level0 level1 level0 level1)
+        - (load goods3 truck1 market1 level0 level1 level0 level1)
+        - (buy truck1 goods2 market1 level0 level1 level0 level1)
+        - (load goods2 truck1 market1 level0 level1 level0 level1)
+        - (buy truck1 goods1 market1 level0 level1 level0 level1)
+        - (load goods1 truck1 market1 level0 level1 level0 level1)
+        - (drive truck1 market1 depot1)
+        - (unload goods3 truck1 depot1 level0 level1 level0 level1)
+        - (unload goods2 truck1 depot1 level0 level1 level0 level1)
+        - (unload goods1 truck1 depot1 level0 level1 level0 level1)
+        repair_set: load,(loaded ?g ?t ?l2),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-20T22:34:52.364634'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '2.21'
+
+
+---
+timestamp: '2025-01-20T22:34:52.395746'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 2.56 seconds'
+
+

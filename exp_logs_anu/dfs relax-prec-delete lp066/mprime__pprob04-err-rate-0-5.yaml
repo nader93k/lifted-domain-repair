@@ -1,0 +1,148 @@
+---
+timestamp: '2025-01-20T10:57:47.169339'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs
+        relax-prec-delete lp066/mprime__pprob04-err-rate-0-5.yaml
+    instance_id: mprime__pprob04-err-rate-0-5
+    search_algorithm: dfs
+    plan_length: 9
+    domain_class: mprime
+    instance_name: pprob04-err-rate-0-5
+    ground_plan:
+    - (feast aesthetics shrimp cherry quebec bosnia)
+    - (feast aesthetics cherry arugula oregon kentucky)
+    - (feast aesthetics arugula wurst oregon kentucky)
+    - (drink scallop wurst oregon bosnia quebec surrey quebec)
+    - (feast aesthetics wurst grapefruit surrey quebec)
+    - (overcome sciatica aesthetics grapefruit mars vulcan)
+    - (drink ham grapefruit bosnia quebec surrey surrey quebec)
+    - (feast aesthetics grapefruit wurst surrey quebec)
+    - (succumb sciatica aesthetics wurst mars vulcan)
+    lifted_plan:
+    -   - feast
+        - aesthetics
+        - shrimp
+        - ?cherry
+        - ?quebec
+        - ?bosnia
+    -   - feast
+        - ?aesthetics
+        - cherry
+        - ?arugula
+        - ?oregon
+        - ?kentucky
+    -   - feast
+        - aesthetics
+        - ?arugula
+        - ?wurst
+        - oregon
+        - ?kentucky
+    -   - drink
+        - ?scallop
+        - wurst
+        - oregon
+        - bosnia
+        - quebec
+        - ?surrey
+        - quebec
+    -   - feast
+        - aesthetics
+        - wurst
+        - ?grapefruit
+        - ?surrey
+        - ?quebec
+    -   - overcome
+        - ?sciatica
+        - aesthetics
+        - grapefruit
+        - ?mars
+        - vulcan
+    -   - drink
+        - ?ham
+        - grapefruit
+        - ?bosnia
+        - ?quebec
+        - surrey
+        - ?surrey
+        - quebec
+    -   - feast
+        - aesthetics
+        - ?grapefruit
+        - ?wurst
+        - surrey
+        - ?quebec
+    -   - succumb
+        - ?sciatica
+        - aesthetics
+        - ?wurst
+        - ?mars
+        - ?vulcan
+
+
+---
+timestamp: '2025-01-20T10:57:47.173331'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-20T10:57:48.321328'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 25
+    fring_size: 1
+    num_nodes_generated: 58
+    sum_h_cost: 0
+    sum_f_cost: 0
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 0.8135659694671631
+    h_max: -.inf
+    current_node:
+        depth: 9
+        ground_actions:
+        - (feast aesthetics shrimp cherry quebec bosnia)
+        - (feast aesthetics cherry shrimp oregon kentucky)
+        - (feast aesthetics cherry shrimp oregon kentucky)
+        - (drink scallop wurst oregon bosnia quebec surrey quebec)
+        - (feast aesthetics wurst grapefruit quebec bosnia)
+        - (overcome sciatica aesthetics grapefruit mars vulcan)
+        - (drink ham grapefruit bosnia quebec surrey surrey quebec)
+        - (feast aesthetics bacon wurst surrey quebec)
+        - (succumb sciatica aesthetics wurst mars vulcan)
+        repair_set: 'feast,(locale ?n1 ?l2),precPos,-1
+
+            feast,(craves ?v ?n1),precPos,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-20T10:57:48.324034'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '2.28'
+
+
+---
+timestamp: '2025-01-20T10:57:48.364592'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 2.62 seconds'
+
+

@@ -1,0 +1,85 @@
+---
+timestamp: '2025-03-09T23:24:20.491305'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary-ff
+        exhaust lp033/zenotravel__pp02-err-rate-0-1.yaml
+    instance_id: zenotravel__pp02-err-rate-0-1
+    search_algorithm: g_astar
+    plan_length: 8
+    domain_class: zenotravel
+    instance_name: pp02-err-rate-0-1
+    ground_plan:
+    - (fly plane1 city0 city1 fl2 fl1)
+    - (fly plane1 city1 city2 fl1 fl0)
+    - (refuel plane1 city2 fl0 fl1)
+    - (board person1 plane1 city2)
+    - (fly plane1 city2 city1 fl1 fl0)
+    - (refuel plane1 city1 fl0 fl1)
+    - (debark person1 plane1 city1)
+    - (fly plane1 city1 city2 fl1 fl0)
+    lifted_plan:
+    -   - fly
+        - plane1
+        - city0
+        - city1
+        - ?fl2
+        - fl1
+    -   - fly
+        - plane1
+        - city1
+        - ?city2
+        - fl1
+        - fl0
+    -   - refuel
+        - plane1
+        - city2
+        - ?fl0
+        - fl1
+    -   - board
+        - person1
+        - ?plane1
+        - city2
+    -   - fly
+        - plane1
+        - city2
+        - city1
+        - ?fl1
+        - fl0
+    -   - refuel
+        - plane1
+        - city1
+        - fl0
+        - ?fl1
+    -   - debark
+        - person1
+        - plane1
+        - city1
+    -   - fly
+        - plane1
+        - city1
+        - city2
+        - ?fl1
+        - fl0
+
+
+---
+timestamp: '2025-03-09T23:24:20.499430'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: fly,(at ?c2 ?l1),effPos,1
+
+
+---
+timestamp: '2025-03-09T23:39:18.084723'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+

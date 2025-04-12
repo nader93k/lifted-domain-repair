@@ -1,0 +1,156 @@
+---
+timestamp: '2025-03-06T16:26:35.692424'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary-ff
+        relax-prec lp1/satellite__pp02-pfile2-err-rate-0-5.yaml
+    instance_id: satellite__pp02-pfile2-err-rate-0-5
+    search_algorithm: g_astar
+    plan_length: 13
+    domain_class: satellite
+    instance_name: pp02-pfile2-err-rate-0-5
+    ground_plan:
+    - (switch_on instrument1 satellite0)
+    - (turn_to satellite0 groundstation2 planet4)
+    - (calibrate satellite0 instrument1 groundstation2)
+    - (turn_to satellite0 phenomenon5 groundstation2)
+    - (take_image satellite0 phenomenon5 instrument1 image2)
+    - (turn_to satellite0 phenomenon6 phenomenon5)
+    - (take_image satellite0 phenomenon6 instrument1 infrared0)
+    - (turn_to satellite0 planet3 phenomenon6)
+    - (take_image satellite0 planet3 instrument1 infrared0)
+    - (turn_to satellite0 planet4 planet3)
+    - (take_image satellite0 planet4 instrument1 infrared0)
+    - (turn_to satellite0 star7 planet4)
+    - (take_image satellite0 star7 instrument1 infrared0)
+    lifted_plan:
+    -   - switch_on
+        - ?instrument1
+        - ?satellite0
+    -   - turn_to
+        - ?satellite0
+        - ?groundstation2
+        - ?planet4
+    -   - calibrate
+        - ?satellite0
+        - ?instrument1
+        - ?groundstation2
+    -   - turn_to
+        - ?satellite0
+        - ?phenomenon5
+        - ?groundstation2
+    -   - take_image
+        - ?satellite0
+        - ?phenomenon5
+        - ?instrument1
+        - ?image2
+    -   - turn_to
+        - ?satellite0
+        - ?phenomenon6
+        - ?phenomenon5
+    -   - take_image
+        - ?satellite0
+        - ?phenomenon6
+        - ?instrument1
+        - ?infrared0
+    -   - turn_to
+        - ?satellite0
+        - ?planet3
+        - ?phenomenon6
+    -   - take_image
+        - ?satellite0
+        - ?planet3
+        - ?instrument1
+        - ?infrared0
+    -   - turn_to
+        - ?satellite0
+        - ?planet4
+        - ?planet3
+    -   - take_image
+        - ?satellite0
+        - ?planet4
+        - ?instrument1
+        - ?infrared0
+    -   - turn_to
+        - ?satellite0
+        - ?star7
+        - ?planet4
+    -   - take_image
+        - ?satellite0
+        - ?star7
+        - ?instrument1
+        - ?infrared0
+
+
+---
+timestamp: '2025-03-06T16:26:35.696955'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'take_image,(have_image ?d ?m),effPos,1
+
+        switch_on,(calibrated ?i),effPos,1'
+
+
+---
+timestamp: '2025-03-06T16:32:10.802616'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 6124
+    fring_size: 40
+    num_nodes_generated: 6164
+    sum_h_cost: 24748
+    sum_f_cost: 18519
+    sum_h_cost_time: 160.87062072753906
+    sum_grounding_time: 122.49966740608215
+    h_max: 6
+    current_node:
+        depth: 13
+        ground_actions:
+        - (switch_on instrument1 satellite0)
+        - (turn_to satellite0 groundstation2 planet4)
+        - (calibrate satellite0 instrument1 groundstation2)
+        - (turn_to satellite0 planet4 groundstation2)
+        - (take_image satellite0 planet4 instrument1 infrared0)
+        - (turn_to satellite0 star7 planet4)
+        - (take_image satellite0 star7 instrument1 infrared0)
+        - (turn_to satellite0 planet3 star7)
+        - (take_image satellite0 planet3 instrument1 infrared0)
+        - (turn_to satellite0 phenomenon5 planet3)
+        - (take_image satellite0 phenomenon5 instrument1 image2)
+        - (turn_to satellite0 phenomenon6 phenomenon5)
+        - (take_image satellite0 phenomenon6 instrument1 infrared0)
+        repair_set: 'take_image,(have_image ?d ?m),effPos,1
+
+            switch_on,(calibrated ?i),effPos,1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-06T16:32:10.805715'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '336.32'
+
+
+---
+timestamp: '2025-03-06T16:32:10.838466'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 336.69 seconds'
+
+

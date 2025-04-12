@@ -1,0 +1,118 @@
+---
+timestamp: '2025-01-22T12:50:12.419190'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary
+        relax-all lp033/zenotravel__pp03-err-rate-0-3.yaml
+    instance_id: zenotravel__pp03-err-rate-0-3
+    search_algorithm: greedy
+    plan_length: 6
+    domain_class: zenotravel
+    instance_name: pp03-err-rate-0-3
+    ground_plan:
+    - (board person1 plane1 city0)
+    - (fly plane1 city0 city1 fl4 fl3)
+    - (board person3 plane1 city1)
+    - (debark person1 plane1 city1)
+    - (fly plane1 city1 city0 fl3 fl2)
+    - (debark person3 plane1 city0)
+    lifted_plan:
+    -   - board
+        - person1
+        - plane1
+        - city0
+    -   - fly
+        - ?plane1
+        - city0
+        - city1
+        - fl4
+        - ?fl3
+    -   - board
+        - person3
+        - plane1
+        - city1
+    -   - debark
+        - person1
+        - ?plane1
+        - city1
+    -   - fly
+        - plane1
+        - ?city1
+        - city0
+        - fl3
+        - fl2
+    -   - debark
+        - person3
+        - ?plane1
+        - city0
+
+
+---
+timestamp: '2025-01-22T12:50:12.422486'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: debark,(in ?p ?a),precPos,-1
+
+
+---
+timestamp: '2025-01-22T12:50:40.896842'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 7
+    fring_size: 300
+    num_nodes_generated: 307
+    sum_h_cost: 3152
+    sum_f_cost: 1576
+    sum_h_cost_time: 0.2937605381011963
+    sum_grounding_time: 7.831625938415527
+    h_max: 6
+    current_node:
+        depth: 6
+        ground_actions:
+        - (board person1 plane1 city0)
+        - (fly person1 city0 city1 fl4 fl3)
+        - (board person3 plane1 city1)
+        - (debark person1 person1 city1)
+        - (fly plane1 city0 city0 fl3 fl2)
+        - (debark person3 plane1 city0)
+        repair_set: 'fly,(fuel-level ?a ?l1),precPos,-1
+
+            board,(aircraft ?p),effPos,1
+
+            debark,(in ?p ?a),precPos,-1
+
+            board,(at ?p ?c),effPos,1
+
+            board,(at ?a ?c),precPos,-1'
+        g_cost: 5
+        h_cost: 0
+        f_cost: 5
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-22T12:50:40.921170'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '29.76'
+
+
+---
+timestamp: '2025-01-22T12:50:40.969887'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 30.13 seconds'
+
+

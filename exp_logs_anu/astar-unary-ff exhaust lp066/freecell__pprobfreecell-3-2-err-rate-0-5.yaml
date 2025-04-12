@@ -1,0 +1,188 @@
+---
+timestamp: '2025-03-14T23:51:21.247319'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary-ff
+        exhaust lp066/freecell__pprobfreecell-3-2-err-rate-0-5.yaml
+    instance_id: freecell__pprobfreecell-3-2-err-rate-0-5
+    search_algorithm: astar
+    plan_length: 13
+    domain_class: freecell
+    instance_name: pprobfreecell-3-2-err-rate-0-5
+    ground_plan:
+    - (sendtohome ca d2 c n1 c0 n0)
+    - (sendtohome-b da d n1 d0 n0 n1 n2)
+    - (sendtohome sa h3 s n1 s0 n0)
+    - (sendtofree h3 ha n4 n3)
+    - (sendtohome-b ha h n1 h0 n0 n2 n3)
+    - (sendtohome-b h2 h n2 ha n1 n3 n4)
+    - (sendtohome-b c2 c n2 ca n1 n4 n5)
+    - (sendtohome-b d2 d n2 da n1 n5 n6)
+    - (homefromfreecell h3 h n3 h2 n2 n3 n4)
+    - (sendtohome d3 s2 d n3 d2 n2)
+    - (sendtohome s2 c3 s n2 sa n1)
+    - (sendtohome-b c3 c n3 c2 n2 n6 n7)
+    - (sendtohome-b s3 s n3 s2 n2 n7 n8)
+    lifted_plan:
+    -   - sendtohome
+        - ca
+        - d2
+        - ?c
+        - ?n1
+        - ?c0
+        - ?n0
+    -   - sendtohome-b
+        - da
+        - ?d
+        - ?n1
+        - ?d0
+        - n0
+        - ?n1
+        - ?n2
+    -   - sendtohome
+        - sa
+        - ?h3
+        - ?s
+        - n1
+        - s0
+        - n0
+    -   - sendtofree
+        - h3
+        - ?ha
+        - n4
+        - n3
+    -   - sendtohome-b
+        - ha
+        - ?h
+        - ?n1
+        - ?h0
+        - ?n0
+        - n2
+        - n3
+    -   - sendtohome-b
+        - ?h2
+        - h
+        - ?n2
+        - ha
+        - ?n1
+        - ?n3
+        - n4
+    -   - sendtohome-b
+        - ?c2
+        - c
+        - n2
+        - ?ca
+        - ?n1
+        - n4
+        - ?n5
+    -   - sendtohome-b
+        - ?d2
+        - d
+        - ?n2
+        - ?da
+        - ?n1
+        - n5
+        - n6
+    -   - homefromfreecell
+        - ?h3
+        - ?h
+        - ?n3
+        - ?h2
+        - n2
+        - ?n3
+        - ?n4
+    -   - sendtohome
+        - d3
+        - ?s2
+        - d
+        - ?n3
+        - d2
+        - ?n2
+    -   - sendtohome
+        - ?s2
+        - ?c3
+        - ?s
+        - ?n2
+        - ?sa
+        - ?n1
+    -   - sendtohome-b
+        - ?c3
+        - ?c
+        - ?n3
+        - ?c2
+        - ?n2
+        - ?n6
+        - n7
+    -   - sendtohome-b
+        - s3
+        - s
+        - n3
+        - s2
+        - n2
+        - ?n7
+        - ?n8
+
+
+---
+timestamp: '2025-03-14T23:51:21.253366'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: sendtofree,(value ?card ?ncells),effPos,1
+
+
+---
+timestamp: '2025-03-14T23:51:28.741060'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''sendtohome'', ''ca'', ''d2'', ''?c'', ''?n1'', ''?c0'',
+            ''?n0'']'
+        num_neighbours: 0
+        current_state: not implemented!
+
+
+---
+timestamp: '2025-03-14T23:51:28.742489'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: . Stack trace: Traceback (most recent call\
+    \ last):\n  File \"instance_solver.py\", line 125, in solve_instance\n    searcher.find_path(logger=logger,\
+    \ log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 78, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
+    \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 195, in get_neighbors\n    possible_groundings = grounder(domain, task,\
+    \ next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 177, in exhaustive_groundings\n    ground_params = list(product(*action_objcet_list))\n\
+    MemoryError\n"
+
+
+---
+timestamp: '2025-03-14T23:51:28.743591'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '8.63'
+
+
+---
+timestamp: '2025-03-14T23:51:28.777865'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 8.94 seconds'
+
+

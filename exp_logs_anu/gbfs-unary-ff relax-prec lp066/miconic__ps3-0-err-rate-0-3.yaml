@@ -1,0 +1,124 @@
+---
+timestamp: '2025-01-20T01:02:38.618487'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-prec lp066/miconic__ps3-0-err-rate-0-3.yaml
+    instance_id: miconic__ps3-0-err-rate-0-3
+    search_algorithm: greedy
+    plan_length: 13
+    domain_class: miconic
+    instance_name: ps3-0-err-rate-0-3
+    ground_plan:
+    - (up f0 f1)
+    - (board f1 p0)
+    - (up f1 f3)
+    - (board f3 p1)
+    - (down f3 f1)
+    - (depart f1 p1)
+    - (up f1 f4)
+    - (depart f4 p0)
+    - (down f4 f1)
+    - (up f1 f5)
+    - (board f5 p2)
+    - (down f5 f1)
+    - (depart f1 p2)
+    lifted_plan:
+    -   - up
+        - f0
+        - f1
+    -   - board
+        - ?f1
+        - ?p0
+    -   - up
+        - ?f1
+        - ?f3
+    -   - board
+        - f3
+        - ?p1
+    -   - down
+        - ?f3
+        - ?f1
+    -   - depart
+        - f1
+        - ?p1
+    -   - up
+        - ?f1
+        - f4
+    -   - depart
+        - ?f4
+        - ?p0
+    -   - down
+        - f4
+        - f1
+    -   - up
+        - f1
+        - f5
+    -   - board
+        - ?f5
+        - p2
+    -   - down
+        - f5
+        - f1
+    -   - depart
+        - ?f1
+        - ?p2
+
+
+---
+timestamp: '2025-01-20T01:02:38.621761'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'up,(destin ?f2 ?f1),precPos,-1
+
+        up,(passenger ?f2),effPos,1'
+
+
+---
+timestamp: '2025-01-20T01:02:38.661148'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 1
+    fring_size: 0
+    num_nodes_generated: 1
+    sum_h_cost: 0
+    sum_f_cost: 0
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 0.03692197799682617
+    h_max: 0
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''up'', ''f0'', ''f1'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-20T01:02:38.662182'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.22'
+
+
+---
+timestamp: '2025-01-20T01:02:38.714730'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.59 seconds'
+
+

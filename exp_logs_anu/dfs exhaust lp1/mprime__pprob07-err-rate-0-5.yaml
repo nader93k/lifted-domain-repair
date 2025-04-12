@@ -1,0 +1,115 @@
+---
+timestamp: '2025-03-03T13:25:58.114092'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_debug/dfs
+        exhast lp1/mprime__pprob07-err-rate-0-5.yaml
+    instance_id: mprime__pprob07-err-rate-0-5
+    search_algorithm: dfs
+    plan_length: 5
+    domain_class: mprime
+    instance_name: pprob07-err-rate-0-5
+    ground_plan:
+    - (drink shrimp snickers moravia manitoba arizona arizona manitoba)
+    - (feast stimulation snickers popover arizona manitoba)
+    - (overcome jealousy stimulation popover mercury saturn)
+    - (feast stimulation popover muffin arizona manitoba)
+    - (succumb jealousy stimulation muffin mercury saturn)
+    lifted_plan:
+    -   - drink
+        - ?shrimp
+        - ?snickers
+        - ?moravia
+        - ?manitoba
+        - ?arizona
+        - ?arizona
+        - ?manitoba
+    -   - feast
+        - ?stimulation
+        - ?snickers
+        - ?popover
+        - ?arizona
+        - ?manitoba
+    -   - overcome
+        - ?jealousy
+        - ?stimulation
+        - ?popover
+        - ?mercury
+        - ?saturn
+    -   - feast
+        - ?stimulation
+        - ?popover
+        - ?muffin
+        - ?arizona
+        - ?manitoba
+    -   - succumb
+        - ?jealousy
+        - ?stimulation
+        - ?muffin
+        - ?mercury
+        - ?saturn
+
+
+---
+timestamp: '2025-03-03T13:25:58.118152'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: drink,(attacks ?n2 ?n2),precPos,-1
+
+
+---
+timestamp: '2025-03-03T13:26:06.673273'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''drink'', ''?shrimp'', ''?snickers'', ''?moravia'',
+            ''?manitoba'', ''?arizona'', ''?arizona'', ''?manitoba'']'
+        num_neighbours: 0
+        current_state: not implemented!
+
+
+---
+timestamp: '2025-03-03T13:26:06.675182'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: . Stack trace: Traceback (most recent call\
+    \ last):\n  File \"instance_solver.py\", line 104, in solve_instance\n    searcher.find_path(logger=logger,\
+    \ log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 137, in find_path\n    neighbors = sorted(current_node.get_neighbors(),\
+    \ key=lambda x: x.g_cost, reverse=True)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 195, in get_neighbors\n    possible_groundings = grounder(domain, task,\
+    \ next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 177, in exhaustive_groundings\n    ground_params = list(product(*action_objcet_list))\n\
+    MemoryError\n"
+
+
+---
+timestamp: '2025-03-03T13:26:06.676452'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '9.81'
+
+
+---
+timestamp: '2025-03-03T13:26:06.729924'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 10.19 seconds'
+
+

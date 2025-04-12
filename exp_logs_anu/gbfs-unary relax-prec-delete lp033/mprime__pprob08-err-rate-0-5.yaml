@@ -1,0 +1,123 @@
+---
+timestamp: '2025-01-21T16:56:08.269678'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary
+        relax-prec-delete lp033/mprime__pprob08-err-rate-0-5.yaml
+    instance_id: mprime__pprob08-err-rate-0-5
+    search_algorithm: greedy
+    plan_length: 7
+    domain_class: mprime
+    instance_name: pprob08-err-rate-0-5
+    ground_plan:
+    - (feast love okra tuna pennsylvania bosnia)
+    - (overcome anxiety stimulation muffin earth uranus)
+    - (drink okra muffin pennsylvania goias bavaria bavaria goias)
+    - (feast stimulation muffin tuna bavaria goias)
+    - (feast stimulation tuna okra bosnia surrey)
+    - (feast stimulation okra wonderbread bavaria goias)
+    - (succumb anxiety stimulation wonderbread earth uranus)
+    lifted_plan:
+    -   - feast
+        - love
+        - okra
+        - tuna
+        - ?pennsylvania
+        - bosnia
+    -   - overcome
+        - anxiety
+        - stimulation
+        - ?muffin
+        - earth
+        - uranus
+    -   - drink
+        - okra
+        - muffin
+        - ?pennsylvania
+        - goias
+        - bavaria
+        - ?bavaria
+        - goias
+    -   - feast
+        - stimulation
+        - muffin
+        - tuna
+        - ?bavaria
+        - goias
+    -   - feast
+        - stimulation
+        - tuna
+        - okra
+        - ?bosnia
+        - surrey
+    -   - feast
+        - stimulation
+        - okra
+        - wonderbread
+        - bavaria
+        - goias
+    -   - succumb
+        - ?anxiety
+        - stimulation
+        - wonderbread
+        - ?earth
+        - uranus
+
+
+---
+timestamp: '2025-01-21T16:56:08.273993'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: overcome,(attacks ?v ?v),precPos,-1
+
+
+---
+timestamp: '2025-01-21T16:56:08.573347'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 2
+    fring_size: 0
+    num_nodes_generated: 2
+    sum_h_cost: 8
+    sum_f_cost: 4
+    sum_h_cost_time: 0.17523598670959473
+    sum_grounding_time: 0.11362743377685547
+    h_max: 4
+    current_node:
+        depth: 1
+        ground_actions:
+        - (feast love okra tuna pennsylvania bosnia)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 4
+        f_cost: 4
+        next_lifted_action: '[''overcome'', ''anxiety'', ''stimulation'', ''?muffin'',
+            ''earth'', ''uranus'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-21T16:56:08.574537'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.60'
+
+
+---
+timestamp: '2025-01-21T16:56:08.611021'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.94 seconds'
+
+

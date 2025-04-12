@@ -1,0 +1,162 @@
+---
+timestamp: '2025-03-06T17:04:30.111933'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary-ff
+        relax-prec-delete lp033/mystery__pprob14-err-rate-0-5.yaml
+    instance_id: mystery__pprob14-err-rate-0-5
+    search_algorithm: g_astar
+    plan_length: 11
+    domain_class: mystery
+    instance_name: pprob14-err-rate-0-5
+    ground_plan:
+    - (feast rest scallop lettuce quebec bavaria)
+    - (feast rest lettuce pistachio arizona pennsylvania)
+    - (overcome anxiety-25 rest pistachio vulcan jupiter)
+    - (overcome prostatitis-23 rest pistachio mars vulcan)
+    - (feast rest pistachio lettuce alsace arizona)
+    - (feast rest lettuce scallop alsace arizona)
+    - (feast rest scallop scallion surrey quebec)
+    - (feast rest scallion shrimp pennsylvania surrey)
+    - (feast rest shrimp potato pennsylvania surrey)
+    - (succumb anxiety-25 rest potato mars vulcan)
+    - (succumb prostatitis-23 rest potato vulcan jupiter)
+    lifted_plan:
+    -   - feast
+        - rest
+        - scallop
+        - lettuce
+        - ?quebec
+        - bavaria
+    -   - feast
+        - rest
+        - lettuce
+        - ?pistachio
+        - arizona
+        - pennsylvania
+    -   - overcome
+        - anxiety-25
+        - rest
+        - ?pistachio
+        - vulcan
+        - jupiter
+    -   - overcome
+        - ?prostatitis-23
+        - rest
+        - pistachio
+        - mars
+        - vulcan
+    -   - feast
+        - ?rest
+        - pistachio
+        - lettuce
+        - alsace
+        - arizona
+    -   - feast
+        - ?rest
+        - lettuce
+        - scallop
+        - alsace
+        - arizona
+    -   - feast
+        - rest
+        - scallop
+        - ?scallion
+        - surrey
+        - quebec
+    -   - feast
+        - ?rest
+        - scallion
+        - shrimp
+        - pennsylvania
+        - surrey
+    -   - feast
+        - ?rest
+        - shrimp
+        - potato
+        - ?pennsylvania
+        - ?surrey
+    -   - succumb
+        - anxiety-25
+        - ?rest
+        - potato
+        - ?mars
+        - vulcan
+    -   - succumb
+        - prostatitis-23
+        - rest
+        - ?potato
+        - ?vulcan
+        - jupiter
+
+
+---
+timestamp: '2025-03-06T17:04:30.118158'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'overcome,(fears ?c ?v),effPos,1
+
+        succumb,(harmony ?v ?s2),effPos,1'
+
+
+---
+timestamp: '2025-03-06T17:04:45.043727'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 27
+    fring_size: 1
+    num_nodes_generated: 28
+    sum_h_cost: 192
+    sum_f_cost: 101
+    sum_h_cost_time: 12.00327754020691
+    sum_grounding_time: 2.0344886779785156
+    h_max: 4
+    current_node:
+        depth: 11
+        ground_actions:
+        - (feast rest scallop lettuce quebec bavaria)
+        - (feast rest lettuce pistachio arizona pennsylvania)
+        - (overcome anxiety-25 rest pistachio vulcan jupiter)
+        - (overcome prostatitis-23 rest pistachio mars vulcan)
+        - (feast rest pistachio lettuce alsace arizona)
+        - (feast rest lettuce scallop alsace arizona)
+        - (feast rest scallop scallion surrey quebec)
+        - (feast rest scallion shrimp pennsylvania surrey)
+        - (feast rest shrimp potato pennsylvania surrey)
+        - (succumb anxiety-25 rest potato mars vulcan)
+        - (succumb prostatitis-23 rest potato vulcan jupiter)
+        repair_set: 'overcome,(fears ?c ?v),effPos,1
+
+            succumb,(harmony ?v ?s2),effPos,1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-06T17:04:45.045650'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '16.26'
+
+
+---
+timestamp: '2025-03-06T17:04:45.089526'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 16.67 seconds'
+
+

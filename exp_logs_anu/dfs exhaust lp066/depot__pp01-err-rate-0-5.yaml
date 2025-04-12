@@ -1,0 +1,97 @@
+---
+timestamp: '2025-03-03T12:29:13.384673'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_debug/dfs
+        exhast lp066/depot__pp01-err-rate-0-5.yaml
+    instance_id: depot__pp01-err-rate-0-5
+    search_algorithm: dfs
+    plan_length: 10
+    domain_class: depot
+    instance_name: pp01-err-rate-0-5
+    ground_plan:
+    - (lift hoist0 crate1 pallet0 depot0)
+    - (load hoist0 crate1 truck1 depot0)
+    - (drive truck1 depot0 distributor0)
+    - (lift hoist1 crate0 pallet1 distributor0)
+    - (load hoist1 crate0 truck1 distributor0)
+    - (unload hoist1 crate1 truck1 distributor0)
+    - (drive truck1 distributor0 distributor1)
+    - (unload hoist2 crate0 truck1 distributor1)
+    - (drop hoist1 crate1 pallet1 distributor0)
+    - (drop hoist2 crate0 pallet2 distributor1)
+    lifted_plan:
+    -   - lift
+        - hoist0
+        - crate1
+        - ?pallet0
+        - ?depot0
+    -   - load
+        - ?hoist0
+        - ?crate1
+        - truck1
+        - ?depot0
+    -   - drive
+        - ?truck1
+        - ?depot0
+        - distributor0
+    -   - lift
+        - ?hoist1
+        - ?crate0
+        - pallet1
+        - ?distributor0
+    -   - load
+        - ?hoist1
+        - crate0
+        - truck1
+        - distributor0
+    -   - unload
+        - hoist1
+        - ?crate1
+        - truck1
+        - distributor0
+    -   - drive
+        - truck1
+        - ?distributor0
+        - ?distributor1
+    -   - unload
+        - ?hoist2
+        - ?crate0
+        - truck1
+        - distributor1
+    -   - drop
+        - ?hoist1
+        - crate1
+        - ?pallet1
+        - distributor0
+    -   - drop
+        - ?hoist2
+        - ?crate0
+        - pallet2
+        - ?distributor1
+
+
+---
+timestamp: '2025-03-03T12:29:13.389317'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 3
+    repair: 'drive,(at ?x ?z),effPos,1
+
+        unload,(in ?y ?z),precPos,-1
+
+        drop,(clear ?z),precPos,-1'
+
+
+---
+timestamp: '2025-03-03T12:44:12.309225'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+

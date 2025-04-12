@@ -1,0 +1,185 @@
+---
+timestamp: '2025-01-19T22:51:51.932727'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary-ff
+        relax-prec lp1/freecell__pprobfreecell-3-4-err-rate-0-1.yaml
+    instance_id: freecell__pprobfreecell-3-4-err-rate-0-1
+    search_algorithm: astar
+    plan_length: 12
+    domain_class: freecell
+    instance_name: pprobfreecell-3-4-err-rate-0-1
+    ground_plan:
+    - (sendtohome-b ha h n1 h0 n0 n1 n2)
+    - (sendtohome-b ca c n1 c0 n0 n2 n3)
+    - (sendtohome da d2 d n1 d0 n0)
+    - (sendtohome sa d3 s n1 s0 n0)
+    - (sendtohome h2 s2 h n2 ha n1)
+    - (sendtohome-b c2 c n2 ca n1 n3 n4)
+    - (sendtohome c3 s3 c n3 c2 n2)
+    - (sendtohome d2 h3 d n2 da n1)
+    - (sendtohome-b d3 d n3 d2 n2 n4 n5)
+    - (sendtohome-b h3 h n3 h2 n2 n5 n6)
+    - (sendtohome-b s2 s n2 sa n1 n6 n7)
+    - (sendtohome-b s3 s n3 s2 n2 n7 n8)
+    lifted_plan:
+    -   - sendtohome-b
+        - ?ha
+        - ?h
+        - ?n1
+        - ?h0
+        - ?n0
+        - ?n1
+        - ?n2
+    -   - sendtohome-b
+        - ?ca
+        - ?c
+        - ?n1
+        - ?c0
+        - ?n0
+        - ?n2
+        - ?n3
+    -   - sendtohome
+        - ?da
+        - ?d2
+        - ?d
+        - ?n1
+        - ?d0
+        - ?n0
+    -   - sendtohome
+        - ?sa
+        - ?d3
+        - ?s
+        - ?n1
+        - ?s0
+        - ?n0
+    -   - sendtohome
+        - ?h2
+        - ?s2
+        - ?h
+        - ?n2
+        - ?ha
+        - ?n1
+    -   - sendtohome-b
+        - ?c2
+        - ?c
+        - ?n2
+        - ?ca
+        - ?n1
+        - ?n3
+        - ?n4
+    -   - sendtohome
+        - ?c3
+        - ?s3
+        - ?c
+        - ?n3
+        - ?c2
+        - ?n2
+    -   - sendtohome
+        - ?d2
+        - ?h3
+        - ?d
+        - ?n2
+        - ?da
+        - ?n1
+    -   - sendtohome-b
+        - ?d3
+        - ?d
+        - ?n3
+        - ?d2
+        - ?n2
+        - ?n4
+        - ?n5
+    -   - sendtohome-b
+        - ?h3
+        - ?h
+        - ?n3
+        - ?h2
+        - ?n2
+        - ?n5
+        - ?n6
+    -   - sendtohome-b
+        - ?s2
+        - ?s
+        - ?n2
+        - ?sa
+        - ?n1
+        - ?n6
+        - ?n7
+    -   - sendtohome-b
+        - ?s3
+        - ?s
+        - ?n3
+        - ?s2
+        - ?n2
+        - ?n7
+        - ?n8
+
+
+---
+timestamp: '2025-01-19T22:51:51.938964'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-19T22:51:54.829705'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 15
+    fring_size: 10
+    num_nodes_generated: 25
+    sum_h_cost: 0
+    sum_f_cost: 0
+    sum_h_cost_time: 1.3115260601043701
+    sum_grounding_time: 0.5019071102142334
+    h_max: 0
+    current_node:
+        depth: 12
+        ground_actions:
+        - (sendtohome-b ha h n1 h0 n0 n1 n2)
+        - (sendtohome-b ca c n1 c0 n0 n2 n3)
+        - (sendtohome sa d3 s n1 s0 n0)
+        - (sendtohome h2 s2 h n2 ha n1)
+        - (sendtohome da d2 d n1 d0 n0)
+        - (sendtohome-b c2 c n2 ca n1 n3 n4)
+        - (sendtohome c3 s3 c n3 c2 n2)
+        - (sendtohome d2 h3 d n2 da n1)
+        - (sendtohome-b s2 s n2 sa n1 n4 n5)
+        - (sendtohome-b h3 h n3 h2 n2 n5 n6)
+        - (sendtohome-b s3 s n3 s2 n2 n6 n7)
+        - (sendtohome-b d3 d n3 d2 n2 n7 n8)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-19T22:51:54.832281'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '5.64'
+
+
+---
+timestamp: '2025-01-19T22:51:54.865814'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 6.21 seconds'
+
+

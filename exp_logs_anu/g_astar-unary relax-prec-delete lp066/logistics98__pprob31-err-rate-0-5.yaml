@@ -1,0 +1,166 @@
+---
+timestamp: '2025-03-12T16:45:51.089546'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary
+        relax-prec-delete lp066/logistics98__pprob31-err-rate-0-5.yaml
+    instance_id: logistics98__pprob31-err-rate-0-5
+    search_algorithm: g_astar
+    plan_length: 14
+    domain_class: logistics98
+    instance_name: pprob31-err-rate-0-5
+    ground_plan:
+    - (load-truck package1 truck4 city4-1)
+    - (drive-truck truck4 city4-1 city4-2 city4)
+    - (unload-truck package1 truck4 city4-2)
+    - (load-truck package3 truck1 city1-1)
+    - (fly-airplane plane1 city2-2 city3-2)
+    - (drive-truck truck1 city1-1 city1-2 city1)
+    - (unload-truck package3 truck1 city1-2)
+    - (load-truck package2 truck1 city1-2)
+    - (drive-truck truck1 city1-2 city1-1 city1)
+    - (unload-truck package2 truck1 city1-1)
+    - (fly-airplane plane1 city3-2 city4-2)
+    - (load-airplane package1 plane1 city4-2)
+    - (fly-airplane plane1 city4-2 city3-2)
+    - (unload-airplane package1 plane1 city3-2)
+    lifted_plan:
+    -   - load-truck
+        - package1
+        - truck4
+        - ?city4-1
+    -   - drive-truck
+        - ?truck4
+        - ?city4-1
+        - ?city4-2
+        - city4
+    -   - unload-truck
+        - ?package1
+        - ?truck4
+        - ?city4-2
+    -   - load-truck
+        - package3
+        - ?truck1
+        - ?city1-1
+    -   - fly-airplane
+        - plane1
+        - ?city2-2
+        - ?city3-2
+    -   - drive-truck
+        - truck1
+        - city1-1
+        - city1-2
+        - city1
+    -   - unload-truck
+        - ?package3
+        - truck1
+        - city1-2
+    -   - load-truck
+        - package2
+        - ?truck1
+        - ?city1-2
+    -   - drive-truck
+        - ?truck1
+        - ?city1-2
+        - city1-1
+        - city1
+    -   - unload-truck
+        - ?package2
+        - truck1
+        - ?city1-1
+    -   - fly-airplane
+        - plane1
+        - ?city3-2
+        - ?city4-2
+    -   - load-airplane
+        - package1
+        - ?plane1
+        - city4-2
+    -   - fly-airplane
+        - plane1
+        - ?city4-2
+        - ?city3-2
+    -   - unload-airplane
+        - package1
+        - ?plane1
+        - ?city3-2
+
+
+---
+timestamp: '2025-03-12T16:45:51.094382'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 3
+    repair: 'load-truck,(in ?truck ?truck),precPos,-1
+
+        fly-airplane,(in ?loc-to ?loc-to),effPos,1
+
+        fly-airplane,(equality-op ?airplane ?loc-to),precPos,-1'
+
+
+---
+timestamp: '2025-03-12T16:51:04.967433'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 3996
+    fring_size: 0
+    num_nodes_generated: 3996
+    sum_h_cost: 81140
+    sum_f_cost: 56499
+    sum_h_cost_time: 189.7585253715515
+    sum_grounding_time: 101.33982849121094
+    h_max: 42
+    current_node:
+        depth: 11
+        ground_actions:
+        - (load-truck package1 truck4 city4-1)
+        - (drive-truck truck4 city4-1 city4-1 city4)
+        - (unload-truck package1 truck4 city4-1)
+        - (load-truck package3 truck1 city1-1)
+        - (fly-airplane plane1 city2-2 city5-2)
+        - (drive-truck truck1 city1-1 city1-2 city1)
+        - (unload-truck package3 truck1 city1-2)
+        - (load-truck package2 truck1 city1-2)
+        - (drive-truck truck1 city1-1 city1-1 city1)
+        - (unload-truck package3 truck1 city1-1)
+        - (fly-airplane plane1 city2-2 city5-2)
+        repair_set: 'fly-airplane,(at ?airplane ?loc-from),precPos,-1
+
+            load-truck,(in ?truck ?truck),precPos,-1
+
+            fly-airplane,(equality-op ?airplane ?loc-to),precPos,-1
+
+            unload-truck,(in ?obj ?truck),effPos,1
+
+            drive-truck,(at ?truck ?loc-from),effPos,1'
+        g_cost: 5
+        h_cost: 9
+        f_cost: 14
+        next_lifted_action: '[''load-airplane'', ''package1'', ''?plane1'', ''city4-2'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-12T16:51:04.969641'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '315.25'
+
+
+---
+timestamp: '2025-03-12T16:51:05.004548'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 315.75 seconds'
+
+

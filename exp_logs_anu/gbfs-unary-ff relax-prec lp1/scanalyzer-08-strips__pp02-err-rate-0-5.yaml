@@ -1,0 +1,161 @@
+---
+timestamp: '2025-01-20T00:41:28.182240'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-prec lp1/scanalyzer-08-strips__pp02-err-rate-0-5.yaml
+    instance_id: scanalyzer-08-strips__pp02-err-rate-0-5
+    search_algorithm: greedy
+    plan_length: 14
+    domain_class: scanalyzer-08-strips
+    instance_name: pp02-err-rate-0-5
+    ground_plan:
+    - (analyze-2 seg-in-1 seg-out-1 car-in-1 car-out-1)
+    - (analyze-2 seg-in-1 seg-out-1 car-out-1 car-in-1)
+    - (analyze-2 seg-in-2 seg-out-1 car-in-2 car-out-1)
+    - (analyze-2 seg-in-2 seg-out-1 car-out-1 car-in-2)
+    - (analyze-2 seg-in-3 seg-out-1 car-in-3 car-out-1)
+    - (analyze-2 seg-in-3 seg-out-1 car-out-1 car-in-3)
+    - (rotate-2 seg-in-1 seg-out-2 car-in-1 car-out-2)
+    - (analyze-2 seg-in-1 seg-out-1 car-out-2 car-out-1)
+    - (analyze-2 seg-in-1 seg-out-1 car-out-1 car-out-2)
+    - (rotate-2 seg-in-1 seg-out-2 car-out-2 car-in-1)
+    - (rotate-2 seg-in-1 seg-out-3 car-in-1 car-out-3)
+    - (analyze-2 seg-in-1 seg-out-1 car-out-3 car-out-1)
+    - (analyze-2 seg-in-1 seg-out-1 car-out-1 car-out-3)
+    - (rotate-2 seg-in-1 seg-out-3 car-out-3 car-in-1)
+    lifted_plan:
+    -   - analyze-2
+        - ?seg-in-1
+        - ?seg-out-1
+        - ?car-in-1
+        - ?car-out-1
+    -   - analyze-2
+        - ?seg-in-1
+        - ?seg-out-1
+        - ?car-out-1
+        - ?car-in-1
+    -   - analyze-2
+        - ?seg-in-2
+        - ?seg-out-1
+        - ?car-in-2
+        - ?car-out-1
+    -   - analyze-2
+        - ?seg-in-2
+        - ?seg-out-1
+        - ?car-out-1
+        - ?car-in-2
+    -   - analyze-2
+        - ?seg-in-3
+        - ?seg-out-1
+        - ?car-in-3
+        - ?car-out-1
+    -   - analyze-2
+        - ?seg-in-3
+        - ?seg-out-1
+        - ?car-out-1
+        - ?car-in-3
+    -   - rotate-2
+        - ?seg-in-1
+        - ?seg-out-2
+        - ?car-in-1
+        - ?car-out-2
+    -   - analyze-2
+        - ?seg-in-1
+        - ?seg-out-1
+        - ?car-out-2
+        - ?car-out-1
+    -   - analyze-2
+        - ?seg-in-1
+        - ?seg-out-1
+        - ?car-out-1
+        - ?car-out-2
+    -   - rotate-2
+        - ?seg-in-1
+        - ?seg-out-2
+        - ?car-out-2
+        - ?car-in-1
+    -   - rotate-2
+        - ?seg-in-1
+        - ?seg-out-3
+        - ?car-in-1
+        - ?car-out-3
+    -   - analyze-2
+        - ?seg-in-1
+        - ?seg-out-1
+        - ?car-out-3
+        - ?car-out-1
+    -   - analyze-2
+        - ?seg-in-1
+        - ?seg-out-1
+        - ?car-out-1
+        - ?car-out-3
+    -   - rotate-2
+        - ?seg-in-1
+        - ?seg-out-3
+        - ?car-out-3
+        - ?car-in-1
+
+
+---
+timestamp: '2025-01-20T00:41:28.186941'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: rotate-2,(cycle-2-with-analysis ?s2 ?s1),precPos,-1
+
+
+---
+timestamp: '2025-01-20T00:44:23.872700'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 1093
+    fring_size: 0
+    num_nodes_generated: 1093
+    sum_h_cost: 3642
+    sum_f_cost: 1821
+    sum_h_cost_time: 148.8688440322876
+    sum_grounding_time: 22.226056337356567
+    h_max: 2
+    current_node:
+        depth: 6
+        ground_actions:
+        - (analyze-2 seg-in-2 seg-out-1 car-in-2 car-out-1)
+        - (analyze-2 seg-in-2 seg-out-1 car-out-1 car-in-2)
+        - (analyze-2 seg-in-3 seg-out-1 car-in-3 car-out-1)
+        - (analyze-2 seg-in-2 seg-out-1 car-in-2 car-in-3)
+        - (analyze-2 seg-in-3 seg-out-1 car-out-1 car-in-2)
+        - (analyze-2 seg-in-3 seg-out-1 car-in-2 car-out-1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 2
+        f_cost: 2
+        next_lifted_action: '[''rotate-2'', ''?seg-in-1'', ''?seg-out-2'', ''?car-in-1'',
+            ''?car-out-2'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-20T00:44:23.875099'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '176.89'
+
+
+---
+timestamp: '2025-01-20T00:44:23.918028'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 177.26 seconds'
+
+

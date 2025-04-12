@@ -1,0 +1,125 @@
+---
+timestamp: '2025-03-02T15:28:52.889715'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_debug/bfs
+        exhast lp1/mprime__pprob32-err-rate-0-3.yaml
+    instance_id: mprime__pprob32-err-rate-0-3
+    search_algorithm: bfs
+    plan_length: 8
+    domain_class: mprime
+    instance_name: pprob32-err-rate-0-3
+    ground_plan:
+    - (feast satiety pepper pork alsace goias)
+    - (feast excitement yogurt cantelope goias kentucky)
+    - (feast satiety pork cucumber alsace goias)
+    - (overcome sciatica satiety cucumber neptune uranus)
+    - (feast satiety cucumber sweetroll goias kentucky)
+    - (feast satiety sweetroll yogurt alsace goias)
+    - (feast satiety yogurt cantelope alsace goias)
+    - (succumb sciatica satiety cantelope neptune uranus)
+    lifted_plan:
+    -   - feast
+        - ?satiety
+        - ?pepper
+        - ?pork
+        - ?alsace
+        - ?goias
+    -   - feast
+        - ?excitement
+        - ?yogurt
+        - ?cantelope
+        - ?goias
+        - ?kentucky
+    -   - feast
+        - ?satiety
+        - ?pork
+        - ?cucumber
+        - ?alsace
+        - ?goias
+    -   - overcome
+        - ?sciatica
+        - ?satiety
+        - ?cucumber
+        - ?neptune
+        - ?uranus
+    -   - feast
+        - ?satiety
+        - ?cucumber
+        - ?sweetroll
+        - ?goias
+        - ?kentucky
+    -   - feast
+        - ?satiety
+        - ?sweetroll
+        - ?yogurt
+        - ?alsace
+        - ?goias
+    -   - feast
+        - ?satiety
+        - ?yogurt
+        - ?cantelope
+        - ?alsace
+        - ?goias
+    -   - succumb
+        - ?sciatica
+        - ?satiety
+        - ?cantelope
+        - ?neptune
+        - ?uranus
+
+
+---
+timestamp: '2025-03-02T15:28:52.894031'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-03-02T15:35:44.346702'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data:
+    error_type: MemoryError
+    error_message: 'Command ''[''/home/projects/u7899572/conda-envs/main/bin/python3'',
+        ''instance_solver.py'', ''bfs'', ''/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1'',
+        ''/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_debug/bfs
+        exhast lp1/mprime__pprob32-err-rate-0-3.yaml'', ''1000000'', ''mprime__pprob32-err-rate-0-3'',
+        ''1.0'', ''unary'']'' died with <Signals.SIGABRT: 6>.'
+    stack_trace: "Traceback (most recent call last):\n  File \"batch_solver.py\",\
+        \ line 126, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
+        \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/subprocess.py\"\
+        , line 516, in run\n    raise CalledProcessError(retcode, process.args,\n\
+        subprocess.CalledProcessError: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',\
+        \ 'instance_solver.py', 'bfs', '/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1',\
+        \ '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_debug/bfs\
+        \ exhast lp1/mprime__pprob32-err-rate-0-3.yaml', '1000000', 'mprime__pprob32-err-rate-0-3',\
+        \ '1.0', 'unary']' died with <Signals.SIGABRT: 6>.\n"
+    instance_id: mprime__pprob32-err-rate-0-3
+    process_info:
+        cmd:
+        - /home/projects/u7899572/conda-envs/main/bin/python3
+        - instance_solver.py
+        - bfs
+        - /home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1
+        - /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_debug/bfs
+            exhast lp1/mprime__pprob32-err-rate-0-3.yaml
+        - '1000000'
+        - mprime__pprob32-err-rate-0-3
+        - '1.0'
+        - unary
+        duration: '413.48'
+        python_executable: /home/projects/u7899572/conda-envs/main/bin/python3
+    stdout: ''
+    stderr: 'terminate called after throwing an instance of ''Minisat22::OutOfMemoryException''
+
+        '
+
+

@@ -1,0 +1,122 @@
+---
+timestamp: '2025-03-12T14:28:01.438933'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary
+        relax-prec lp033/mystery__pprob19-err-rate-0-5.yaml
+    instance_id: mystery__pprob19-err-rate-0-5
+    search_algorithm: g_astar
+    plan_length: 6
+    domain_class: mystery
+    instance_name: pprob19-err-rate-0-5
+    ground_plan:
+    - (feast lubricity lemon beef bavaria manitoba)
+    - (overcome abrasion lubricity beef saturn earth)
+    - (feast lubricity beef lamb pennsylvania oregon)
+    - (feast lubricity lamb haroset goias bosnia)
+    - (feast lubricity haroset lobster bavaria manitoba)
+    - (succumb abrasion lubricity lobster saturn earth)
+    lifted_plan:
+    -   - feast
+        - lubricity
+        - lemon
+        - beef
+        - ?bavaria
+        - manitoba
+    -   - overcome
+        - abrasion
+        - lubricity
+        - ?beef
+        - saturn
+        - earth
+    -   - feast
+        - lubricity
+        - beef
+        - ?lamb
+        - pennsylvania
+        - oregon
+    -   - feast
+        - ?lubricity
+        - lamb
+        - haroset
+        - goias
+        - bosnia
+    -   - feast
+        - ?lubricity
+        - haroset
+        - lobster
+        - bavaria
+        - manitoba
+    -   - succumb
+        - ?abrasion
+        - lubricity
+        - lobster
+        - saturn
+        - earth
+
+
+---
+timestamp: '2025-03-12T14:28:01.443356'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'succumb,(craves ?c ?n),effPos,1
+
+        overcome,(fears ?c ?v),effPos,1'
+
+
+---
+timestamp: '2025-03-12T14:28:03.308345'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 8
+    fring_size: 3
+    num_nodes_generated: 11
+    sum_h_cost: 104
+    sum_f_cost: 54
+    sum_h_cost_time: 0.9490845203399658
+    sum_grounding_time: 0.3565378189086914
+    h_max: 6
+    current_node:
+        depth: 6
+        ground_actions:
+        - (feast lubricity lemon beef bavaria manitoba)
+        - (overcome abrasion lubricity beef saturn earth)
+        - (feast lubricity beef lamb pennsylvania oregon)
+        - (feast lubricity lamb haroset goias bosnia)
+        - (feast lubricity haroset lobster bavaria manitoba)
+        - (succumb abrasion lubricity lobster saturn earth)
+        repair_set: 'succumb,(craves ?c ?n),effPos,1
+
+            overcome,(fears ?c ?v),effPos,1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-12T14:28:03.309773'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '3.00'
+
+
+---
+timestamp: '2025-03-12T14:28:03.339725'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 3.40 seconds'
+
+

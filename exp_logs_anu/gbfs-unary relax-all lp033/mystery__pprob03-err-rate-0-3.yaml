@@ -1,0 +1,106 @@
+---
+timestamp: '2025-01-22T12:48:45.975787'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary
+        relax-all lp033/mystery__pprob03-err-rate-0-3.yaml
+    instance_id: mystery__pprob03-err-rate-0-3
+    search_algorithm: greedy
+    plan_length: 4
+    domain_class: mystery
+    instance_name: pprob03-err-rate-0-3
+    ground_plan:
+    - (feast love orange chocolate guanabara bavaria)
+    - (overcome hangover love chocolate venus neptune)
+    - (feast love chocolate ham goias guanabara)
+    - (succumb hangover love ham venus neptune)
+    lifted_plan:
+    -   - feast
+        - love
+        - orange
+        - chocolate
+        - ?guanabara
+        - bavaria
+    -   - overcome
+        - hangover
+        - love
+        - ?chocolate
+        - venus
+        - neptune
+    -   - feast
+        - love
+        - chocolate
+        - ?ham
+        - goias
+        - guanabara
+    -   - succumb
+        - ?hangover
+        - love
+        - ham
+        - venus
+        - neptune
+
+
+---
+timestamp: '2025-01-22T12:48:45.980435'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: succumb,(craves ?c ?n),effPos,1
+
+
+---
+timestamp: '2025-01-22T12:56:05.556435'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 5
+    fring_size: 90
+    num_nodes_generated: 95
+    sum_h_cost: 2
+    sum_f_cost: 1
+    sum_h_cost_time: 0.06389737129211426
+    sum_grounding_time: 436.82373094558716
+    h_max: 1
+    current_node:
+        depth: 4
+        ground_actions:
+        - (feast love orange chocolate guanabara bavaria)
+        - (overcome hangover love pea venus neptune)
+        - (feast love chocolate ham goias guanabara)
+        - (succumb hangover love ham venus neptune)
+        repair_set: 'succumb,(craves ?c ?n),effPos,1
+
+            overcome,(craves ?v ?n),precPos,-1
+
+            overcome,(craves ?c ?n),precPos,-1'
+        g_cost: 3
+        h_cost: 0
+        f_cost: 3
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-22T12:56:05.566799'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '440.92'
+
+
+---
+timestamp: '2025-01-22T12:56:05.659102'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 441.27 seconds'
+
+

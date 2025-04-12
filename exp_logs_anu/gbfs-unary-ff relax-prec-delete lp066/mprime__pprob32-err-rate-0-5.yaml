@@ -1,0 +1,132 @@
+---
+timestamp: '2025-01-20T04:13:12.036267'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-prec-delete lp066/mprime__pprob32-err-rate-0-5.yaml
+    instance_id: mprime__pprob32-err-rate-0-5
+    search_algorithm: greedy
+    plan_length: 8
+    domain_class: mprime
+    instance_name: pprob32-err-rate-0-5
+    ground_plan:
+    - (feast satiety pepper pork alsace goias)
+    - (feast excitement yogurt cantelope goias kentucky)
+    - (feast satiety pork cucumber alsace goias)
+    - (overcome sciatica satiety cucumber neptune uranus)
+    - (feast satiety cucumber sweetroll goias kentucky)
+    - (feast satiety sweetroll yogurt alsace goias)
+    - (feast satiety yogurt cantelope alsace goias)
+    - (succumb sciatica satiety cantelope neptune uranus)
+    lifted_plan:
+    -   - feast
+        - satiety
+        - pepper
+        - ?pork
+        - ?alsace
+        - ?goias
+    -   - feast
+        - ?excitement
+        - yogurt
+        - ?cantelope
+        - ?goias
+        - ?kentucky
+    -   - feast
+        - satiety
+        - ?pork
+        - ?cucumber
+        - alsace
+        - ?goias
+    -   - overcome
+        - ?sciatica
+        - satiety
+        - cucumber
+        - neptune
+        - uranus
+    -   - feast
+        - ?satiety
+        - cucumber
+        - sweetroll
+        - goias
+        - ?kentucky
+    -   - feast
+        - ?satiety
+        - ?sweetroll
+        - ?yogurt
+        - alsace
+        - goias
+    -   - feast
+        - ?satiety
+        - yogurt
+        - ?cantelope
+        - alsace
+        - ?goias
+    -   - succumb
+        - ?sciatica
+        - satiety
+        - ?cantelope
+        - neptune
+        - uranus
+
+
+---
+timestamp: '2025-01-20T04:13:12.040288'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: feast,(craves ?v ?n2),effPos,1
+
+
+---
+timestamp: '2025-01-20T04:13:16.516770'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 28
+    fring_size: 0
+    num_nodes_generated: 28
+    sum_h_cost: 54
+    sum_f_cost: 27
+    sum_h_cost_time: 3.3297536373138428
+    sum_grounding_time: 1.0036060810089111
+    h_max: 3
+    current_node:
+        depth: 3
+        ground_actions:
+        - (feast satiety pepper cantelope alsace goias)
+        - (feast excitement yogurt sweetroll goias kentucky)
+        - (feast satiety pepper cantelope alsace goias)
+        repair_set: 'feast,(locale ?n1 ?l2),effPos,1
+
+            feast,(not (craves ?v ?n1)),effNeg,-1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: '[''overcome'', ''?sciatica'', ''satiety'', ''cucumber'',
+            ''neptune'', ''uranus'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-20T04:13:16.518083'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '5.62'
+
+
+---
+timestamp: '2025-01-20T04:13:16.567077'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 5.91 seconds'
+
+

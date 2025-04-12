@@ -1,0 +1,65 @@
+---
+timestamp: '2025-01-22T14:07:45.736143'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-all lp1/mystery__pprob25-err-rate-0-5.yaml
+    instance_id: mystery__pprob25-err-rate-0-5
+    search_algorithm: greedy
+    plan_length: 4
+    domain_class: mystery
+    instance_name: pprob25-err-rate-0-5
+    ground_plan:
+    - (feast expectation tuna wurst kentucky bavaria)
+    - (overcome depression expectation wurst jupiter uranus)
+    - (feast expectation wurst chicken kentucky bavaria)
+    - (succumb depression expectation chicken jupiter uranus)
+    lifted_plan:
+    -   - feast
+        - ?expectation
+        - ?tuna
+        - ?wurst
+        - ?kentucky
+        - ?bavaria
+    -   - overcome
+        - ?depression
+        - ?expectation
+        - ?wurst
+        - ?jupiter
+        - ?uranus
+    -   - feast
+        - ?expectation
+        - ?wurst
+        - ?chicken
+        - ?kentucky
+        - ?bavaria
+    -   - succumb
+        - ?depression
+        - ?expectation
+        - ?chicken
+        - ?jupiter
+        - ?uranus
+
+
+---
+timestamp: '2025-01-22T14:07:45.739859'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'overcome,(equality-op ?c ?s1),precPos,-1
+
+        feast,(equality-op ?l2 ?v),precPos,-1'
+
+
+---
+timestamp: '2025-01-22T14:22:44.487076'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+

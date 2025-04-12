@@ -1,0 +1,152 @@
+---
+timestamp: '2025-01-20T08:13:32.493251'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs
+        relax-prec-delete lp1/rovers__pp03-err-rate-0-5.yaml
+    instance_id: rovers__pp03-err-rate-0-5
+    search_algorithm: bfs
+    plan_length: 12
+    domain_class: rovers
+    instance_name: pp03-err-rate-0-5
+    ground_plan:
+    - (navigate rover1 waypoint3 waypoint0)
+    - (calibrate rover1 camera1 objective0 waypoint0)
+    - (take_image rover1 waypoint0 objective0 camera1 colour)
+    - (navigate rover1 waypoint0 waypoint3)
+    - (navigate rover1 waypoint3 waypoint2)
+    - (communicate_image_data rover1 general objective0 colour waypoint2 waypoint0)
+    - (sample_soil rover1 rover1store waypoint2)
+    - (communicate_soil_data rover1 general waypoint2 waypoint2 waypoint0)
+    - (navigate rover0 waypoint1 waypoint0)
+    - (sample_rock rover0 rover0store waypoint0)
+    - (navigate rover0 waypoint0 waypoint1)
+    - (communicate_rock_data rover0 general waypoint0 waypoint1 waypoint0)
+    lifted_plan:
+    -   - navigate
+        - ?rover1
+        - ?waypoint3
+        - ?waypoint0
+    -   - calibrate
+        - ?rover1
+        - ?camera1
+        - ?objective0
+        - ?waypoint0
+    -   - take_image
+        - ?rover1
+        - ?waypoint0
+        - ?objective0
+        - ?camera1
+        - ?colour
+    -   - navigate
+        - ?rover1
+        - ?waypoint0
+        - ?waypoint3
+    -   - navigate
+        - ?rover1
+        - ?waypoint3
+        - ?waypoint2
+    -   - communicate_image_data
+        - ?rover1
+        - ?general
+        - ?objective0
+        - ?colour
+        - ?waypoint2
+        - ?waypoint0
+    -   - sample_soil
+        - ?rover1
+        - ?rover1store
+        - ?waypoint2
+    -   - communicate_soil_data
+        - ?rover1
+        - ?general
+        - ?waypoint2
+        - ?waypoint2
+        - ?waypoint0
+    -   - navigate
+        - ?rover0
+        - ?waypoint1
+        - ?waypoint0
+    -   - sample_rock
+        - ?rover0
+        - ?rover0store
+        - ?waypoint0
+    -   - navigate
+        - ?rover0
+        - ?waypoint0
+        - ?waypoint1
+    -   - communicate_rock_data
+        - ?rover0
+        - ?general
+        - ?waypoint0
+        - ?waypoint1
+        - ?waypoint0
+
+
+---
+timestamp: '2025-01-20T08:13:32.498065'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: communicate_image_data,(have_image ?r ?o ?m),precPos,-1
+
+
+---
+timestamp: '2025-01-20T08:13:55.110126'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 323
+    fring_size: 2647
+    num_nodes_generated: 2970
+    sum_h_cost: 0
+    sum_f_cost: 4114
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 11.253920316696167
+    h_max: 0
+    current_node:
+        depth: 12
+        ground_actions:
+        - (navigate rover1 waypoint3 waypoint2)
+        - (calibrate rover0 camera0 objective1 waypoint1)
+        - (take_image rover0 waypoint1 objective0 camera0 low_res)
+        - (navigate rover0 waypoint1 waypoint0)
+        - (navigate rover0 waypoint0 waypoint1)
+        - (communicate_image_data rover0 general objective0 colour waypoint1 waypoint0)
+        - (sample_soil rover1 rover1store waypoint2)
+        - (communicate_soil_data rover1 general waypoint2 waypoint2 waypoint0)
+        - (navigate rover0 waypoint1 waypoint0)
+        - (sample_rock rover0 rover0store waypoint0)
+        - (navigate rover0 waypoint0 waypoint1)
+        - (communicate_rock_data rover0 general waypoint0 waypoint1 waypoint0)
+        repair_set: communicate_image_data,(have_image ?r ?o ?m),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-20T08:13:55.306947'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '23.98'
+
+
+---
+timestamp: '2025-01-20T08:13:55.420286'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 24.38 seconds'
+
+

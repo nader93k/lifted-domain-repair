@@ -1,0 +1,120 @@
+---
+timestamp: '2025-03-02T17:50:51.006300'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_debug/bfs
+        exhast lp066/blocks__pprobBLOCKS-5-1-err-rate-0-3.yaml
+    instance_id: blocks__pprobBLOCKS-5-1-err-rate-0-3
+    search_algorithm: bfs
+    plan_length: 10
+    domain_class: blocks
+    instance_name: pprobBLOCKS-5-1-err-rate-0-3
+    ground_plan:
+    - (unstack b a)
+    - (put-down b)
+    - (unstack a d)
+    - (stack a e)
+    - (pick-up b)
+    - (stack b a)
+    - (pick-up c)
+    - (stack c b)
+    - (pick-up d)
+    - (stack d c)
+    lifted_plan:
+    -   - unstack
+        - b
+        - a
+    -   - put-down
+        - ?b
+    -   - unstack
+        - ?a
+        - ?d
+    -   - stack
+        - ?a
+        - e
+    -   - pick-up
+        - ?b
+    -   - stack
+        - ?b
+        - ?a
+    -   - pick-up
+        - c
+    -   - stack
+        - ?c
+        - ?b
+    -   - pick-up
+        - d
+    -   - stack
+        - ?d
+        - ?c
+
+
+---
+timestamp: '2025-03-02T17:50:51.009103'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'stack,(on ?x ?y),effPos,1
+
+        unstack,(holding ?x),effPos,1'
+
+
+---
+timestamp: '2025-03-02T17:50:59.632260'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 280
+    fring_size: 2684
+    num_nodes_generated: 2964
+    sum_h_cost: 0
+    sum_f_cost: 6776
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 2.5223729610443115
+    h_max: 0
+    current_node:
+        depth: 10
+        ground_actions:
+        - (unstack b a)
+        - (put-down b)
+        - (unstack a d)
+        - (stack a e)
+        - (pick-up b)
+        - (stack b a)
+        - (pick-up c)
+        - (stack c b)
+        - (pick-up d)
+        - (stack d c)
+        repair_set: 'stack,(on ?x ?y),effPos,1
+
+            unstack,(holding ?x),effPos,1'
+        g_cost: 2
+        h_cost: 0
+        f_cost: 2
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-02T17:50:59.692064'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '9.82'
+
+
+---
+timestamp: '2025-03-02T17:50:59.728341'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 10.19 seconds'
+
+

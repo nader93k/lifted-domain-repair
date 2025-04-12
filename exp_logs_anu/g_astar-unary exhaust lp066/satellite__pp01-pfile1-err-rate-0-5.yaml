@@ -1,0 +1,84 @@
+---
+timestamp: '2025-03-14T04:28:04.990361'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary
+        exhaust lp066/satellite__pp01-pfile1-err-rate-0-5.yaml
+    instance_id: satellite__pp01-pfile1-err-rate-0-5
+    search_algorithm: g_astar
+    plan_length: 9
+    domain_class: satellite
+    instance_name: pp01-pfile1-err-rate-0-5
+    ground_plan:
+    - (switch_on instrument0 satellite0)
+    - (turn_to satellite0 groundstation2 phenomenon6)
+    - (calibrate satellite0 instrument0 groundstation2)
+    - (turn_to satellite0 phenomenon4 groundstation2)
+    - (take_image satellite0 phenomenon4 instrument0 thermograph0)
+    - (turn_to satellite0 phenomenon6 phenomenon4)
+    - (take_image satellite0 phenomenon6 instrument0 thermograph0)
+    - (turn_to satellite0 star5 phenomenon6)
+    - (take_image satellite0 star5 instrument0 thermograph0)
+    lifted_plan:
+    -   - switch_on
+        - instrument0
+        - satellite0
+    -   - turn_to
+        - ?satellite0
+        - ?groundstation2
+        - ?phenomenon6
+    -   - calibrate
+        - ?satellite0
+        - instrument0
+        - ?groundstation2
+    -   - turn_to
+        - ?satellite0
+        - ?phenomenon4
+        - groundstation2
+    -   - take_image
+        - ?satellite0
+        - ?phenomenon4
+        - instrument0
+        - ?thermograph0
+    -   - turn_to
+        - ?satellite0
+        - phenomenon6
+        - phenomenon4
+    -   - take_image
+        - satellite0
+        - phenomenon6
+        - ?instrument0
+        - thermograph0
+    -   - turn_to
+        - satellite0
+        - star5
+        - ?phenomenon6
+    -   - take_image
+        - ?satellite0
+        - ?star5
+        - ?instrument0
+        - thermograph0
+
+
+---
+timestamp: '2025-03-14T04:28:04.994785'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'switch_on,(calibrated ?i),precPos,-1
+
+        calibrate,(pointing ?d ?i),precPos,-1'
+
+
+---
+timestamp: '2025-03-14T04:43:03.467833'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+

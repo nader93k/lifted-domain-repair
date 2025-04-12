@@ -1,0 +1,172 @@
+---
+timestamp: '2025-01-20T20:06:21.288028'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs
+        relax-prec lp1/hiking-agl14-strips__ptesting-3-4-3-err-rate-0-1.yaml
+    instance_id: hiking-agl14-strips__ptesting-3-4-3-err-rate-0-1
+    search_algorithm: bfs
+    plan_length: 13
+    domain_class: hiking-agl14-strips
+    instance_name: ptesting-3-4-3-err-rate-0-1
+    ground_plan:
+    - (put_down girl0 place0 tent0)
+    - (drive_tent girl0 place0 place1 car0 tent0)
+    - (put_up girl0 place1 tent0)
+    - (walk_together tent0 place1 guy1 place0 girl1 couple1)
+    - (walk_together tent0 place1 guy2 place0 girl2 couple2)
+    - (drive_tent guy0 place0 place2 car1 tent1)
+    - (put_up guy0 place2 tent1)
+    - (walk_together tent1 place2 guy1 place1 girl1 couple1)
+    - (walk_together tent1 place2 guy2 place1 girl2 couple2)
+    - (drive guy0 place2 place0 car1)
+    - (drive girl0 place1 place0 car0)
+    - (walk_together tent0 place1 guy0 place0 girl0 couple0)
+    - (walk_together tent1 place2 guy0 place1 girl0 couple0)
+    lifted_plan:
+    -   - put_down
+        - ?girl0
+        - ?place0
+        - ?tent0
+    -   - drive_tent
+        - ?girl0
+        - ?place0
+        - ?place1
+        - ?car0
+        - ?tent0
+    -   - put_up
+        - ?girl0
+        - ?place1
+        - ?tent0
+    -   - walk_together
+        - ?tent0
+        - ?place1
+        - ?guy1
+        - ?place0
+        - ?girl1
+        - ?couple1
+    -   - walk_together
+        - ?tent0
+        - ?place1
+        - ?guy2
+        - ?place0
+        - ?girl2
+        - ?couple2
+    -   - drive_tent
+        - ?guy0
+        - ?place0
+        - ?place2
+        - ?car1
+        - ?tent1
+    -   - put_up
+        - ?guy0
+        - ?place2
+        - ?tent1
+    -   - walk_together
+        - ?tent1
+        - ?place2
+        - ?guy1
+        - ?place1
+        - ?girl1
+        - ?couple1
+    -   - walk_together
+        - ?tent1
+        - ?place2
+        - ?guy2
+        - ?place1
+        - ?girl2
+        - ?couple2
+    -   - drive
+        - ?guy0
+        - ?place2
+        - ?place0
+        - ?car1
+    -   - drive
+        - ?girl0
+        - ?place1
+        - ?place0
+        - ?car0
+    -   - walk_together
+        - ?tent0
+        - ?place1
+        - ?guy0
+        - ?place0
+        - ?girl0
+        - ?couple0
+    -   - walk_together
+        - ?tent1
+        - ?place2
+        - ?guy0
+        - ?place1
+        - ?girl0
+        - ?couple0
+
+
+---
+timestamp: '2025-01-20T20:06:21.293249'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: drive_tent,(up ?x5),effPos,1
+
+
+---
+timestamp: '2025-01-20T20:15:45.923843'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 18856
+    fring_size: 9538
+    num_nodes_generated: 28394
+    sum_h_cost: 0
+    sum_f_cost: 9811
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 406.8541190624237
+    h_max: 0
+    current_node:
+        depth: 13
+        ground_actions:
+        - (put_down girl1 place0 tent0)
+        - (drive_tent girl2 place0 place1 car1 tent0)
+        - (put_up guy0 place0 tent1)
+        - (walk_together tent0 place1 guy1 place0 girl1 couple1)
+        - (walk_together tent0 place1 guy0 place0 girl0 couple0)
+        - (drive_tent guy2 place0 place2 car3 tent2)
+        - (put_up girl2 place1 tent0)
+        - (walk_together tent2 place2 guy0 place1 girl0 couple0)
+        - (walk_together tent2 place2 guy1 place1 girl1 couple1)
+        - (drive guy2 place2 place0 car3)
+        - (drive girl2 place1 place0 car1)
+        - (walk_together tent0 place1 guy2 place0 girl2 couple2)
+        - (walk_together tent2 place2 guy2 place1 girl2 couple2)
+        repair_set: drive_tent,(up ?x5),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-20T20:15:46.634270'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '566.72'
+
+
+---
+timestamp: '2025-01-20T20:15:46.733897'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 567.09 seconds'
+
+

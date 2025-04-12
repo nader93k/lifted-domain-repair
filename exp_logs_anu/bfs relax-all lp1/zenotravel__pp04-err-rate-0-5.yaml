@@ -1,0 +1,126 @@
+---
+timestamp: '2025-01-21T19:05:58.251400'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs
+        relax-all lp1/zenotravel__pp04-err-rate-0-5.yaml
+    instance_id: zenotravel__pp04-err-rate-0-5
+    search_algorithm: bfs
+    plan_length: 9
+    domain_class: zenotravel
+    instance_name: pp04-err-rate-0-5
+    ground_plan:
+    - (fly plane1 city2 city0 fl5 fl4)
+    - (board person4 plane1 city0)
+    - (fly plane1 city0 city1 fl4 fl3)
+    - (debark person4 plane1 city1)
+    - (board person2 plane1 city1)
+    - (fly plane1 city1 city0 fl3 fl2)
+    - (fly plane1 city0 city2 fl2 fl1)
+    - (debark person2 plane1 city2)
+    - (fly plane1 city2 city0 fl1 fl0)
+    lifted_plan:
+    -   - fly
+        - ?plane1
+        - ?city2
+        - ?city0
+        - ?fl5
+        - ?fl4
+    -   - board
+        - ?person4
+        - ?plane1
+        - ?city0
+    -   - fly
+        - ?plane1
+        - ?city0
+        - ?city1
+        - ?fl4
+        - ?fl3
+    -   - debark
+        - ?person4
+        - ?plane1
+        - ?city1
+    -   - board
+        - ?person2
+        - ?plane1
+        - ?city1
+    -   - fly
+        - ?plane1
+        - ?city1
+        - ?city0
+        - ?fl3
+        - ?fl2
+    -   - fly
+        - ?plane1
+        - ?city0
+        - ?city2
+        - ?fl2
+        - ?fl1
+    -   - debark
+        - ?person2
+        - ?plane1
+        - ?city2
+    -   - fly
+        - ?plane1
+        - ?city2
+        - ?city0
+        - ?fl1
+        - ?fl0
+
+
+---
+timestamp: '2025-01-21T19:05:58.255524'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'fly,(at ?a ?c2),effPos,1
+
+        debark,(at ?p ?c),effPos,1'
+
+
+---
+timestamp: '2025-01-21T19:18:05.832270'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data:
+    error_type: MemoryError
+    error_message: 'Command ''[''/home/projects/u7899572/conda-envs/main/bin/python3'',
+        ''instance_solver.py'', ''bfs'', ''/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1'',
+        ''/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs relax-all
+        lp1/zenotravel__pp04-err-rate-0-5.yaml'', ''1000000'', ''zenotravel__pp04-err-rate-0-5'',
+        ''1.0'', ''unary'']'' died with <Signals.SIGABRT: 6>.'
+    stack_trace: "Traceback (most recent call last):\n  File \"batch_solver.py\",\
+        \ line 126, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
+        \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/subprocess.py\"\
+        , line 516, in run\n    raise CalledProcessError(retcode, process.args,\n\
+        subprocess.CalledProcessError: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',\
+        \ 'instance_solver.py', 'bfs', '/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1',\
+        \ '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs\
+        \ relax-all lp1/zenotravel__pp04-err-rate-0-5.yaml', '1000000', 'zenotravel__pp04-err-rate-0-5',\
+        \ '1.0', 'unary']' died with <Signals.SIGABRT: 6>.\n"
+    instance_id: zenotravel__pp04-err-rate-0-5
+    process_info:
+        cmd:
+        - /home/projects/u7899572/conda-envs/main/bin/python3
+        - instance_solver.py
+        - bfs
+        - /home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1
+        - /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs relax-all
+            lp1/zenotravel__pp04-err-rate-0-5.yaml
+        - '1000000'
+        - zenotravel__pp04-err-rate-0-5
+        - '1.0'
+        - unary
+        duration: '729.07'
+        python_executable: /home/projects/u7899572/conda-envs/main/bin/python3
+    stdout: ''
+    stderr: 'terminate called after throwing an instance of ''Minisat22::OutOfMemoryException''
+
+        '
+
+

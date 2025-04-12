@@ -1,0 +1,131 @@
+---
+timestamp: '2025-01-20T12:01:45.978815'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs
+        relax-prec-delete lp1/mystery__pprob11-err-rate-0-1.yaml
+    instance_id: mystery__pprob11-err-rate-0-1
+    search_algorithm: dfs
+    plan_length: 7
+    domain_class: mystery
+    instance_name: pprob11-err-rate-0-1
+    ground_plan:
+    - (overcome laceration lubricity pear uranus saturn)
+    - (feast lubricity pear sweetroll quebec bosnia)
+    - (overcome loneliness lubricity sweetroll neptune uranus)
+    - (feast lubricity sweetroll tomato alsace quebec)
+    - (feast lubricity tomato shrimp quebec bosnia)
+    - (succumb laceration lubricity shrimp neptune uranus)
+    - (succumb loneliness lubricity shrimp uranus saturn)
+    lifted_plan:
+    -   - overcome
+        - ?laceration
+        - ?lubricity
+        - ?pear
+        - ?uranus
+        - ?saturn
+    -   - feast
+        - ?lubricity
+        - ?pear
+        - ?sweetroll
+        - ?quebec
+        - ?bosnia
+    -   - overcome
+        - ?loneliness
+        - ?lubricity
+        - ?sweetroll
+        - ?neptune
+        - ?uranus
+    -   - feast
+        - ?lubricity
+        - ?sweetroll
+        - ?tomato
+        - ?alsace
+        - ?quebec
+    -   - feast
+        - ?lubricity
+        - ?tomato
+        - ?shrimp
+        - ?quebec
+        - ?bosnia
+    -   - succumb
+        - ?laceration
+        - ?lubricity
+        - ?shrimp
+        - ?neptune
+        - ?uranus
+    -   - succumb
+        - ?loneliness
+        - ?lubricity
+        - ?shrimp
+        - ?uranus
+        - ?saturn
+
+
+---
+timestamp: '2025-01-20T12:01:45.982679'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: succumb,(attacks ?s1 ?c),precPos,-1
+
+
+---
+timestamp: '2025-01-20T12:02:18.592422'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 869
+    fring_size: 1
+    num_nodes_generated: 869
+    sum_h_cost: 0
+    sum_f_cost: 0
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 28.162670612335205
+    h_max: -.inf
+    current_node:
+        depth: 5
+        ground_actions:
+        - (overcome laceration lubricity pear uranus saturn)
+        - (feast lubricity pear sweetroll quebec bosnia)
+        - (overcome laceration lubricity pear uranus saturn)
+        - (feast lubricity pear cherry quebec bosnia)
+        - (feast lubricity sweetroll pear alsace quebec)
+        repair_set: 'overcome,(harmony ?v ?s2),precPos,-1
+
+            feast,(craves ?v ?n1),effPos,1
+
+            feast,(not (locale ?n1 ?l2)),effNeg,-1
+
+            overcome,(craves ?c ?n),precPos,-1'
+        g_cost: 4
+        h_cost: 0
+        f_cost: 4
+        next_lifted_action: '[''succumb'', ''?laceration'', ''?lubricity'', ''?shrimp'',
+            ''?neptune'', ''?uranus'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-20T12:02:18.594334'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '35.45'
+
+
+---
+timestamp: '2025-01-20T12:02:18.630629'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 35.99 seconds'
+
+

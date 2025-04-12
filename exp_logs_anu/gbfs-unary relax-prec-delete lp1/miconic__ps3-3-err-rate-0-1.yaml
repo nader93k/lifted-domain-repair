@@ -1,0 +1,125 @@
+---
+timestamp: '2025-01-21T14:58:02.880659'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary
+        relax-prec-delete lp1/miconic__ps3-3-err-rate-0-1.yaml
+    instance_id: miconic__ps3-3-err-rate-0-1
+    search_algorithm: greedy
+    plan_length: 12
+    domain_class: miconic
+    instance_name: ps3-3-err-rate-0-1
+    ground_plan:
+    - (board f0 p2)
+    - (up f0 f1)
+    - (board f1 p1)
+    - (down f1 f0)
+    - (up f0 f3)
+    - (depart f3 p1)
+    - (down f3 f0)
+    - (up f0 f5)
+    - (board f5 p0)
+    - (depart f5 p2)
+    - (down f5 f0)
+    - (depart f0 p0)
+    lifted_plan:
+    -   - board
+        - ?f0
+        - ?p2
+    -   - up
+        - ?f0
+        - ?f1
+    -   - board
+        - ?f1
+        - ?p1
+    -   - down
+        - ?f1
+        - ?f0
+    -   - up
+        - ?f0
+        - ?f3
+    -   - depart
+        - ?f3
+        - ?p1
+    -   - down
+        - ?f3
+        - ?f0
+    -   - up
+        - ?f0
+        - ?f5
+    -   - board
+        - ?f5
+        - ?p0
+    -   - depart
+        - ?f5
+        - ?p2
+    -   - down
+        - ?f5
+        - ?f0
+    -   - depart
+        - ?f0
+        - ?p0
+
+
+---
+timestamp: '2025-01-21T14:58:02.883772'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: depart,(destin ?f ?f),precPos,-1
+
+
+---
+timestamp: '2025-01-21T14:58:20.258130'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 204
+    fring_size: 0
+    num_nodes_generated: 204
+    sum_h_cost: 2628
+    sum_f_cost: 1314
+    sum_h_cost_time: 13.345033407211304
+    sum_grounding_time: 3.4389920234680176
+    h_max: 11
+    current_node:
+        depth: 5
+        ground_actions:
+        - (board f0 p2)
+        - (up f0 f4)
+        - (board f0 p2)
+        - (down f4 f0)
+        - (up f4 f5)
+        repair_set: 'up,(lift-at ?f1),effPos,1
+
+            up,(lift-at ?f1),precPos,-1'
+        g_cost: 2
+        h_cost: 6
+        f_cost: 8
+        next_lifted_action: '[''depart'', ''?f3'', ''?p1'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-21T14:58:20.259687'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '18.58'
+
+
+---
+timestamp: '2025-01-21T14:58:20.292825'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 18.93 seconds'
+
+

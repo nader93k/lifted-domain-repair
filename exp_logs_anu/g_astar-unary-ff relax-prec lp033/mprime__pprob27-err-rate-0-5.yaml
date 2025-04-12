@@ -1,0 +1,109 @@
+---
+timestamp: '2025-03-06T15:08:33.596472'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary-ff
+        relax-prec lp033/mprime__pprob27-err-rate-0-5.yaml
+    instance_id: mprime__pprob27-err-rate-0-5
+    search_algorithm: g_astar
+    plan_length: 5
+    domain_class: mprime
+    instance_name: pprob27-err-rate-0-5
+    ground_plan:
+    - (overcome boils satisfaction scallion mars uranus)
+    - (overcome grief satisfaction scallion mercury mars)
+    - (feast satisfaction scallion guava arizona pennsylvania)
+    - (succumb boils satisfaction guava mercury mars)
+    - (succumb grief satisfaction guava mars uranus)
+    lifted_plan:
+    -   - overcome
+        - boils
+        - satisfaction
+        - scallion
+        - ?mars
+        - uranus
+    -   - overcome
+        - grief
+        - satisfaction
+        - ?scallion
+        - mercury
+        - mars
+    -   - feast
+        - satisfaction
+        - scallion
+        - ?guava
+        - arizona
+        - pennsylvania
+    -   - succumb
+        - ?boils
+        - satisfaction
+        - guava
+        - mercury
+        - mars
+    -   - succumb
+        - ?grief
+        - satisfaction
+        - guava
+        - mars
+        - uranus
+
+
+---
+timestamp: '2025-03-06T15:08:33.600241'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: feast,(craves ?v ?n2),effPos,1
+
+
+---
+timestamp: '2025-03-06T15:08:34.573900'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 6
+    fring_size: 0
+    num_nodes_generated: 6
+    sum_h_cost: 32
+    sum_f_cost: 16
+    sum_h_cost_time: 0.7088923454284668
+    sum_grounding_time: 0.23804426193237305
+    h_max: 4
+    current_node:
+        depth: 3
+        ground_actions:
+        - (overcome boils satisfaction scallion mars uranus)
+        - (overcome grief satisfaction scallion mercury mars)
+        - (feast satisfaction scallion muffin arizona pennsylvania)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 2
+        f_cost: 2
+        next_lifted_action: '[''succumb'', ''?boils'', ''satisfaction'', ''guava'',
+            ''mercury'', ''mars'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-06T15:08:34.575212'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '2.13'
+
+
+---
+timestamp: '2025-03-06T15:08:34.606915'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 2.47 seconds'
+
+

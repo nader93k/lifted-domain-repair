@@ -1,0 +1,102 @@
+---
+timestamp: '2025-03-06T15:40:52.600562'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary-ff
+        relax-prec lp1/mprime__pprob34-err-rate-0-1.yaml
+    instance_id: mprime__pprob34-err-rate-0-1
+    search_algorithm: g_astar
+    plan_length: 4
+    domain_class: mprime
+    instance_name: pprob34-err-rate-0-1
+    ground_plan:
+    - (overcome angina intoxication hamburger earth mars)
+    - (feast intoxication hamburger lemon alsace surrey)
+    - (feast intoxication lemon lobster surrey quebec)
+    - (succumb angina intoxication lobster earth mars)
+    lifted_plan:
+    -   - overcome
+        - ?angina
+        - ?intoxication
+        - ?hamburger
+        - ?earth
+        - ?mars
+    -   - feast
+        - ?intoxication
+        - ?hamburger
+        - ?lemon
+        - ?alsace
+        - ?surrey
+    -   - feast
+        - ?intoxication
+        - ?lemon
+        - ?lobster
+        - ?surrey
+        - ?quebec
+    -   - succumb
+        - ?angina
+        - ?intoxication
+        - ?lobster
+        - ?earth
+        - ?mars
+
+
+---
+timestamp: '2025-03-06T15:40:52.603958'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-03-06T15:40:57.439460'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 61
+    fring_size: 20
+    num_nodes_generated: 81
+    sum_h_cost: 0
+    sum_f_cost: 0
+    sum_h_cost_time: 1.1379611492156982
+    sum_grounding_time: 2.4979779720306396
+    h_max: 0
+    current_node:
+        depth: 4
+        ground_actions:
+        - (overcome angina intoxication hamburger earth mars)
+        - (feast intoxication hamburger lemon alsace surrey)
+        - (feast intoxication lemon lobster surrey quebec)
+        - (succumb angina intoxication lobster earth mars)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-06T15:40:57.441524'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '5.97'
+
+
+---
+timestamp: '2025-03-06T15:40:57.479422'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 6.50 seconds'
+
+

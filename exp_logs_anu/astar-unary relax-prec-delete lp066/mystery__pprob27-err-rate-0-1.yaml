@@ -1,0 +1,108 @@
+---
+timestamp: '2025-01-21T11:56:02.256839'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary
+        relax-prec-delete lp066/mystery__pprob27-err-rate-0-1.yaml
+    instance_id: mystery__pprob27-err-rate-0-1
+    search_algorithm: astar
+    plan_length: 5
+    domain_class: mystery
+    instance_name: pprob27-err-rate-0-1
+    ground_plan:
+    - (overcome boils satisfaction scallion mars uranus)
+    - (overcome grief satisfaction scallion mercury mars)
+    - (feast satisfaction scallion guava arizona pennsylvania)
+    - (succumb boils satisfaction guava mercury mars)
+    - (succumb grief satisfaction guava mars uranus)
+    lifted_plan:
+    -   - overcome
+        - boils
+        - satisfaction
+        - ?scallion
+        - ?mars
+        - ?uranus
+    -   - overcome
+        - ?grief
+        - satisfaction
+        - ?scallion
+        - ?mercury
+        - ?mars
+    -   - feast
+        - satisfaction
+        - ?scallion
+        - ?guava
+        - arizona
+        - ?pennsylvania
+    -   - succumb
+        - ?boils
+        - satisfaction
+        - guava
+        - mercury
+        - mars
+    -   - succumb
+        - ?grief
+        - satisfaction
+        - guava
+        - mars
+        - ?uranus
+
+
+---
+timestamp: '2025-01-21T11:56:02.260749'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: feast,(fears ?n2 ?n1),precPos,-1
+
+
+---
+timestamp: '2025-01-21T11:56:04.007438'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 8
+    fring_size: 0
+    num_nodes_generated: 8
+    sum_h_cost: 110
+    sum_f_cost: 60
+    sum_h_cost_time: 1.411271572113037
+    sum_grounding_time: 0.30136728286743164
+    h_max: 9
+    current_node:
+        depth: 2
+        ground_actions:
+        - (overcome boils satisfaction scallion mars uranus)
+        - (overcome grief satisfaction scallion mars uranus)
+        repair_set: overcome,(harmony ?v ?s2),precPos,-1
+        g_cost: 1
+        h_cost: 9
+        f_cost: 10
+        next_lifted_action: '[''feast'', ''satisfaction'', ''?scallion'', ''?guava'',
+            ''arizona'', ''?pennsylvania'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-21T11:56:04.008619'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '2.94'
+
+
+---
+timestamp: '2025-01-21T11:56:04.038350'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 3.21 seconds'
+
+

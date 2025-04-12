@@ -1,0 +1,144 @@
+---
+timestamp: '2025-01-22T16:48:02.970927'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-all lp066/satellite__pp01-pfile1-err-rate-0-5.yaml
+    instance_id: satellite__pp01-pfile1-err-rate-0-5
+    search_algorithm: greedy
+    plan_length: 9
+    domain_class: satellite
+    instance_name: pp01-pfile1-err-rate-0-5
+    ground_plan:
+    - (switch_on instrument0 satellite0)
+    - (turn_to satellite0 groundstation2 phenomenon6)
+    - (calibrate satellite0 instrument0 groundstation2)
+    - (turn_to satellite0 phenomenon4 groundstation2)
+    - (take_image satellite0 phenomenon4 instrument0 thermograph0)
+    - (turn_to satellite0 phenomenon6 phenomenon4)
+    - (take_image satellite0 phenomenon6 instrument0 thermograph0)
+    - (turn_to satellite0 star5 phenomenon6)
+    - (take_image satellite0 star5 instrument0 thermograph0)
+    lifted_plan:
+    -   - switch_on
+        - instrument0
+        - satellite0
+    -   - turn_to
+        - ?satellite0
+        - ?groundstation2
+        - ?phenomenon6
+    -   - calibrate
+        - ?satellite0
+        - instrument0
+        - ?groundstation2
+    -   - turn_to
+        - ?satellite0
+        - ?phenomenon4
+        - groundstation2
+    -   - take_image
+        - ?satellite0
+        - ?phenomenon4
+        - instrument0
+        - ?thermograph0
+    -   - turn_to
+        - ?satellite0
+        - phenomenon6
+        - phenomenon4
+    -   - take_image
+        - satellite0
+        - phenomenon6
+        - ?instrument0
+        - thermograph0
+    -   - turn_to
+        - satellite0
+        - star5
+        - ?phenomenon6
+    -   - take_image
+        - ?satellite0
+        - ?star5
+        - ?instrument0
+        - thermograph0
+
+
+---
+timestamp: '2025-01-22T16:48:02.974609'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'switch_on,(calibrated ?i),precPos,-1
+
+        calibrate,(pointing ?d ?i),precPos,-1'
+
+
+---
+timestamp: '2025-01-22T16:53:13.463805'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 10
+    fring_size: 3838
+    num_nodes_generated: 3848
+    sum_h_cost: 13614
+    sum_f_cost: 6807
+    sum_h_cost_time: 0.31573963165283203
+    sum_grounding_time: 0.32974982261657715
+    h_max: 5
+    current_node:
+        depth: 9
+        ground_actions:
+        - (switch_on instrument0 satellite0)
+        - (turn_to groundstation2 groundstation2 star0)
+        - (calibrate satellite0 instrument0 phenomenon6)
+        - (turn_to image1 phenomenon4 groundstation2)
+        - (take_image satellite0 phenomenon6 instrument0 thermograph0)
+        - (turn_to star0 phenomenon6 phenomenon4)
+        - (take_image satellite0 phenomenon6 instrument0 thermograph0)
+        - (turn_to satellite0 star5 phenomenon3)
+        - (take_image phenomenon4 star5 instrument0 thermograph0)
+        repair_set: 'take_image,(on_board ?i ?s),precPos,-1
+
+            calibrate,(calibration_target ?i ?d),precPos,-1
+
+            turn_to,(satellite ?s),precPos,-1
+
+            switch_on,(calibrated ?i),precPos,-1
+
+            take_image,(pointing ?s ?d),precPos,-1
+
+            calibrate,(pointing ?d ?i),precPos,-1
+
+            turn_to,(satellite ?d_new),effPos,1
+
+            turn_to,(pointing ?s ?d_prev),precPos,-1
+
+            take_image,(have_image ?s ?m),effPos,1'
+        g_cost: 9
+        h_cost: 0
+        f_cost: 9
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-22T16:53:13.615364'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '311.84'
+
+
+---
+timestamp: '2025-01-22T16:53:13.672259'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 312.19 seconds'
+
+

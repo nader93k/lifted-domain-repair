@@ -1,0 +1,186 @@
+---
+timestamp: '2025-03-06T19:42:20.057844'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary-ff
+        relax-all lp033/mprime__pprob24-err-rate-0-3.yaml
+    instance_id: mprime__pprob24-err-rate-0-3
+    search_algorithm: g_astar
+    plan_length: 13
+    domain_class: mprime
+    instance_name: pprob24-err-rate-0-3
+    ground_plan:
+    - (feast curiosity muffin apple alsace goias)
+    - (drink chicken cherry alsace arizona surrey surrey arizona)
+    - (drink turkey tofu alsace arizona surrey surrey arizona)
+    - (feast achievement cherry tofu surrey arizona)
+    - (feast achievement tofu muffin surrey arizona)
+    - (feast achievement muffin apple arizona alsace)
+    - (overcome anger-12 achievement apple uranus saturn)
+    - (drink bacon apple bosnia manitoba goias surrey arizona)
+    - (feast achievement apple muffin surrey arizona)
+    - (feast achievement muffin tofu surrey arizona)
+    - (drink potato tofu bavaria guanabara moravia surrey arizona)
+    - (feast achievement tofu cherry surrey arizona)
+    - (succumb anger-12 achievement cherry uranus saturn)
+    lifted_plan:
+    -   - feast
+        - curiosity
+        - muffin
+        - apple
+        - ?alsace
+        - goias
+    -   - drink
+        - chicken
+        - cherry
+        - ?alsace
+        - arizona
+        - surrey
+        - surrey
+        - arizona
+    -   - drink
+        - ?turkey
+        - tofu
+        - alsace
+        - ?arizona
+        - surrey
+        - surrey
+        - arizona
+    -   - feast
+        - achievement
+        - ?cherry
+        - tofu
+        - surrey
+        - arizona
+    -   - feast
+        - achievement
+        - ?tofu
+        - muffin
+        - surrey
+        - arizona
+    -   - feast
+        - achievement
+        - muffin
+        - apple
+        - ?arizona
+        - alsace
+    -   - overcome
+        - anger-12
+        - ?achievement
+        - apple
+        - uranus
+        - saturn
+    -   - drink
+        - bacon
+        - ?apple
+        - bosnia
+        - manitoba
+        - ?goias
+        - ?surrey
+        - arizona
+    -   - feast
+        - ?achievement
+        - apple
+        - ?muffin
+        - surrey
+        - arizona
+    -   - feast
+        - achievement
+        - ?muffin
+        - ?tofu
+        - surrey
+        - arizona
+    -   - drink
+        - ?potato
+        - tofu
+        - bavaria
+        - guanabara
+        - moravia
+        - surrey
+        - arizona
+    -   - feast
+        - achievement
+        - tofu
+        - cherry
+        - surrey
+        - arizona
+    -   - succumb
+        - anger-12
+        - ?achievement
+        - ?cherry
+        - ?uranus
+        - saturn
+
+
+---
+timestamp: '2025-03-06T19:42:20.063938'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: overcome,(eats ?c ?v),precPos,-1
+
+
+---
+timestamp: '2025-03-06T19:42:29.893597'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data:
+    error_type: MemoryError
+    error_message: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',
+        'instance_solver.py', 'g_astar-unary-ff-sg3-lp033.yaml', 'mprime__pprob24-err-rate-0-3']'
+        returned non-zero exit status 1.
+    stack_trace: "Traceback (most recent call last):\n  File \"batch_solver.py\",\
+        \ line 119, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
+        \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/subprocess.py\"\
+        , line 516, in run\n    raise CalledProcessError(retcode, process.args,\n\
+        subprocess.CalledProcessError: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',\
+        \ 'instance_solver.py', 'g_astar-unary-ff-sg3-lp033.yaml', 'mprime__pprob24-err-rate-0-3']'\
+        \ returned non-zero exit status 1.\n"
+    instance_id: mprime__pprob24-err-rate-0-3
+    process_info:
+        cmd:
+        - /home/projects/u7899572/conda-envs/main/bin/python3
+        - instance_solver.py
+        - g_astar-unary-ff-sg3-lp033.yaml
+        - mprime__pprob24-err-rate-0-3
+        duration: '11.44'
+        python_executable: /home/projects/u7899572/conda-envs/main/bin/python3
+    stdout: '[Errno 12] Cannot allocate memory: ''/dev/shm/pddl_files/tmprjjwtywy''
+
+        '
+    stderr: "Traceback (most recent call last):\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+        , line 131, in ground_pddl\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+        , line 485, in get_applicable_actions\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+        , line 433, in _get_applicable_var_assigns_action\nMemoryError\n\nDuring handling\
+        \ of the above exception, another exception occurred:\n\nTraceback (most recent\
+        \ call last):\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+        , line 195, in get_neighbors\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+        , line 140, in ground_pddl\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/tempfile.py\"\
+        , line 836, in __exit__\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/tempfile.py\"\
+        , line 840, in cleanup\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/tempfile.py\"\
+        , line 822, in _rmtree\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/shutil.py\"\
+        , line 718, in rmtree\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/shutil.py\"\
+        , line 631, in _rmtree_safe_fd\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/shutil.py\"\
+        , line 627, in _rmtree_safe_fd\nOSError: [Errno 12] Cannot allocate memory:\
+        \ '/dev/shm/pddl_files/tmprjjwtywy'\n\nDuring handling of the above exception,\
+        \ another exception occurred:\n\nTraceback (most recent call last):\n  File\
+        \ \"instance_solver.py\", line 125, in solve_instance\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+        , line 78, in find_path\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+        , line 201, in get_neighbors\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+        , line 237, in to_dict\nMemoryError\n\nDuring handling of the above exception,\
+        \ another exception occurred:\n\nTraceback (most recent call last):\n  File\
+        \ \"instance_solver.py\", line 147, in <module>\n  File \"instance_solver.py\"\
+        , line 127, in solve_instance\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/traceback.py\"\
+        , line 167, in format_exc\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/traceback.py\"\
+        , line 120, in format_exception\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/traceback.py\"\
+        , line 493, in __init__\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/traceback.py\"\
+        , line 493, in __init__\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/traceback.py\"\
+        , line 508, in __init__\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/traceback.py\"\
+        , line 336, in extract\nMemoryError\n"
+
+

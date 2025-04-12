@@ -1,0 +1,148 @@
+---
+timestamp: '2025-03-03T12:44:14.117964'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_debug/dfs
+        exhast lp066/visitall-opt11-strips__pproblem03-full-err-rate-0-3.yaml
+    instance_id: visitall-opt11-strips__pproblem03-full-err-rate-0-3
+    search_algorithm: dfs
+    plan_length: 12
+    domain_class: visitall-opt11-strips
+    instance_name: pproblem03-full-err-rate-0-3
+    ground_plan:
+    - (move loc-x1-y1 loc-x0-y1)
+    - (move loc-x0-y1 loc-x0-y0)
+    - (move loc-x0-y0 loc-x1-y0)
+    - (move loc-x1-y0 loc-x1-y1)
+    - (move loc-x1-y1 loc-x1-y2)
+    - (move loc-x1-y2 loc-x0-y2)
+    - (move loc-x0-y2 loc-x1-y2)
+    - (move loc-x1-y2 loc-x1-y1)
+    - (move loc-x1-y1 loc-x2-y1)
+    - (move loc-x2-y1 loc-x2-y2)
+    - (move loc-x2-y2 loc-x2-y1)
+    - (move loc-x2-y1 loc-x2-y0)
+    lifted_plan:
+    -   - move
+        - loc-x1-y1
+        - loc-x0-y1
+    -   - move
+        - ?loc-x0-y1
+        - ?loc-x0-y0
+    -   - move
+        - ?loc-x0-y0
+        - ?loc-x1-y0
+    -   - move
+        - loc-x1-y0
+        - ?loc-x1-y1
+    -   - move
+        - ?loc-x1-y1
+        - ?loc-x1-y2
+    -   - move
+        - loc-x1-y2
+        - ?loc-x0-y2
+    -   - move
+        - ?loc-x0-y2
+        - loc-x1-y2
+    -   - move
+        - ?loc-x1-y2
+        - ?loc-x1-y1
+    -   - move
+        - loc-x1-y1
+        - loc-x2-y1
+    -   - move
+        - loc-x2-y1
+        - loc-x2-y2
+    -   - move
+        - ?loc-x2-y2
+        - loc-x2-y1
+    -   - move
+        - loc-x2-y1
+        - loc-x2-y0
+
+
+---
+timestamp: '2025-03-03T12:44:14.120637'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: move,(visited ?nextpos),precPos,-1
+
+
+---
+timestamp: '2025-03-03T12:44:18.575671'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 11
+        ground_actions:
+        - (move loc-x2-y1 loc-x1-y1)
+        - (move loc-x2-y1 loc-x1-y1)
+        - (move loc-x2-y1 loc-x1-y1)
+        - (move loc-x2-y1 loc-x1-y1)
+        - (move loc-x2-y1 loc-x1-y1)
+        - (move loc-x2-y1 loc-x1-y1)
+        - (move loc-x2-y1 loc-x1-y1)
+        - (move loc-x2-y1 loc-x1-y1)
+        - (move loc-x2-y1 loc-x1-y1)
+        - (move loc-x2-y1 loc-x1-y1)
+        - (move loc-x2-y2 loc-x2-y2)
+        repair_set: 'move,(at-robot ?curpos),precPos,-1
+
+            move,(visited ?nextpos),precPos,-1
+
+            move,(connected ?curpos ?nextpos),precPos,-1'
+        g_cost: 3
+        h_cost: 0
+        f_cost: 3
+        next_lifted_action: '[''move'', ''loc-x2-y1'', ''loc-x2-y0'']'
+        num_neighbours: 0
+        current_state: not implemented!
+
+
+---
+timestamp: '2025-03-03T12:44:18.578777'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: 'Tautology' object has no attribute 'predicate'.\
+    \ Stack trace: Traceback (most recent call last):\n  File \"instance_solver.py\"\
+    , line 104, in solve_instance\n    searcher.find_path(logger=logger, log_interval=log_interval)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 137, in find_path\n    neighbors = sorted(current_node.get_neighbors(),\
+    \ key=lambda x: x.g_cost, reverse=True)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 195, in get_neighbors\n    possible_groundings = grounder(domain, task,\
+    \ next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 162, in exhaustive_groundings\n    parser.parse_domain(domain_path)\n \
+    \ File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 213, in parse_domain\n    preconds_tuple = tuple([(preffix, precond.predicate.name,\
+    \ tuple([var_names.index(var.symbol) for var in precond.subterms])) for preffix,\
+    \ precond in preconds_list])\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 213, in <listcomp>\n    preconds_tuple = tuple([(preffix, precond.predicate.name,\
+    \ tuple([var_names.index(var.symbol) for var in precond.subterms])) for preffix,\
+    \ precond in preconds_list])\nAttributeError: 'Tautology' object has no attribute\
+    \ 'predicate'\n"
+
+
+---
+timestamp: '2025-03-03T12:44:18.586949'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '5.98'
+
+
+---
+timestamp: '2025-03-03T12:44:18.624519'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 6.31 seconds'
+
+

@@ -1,0 +1,110 @@
+---
+timestamp: '2025-01-19T23:45:04.947492'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-prec lp1/mystery__pprob01-err-rate-0-1.yaml
+    instance_id: mystery__pprob01-err-rate-0-1
+    search_algorithm: greedy
+    plan_length: 5
+    domain_class: mystery
+    instance_name: pprob01-err-rate-0-1
+    ground_plan:
+    - (overcome abrasion rest pork uranus venus)
+    - (feast rest pork lamb alsace quebec)
+    - (feast rest lamb flounder surrey pennsylvania)
+    - (feast rest flounder rice pennsylvania alsace)
+    - (succumb abrasion rest rice uranus venus)
+    lifted_plan:
+    -   - overcome
+        - ?abrasion
+        - ?rest
+        - ?pork
+        - ?uranus
+        - ?venus
+    -   - feast
+        - ?rest
+        - ?pork
+        - ?lamb
+        - ?alsace
+        - ?quebec
+    -   - feast
+        - ?rest
+        - ?lamb
+        - ?flounder
+        - ?surrey
+        - ?pennsylvania
+    -   - feast
+        - ?rest
+        - ?flounder
+        - ?rice
+        - ?pennsylvania
+        - ?alsace
+    -   - succumb
+        - ?abrasion
+        - ?rest
+        - ?rice
+        - ?uranus
+        - ?venus
+
+
+---
+timestamp: '2025-01-19T23:45:04.950837'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: feast,(harmony ?v ?n2),effPos,1
+
+
+---
+timestamp: '2025-01-19T23:45:06.803373'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 16
+    fring_size: 0
+    num_nodes_generated: 16
+    sum_h_cost: 60
+    sum_f_cost: 30
+    sum_h_cost_time: 1.3798291683197021
+    sum_grounding_time: 0.4162571430206299
+    h_max: 2
+    current_node:
+        depth: 4
+        ground_actions:
+        - (overcome abrasion rest pork uranus venus)
+        - (feast rest pork lamb alsace quebec)
+        - (feast rest lamb flounder surrey pennsylvania)
+        - (feast rest flounder lamb pennsylvania alsace)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 2
+        f_cost: 2
+        next_lifted_action: '[''succumb'', ''?abrasion'', ''?rest'', ''?rice'', ''?uranus'',
+            ''?venus'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-19T23:45:06.804659'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '3.14'
+
+
+---
+timestamp: '2025-01-19T23:45:06.837571'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 3.44 seconds'
+
+

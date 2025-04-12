@@ -1,0 +1,118 @@
+---
+timestamp: '2025-01-21T20:39:29.694536'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs
+        relax-all lp066/mystery__pprob11-err-rate-0-5.yaml
+    instance_id: mystery__pprob11-err-rate-0-5
+    search_algorithm: bfs
+    plan_length: 7
+    domain_class: mystery
+    instance_name: pprob11-err-rate-0-5
+    ground_plan:
+    - (overcome laceration lubricity pear uranus saturn)
+    - (feast lubricity pear sweetroll quebec bosnia)
+    - (overcome loneliness lubricity sweetroll neptune uranus)
+    - (feast lubricity sweetroll tomato alsace quebec)
+    - (feast lubricity tomato shrimp quebec bosnia)
+    - (succumb laceration lubricity shrimp neptune uranus)
+    - (succumb loneliness lubricity shrimp uranus saturn)
+    lifted_plan:
+    -   - overcome
+        - laceration
+        - lubricity
+        - ?pear
+        - ?uranus
+        - ?saturn
+    -   - feast
+        - ?lubricity
+        - pear
+        - ?sweetroll
+        - ?quebec
+        - ?bosnia
+    -   - overcome
+        - loneliness
+        - ?lubricity
+        - ?sweetroll
+        - neptune
+        - ?uranus
+    -   - feast
+        - ?lubricity
+        - sweetroll
+        - tomato
+        - alsace
+        - quebec
+    -   - feast
+        - ?lubricity
+        - tomato
+        - shrimp
+        - quebec
+        - ?bosnia
+    -   - succumb
+        - ?laceration
+        - ?lubricity
+        - ?shrimp
+        - neptune
+        - uranus
+    -   - succumb
+        - ?loneliness
+        - lubricity
+        - ?shrimp
+        - uranus
+        - ?saturn
+
+
+---
+timestamp: '2025-01-21T20:39:29.700023'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: succumb,(craves ?c ?n),effPos,1
+
+
+---
+timestamp: '2025-01-21T20:53:43.862209'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data:
+    error_type: MemoryError
+    error_message: 'Command ''[''/home/projects/u7899572/conda-envs/main/bin/python3'',
+        ''instance_solver.py'', ''bfs'', ''/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1'',
+        ''/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs relax-all
+        lp066/mystery__pprob11-err-rate-0-5.yaml'', ''1000000'', ''mystery__pprob11-err-rate-0-5'',
+        ''0.66'', ''unary'']'' died with <Signals.SIGABRT: 6>.'
+    stack_trace: "Traceback (most recent call last):\n  File \"batch_solver.py\",\
+        \ line 126, in worker\n    result = subprocess.run(cmd, check=True, timeout=params['timeout_seconds'],\n\
+        \  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/subprocess.py\"\
+        , line 516, in run\n    raise CalledProcessError(retcode, process.args,\n\
+        subprocess.CalledProcessError: Command '['/home/projects/u7899572/conda-envs/main/bin/python3',\
+        \ 'instance_solver.py', 'bfs', '/home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1',\
+        \ '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs\
+        \ relax-all lp066/mystery__pprob11-err-rate-0-5.yaml', '1000000', 'mystery__pprob11-err-rate-0-5',\
+        \ '0.66', 'unary']' died with <Signals.SIGABRT: 6>.\n"
+    instance_id: mystery__pprob11-err-rate-0-5
+    process_info:
+        cmd:
+        - /home/projects/u7899572/conda-envs/main/bin/python3
+        - instance_solver.py
+        - bfs
+        - /home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1
+        - /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs relax-all
+            lp066/mystery__pprob11-err-rate-0-5.yaml
+        - '1000000'
+        - mystery__pprob11-err-rate-0-5
+        - '0.66'
+        - unary
+        duration: '856.08'
+        python_executable: /home/projects/u7899572/conda-envs/main/bin/python3
+    stdout: ''
+    stderr: 'terminate called after throwing an instance of ''Minisat22::OutOfMemoryException''
+
+        '
+
+

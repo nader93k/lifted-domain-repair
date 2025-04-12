@@ -1,0 +1,100 @@
+---
+timestamp: '2025-03-12T15:00:12.463290'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary
+        relax-prec lp1/mystery__pprob17-err-rate-0-3.yaml
+    instance_id: mystery__pprob17-err-rate-0-3
+    search_algorithm: g_astar
+    plan_length: 4
+    domain_class: mystery
+    instance_name: pprob17-err-rate-0-3
+    ground_plan:
+    - (feast satisfaction potato yogurt guanabara bosnia)
+    - (overcome abrasion satisfaction yogurt mercury saturn)
+    - (feast satisfaction yogurt wonderbread guanabara bosnia)
+    - (succumb abrasion satisfaction wonderbread mercury saturn)
+    lifted_plan:
+    -   - feast
+        - ?satisfaction
+        - ?potato
+        - ?yogurt
+        - ?guanabara
+        - ?bosnia
+    -   - overcome
+        - ?abrasion
+        - ?satisfaction
+        - ?yogurt
+        - ?mercury
+        - ?saturn
+    -   - feast
+        - ?satisfaction
+        - ?yogurt
+        - ?wonderbread
+        - ?guanabara
+        - ?bosnia
+    -   - succumb
+        - ?abrasion
+        - ?satisfaction
+        - ?wonderbread
+        - ?mercury
+        - ?saturn
+
+
+---
+timestamp: '2025-03-12T15:00:12.467408'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: overcome,(attacks ?v ?v),precPos,-1
+
+
+---
+timestamp: '2025-03-12T15:00:21.387221'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 22
+    fring_size: 0
+    num_nodes_generated: 22
+    sum_h_cost: 336
+    sum_f_cost: 168
+    sum_h_cost_time: 7.574325084686279
+    sum_grounding_time: 1.2255289554595947
+    h_max: 8
+    current_node:
+        depth: 1
+        ground_actions:
+        - (feast satiety cherry marzipan bosnia alsace)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 4
+        f_cost: 4
+        next_lifted_action: '[''overcome'', ''?abrasion'', ''?satisfaction'', ''?yogurt'',
+            ''?mercury'', ''?saturn'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-12T15:00:21.388540'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '10.16'
+
+
+---
+timestamp: '2025-03-12T15:00:21.430165'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 10.53 seconds'
+
+

@@ -1,0 +1,122 @@
+---
+timestamp: '2025-03-10T01:42:22.615511'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary-ff
+        exhaust lp066/miconic__ps2-1-err-rate-0-3.yaml
+    instance_id: miconic__ps2-1-err-rate-0-3
+    search_algorithm: g_astar
+    plan_length: 8
+    domain_class: miconic
+    instance_name: ps2-1-err-rate-0-3
+    ground_plan:
+    - (board f0 p0)
+    - (up f0 f1)
+    - (depart f1 p0)
+    - (down f1 f0)
+    - (up f0 f3)
+    - (board f3 p1)
+    - (down f3 f0)
+    - (depart f0 p1)
+    lifted_plan:
+    -   - board
+        - f0
+        - p0
+    -   - up
+        - ?f0
+        - ?f1
+    -   - depart
+        - ?f1
+        - ?p0
+    -   - down
+        - f1
+        - ?f0
+    -   - up
+        - ?f0
+        - ?f3
+    -   - board
+        - f3
+        - ?p1
+    -   - down
+        - ?f3
+        - f0
+    -   - depart
+        - ?f0
+        - ?p1
+
+
+---
+timestamp: '2025-03-10T01:42:22.619020'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'depart,(origin ?p ?f),precPos,-1
+
+        up,(served ?f1),precPos,-1'
+
+
+---
+timestamp: '2025-03-10T01:43:08.383333'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 32
+    fring_size: 1085
+    num_nodes_generated: 1117
+    sum_h_cost: 10704
+    sum_f_cost: 12354
+    sum_h_cost_time: 1.2896227836608887
+    sum_grounding_time: 0.5280377864837646
+    h_max: 10
+    current_node:
+        depth: 8
+        ground_actions:
+        - (board f0 p0)
+        - (up f0 f1)
+        - (depart f1 f0)
+        - (down f1 f0)
+        - (up f0 f3)
+        - (board f3 p1)
+        - (down f3 f0)
+        - (depart f0 p0)
+        repair_set: 'board,(served ?p),effPos,1
+
+            depart,(origin ?p ?f),precPos,-1
+
+            up,(boarded ?f1),effPos,1
+
+            depart,(destin ?p ?f),precPos,-1
+
+            up,(passenger ?f1),effPos,1
+
+            up,(served ?f1),precPos,-1'
+        g_cost: 6
+        h_cost: 0
+        f_cost: 6
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-10T01:43:08.440400'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '47.14'
+
+
+---
+timestamp: '2025-03-10T01:43:08.497185'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 47.55 seconds'
+
+

@@ -1,0 +1,193 @@
+---
+timestamp: '2025-01-20T23:08:41.117824'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary
+        relax-prec lp033/freecell__pprobfreecell-3-3-err-rate-0-3.yaml
+    instance_id: freecell__pprobfreecell-3-3-err-rate-0-3
+    search_algorithm: greedy
+    plan_length: 13
+    domain_class: freecell
+    instance_name: pprobfreecell-3-3-err-rate-0-3
+    ground_plan:
+    - (sendtohome ha ca h n1 h0 n0)
+    - (sendtohome-b ca c n1 c0 n0 n1 n2)
+    - (sendtofree s3 da n4 n3)
+    - (sendtohome-b da d n1 d0 n0 n2 n3)
+    - (sendtohome c2 sa c n2 ca n1)
+    - (sendtohome sa d2 s n1 s0 n0)
+    - (sendtohome-b c3 c n3 c2 n2 n3 n4)
+    - (sendtohome-b d2 d n2 da n1 n4 n5)
+    - (sendtohome-b d3 d n3 d2 n2 n5 n6)
+    - (sendtohome-b h2 h n2 ha n1 n6 n7)
+    - (sendtohome h3 s2 h n3 h2 n2)
+    - (sendtohome-b s2 s n2 sa n1 n7 n8)
+    - (homefromfreecell s3 s n3 s2 n2 n3 n4)
+    lifted_plan:
+    -   - sendtohome
+        - ha
+        - ca
+        - h
+        - ?n1
+        - h0
+        - n0
+    -   - sendtohome-b
+        - ca
+        - ?c
+        - n1
+        - c0
+        - n0
+        - n1
+        - ?n2
+    -   - sendtofree
+        - s3
+        - da
+        - ?n4
+        - n3
+    -   - sendtohome-b
+        - da
+        - d
+        - n1
+        - ?d0
+        - n0
+        - n2
+        - n3
+    -   - sendtohome
+        - c2
+        - ?sa
+        - c
+        - n2
+        - ca
+        - n1
+    -   - sendtohome
+        - sa
+        - d2
+        - ?s
+        - n1
+        - s0
+        - ?n0
+    -   - sendtohome-b
+        - c3
+        - c
+        - n3
+        - c2
+        - ?n2
+        - n3
+        - n4
+    -   - sendtohome-b
+        - ?d2
+        - ?d
+        - n2
+        - ?da
+        - n1
+        - ?n4
+        - n5
+    -   - sendtohome-b
+        - d3
+        - d
+        - ?n3
+        - ?d2
+        - n2
+        - n5
+        - ?n6
+    -   - sendtohome-b
+        - h2
+        - h
+        - n2
+        - ha
+        - n1
+        - n6
+        - n7
+    -   - sendtohome
+        - h3
+        - s2
+        - h
+        - n3
+        - h2
+        - ?n2
+    -   - sendtohome-b
+        - ?s2
+        - ?s
+        - n2
+        - sa
+        - n1
+        - ?n7
+        - n8
+    -   - homefromfreecell
+        - s3
+        - s
+        - n3
+        - s2
+        - n2
+        - n3
+        - n4
+
+
+---
+timestamp: '2025-01-20T23:08:41.123728'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-20T23:08:42.802001'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 14
+    fring_size: 1
+    num_nodes_generated: 15
+    sum_h_cost: 12
+    sum_f_cost: 6
+    sum_h_cost_time: 0.9299468994140625
+    sum_grounding_time: 0.44536900520324707
+    h_max: 6
+    current_node:
+        depth: 13
+        ground_actions:
+        - (sendtohome ha ca h n1 h0 n0)
+        - (sendtohome-b ca c n1 c0 n0 n1 n2)
+        - (sendtofree s3 da n4 n3)
+        - (sendtohome-b da d n1 d0 n0 n2 n3)
+        - (sendtohome c2 sa c n2 ca n1)
+        - (sendtohome sa d2 s n1 s0 n0)
+        - (sendtohome-b c3 c n3 c2 n2 n3 n4)
+        - (sendtohome-b d2 d n2 da n1 n4 n5)
+        - (sendtohome-b d3 d n3 d2 n2 n5 n6)
+        - (sendtohome-b h2 h n2 ha n1 n6 n7)
+        - (sendtohome h3 s2 h n3 h2 n2)
+        - (sendtohome-b s2 s n2 sa n1 n7 n8)
+        - (homefromfreecell s3 s n3 s2 n2 n3 n4)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-20T23:08:42.804295'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '2.82'
+
+
+---
+timestamp: '2025-01-20T23:08:42.847280'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 3.12 seconds'
+
+

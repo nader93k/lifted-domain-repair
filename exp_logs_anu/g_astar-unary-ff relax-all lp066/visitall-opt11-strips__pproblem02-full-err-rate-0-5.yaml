@@ -1,0 +1,85 @@
+---
+timestamp: '2025-03-09T18:41:48.390890'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary-ff
+        relax-all lp066/visitall-opt11-strips__pproblem02-full-err-rate-0-5.yaml
+    instance_id: visitall-opt11-strips__pproblem02-full-err-rate-0-5
+    search_algorithm: g_astar
+    plan_length: 3
+    domain_class: visitall-opt11-strips
+    instance_name: pproblem02-full-err-rate-0-5
+    ground_plan:
+    - (move loc-x1-y1 loc-x0-y1)
+    - (move loc-x0-y1 loc-x0-y0)
+    - (move loc-x0-y0 loc-x1-y0)
+    lifted_plan:
+    -   - move
+        - loc-x1-y1
+        - loc-x0-y1
+    -   - move
+        - ?loc-x0-y1
+        - ?loc-x0-y0
+    -   - move
+        - ?loc-x0-y0
+        - ?loc-x1-y0
+
+
+---
+timestamp: '2025-03-09T18:41:48.392975'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: move,(visited ?nextpos),effPos,1
+
+
+---
+timestamp: '2025-03-09T18:41:48.540783'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 4
+    fring_size: 21
+    num_nodes_generated: 25
+    sum_h_cost: 68
+    sum_f_cost: 73
+    sum_h_cost_time: 0.011382818222045898
+    sum_grounding_time: 0.047159671783447266
+    h_max: 2
+    current_node:
+        depth: 3
+        ground_actions:
+        - (move loc-x1-y1 loc-x0-y1)
+        - (move loc-x0-y1 loc-x0-y0)
+        - (move loc-x0-y0 loc-x1-y0)
+        repair_set: move,(visited ?nextpos),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-09T18:41:48.541995'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.30'
+
+
+---
+timestamp: '2025-03-09T18:41:48.570728'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.67 seconds'
+
+

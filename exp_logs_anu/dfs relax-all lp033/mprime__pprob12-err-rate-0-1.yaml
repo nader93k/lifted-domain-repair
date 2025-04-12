@@ -1,0 +1,168 @@
+---
+timestamp: '2025-01-22T18:50:41.073062'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/dfs
+        relax-all lp033/mprime__pprob12-err-rate-0-1.yaml
+    instance_id: mprime__pprob12-err-rate-0-1
+    search_algorithm: dfs
+    plan_length: 11
+    domain_class: mprime
+    instance_name: pprob12-err-rate-0-1
+    ground_plan:
+    - (feast intoxication lettuce arugula arizona surrey)
+    - (feast love hotdog kale kentucky pennsylvania)
+    - (feast love kale pork kentucky pennsylvania)
+    - (feast love pork kale kentucky pennsylvania)
+    - (overcome anger rest arugula pluto jupiter)
+    - (drink broccoli arugula quebec pennsylvania kentucky kentucky pennsylvania)
+    - (feast rest arugula lettuce kentucky pennsylvania)
+    - (feast rest lettuce hotdog quebec arizona)
+    - (drink lettuce hotdog quebec pennsylvania kentucky kentucky pennsylvania)
+    - (feast rest hotdog kale kentucky pennsylvania)
+    - (succumb anger rest kale pluto jupiter)
+    lifted_plan:
+    -   - feast
+        - intoxication
+        - lettuce
+        - arugula
+        - ?arizona
+        - surrey
+    -   - feast
+        - love
+        - hotdog
+        - ?kale
+        - kentucky
+        - pennsylvania
+    -   - feast
+        - love
+        - kale
+        - ?pork
+        - kentucky
+        - pennsylvania
+    -   - feast
+        - ?love
+        - pork
+        - kale
+        - kentucky
+        - pennsylvania
+    -   - overcome
+        - ?anger
+        - rest
+        - arugula
+        - pluto
+        - jupiter
+    -   - drink
+        - ?broccoli
+        - arugula
+        - quebec
+        - pennsylvania
+        - kentucky
+        - kentucky
+        - pennsylvania
+    -   - feast
+        - ?rest
+        - arugula
+        - lettuce
+        - ?kentucky
+        - pennsylvania
+    -   - feast
+        - rest
+        - lettuce
+        - hotdog
+        - ?quebec
+        - arizona
+    -   - drink
+        - lettuce
+        - ?hotdog
+        - ?quebec
+        - pennsylvania
+        - ?kentucky
+        - kentucky
+        - ?pennsylvania
+    -   - feast
+        - rest
+        - hotdog
+        - kale
+        - ?kentucky
+        - ?pennsylvania
+    -   - succumb
+        - anger
+        - rest
+        - ?kale
+        - pluto
+        - jupiter
+
+
+---
+timestamp: '2025-01-22T18:50:41.078078'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: drink,(locale ?l21 ?l13),precPos,-1
+
+
+---
+timestamp: '2025-01-22T18:53:27.756563'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast intoxication lettuce arugula arizona surrey)
+        - (feast love hotdog lettuce kentucky pennsylvania)
+        - (feast love kale hotdog kentucky pennsylvania)
+        - (feast excitement pork kale kentucky pennsylvania)
+        - (overcome anger rest arugula pluto jupiter)
+        repair_set: feast,(craves ?v ?n1),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''drink'', ''?broccoli'', ''arugula'', ''quebec'', ''pennsylvania'',
+            ''kentucky'', ''kentucky'', ''pennsylvania'']'
+        num_neighbours: 0
+        current_state: not implemented!
+
+
+---
+timestamp: '2025-01-22T18:53:27.759010'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: . Stack trace: Traceback (most recent call\
+    \ last):\n  File \"instance_solver.py\", line 104, in solve_instance\n    searcher.find_path(logger=logger,\
+    \ log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 137, in find_path\n    neighbors = sorted(current_node.get_neighbors(),\
+    \ key=lambda x: x.g_cost, reverse=True)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 193, in get_neighbors\n    possible_groundings = ground_pddl(domain, task,\
+    \ next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 135, in ground_pddl\n    actions = parser.get_applicable_actions()\n  File\
+    \ \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 485, in get_applicable_actions\n    full_var_assigns = self._get_applicable_var_assigns_action(action,\
+    \ [[-1]*len(action_vars)])\n  File \"/home/projects/u7899572/conda-envs/main/lib/python3.8/site-packages/lifted_pddl/parser.py\"\
+    , line 433, in _get_applicable_var_assigns_action\n    full_var_assigns.extend(new_var_assigns)\n\
+    MemoryError\n"
+
+
+---
+timestamp: '2025-01-22T18:53:30.031210'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '170.20'
+
+
+---
+timestamp: '2025-01-22T18:53:30.087228'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 170.59 seconds'
+
+

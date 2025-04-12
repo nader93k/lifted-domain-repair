@@ -1,0 +1,142 @@
+---
+timestamp: '2025-01-20T04:13:19.705288'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-prec-delete lp066/mprime__pprob30-err-rate-0-1.yaml
+    instance_id: mprime__pprob30-err-rate-0-1
+    search_algorithm: greedy
+    plan_length: 9
+    domain_class: mprime
+    instance_name: pprob30-err-rate-0-1
+    ground_plan:
+    - (overcome boils expectation hamburger neptune venus)
+    - (feast expectation hamburger beef bosnia bavaria)
+    - (feast expectation beef baguette bosnia bavaria)
+    - (overcome dread expectation baguette vulcan neptune)
+    - (feast expectation baguette cucumber alsace guanabara)
+    - (feast expectation cucumber hotdog bosnia bavaria)
+    - (feast expectation hotdog mutton moravia kentucky)
+    - (succumb boils expectation mutton vulcan neptune)
+    - (succumb dread expectation mutton neptune venus)
+    lifted_plan:
+    -   - overcome
+        - boils
+        - expectation
+        - ?hamburger
+        - ?neptune
+        - ?venus
+    -   - feast
+        - ?expectation
+        - hamburger
+        - ?beef
+        - ?bosnia
+        - ?bavaria
+    -   - feast
+        - expectation
+        - ?beef
+        - ?baguette
+        - bosnia
+        - ?bavaria
+    -   - overcome
+        - ?dread
+        - expectation
+        - baguette
+        - vulcan
+        - neptune
+    -   - feast
+        - ?expectation
+        - baguette
+        - cucumber
+        - alsace
+        - ?guanabara
+    -   - feast
+        - ?expectation
+        - ?cucumber
+        - ?hotdog
+        - bosnia
+        - bavaria
+    -   - feast
+        - ?expectation
+        - hotdog
+        - ?mutton
+        - moravia
+        - ?kentucky
+    -   - succumb
+        - ?boils
+        - expectation
+        - ?mutton
+        - vulcan
+        - neptune
+    -   - succumb
+        - ?dread
+        - ?expectation
+        - mutton
+        - ?neptune
+        - ?venus
+
+
+---
+timestamp: '2025-01-20T04:13:19.710047'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: overcome,(not (harmony ?v ?s2)),effNeg,-1
+
+
+---
+timestamp: '2025-01-20T04:13:49.183012'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 46
+    fring_size: 202
+    num_nodes_generated: 248
+    sum_h_cost: 854
+    sum_f_cost: 427
+    sum_h_cost_time: 5.076128721237183
+    sum_grounding_time: 2.171393632888794
+    h_max: 2
+    current_node:
+        depth: 9
+        ground_actions:
+        - (overcome boils expectation hamburger neptune venus)
+        - (feast expectation hamburger beef bosnia bavaria)
+        - (feast expectation beef baguette bosnia bavaria)
+        - (overcome dread expectation baguette vulcan neptune)
+        - (feast expectation baguette cucumber alsace guanabara)
+        - (feast expectation cucumber hotdog bosnia bavaria)
+        - (feast expectation hotdog mutton moravia kentucky)
+        - (succumb boils expectation mutton vulcan neptune)
+        - (succumb dread expectation mutton vulcan neptune)
+        repair_set: succumb,(harmony ?v ?s1),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-20T04:13:49.191787'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '30.64'
+
+
+---
+timestamp: '2025-01-20T04:13:49.234748'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 31.05 seconds'
+
+

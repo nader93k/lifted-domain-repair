@@ -1,0 +1,64 @@
+---
+timestamp: '2025-03-15T07:30:26.089187'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary
+        exhaust lp066/pegsol-08-strips__pp01-err-rate-0-3.yaml
+    instance_id: pegsol-08-strips__pp01-err-rate-0-3
+    search_algorithm: astar
+    plan_length: 7
+    domain_class: pegsol-08-strips
+    instance_name: pp01-err-rate-0-3
+    ground_plan:
+    - (jump-new-move pos-3-4 pos-2-4 pos-1-4)
+    - (end-move pos-1-4)
+    - (jump-new-move pos-1-4 pos-1-3 pos-1-2)
+    - (end-move pos-1-2)
+    - (jump-new-move pos-1-2 pos-2-2 pos-3-2)
+    - (end-move pos-3-2)
+    - (jump-new-move pos-3-1 pos-3-2 pos-3-3)
+    lifted_plan:
+    -   - jump-new-move
+        - pos-3-4
+        - pos-2-4
+        - ?pos-1-4
+    -   - end-move
+        - ?pos-1-4
+    -   - jump-new-move
+        - ?pos-1-4
+        - ?pos-1-3
+        - pos-1-2
+    -   - end-move
+        - ?pos-1-2
+    -   - jump-new-move
+        - ?pos-1-2
+        - ?pos-2-2
+        - pos-3-2
+    -   - end-move
+        - ?pos-3-2
+    -   - jump-new-move
+        - ?pos-3-1
+        - pos-3-2
+        - ?pos-3-3
+
+
+---
+timestamp: '2025-03-15T07:30:26.093071'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: jump-new-move,(move-ended ),precPos,-1
+
+
+---
+timestamp: '2025-03-15T07:45:22.472997'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+

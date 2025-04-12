@@ -1,0 +1,90 @@
+---
+timestamp: '2025-03-03T21:08:51.146952'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/bfs
+        exhaust lp033/pegsol-08-strips__pp04-err-rate-0-5.yaml
+    instance_id: pegsol-08-strips__pp04-err-rate-0-5
+    search_algorithm: bfs
+    plan_length: 13
+    domain_class: pegsol-08-strips
+    instance_name: pp04-err-rate-0-5
+    ground_plan:
+    - (jump-new-move pos-0-2 pos-0-3 pos-0-4)
+    - (end-move pos-0-4)
+    - (jump-new-move pos-1-2 pos-1-3 pos-1-4)
+    - (end-move pos-1-4)
+    - (jump-new-move pos-0-4 pos-1-4 pos-2-4)
+    - (end-move pos-2-4)
+    - (jump-new-move pos-5-2 pos-5-3 pos-5-4)
+    - (end-move pos-5-4)
+    - (jump-new-move pos-2-4 pos-3-4 pos-4-4)
+    - (end-move pos-4-4)
+    - (jump-new-move pos-5-4 pos-4-4 pos-3-4)
+    - (end-move pos-3-4)
+    - (jump-new-move pos-3-5 pos-3-4 pos-3-3)
+    lifted_plan:
+    -   - jump-new-move
+        - pos-0-2
+        - pos-0-3
+        - pos-0-4
+    -   - end-move
+        - ?pos-0-4
+    -   - jump-new-move
+        - pos-1-2
+        - pos-1-3
+        - pos-1-4
+    -   - end-move
+        - ?pos-1-4
+    -   - jump-new-move
+        - pos-0-4
+        - pos-1-4
+        - pos-2-4
+    -   - end-move
+        - pos-2-4
+    -   - jump-new-move
+        - ?pos-5-2
+        - pos-5-3
+        - pos-5-4
+    -   - end-move
+        - ?pos-5-4
+    -   - jump-new-move
+        - pos-2-4
+        - pos-3-4
+        - pos-4-4
+    -   - end-move
+        - pos-4-4
+    -   - jump-new-move
+        - ?pos-5-4
+        - pos-4-4
+        - pos-3-4
+    -   - end-move
+        - pos-3-4
+    -   - jump-new-move
+        - pos-3-5
+        - ?pos-3-4
+        - pos-3-3
+
+
+---
+timestamp: '2025-03-03T21:08:51.151318'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'jump-new-move,(in-line ?over ?over ?to),precPos,-1
+
+        end-move,(in-line ?loc ?loc ?loc),precPos,-1'
+
+
+---
+timestamp: '2025-03-03T21:23:49.896413'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+

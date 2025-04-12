@@ -1,0 +1,145 @@
+---
+timestamp: '2025-01-19T20:16:32.919235'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary-ff
+        relax-prec lp066/mystery__pprob30-err-rate-0-1.yaml
+    instance_id: mystery__pprob30-err-rate-0-1
+    search_algorithm: astar
+    plan_length: 10
+    domain_class: mystery
+    instance_name: pprob30-err-rate-0-1
+    ground_plan:
+    - (feast triumph turkey chicken surrey pennsylvania)
+    - (overcome boils expectation hamburger neptune venus)
+    - (feast expectation hamburger beef bosnia bavaria)
+    - (feast expectation beef baguette bosnia bavaria)
+    - (overcome dread expectation baguette vulcan neptune)
+    - (feast expectation baguette cucumber alsace guanabara)
+    - (feast expectation cucumber hotdog bosnia bavaria)
+    - (feast expectation hotdog mutton moravia kentucky)
+    - (succumb boils expectation mutton vulcan neptune)
+    - (succumb dread expectation mutton neptune venus)
+    lifted_plan:
+    -   - feast
+        - triumph
+        - turkey
+        - ?chicken
+        - ?surrey
+        - ?pennsylvania
+    -   - overcome
+        - ?boils
+        - expectation
+        - ?hamburger
+        - ?neptune
+        - ?venus
+    -   - feast
+        - expectation
+        - ?hamburger
+        - ?beef
+        - bosnia
+        - ?bavaria
+    -   - feast
+        - ?expectation
+        - beef
+        - baguette
+        - bosnia
+        - bavaria
+    -   - overcome
+        - ?dread
+        - expectation
+        - baguette
+        - vulcan
+        - ?neptune
+    -   - feast
+        - ?expectation
+        - ?baguette
+        - ?cucumber
+        - alsace
+        - guanabara
+    -   - feast
+        - ?expectation
+        - cucumber
+        - ?hotdog
+        - bosnia
+        - ?bavaria
+    -   - feast
+        - ?expectation
+        - hotdog
+        - ?mutton
+        - moravia
+        - kentucky
+    -   - succumb
+        - ?boils
+        - ?expectation
+        - mutton
+        - ?vulcan
+        - ?neptune
+    -   - succumb
+        - dread
+        - ?expectation
+        - ?mutton
+        - ?neptune
+        - venus
+
+
+---
+timestamp: '2025-01-19T20:16:32.923869'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: overcome,(harmony ?v ?s1),effPos,1
+
+
+---
+timestamp: '2025-01-19T20:16:43.355364'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 22
+    fring_size: 0
+    num_nodes_generated: 22
+    sum_h_cost: 108
+    sum_f_cost: 54
+    sum_h_cost_time: 9.342249870300293
+    sum_grounding_time: 0.9780476093292236
+    h_max: 3
+    current_node:
+        depth: 4
+        ground_actions:
+        - (feast triumph turkey muffin surrey pennsylvania)
+        - (overcome boils expectation hamburger neptune venus)
+        - (feast expectation hamburger beef bosnia bavaria)
+        - (feast expectation beef baguette bosnia bavaria)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 3
+        f_cost: 3
+        next_lifted_action: '[''overcome'', ''?dread'', ''expectation'', ''baguette'',
+            ''vulcan'', ''?neptune'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-19T20:16:43.357068'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '11.57'
+
+
+---
+timestamp: '2025-01-19T20:16:43.395108'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 11.95 seconds'
+
+

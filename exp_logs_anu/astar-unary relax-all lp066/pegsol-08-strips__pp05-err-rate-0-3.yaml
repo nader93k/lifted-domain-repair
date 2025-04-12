@@ -1,0 +1,142 @@
+---
+timestamp: '2025-01-22T05:50:49.787601'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary
+        relax-all lp066/pegsol-08-strips__pp05-err-rate-0-3.yaml
+    instance_id: pegsol-08-strips__pp05-err-rate-0-3
+    search_algorithm: astar
+    plan_length: 14
+    domain_class: pegsol-08-strips
+    instance_name: pp05-err-rate-0-3
+    ground_plan:
+    - (jump-new-move pos-2-5 pos-2-4 pos-2-3)
+    - (end-move pos-2-3)
+    - (jump-new-move pos-4-1 pos-4-2 pos-4-3)
+    - (end-move pos-4-3)
+    - (jump-new-move pos-2-3 pos-2-2 pos-2-1)
+    - (end-move pos-2-1)
+    - (jump-new-move pos-2-1 pos-3-1 pos-4-1)
+    - (end-move pos-4-1)
+    - (jump-new-move pos-4-4 pos-4-3 pos-4-2)
+    - (end-move pos-4-2)
+    - (jump-new-move pos-4-1 pos-4-2 pos-4-3)
+    - (jump-continue-move pos-4-3 pos-3-3 pos-2-3)
+    - (end-move pos-2-3)
+    - (jump-new-move pos-1-3 pos-2-3 pos-3-3)
+    lifted_plan:
+    -   - jump-new-move
+        - pos-2-5
+        - pos-2-4
+        - ?pos-2-3
+    -   - end-move
+        - ?pos-2-3
+    -   - jump-new-move
+        - ?pos-4-1
+        - ?pos-4-2
+        - pos-4-3
+    -   - end-move
+        - ?pos-4-3
+    -   - jump-new-move
+        - ?pos-2-3
+        - ?pos-2-2
+        - pos-2-1
+    -   - end-move
+        - ?pos-2-1
+    -   - jump-new-move
+        - ?pos-2-1
+        - pos-3-1
+        - ?pos-4-1
+    -   - end-move
+        - ?pos-4-1
+    -   - jump-new-move
+        - pos-4-4
+        - pos-4-3
+        - pos-4-2
+    -   - end-move
+        - pos-4-2
+    -   - jump-new-move
+        - ?pos-4-1
+        - pos-4-2
+        - pos-4-3
+    -   - jump-continue-move
+        - pos-4-3
+        - ?pos-3-3
+        - ?pos-2-3
+    -   - end-move
+        - ?pos-2-3
+    -   - jump-new-move
+        - ?pos-1-3
+        - pos-2-3
+        - pos-3-3
+
+
+---
+timestamp: '2025-01-22T05:50:49.791894'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-22T06:01:47.863888'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 15
+    fring_size: 4576
+    num_nodes_generated: 4591
+    sum_h_cost: 9500
+    sum_f_cost: 14888
+    sum_h_cost_time: 2.1392974853515625
+    sum_grounding_time: 1.486647367477417
+    h_max: 7
+    current_node:
+        depth: 14
+        ground_actions:
+        - (jump-new-move pos-2-5 pos-2-4 pos-2-3)
+        - (end-move pos-2-3)
+        - (jump-new-move pos-4-1 pos-4-2 pos-4-3)
+        - (end-move pos-4-3)
+        - (jump-new-move pos-2-3 pos-2-2 pos-2-1)
+        - (end-move pos-2-1)
+        - (jump-new-move pos-2-1 pos-3-1 pos-4-1)
+        - (end-move pos-4-1)
+        - (jump-new-move pos-4-4 pos-4-3 pos-4-2)
+        - (end-move pos-4-2)
+        - (jump-new-move pos-4-1 pos-4-2 pos-4-3)
+        - (jump-continue-move pos-4-3 pos-3-3 pos-2-3)
+        - (end-move pos-2-3)
+        - (jump-new-move pos-1-3 pos-2-3 pos-3-3)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-22T06:01:47.992868'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '660.76'
+
+
+---
+timestamp: '2025-01-22T06:01:48.054742'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 661.44 seconds'
+
+

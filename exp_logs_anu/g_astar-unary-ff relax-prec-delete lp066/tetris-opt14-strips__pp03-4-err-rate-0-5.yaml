@@ -1,0 +1,133 @@
+---
+timestamp: '2025-03-06T17:20:29.991964'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary-ff
+        relax-prec-delete lp066/tetris-opt14-strips__pp03-4-err-rate-0-5.yaml
+    instance_id: tetris-opt14-strips__pp03-4-err-rate-0-5
+    search_algorithm: g_astar
+    plan_length: 10
+    domain_class: tetris-opt14-strips
+    instance_name: pp03-4-err-rate-0-5
+    ground_plan:
+    - (move_square f1-0f f2-0f square2)
+    - (move_square f0-2f f0-1f square1)
+    - (move_square f0-0f f1-0f square0)
+    - (move_square f1-1f f2-1f square3)
+    - (move_l_down f1-2f f2-2f f2-3f f3-2f f3-3f rightl0)
+    - (move_square f2-0f f3-0f square2)
+    - (move_square f1-0f f2-0f square0)
+    - (move_square f0-1f f1-1f square1)
+    - (move_square f2-1f f3-1f square3)
+    - (move_square f1-1f f2-1f square1)
+    lifted_plan:
+    -   - move_square
+        - f1-0f
+        - f2-0f
+        - ?square2
+    -   - move_square
+        - ?f0-2f
+        - ?f0-1f
+        - ?square1
+    -   - move_square
+        - f0-0f
+        - ?f1-0f
+        - ?square0
+    -   - move_square
+        - ?f1-1f
+        - f2-1f
+        - ?square3
+    -   - move_l_down
+        - ?f1-2f
+        - f2-2f
+        - ?f2-3f
+        - ?f3-2f
+        - f3-3f
+        - rightl0
+    -   - move_square
+        - f2-0f
+        - f3-0f
+        - ?square2
+    -   - move_square
+        - f1-0f
+        - f2-0f
+        - square0
+    -   - move_square
+        - ?f0-1f
+        - ?f1-1f
+        - ?square1
+    -   - move_square
+        - ?f2-1f
+        - f3-1f
+        - square3
+    -   - move_square
+        - ?f1-1f
+        - f2-1f
+        - ?square1
+
+
+---
+timestamp: '2025-03-06T17:20:29.995994'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-03-06T17:20:34.221190'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 16
+    fring_size: 51
+    num_nodes_generated: 67
+    sum_h_cost: 52
+    sum_f_cost: 78
+    sum_h_cost_time: 0.9023900032043457
+    sum_grounding_time: 0.508894681930542
+    h_max: 4
+    current_node:
+        depth: 10
+        ground_actions:
+        - (move_square f1-0f f2-0f square2)
+        - (move_square f0-2f f0-1f square1)
+        - (move_square f0-0f f1-0f square0)
+        - (move_square f1-1f f2-1f square3)
+        - (move_l_down f1-2f f2-2f f2-3f f3-2f f3-3f rightl0)
+        - (move_square f2-0f f3-0f square2)
+        - (move_square f1-0f f2-0f square0)
+        - (move_square f0-1f f1-1f square1)
+        - (move_square f2-1f f3-1f square3)
+        - (move_square f1-1f f2-1f square1)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-06T17:20:34.224728'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '5.37'
+
+
+---
+timestamp: '2025-03-06T17:20:34.260332'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 5.66 seconds'
+
+

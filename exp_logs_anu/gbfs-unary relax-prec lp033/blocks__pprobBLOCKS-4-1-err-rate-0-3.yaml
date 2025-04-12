@@ -1,0 +1,116 @@
+---
+timestamp: '2025-01-20T23:08:26.931978'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary
+        relax-prec lp033/blocks__pprobBLOCKS-4-1-err-rate-0-3.yaml
+    instance_id: blocks__pprobBLOCKS-4-1-err-rate-0-3
+    search_algorithm: greedy
+    plan_length: 10
+    domain_class: blocks
+    instance_name: pprobBLOCKS-4-1-err-rate-0-3
+    ground_plan:
+    - (unstack b c)
+    - (put-down b)
+    - (unstack c a)
+    - (put-down c)
+    - (unstack a d)
+    - (stack a b)
+    - (pick-up c)
+    - (stack c a)
+    - (pick-up d)
+    - (stack d c)
+    lifted_plan:
+    -   - unstack
+        - b
+        - c
+    -   - put-down
+        - b
+    -   - unstack
+        - ?c
+        - a
+    -   - put-down
+        - c
+    -   - unstack
+        - a
+        - ?d
+    -   - stack
+        - a
+        - b
+    -   - pick-up
+        - c
+    -   - stack
+        - c
+        - ?a
+    -   - pick-up
+        - d
+    -   - stack
+        - d
+        - ?c
+
+
+---
+timestamp: '2025-01-20T23:08:26.934416'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-20T23:08:27.132198'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 11
+    fring_size: 1
+    num_nodes_generated: 12
+    sum_h_cost: 10
+    sum_f_cost: 5
+    sum_h_cost_time: 0.0709836483001709
+    sum_grounding_time: 0.0980522632598877
+    h_max: 5
+    current_node:
+        depth: 10
+        ground_actions:
+        - (unstack b c)
+        - (put-down b)
+        - (unstack c a)
+        - (put-down c)
+        - (unstack a d)
+        - (stack a b)
+        - (pick-up c)
+        - (stack c a)
+        - (pick-up d)
+        - (stack d c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-20T23:08:27.133464'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.35'
+
+
+---
+timestamp: '2025-01-20T23:08:27.162919'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.73 seconds'
+
+

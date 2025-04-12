@@ -1,0 +1,160 @@
+---
+timestamp: '2025-03-06T15:08:58.464055'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary-ff
+        relax-prec lp033/mystery__pprob14-err-rate-0-5.yaml
+    instance_id: mystery__pprob14-err-rate-0-5
+    search_algorithm: g_astar
+    plan_length: 11
+    domain_class: mystery
+    instance_name: pprob14-err-rate-0-5
+    ground_plan:
+    - (feast rest scallop lettuce quebec bavaria)
+    - (feast rest lettuce pistachio arizona pennsylvania)
+    - (overcome anxiety-25 rest pistachio vulcan jupiter)
+    - (overcome prostatitis-23 rest pistachio mars vulcan)
+    - (feast rest pistachio lettuce alsace arizona)
+    - (feast rest lettuce scallop alsace arizona)
+    - (feast rest scallop scallion surrey quebec)
+    - (feast rest scallion shrimp pennsylvania surrey)
+    - (feast rest shrimp potato pennsylvania surrey)
+    - (succumb anxiety-25 rest potato mars vulcan)
+    - (succumb prostatitis-23 rest potato vulcan jupiter)
+    lifted_plan:
+    -   - feast
+        - rest
+        - scallop
+        - lettuce
+        - ?quebec
+        - bavaria
+    -   - feast
+        - rest
+        - lettuce
+        - ?pistachio
+        - arizona
+        - pennsylvania
+    -   - overcome
+        - anxiety-25
+        - rest
+        - ?pistachio
+        - vulcan
+        - jupiter
+    -   - overcome
+        - ?prostatitis-23
+        - rest
+        - pistachio
+        - mars
+        - vulcan
+    -   - feast
+        - ?rest
+        - pistachio
+        - lettuce
+        - alsace
+        - arizona
+    -   - feast
+        - ?rest
+        - lettuce
+        - scallop
+        - alsace
+        - arizona
+    -   - feast
+        - rest
+        - scallop
+        - ?scallion
+        - surrey
+        - quebec
+    -   - feast
+        - ?rest
+        - scallion
+        - shrimp
+        - pennsylvania
+        - surrey
+    -   - feast
+        - ?rest
+        - shrimp
+        - potato
+        - ?pennsylvania
+        - ?surrey
+    -   - succumb
+        - anxiety-25
+        - ?rest
+        - potato
+        - ?mars
+        - vulcan
+    -   - succumb
+        - prostatitis-23
+        - rest
+        - ?potato
+        - ?vulcan
+        - jupiter
+
+
+---
+timestamp: '2025-03-06T15:08:58.470046'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'overcome,(fears ?c ?v),effPos,1
+
+        overcome,(harmony ?v ?s2),effPos,1'
+
+
+---
+timestamp: '2025-03-06T15:09:12.617616'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 26
+    fring_size: 0
+    num_nodes_generated: 26
+    sum_h_cost: 184
+    sum_f_cost: 94
+    sum_h_cost_time: 12.022933959960938
+    sum_grounding_time: 1.9450678825378418
+    h_max: 4
+    current_node:
+        depth: 10
+        ground_actions:
+        - (feast rest scallop lettuce quebec bavaria)
+        - (feast rest lettuce pistachio arizona pennsylvania)
+        - (overcome anxiety-25 rest pistachio vulcan jupiter)
+        - (overcome loneliness-24 rest pistachio mars vulcan)
+        - (feast rest pistachio lettuce alsace arizona)
+        - (feast rest lettuce scallop alsace arizona)
+        - (feast rest scallop scallion surrey quebec)
+        - (feast rest scallion shrimp pennsylvania surrey)
+        - (feast rest shrimp potato pennsylvania surrey)
+        - (succumb anxiety-25 rest potato mars vulcan)
+        repair_set: overcome,(fears ?c ?v),effPos,1
+        g_cost: 1
+        h_cost: 2
+        f_cost: 3
+        next_lifted_action: '[''succumb'', ''prostatitis-23'', ''rest'', ''?potato'',
+            ''?vulcan'', ''jupiter'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-06T15:09:12.619293'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '15.50'
+
+
+---
+timestamp: '2025-03-06T15:09:12.650877'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 15.94 seconds'
+
+

@@ -1,0 +1,109 @@
+---
+timestamp: '2025-03-03T13:47:59.264549'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_debug/dfs
+        exhast lp1/visitall-opt11-strips__pproblem03-half-err-rate-0-1.yaml
+    instance_id: visitall-opt11-strips__pproblem03-half-err-rate-0-1
+    search_algorithm: dfs
+    plan_length: 7
+    domain_class: visitall-opt11-strips
+    instance_name: pproblem03-half-err-rate-0-1
+    ground_plan:
+    - (move loc-x1-y1 loc-x0-y1)
+    - (move loc-x0-y1 loc-x0-y2)
+    - (move loc-x0-y2 loc-x0-y1)
+    - (move loc-x0-y1 loc-x0-y0)
+    - (move loc-x0-y0 loc-x1-y0)
+    - (move loc-x1-y0 loc-x2-y0)
+    - (move loc-x2-y0 loc-x2-y1)
+    lifted_plan:
+    -   - move
+        - ?loc-x1-y1
+        - ?loc-x0-y1
+    -   - move
+        - ?loc-x0-y1
+        - ?loc-x0-y2
+    -   - move
+        - ?loc-x0-y2
+        - ?loc-x0-y1
+    -   - move
+        - ?loc-x0-y1
+        - ?loc-x0-y0
+    -   - move
+        - ?loc-x0-y0
+        - ?loc-x1-y0
+    -   - move
+        - ?loc-x1-y0
+        - ?loc-x2-y0
+    -   - move
+        - ?loc-x2-y0
+        - ?loc-x2-y1
+
+
+---
+timestamp: '2025-03-03T13:47:59.266737'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-03-03T13:47:59.855521'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 9
+    fring_size: 1
+    num_nodes_generated: 489
+    sum_h_cost: 0
+    sum_f_cost: 0
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 0.13409876823425293
+    h_max: -.inf
+    current_node:
+        depth: 7
+        ground_actions:
+        - (move loc-x1-y1 loc-x2-y1)
+        - (move loc-x2-y1 loc-x2-y2)
+        - (move loc-x2-y2 loc-x2-y1)
+        - (move loc-x2-y1 loc-x2-y2)
+        - (move loc-x2-y2 loc-x2-y1)
+        - (move loc-x2-y1 loc-x2-y0)
+        - (move loc-x0-y2 loc-x0-y0)
+        repair_set: 'move,(at-robot ?curpos),precPos,-1
+
+            move,(connected ?curpos ?nextpos),precPos,-1
+
+            move,(visited ?curpos),effPos,1'
+        g_cost: 3
+        h_cost: 0
+        f_cost: 3
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-03T13:47:59.862562'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.91'
+
+
+---
+timestamp: '2025-03-03T13:47:59.906495'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 2.28 seconds'
+
+

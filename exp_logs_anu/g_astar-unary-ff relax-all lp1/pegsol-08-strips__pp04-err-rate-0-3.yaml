@@ -1,0 +1,88 @@
+---
+timestamp: '2025-03-09T22:06:05.445804'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary-ff
+        relax-all lp1/pegsol-08-strips__pp04-err-rate-0-3.yaml
+    instance_id: pegsol-08-strips__pp04-err-rate-0-3
+    search_algorithm: g_astar
+    plan_length: 13
+    domain_class: pegsol-08-strips
+    instance_name: pp04-err-rate-0-3
+    ground_plan:
+    - (jump-new-move pos-0-2 pos-0-3 pos-0-4)
+    - (end-move pos-0-4)
+    - (jump-new-move pos-1-2 pos-1-3 pos-1-4)
+    - (end-move pos-1-4)
+    - (jump-new-move pos-0-4 pos-1-4 pos-2-4)
+    - (end-move pos-2-4)
+    - (jump-new-move pos-5-2 pos-5-3 pos-5-4)
+    - (end-move pos-5-4)
+    - (jump-new-move pos-2-4 pos-3-4 pos-4-4)
+    - (end-move pos-4-4)
+    - (jump-new-move pos-5-4 pos-4-4 pos-3-4)
+    - (end-move pos-3-4)
+    - (jump-new-move pos-3-5 pos-3-4 pos-3-3)
+    lifted_plan:
+    -   - jump-new-move
+        - ?pos-0-2
+        - ?pos-0-3
+        - ?pos-0-4
+    -   - end-move
+        - ?pos-0-4
+    -   - jump-new-move
+        - ?pos-1-2
+        - ?pos-1-3
+        - ?pos-1-4
+    -   - end-move
+        - ?pos-1-4
+    -   - jump-new-move
+        - ?pos-0-4
+        - ?pos-1-4
+        - ?pos-2-4
+    -   - end-move
+        - ?pos-2-4
+    -   - jump-new-move
+        - ?pos-5-2
+        - ?pos-5-3
+        - ?pos-5-4
+    -   - end-move
+        - ?pos-5-4
+    -   - jump-new-move
+        - ?pos-2-4
+        - ?pos-3-4
+        - ?pos-4-4
+    -   - end-move
+        - ?pos-4-4
+    -   - jump-new-move
+        - ?pos-5-4
+        - ?pos-4-4
+        - ?pos-3-4
+    -   - end-move
+        - ?pos-3-4
+    -   - jump-new-move
+        - ?pos-3-5
+        - ?pos-3-4
+        - ?pos-3-3
+
+
+---
+timestamp: '2025-03-09T22:06:05.450283'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: jump-new-move,(move-ended ),effPos,1
+
+
+---
+timestamp: '2025-03-09T22:21:03.657349'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+

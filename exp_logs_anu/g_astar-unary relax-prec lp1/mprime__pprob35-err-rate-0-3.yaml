@@ -1,0 +1,117 @@
+---
+timestamp: '2025-03-12T15:00:23.955250'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary
+        relax-prec lp1/mprime__pprob35-err-rate-0-3.yaml
+    instance_id: mprime__pprob35-err-rate-0-3
+    search_algorithm: g_astar
+    plan_length: 6
+    domain_class: mprime
+    instance_name: pprob35-err-rate-0-3
+    ground_plan:
+    - (feast empathy chicken arugula kentucky bosnia)
+    - (overcome sciatica empathy arugula earth mars)
+    - (drink chicken arugula kentucky arizona manitoba manitoba arizona)
+    - (feast empathy arugula chicken manitoba arizona)
+    - (feast empathy chicken ham manitoba arizona)
+    - (succumb sciatica empathy ham earth mars)
+    lifted_plan:
+    -   - feast
+        - ?empathy
+        - ?chicken
+        - ?arugula
+        - ?kentucky
+        - ?bosnia
+    -   - overcome
+        - ?sciatica
+        - ?empathy
+        - ?arugula
+        - ?earth
+        - ?mars
+    -   - drink
+        - ?chicken
+        - ?arugula
+        - ?kentucky
+        - ?arizona
+        - ?manitoba
+        - ?manitoba
+        - ?arizona
+    -   - feast
+        - ?empathy
+        - ?arugula
+        - ?chicken
+        - ?manitoba
+        - ?arizona
+    -   - feast
+        - ?empathy
+        - ?chicken
+        - ?ham
+        - ?manitoba
+        - ?arizona
+    -   - succumb
+        - ?sciatica
+        - ?empathy
+        - ?ham
+        - ?earth
+        - ?mars
+
+
+---
+timestamp: '2025-03-12T15:00:23.958864'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: drink,(craves ?n1 ?l13),precPos,-1
+
+
+---
+timestamp: '2025-03-12T15:00:28.798661'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 20
+    fring_size: 0
+    num_nodes_generated: 20
+    sum_h_cost: 168
+    sum_f_cost: 84
+    sum_h_cost_time: 4.2085442543029785
+    sum_grounding_time: 0.5520052909851074
+    h_max: 6
+    current_node:
+        depth: 2
+        ground_actions:
+        - (feast intoxication tofu marzipan guanabara goias)
+        - (overcome sciatica excitement arugula mars jupiter)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 3
+        f_cost: 3
+        next_lifted_action: '[''drink'', ''?chicken'', ''?arugula'', ''?kentucky'',
+            ''?arizona'', ''?manitoba'', ''?manitoba'', ''?arizona'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-12T15:00:28.800228'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '5.98'
+
+
+---
+timestamp: '2025-03-12T15:00:28.834203'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 6.32 seconds'
+
+

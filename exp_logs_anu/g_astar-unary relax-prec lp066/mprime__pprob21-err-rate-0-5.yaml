@@ -1,0 +1,129 @@
+---
+timestamp: '2025-03-12T14:43:55.476081'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary
+        relax-prec lp066/mprime__pprob21-err-rate-0-5.yaml
+    instance_id: mprime__pprob21-err-rate-0-5
+    search_algorithm: g_astar
+    plan_length: 7
+    domain_class: mprime
+    instance_name: pprob21-err-rate-0-5
+    ground_plan:
+    - (feast love flounder wurst alsace kentucky)
+    - (feast learning lemon apple alsace kentucky)
+    - (overcome sciatica love wurst uranus neptune)
+    - (drink snickers wurst goias kentucky alsace alsace kentucky)
+    - (feast love wurst snickers alsace kentucky)
+    - (feast love snickers apple alsace kentucky)
+    - (succumb sciatica love apple uranus neptune)
+    lifted_plan:
+    -   - feast
+        - love
+        - flounder
+        - ?wurst
+        - ?alsace
+        - ?kentucky
+    -   - feast
+        - ?learning
+        - lemon
+        - ?apple
+        - ?alsace
+        - ?kentucky
+    -   - overcome
+        - sciatica
+        - ?love
+        - ?wurst
+        - uranus
+        - ?neptune
+    -   - drink
+        - ?snickers
+        - wurst
+        - goias
+        - kentucky
+        - alsace
+        - ?alsace
+        - kentucky
+    -   - feast
+        - love
+        - wurst
+        - ?snickers
+        - ?alsace
+        - ?kentucky
+    -   - feast
+        - ?love
+        - snickers
+        - apple
+        - ?alsace
+        - kentucky
+    -   - succumb
+        - ?sciatica
+        - love
+        - ?apple
+        - ?uranus
+        - neptune
+
+
+---
+timestamp: '2025-03-12T14:43:55.481217'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'drink,(locale ?n1 ?l12),effPos,1
+
+        succumb,(fears ?c ?v),precPos,-1'
+
+
+---
+timestamp: '2025-03-12T14:44:13.528844'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 57
+    fring_size: 0
+    num_nodes_generated: 57
+    sum_h_cost: 700
+    sum_f_cost: 350
+    sum_h_cost_time: 14.817240238189697
+    sum_grounding_time: 2.8909668922424316
+    h_max: 8
+    current_node:
+        depth: 5
+        ground_actions:
+        - (feast love flounder wurst alsace kentucky)
+        - (feast learning lemon wurst alsace kentucky)
+        - (overcome sciatica love wurst uranus neptune)
+        - (drink snickers wurst goias kentucky alsace alsace kentucky)
+        - (feast love wurst snickers alsace kentucky)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 4
+        f_cost: 4
+        next_lifted_action: '[''feast'', ''?love'', ''snickers'', ''apple'', ''?alsace'',
+            ''kentucky'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-12T14:44:13.530477'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '19.30'
+
+
+---
+timestamp: '2025-03-12T14:44:13.564690'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 19.60 seconds'
+
+

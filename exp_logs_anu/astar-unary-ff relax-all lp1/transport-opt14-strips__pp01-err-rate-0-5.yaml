@@ -1,0 +1,116 @@
+---
+timestamp: '2025-01-21T02:51:05.643808'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary-ff
+        relax-all lp1/transport-opt14-strips__pp01-err-rate-0-5.yaml
+    instance_id: transport-opt14-strips__pp01-err-rate-0-5
+    search_algorithm: astar
+    plan_length: 13
+    domain_class: transport-opt14-strips
+    instance_name: pp01-err-rate-0-5
+    ground_plan:
+    - (pick-up truck-2 city-loc-1 package-1 capacity-1 capacity-2)
+    - (pick-up truck-1 city-loc-2 package-4 capacity-2 capacity-3)
+    - (drive truck-1 city-loc-2 city-loc-5)
+    - (drop truck-1 city-loc-5 package-4 capacity-2 capacity-3)
+    - (drive truck-2 city-loc-1 city-loc-3)
+    - (pick-up truck-2 city-loc-3 package-3 capacity-0 capacity-1)
+    - (drive truck-2 city-loc-3 city-loc-1)
+    - (drop truck-2 city-loc-1 package-3 capacity-0 capacity-1)
+    - (pick-up truck-2 city-loc-1 package-2 capacity-0 capacity-1)
+    - (drive truck-2 city-loc-1 city-loc-3)
+    - (drive truck-2 city-loc-3 city-loc-2)
+    - (drop truck-2 city-loc-2 package-1 capacity-0 capacity-1)
+    - (drop truck-2 city-loc-2 package-2 capacity-1 capacity-2)
+    lifted_plan:
+    -   - pick-up
+        - ?truck-2
+        - ?city-loc-1
+        - ?package-1
+        - ?capacity-1
+        - ?capacity-2
+    -   - pick-up
+        - ?truck-1
+        - ?city-loc-2
+        - ?package-4
+        - ?capacity-2
+        - ?capacity-3
+    -   - drive
+        - ?truck-1
+        - ?city-loc-2
+        - ?city-loc-5
+    -   - drop
+        - ?truck-1
+        - ?city-loc-5
+        - ?package-4
+        - ?capacity-2
+        - ?capacity-3
+    -   - drive
+        - ?truck-2
+        - ?city-loc-1
+        - ?city-loc-3
+    -   - pick-up
+        - ?truck-2
+        - ?city-loc-3
+        - ?package-3
+        - ?capacity-0
+        - ?capacity-1
+    -   - drive
+        - ?truck-2
+        - ?city-loc-3
+        - ?city-loc-1
+    -   - drop
+        - ?truck-2
+        - ?city-loc-1
+        - ?package-3
+        - ?capacity-0
+        - ?capacity-1
+    -   - pick-up
+        - ?truck-2
+        - ?city-loc-1
+        - ?package-2
+        - ?capacity-0
+        - ?capacity-1
+    -   - drive
+        - ?truck-2
+        - ?city-loc-1
+        - ?city-loc-3
+    -   - drive
+        - ?truck-2
+        - ?city-loc-3
+        - ?city-loc-2
+    -   - drop
+        - ?truck-2
+        - ?city-loc-2
+        - ?package-1
+        - ?capacity-0
+        - ?capacity-1
+    -   - drop
+        - ?truck-2
+        - ?city-loc-2
+        - ?package-2
+        - ?capacity-1
+        - ?capacity-2
+
+
+---
+timestamp: '2025-01-21T02:51:05.647888'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: pick-up,(road ?l ?l),precPos,-1
+
+
+---
+timestamp: '2025-01-21T03:06:04.340035'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+

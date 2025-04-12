@@ -1,0 +1,168 @@
+---
+timestamp: '2025-03-09T22:18:02.097508'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary-ff
+        relax-all lp1/nomystery-opt11-strips__pp02-err-rate-0-5.yaml
+    instance_id: nomystery-opt11-strips__pp02-err-rate-0-5
+    search_algorithm: g_astar
+    plan_length: 14
+    domain_class: nomystery-opt11-strips
+    instance_name: pp02-err-rate-0-5
+    ground_plan:
+    - (load p1 t0 l3)
+    - (drive t0 l3 l2 level94 level11 level105)
+    - (drive t0 l2 l1 level89 level5 level94)
+    - (load p2 t0 l1)
+    - (unload p1 t0 l1)
+    - (drive t0 l1 l2 level84 level5 level89)
+    - (unload p2 t0 l2)
+    - (drive t0 l2 l4 level61 level23 level84)
+    - (load p3 t0 l4)
+    - (load p0 t0 l4)
+    - (drive t0 l4 l2 level38 level23 level61)
+    - (unload p0 t0 l2)
+    - (drive t0 l2 l3 level27 level11 level38)
+    - (unload p3 t0 l3)
+    lifted_plan:
+    -   - load
+        - ?p1
+        - ?t0
+        - ?l3
+    -   - drive
+        - ?t0
+        - ?l3
+        - ?l2
+        - ?level94
+        - ?level11
+        - ?level105
+    -   - drive
+        - ?t0
+        - ?l2
+        - ?l1
+        - ?level89
+        - ?level5
+        - ?level94
+    -   - load
+        - ?p2
+        - ?t0
+        - ?l1
+    -   - unload
+        - ?p1
+        - ?t0
+        - ?l1
+    -   - drive
+        - ?t0
+        - ?l1
+        - ?l2
+        - ?level84
+        - ?level5
+        - ?level89
+    -   - unload
+        - ?p2
+        - ?t0
+        - ?l2
+    -   - drive
+        - ?t0
+        - ?l2
+        - ?l4
+        - ?level61
+        - ?level23
+        - ?level84
+    -   - load
+        - ?p3
+        - ?t0
+        - ?l4
+    -   - load
+        - ?p0
+        - ?t0
+        - ?l4
+    -   - drive
+        - ?t0
+        - ?l4
+        - ?l2
+        - ?level38
+        - ?level23
+        - ?level61
+    -   - unload
+        - ?p0
+        - ?t0
+        - ?l2
+    -   - drive
+        - ?t0
+        - ?l2
+        - ?l3
+        - ?level27
+        - ?level11
+        - ?level38
+    -   - unload
+        - ?p3
+        - ?t0
+        - ?l3
+
+
+---
+timestamp: '2025-03-09T22:18:02.145016'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: load,(connected ?l ?l),precPos,-1
+
+
+---
+timestamp: '2025-03-09T22:20:59.641630'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 1
+        ground_actions:
+        - (load p1 t0 l3)
+        repair_set: load,(connected ?l ?l),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: '[''drive'', ''?t0'', ''?l3'', ''?l2'', ''?level94'',
+            ''?level11'', ''?level105'']'
+        num_neighbours: 0
+        current_state: not implemented!
+
+
+---
+timestamp: '2025-03-09T22:20:59.643548'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: . Stack trace: Traceback (most recent call\
+    \ last):\n  File \"instance_solver.py\", line 125, in solve_instance\n    searcher.find_path(logger=logger,\
+    \ log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 78, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
+    \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 195, in get_neighbors\n    possible_groundings = grounder(domain, task,\
+    \ next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 134, in ground_pddl\n    filtered = filter_actions(lifted_action, applicable_actions)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 90, in filter_actions\n    filtered_actions.add(action)\nMemoryError\n"
+
+
+---
+timestamp: '2025-03-09T22:21:06.705334'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '185.80'
+
+
+---
+timestamp: '2025-03-09T22:21:06.749211'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 186.19 seconds'
+
+

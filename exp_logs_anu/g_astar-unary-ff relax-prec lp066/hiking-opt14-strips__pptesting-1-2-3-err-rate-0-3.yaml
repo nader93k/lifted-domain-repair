@@ -1,0 +1,158 @@
+---
+timestamp: '2025-03-06T15:25:16.494184'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary-ff
+        relax-prec lp066/hiking-opt14-strips__pptesting-1-2-3-err-rate-0-3.yaml
+    instance_id: hiking-opt14-strips__pptesting-1-2-3-err-rate-0-3
+    search_algorithm: g_astar
+    plan_length: 13
+    domain_class: hiking-opt14-strips
+    instance_name: pptesting-1-2-3-err-rate-0-3
+    ground_plan:
+    - (put_down girl0 place0 tent0)
+    - (drive_tent girl0 place0 place1 car0 tent0)
+    - (drive guy0 place0 place1 car1)
+    - (drive_tent_passenger girl0 place1 place0 car0 tent0 guy0)
+    - (drive_tent girl0 place0 place1 car0 tent0)
+    - (put_up girl0 place1 tent0)
+    - (drive girl0 place1 place0 car0)
+    - (walk_together tent0 place1 guy0 place0 girl0 couple0)
+    - (put_down girl0 place1 tent0)
+    - (drive_tent girl0 place1 place2 car1 tent0)
+    - (put_up girl0 place2 tent0)
+    - (drive girl0 place2 place1 car1)
+    - (walk_together tent0 place2 guy0 place1 girl0 couple0)
+    lifted_plan:
+    -   - put_down
+        - girl0
+        - place0
+        - ?tent0
+    -   - drive_tent
+        - ?girl0
+        - ?place0
+        - ?place1
+        - car0
+        - ?tent0
+    -   - drive
+        - ?guy0
+        - ?place0
+        - place1
+        - ?car1
+    -   - drive_tent_passenger
+        - ?girl0
+        - place1
+        - ?place0
+        - ?car0
+        - tent0
+        - guy0
+    -   - drive_tent
+        - girl0
+        - place0
+        - ?place1
+        - car0
+        - tent0
+    -   - put_up
+        - girl0
+        - ?place1
+        - ?tent0
+    -   - drive
+        - ?girl0
+        - ?place1
+        - place0
+        - car0
+    -   - walk_together
+        - ?tent0
+        - place1
+        - ?guy0
+        - place0
+        - ?girl0
+        - ?couple0
+    -   - put_down
+        - girl0
+        - ?place1
+        - tent0
+    -   - drive_tent
+        - girl0
+        - ?place1
+        - ?place2
+        - car1
+        - ?tent0
+    -   - put_up
+        - ?girl0
+        - place2
+        - ?tent0
+    -   - drive
+        - ?girl0
+        - ?place2
+        - place1
+        - car1
+    -   - walk_together
+        - ?tent0
+        - ?place2
+        - ?guy0
+        - ?place1
+        - girl0
+        - ?couple0
+
+
+---
+timestamp: '2025-03-06T15:25:16.499138'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: drive_tent,(at_car ?x4 ?x3),effPos,1
+
+
+---
+timestamp: '2025-03-06T15:25:18.878359'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 28
+    fring_size: 0
+    num_nodes_generated: 28
+    sum_h_cost: 352
+    sum_f_cost: 176
+    sum_h_cost_time: 1.8505222797393799
+    sum_grounding_time: 0.4098653793334961
+    h_max: 10
+    current_node:
+        depth: 4
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place1 car0 tent0)
+        - (drive guy0 place0 place1 car1)
+        - (drive_tent_passenger girl0 place1 place2 car1 tent0 guy0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 5
+        f_cost: 5
+        next_lifted_action: '[''drive_tent'', ''girl0'', ''place0'', ''?place1'',
+            ''car0'', ''tent0'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-06T15:25:18.879801'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '3.65'
+
+
+---
+timestamp: '2025-03-06T15:25:18.917009'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 4.04 seconds'
+
+

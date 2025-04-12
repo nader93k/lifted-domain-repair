@@ -1,0 +1,122 @@
+---
+timestamp: '2025-03-06T15:08:47.413831'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary-ff
+        relax-prec lp033/zenotravel__pp02-err-rate-0-1.yaml
+    instance_id: zenotravel__pp02-err-rate-0-1
+    search_algorithm: g_astar
+    plan_length: 8
+    domain_class: zenotravel
+    instance_name: pp02-err-rate-0-1
+    ground_plan:
+    - (fly plane1 city0 city1 fl2 fl1)
+    - (fly plane1 city1 city2 fl1 fl0)
+    - (refuel plane1 city2 fl0 fl1)
+    - (board person1 plane1 city2)
+    - (fly plane1 city2 city1 fl1 fl0)
+    - (refuel plane1 city1 fl0 fl1)
+    - (debark person1 plane1 city1)
+    - (fly plane1 city1 city2 fl1 fl0)
+    lifted_plan:
+    -   - fly
+        - plane1
+        - city0
+        - city1
+        - ?fl2
+        - fl1
+    -   - fly
+        - plane1
+        - city1
+        - ?city2
+        - fl1
+        - fl0
+    -   - refuel
+        - plane1
+        - city2
+        - ?fl0
+        - fl1
+    -   - board
+        - person1
+        - ?plane1
+        - city2
+    -   - fly
+        - plane1
+        - city2
+        - city1
+        - ?fl1
+        - fl0
+    -   - refuel
+        - plane1
+        - city1
+        - fl0
+        - ?fl1
+    -   - debark
+        - person1
+        - plane1
+        - city1
+    -   - fly
+        - plane1
+        - city1
+        - city2
+        - ?fl1
+        - fl0
+
+
+---
+timestamp: '2025-03-06T15:08:47.417322'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: refuel,(at ?c ?l1),precPos,-1
+
+
+---
+timestamp: '2025-03-06T15:08:48.035181'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 5
+    fring_size: 0
+    num_nodes_generated: 5
+    sum_h_cost: 44
+    sum_f_cost: 22
+    sum_h_cost_time: 0.4996349811553955
+    sum_grounding_time: 0.10208988189697266
+    h_max: 6
+    current_node:
+        depth: 2
+        ground_actions:
+        - (fly plane1 city0 city1 fl2 fl1)
+        - (fly plane1 city1 city1 fl1 fl0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 3
+        f_cost: 3
+        next_lifted_action: '[''refuel'', ''plane1'', ''city2'', ''?fl0'', ''fl1'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-06T15:08:48.036412'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.86'
+
+
+---
+timestamp: '2025-03-06T15:08:48.073857'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 2.24 seconds'
+
+

@@ -1,0 +1,135 @@
+---
+timestamp: '2025-03-13T23:35:07.794817'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary
+        relax-all lp1/mprime__pprob32-err-rate-0-3.yaml
+    instance_id: mprime__pprob32-err-rate-0-3
+    search_algorithm: g_astar
+    plan_length: 8
+    domain_class: mprime
+    instance_name: pprob32-err-rate-0-3
+    ground_plan:
+    - (feast satiety pepper pork alsace goias)
+    - (feast excitement yogurt cantelope goias kentucky)
+    - (feast satiety pork cucumber alsace goias)
+    - (overcome sciatica satiety cucumber neptune uranus)
+    - (feast satiety cucumber sweetroll goias kentucky)
+    - (feast satiety sweetroll yogurt alsace goias)
+    - (feast satiety yogurt cantelope alsace goias)
+    - (succumb sciatica satiety cantelope neptune uranus)
+    lifted_plan:
+    -   - feast
+        - ?satiety
+        - ?pepper
+        - ?pork
+        - ?alsace
+        - ?goias
+    -   - feast
+        - ?excitement
+        - ?yogurt
+        - ?cantelope
+        - ?goias
+        - ?kentucky
+    -   - feast
+        - ?satiety
+        - ?pork
+        - ?cucumber
+        - ?alsace
+        - ?goias
+    -   - overcome
+        - ?sciatica
+        - ?satiety
+        - ?cucumber
+        - ?neptune
+        - ?uranus
+    -   - feast
+        - ?satiety
+        - ?cucumber
+        - ?sweetroll
+        - ?goias
+        - ?kentucky
+    -   - feast
+        - ?satiety
+        - ?sweetroll
+        - ?yogurt
+        - ?alsace
+        - ?goias
+    -   - feast
+        - ?satiety
+        - ?yogurt
+        - ?cantelope
+        - ?alsace
+        - ?goias
+    -   - succumb
+        - ?sciatica
+        - ?satiety
+        - ?cantelope
+        - ?neptune
+        - ?uranus
+
+
+---
+timestamp: '2025-03-13T23:35:07.799333'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-03-13T23:36:47.480863'
+level: ERROR
+issuer: node
+event_type: error
+data:
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''feast'', ''?satiety'', ''?pepper'', ''?pork'', ''?alsace'',
+            ''?goias'']'
+        num_neighbours: 0
+        current_state: not implemented!
+
+
+---
+timestamp: '2025-03-13T23:36:47.482648'
+level: ERROR
+issuer: instance_solver
+event_type: error
+data: "An error occurred during A* search: . Stack trace: Traceback (most recent call\
+    \ last):\n  File \"instance_solver.py\", line 125, in solve_instance\n    searcher.find_path(logger=logger,\
+    \ log_interval=log_interval)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/search_algorithms.py\"\
+    , line 78, in find_path\n    neighbours = current_node.get_neighbors()\n  File\
+    \ \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/node.py\"\
+    , line 195, in get_neighbors\n    possible_groundings = grounder(domain, task,\
+    \ next_action_pddl)\n  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 134, in ground_pddl\n    filtered = filter_actions(lifted_action, applicable_actions)\n\
+    \  File \"/home/remote/u7899572/lifted-white-plan-domain-repair/search_partial_grounding/lifted_pddl_grounder.py\"\
+    , line 90, in filter_actions\n    filtered_actions.add(action)\nMemoryError\n"
+
+
+---
+timestamp: '2025-03-13T23:36:55.347811'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '108.85'
+
+
+---
+timestamp: '2025-03-13T23:36:55.400566'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 109.31 seconds'
+
+

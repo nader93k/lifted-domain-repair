@@ -1,0 +1,179 @@
+---
+timestamp: '2025-01-22T13:49:37.212932'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary
+        relax-all lp033/nomystery-opt11-strips__pp13-err-rate-0-5.yaml
+    instance_id: nomystery-opt11-strips__pp13-err-rate-0-5
+    search_algorithm: astar
+    plan_length: 15
+    domain_class: nomystery-opt11-strips
+    instance_name: pp13-err-rate-0-5
+    ground_plan:
+    - (load p1 t0 l2)
+    - (load p0 t0 l2)
+    - (drive t0 l2 l1 level41 level3 level44)
+    - (load p2 t0 l1)
+    - (drive t0 l1 l4 level29 level12 level41)
+    - (unload p1 t0 l4)
+    - (drive t0 l4 l3 level24 level5 level29)
+    - (load p4 t0 l3)
+    - (load p3 t0 l3)
+    - (unload p2 t0 l3)
+    - (unload p0 t0 l3)
+    - (drive t0 l3 l4 level19 level5 level24)
+    - (drive t0 l4 l2 level3 level16 level19)
+    - (unload p4 t0 l2)
+    - (unload p3 t0 l2)
+    lifted_plan:
+    -   - load
+        - p1
+        - t0
+        - l2
+    -   - load
+        - ?p0
+        - t0
+        - l2
+    -   - drive
+        - t0
+        - ?l2
+        - l1
+        - level41
+        - level3
+        - level44
+    -   - load
+        - ?p2
+        - t0
+        - l1
+    -   - drive
+        - ?t0
+        - l1
+        - l4
+        - level29
+        - level12
+        - ?level41
+    -   - unload
+        - p1
+        - t0
+        - l4
+    -   - drive
+        - t0
+        - ?l4
+        - l3
+        - level24
+        - level5
+        - level29
+    -   - load
+        - p4
+        - t0
+        - ?l3
+    -   - load
+        - p3
+        - t0
+        - ?l3
+    -   - unload
+        - p2
+        - t0
+        - l3
+    -   - unload
+        - p0
+        - ?t0
+        - l3
+    -   - drive
+        - t0
+        - ?l3
+        - ?l4
+        - level19
+        - ?level5
+        - level24
+    -   - drive
+        - ?t0
+        - l4
+        - l2
+        - level3
+        - ?level16
+        - ?level19
+    -   - unload
+        - p4
+        - t0
+        - ?l2
+    -   - unload
+        - p3
+        - t0
+        - l2
+
+
+---
+timestamp: '2025-01-22T13:49:37.225496'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: drive,(fuelcost ?fuelpre ?l2 ?l2),precPos,-1
+
+
+---
+timestamp: '2025-01-22T13:59:10.533462'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 21
+    fring_size: 3740
+    num_nodes_generated: 3761
+    sum_h_cost: 5268
+    sum_f_cost: 25286
+    sum_h_cost_time: 6.486465692520142
+    sum_grounding_time: 57.60723876953125
+    h_max: 18
+    current_node:
+        depth: 15
+        ground_actions:
+        - (load p1 t0 l2)
+        - (load p2 t0 l2)
+        - (drive t0 l2 l1 level41 level3 level44)
+        - (load p0 t0 l1)
+        - (drive t0 l1 l4 level29 level12 level41)
+        - (unload p1 t0 l4)
+        - (drive t0 l4 l3 level24 level5 level29)
+        - (load p4 t0 l5)
+        - (load p3 t0 l0)
+        - (unload p2 t0 l3)
+        - (unload p0 t0 l3)
+        - (drive t0 l3 l4 level19 level5 level24)
+        - (drive t0 l4 l2 level3 level16 level19)
+        - (unload p4 t0 l2)
+        - (unload p3 t0 l2)
+        repair_set: 'load,(at ?p ?l),precPos,-1
+
+            drive,(fuelcost ?fuelpre ?l2 ?l2),precPos,-1
+
+            load,(at ?t ?l),precPos,-1'
+        g_cost: 3
+        h_cost: 0
+        f_cost: 3
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-22T13:59:10.666569'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '574.60'
+
+
+---
+timestamp: '2025-01-22T13:59:10.734112'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 574.98 seconds'
+
+

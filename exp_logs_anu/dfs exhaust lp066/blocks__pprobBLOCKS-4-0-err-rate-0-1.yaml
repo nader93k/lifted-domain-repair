@@ -1,0 +1,103 @@
+---
+timestamp: '2025-03-03T12:01:00.252603'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_debug/dfs
+        exhast lp066/blocks__pprobBLOCKS-4-0-err-rate-0-1.yaml
+    instance_id: blocks__pprobBLOCKS-4-0-err-rate-0-1
+    search_algorithm: dfs
+    plan_length: 6
+    domain_class: blocks
+    instance_name: pprobBLOCKS-4-0-err-rate-0-1
+    ground_plan:
+    - (pick-up b)
+    - (stack b a)
+    - (pick-up c)
+    - (stack c b)
+    - (pick-up d)
+    - (stack d c)
+    lifted_plan:
+    -   - pick-up
+        - b
+    -   - stack
+        - b
+        - ?a
+    -   - pick-up
+        - ?c
+    -   - stack
+        - ?c
+        - ?b
+    -   - pick-up
+        - d
+    -   - stack
+        - ?d
+        - ?c
+
+
+---
+timestamp: '2025-03-03T12:01:00.255203'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-03-03T12:01:11.561324'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 347
+    fring_size: 1
+    num_nodes_generated: 383
+    sum_h_cost: 0
+    sum_f_cost: 0
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 3.2389919757843018
+    h_max: -.inf
+    current_node:
+        depth: 6
+        ground_actions:
+        - (pick-up c)
+        - (stack c b)
+        - (pick-up a)
+        - (stack c d)
+        - (pick-up c)
+        - (stack a b)
+        repair_set: 'stack,(on ?y ?x),effPos,1
+
+            pick-up,(ontable ?x),precPos,-1
+
+            stack,(not (clear ?y)),effNeg,-1
+
+            stack,(not (holding ?x)),effNeg,-1'
+        g_cost: 4
+        h_cost: 0
+        f_cost: 4
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-03T12:01:11.563586'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '12.73'
+
+
+---
+timestamp: '2025-03-03T12:01:11.599577'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 13.14 seconds'
+
+

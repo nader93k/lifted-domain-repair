@@ -1,0 +1,97 @@
+---
+timestamp: '2025-01-21T14:09:52.866660'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary
+        relax-prec-delete lp1/blocks__pprobBLOCKS-4-0-err-rate-0-5.yaml
+    instance_id: blocks__pprobBLOCKS-4-0-err-rate-0-5
+    search_algorithm: greedy
+    plan_length: 6
+    domain_class: blocks
+    instance_name: pprobBLOCKS-4-0-err-rate-0-5
+    ground_plan:
+    - (pick-up b)
+    - (stack b a)
+    - (pick-up c)
+    - (stack c b)
+    - (pick-up d)
+    - (stack d c)
+    lifted_plan:
+    -   - pick-up
+        - ?b
+    -   - stack
+        - ?b
+        - ?a
+    -   - pick-up
+        - ?c
+    -   - stack
+        - ?c
+        - ?b
+    -   - pick-up
+        - ?d
+    -   - stack
+        - ?d
+        - ?c
+
+
+---
+timestamp: '2025-01-21T14:09:52.868903'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-21T14:09:56.982962'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 110
+    fring_size: 249
+    num_nodes_generated: 359
+    sum_h_cost: 636
+    sum_f_cost: 318
+    sum_h_cost_time: 0.5993447303771973
+    sum_grounding_time: 0.9999368190765381
+    h_max: 5
+    current_node:
+        depth: 6
+        ground_actions:
+        - (pick-up b)
+        - (stack b a)
+        - (pick-up c)
+        - (stack c b)
+        - (pick-up d)
+        - (stack d c)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-21T14:09:56.992353'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '5.37'
+
+
+---
+timestamp: '2025-01-21T14:09:57.023143'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 5.76 seconds'
+
+

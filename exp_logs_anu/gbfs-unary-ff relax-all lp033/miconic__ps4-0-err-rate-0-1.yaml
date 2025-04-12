@@ -1,0 +1,145 @@
+---
+timestamp: '2025-01-22T18:16:34.199868'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary-ff
+        relax-all lp033/miconic__ps4-0-err-rate-0-1.yaml
+    instance_id: miconic__ps4-0-err-rate-0-1
+    search_algorithm: greedy
+    plan_length: 15
+    domain_class: miconic
+    instance_name: ps4-0-err-rate-0-1
+    ground_plan:
+    - (up f0 f1)
+    - (board f1 p1)
+    - (board f1 p2)
+    - (up f1 f2)
+    - (board f2 p3)
+    - (up f2 f3)
+    - (depart f3 p1)
+    - (up f3 f4)
+    - (depart f4 p3)
+    - (up f4 f6)
+    - (up f6 f7)
+    - (board f7 p0)
+    - (depart f7 p2)
+    - (down f7 f6)
+    - (depart f6 p0)
+    lifted_plan:
+    -   - up
+        - f0
+        - f1
+    -   - board
+        - f1
+        - ?p1
+    -   - board
+        - f1
+        - p2
+    -   - up
+        - f1
+        - ?f2
+    -   - board
+        - f2
+        - p3
+    -   - up
+        - f2
+        - f3
+    -   - depart
+        - ?f3
+        - p1
+    -   - up
+        - f3
+        - ?f4
+    -   - depart
+        - f4
+        - p3
+    -   - up
+        - f4
+        - f6
+    -   - up
+        - ?f6
+        - f7
+    -   - board
+        - f7
+        - p0
+    -   - depart
+        - f7
+        - ?p2
+    -   - down
+        - f7
+        - f6
+    -   - depart
+        - f6
+        - p0
+
+
+---
+timestamp: '2025-01-22T18:16:34.203343'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: depart,(origin ?p ?f),precPos,-1
+
+
+---
+timestamp: '2025-01-22T18:16:43.797302'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 27
+    fring_size: 187
+    num_nodes_generated: 214
+    sum_h_cost: 1492
+    sum_f_cost: 746
+    sum_h_cost_time: 1.045006513595581
+    sum_grounding_time: 0.5770714282989502
+    h_max: 5
+    current_node:
+        depth: 15
+        ground_actions:
+        - (up f0 f1)
+        - (board f1 p1)
+        - (board f1 p2)
+        - (up f1 f2)
+        - (board f2 p3)
+        - (up f2 f3)
+        - (depart f3 p1)
+        - (up f3 f4)
+        - (depart f4 p3)
+        - (up f4 f6)
+        - (up f6 f7)
+        - (board f7 p0)
+        - (depart f7 p2)
+        - (down f7 f6)
+        - (depart f6 p0)
+        repair_set: depart,(origin ?p ?f),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-22T18:16:43.805110'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '10.81'
+
+
+---
+timestamp: '2025-01-22T18:16:43.840920'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 11.16 seconds'
+
+

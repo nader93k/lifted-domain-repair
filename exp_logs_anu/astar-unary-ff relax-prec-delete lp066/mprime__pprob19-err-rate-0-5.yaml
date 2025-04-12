@@ -1,0 +1,136 @@
+---
+timestamp: '2025-01-19T18:40:37.156411'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary-ff
+        relax-prec-delete lp066/mprime__pprob19-err-rate-0-5.yaml
+    instance_id: mprime__pprob19-err-rate-0-5
+    search_algorithm: astar
+    plan_length: 8
+    domain_class: mprime
+    instance_name: pprob19-err-rate-0-5
+    ground_plan:
+    - (feast love haroset lamb bavaria manitoba)
+    - (drink lamb haroset bosnia goias oregon bavaria manitoba)
+    - (feast love lamb beef oregon goias)
+    - (overcome abrasion love beef vulcan uranus)
+    - (feast love beef lamb pennsylvania oregon)
+    - (feast love lamb haroset pennsylvania oregon)
+    - (feast love haroset lobster bavaria manitoba)
+    - (succumb abrasion love lobster vulcan uranus)
+    lifted_plan:
+    -   - feast
+        - love
+        - haroset
+        - ?lamb
+        - ?bavaria
+        - ?manitoba
+    -   - drink
+        - ?lamb
+        - haroset
+        - ?bosnia
+        - ?goias
+        - ?oregon
+        - bavaria
+        - ?manitoba
+    -   - feast
+        - ?love
+        - lamb
+        - ?beef
+        - ?oregon
+        - goias
+    -   - overcome
+        - abrasion
+        - love
+        - beef
+        - ?vulcan
+        - uranus
+    -   - feast
+        - love
+        - beef
+        - ?lamb
+        - ?pennsylvania
+        - ?oregon
+    -   - feast
+        - ?love
+        - lamb
+        - haroset
+        - ?pennsylvania
+        - oregon
+    -   - feast
+        - ?love
+        - haroset
+        - ?lobster
+        - ?bavaria
+        - manitoba
+    -   - succumb
+        - ?abrasion
+        - love
+        - lobster
+        - ?vulcan
+        - ?uranus
+
+
+---
+timestamp: '2025-01-19T18:40:37.161052'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: overcome,(harmony ?v ?s1),effPos,1
+
+
+---
+timestamp: '2025-01-19T18:40:46.977461'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 27
+    fring_size: 16
+    num_nodes_generated: 43
+    sum_h_cost: 96
+    sum_f_cost: 52
+    sum_h_cost_time: 2.786707878112793
+    sum_grounding_time: 1.335228681564331
+    h_max: 2
+    current_node:
+        depth: 8
+        ground_actions:
+        - (feast love haroset lamb bavaria manitoba)
+        - (drink lamb haroset bosnia goias oregon bavaria manitoba)
+        - (feast love lamb beef oregon goias)
+        - (overcome abrasion love beef vulcan uranus)
+        - (feast love beef lamb pennsylvania oregon)
+        - (feast love lamb haroset pennsylvania oregon)
+        - (feast love haroset lobster bavaria manitoba)
+        - (succumb abrasion love lobster uranus saturn)
+        repair_set: overcome,(harmony ?v ?s2),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-19T18:40:46.979781'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '11.06'
+
+
+---
+timestamp: '2025-01-19T18:40:47.011134'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 11.34 seconds'
+
+

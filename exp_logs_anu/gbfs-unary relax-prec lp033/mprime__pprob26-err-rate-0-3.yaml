@@ -1,0 +1,120 @@
+---
+timestamp: '2025-01-20T23:08:12.744767'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary
+        relax-prec lp033/mprime__pprob26-err-rate-0-3.yaml
+    instance_id: mprime__pprob26-err-rate-0-3
+    search_algorithm: greedy
+    plan_length: 6
+    domain_class: mprime
+    instance_name: pprob26-err-rate-0-3
+    ground_plan:
+    - (overcome boils entertainment haroset earth neptune)
+    - (feast entertainment haroset marzipan oregon bavaria)
+    - (drink rice marzipan oregon manitoba quebec moravia kentucky)
+    - (feast entertainment marzipan turkey moravia kentucky)
+    - (feast entertainment turkey papaya manitoba oregon)
+    - (succumb boils entertainment papaya earth neptune)
+    lifted_plan:
+    -   - overcome
+        - boils
+        - entertainment
+        - haroset
+        - ?earth
+        - neptune
+    -   - feast
+        - entertainment
+        - haroset
+        - ?marzipan
+        - oregon
+        - bavaria
+    -   - drink
+        - rice
+        - marzipan
+        - ?oregon
+        - manitoba
+        - quebec
+        - ?moravia
+        - kentucky
+    -   - feast
+        - entertainment
+        - marzipan
+        - turkey
+        - ?moravia
+        - kentucky
+    -   - feast
+        - entertainment
+        - turkey
+        - papaya
+        - ?manitoba
+        - oregon
+    -   - succumb
+        - boils
+        - entertainment
+        - papaya
+        - earth
+        - neptune
+
+
+---
+timestamp: '2025-01-20T23:08:12.748836'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: overcome,(fears ?c ?v),effPos,1
+
+
+---
+timestamp: '2025-01-20T23:08:13.608630'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 7
+    fring_size: 3
+    num_nodes_generated: 10
+    sum_h_cost: 48
+    sum_f_cost: 24
+    sum_h_cost_time: 0.3111402988433838
+    sum_grounding_time: 0.24065375328063965
+    h_max: 3
+    current_node:
+        depth: 6
+        ground_actions:
+        - (overcome boils entertainment haroset earth neptune)
+        - (feast entertainment haroset marzipan oregon bavaria)
+        - (drink rice marzipan oregon manitoba quebec moravia kentucky)
+        - (feast entertainment marzipan turkey moravia kentucky)
+        - (feast entertainment turkey papaya manitoba oregon)
+        - (succumb boils entertainment papaya earth neptune)
+        repair_set: overcome,(fears ?c ?v),effPos,1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-20T23:08:13.610103'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '2.01'
+
+
+---
+timestamp: '2025-01-20T23:08:13.642758'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 2.27 seconds'
+
+

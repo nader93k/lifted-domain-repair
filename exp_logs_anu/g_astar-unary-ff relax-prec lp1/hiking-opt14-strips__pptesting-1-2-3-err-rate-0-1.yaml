@@ -1,0 +1,166 @@
+---
+timestamp: '2025-03-06T16:22:31.910157'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary-ff
+        relax-prec lp1/hiking-opt14-strips__pptesting-1-2-3-err-rate-0-1.yaml
+    instance_id: hiking-opt14-strips__pptesting-1-2-3-err-rate-0-1
+    search_algorithm: g_astar
+    plan_length: 13
+    domain_class: hiking-opt14-strips
+    instance_name: pptesting-1-2-3-err-rate-0-1
+    ground_plan:
+    - (put_down girl0 place0 tent0)
+    - (drive_tent girl0 place0 place1 car0 tent0)
+    - (drive guy0 place0 place1 car1)
+    - (drive_tent_passenger girl0 place1 place0 car0 tent0 guy0)
+    - (drive_tent girl0 place0 place1 car0 tent0)
+    - (put_up girl0 place1 tent0)
+    - (drive girl0 place1 place0 car0)
+    - (walk_together tent0 place1 guy0 place0 girl0 couple0)
+    - (put_down girl0 place1 tent0)
+    - (drive_tent girl0 place1 place2 car1 tent0)
+    - (put_up girl0 place2 tent0)
+    - (drive girl0 place2 place1 car1)
+    - (walk_together tent0 place2 guy0 place1 girl0 couple0)
+    lifted_plan:
+    -   - put_down
+        - ?girl0
+        - ?place0
+        - ?tent0
+    -   - drive_tent
+        - ?girl0
+        - ?place0
+        - ?place1
+        - ?car0
+        - ?tent0
+    -   - drive
+        - ?guy0
+        - ?place0
+        - ?place1
+        - ?car1
+    -   - drive_tent_passenger
+        - ?girl0
+        - ?place1
+        - ?place0
+        - ?car0
+        - ?tent0
+        - ?guy0
+    -   - drive_tent
+        - ?girl0
+        - ?place0
+        - ?place1
+        - ?car0
+        - ?tent0
+    -   - put_up
+        - ?girl0
+        - ?place1
+        - ?tent0
+    -   - drive
+        - ?girl0
+        - ?place1
+        - ?place0
+        - ?car0
+    -   - walk_together
+        - ?tent0
+        - ?place1
+        - ?guy0
+        - ?place0
+        - ?girl0
+        - ?couple0
+    -   - put_down
+        - ?girl0
+        - ?place1
+        - ?tent0
+    -   - drive_tent
+        - ?girl0
+        - ?place1
+        - ?place2
+        - ?car1
+        - ?tent0
+    -   - put_up
+        - ?girl0
+        - ?place2
+        - ?tent0
+    -   - drive
+        - ?girl0
+        - ?place2
+        - ?place1
+        - ?car1
+    -   - walk_together
+        - ?tent0
+        - ?place2
+        - ?guy0
+        - ?place1
+        - ?girl0
+        - ?couple0
+
+
+---
+timestamp: '2025-03-06T16:22:31.914511'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-03-06T16:23:51.571844'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 439
+    fring_size: 717
+    num_nodes_generated: 1156
+    sum_h_cost: 5568
+    sum_f_cost: 2784
+    sum_h_cost_time: 24.71101188659668
+    sum_grounding_time: 6.642399787902832
+    h_max: 6
+    current_node:
+        depth: 13
+        ground_actions:
+        - (put_down girl0 place0 tent0)
+        - (drive_tent girl0 place0 place1 car1 tent0)
+        - (drive guy0 place0 place1 car0)
+        - (drive_tent_passenger girl0 place1 place0 car0 tent0 guy0)
+        - (drive_tent girl0 place0 place1 car0 tent0)
+        - (put_up girl0 place1 tent0)
+        - (drive girl0 place1 place0 car1)
+        - (walk_together tent0 place1 guy0 place0 girl0 couple0)
+        - (put_down guy0 place1 tent0)
+        - (drive_tent girl0 place1 place2 car0 tent0)
+        - (put_up girl0 place2 tent0)
+        - (drive girl0 place2 place1 car0)
+        - (walk_together tent0 place2 guy0 place1 girl0 couple0)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-06T16:23:51.612805'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '81.59'
+
+
+---
+timestamp: '2025-03-06T16:23:51.656635'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 82.02 seconds'
+
+

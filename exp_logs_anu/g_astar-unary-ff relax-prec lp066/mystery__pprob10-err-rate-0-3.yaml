@@ -1,0 +1,134 @@
+---
+timestamp: '2025-03-06T15:24:35.833698'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary-ff
+        relax-prec lp066/mystery__pprob10-err-rate-0-3.yaml
+    instance_id: mystery__pprob10-err-rate-0-3
+    search_algorithm: g_astar
+    plan_length: 8
+    domain_class: mystery
+    instance_name: pprob10-err-rate-0-3
+    ground_plan:
+    - (feast aesthetics flounder kale surrey moravia)
+    - (overcome jealousy-16 aesthetics kale mars neptune)
+    - (feast aesthetics kale arugula moravia quebec)
+    - (feast aesthetics arugula beef surrey moravia)
+    - (feast aesthetics beef snickers surrey moravia)
+    - (feast aesthetics snickers lamb oregon alsace)
+    - (feast aesthetics lamb tofu surrey moravia)
+    - (succumb jealousy-16 aesthetics tofu mars neptune)
+    lifted_plan:
+    -   - feast
+        - aesthetics
+        - flounder
+        - ?kale
+        - ?surrey
+        - ?moravia
+    -   - overcome
+        - ?jealousy-16
+        - aesthetics
+        - ?kale
+        - ?mars
+        - ?neptune
+    -   - feast
+        - aesthetics
+        - ?kale
+        - ?arugula
+        - moravia
+        - ?quebec
+    -   - feast
+        - ?aesthetics
+        - arugula
+        - beef
+        - surrey
+        - moravia
+    -   - feast
+        - ?aesthetics
+        - beef
+        - snickers
+        - surrey
+        - ?moravia
+    -   - feast
+        - ?aesthetics
+        - ?snickers
+        - ?lamb
+        - oregon
+        - alsace
+    -   - feast
+        - ?aesthetics
+        - lamb
+        - ?tofu
+        - surrey
+        - ?moravia
+    -   - succumb
+        - ?jealousy-16
+        - aesthetics
+        - ?tofu
+        - mars
+        - neptune
+
+
+---
+timestamp: '2025-03-06T15:24:35.838834'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: overcome,(fears ?c ?v),effPos,1
+
+
+---
+timestamp: '2025-03-06T15:24:50.434560'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 28
+    fring_size: 5
+    num_nodes_generated: 33
+    sum_h_cost: 128
+    sum_f_cost: 65
+    sum_h_cost_time: 9.779994249343872
+    sum_grounding_time: 1.8510799407958984
+    h_max: 4
+    current_node:
+        depth: 8
+        ground_actions:
+        - (feast aesthetics flounder cantelope surrey moravia)
+        - (overcome boils-32 aesthetics cantelope mars neptune)
+        - (feast aesthetics cantelope arugula moravia quebec)
+        - (feast aesthetics arugula beef surrey moravia)
+        - (feast aesthetics beef snickers surrey moravia)
+        - (feast aesthetics snickers lamb oregon alsace)
+        - (feast aesthetics lamb tofu surrey moravia)
+        - (succumb jealousy-16 aesthetics tofu mars neptune)
+        repair_set: succumb,(fears ?c ?v),precPos,-1
+        g_cost: 1
+        h_cost: 0
+        f_cost: 1
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-06T15:24:50.436528'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '15.74'
+
+
+---
+timestamp: '2025-03-06T15:24:50.470825'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 16.06 seconds'
+
+

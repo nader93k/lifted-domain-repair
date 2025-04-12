@@ -1,0 +1,100 @@
+---
+timestamp: '2025-01-19T19:34:51.558354'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary-ff
+        relax-prec-delete lp033/mystery__pprob17-err-rate-0-3.yaml
+    instance_id: mystery__pprob17-err-rate-0-3
+    search_algorithm: astar
+    plan_length: 4
+    domain_class: mystery
+    instance_name: pprob17-err-rate-0-3
+    ground_plan:
+    - (feast satisfaction potato yogurt guanabara bosnia)
+    - (overcome abrasion satisfaction yogurt mercury saturn)
+    - (feast satisfaction yogurt wonderbread guanabara bosnia)
+    - (succumb abrasion satisfaction wonderbread mercury saturn)
+    lifted_plan:
+    -   - feast
+        - satisfaction
+        - potato
+        - yogurt
+        - ?guanabara
+        - bosnia
+    -   - overcome
+        - abrasion
+        - satisfaction
+        - ?yogurt
+        - mercury
+        - saturn
+    -   - feast
+        - satisfaction
+        - yogurt
+        - ?wonderbread
+        - guanabara
+        - bosnia
+    -   - succumb
+        - ?abrasion
+        - satisfaction
+        - wonderbread
+        - mercury
+        - saturn
+
+
+---
+timestamp: '2025-01-19T19:34:51.562266'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: overcome,(attacks ?v ?v),precPos,-1
+
+
+---
+timestamp: '2025-01-19T19:34:51.955228'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 2
+    fring_size: 0
+    num_nodes_generated: 2
+    sum_h_cost: 6
+    sum_f_cost: 3
+    sum_h_cost_time: 0.2495279312133789
+    sum_grounding_time: 0.13280773162841797
+    h_max: 3
+    current_node:
+        depth: 1
+        ground_actions:
+        - (feast satisfaction potato yogurt guanabara bosnia)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 3
+        f_cost: 3
+        next_lifted_action: '[''overcome'', ''abrasion'', ''satisfaction'', ''?yogurt'',
+            ''mercury'', ''saturn'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-19T19:34:51.956395'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.60'
+
+
+---
+timestamp: '2025-01-19T19:34:51.992974'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.92 seconds'
+
+

@@ -1,0 +1,110 @@
+---
+timestamp: '2025-01-20T21:03:52.710416'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/astar-unary
+        relax-prec lp1/mprime__pprob01-err-rate-0-5.yaml
+    instance_id: mprime__pprob01-err-rate-0-5
+    search_algorithm: astar
+    plan_length: 5
+    domain_class: mprime
+    instance_name: pprob01-err-rate-0-5
+    ground_plan:
+    - (overcome abrasion rest pork uranus venus)
+    - (feast rest pork lamb alsace quebec)
+    - (feast rest lamb flounder surrey pennsylvania)
+    - (feast rest flounder rice pennsylvania alsace)
+    - (succumb abrasion rest rice uranus venus)
+    lifted_plan:
+    -   - overcome
+        - ?abrasion
+        - ?rest
+        - ?pork
+        - ?uranus
+        - ?venus
+    -   - feast
+        - ?rest
+        - ?pork
+        - ?lamb
+        - ?alsace
+        - ?quebec
+    -   - feast
+        - ?rest
+        - ?lamb
+        - ?flounder
+        - ?surrey
+        - ?pennsylvania
+    -   - feast
+        - ?rest
+        - ?flounder
+        - ?rice
+        - ?pennsylvania
+        - ?alsace
+    -   - succumb
+        - ?abrasion
+        - ?rest
+        - ?rice
+        - ?uranus
+        - ?venus
+
+
+---
+timestamp: '2025-01-20T21:03:52.713513'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-01-20T21:03:53.162605'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: true
+    iteration: 9
+    fring_size: 2
+    num_nodes_generated: 11
+    sum_h_cost: 0
+    sum_f_cost: 0
+    sum_h_cost_time: 0.15350055694580078
+    sum_grounding_time: 0.2190840244293213
+    h_max: 0
+    current_node:
+        depth: 5
+        ground_actions:
+        - (overcome abrasion rest pork uranus venus)
+        - (feast rest pork okra alsace quebec)
+        - (feast rest okra pear quebec guanabara)
+        - (feast rest pear rice bosnia surrey)
+        - (succumb abrasion rest rice uranus venus)
+        repair_set: ''
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: null
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-01-20T21:03:53.163986'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.59'
+
+
+---
+timestamp: '2025-01-20T21:03:53.196359'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.89 seconds'
+
+

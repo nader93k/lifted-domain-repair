@@ -1,0 +1,141 @@
+---
+timestamp: '2025-03-12T16:28:16.139674'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary
+        relax-prec-delete lp033/zenotravel__pp06-err-rate-0-5.yaml
+    instance_id: zenotravel__pp06-err-rate-0-5
+    search_algorithm: g_astar
+    plan_length: 12
+    domain_class: zenotravel
+    instance_name: pp06-err-rate-0-5
+    ground_plan:
+    - (fly plane2 city1 city0 fl3 fl2)
+    - (board person2 plane2 city0)
+    - (board person1 plane2 city0)
+    - (fly plane2 city0 city1 fl2 fl1)
+    - (board person4 plane2 city1)
+    - (debark person2 plane2 city1)
+    - (fly plane2 city1 city3 fl1 fl0)
+    - (debark person4 plane2 city3)
+    - (debark person1 plane2 city3)
+    - (board person5 plane1 city2)
+    - (fly plane1 city2 city1 fl5 fl4)
+    - (debark person5 plane1 city1)
+    lifted_plan:
+    -   - fly
+        - plane2
+        - city1
+        - city0
+        - ?fl3
+        - fl2
+    -   - board
+        - person2
+        - plane2
+        - ?city0
+    -   - board
+        - person1
+        - plane2
+        - city0
+    -   - fly
+        - plane2
+        - ?city0
+        - city1
+        - fl2
+        - ?fl1
+    -   - board
+        - person4
+        - plane2
+        - city1
+    -   - debark
+        - person2
+        - ?plane2
+        - city1
+    -   - fly
+        - plane2
+        - city1
+        - city3
+        - ?fl1
+        - fl0
+    -   - debark
+        - person4
+        - plane2
+        - city3
+    -   - debark
+        - person1
+        - plane2
+        - ?city3
+    -   - board
+        - person5
+        - plane1
+        - ?city2
+    -   - fly
+        - plane1
+        - city2
+        - city1
+        - fl5
+        - ?fl4
+    -   - debark
+        - person5
+        - plane1
+        - ?city1
+
+
+---
+timestamp: '2025-03-12T16:28:16.143712'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'debark,(in ?p ?c),precPos,-1
+
+        fly,(fuel-level ?c1 ?c1),precPos,-1'
+
+
+---
+timestamp: '2025-03-12T16:28:16.188737'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 1
+    fring_size: 0
+    num_nodes_generated: 1
+    sum_h_cost: 0
+    sum_f_cost: 0
+    sum_h_cost_time: 0.0
+    sum_grounding_time: 0.04168844223022461
+    h_max: 0
+    current_node:
+        depth: 0
+        ground_actions: []
+        repair_set: null
+        g_cost: 0
+        h_cost: 0
+        f_cost: 0
+        next_lifted_action: '[''fly'', ''plane2'', ''city1'', ''city0'', ''?fl3'',
+            ''fl2'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-12T16:28:16.189735'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '1.35'
+
+
+---
+timestamp: '2025-03-12T16:28:16.217291'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 1.67 seconds'
+
+

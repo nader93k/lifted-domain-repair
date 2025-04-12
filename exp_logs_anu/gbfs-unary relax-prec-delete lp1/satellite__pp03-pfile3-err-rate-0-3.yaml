@@ -1,0 +1,95 @@
+---
+timestamp: '2025-01-21T14:55:12.096326'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/gbfs-unary
+        relax-prec-delete lp1/satellite__pp03-pfile3-err-rate-0-3.yaml
+    instance_id: satellite__pp03-pfile3-err-rate-0-3
+    search_algorithm: greedy
+    plan_length: 11
+    domain_class: satellite
+    instance_name: pp03-pfile3-err-rate-0-3
+    ground_plan:
+    - (switch_on instrument3 satellite1)
+    - (calibrate satellite1 instrument3 star0)
+    - (turn_to satellite1 phenomenon5 star0)
+    - (take_image satellite1 phenomenon5 instrument3 spectrograph2)
+    - (turn_to satellite1 phenomenon7 phenomenon5)
+    - (take_image satellite1 phenomenon7 instrument3 spectrograph2)
+    - (turn_to satellite1 star3 phenomenon7)
+    - (take_image satellite1 star3 instrument3 infrared0)
+    - (turn_to satellite1 star4 star3)
+    - (take_image satellite1 star4 instrument3 spectrograph2)
+    - (turn_to satellite0 phenomenon5 star4)
+    lifted_plan:
+    -   - switch_on
+        - ?instrument3
+        - ?satellite1
+    -   - calibrate
+        - ?satellite1
+        - ?instrument3
+        - ?star0
+    -   - turn_to
+        - ?satellite1
+        - ?phenomenon5
+        - ?star0
+    -   - take_image
+        - ?satellite1
+        - ?phenomenon5
+        - ?instrument3
+        - ?spectrograph2
+    -   - turn_to
+        - ?satellite1
+        - ?phenomenon7
+        - ?phenomenon5
+    -   - take_image
+        - ?satellite1
+        - ?phenomenon7
+        - ?instrument3
+        - ?spectrograph2
+    -   - turn_to
+        - ?satellite1
+        - ?star3
+        - ?phenomenon7
+    -   - take_image
+        - ?satellite1
+        - ?star3
+        - ?instrument3
+        - ?infrared0
+    -   - turn_to
+        - ?satellite1
+        - ?star4
+        - ?star3
+    -   - take_image
+        - ?satellite1
+        - ?star4
+        - ?instrument3
+        - ?spectrograph2
+    -   - turn_to
+        - ?satellite0
+        - ?phenomenon5
+        - ?star4
+
+
+---
+timestamp: '2025-01-21T14:55:12.100551'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'take_image,(have_image ?d ?m),effPos,1
+
+        switch_on,(power_on ?i),effPos,1'
+
+
+---
+timestamp: '2025-01-21T15:10:10.607851'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+

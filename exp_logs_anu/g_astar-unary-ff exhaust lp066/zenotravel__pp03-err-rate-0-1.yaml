@@ -1,0 +1,69 @@
+---
+timestamp: '2025-03-10T01:33:21.472275'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary-ff
+        exhaust lp066/zenotravel__pp03-err-rate-0-1.yaml
+    instance_id: zenotravel__pp03-err-rate-0-1
+    search_algorithm: g_astar
+    plan_length: 6
+    domain_class: zenotravel
+    instance_name: pp03-err-rate-0-1
+    ground_plan:
+    - (board person1 plane1 city0)
+    - (fly plane1 city0 city1 fl4 fl3)
+    - (board person3 plane1 city1)
+    - (debark person1 plane1 city1)
+    - (fly plane1 city1 city0 fl3 fl2)
+    - (debark person3 plane1 city0)
+    lifted_plan:
+    -   - board
+        - person1
+        - plane1
+        - ?city0
+    -   - fly
+        - ?plane1
+        - ?city0
+        - ?city1
+        - fl4
+        - ?fl3
+    -   - board
+        - ?person3
+        - ?plane1
+        - city1
+    -   - debark
+        - ?person1
+        - ?plane1
+        - city1
+    -   - fly
+        - ?plane1
+        - ?city1
+        - city0
+        - fl3
+        - fl2
+    -   - debark
+        - person3
+        - ?plane1
+        - city0
+
+
+---
+timestamp: '2025-03-10T01:33:21.475241'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 0
+    repair: ''
+
+
+---
+timestamp: '2025-03-10T01:48:17.917098'
+level: ERROR
+issuer: batch_solver
+event_type: error
+data: Subprocess timed out after 900 seconds.
+
+

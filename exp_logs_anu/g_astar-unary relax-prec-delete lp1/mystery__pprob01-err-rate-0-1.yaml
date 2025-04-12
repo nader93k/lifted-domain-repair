@@ -1,0 +1,112 @@
+---
+timestamp: '2025-03-12T17:01:38.734108'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary
+        relax-prec-delete lp1/mystery__pprob01-err-rate-0-1.yaml
+    instance_id: mystery__pprob01-err-rate-0-1
+    search_algorithm: g_astar
+    plan_length: 5
+    domain_class: mystery
+    instance_name: pprob01-err-rate-0-1
+    ground_plan:
+    - (overcome abrasion rest pork uranus venus)
+    - (feast rest pork lamb alsace quebec)
+    - (feast rest lamb flounder surrey pennsylvania)
+    - (feast rest flounder rice pennsylvania alsace)
+    - (succumb abrasion rest rice uranus venus)
+    lifted_plan:
+    -   - overcome
+        - ?abrasion
+        - ?rest
+        - ?pork
+        - ?uranus
+        - ?venus
+    -   - feast
+        - ?rest
+        - ?pork
+        - ?lamb
+        - ?alsace
+        - ?quebec
+    -   - feast
+        - ?rest
+        - ?lamb
+        - ?flounder
+        - ?surrey
+        - ?pennsylvania
+    -   - feast
+        - ?rest
+        - ?flounder
+        - ?rice
+        - ?pennsylvania
+        - ?alsace
+    -   - succumb
+        - ?abrasion
+        - ?rest
+        - ?rice
+        - ?uranus
+        - ?venus
+
+
+---
+timestamp: '2025-03-12T17:01:38.737418'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 1
+    repair: succumb,(harmony ?v ?n),precPos,-1
+
+
+---
+timestamp: '2025-03-12T17:01:53.862072'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 180
+    fring_size: 0
+    num_nodes_generated: 180
+    sum_h_cost: 1432
+    sum_f_cost: 972
+    sum_h_cost_time: 9.499576091766357
+    sum_grounding_time: 4.901937961578369
+    h_max: 4
+    current_node:
+        depth: 4
+        ground_actions:
+        - (overcome abrasion rest pork uranus venus)
+        - (feast rest pork lamb alsace quebec)
+        - (feast rest pork okra alsace quebec)
+        - (feast rest rice flounder kentucky bosnia)
+        repair_set: 'feast,(not (locale ?n1 ?l2)),effNeg,-1
+
+            feast,(craves ?v ?n1),precPos,-1'
+        g_cost: 2
+        h_cost: 2
+        f_cost: 4
+        next_lifted_action: '[''succumb'', ''?abrasion'', ''?rest'', ''?rice'', ''?uranus'',
+            ''?venus'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-12T17:01:53.863813'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '16.27'
+
+
+---
+timestamp: '2025-03-12T17:01:53.896666'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 16.73 seconds'
+
+

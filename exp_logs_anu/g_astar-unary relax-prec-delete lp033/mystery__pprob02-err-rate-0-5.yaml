@@ -1,0 +1,187 @@
+---
+timestamp: '2025-03-12T16:28:25.123410'
+level: INFO
+issuer: instance_solver
+event_type: metadata
+data:
+    log_file: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary
+        relax-prec-delete lp033/mystery__pprob02-err-rate-0-5.yaml
+    instance_id: mystery__pprob02-err-rate-0-5
+    search_algorithm: g_astar
+    plan_length: 14
+    domain_class: mystery
+    instance_name: pprob02-err-rate-0-5
+    ground_plan:
+    - (feast stimulation flounder tuna arizona kentucky)
+    - (feast stimulation tuna beef arizona kentucky)
+    - (feast satiety onion muffin kentucky bosnia)
+    - (overcome depression-1 satiety muffin mercury vulcan)
+    - (feast satiety muffin tuna arizona kentucky)
+    - (feast stimulation beef tuna bosnia surrey)
+    - (feast satiety tuna beef alsace arizona)
+    - (overcome boils-4 entertainment ham pluto jupiter)
+    - (overcome grief-7 entertainment ham vulcan pluto)
+    - (feast entertainment ham muffin bosnia surrey)
+    - (feast entertainment muffin onion alsace arizona)
+    - (feast entertainment onion beef arizona kentucky)
+    - (succumb grief-7 entertainment beef vulcan pluto)
+    - (succumb depression-1 satiety beef mercury vulcan)
+    lifted_plan:
+    -   - feast
+        - stimulation
+        - flounder
+        - tuna
+        - ?arizona
+        - kentucky
+    -   - feast
+        - stimulation
+        - tuna
+        - ?beef
+        - arizona
+        - kentucky
+    -   - feast
+        - satiety
+        - onion
+        - ?muffin
+        - kentucky
+        - bosnia
+    -   - overcome
+        - ?depression-1
+        - satiety
+        - muffin
+        - mercury
+        - vulcan
+    -   - feast
+        - ?satiety
+        - muffin
+        - tuna
+        - arizona
+        - kentucky
+    -   - feast
+        - ?stimulation
+        - beef
+        - tuna
+        - bosnia
+        - surrey
+    -   - feast
+        - satiety
+        - tuna
+        - ?beef
+        - alsace
+        - arizona
+    -   - overcome
+        - ?boils-4
+        - entertainment
+        - ham
+        - pluto
+        - jupiter
+    -   - overcome
+        - ?grief-7
+        - entertainment
+        - ham
+        - ?vulcan
+        - ?pluto
+    -   - feast
+        - entertainment
+        - ?ham
+        - muffin
+        - ?bosnia
+        - surrey
+    -   - feast
+        - entertainment
+        - muffin
+        - ?onion
+        - ?alsace
+        - arizona
+    -   - feast
+        - entertainment
+        - ?onion
+        - beef
+        - arizona
+        - kentucky
+    -   - succumb
+        - grief-7
+        - entertainment
+        - beef
+        - vulcan
+        - pluto
+    -   - succumb
+        - depression-1
+        - satiety
+        - beef
+        - mercury
+        - ?vulcan
+
+
+---
+timestamp: '2025-03-12T16:28:25.129305'
+level: INFO
+issuer: instance_solver
+event_type: ground_repair
+data:
+    repair_length: 2
+    repair: 'overcome,(harmony ?v ?s1),effPos,1
+
+        succumb,(craves ?c ?n),effPos,1'
+
+
+---
+timestamp: '2025-03-12T16:29:31.139369'
+level: INFO
+issuer: searcher
+event_type: final
+data:
+    final: true
+    is_goal: false
+    iteration: 496
+    fring_size: 0
+    num_nodes_generated: 496
+    sum_h_cost: 6164
+    sum_f_cost: 3706
+    sum_h_cost_time: 44.686434745788574
+    sum_grounding_time: 18.907108545303345
+    h_max: 16
+    current_node:
+        depth: 12
+        ground_actions:
+        - (feast stimulation flounder tuna arizona kentucky)
+        - (feast stimulation tuna beef arizona kentucky)
+        - (feast satiety onion muffin kentucky bosnia)
+        - (overcome depression-1 satiety muffin mercury vulcan)
+        - (feast satiety muffin tuna arizona kentucky)
+        - (feast stimulation beef tuna bosnia surrey)
+        - (feast satiety tuna beef alsace arizona)
+        - (overcome grief-7 entertainment ham pluto jupiter)
+        - (overcome grief-7 entertainment ham pluto jupiter)
+        - (feast entertainment ham muffin bosnia surrey)
+        - (feast entertainment muffin tuna alsace arizona)
+        - (feast entertainment tuna beef arizona kentucky)
+        repair_set: 'feast,(not (locale ?n1 ?l2)),effNeg,-1
+
+            overcome,(craves ?c ?n),precPos,-1
+
+            overcome,(not (harmony ?v ?s2)),effNeg,-1'
+        g_cost: 3
+        h_cost: 3
+        f_cost: 6
+        next_lifted_action: '[''succumb'', ''grief-7'', ''entertainment'', ''beef'',
+            ''vulcan'', ''pluto'']'
+        num_neighbours: 0
+
+
+---
+timestamp: '2025-03-12T16:29:31.141021'
+level: INFO
+issuer: instance_solver
+event_type: timer_seconds
+data: '67.41'
+
+
+---
+timestamp: '2025-03-12T16:29:31.165530'
+level: INFO
+issuer: batch_solver
+event_type: general
+data: 'Subprocess finished successfully. Duration: 67.72 seconds'
+
+
