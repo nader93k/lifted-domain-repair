@@ -239,7 +239,7 @@ if __name__ == "__main__":
     summary_df = pd.read_csv(summary_table)
 
     output = folder + 'main_table.tex'
-    alg_order_list = ['UCS', 'A*(FF)', 'A*(UNR)', 'GBFS(FF)', 'GBFS(UNR)', 'DFS']
+    alg_order_list = ['UCS', 'A*(FF)', 'A*(UNR)', 'WA*(FF)', 'WA*(UNR)', 'GBFS(FF)', 'GBFS(UNR)', 'DFS']
     
     # Set include_liftprob to False to exclude the lift probability column
     process_csv_to_latex(main_df, summary_df, alg_order_list, output, include_liftprob=False)
