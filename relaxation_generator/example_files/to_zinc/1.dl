@@ -1,5 +1,0 @@
-temp_decomp_405_0 :- pddl_type_object(Var_underob), clear(Var_underob).
-clear(Var_ob) :- pddl_type_object(Var_ob), holding(Var_ob), temp_decomp_405_0.
-on(Var_ob,Var_underob) :- pddl_type_object(Var_ob), pddl_type_object(Var_underob), clear(Var_underob), holding(Var_ob).
-holding(Var_ob) :- pddl_type_object(Var_ob), clear(Var_ob), on__table(Var_ob), arm__empty.
-holding(Var_ob) :- pddl_type_object(Var_ob), pddl_type_object(Var_underob), on(Var_ob,Var_underob), clear(Var_ob), arm__empty.

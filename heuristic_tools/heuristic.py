@@ -6,7 +6,6 @@ from pathlib import Path
 from io import UnsupportedOperation
 from fd.pddl.effects import add_effect
 import fd.pddl.conditions
-from relaxation_generator.shortcuts import ground
 from fd.pddl.tasks import Task
 import copy
 import pickle
@@ -979,14 +978,10 @@ class Heurisitc:
     def __init__(self, h_name, relaxation, use_ff=False):
         self.h_name = h_name
         self.relaxation = relaxation
-        self.no_legacy = True
         self.use_ff = use_ff
 
     def get_val(self, domain, task):
-        if self.no_legacy:
-            return self.new_get_val(domain, task)
-        else:
-            return self.legacy_get_val()
+        return self.new_get_val(domain, task)
 
     def new_get_val(self, domain, task):
         add_goal_rule(domain, task)
@@ -1015,64 +1010,18 @@ class Heurisitc:
                               self.use_ff,
                               unary_dict)
 
-    def legacy_get_val(self):
-        GROUND_CMD = {
-            "domain": INPUT_MODEL_DOMAIN,
-            "problem": INPUT_MODEL_PROBLEM,
-            "theory_outp": DATALOG_THEORY,
-            "model_outp": DATALOG_MODEL,
-            "domain_print": OUTPUT_MODEL_DOMAIN,
-            "problem_print": OUTPUT_MODEL_PROBLEM,
-            "lpopt_enabled": True
-        }
-
-        if self.h_name.startswith("L_"):
-            # Calling the grounder with executable 'none' executes all of its preprocessing steps and generates the
-            # according datalog and .pddl files, but does not actually ground the problem yet
-            GROUND_CMD["grounder"] = 'none'
-        else:
-            assert self.h_name.startswith("G_"), (f"{self.h_name} should either start with L_ to indicate a lifted"
-                                                  "or G to indicate a grounded heuristic")
-            # For now we also do not use the efficient grounder, as we would have to do an additional translation
-            # the splitting by lpopt should suffice to make the FD grounder sufficiently performant for
-            # a first evaluation
-            GROUND_CMD["grounder"] = 'none'
-
-        if self.relaxation:
-            GROUND_CMD["relaxation"] = self.relaxation
-
-        with timing("Grounding/Transforimng", block=True):
-            ground(**GROUND_CMD)
-
-        dprint("GROUNDED", "now computing heuristic")
-
-        with timing("Calculating heuristic value", block=True):
-            if self.h_name.startswith("L_"):
-                val = get_pwl_value(self.h_name, OUTPUT_MODEL_DOMAIN, OUTPUT_MODEL_PROBLEM)
-            else:
-                val = get_fd_value(self.h_name, OUTPUT_MODEL_DOMAIN, OUTPUT_MODEL_PROBLEM)
-        return val
 
     def re_run(self, __domain, __task, action_sequence):
         assert False, "With our current construction we should never be able to return infty"
-
-        if not self.no_legacy:
-            shutil.copyfile(OUTPUT_MODEL_DOMAIN, OLD_OUTPUT_MODEL_DOMAIN)
-            shutil.copyfile(OUTPUT_MODEL_PROBLEM, OLD_OUTPUT_MODEL_PROBLEM)
 
         domain = copy.deepcopy(__domain) # verbose
         task = copy.deepcopy(__task) # verbose
 
         integrate_pre_repair(domain, task, action_sequence[0])
 
-        if self.no_legacy:
-            integrate_repair_actions(domain)
+        integrate_repair_actions(domain)
 
         revert_to_fd_structure(domain, task)
-
-        if not self.no_legacy:
-            print_domain(domain, INPUT_MODEL_DOMAIN)
-            print_problem(task, INPUT_MODEL_PROBLEM)
 
         # hack to evaluate this with h_add
         old_h = self.h_name
@@ -1092,10 +1041,8 @@ class Heurisitc:
         with timing("Integrating action sequence", block=True):
             integrate_action_sequence(domain, task, action_sequence)
 
-
-        if self.no_legacy:
-            with timing("Adding repair actions", block=True):
-                integrate_repair_actions(domain)
+        with timing("Adding repair actions", block=True):
+            integrate_repair_actions(domain)
 
         # Here we revert Songtuans datastructure to match the original FD translator format again
         # This allows us to use the provided printout functions of the translator
@@ -1105,11 +1052,6 @@ class Heurisitc:
         # But we ignore this for now
         with timing("Reverting to FD structure", block=True):
             revert_to_fd_structure(domain, task)
-
-        with timing("Dumping files", block=True):
-            if not self.no_legacy:
-                print_domain(domain, INPUT_MODEL_DOMAIN)
-                print_problem(task, INPUT_MODEL_PROBLEM)
 
         try:
             val = self.get_val(domain, task)
