@@ -232,7 +232,7 @@ def process_csv_to_latex(main_df, summary_df, alg_order_list, output_file, capti
 
 # Example usage
 if __name__ == "__main__":
-    folder = '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_csv/'
+    folder = 'exp_logs_csv/'
     main_table = folder + 'main_table.csv'
     main_df = pd.read_csv(main_table)
     summary_table = folder + 'summary_table.csv'
@@ -240,6 +240,8 @@ if __name__ == "__main__":
 
     output = folder + 'main_table.tex'
     alg_order_list = ['UCS', 'A*(FF)', 'A*(UNR)', 'WA*(FF)', 'WA*(UNR)', 'GBFS(FF)', 'GBFS(UNR)', 'DFS']
+
+    main_df = main_df[main_df['grounding method'] != 'SG4']
     
     # Set include_liftprob to False to exclude the lift probability column
     process_csv_to_latex(main_df, summary_df, alg_order_list, output, include_liftprob=False)

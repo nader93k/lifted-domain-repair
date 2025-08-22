@@ -4,28 +4,28 @@ import pandas as pd
 
 domain_shortcuts = {
     'domain-trimmed': 'shorten',
-    'zenotravel': 'zeno',
-    'visitall': 'visit',
-    'transport': 'trans',
-    'tpp': 'tpp',
-    'tetris': 'tetris',
-    'scanalyzer': 'scan',
-    'satellite': 'sat',
-    'rovers': 'rovs',
-    'pegsol': 'pegs',
-    'nomystery': 'nomys',
-    'mystery': 'myst',
-    'mprime': 'mprim',
-    'miconic': 'mic',
-    'logistics98': 'log98',
-    'hiking': 'hike',
-    'gripper': 'grip',
-    'grid': 'grid',
-    'freecell': 'fCell',
-    'elevators': 'elevs',
-    'driverlog': 'drivL',
-    'depot': 'depot',
-    'blocks': 'blks'
+    'zenotravel': 'Zeno',
+    'visitall': 'Visit',
+    'transport': 'Trans',
+    'tpp': 'TPP',
+    'tetris': 'Tetris',
+    'scanalyzer': 'Scan',
+    'satellite': 'Satellite',
+    'rovers': 'Rovers',
+    'pegsol': 'Pegs',
+    'nomystery': 'NoMyst',
+    'mystery': 'Myst',
+    'mprime': 'MPrime',
+    'miconic': 'Miconic',
+    'logistics98': 'Logistics',
+    'hiking': 'Hike',
+    'gripper': 'Gripper',
+    'grid': 'Grid',
+    'freecell': 'Freecell',
+    'elevators': 'Elevs',
+    'driverlog': 'Driverlog',
+    'depot': 'Depot',
+    'blocks': 'BlocksW'
 }
 
 
@@ -113,7 +113,7 @@ def summary_table(main_table):
 
 
 if __name__ == "__main__":
-    folder = '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_csv/'
+    folder = 'exp_logs_csv/'
     input_file = folder + 'merged.csv'
     output_main = folder + 'main_table.csv'
     output_summary = folder + 'summary_table.csv'
