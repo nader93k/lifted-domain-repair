@@ -1,0 +1,35 @@
+# The config file to specify the problem parameters.
+
+# a working example we have used, as a reference
+search_algorithm: g_astar
+heuristic_relaxation: unary
+lift_prob: 1.0
+instance_ids: null
+min_length: 1
+max_length: 15
+timeout_seconds: 900  # 15 * 60
+order: increasing
+benchmark_path: /home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1
+log_folder: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary-ff relax-all lp1
+log_interval: 1000000
+domain_class: null
+
+
+###### Supported Values
+# search_algorithm:
+#   g_astar: greedy_astar
+#   astar
+#   bfs: Uniform Cost Search (note that "bfs" can be misleading, and we will refactor the code to rename it to ucs later.)
+#   greedy
+#   dfs
+#   bb: branch & bound
+# heuristic_relaxation: zeroary, null, unary
+# lift_prob: (0 to 1.0). We use this variable as the probability of turning each action parameter from an object to a variable. 1 means all objects in the action traces will turn into variables, 0 means they will remain grounded.
+# min_length & max_length: integers greater than zero. They are used to filter the benchmark for problems that have a action trace with specified length bounds.
+# timeout_seconds: max_time for the search per instance in seconds.
+# log_interval: how frequently the details of the search variables will be logged. Use small values for debugging. Use large values (e.g. 1000000) for other purposes.
+# order: can be "increasing" or "random" (without double-quotes). Increasing means that problems with smaller length of action traces will be solved first.
+# benchmark_path: The path that holds the problems to be solved. The folder structure should be similar to the benchmark we used. Refer to readme.md for more information. #TODO add this to readme.
+# log_folder: the folder that log files will be saved to.
+# domain_class: "null" or the name of the domain (e.g. "mprime"). We mostly used this for testing on a subset of our benchmarks. For the end user can simply be null.
+# instance_ids: To run on specific instances. Simply set to null to solve all the benchmark set. If you need to solve on specific instances, look at this example: "miconic__ps1-3-err-rate-0-1" (without double quotes). Refer to README.md to see how these ids are defined. Note that "instance_ids" is an special value. If you set it, batch_processor will look at all the ideas defined in the file 'instance_ids.json' in the root project folder and solve for all of them.

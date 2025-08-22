@@ -1,3 +1,16 @@
-limitations:
-the grounder can't work with constants
-parallel processing not possible for h
+We need to update this significantly.
+
+------------ Nader's draft: begin ------------
+RUN COMMANDS:
+#######  Batch solver without parameter:
+
+/home/nader/miniconda3/envs/planning/bin/python -u /home/nader/projects/lifted-white-plan-domain-repair/batch_solver.py >> log.txt 2>&1
+
+#######  Batch solver with instance name as parameter:
+
+/home/nader/miniconda3/envs/planning/bin/python -u /home/nader/projects/lifted-white-plan-domain-repair/batch_solver.py blocks/pprobBLOCKS-4-2-err-rate-0-5
+
+#######  Prepare the result CSV
+
+/home/nader/miniconda3/envs/planning/bin/python -u /home/nader/projects/lifted-white-plan-domain-repair/log_reader.py  > log_reader.txt 2>&1
+------------ Nader's draft: end ------------

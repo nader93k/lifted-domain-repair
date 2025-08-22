@@ -413,7 +413,7 @@ if __name__ == "__main__":
     # run on fixed instance_ids
     instance_ids = config['instance_ids']
     if instance_ids == 'load_instance_ids':
-        instance_ids = load_instance_ids('instance_ids_nonzero_h.json')
+        instance_ids = load_instance_ids('instance_ids.json')
     elif instance_ids == 'instance_ids_small_exp_set':
         instance_ids = load_instance_ids('instance_ids_small_exp_set.json')
 
