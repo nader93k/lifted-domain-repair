@@ -1,11 +1,7 @@
 import os
 import pandas as pd
-import glob
 from itertools import product
 from log_reader import process_yaml_files
-
-
-
 
 
 # Define base components
@@ -80,61 +76,3 @@ print(f"The output rows are={len(merged_df)}")
 duplicate_check = merged_df.duplicated().sum()
 if duplicate_check > 0:
     print(f"Found {duplicate_check} duplicate rows")
-
-
-# folders = [
-#     # (log-file, lift-prob, grounding, algorithm-rename)
-
-#     # UCS
-#     ('bfs relax-prec lp033', 0.33, 'G1'),
-#     ('bfs relax-prec lp066', 0.66, 'G1'),
-#     ('bfs relax-prec lp1', 1.0, 'G1'),
-    
-#     ('bfs relax-prec-delete lp033', 0.33, 'G2'),
-#     ('bfs relax-prec-delete lp066', 0.66, 'G2'),
-#     ('bfs relax-prec-delete lp1', 1.0, 'G2'),
-
-#     ('bfs relax-all lp033', 0.33, 'G3'),
-#     ('bfs relax-all lp066', 0.66, 'G3'),
-#     ('bfs relax-all lp1', 1.0, 'G3'),
-
-#     # DFS
-#     ('dfs relax-prec lp033', 0.33, 'G1'),
-#     ('dfs relax-prec lp066', 0.66, 'G1'),
-#     ('dfs relax-prec lp1', 1.0, 'G1'),
-    
-#     ('dfs relax-prec-delete lp033', 0.33, 'G2'),
-#     ('dfs relax-prec-delete lp066', 0.66, 'G2'),
-#     ('dfs relax-prec-delete lp1', 1.0, 'G2'),
-
-#     ('dfs relax-all lp033', 0.33, 'G2'),
-#     ('dfs relax-all lp066', 0.66, 'G2'),
-#     ('dfs relax-all lp1', 1.0, 'G2'),
-
-#     # A*
-#     ('astar-unary-ff relax-prec lp033', 0.33, 'G1'),
-#     ('astar-unary-ff relax-prec lp066', 0.66, 'G1'),
-#     ('astar-unary-ff relax-prec lp1', 1.0, 'G1'),
-
-#     ('astar-unary-ff relax-prec-delete lp033', 0.33, 'G2'),
-#     ('astar-unary-ff relax-prec-delete lp066', 0.66, 'G2'),
-#     ('astar-unary-ff relax-prec-delete lp1', 1.0, 'G2'),
-
-#     ('astar-unary-ff relax-all lp033', 0.33, 'G3'),
-#     ('astar-unary-ff relax-all lp066', 0.66, 'G3'),
-#     ('astar-unary-ff relax-all lp1', 1.0, 'G3'),
-    
-#     # GBFS
-
-#     ('gbfs-unary-ff relax-prec lp033', 0.33, 'G1'),
-#     ('gbfs-unary-ff relax-prec lp066', 0.66, 'G1'),
-#     ('gbfs-unary-ff relax-prec lp1', 1.0, 'G1'),
-
-#     ('gbfs-unary-ff relax-prec-delete lp033', 0.33, 'G2'),
-#     ('gbfs-unary-ff relax-prec-delete lp066', 0.66, 'G2'),
-#     ('gbfs-unary-ff relax-prec-delete lp1', 1.0, 'G2'),
-
-#     ('gbfs-unary-ff relax-prec lp033', 0.33, 'G3'),
-#     ('gbfs-unary-ff relax-prec lp066', 0.66, 'G3'),
-#     ('gbfs-unary-ff relax-prec lp1', 1.0, 'G3'),
-# ]

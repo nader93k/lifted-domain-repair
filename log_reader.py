@@ -174,30 +174,3 @@ def process_yaml_files(directory_path, output_csv, lift_prob=None, excluded_doma
                 continue
                 
             writer.writerow(data)
-
-
-# if __name__ == "__main__":
-#     log_folders = [
-#         'astar-unary relax-prec lp066',
-#         'astar-unary relax-prec lp1',
-#         'astar-unary relax-prec-delete lp1',
-#         'bfs relax-all lp066',
-#         'bfs relax-all lp1',
-#         'bfs relax-prec lp1',
-#         'dfs relax-prec lp033',
-#         'dfs relax-prec lp066',
-#         'dfs relax-prec lp1'
-#     ]
-    
-#     # Example domain classes to exclude
-#     domain_exclusions = []  # Add domain classes to exclude here
-    
-#     # Example grounding method to use
-#     grounding_method = "default"  # You can change this value as needed
-    
-#     for log in log_folders:
-#         directory_path = f"/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/{log}"
-#         output_csv = f"{log}.csv"
-#         # Extract lift probability from folder name
-#         lift_prob = next((x[2:] for x in log.split() if x.startswith('lp')), None)
-#         process_yaml_files(directory_path, output_csv, lift_prob, domain_exclusions, grounding_method)

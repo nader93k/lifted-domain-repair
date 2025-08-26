@@ -1,0 +1,41 @@
+Bootstrap: docker
+From: ubuntu:20.04
+
+%environment
+    # for htd
+    export LD_LIBRARY_PATH="/lib:/usr/lib:/usr/local/lib"
+    export DYLD_LIBRARY_PATH=$LD_LIBRARY_PATH
+    export PATH="/usr/local/bin:$PATH"
+
+%post
+    export DEBIAN_FRONTEND=noninteractive
+
+    # install standard build tools
+    apt-get update
+    apt-get -y install --no-install-recommends \
+        wget \
+        p7zip-full \
+        cmake \
+        g++ \
+        make \
+        build-essential \
+        autotools-dev \
+        libboost-all-dev \
+        libboost-program-options-dev \
+        zlib1g-dev \
+        libssl-dev \
+        libffi-dev \
+        libsqlite3-dev \
+        libbz2-dev \
+        liblzma-dev \
+        tk-dev \
+        software-properties-common \
+        gpg-agent
+
+    # Install Python 3.8
+    sudo apt install -y software-properties-common
+    sudo add-apt-repository ppa:deadsnakes/ppa
+    sudo apt update
+    sudo apt install -y python3.8 python3.8-venv python3.8-dev python3-pip
+    
+    

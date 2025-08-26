@@ -1,16 +1,22 @@
-# The config file to specify the problem parameters.
+
+
+
 
 # a working example we have used, as a reference
-search_algorithm: g_astar
+successor_generator: missing
+# ['missing', 'missing-and-negative', 'all', 'exhaust']
+use_ff: True
+search_algorithm: astar
 heuristic_relaxation: unary
-lift_prob: 1.0
+lift_prob: 0.33
 instance_ids: null
 min_length: 1
 max_length: 15
 timeout_seconds: 900  # 15 * 60
 order: increasing
-benchmark_path: /home/remote/u7899572/lifted-white-plan-domain-repair/input/benchmarks-G1
-log_folder: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary-ff relax-all lp1
+benchmark_path: input/benchmarks-G1
+# log_folder: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary-ff relax-all lp1
+log_folder: exp_logs_debug/
 log_interval: 1000000
 domain_class: null
 
@@ -23,6 +29,10 @@ domain_class: null
 #   greedy
 #   dfs
 #   bb: branch & bound
+
+# successor_generator: 'missing', 'missing-and-negative', 'exhaust'
+# they correspond to RELAX_PRE, RELAX_DEL, and EXHAUST in the paper, respectively.
+
 # heuristic_relaxation: zeroary, null, unary
 # lift_prob: (0 to 1.0). We use this variable as the probability of turning each action parameter from an object to a variable. 1 means all objects in the action traces will turn into variables, 0 means they will remain grounded.
 # min_length & max_length: integers greater than zero. They are used to filter the benchmark for problems that have a action trace with specified length bounds.

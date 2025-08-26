@@ -1,6 +1,7 @@
 from pathlib import Path
 import os
 import tempfile
+import tempfile
 from itertools import product
 from lifted_pddl import Parser
 
@@ -109,7 +110,8 @@ def ground_pddl(domain, task, lifted_action):
     """
 
     process_id = os.getpid()
-    pddl_files_dir = "/dev/shm/pddl_files/"
+    # pddl_files_dir = "/dev/shm/pddl_files/"
+    pddl_files_dir = os.path.join(tempfile.gettempdir(), "pddl_files")
     os.makedirs(pddl_files_dir, exist_ok=True)
     with tempfile.TemporaryDirectory(dir=pddl_files_dir) as temp_dir:
         base_folder = Path(temp_dir)
@@ -132,10 +134,6 @@ def ground_pddl(domain, task, lifted_action):
         applicable_actions = parser.encode_ground_actions_as_pddl(actions, 'str')
         
         filtered = filter_actions(lifted_action, applicable_actions)
-
-        # debug
-        # with open('/home/remote/u7899572/lifted-white-plan-domain-repair/ground_pddl.txt', 'a') as debug:
-        #     debug.write(str(filtered))
 
         return list(filtered)
 

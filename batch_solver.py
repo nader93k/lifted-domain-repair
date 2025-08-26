@@ -414,8 +414,6 @@ if __name__ == "__main__":
     instance_ids = config['instance_ids']
     if instance_ids == 'load_instance_ids':
         instance_ids = load_instance_ids('instance_ids.json')
-    elif instance_ids == 'instance_ids_small_exp_set':
-        instance_ids = load_instance_ids('instance_ids_small_exp_set.json')
 
     print(f"Loaded configuration from: {config_file}", flush=True)
     print("Configuration:", flush=True)

@@ -1,6 +1,3 @@
-import cProfile
-import pstats
-from pstats import SortKey
 from search_partial_grounding import AStar, Node, DFS, BranchBound
 #TODO: Fina a better place for ground_repair
 from vanilla_runs.run_songtuans_vanilla import ground_repair
@@ -18,7 +15,7 @@ import yaml
 
 
 pid = os.getpid()
-workspace_path = f'/home/remote/u7899572/lifted-white-plan-domain-repair/heuristic_tools/aux_files/{pid}'
+workspace_path = f'heuristic_tools/aux_files/{pid}'
 
 def setup_process_workspace():
     if os.path.exists(workspace_path):
