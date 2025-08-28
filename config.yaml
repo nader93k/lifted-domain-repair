@@ -1,4 +1,4 @@
-# a working example we have used, as a reference
+# Working example used as reference
 successor_generator: missing
 use_ff: True
 search_algorithm: ucs
@@ -14,25 +14,42 @@ log_interval: 1000000
 domain_class: null
 
 
-###### Supported Values
+###### Supported values
 # search_algorithm:
+#   ucs: uniform cost search
 #   g_astar: greedy_astar
 #   astar
-#   bfs: Uniform Cost Search (note that "bfs" can be misleading, and we will refactor the code to rename it to ucs later.)
+#   ucs: uniform cost search
 #   greedy
 #   dfs
 #   bb: branch & bound
-
+#
 # successor_generator: 'missing', 'missing-and-negative', 'exhaust'
-# they correspond to RELAX_PRE, RELAX_DEL, and EXHAUST in the paper, respectively.
-
+# They correspond to RELAX_PRE, RELAX_DEL, and EXHAUST in the paper.
+#
 # heuristic_relaxation: zeroary, null, unary
-# lift_prob: (0 to 1.0). We use this variable as the probability of turning each action parameter from an object to a variable. 1 means all objects in the action traces will turn into variables, 0 means they will remain grounded.
-# min_length & max_length: integers greater than zero. They are used to filter the benchmark for problems that have a action trace with specified length bounds.
-# timeout_seconds: max_time for the search per instance in seconds.
-# log_interval: how frequently the details of the search variables will be logged. Use small values for debugging. Use large values (e.g. 1000000) for other purposes.
-# order: can be "increasing" or "random" (without double-quotes). Increasing means that problems with smaller length of action traces will be solved first.
-# benchmark_path: The path that holds the problems to be solved. The folder structure should be similar to the benchmark we used. Refer to readme.md for more information. #TODO add this to readme.
-# log_folder: the folder that log files will be saved to.
-# domain_class: "null" or the name of the domain (e.g. "mprime"). We mostly used this for testing on a subset of our benchmarks. For the end user can simply be null.
-
+#
+# lift_prob: 0 to 1.0. Probability of turning each action parameter from an object to a variable.
+# 1 means all objects in the action traces turn into variables, 0 means they remain grounded.
+# Caution: This is useful only when your test plan is fully grounded, and you want to randomly lift
+# some of the parameters. If your whitelist plan is already lifted or partially lifted, set this
+# to 0.
+#
+# min_length & max_length: integers greater than zero. Used to filter benchmarks for problems
+# that have an action trace within the specified length bounds.
+#
+# timeout_seconds: max time for the search per instance in seconds.
+#
+# log_interval: how frequently search details are logged. Use small values for debugging.
+# Use large values (e.g., 1000000) otherwise.
+#
+# order: "increasing" or "random" (without double quotes). "increasing" solves problems
+# with shorter action traces first.
+#
+# benchmark_path: path holding the problems to be solved. The folder structure should be
+# similar to the benchmark we used. Refer to README.md for more information.
+#
+# log_folder: folder where log files will be saved.
+#
+# domain_class: "null" or the domain name (e.g., "mprime"). Mostly used for testing on a subset
+# of benchmarks. For end users it can be null.
