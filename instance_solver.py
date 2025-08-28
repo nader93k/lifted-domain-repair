@@ -1,6 +1,5 @@
 from search_partial_grounding import AStar, Node, DFS, BranchBound
-#TODO: Fina a better place for ground_repair
-from vanilla_runs.run_songtuans_vanilla import ground_repair
+from search_partial_grounding.baseline_repairer import ground_repair
 from custom_logger import StructuredLogger
 from exptools import list_instances
 from pathlib import Path
@@ -99,7 +98,7 @@ def solve_instance(config_file, instance_id):
         ground_action_sequence=[],
         parent=None,
         is_initial_node=True,
-        h_cost_needed=False if search_algorithm in ('dfs', 'bfs') else True,
+        h_cost_needed=False if search_algorithm in ('dfs', 'ucs') else True,
         heuristic_relaxation=heuristic_relaxation
     )
 
@@ -107,7 +106,7 @@ def solve_instance(config_file, instance_id):
         searcher = AStar(initial_node, g_cost_multiplier=1, h_cost_multiplier=1)
     elif search_algorithm == 'g_astar':
         searcher = AStar(initial_node, g_cost_multiplier=1, h_cost_multiplier=2)
-    elif search_algorithm == 'bfs':
+    elif search_algorithm == 'ucs':
         searcher = AStar(initial_node, g_cost_multiplier=1, h_cost_multiplier=0)
     elif search_algorithm == 'greedy':
         searcher = AStar(initial_node, g_cost_multiplier=0, h_cost_multiplier=1)
