@@ -1,21 +1,14 @@
-
-
-
-
 # a working example we have used, as a reference
 successor_generator: missing
-# ['missing', 'missing-and-negative', 'all', 'exhaust']
 use_ff: True
-search_algorithm: astar
+search_algorithm: ucs
 heuristic_relaxation: unary
 lift_prob: 0.33
-instance_ids: null
 min_length: 1
 max_length: 15
-timeout_seconds: 900  # 15 * 60
+timeout_seconds: 900  # 15 minutes * 60 seconds/minute
 order: increasing
 benchmark_path: input/benchmarks-G1
-# log_folder: /home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/g_astar-unary-ff relax-all lp1
 log_folder: exp_logs_debug/
 log_interval: 1000000
 domain_class: null
@@ -42,4 +35,4 @@ domain_class: null
 # benchmark_path: The path that holds the problems to be solved. The folder structure should be similar to the benchmark we used. Refer to readme.md for more information. #TODO add this to readme.
 # log_folder: the folder that log files will be saved to.
 # domain_class: "null" or the name of the domain (e.g. "mprime"). We mostly used this for testing on a subset of our benchmarks. For the end user can simply be null.
-# instance_ids: To run on specific instances. Simply set to null to solve all the benchmark set. If you need to solve on specific instances, look at this example: "miconic__ps1-3-err-rate-0-1" (without double quotes). Refer to README.md to see how these ids are defined. Note that "instance_ids" is an special value. If you set it, batch_processor will look at all the ideas defined in the file 'instance_ids.json' in the root project folder and solve for all of them.
+
