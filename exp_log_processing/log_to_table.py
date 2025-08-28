@@ -1,5 +1,8 @@
-import pandas as pd
+"""
+Takes the CSV logs (outputs of log_merger.py) and merges them into a single table (main_table.csv by default).
+"""
 
+import pandas as pd
 
 
 domain_shortcuts = {
@@ -113,14 +116,13 @@ def summary_table(main_table):
 
 
 if __name__ == "__main__":
-    folder = 'exp_logs_csv/'
+    folder = '../exp_logs_csv/'
     input_file = folder + 'merged.csv'
     output_main = folder + 'main_table.csv'
     output_summary = folder + 'summary_table.csv'
 
     order_list = ['UCS', 'A*(FF)', 'A*(UNR)', 'WA*(FF)', 'WA*(UNR)', 'GBFS(FF)', 'GBFS(UNR)', 'DFS']
     
-
     main_df = main_table(input_file, order_list)
     main_df.to_csv(output_main, index=False)
     print("\nFirst few rows of the main_df:")

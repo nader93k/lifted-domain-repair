@@ -1,5 +1,10 @@
+"""
+Converts the final CSV table (output of log_to_table.py) to a Latex table (main_table.tex).
+"""
+
 import pandas as pd
 import numpy as np
+
 
 def process_csv_to_latex(main_df, summary_df, alg_order_list, output_file, caption="Search Algorithm Performance Comparison", include_liftprob=False):
     # Get unique values from dataframes
@@ -232,7 +237,7 @@ def process_csv_to_latex(main_df, summary_df, alg_order_list, output_file, capti
 
 # Example usage
 if __name__ == "__main__":
-    folder = 'exp_logs_csv/'
+    folder = '../exp_logs_csv/'
     main_table = folder + 'main_table.csv'
     main_df = pd.read_csv(main_table)
     summary_table = folder + 'summary_table.csv'

@@ -1,7 +1,17 @@
+"""
+This script reads all the YAML experiments in each experiment folder and saves a single CSV file (default name is merged.csv). Each row will correspond to a YAML file in that folder.
+"""
+
+
 import os
 import pandas as pd
 from itertools import product
 from log_reader import process_yaml_files
+
+
+# Change this according to your setting
+exp_parent = '../exp_logs_anu/'
+csv_folder = '../exp_logs_csv/'
 
 
 # Define base components
@@ -48,10 +58,6 @@ excluded_domains = [
     'ged-opt14-strips'
 ]
 
-
-exp_parent = '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_anu/'
-csv_folder = '/home/remote/u7899572/lifted-white-plan-domain-repair/exp_logs_csv/'
-
 df_list = []
 for folder, prob, grounding, rename in experiments:
     exp_folder = exp_parent + folder
@@ -64,7 +70,6 @@ for folder, prob, grounding, rename in experiments:
         df['search algorithm'] = rename
         df['grounding method'] = grounding
         df_list.append(df)
-
 
 merged_df = pd.concat(df_list)
 merged_df = merged_df[merged_df['instance id'].notna() & (merged_df['instance id'].str.strip() != '')]

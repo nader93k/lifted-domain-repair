@@ -1,3 +1,5 @@
+"""Utility functions used to read YAML files and create CSVs. Refer to log_merger.py to see the usage."""
+
 import yaml
 import csv
 import os
