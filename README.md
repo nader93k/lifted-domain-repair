@@ -1,4 +1,4 @@
-# Lifted-White Plan Domain Repair
+# PDDL Domain Repair with Lifted Test Plans
 
 This repository implements the **Lifted White Plan Domain Repair framework**, providing tools to repair planning domains using lifted and partial grounding techniques. It supports multiple search algorithms, heuristic relaxations, structured logging, and batch execution of repair experiments.
 
