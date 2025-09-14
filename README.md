@@ -36,7 +36,7 @@ If you use this code in your research, please **refer to our ECAI 2025 paper** a
 We provide a pre-built Docker image that should work out of the box:
 
 ```bash
-docker pull nader93k/ecai2025-repairing-domains:latest
+docker pull nader93k/ecai2025-repairing-domains:0.1.0
 ```
 
 This image contains all required dependencies and is the recommended way to get started quickly.
@@ -317,8 +317,16 @@ If you use this code in your research, please cite our paper:
 }
 ```
 
----
-
 ## License
-*To be added later.*
 
+This repository is distributed under the [GNU General Public License v3.0](LICENSE).
+
+It incorporates or builds upon code from:
+- [Fast Downward](https://github.com/aibasel/downward) – GPL v3
+- [Powerlifted](https://github.com/abcorrea/powerlifted) – GPL v3
+- [lpopt](https://dbai.tuwien.ac.at/proj/lpopt/) – GPL v3
+- [clingo](https://github.com/potassco/clingo) – MIT
+- [Diagnoser](https://github.com/Songtuan-Lin/diagnoser) – *no explicit license*
+
+As required by the GPL, this repository as a whole is licensed under GPL v3.  
+MIT-licensed portions retain their original license notices.  
