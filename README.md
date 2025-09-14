@@ -2,26 +2,9 @@
 
 This repository implements the **Lifted White Plan Domain Repair framework**, providing tools to repair planning domains using lifted and partial grounding techniques. It supports multiple search algorithms, heuristic relaxations, structured logging, and batch execution of repair experiments.
 
-If you use this code in your research, please **refer to our ECAI 2025 paper** and cite it (see [Reference](#reference)).
+Our work builds on the baseline repairer from [Songtuan Lin’s *Diagnoser* repository](https://github.com/Songtuan-Lin/diagnoser). We have extended and adapted that implementation to develop the lifted and partial grounding methods described in our [ECAI 2025 paper](#reference).
 
-## Table of Contents
-- [Features](#features)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Usage](#usage)
-  - [Batch Solver](#batch-solver)
-  - [Simplified Batch Solver](#simplified-batch-solver)
-  - [Single Instance Solver](#single-instance-solver)
-  - [Log Processing](#log-processing)
-- [Docker Usage](#docker-usage)
-- [Directory Structure](#directory-structure)
-- [Documentation](#documentation)
-- [Tests](#tests)
-- [Limitations](#limitations)
-- [Reference](#reference)
-- [License](#license)
 
----
 
 ## Features
 - Batch processing of planning domain repair tasks with `batch_solver.py`.
@@ -30,7 +13,7 @@ If you use this code in your research, please **refer to our ECAI 2025 paper** a
 - Heuristic relaxations: zeroary, null, unary.
 - Structured YAML logging and log-to-table utilities.
 
----
+
 
 ## Running by Docker
 We provide a pre-built Docker image that should work out of the box:
@@ -42,7 +25,7 @@ docker pull nader93k/ecai2025-repairing-domains:0.1.0
 This image contains all required dependencies and is the recommended way to get started quickly.
 
 
-If you need to build the project, please see see the explanation below.
+If you need to build the project, please see the explanation below.
 
 ## Setting the Environment & Building
 
@@ -104,13 +87,13 @@ export PKG_CONFIG_PATH=$HOME/.local/lib/pkgconfig:$PKG_CONFIG_PATH
 - Available through most Linux package managers.  
 - Sources available at: [Clingo GitHub](https://github.com/potassco/clingo)
 
----
+
 
 ## Configuration
 Experiment settings are defined in `config.yaml`. Below is a guide to the most important parameters:
 
 ```yaml
-# --- PART 1: THE MAIN PARAMETERS ---
+#  PART 1: THE MAIN PARAMETERS 
 
 # Search method. Choices:
   #   ucs   = uniform cost search
@@ -119,7 +102,6 @@ Experiment settings are defined in `config.yaml`. Below is a guide to the most i
   #   greedy = greedy best-first
   #   dfs   = depth-first search
   #   bb    = branch & bound
-  # Note: BFS/DFS ignore heuristics; A*/Greedy require them.
 search_algorithm: g_astar        
 
 # Heuristic relaxation type. Choices:
@@ -142,8 +124,9 @@ benchmark_path: /path/to/benchmarks
 log_folder: /path/to/output/logs
 
 
-# Probability (0–1) of lifting action parameters. Useful only if you want to create a lifted benchmark using a grounded one. Set to 0 to  avoid touching your whitelist traces.
+# Probability (0–1) of lifting action parameters. Useful only if you want to create a lifted benchmark using a grounded one. Set to 0 if the terms your whitelist traces don't need to be randomly lifted.
   #   1.0 = all objects lifted into variables
+  #   any 0.0 < P < 1.0: Lift each term with a uniform probability of P.
   #   0.0 = all remain grounded                   
 lift_prob: 1.0
 
@@ -152,7 +135,7 @@ timeout_seconds: 900
 
 
 
-# --- PART 2: DEBUG AND HELPER PARAMETERS ---
+#  PART 2: DEBUG AND HELPER PARAMETERS 
 
 # Frequency of logging (in expansions).
 #   Small values for debugging, large values (e.g., 1e6) for normal runs.
@@ -193,7 +176,7 @@ python3 -u batch_solver.py config.yaml
 - For HPC: we used `container/source/ecai-os-python.def` to build a **Singularity image** as the execution environment. 
   - We include this Singularity image to be transparent about how we run our experiments. However, we recommend using the Docker file we mentioned above instead, we it should work out of the box.
 
----
+
 
 ### Simplified Batch Solver
 If you want a single-CPU version with simpler usage, run:
@@ -204,7 +187,7 @@ python3 main.py config.yaml
 
 This is useful for debugging or running small batches without HPC infrastructure.
 
----
+
 
 ### Single Instance Solver
 Solve a single instance identified by `<instance_id>`:
@@ -215,9 +198,7 @@ python -u instance_solver.py config.yaml <instance_id>
 python3 instance_solver.py config.yaml zenotravel__pp01-err-rate-0-3
 ```
 
-TODO: How form instance_id
 
----
 
 ### Log Processing
 Convert generated YAML logs into structured summaries. Note that the Paths of the inputs and outputs are hard-coded in each script. Check (and change) them before using.
@@ -232,7 +213,7 @@ python3 -u log_merger.py
 # For all domains, "merged.csv" files are combined into two outputs: "main_table.csv", listing results of several algorithms per domain (as in the supplementary material), and "summary_table.csv", a compact version covering the full benchmark set (as in the main paper).
 python3 -u log_to_table.py
 
-# Generate a LaTeX table: converts "main_table.csv" and "summary_table.csv" to Latex tables. Note that I don't recommend using this script, since later we realized "pandas.DataFrame.to_latex" is much simpler and cleaner for creating Latex tables.
+# Generate a LaTeX table: converts "main_table.csv" and "summary_table.csv" to LaTeX tables. Note that I don't recommend using this script, since later we realized "pandas.DataFrame.to_latex" is much simpler and cleaner for creating LaTeX tables.
 python3 -u log_table_to_latex.py
 ```
 
@@ -258,7 +239,7 @@ Inside the domain folder:
 Note that the benchmark set originates from the baseline work (grounded). By setting `lift_prob`, literals are randomly lifted to variables, producing a partially lifted benchmark set (as described in the paper).
 
 
----
+
 
 ## Directory Structure
 
@@ -289,20 +270,14 @@ Note that the benchmark set originates from the baseline work (grounded). By set
 ├── requirements.txt         # Refer to README.md
 ```
 
----
+
 
 ## Limitations
 - You can't enforece identical grounding by using identical variable names in the input action sequence. The search procedure will try grounding each variable independently by using objects of the same type.
-- In the experimental logs included in exp_logs_anu, `bfs` is internally equivalent to **Uniform Cost Search (UCS)**. The log_processing scripts rename `bfs` to `ucs` for creating the latex table.
----
+- In the experimental logs included in exp_logs_anu, `bfs` is internally equivalent to **Uniform Cost Search (UCS)**. The log_processing scripts rename `bfs` to `ucs` for creating the LaTeX table.
+
 
 ## Reference
-
-This repository is the official implementation of our paper:
-
-> Nader Karimi Bavandpour, Pascal Lauer, Songtuan Lin, and Pascal Bercher.  
-> *Repairing Planning Domains Based on Lifted Test Plans*.  
-> In Proceedings of the 28th European Conference on Artificial Intelligence (ECAI 2025). IOS Press, 2025.
 
 If you use this code in your research, please cite our paper:
 
@@ -312,8 +287,7 @@ If you use this code in your research, please cite our paper:
   booktitle = {Proceedings of the 28th European Conference on Artificial Intelligence (ECAI 2025)},
   title     = {Repairing Planning Domains Based on Lifted Test Plans},
   year      = {2025},
-  publisher = {IOS Press},
-  abstract  = {Knowledge engineering for AI planning remains a significant challenge, particularly in the creation and maintenance of accurate domain models. A recent approach to correcting flawed models involves using test plans: non-solution plans that are intended to be solutions. However, these plans must be grounded, which restricts the modeler's ability to specify repairs at various levels of abstraction, especially when only partial information is available. In this paper, we propose a novel approach that extends domain repair capabilities to handle lifted test plans, where action parameters may remain unspecified. We introduce a new lifted repair problem set, a search algorithm, different designs of proper search spaces, and a novel lifted heuristic for solving the lifted repair problem. Our implementation and experimental results shows that our approach can solve a wide range of problems efficiently and reach solutions that are close to optimal.}  
+  publisher = {IOS Press}
 }
 ```
 
@@ -322,11 +296,11 @@ If you use this code in your research, please cite our paper:
 This repository is distributed under the [GNU General Public License v3.0](LICENSE).
 
 It incorporates or builds upon code from:
+- [Diagnoser](https://github.com/Songtuan-Lin/diagnoser) – *no explicit license*
 - [Fast Downward](https://github.com/aibasel/downward) – GPL v3
 - [Powerlifted](https://github.com/abcorrea/powerlifted) – GPL v3
 - [lpopt](https://dbai.tuwien.ac.at/proj/lpopt/) – GPL v3
 - [clingo](https://github.com/potassco/clingo) – MIT
-- [Diagnoser](https://github.com/Songtuan-Lin/diagnoser) – *no explicit license*
 
 As required by the GPL, this repository as a whole is licensed under GPL v3.  
 MIT-licensed portions retain their original license notices.  
