@@ -252,10 +252,3 @@ If you use this code in your research, please cite our paper:
 ## License
 *To be added later.*
 
-
-
-----
-# TODO
--- explain how define lifted plans as input
--- explain the expected folder structure
--- add licensing
