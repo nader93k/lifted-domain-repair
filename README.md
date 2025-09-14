@@ -26,8 +26,7 @@ If you use this code in your research, please **refer to our ECAI 2025 paper** a
 ## Features
 - Batch processing of planning domain repair tasks with `batch_solver.py`.
 - Single-instance execution with `instance_solver.py`.
-- Supports lifted planning, ground repair, and partial grounding.
-- Configurable search algorithms: A*, Greedy, DFS, Uniform-Cost-Search (UCS) Branch and Bound.
+- Configurable search algorithms: A*, Greedy, DFS, Uniform-Cost-Search (UCS), Branch and Bound.
 - Heuristic relaxations: zeroary, null, unary.
 - Structured YAML logging and log-to-table utilities.
 
@@ -65,6 +64,7 @@ python3 -m pip install -r requirements.txt
 
 ### lpopt (Tree Decomposition Optimizer)
 
+- Version: 2.2
 - Build instructions: [lpopt installation guide](https://dbai.tuwien.ac.at/proj/lpopt/)  
 - Requires **HTD** installed first.
 
@@ -82,17 +82,17 @@ export PKG_CONFIG_PATH=$HOME/.local/lib/pkgconfig:$PKG_CONFIG_PATH
 - Extra build instructions: [HTD gist](https://gist.github.com/PLauerRocks/5e906f05526220b2f67eb11e92ffff92)
 
 
-### Fast Downward
-
+### Fast Downward (in ./fd2/)
+- Version used: 23.06
 - Must be compiled manually.  
 - Official instructions: [Fast Downward](https://www.fast-downward.org/latest/)  
-- Expected source directory: `fd2/`
 
 
 ### Powerlifted
 
 - Must be compiled manually.  
 - Repository: [Powerlifted](https://github.com/abcorrea/powerlifted)  
+- If you had any issues with the latest version, try commit "736b0cd".
 - Expected source directory: `pwl/`
 
 
@@ -108,24 +108,73 @@ export PKG_CONFIG_PATH=$HOME/.local/lib/pkgconfig:$PKG_CONFIG_PATH
 Experiment settings are defined in `config.yaml`. Below is a guide to the most important parameters:
 
 ```yaml
-search_algorithm: g_astar        # Choices: ucs, dfs, astar, g_astar, gbfs
-heuristic_relaxation: unary      # Choices: zeroary, null, unary, or relax-all variants.
-lift_prob: 1.0                   # Probability for lifting actions (1.0 =  lift).
-instance_ids: null               # Provide explicit IDs, or null to run all.
-min_length: 1                    # Minimum plan length.
-max_length: 15                   # Maximum plan length.
-timeout_seconds: 900             # Timeout per instance (seconds).
-order: increasing                # Instance ordering (increasing or random).
-benchmark_path: /path/to/benchmarks   # Path to benchmark PDDL problems.
-log_folder: /path/to/output/logs      # Output folder for per-instance YAML logs.
-log_interval: 1000000            # Logging frequency (in expansions).
-domain_class: null               # Override with a custom domain class (optional).
+# --- PART 1: THE MAIN PARAMETERS ---
+
+# Search method. Choices:
+  #   ucs   = uniform cost search
+  #   astar = A* search
+  #   g_astar = greedy A*
+  #   greedy = greedy best-first
+  #   dfs   = depth-first search
+  #   bb    = branch & bound
+  # Note: BFS/DFS ignore heuristics; A*/Greedy require them.
+search_algorithm: g_astar        
+
+# Heuristic relaxation type. Choices:
+  #   zeroary, null, unary
+heuristic_relaxation: unary      
+                            
+# FF relaxation for the heuristic
+use_ff: True                     
+
+# How successor states are generated. Choices:
+  #   missing  = RELAX_PRE
+  #   missing-and-negative = RELAX_DEL
+  #   exhaust  = EXHAUST (see paper).
+successor_generator: missing
+
+# Path to benchmark PDDL problems.
+benchmark_path: /path/to/benchmarks   
+
+# Folder where logs will be stored.
+log_folder: /path/to/output/logs
+
+
+# Probability (0–1) of lifting action parameters. Useful only if you want to create a lifted benchmark using a grounded one. Set to 0 to  avoid touching your whitelist traces.
+  #   1.0 = all objects lifted into variables
+  #   0.0 = all remain grounded                   
+lift_prob: 1.0
+
+# Per-instance time limit in seconds (default: 15 min).
+timeout_seconds: 900    
+
+
+
+# --- PART 2: DEBUG AND HELPER PARAMETERS ---
+
+# Frequency of logging (in expansions).
+#   Small values for debugging, large values (e.g., 1e6) for normal runs.
+log_interval: 1000000    
+
+# Explicit IDs of instances to run. Use null to run all.
+# You can set it to a JSON file at the root project folder that contains a list of instance IDs that needs to picked and solved out of a possibly large dataset.
+  # Example: filtered.json containing: ["domainName1__problemName1", "domainName1__problemName1"]. Note that the pattern of creating IDs for each instance is `"domainName" + "__" + "problemName"`.
+instance_ids: null               
+
+# Minimum and maximum plan length (integer > 0). Filters your problem set to contain the instances that have a whitelist plan of this specified range.
+min_length: 1
+max_length: 15
+
+# Instance ordering: In what order should the problems be solved? You may want to set to increasing for debug, so that you start from smaller problems and fail faster.
+# Choices:
+  #   increasing = shorter action traces first
+  #   random     = random order
+order: increasing
+
+# Domain restriction. Use null or specify a domain name (e.g., "mprime").
+domain_class: null               
 ```
 
-> Each parameter is explained directly in `config.yaml`.  
-> For example, `search_algorithm` and `heuristic_relaxation` must be compatible; BFS/DFS ignore heuristics, while A* and Greedy require them.
-
----
 
 ## Usage
 
@@ -133,13 +182,14 @@ domain_class: null               # Override with a custom domain class (optional
 Run batch experiments over a set of benchmark instances:
 
 ```bash
-python -u batch_solver.py config.yaml
+python3 -u batch_solver.py config.yaml
 ```
 
 - Automatically detects available CPUs and distributes work across them.  
 - Memory usage is capped at 8GB per instance in `instance_solver.py`; ensure you have enough RAM when scaling up CPU usage.  
 - Produces per-instance YAML logs in `log_folder`.  
-- For HPC: we used `container/source/ecai-os-python.def` to build a **Singularity image** as the execution environment.
+- For HPC: we used `container/source/ecai-os-python.def` to build a **Singularity image** as the execution environment. 
+  - We include this Singularity image to be transparent about how we run our experiments. However, we recommend using the Docker file we mentioned above instead, we it should work out of the box.
 
 ---
 
@@ -159,6 +209,8 @@ Solve a single instance identified by `<instance_id>`:
 
 ```bash
 python -u instance_solver.py config.yaml <instance_id>
+# Example:
+python3 instance_solver.py config.yaml zenotravel__pp01-err-rate-0-3
 ```
 
 TODO: How form instance_id
@@ -166,17 +218,20 @@ TODO: How form instance_id
 ---
 
 ### Log Processing
-Convert generated YAML logs into structured summaries:
+Convert generated YAML logs into structured summaries. Note that the Paths of the inputs and outputs are hard-coded in each script. Check (and change) them before using.
 
 ```bash
-# Generate a combined CSV summary:
-python -u log_reader.py              > summary.csv
+cd exp_log_processing
 
-# Create a plain-text table:
-python -u log_to_table.py <logs_dir> > table.txt
+# Per each domain: reads each YAML log file and generates a merged, single CSV file named "merged.csv".
+python3 -u log_merger.py
 
-# Generate a LaTeX table:
-python -u log_table_to_latex.py <logs_dir> > table.tex
+
+# For all domains, "merged.csv" files are combined into two outputs: "main_table.csv", listing results of several algorithms per domain (as in the supplementary material), and "summary_table.csv", a compact version covering the full benchmark set (as in the main paper).
+python3 -u log_to_table.py
+
+# Generate a LaTeX table: converts "main_table.csv" and "summary_table.csv" to Latex tables. Note that I don't recommend using this script, since later we realized "pandas.DataFrame.to_latex" is much simpler and cleaner for creating Latex tables.
+python3 -u log_table_to_latex.py
 ```
 
 Other utilities:
@@ -191,30 +246,27 @@ Other utilities:
 .
 ├── container/               # Container definitions (e.g., Singularity, Docker support files)
 ├── exp_log_processing/      # Utilities for processing experimental logs
-├── exp_logs_anu/            # Experiment logs (ANU runs)
-├── exp_logs_csv/            # Experiment logs exported to CSV
-├── exp_logs_debug/          # Debugging logs
+├── exp_logs_anu/            # Experiment logs, as reported in the paper.
+├── exp_logs_csv/            # "exp_logs_anu" processed to CSV
 ├── exptools/                # Experiment utilities for instance and data management
-├── fd/                      # Fast Downward build or resources
-├── fd2/                     # Alternate Fast Downward build
+├── fd/                      # Fast Downward: used in the baseline repairer and blind search.
+├── fd2/                     # Fast Downward: used for the heuristic
 ├── heuristic_tools/         # Heuristic implementations and auxiliary files
-├── hitter/                  # Hitting set or related utilities
+├── hitter/                  # Hitting set solver
 ├── input/                   # Input benchmark datasets
-├── model/                   # PDDL domain and task models
-├── pwl/                     # Powerlifted build/resources
-├── relaxation_generator/    # Heuristic relaxation generators
-├── repairer/                # Ground repair implementations
-├── search_partial_grounding/ # Partial grounding search framework
-├── utils/                   # Supporting utility modules
-├── batch_solver.py
-├── commands.sh
-├── config.yaml
-├── custom_logger.py
-├── Dockerfile
-├── instance_solver.py
-├── main.py
-├── README.md
-├── requirements.txt
+├── model/                   # PDDL domain and task, and repair Python models
+├── pwl/                     # Powerlifted build/resources: used in the heuristic
+├── relaxation_generator/    # Heuristic relaxation generators: used in the heuristic
+├── repairer/                # Baseline repair implementations
+├── search_partial_grounding/ # Partial grounding search framework (main contribution)
+├── utils/                   # Supporting utility modules (used mainly in the baseline repairer)
+├── batch_solver.py          # Refer to README.md
+├── config.yaml              # Refer to README.md
+├── custom_logger.py         # A custom logger used for creating YAML logs which is the main output of the experimental results as well as logging errors and tracking execution.
+├── instance_solver.py       # Refer to README.md
+├── main.py                  # Refer to README.md
+├── README.md                # Refer to README.md :-)
+├── requirements.txt         # Refer to README.md
 ```
 
 ---
@@ -222,7 +274,6 @@ Other utilities:
 ## Limitations
 - You can't enforece identical grounding by using identical variable names in the input action sequence. The search procedure will try grounding each variable independently by using objects of the same type.
 - In the experimental logs included in exp_logs_anu, `bfs` is internally equivalent to **Uniform Cost Search (UCS)**. The log_processing scripts rename `bfs` to `ucs` for creating the latex table.
-- Batch solver assumes HPC usage; ensure sufficient memory scaling across CPUs.    
 ---
 
 ## Reference
@@ -242,7 +293,6 @@ If you use this code in your research, please cite our paper:
   title     = {Repairing Planning Domains Based on Lifted Test Plans},
   year      = {2025},
   publisher = {IOS Press},
-  keywords  = {conference,DECRA},
   abstract  = {Knowledge engineering for AI planning remains a significant challenge, particularly in the creation and maintenance of accurate domain models. A recent approach to correcting flawed models involves using test plans: non-solution plans that are intended to be solutions. However, these plans must be grounded, which restricts the modeler's ability to specify repairs at various levels of abstraction, especially when only partial information is available. In this paper, we propose a novel approach that extends domain repair capabilities to handle lifted test plans, where action parameters may remain unspecified. We introduce a new lifted repair problem set, a search algorithm, different designs of proper search spaces, and a novel lifted heuristic for solving the lifted repair problem. Our implementation and experimental results shows that our approach can solve a wide range of problems efficiently and reach solutions that are close to optimal.}  
 }
 ```
