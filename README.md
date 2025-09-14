@@ -234,9 +234,27 @@ python3 -u log_to_table.py
 python3 -u log_table_to_latex.py
 ```
 
-Other utilities:
-- `log_merger.py` – merge multiple YAML logs
-- `log_table_to_latex_maxh.py` – LaTeX tables optimized for publications
+### Benchmark Folder Structure Assumptions
+
+
+If you want to use the default data loader in `exptools/load_data.py` directly, you need to organize your repair problems like in `./input/benchmarks-G1`.
+
+**Folder Structure Assumptions:**
+- The **first-level folders** are domain names. These names will be used for reporting (i.e., rows in the output tables).
+- Example: a `Blocks` domain is located in `./input/ExampleBenchmarks/Blocks`.
+
+Inside the domain folder:
+- Flawed domains must follow the format:  
+  `domain-<problem_name>.pddl`  
+  Example: `domain-prob1.pddl`
+- Each flawed domain must have a **matching problem file**:  
+  `<problem_name>.pddl`  
+  Example: `prob1.pddl`
+- A corresponding folder `<domain>_plans` must exist, containing partially whitelist plans:  
+  Example: `./input/ExampleBenchmarks/Blocks_plans/prob1.plan`
+
+Note that the benchmark set originates from the baseline work (grounded). By setting `lift_prob`, literals are randomly lifted to variables, producing a partially lifted benchmark set (as described in the paper).
+
 
 ---
 
