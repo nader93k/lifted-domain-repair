@@ -58,8 +58,10 @@ Below is a concise installation guide.
 python3 -m pip install -r requirements.txt
 ```
 
-- For **blind search algorithms**, this is sufficient.  
-- For heuristic search, additional tools must be compiled.
+
+
+> ***For **blind search algorithms**, this is sufficient. If you use the heuristic, see the requirements below.***
+
 
 
 ### lpopt (Tree Decomposition Optimizer)
