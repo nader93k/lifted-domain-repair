@@ -1,6 +1,6 @@
 # PDDL Domain Repair with Lifted Test Plans
 
-This repository implements the **Lifted White List Plan Domain Repair framework**, providing tools to repair planning domains using lifted and partial grounding techniques. It supports multiple search algorithms, heuristic relaxations, structured logging, and batch execution of repair experiments.
+This repository implements the **PDDL Domain Repair with Lifted Test Plans Solver**, providing tools to repair planning domains using lifted and partial grounding techniques. It supports multiple search algorithms, heuristic relaxations, structured logging, and batch execution of repair experiments.
 
 Our work builds on the baseline repairer from [Songtuan Lin’s *Diagnoser* repository](https://github.com/Songtuan-Lin/diagnoser). We have extended and adapted that implementation to develop the lifted and partial grounding methods described in our [ECAI 2025 paper](#reference).
 
@@ -261,6 +261,15 @@ Note that the benchmark set originates from the baseline work (grounded). By set
 
 - You can't enforce identical grounding by using identical variable names in the input action sequence. The search procedure will try grounding each variable independently by using objects of the same type.
 - In the experimental logs included in exp_logs_anu, `bfs` is internally equivalent to **Uniform Cost Search (UCS)**. The log_processing scripts rename `bfs` to `ucs` for creating the LaTeX table.
+
+## How to Reproduce Our Results
+
+To reproduce the data for a specific experiment from the paper, you will need to:
+
+1. Set up the environment and required dependencies (see sections below).
+2. **Adjust the main experimental parameters** (e.g., `search_algorithm`, `successor_generator`, `lift_prob`) within the `config.yaml` file to match the desired configuration.
+3. Execute the batch solver script: `python3 -u batch_solver.py config.yaml`
+4. Each successful run will produce a set of raw results (logs) in the configured `log_folder` (which, when configured like ours, corresponds to the structure in `exp_logs_anu/`).
 
 ## Reference
 
