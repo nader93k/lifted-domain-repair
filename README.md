@@ -234,7 +234,7 @@ Note that the benchmark set originates from the baseline work (grounded). By set
 .
 ├── container/               # Container definitions (e.g., Singularity, Docker support files)
 ├── exp_log_processing/      # Utilities for processing experimental logs
-├── exp_logs_anu/            # Experiment logs, as reported in the paper.
+├── exp_logs_anu/            # Our experiment logs, as reported in the paper.
 ├── exp_logs_csv/            # "exp_logs_anu" processed to CSV
 ├── exptools/                # Experiment utilities for instance and data management
 ├── fd/                      # Fast Downward: used in the baseline repairer and blind search.
@@ -263,6 +263,8 @@ Note that the benchmark set originates from the baseline work (grounded). By set
 - In the experimental logs included in exp_logs_anu, `bfs` is internally equivalent to **Uniform Cost Search (UCS)**. The log_processing scripts rename `bfs` to `ucs` for creating the LaTeX table.
 
 ## How to Reproduce Our Results
+
+All the logs that we produced and reported in the paper can be found in `exp_logs_anu`.
 
 To reproduce the data for a specific experiment from the paper, you will need to:
 
