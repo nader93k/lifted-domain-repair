@@ -2,7 +2,7 @@
 
 This repository implements the **PDDL Domain Repair with Lifted Test Plans Solver**, providing tools to repair planning domains using lifted and partial grounding techniques. It supports multiple search algorithms, heuristic relaxations, structured logging, and batch execution of repair experiments.
 
-Our work builds on the baseline repairer from [Songtuan Lin’s *Diagnoser* repository](https://github.com/Songtuan-Lin/diagnoser). We have extended and adapted that implementation to develop the lifted and partial grounding methods described in our [ECAI 2025 paper](#reference).
+Our work builds on the baseline repairer from [*Diagnoser*](https://github.com/Songtuan-Lin/diagnoser). We have extended and adapted that implementation to develop the lifted and partial grounding methods described in our [ECAI 2025 paper](#reference).
 
 ## Features
 
