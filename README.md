@@ -1,21 +1,19 @@
 # PDDL Domain Repair with Lifted Test Plans
 
-This repository implements the **Lifted White Plan Domain Repair framework**, providing tools to repair planning domains using lifted and partial grounding techniques. It supports multiple search algorithms, heuristic relaxations, structured logging, and batch execution of repair experiments.
+This repository implements the **Lifted White List Plan Domain Repair framework**, providing tools to repair planning domains using lifted and partial grounding techniques. It supports multiple search algorithms, heuristic relaxations, structured logging, and batch execution of repair experiments.
 
 Our work builds on the baseline repairer from [Songtuan Lin’s *Diagnoser* repository](https://github.com/Songtuan-Lin/diagnoser). We have extended and adapted that implementation to develop the lifted and partial grounding methods described in our [ECAI 2025 paper](#reference).
 
-
-
 ## Features
+
 - Batch processing of planning domain repair tasks with `batch_solver.py`.
 - Single-instance execution with `instance_solver.py`.
 - Configurable search algorithms: A*, Greedy, DFS, Uniform-Cost-Search (UCS), Branch and Bound.
 - Heuristic relaxations: zeroary, null, unary.
 - Structured YAML logging and log-to-table utilities.
 
-
-
 ## Running by Docker
+
 We provide a pre-built Docker image that should work out of the box:
 
 ```bash
@@ -23,7 +21,6 @@ docker pull nader93k/ecai2025-repairing-domains:0.1.0
 ```
 
 This image contains all required dependencies and is the recommended way to get started quickly.
-
 
 If you need to build the project, please see the explanation below.
 
@@ -41,11 +38,7 @@ Below is a concise installation guide.
 python3 -m pip install -r requirements.txt
 ```
 
-
-
 > ***For **blind search algorithms**, this is sufficient. If you use the heuristic, see the requirements below.***
-
-
 
 ### lpopt (Tree Decomposition Optimizer)
 
@@ -54,6 +47,7 @@ python3 -m pip install -r requirements.txt
 - Requires **HTD** installed first.
 
 #### HTD Installation Notes
+
 - Avoid installing in system directories (e.g., `/usr`).  
 - Install in a custom user path without `sudo`.  
 - Add the following to your `.bashrc`:
@@ -66,20 +60,19 @@ export PKG_CONFIG_PATH=$HOME/.local/lib/pkgconfig:$PKG_CONFIG_PATH
 
 - Extra build instructions: [HTD gist](https://gist.github.com/PLauerRocks/5e906f05526220b2f67eb11e92ffff92)
 
+### Fast Downward
 
-### Fast Downward (in ./fd2/)
+- Some of the source code from Fast Downward is copied in `./fd2/`.
+- Must be compiled manually.
+- Repository: [Fast Downward](https://www.fast-downward.org/latest/)  
 - Version used: 23.06
-- Must be compiled manually.  
-- Official instructions: [Fast Downward](https://www.fast-downward.org/latest/)  
-
 
 ### Powerlifted
 
+- The code for this project is copied in `./pwl/`.
 - Must be compiled manually.  
 - Repository: [Powerlifted](https://github.com/abcorrea/powerlifted)  
 - If you had any issues with the latest version, try commit "736b0cd".
-- Expected source directory: `pwl/`
-
 
 ### Clingo / Gringo
 
@@ -87,9 +80,8 @@ export PKG_CONFIG_PATH=$HOME/.local/lib/pkgconfig:$PKG_CONFIG_PATH
 - Available through most Linux package managers.  
 - Sources available at: [Clingo GitHub](https://github.com/potassco/clingo)
 
-
-
 ## Configuration
+
 Experiment settings are defined in `config.yaml`. Below is a guide to the most important parameters:
 
 ```yaml
@@ -160,10 +152,10 @@ order: increasing
 domain_class: null               
 ```
 
-
 ## Usage
 
 ### Batch Solver
+
 Run batch experiments over a set of benchmark instances:
 
 ```bash
@@ -176,9 +168,8 @@ python3 -u batch_solver.py config.yaml
 - For HPC: we used `container/source/ecai-os-python.def` to build a **Singularity image** as the execution environment. 
   - We include this Singularity image to be transparent about how we run our experiments. However, we recommend using the Docker file we mentioned above instead, we it should work out of the box.
 
-
-
 ### Simplified Batch Solver
+
 If you want a single-CPU version with simpler usage, run:
 
 ```bash
@@ -187,9 +178,8 @@ python3 main.py config.yaml
 
 This is useful for debugging or running small batches without HPC infrastructure.
 
-
-
 ### Single Instance Solver
+
 Solve a single instance identified by `<instance_id>`:
 
 ```bash
@@ -198,9 +188,8 @@ python -u instance_solver.py config.yaml <instance_id>
 python3 instance_solver.py config.yaml zenotravel__pp01-err-rate-0-3
 ```
 
-
-
 ### Log Processing
+
 Convert generated YAML logs into structured summaries. Note that the Paths of the inputs and outputs are hard-coded in each script. Check (and change) them before using.
 
 ```bash
@@ -219,14 +208,15 @@ python3 -u log_table_to_latex.py
 
 ### Benchmark Folder Structure Assumptions
 
-
 If you want to use the default data loader in `exptools/load_data.py` directly, you need to organize your repair problems like in `./input/benchmarks-G1`.
 
 **Folder Structure Assumptions:**
+
 - The **first-level folders** are domain names. These names will be used for reporting (i.e., rows in the output tables).
 - Example: a `Blocks` domain is located in `./input/ExampleBenchmarks/Blocks`.
 
 Inside the domain folder:
+
 - Flawed domains must follow the format:  
   `domain-<problem_name>.pddl`  
   Example: `domain-prob1.pddl`
@@ -238,12 +228,9 @@ Inside the domain folder:
 
 Note that the benchmark set originates from the baseline work (grounded). By setting `lift_prob`, literals are randomly lifted to variables, producing a partially lifted benchmark set (as described in the paper).
 
-
-
-
 ## Directory Structure
 
-```
+```bash
 .
 ├── container/               # Container definitions (e.g., Singularity, Docker support files)
 ├── exp_log_processing/      # Utilities for processing experimental logs
@@ -270,18 +257,16 @@ Note that the benchmark set originates from the baseline work (grounded). By set
 ├── requirements.txt         # Refer to README.md
 ```
 
-
-
 ## Limitations
-- You can't enforece identical grounding by using identical variable names in the input action sequence. The search procedure will try grounding each variable independently by using objects of the same type.
-- In the experimental logs included in exp_logs_anu, `bfs` is internally equivalent to **Uniform Cost Search (UCS)**. The log_processing scripts rename `bfs` to `ucs` for creating the LaTeX table.
 
+- You can't enforce identical grounding by using identical variable names in the input action sequence. The search procedure will try grounding each variable independently by using objects of the same type.
+- In the experimental logs included in exp_logs_anu, `bfs` is internally equivalent to **Uniform Cost Search (UCS)**. The log_processing scripts rename `bfs` to `ucs` for creating the LaTeX table.
 
 ## Reference
 
 If you use this code in your research, please cite our paper:
 
-```
+```bibtex
 @InProceedings{Bavandpour2025LiftedTestPlans,
   author    = {Nader Karimi Bavandpour and Pascal Lauer and Songtuan Lin and Pascal Bercher},
   booktitle = {Proceedings of the 28th European Conference on Artificial Intelligence (ECAI 2025)},
@@ -296,6 +281,7 @@ If you use this code in your research, please cite our paper:
 This repository is distributed under the [GNU General Public License v3.0](LICENSE).
 
 It incorporates or builds upon code from:
+
 - [Diagnoser](https://github.com/Songtuan-Lin/diagnoser) – *no explicit license*
 - [Fast Downward](https://github.com/aibasel/downward) – GPL v3
 - [Powerlifted](https://github.com/abcorrea/powerlifted) – GPL v3
@@ -303,4 +289,4 @@ It incorporates or builds upon code from:
 - [clingo](https://github.com/potassco/clingo) – MIT
 
 As required by the GPL, this repository as a whole is licensed under GPL v3.  
-MIT-licensed portions retain their original license notices.  
+MIT-licensed portions retain their original license notices.
