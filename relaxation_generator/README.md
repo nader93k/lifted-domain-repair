@@ -1,12 +1,3 @@
-Pascal (L.) says: 
-This whole thing was copied from another project of mine. 
-Please let me do a clean-up pass before publishing this.
-
-The repository builds on the work of Corrêa et al. (ICAPS 2023)., we should make it clear
-that we re-used the code. 
-
----
-
 # ASP encoding to ground planning tasks
 
 Encodes the relaxed-reachability of a PDDL planning task as a logic program. The
