@@ -24,14 +24,13 @@ This image contains all required dependencies and is the recommended way to get 
 
 If you need to build the project, please see the explanation below.
 
-## Setting the Environment & Building
+## Setting the Environments: Blind Search
 
-This project requires several external tools and libraries in addition to the Python codebase.  
-Below is a concise installation guide.
+This project requires several external tools and libraries in addition to the Python codebase.   Below is a concise installation guide.
 
 ### Python Packages
 
-- Tested with **Python 3.8**.  
+- Tested with `Python 3.8`.  
 - Install dependencies from `requirements.txt`:
 
 ```bash
@@ -40,14 +39,30 @@ python3 -m pip install -r requirements.txt
 
 > ***For **blind search algorithms**, this is sufficient. If you use the heuristic, see the requirements below.***
 
+## Setting the Environments: Heuristic Search
+
+As the paper notes, this heuristic is currently a theoretical contribution. We did not find an empirical speed-up within the benchmark set included in this repository. To use or extend the heuristic, you will first need to set up the appropriate execution environment, as explained in this section.
+
+There are 3 folders dedicated to the heuristic implementation:
+
+- `./heuristic_tools/`: Main execution scripts and program entry points.
+- `./fd2/`: Fast Downward which is exclusively used for the heuristic:
+  - You need to compile it manually. Look for version 23.06 in the original repo for build instructions: [Fast Downward](https://www.fast-downward.org/latest/).
+- `./relaxation_generator/`: The main folder (which is also a git repo) that implements the relaxed problem.
+  - It builds on the 2023 `ICAPS` publication, `Grounding planning tasks using tree decompositions and iterated solving (Corrêa et al.)`.
+  - There is a README file at `./relaxation_generator/README.md` that you can check.
+
+The code within `./relaxation_generator/`, needs configuring the prerequisites listed in the rest of this section.
+
 ### lpopt (Tree Decomposition Optimizer)
 
-- Version: 2.2
+- Version: `2.2`
 - Build instructions: [lpopt installation guide](https://dbai.tuwien.ac.at/proj/lpopt/)  
 - Requires **HTD** installed first.
 
 #### HTD Installation Notes
 
+- Build instructions: [HTD gist](https://gist.github.com/PLauerRocks/5e906f05526220b2f67eb11e92ffff92)
 - Avoid installing in system directories (e.g., `/usr`).  
 - Install in a custom user path without `sudo`.  
 - Add the following to your `.bashrc`:
@@ -58,21 +73,11 @@ export LD_LIBRARY_PATH=$HOME/.local/lib:$LD_LIBRARY_PATH
 export PKG_CONFIG_PATH=$HOME/.local/lib/pkgconfig:$PKG_CONFIG_PATH
 ```
 
-- Extra build instructions: [HTD gist](https://gist.github.com/PLauerRocks/5e906f05526220b2f67eb11e92ffff92)
-
-### Fast Downward
-
-- Some of the source code from Fast Downward is copied in `./fd2/`.
-- Must be compiled manually.
-- Repository: [Fast Downward](https://www.fast-downward.org/latest/)  
-- Version used: 23.06
-
 ### Powerlifted
 
-- The code for this project is copied in `./pwl/`.
-- Must be compiled manually.  
+- The code for this project is copied in `./pwl/` and must be compiled manually.  
 - Repository: [Powerlifted](https://github.com/abcorrea/powerlifted)  
-- If you had any issues with the latest version, try commit "736b0cd".
+- If you had any issues with the latest version, try commit `736b0cd`.
 
 ### Clingo / Gringo
 
@@ -262,16 +267,15 @@ Note that the benchmark set originates from the baseline work (grounded). By set
 - You can't enforce identical grounding by using identical variable names in the input action sequence. The search procedure will try grounding each variable independently by using objects of the same type.
 - In the experimental logs included in exp_logs_anu, `bfs` is internally equivalent to **Uniform Cost Search (UCS)**. The log_processing scripts rename `bfs` to `ucs` for creating the LaTeX table.
 
-## How to Reproduce Our Results
+## How to Reproduce our Results
 
 All the logs that we produced and reported in the paper can be found in `exp_logs_anu`.
 
 To reproduce the data for a specific experiment from the paper, you will need to:
 
-1. Set up the environment and required dependencies (see sections below).
-2. **Adjust the main experimental parameters** (e.g., `search_algorithm`, `successor_generator`, `lift_prob`) within the `config.yaml` file to match the desired configuration.
-3. Execute the batch solver script: `python3 -u batch_solver.py config.yaml`
-4. Each successful run will produce a set of raw results (logs) in the configured `log_folder` (which, when configured like ours, corresponds to the structure in `exp_logs_anu/`).
+- **Adjust the main experimental parameters** (e.g., `search_algorithm`, `successor_generator`, `lift_prob`) within the `config.yaml` file to match the desired configuration.
+- Execute the batch solver script: `python3 -u batch_solver.py config.yaml`
+- Each successful run will produce a set of logs in the configured `log_folder` (which, when configured like ours, corresponds to the structure in `./exp_logs_anu/`).
 
 ## Reference
 
